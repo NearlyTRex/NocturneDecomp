@@ -9,7 +9,7 @@
 void __cdecl engine_light_cpp_setLightingMultipliers_FUN_004c6a50(int diffuse_multiplier,int specular_multiplier)
 
 {
-  DAT_005bacd8 = diffuse_multiplier;
-  DAT_005bacdc = specular_multiplier;
+  g_INT_005bacd8 = diffuse_multiplier;
+  g_INT_005bacdc = specular_multiplier;
   return;
 }

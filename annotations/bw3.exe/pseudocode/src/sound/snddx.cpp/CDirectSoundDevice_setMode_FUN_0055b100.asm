@@ -22,7 +22,7 @@
 ;   IDirectSound* g_IDirectSound_PTR_02cf49c4
 ;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8
 ;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49cc
-;   undefined4 DAT_02cf49d4
+;   IKsPropertySet* g_IKsPropertySet_PTR_02cf49d4
 ;   int g_INT_02cf49d8
 ;   int g_INT_02cf49dc
 ;   int g_INT_02cf49e0
@@ -48,7 +48,7 @@ section .text
     PUSH EBP                            ; 0055b103
     SUB ESP,0x6c0                       ; 0055b104
     MOV EBX,dword ptr [ESP + 0x6d8]     ; 0055b10a
-    MOV EDX,dword ptr [0x02cf49d4]      ; 0055b111 | DAT_02cf49d4
+    MOV EDX,dword ptr [0x02cf49d4]      ; 0055b111 | g_IKsPropertySet_PTR_02cf49d4
     TEST EDX,EDX                        ; 0055b117
     JNZ 0x0055b148                      ; 0055b119
         ;   XREF to: 0055b148 (CONDITIONAL_JUMP)  ; LAB_0055b148
@@ -80,7 +80,7 @@ section .text
     MOV EDX,dword ptr [EDX]             ; 0055b14b
     CALL dword ptr [EDX + 0x8]          ; 0055b14d
     XOR ECX,ECX                         ; 0055b150
-    MOV dword ptr [0x02cf49d4],ECX      ; 0055b152 | DAT_02cf49d4
+    MOV dword ptr [0x02cf49d4],ECX      ; 0055b152 | g_IKsPropertySet_PTR_02cf49d4
     JMP 0x0055b11b                      ; 0055b158
         ;   XREF to: 0055b11b (UNCONDITIONAL_JUMP)  ; LAB_0055b11b
     PUSH 0x12                           ; 0055b15a
@@ -139,7 +139,7 @@ section .text
     MOV [0x02cf49dc],EAX                ; 0055b22d | g_INT_02cf49dc
     XOR EAX,EAX                         ; 0055b232
     MOV AX,word ptr [ESP + 0x68a]       ; 0055b234
-    MOV EDI,dword ptr [0x02cf49d4]      ; 0055b23c | DAT_02cf49d4
+    MOV EDI,dword ptr [0x02cf49d4]      ; 0055b23c | g_IKsPropertySet_PTR_02cf49d4
     MOV [0x02cf49e0],EAX                ; 0055b242 | g_INT_02cf49e0
     TEST EDI,EDI                        ; 0055b247
     JZ 0x0055b259                       ; 0055b249
@@ -148,7 +148,7 @@ section .text
     MOV EDX,dword ptr [EDI]             ; 0055b24c
     XOR EBP,EBP                         ; 0055b24e
     CALL dword ptr [EDX + 0x8]          ; 0055b250
-    MOV dword ptr [0x02cf49d4],EBP      ; 0055b253 | DAT_02cf49d4
+    MOV dword ptr [0x02cf49d4],EBP      ; 0055b253 | g_IKsPropertySet_PTR_02cf49d4
     PUSH 0x12                           ; 0055b259
         ;   Label: LAB_0055b259
     XOR EAX,EAX                         ; 0055b25b
@@ -219,7 +219,7 @@ section .text
     XOR EDI,EDI                         ; 0055b36b
     CALL dword ptr [EAX + 0x8]          ; 0055b36d
     MOV dword ptr [ESP + 0x6b0],EDI     ; 0055b370
-    MOV EBP,dword ptr [0x02cf49d4]      ; 0055b377 | DAT_02cf49d4
+    MOV EBP,dword ptr [0x02cf49d4]      ; 0055b377 | g_IKsPropertySet_PTR_02cf49d4
         ;   Label: LAB_0055b377
     TEST EBP,EBP                        ; 0055b37d
     JZ 0x0055b3a9                       ; 0055b37f
@@ -376,7 +376,7 @@ section .text
     ADD ESP,0x4                         ; 0055b56c
     JMP 0x0055b377                      ; 0055b56f
         ;   XREF to: 0055b377 (UNCONDITIONAL_JUMP)  ; LAB_0055b377
-    PUSH 0x2cf49d4                      ; 0055b574 | DAT_02cf49d4
+    PUSH 0x2cf49d4                      ; 0055b574 | g_IKsPropertySet_PTR_02cf49d4
         ;   Label: LAB_0055b574
     PUSH 0x6044e0                       ; 0055b579 | g_IID_IKsPropertySet
     MOV EAX,dword ptr [ECX]             ; 0055b57e

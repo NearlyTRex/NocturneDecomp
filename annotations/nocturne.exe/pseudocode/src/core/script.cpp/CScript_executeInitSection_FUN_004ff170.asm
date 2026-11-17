@@ -25,8 +25,8 @@
 ;   CGame g_CGameInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01e56418
-;   undefined4 DAT_01e56c24
+;   int g_INT_01e56418
+;   int g_INT_01e56c24
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
@@ -46,7 +46,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004ff176
     XOR EDX,EDX                         ; 004ff17a
     MOV ECX,dword ptr [EBX + 0x28]      ; 004ff17c
-    MOV dword ptr [0x01e56418],EDX      ; 004ff17f | DAT_01e56418
+    MOV dword ptr [0x01e56418],EDX      ; 004ff17f | g_INT_01e56418
     CMP ECX,0x1                         ; 004ff185
     JL 0x004ff190                       ; 004ff188
         ;   XREF to: 004ff190 (CONDITIONAL_JUMP)  ; LAB_004ff190
@@ -83,7 +83,7 @@ section .text
         ;   Label: LAB_004ff1c0
     XOR EDX,EDX                         ; 004ff1c3
     MOV dword ptr [ESP + 0x8],EAX       ; 004ff1c5
-    MOV dword ptr [0x01e56c24],EDX      ; 004ff1c9 | DAT_01e56c24
+    MOV dword ptr [0x01e56c24],EDX      ; 004ff1c9 | g_INT_01e56c24
     MOV dword ptr [EBX + 0x40],ESI      ; 004ff1cf
     XOR ESI,ESI                         ; 004ff1d2
     LEA EAX,[ESP + 0x4]                 ; 004ff1d4
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_004ff1f2
     JNZ 0x004ff289                      ; 004ff1f5
         ;   XREF to: 004ff289 (CONDITIONAL_JUMP)  ; LAB_004ff289
-    CMP dword ptr [0x01e56c24],0x0      ; 004ff1fb | DAT_01e56c24
+    CMP dword ptr [0x01e56c24],0x0      ; 004ff1fb | g_INT_01e56c24
     JZ 0x004ff21b                       ; 004ff202
         ;   XREF to: 004ff21b (CONDITIONAL_JUMP)  ; LAB_004ff21b
     MOV ECX,dword ptr [0x005b9354]      ; 004ff204 | g_CGamePtr
@@ -112,7 +112,7 @@ section .text
     CALL core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0 ; 004ff20d
         ;   XREF to: 0049f8c0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(CGame * this_ptr)
     ADD ESP,0x4                         ; 004ff212
-    MOV dword ptr [0x01e56c24],ESI      ; 004ff215 | DAT_01e56c24
+    MOV dword ptr [0x01e56c24],ESI      ; 004ff215 | g_INT_01e56c24
     MOV EAX,dword ptr [ESP + 0x8]       ; 004ff21b
         ;   Label: LAB_004ff21b
     MOV dword ptr [EBX + 0x40],EAX      ; 004ff21f

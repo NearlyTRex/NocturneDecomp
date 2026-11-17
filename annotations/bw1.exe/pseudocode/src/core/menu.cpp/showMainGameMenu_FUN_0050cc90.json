@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 499,
-    "complexity_score": 320,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 41,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 190,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 689
@@ -283,97 +282,97 @@
     },
     {
       "addr": "01d21048",
-      "name": "g_CHAR_ARRAY_01d21048",
-      "type": "char[4]",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048",
+      "type": "char[4][256]",
       "value": null
     },
     {
       "addr": "01d21049",
-      "name": "g_CHAR_ARRAY_01d21048+1",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2104a",
-      "name": "g_CHAR_ARRAY_01d21048+2",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[0][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2104b",
-      "name": "g_CHAR_ARRAY_01d21048+3",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[0][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21148",
-      "name": "DAT_01d21148",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21149",
-      "name": "DAT_01d21149",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[1][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2114a",
-      "name": "DAT_01d2114a",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[1][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2114b",
-      "name": "DAT_01d2114b",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[1][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21248",
-      "name": "DAT_01d21248",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[2][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21249",
-      "name": "DAT_01d21249",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[2][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2124a",
-      "name": "DAT_01d2124a",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[2][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2124b",
-      "name": "DAT_01d2124b",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[2][3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21348",
-      "name": "DAT_01d21348",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[3][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21349",
-      "name": "DAT_01d21349",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[3][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2134a",
-      "name": "DAT_01d2134a",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[3][2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d2134b",
-      "name": "DAT_01d2134b",
+      "name": "g_CHAR_ARRAY_ARRAY_01d21048[3][3]",
       "type": "undefined4",
       "value": null
     },
@@ -512,35 +511,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01d21148",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_01d21148;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 78,
-      "match": "DAT_01d21248",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_01d21248;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 88,
-      "match": "DAT_01d21348",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01d21348;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 102,
-      "match": "(char **)((int)g_CHAR_PTR_ARRAY_01d21448",
+      "line": 63,
+      "match": "(char *)((int)pacVar6",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_01d21448 + iVar4) = pcVar6;",
+      "text": "*(char *)((int)pacVar6 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
@@ -556,7 +531,7 @@
       "line": 102,
       "match": "(int)g_CHAR_PTR_ARRAY_01d21448",
       "severity": "moderate",
-      "text": "*(char **)((int)g_CHAR_PTR_ARRAY_01d21448 + iVar4) = pcVar6;",
+      "text": "*(char (**) [256])((int)g_CHAR_PTR_ARRAY_01d21448 + iVar4) = pacVar6;",
       "type": "pointer_truncation"
     },
     {

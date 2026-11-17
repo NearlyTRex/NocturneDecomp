@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 81,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 4,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "stack_ref",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 126
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 28,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 128
   },
   "cross_references": [],
   "function": {
@@ -222,40 +218,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 18,
-      "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
-      "severity": "moderate",
-      "text": "piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar3 = (**(code **)(*piVar2 + 0x10))(piVar2);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xfffffe44",
-      "severity": "moderate",
-      "text": "_sprintf(&stack0xfffffe44,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffe44",
-      "severity": "moderate",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_00529980(&stack0xfffffe44);",
-      "type": "stack_ref"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -12,10 +12,10 @@
 ; Referenced Globals:
 ;   int g_ProcessorType
 ;   int g_VertexPreprocessMode
-;   undefined4 DAT_01e52a68
-;   undefined4 DAT_01e52a6c
-;   undefined4 DAT_01e52eec
-;   undefined4 DAT_01e52ef0
+;   int g_INT_01e52a68
+;   SSoftwareEdge[16] g_SSoftwareEdge_ARRAY_01e52a6c
+;   int g_INT_01e52eec
+;   int g_INT_01e52ef0
 ;
 ; *****************************************************************************
 
@@ -46,24 +46,24 @@ section .text
     MOV EAX,EDI                         ; 004f9651
     MOV EDI,EBX                         ; 004f9653
     MOV EBX,EAX                         ; 004f9655
-    MOV EAX,[0x01e52a68]                ; 004f9657 | DAT_01e52a68
+    MOV EAX,[0x01e52a68]                ; 004f9657 | g_INT_01e52a68
         ;   Label: LAB_004f9657
     LEA ECX,[EAX*0x8 + 0x0]             ; 004f965c
     ADD ECX,EAX                         ; 004f9663
     SHL ECX,0x3                         ; 004f9665
     ADD ECX,0x1e52a6c                   ; 004f9668
-    MOV dword ptr [ECX],EDI             ; 004f966e | DAT_01e52a6c
-    MOV EAX,[0x01e52eec]                ; 004f9670 | DAT_01e52eec
+    MOV dword ptr [ECX],EDI             ; 004f966e | g_SSoftwareEdge_ARRAY_01e52a6c
+    MOV EAX,[0x01e52eec]                ; 004f9670 | g_INT_01e52eec
     MOV dword ptr [ECX + 0x4],EBX       ; 004f9675
     CMP EDI,EAX                         ; 004f9678
     JGE 0x004f9682                      ; 004f967a
         ;   XREF to: 004f9682 (CONDITIONAL_JUMP)  ; LAB_004f9682
-    MOV dword ptr [0x01e52eec],EDI      ; 004f967c | DAT_01e52eec
-    CMP EBX,dword ptr [0x01e52ef0]      ; 004f9682 | DAT_01e52ef0
+    MOV dword ptr [0x01e52eec],EDI      ; 004f967c | g_INT_01e52eec
+    CMP EBX,dword ptr [0x01e52ef0]      ; 004f9682 | g_INT_01e52ef0
         ;   Label: LAB_004f9682
     JLE 0x004f9690                      ; 004f9688
         ;   XREF to: 004f9690 (CONDITIONAL_JUMP)  ; LAB_004f9690
-    MOV dword ptr [0x01e52ef0],EBX      ; 004f968a | DAT_01e52ef0
+    MOV dword ptr [0x01e52ef0],EBX      ; 004f968a | g_INT_01e52ef0
     MOV EDI,dword ptr [ESI + 0x14]      ; 004f9690
         ;   Label: LAB_004f9690
     MOV EBX,dword ptr [EBP + 0x14]      ; 004f9693
@@ -185,7 +185,7 @@ section .text
     SHRD EAX,EDX,0x10                   ; 004f97ca
     ADD ESI,EAX                         ; 004f97ce
     MOV dword ptr [ECX + 0x28],ESI      ; 004f97d0
-    INC dword ptr [0x01e52a68]          ; 004f97d3 | DAT_01e52a68
+    INC dword ptr [0x01e52a68]          ; 004f97d3 | g_INT_01e52a68
     ADD ESP,0x4                         ; 004f97d9
         ;   Label: LAB_004f97d9
     POP EBP                             ; 004f97dc
@@ -222,7 +222,7 @@ section .text
     MOV EAX,dword ptr [ESI + 0x8]       ; 004f981a
     ADD EAX,EDX                         ; 004f981d
     MOV dword ptr [ECX + 0x28],EAX      ; 004f981f
-    INC dword ptr [0x01e52a68]          ; 004f9822 | DAT_01e52a68
+    INC dword ptr [0x01e52a68]          ; 004f9822 | g_INT_01e52a68
     ADD ESP,0x4                         ; 004f9828
     POP EBP                             ; 004f982b
     POP EDI                             ; 004f982c

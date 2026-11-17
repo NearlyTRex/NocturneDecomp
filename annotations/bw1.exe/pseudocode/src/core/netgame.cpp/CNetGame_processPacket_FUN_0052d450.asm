@@ -626,7 +626,7 @@ section .text
     SHL EDI,0x2                         ; 0052d9b3
     MOV ECX,dword ptr [ESP + 0xd0]      ; 0052d9b6
         ;   Label: LAB_0052d9b6
-    MOV EDX,dword ptr [EAX + 0x1d6dfc0] ; 0052d9bd | DAT_01d6dfc0
+    MOV EDX,dword ptr [EAX + 0x1d6dfc0] ; 0052d9bd | g_SChatOutMessage_ARRAY_01d6dfbc[0].sequence_number
     CMP EDX,dword ptr [ECX + 0x5]       ; 0052d9c3
     JZ 0x0052d9d8                       ; 0052d9c6
         ;   XREF to: 0052d9d8 (CONDITIONAL_JUMP)  ; LAB_0052d9d8

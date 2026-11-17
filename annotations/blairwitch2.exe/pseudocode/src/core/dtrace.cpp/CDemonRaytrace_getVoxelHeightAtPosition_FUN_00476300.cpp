@@ -73,7 +73,8 @@ float __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_004763
                                (this_ptr,0x476383,iStack_34,0x4763a8), pCVar15 != (CDemonCube *)0x0)
     {
       if ((pCVar15->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-         ((pCVar15->voxel_buffer1->voxels[iVar1][iStack_30] & bRam00a89be4) != 0)) {
+         ((pCVar15->voxel_buffer1->voxels[iVar1][iStack_30] &
+          g_CVector3f_ARRAY_ARRAY_00a005d4[0x92][0xac].x._0_1_) != 0)) {
         return (float)iStack_30 * (this_ptr->cell_size).y * 0.125f +
                (float)iStack_34 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
       }

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 256,
+    "complexity_score": 255,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
+    "pseudocode_lines": 135,
     "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation"
     ],
-    "total_lines": 476
+    "total_lines": 475
   },
   "cross_references": [
     {
@@ -81,14 +81,14 @@
     },
     {
       "addr": "006015e8",
-      "name": "g_INT_ARRAY_006015e8",
-      "type": "int[2]",
+      "name": "g_INT_ARRAY_ARRAY_006015e8",
+      "type": "int[2][16]",
       "value": null
     },
     {
       "addr": "00601628",
-      "name": "g_INT_ARRAY_00601628",
-      "type": "int[16]",
+      "name": "g_INT_ARRAY_ARRAY_006015e8[1][0]",
+      "type": "undefined4",
       "value": null
     }
   ],
@@ -402,9 +402,9 @@
     {
       "description": "Complex pointer cast",
       "line": 41,
-      "match": "(uint *)((int)g_INT_ARRAY_006015e8",
+      "match": "(uint *)((int)g_INT_ARRAY_ARRAY_006015e8",
       "severity": "moderate",
-      "text": "(this_ptr,*(uint *)((int)g_INT_ARRAY_006015e8 +",
+      "text": "(this_ptr,*(uint *)((int)g_INT_ARRAY_ARRAY_006015e8[0] +",
       "type": "pointer_cast"
     },
     {
@@ -449,7 +449,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(int *)((int)g_INT_ARRAY_006015c8",
       "severity": "moderate",
       "text": "} while (iVar3 < *(int *)((int)g_INT_ARRAY_006015c8 + local_38 + 4));",

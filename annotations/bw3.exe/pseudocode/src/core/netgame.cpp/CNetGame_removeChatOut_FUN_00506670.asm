@@ -43,8 +43,8 @@
 ;   int g_INT_01da6474
 ;   uint g_UINT_01da6478
 ;   int g_INT_01dc2690
-;   undefined4 DAT_01dc2694
-;   undefined4 DAT_01dc2698
+;   SChatOutMessage[50] g_SChatOutMessage_ARRAY_01dc2694
+;   undefined4 g_SChatOutMessage_ARRAY_01dc2694[0].sequence_number
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -95,13 +95,13 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 005066d9
     MOV ECX,0x1dc2694                   ; 005066dc
     ADD EAX,0x20                        ; 005066e1
-    MOV dword ptr [ESP + 0x11c],ECX     ; 005066e4 | DAT_01dc2694
+    MOV dword ptr [ESP + 0x11c],ECX     ; 005066e4 | g_SChatOutMessage_ARRAY_01dc2694
     MOV dword ptr [ESP + 0x118],EAX     ; 005066eb
     MOV EAX,dword ptr [ESP + 0x11c]     ; 005066f2
         ;   Label: LAB_005066f2
     MOV EDX,dword ptr [0x01da6478]      ; 005066f9 | g_UINT_01da6478
-    MOV dword ptr [ESP + 0x12c],EAX     ; 005066ff | DAT_01dc2694
-    MOV EAX,dword ptr [EAX]             ; 00506706 | DAT_01dc2694
+    MOV dword ptr [ESP + 0x12c],EAX     ; 005066ff | g_SChatOutMessage_ARRAY_01dc2694
+    MOV EAX,dword ptr [EAX]             ; 00506706 | g_SChatOutMessage_ARRAY_01dc2694
     SUB EDX,EAX                         ; 00506708
     MOV dword ptr [ESP + 0x140],EDX     ; 0050670a
     MOV EBX,0x1                         ; 00506711
@@ -140,7 +140,7 @@ section .text
     ADD EAX,0x14                        ; 00506782
     MOV dword ptr [ESP + 0x124],EAX     ; 00506785
     MOV EAX,dword ptr [ESP + 0x12c]     ; 0050678c
-    MOV dword ptr [ESP + 0x138],EAX     ; 00506793 | DAT_01dc2694
+    MOV dword ptr [ESP + 0x138],EAX     ; 00506793 | g_SChatOutMessage_ARRAY_01dc2694
     MOV EAX,dword ptr [EBP + 0x14]      ; 0050679a
     MOV dword ptr [ESP + 0x134],EAX     ; 0050679d
     MOV EAX,dword ptr [ESP + 0x118]     ; 005067a4
@@ -149,7 +149,7 @@ section .text
     MOV dword ptr [ESP + 0x13c],EAX     ; 005067b5
     MOV EAX,dword ptr [ESP + 0x138]     ; 005067bc
         ;   Label: LAB_005067bc
-    CMP byte ptr [EAX + 0x8],0x0        ; 005067c3 | DAT_01dc269c | DAT_01dc269d
+    CMP byte ptr [EAX + 0x8],0x0        ; 005067c3 | g_SChatOutMessage_ARRAY_01dc2694[0].ack_flags | g_SChatOutMessage_ARRAY_01dc2694[0].ack_flags+1
     JZ 0x005068ca                       ; 005067c7
         ;   XREF to: 005068ca (CONDITIONAL_JUMP)  ; LAB_005068ca
     MOV ECX,dword ptr [ESP + 0x138]     ; 005067cd
@@ -253,7 +253,7 @@ section .text
     MOV dword ptr [ESP + 0x8],0x40a00000 ; 00506909
     MOV EDX,dword ptr [0x01da6478]      ; 00506911 | g_UINT_01da6478
         ;   Label: LAB_00506911
-    MOV EAX,dword ptr [EBX + 0xc]       ; 00506917 | DAT_01dc26a4
+    MOV EAX,dword ptr [EBX + 0xc]       ; 00506917 | g_SChatOutMessage_ARRAY_01dc2694[0].player_timestamps[1]
     SUB EDX,EAX                         ; 0050691a
     MOV dword ptr [ESP + 0x140],EDX     ; 0050691c
     FILD dword ptr [ESP + 0x140]        ; 00506923
@@ -288,17 +288,17 @@ section .text
     MOV dword ptr [ESP + 0xc],ESI       ; 00506974
     MOV byte ptr [ESP + 0x10],DH        ; 00506978
     LEA EDI,[ESP + 0x15]                ; 0050697c
-    MOV EAX,dword ptr [EAX + 0x4]       ; 00506980 | DAT_01dc2698
+    MOV EAX,dword ptr [EAX + 0x4]       ; 00506980 | g_SChatOutMessage_ARRAY_01dc2694[0].sequence_number
     MOV ESI,dword ptr [ESP + 0x124]     ; 00506983
     MOV dword ptr [ESP + 0x11],EAX      ; 0050698a
     PUSH EDI                            ; 0050698e
-    MOV AL,byte ptr [ESI]               ; 0050698f | DAT_01dc26a8 | DAT_01dc26aa
+    MOV AL,byte ptr [ESI]               ; 0050698f | g_SChatOutMessage_ARRAY_01dc2694[0].message[0] | g_SChatOutMessage_ARRAY_01dc2694[0].message[2]
         ;   Label: LAB_0050698f
     MOV byte ptr [EDI],AL               ; 00506991
     CMP AL,0x0                          ; 00506993
     JZ 0x005069a7                       ; 00506995
         ;   XREF to: 005069a7 (CONDITIONAL_JUMP)  ; LAB_005069a7
-    MOV AL,byte ptr [ESI + 0x1]         ; 00506997 | DAT_01dc26a9 | DAT_01dc26ab
+    MOV AL,byte ptr [ESI + 0x1]         ; 00506997 | g_SChatOutMessage_ARRAY_01dc2694[0].message[1] | g_SChatOutMessage_ARRAY_01dc2694[0].message[3]
     ADD ESI,0x2                         ; 0050699a
     MOV byte ptr [EDI + 0x1],AL         ; 0050699d
     ADD EDI,0x2                         ; 005069a0
@@ -317,7 +317,7 @@ section .text
         ;   XREF to: 005058d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0(CNetGame * this_ptr, SNetworkAddr * dest_addr, SNetPacketHeader * packet)
     MOV EAX,[0x01da6478]                ; 005069be | g_UINT_01da6478
     ADD ESP,0xc                         ; 005069c3
-    MOV dword ptr [EBX + 0xc],EAX       ; 005069c6 | DAT_01dc26a4
+    MOV dword ptr [EBX + 0xc],EAX       ; 005069c6 | g_SChatOutMessage_ARRAY_01dc2694[0].player_timestamps[1]
     JMP 0x005067cd                      ; 005069c9
         ;   XREF to: 005067cd (UNCONDITIONAL_JUMP)  ; LAB_005067cd
     MOV EBX,dword ptr [ESP + 0x120]     ; 005069ce

@@ -143,8 +143,8 @@ __asm {
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [DAT_00618618]
-        paddw MM1,qword ptr [DAT_00618620]
+        paddw MM0,qword ptr [g_MMX_INTEGER_00618618]
+        paddw MM1,qword ptr [g_MMX_INTEGER_00618620]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM7

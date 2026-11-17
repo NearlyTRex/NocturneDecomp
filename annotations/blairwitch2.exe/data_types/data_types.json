@@ -933,6 +933,10 @@
       "type":"struct"
     },
     {
+      "name":"CPathQueueNode",
+      "type":"struct"
+    },
+    {
       "name":"CPickList_handleInput",
       "type":"function_definition"
     },
@@ -1469,6 +1473,14 @@
       "type":"function_definition"
     },
     {
+      "name":"D3DVALUE",
+      "type":"typedef"
+    },
+    {
+      "name":"D3DVECTOR",
+      "type":"struct"
+    },
+    {
       "name":"DDCOLORKEY",
       "type":"struct"
     },
@@ -1509,20 +1521,12 @@
       "type":"union"
     },
     {
-      "name":"DSCAPS",
+      "name":"DS3DLISTENER",
       "type":"struct"
     },
     {
-      "name":"DWORD",
-      "type":"typedef"
-    },
-    {
-      "name":"ACCESS_MASK",
-      "type":"typedef"
-    },
-    {
-      "name":"COLORREF",
-      "type":"typedef"
+      "name":"DSCAPS",
+      "type":"struct"
     },
     {
       "name":"EActorLifecycleState",
@@ -1821,6 +1825,10 @@
       "type":"struct"
     },
     {
+      "name":"FileListNode",
+      "type":"struct"
+    },
+    {
       "name":"FileSearchHandlerFunc",
       "type":"function_definition"
     },
@@ -1985,6 +1993,14 @@
       "type":"struct"
     },
     {
+      "name":"IDirectSound3DListener",
+      "type":"struct"
+    },
+    {
+      "name":"IDirectSound3DListener_vtable",
+      "type":"struct"
+    },
+    {
       "name":"IDirectSoundBuffer",
       "type":"struct"
     },
@@ -1998,6 +2014,14 @@
     },
     {
       "name":"IDirectSound_vtable",
+      "type":"struct"
+    },
+    {
+      "name":"IKsPropertySet",
+      "type":"struct"
+    },
+    {
+      "name":"IKsPropertySet_vtable",
       "type":"struct"
     },
     {
@@ -2257,6 +2281,58 @@
       "type":"function_definition"
     },
     {
+      "name":"IDirectSound3DListener_CommitDeferredSettings",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetDistanceFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetDopplerFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetOrientation",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetRolloffFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_GetVelocity",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetDistanceFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetDopplerFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetOrientation",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetRolloffFactor",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetVelocity",
+      "type":"function_definition"
+    },
+    {
       "name":"IUnknown_QueryInterface",
       "type":"function_definition"
     },
@@ -2345,35 +2421,23 @@
       "type":"function_definition"
     },
     {
+      "name":"LPDS3DLISTENER",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSound3DListener_GetAllParameters",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound3DListener_SetAllParameters",
+      "type":"function_definition"
+    },
+    {
       "name":"LPDSCAPS",
       "type":"typedef"
     },
     {
       "name":"IDirectSound_GetCaps",
-      "type":"function_definition"
-    },
-    {
-      "name":"LPDWORD",
-      "type":"typedef"
-    },
-    {
-      "name":"IDirectSoundBuffer_GetCurrentPosition",
-      "type":"function_definition"
-    },
-    {
-      "name":"IDirectSoundBuffer_GetFrequency",
-      "type":"function_definition"
-    },
-    {
-      "name":"IDirectSoundBuffer_GetStatus",
-      "type":"function_definition"
-    },
-    {
-      "name":"IDirectSoundBuffer_Lock",
-      "type":"function_definition"
-    },
-    {
-      "name":"IDirectSound_GetSpeakerConfig",
       "type":"function_definition"
     },
     {
@@ -2437,10 +2501,6 @@
       "type":"typedef"
     },
     {
-      "name":"MCIERROR",
-      "type":"typedef"
-    },
-    {
       "name":"MathErrorContext",
       "type":"struct"
     },
@@ -2497,10 +2557,6 @@
       "type":"typedef"
     },
     {
-      "name":"REGSAM",
-      "type":"typedef"
-    },
-    {
       "name":"RUNTIME_HANDLER_FUNC",
       "type":"function_definition"
     },
@@ -2518,6 +2574,10 @@
     },
     {
       "name":"SArmAimData",
+      "type":"struct"
+    },
+    {
+      "name":"SAudioFormatDescriptor",
       "type":"struct"
     },
     {
@@ -2577,6 +2637,10 @@
       "type":"struct"
     },
     {
+      "name":"SCameraEdge",
+      "type":"struct"
+    },
+    {
       "name":"SCameraViewportState",
       "type":"struct"
     },
@@ -2606,6 +2670,10 @@
     },
     {
       "name":"SCoronaLightEntry",
+      "type":"struct"
+    },
+    {
+      "name":"SCoronaLightCache",
       "type":"struct"
     },
     {
@@ -2669,11 +2737,19 @@
       "type":"struct"
     },
     {
+      "name":"SFogImagePlane",
+      "type":"struct"
+    },
+    {
       "name":"SFollowSlotStruct",
       "type":"struct"
     },
     {
       "name":"SFollowFormation",
+      "type":"struct"
+    },
+    {
+      "name":"SFontGlyph",
       "type":"struct"
     },
     {
@@ -2709,8 +2785,16 @@
       "type":"struct"
     },
     {
+      "name":"SHuffmanTableSource",
+      "type":"struct"
+    },
+    {
       "name":"SIGNAL_HANDLER_TYPE",
       "type":"typedef"
+    },
+    {
+      "name":"SIOControlBlock",
+      "type":"struct"
     },
     {
       "name":"SInteractionInfo",
@@ -2737,6 +2821,10 @@
       "type":"struct"
     },
     {
+      "name":"SLightGlowParams",
+      "type":"struct"
+    },
+    {
       "name":"SLineStrip",
       "type":"struct"
     },
@@ -2750,6 +2838,10 @@
     },
     {
       "name":"SMRGLAnimatedTexture",
+      "type":"struct"
+    },
+    {
+      "name":"SMRGLHeaderBasicCountOnly",
       "type":"struct"
     },
     {
@@ -2786,6 +2878,14 @@
     },
     {
       "name":"CTextureList",
+      "type":"struct"
+    },
+    {
+      "name":"SLightGlowSprite",
+      "type":"struct"
+    },
+    {
+      "name":"SLightGlowTable",
       "type":"struct"
     },
     {
@@ -2866,6 +2966,10 @@
     },
     {
       "name":"SMpegFrameHeader",
+      "type":"struct"
+    },
+    {
+      "name":"SMpegLayer3BandIndex",
       "type":"struct"
     },
     {
@@ -3089,6 +3193,10 @@
       "type":"struct"
     },
     {
+      "name":"SRenderBufferEntry",
+      "type":"struct"
+    },
+    {
       "name":"SReverbSettings",
       "type":"struct"
     },
@@ -3253,6 +3361,14 @@
       "type":"struct"
     },
     {
+      "name":"SWindowRect",
+      "type":"struct"
+    },
+    {
+      "name":"SWindow",
+      "type":"struct"
+    },
+    {
       "name":"SectionFlags",
       "type":"enum"
     },
@@ -3321,6 +3437,10 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLLightPrimitive",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPrimitivePoly",
       "type":"struct"
     },
@@ -3337,6 +3457,10 @@
       "type":"struct"
     },
     {
+      "name":"SMRGLPrimitiveQuadIndex",
+      "type":"struct"
+    },
+    {
       "name":"SMRGLPrimitiveTriangle",
       "type":"struct"
     },
@@ -3347,6 +3471,58 @@
     {
       "name":"SSurfacePlane",
       "type":"struct"
+    },
+    {
+      "name":"ULONG",
+      "type":"typedef"
+    },
+    {
+      "name":"DWORD",
+      "type":"typedef"
+    },
+    {
+      "name":"ACCESS_MASK",
+      "type":"typedef"
+    },
+    {
+      "name":"COLORREF",
+      "type":"typedef"
+    },
+    {
+      "name":"LPDWORD",
+      "type":"typedef"
+    },
+    {
+      "name":"IDirectSoundBuffer_GetCurrentPosition",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundBuffer_GetFrequency",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundBuffer_GetStatus",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSoundBuffer_Lock",
+      "type":"function_definition"
+    },
+    {
+      "name":"IDirectSound_GetSpeakerConfig",
+      "type":"function_definition"
+    },
+    {
+      "name":"MCIERROR",
+      "type":"typedef"
+    },
+    {
+      "name":"PULONG",
+      "type":"typedef"
+    },
+    {
+      "name":"REGSAM",
+      "type":"typedef"
     },
     {
       "name":"ULONG_PTR",
@@ -3557,6 +3733,10 @@
       "type":"struct"
     },
     {
+      "name":"SChatOutMessage",
+      "type":"struct"
+    },
+    {
       "name":"_COORD",
       "type":"struct"
     },
@@ -3669,12 +3849,28 @@
       "type":"function_definition"
     },
     {
+      "name":"IKsPropertySet_Get",
+      "type":"function_definition"
+    },
+    {
+      "name":"IKsPropertySet_QuerySupport",
+      "type":"function_definition"
+    },
+    {
+      "name":"IKsPropertySet_Set",
+      "type":"function_definition"
+    },
+    {
       "name":"LPDSENUMCALLBACKA_FUNC",
       "type":"function_definition"
     },
     {
       "name":"LPDSENUMCALLBACKA",
       "type":"typedef"
+    },
+    {
+      "name":"SDirectSoundDeviceInfo",
+      "type":"struct"
     },
     {
       "name":"_LIST_ENTRY",
@@ -3707,6 +3903,10 @@
     {
       "name":"MENU_EVENT_RECORD",
       "type":"typedef"
+    },
+    {
+      "name":"_MMX_INTEGER",
+      "type":"union"
     },
     {
       "name":"_MOUSE_EVENT_RECORD",
@@ -12258,6 +12458,340 @@
       "calling_convention":"__cdecl",
       "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
       "importable":true,
+      "name":"IDirectSound3DListener_CommitDeferredSettings",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetAllParameters",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pListener",
+          "type":"LPDS3DLISTENER"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetDistanceFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pflDistanceFactor",
+          "type":"D3DVALUE*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetDopplerFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pflDopplerFactor",
+          "type":"D3DVALUE*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetOrientation",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pvOrientFront",
+          "type":"D3DVECTOR*"
+        },
+        {
+          "name":"pvOrientTop",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetPosition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pvPosition",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetRolloffFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pflRolloffFactor",
+          "type":"D3DVALUE*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_GetVelocity",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pvVelocity",
+          "type":"D3DVECTOR*"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetAllParameters",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"pcListener",
+          "type":"LPDS3DLISTENER"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetDistanceFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"flDistanceFactor",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetDopplerFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"flDopplerFactor",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetOrientation",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"xFront",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"yFront",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"zFront",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"xTop",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"yTop",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"zTop",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetPosition",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"x",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"y",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"z",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetRolloffFactor",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"flRolloffFactor",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
+      "name":"IDirectSound3DListener_SetVelocity",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IDirectSound3DListener*"
+        },
+        {
+          "name":"x",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"y",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"z",
+          "type":"D3DVALUE"
+        },
+        {
+          "name":"dwApply",
+          "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/dsound.h",
+      "importable":true,
       "name":"IDirectSound_Compact",
       "parameters":[
         {
@@ -12781,6 +13315,112 @@
         {
           "name":"dwAudioBytes2",
           "type":"DWORD"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/ksproxy.h",
+      "importable":true,
+      "name":"IKsPropertySet_Get",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IKsPropertySet*"
+        },
+        {
+          "name":"rguidPropSet",
+          "type":"LPGUID"
+        },
+        {
+          "name":"ulId",
+          "type":"ulong"
+        },
+        {
+          "name":"pInstanceData",
+          "type":"LPVOID"
+        },
+        {
+          "name":"ulInstanceLength",
+          "type":"ulong"
+        },
+        {
+          "name":"pPropertyData",
+          "type":"LPVOID"
+        },
+        {
+          "name":"ulDataLength",
+          "type":"ulong"
+        },
+        {
+          "name":"pulBytesReturned",
+          "type":"PULONG"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/ksproxy.h",
+      "importable":true,
+      "name":"IKsPropertySet_QuerySupport",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IKsPropertySet*"
+        },
+        {
+          "name":"rguidPropSet",
+          "type":"LPGUID"
+        },
+        {
+          "name":"ulId",
+          "type":"ulong"
+        },
+        {
+          "name":"pulTypeSupport",
+          "type":"PULONG"
+        }
+      ],
+      "return_type":"HRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__cdecl",
+      "cat":"/Nocturne/FunctionDefinition/System/ksproxy.h",
+      "importable":true,
+      "name":"IKsPropertySet_Set",
+      "parameters":[
+        {
+          "name":"this_ptr",
+          "type":"IKsPropertySet*"
+        },
+        {
+          "name":"rguidPropSet",
+          "type":"LPGUID"
+        },
+        {
+          "name":"ulId",
+          "type":"ulong"
+        },
+        {
+          "name":"pInstanceData",
+          "type":"LPVOID"
+        },
+        {
+          "name":"ulInstanceLength",
+          "type":"ulong"
+        },
+        {
+          "name":"pPropertyData",
+          "type":"LPVOID"
+        },
+        {
+          "name":"ulDataLength",
+          "type":"ulong"
         }
       ],
       "return_type":"HRESULT",
@@ -31825,6 +32465,37 @@
     {
       "alig":1,
       "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"x",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"cost",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"z",
+          "offset":8,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"CPathQueueNode",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
       "desc":"registered under CWayPoint (registerActorClass); size 1724 from RTTI; no fields of its own",
       "fields":[
         {
@@ -38432,6 +39103,37 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/d3d.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"x",
+          "offset":0,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"y",
+          "offset":4,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"z",
+          "offset":8,
+          "type":"D3DVALUE"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"D3DVECTOR",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/ddraw.h",
       "desc":"",
@@ -38642,6 +39344,67 @@
       "len":108,
       "min_alig":4,
       "name":"DDSURFACEDESC",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":12,
+          "name":"vPosition",
+          "offset":4,
+          "type":"D3DVECTOR"
+        },
+        {
+          "len":12,
+          "name":"vVelocity",
+          "offset":16,
+          "type":"D3DVECTOR"
+        },
+        {
+          "len":12,
+          "name":"vOrientFront",
+          "offset":28,
+          "type":"D3DVECTOR"
+        },
+        {
+          "len":12,
+          "name":"vOrientTop",
+          "offset":40,
+          "type":"D3DVECTOR"
+        },
+        {
+          "len":4,
+          "name":"flDistanceFactor",
+          "offset":52,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"flRolloffFactor",
+          "offset":56,
+          "type":"D3DVALUE"
+        },
+        {
+          "len":4,
+          "name":"flDopplerFactor",
+          "offset":60,
+          "type":"D3DVALUE"
+        }
+      ],
+      "importable":true,
+      "len":64,
+      "min_alig":1,
+      "name":"DS3DLISTENER",
       "pack":false,
       "type":"struct"
     },
@@ -39133,6 +39896,49 @@
       "importable":true,
       "len":24,
       "name":"FileEmbeddedData",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/stdio.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"next",
+          "offset":0,
+          "type":"FileListNode*"
+        },
+        {
+          "len":4,
+          "name":"file_struct",
+          "offset":4,
+          "type":"_FILE*"
+        },
+        {
+          "len":4,
+          "name":"back_pointer",
+          "offset":8,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"flags",
+          "offset":12,
+          "type":"uint"
+        },
+        {
+          "len":17,
+          "name":"reserved",
+          "offset":16,
+          "type":"char[17]"
+        }
+      ],
+      "importable":true,
+      "len":33,
+      "min_alig":1,
+      "name":"FileListNode",
       "pack":false,
       "type":"struct"
     },
@@ -40029,6 +40835,146 @@
       "fields":[
         {
           "len":4,
+          "name":"vtable",
+          "offset":0,
+          "type":"IDirectSound3DListener_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "min_alig":1,
+      "name":"IDirectSound3DListener",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"QueryInterface",
+          "offset":0,
+          "type":"IUnknown_QueryInterface*"
+        },
+        {
+          "len":4,
+          "name":"AddRef",
+          "offset":4,
+          "type":"IUnknown_AddRef*"
+        },
+        {
+          "len":4,
+          "name":"Release",
+          "offset":8,
+          "type":"IUnknown_Release*"
+        },
+        {
+          "len":4,
+          "name":"GetAllParameters",
+          "offset":12,
+          "type":"IDirectSound3DListener_GetAllParameters*"
+        },
+        {
+          "len":4,
+          "name":"GetDistanceFactor",
+          "offset":16,
+          "type":"IDirectSound3DListener_GetDistanceFactor*"
+        },
+        {
+          "len":4,
+          "name":"GetDopplerFactor",
+          "offset":20,
+          "type":"IDirectSound3DListener_GetDopplerFactor*"
+        },
+        {
+          "len":4,
+          "name":"GetOrientation",
+          "offset":24,
+          "type":"IDirectSound3DListener_GetOrientation*"
+        },
+        {
+          "len":4,
+          "name":"GetPosition",
+          "offset":28,
+          "type":"IDirectSound3DListener_GetPosition*"
+        },
+        {
+          "len":4,
+          "name":"GetRolloffFactor",
+          "offset":32,
+          "type":"IDirectSound3DListener_GetRolloffFactor*"
+        },
+        {
+          "len":4,
+          "name":"GetVelocity",
+          "offset":36,
+          "type":"IDirectSound3DListener_GetVelocity*"
+        },
+        {
+          "len":4,
+          "name":"SetAllParameters",
+          "offset":40,
+          "type":"IDirectSound3DListener_SetAllParameters*"
+        },
+        {
+          "len":4,
+          "name":"SetDistanceFactor",
+          "offset":44,
+          "type":"IDirectSound3DListener_SetDistanceFactor*"
+        },
+        {
+          "len":4,
+          "name":"SetDopplerFactor",
+          "offset":48,
+          "type":"IDirectSound3DListener_SetDopplerFactor*"
+        },
+        {
+          "len":4,
+          "name":"SetOrientation",
+          "offset":52,
+          "type":"IDirectSound3DListener_SetOrientation*"
+        },
+        {
+          "len":4,
+          "name":"SetPosition",
+          "offset":56,
+          "type":"IDirectSound3DListener_SetPosition*"
+        },
+        {
+          "len":4,
+          "name":"SetRolloffFactor",
+          "offset":60,
+          "type":"IDirectSound3DListener_SetRolloffFactor*"
+        },
+        {
+          "len":4,
+          "name":"SetVelocity",
+          "offset":64,
+          "type":"IDirectSound3DListener_SetVelocity*"
+        },
+        {
+          "len":4,
+          "name":"CommitDeferredSettings",
+          "offset":68,
+          "type":"IDirectSound3DListener_CommitDeferredSettings*"
+        }
+      ],
+      "importable":true,
+      "len":72,
+      "min_alig":1,
+      "name":"IDirectSound3DListener_vtable",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/dsound.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"QueryInterface",
           "offset":0,
           "type":"IUnknown_QueryInterface*"
@@ -40287,6 +41233,74 @@
       "len":128,
       "min_alig":4,
       "name":"ifstream",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ksproxy.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"vtable",
+          "offset":0,
+          "type":"IKsPropertySet_vtable*"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "min_alig":1,
+      "name":"IKsPropertySet",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/ksproxy.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"QueryInterface",
+          "offset":0,
+          "type":"IUnknown_QueryInterface*"
+        },
+        {
+          "len":4,
+          "name":"AddRef",
+          "offset":4,
+          "type":"IUnknown_AddRef*"
+        },
+        {
+          "len":4,
+          "name":"Release",
+          "offset":8,
+          "type":"IUnknown_Release*"
+        },
+        {
+          "len":4,
+          "name":"Get",
+          "offset":12,
+          "type":"IKsPropertySet_Get*"
+        },
+        {
+          "len":4,
+          "name":"Set",
+          "offset":16,
+          "type":"IKsPropertySet_Set*"
+        },
+        {
+          "len":4,
+          "name":"QuerySupport",
+          "offset":20,
+          "type":"IKsPropertySet_QuerySupport*"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "min_alig":1,
+      "name":"IKsPropertySet_vtable",
       "pack":false,
       "type":"struct"
     },
@@ -41385,6 +42399,43 @@
       "fields":[
         {
           "len":4,
+          "name":"format_flags",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"bits_per_sample",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"channels",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"sample_rate",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "min_alig":1,
+      "name":"SAudioFormatDescriptor",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"bits_available",
           "offset":0,
           "type":"int"
@@ -41658,6 +42709,37 @@
       "importable":true,
       "len":44,
       "name":"SButtonStruct",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"v",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"x",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"y",
+          "offset":8,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"SCameraEdge",
       "pack":false,
       "type":"struct"
     },
@@ -42046,6 +43128,49 @@
       "fields":[
         {
           "len":4,
+          "name":"timestamp",
+          "offset":0,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"sequence_number",
+          "offset":4,
+          "type":"uint"
+        },
+        {
+          "len":4,
+          "name":"ack_flags",
+          "offset":8,
+          "type":"_BIT_INTEGER32"
+        },
+        {
+          "len":8,
+          "name":"player_timestamps",
+          "offset":12,
+          "type":"uint[2]"
+        },
+        {
+          "len":256,
+          "name":"message",
+          "offset":20,
+          "type":"char[256]"
+        }
+      ],
+      "importable":true,
+      "len":276,
+      "min_alig":1,
+      "name":"SChatOutMessage",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"A",
           "offset":0,
           "type":"UIntegerFloat"
@@ -42364,6 +43489,31 @@
       "fields":[
         {
           "len":4,
+          "name":"count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":629792,
+          "name":"entries",
+          "offset":4,
+          "type":"SCoronaLightEntry[8]"
+        }
+      ],
+      "importable":true,
+      "len":629796,
+      "min_alig":1,
+      "name":"SCoronaLightCache",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
           "name":"globe",
           "offset":0,
           "type":"CDemonGlobe*"
@@ -42611,6 +43761,49 @@
       "importable":true,
       "len":550,
       "name":"SDialogEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"is_primary_device",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":16,
+          "name":"device_guid",
+          "offset":4,
+          "type":"_GUID"
+        },
+        {
+          "len":256,
+          "name":"device_description",
+          "offset":20,
+          "type":"char[256]"
+        },
+        {
+          "len":4,
+          "name":"is_emulated",
+          "offset":276,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"has_hardware_mixing",
+          "offset":280,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":284,
+      "min_alig":1,
+      "name":"SDirectSoundDeviceInfo",
       "pack":false,
       "type":"struct"
     },
@@ -42986,6 +44179,25 @@
     {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":76800,
+          "name":"pixels",
+          "offset":0,
+          "type":"char[240][320]"
+        }
+      ],
+      "importable":true,
+      "len":76800,
+      "min_alig":1,
+      "name":"SFogImagePlane",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
       "desc":"CCharacter +0x3058, constructed by FUN_0059ded0 (unkaddr 0059d350.cpp): __arrinit(+4, 16, g_SFollowSlotStructTypeInfo), +0x3c4 = 0, +0x3cc = 0.5, +0x3d0 = 3.0, +0x3c8 = +0x3cc; the CCharacter ctor binds this to +0x0 and stores follow_leader at +0x342c right after (so at most 980); FUN_0059e110 (special.cpp) updates it.",
       "fields":[
         {
@@ -43095,6 +44307,31 @@
       "importable":true,
       "len":60,
       "name":"SFollowSlotStruct",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":1,
+          "name":"width",
+          "offset":0,
+          "type":"uchar"
+        },
+        {
+          "len":144,
+          "name":"bitmap",
+          "offset":1,
+          "type":"uchar[144]"
+        }
+      ],
+      "importable":true,
+      "len":145,
+      "min_alig":1,
+      "name":"SFontGlyph",
       "pack":false,
       "type":"struct"
     },
@@ -43502,6 +44739,55 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"table_size",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"xlen",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"ylen",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bits",
+          "offset":12,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"reference_index",
+          "offset":16,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"huffman_data_ptr",
+          "offset":20,
+          "type":"char*"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "min_alig":1,
+      "name":"SHuffmanTableSource",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System/signal.h",
       "desc":"",
@@ -43809,6 +45095,43 @@
       "type":"struct"
     },
     {
+      "alig":4,
+      "cat":"/Nocturne/Struct/System/wincon.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":20,
+          "name":"standard_handles",
+          "offset":0,
+          "type":"HANDLE[5]"
+        },
+        {
+          "len":4,
+          "name":"console_mode",
+          "offset":20,
+          "type":"dword"
+        },
+        {
+          "len":4,
+          "name":"io_flags",
+          "offset":24,
+          "type":"dword"
+        },
+        {
+          "len":60,
+          "name":"extended_handles",
+          "offset":28,
+          "type":"HANDLE[15]"
+        }
+      ],
+      "importable":true,
+      "len":88,
+      "min_alig":4,
+      "name":"SIOControlBlock",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":1,
       "cat":"/Nocturne/Struct/Game",
       "desc":"RTTI 'IpAddr' size 4; copy ctor 0050f9c0 copies the single dword",
@@ -43968,6 +45291,93 @@
       "importable":true,
       "len":56,
       "name":"SLayerAction",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"flare_axis_pos",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"size",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":16,
+          "name":"uv",
+          "offset":8,
+          "type":"int[4]"
+        }
+      ],
+      "importable":true,
+      "len":24,
+      "min_alig":1,
+      "name":"SLightGlowParams",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"texture",
+          "offset":0,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":24,
+          "name":"params",
+          "offset":24,
+          "type":"SLightGlowParams"
+        }
+      ],
+      "importable":true,
+      "len":48,
+      "min_alig":1,
+      "name":"SLightGlowSprite",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"fuzz",
+          "offset":0,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":24,
+          "name":"headlight",
+          "offset":24,
+          "type":"SMRGLTextureBasic"
+        },
+        {
+          "len":432,
+          "name":"sprites",
+          "offset":48,
+          "type":"SLightGlowSprite[9]"
+        }
+      ],
+      "importable":true,
+      "len":480,
+      "min_alig":1,
+      "name":"SLightGlowTable",
       "pack":false,
       "type":"struct"
     },
@@ -44546,6 +45956,31 @@
       "desc":"",
       "fields":[
         {
+          "len":92,
+          "name":"l",
+          "offset":0,
+          "type":"int[23]"
+        },
+        {
+          "len":56,
+          "name":"s",
+          "offset":92,
+          "type":"int[14]"
+        }
+      ],
+      "importable":true,
+      "len":148,
+      "min_alig":1,
+      "name":"SMpegLayer3BandIndex",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":4,
           "name":"part_2_3_length",
           "offset":0,
@@ -44926,6 +46361,25 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"count",
+          "offset":0,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":4,
+      "min_alig":1,
+      "name":"SMRGLHeaderBasicCountOnly",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":8,
           "name":"base",
           "offset":0,
@@ -45043,6 +46497,37 @@
       "importable":true,
       "len":344,
       "name":"SMRGLKeyframeModel",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderBasicCountOnly"
+        },
+        {
+          "len":16,
+          "name":"normal",
+          "offset":4,
+          "type":"SClipPlane"
+        },
+        {
+          "len":16,
+          "name":"vertices",
+          "offset":20,
+          "type":"int[4]"
+        }
+      ],
+      "importable":true,
+      "len":36,
+      "min_alig":1,
+      "name":"SMRGLLightPrimitive",
       "pack":false,
       "type":"struct"
     },
@@ -45182,6 +46667,31 @@
       "importable":true,
       "len":72,
       "name":"SMRGLPrimitiveQuad",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":24,
+          "name":"base",
+          "offset":0,
+          "type":"SMRGLHeaderPrimitive"
+        },
+        {
+          "len":16,
+          "name":"vertices",
+          "offset":24,
+          "type":"int[4]"
+        }
+      ],
+      "importable":true,
+      "len":40,
+      "min_alig":1,
+      "name":"SMRGLPrimitiveQuadIndex",
       "pack":false,
       "type":"struct"
     },
@@ -47278,6 +48788,55 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"vertex_count",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":192,
+          "name":"vertices",
+          "offset":4,
+          "type":"SRenderVertex[4]"
+        },
+        {
+          "len":72,
+          "name":"texture_data",
+          "offset":196,
+          "type":"SMRGLTextureModel"
+        },
+        {
+          "len":4,
+          "name":"alpha_value",
+          "offset":268,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"blend_mode",
+          "offset":272,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"min_z_value",
+          "offset":276,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":280,
+      "min_alig":1,
+      "name":"SRenderBufferEntry",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":24,
           "name":"projected_vertex",
           "offset":0,
@@ -48752,6 +50311,140 @@
       "importable":true,
       "len":8,
       "name":"SWayPointAdjacency",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":16,
+          "name":"rect",
+          "offset":0,
+          "type":"SWindowRect"
+        },
+        {
+          "len":16,
+          "name":"saved_clip",
+          "offset":16,
+          "type":"SWindowRect"
+        },
+        {
+          "len":16,
+          "name":"saved_projection",
+          "offset":32,
+          "type":"SProjectionParams"
+        },
+        {
+          "len":4,
+          "name":"saved_viewport_width",
+          "offset":48,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"saved_viewport_height",
+          "offset":52,
+          "type":"int"
+        },
+        {
+          "len":400,
+          "name":"text_buffer",
+          "offset":56,
+          "type":"char[400]"
+        },
+        {
+          "len":4,
+          "name":"screen_backup_buffer",
+          "offset":456,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"backup_x_offset",
+          "offset":460,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"backup_y_offset",
+          "offset":464,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"backup_width",
+          "offset":468,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"backup_height",
+          "offset":472,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"progress_start_time",
+          "offset":476,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"progress_percentage",
+          "offset":480,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"progress_timestamp",
+          "offset":484,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":488,
+      "min_alig":1,
+      "name":"SWindow",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"left",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"top",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"right",
+          "offset":8,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"bottom",
+          "offset":12,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":16,
+      "min_alig":1,
+      "name":"SWindowRect",
       "pack":false,
       "type":"struct"
     },
@@ -50301,6 +51994,13 @@
       "type":"typedef"
     },
     {
+      "base":"float",
+      "cat":"/Nocturne/Typedef/System/d3d.h",
+      "importable":true,
+      "name":"D3DVALUE",
+      "type":"typedef"
+    },
+    {
       "base":"ulong",
       "cat":"/Nocturne/Typedef/System/windef.h",
       "importable":true,
@@ -50621,6 +52321,13 @@
       "cat":"/Nocturne/Typedef/System/dsound.h",
       "importable":true,
       "name":"LPDIRECTSOUNDBUFFER",
+      "type":"typedef"
+    },
+    {
+      "base":"DS3DLISTENER*",
+      "cat":"/Nocturne/Typedef/System/dsound.h",
+      "importable":true,
+      "name":"LPDS3DLISTENER",
       "type":"typedef"
     },
     {
@@ -51014,6 +52721,13 @@
       "type":"typedef"
     },
     {
+      "base":"ULONG*",
+      "cat":"/Nocturne/Typedef/System/winbase.h",
+      "importable":true,
+      "name":"PULONG",
+      "type":"typedef"
+    },
+    {
       "base":"void*",
       "cat":"/Nocturne/Typedef/System/winnt.h",
       "importable":true,
@@ -51155,6 +52869,13 @@
       "type":"typedef"
     },
     {
+      "base":"uint",
+      "cat":"/Nocturne/Typedef/System/windef.h",
+      "importable":true,
+      "name":"ULONG",
+      "type":"typedef"
+    },
+    {
       "base":"ulong",
       "cat":"/Nocturne/Typedef/System/basetsd.h",
       "importable":true,
@@ -51278,6 +52999,37 @@
       "len":8,
       "name":"_LARGE_INTEGER",
       "pack":true,
+      "type":"union"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Union/System/winnt.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":8,
+          "name":"mm",
+          "offset":0,
+          "type":"ulonglong"
+        },
+        {
+          "len":8,
+          "name":"u32",
+          "offset":0,
+          "type":"uint[2]"
+        },
+        {
+          "len":8,
+          "name":"b32",
+          "offset":0,
+          "type":"_BIT_INTEGER32[2]"
+        }
+      ],
+      "importable":true,
+      "len":8,
+      "min_alig":1,
+      "name":"_MMX_INTEGER",
+      "pack":false,
       "type":"union"
     },
     {

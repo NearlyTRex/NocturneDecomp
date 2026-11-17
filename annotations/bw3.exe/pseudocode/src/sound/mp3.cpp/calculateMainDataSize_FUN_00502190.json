@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 50,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
     "suspect_count": 1,
     "suspect_types": [
-      "undefined_data"
+      "raw_address_constant"
     ],
-    "total_lines": 127
+    "total_lines": 125
   },
   "cross_references": [
     {
@@ -44,13 +44,13 @@
   "globals": [
     {
       "addr": "006011b8",
-      "name": "g_DOUBLE_ARRAY_006011b8",
-      "type": "double[2]",
+      "name": "g_DOUBLE_ARRAY_ARRAY_006011b8",
+      "type": "double[2][4]",
       "value": null
     },
     {
       "addr": "00601270",
-      "name": "DAT_00601270",
+      "name": "g_INT_ARRAY_ARRAY_ARRAY_006011f8[0][2][0]",
       "type": "undefined4",
       "value": null
     }
@@ -181,12 +181,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Raw hex literal 0x601270 matches address of g_INT_ARRAY_ARRAY_ARRAY_006011f8 (+120 bytes into) (type int[2][3][15]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 10,
-      "match": "DAT_00601270",
-      "severity": "mild",
-      "text": "((double)(*(int *)(&DAT_00601270 +",
-      "type": "undefined_data"
+      "match": "0x601270",
+      "severity": "moderate",
+      "text": "((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x601270 +",
+      "type": "raw_address_constant"
     }
   ]
 }

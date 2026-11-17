@@ -22,8 +22,8 @@ _ostrstream * __cdecl crt_strstream_cpp_ostrstream_ctor_FUN_00564d92(void *this_
   
   bVar10 = 0;
   if ((flags & 1U) == 0) {
-    *(byte **)this_ptr = &DAT_005a46b8;
-    *(byte **)((int)this_ptr + 0x48) = &DAT_005a46c0;
+    *(WatcomVirtualBaseDescriptor **)this_ptr = &g_WatcomVirtualBaseDescriptor_005a46b8;
+    *(WatcomThunkedDestructor **)((int)this_ptr + 0x48) = &g_WatcomThunkedDestructor_005a46c0;
     piVar7 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x54));
     this_ptr = &piVar7[-2].__tied_stream;
   }

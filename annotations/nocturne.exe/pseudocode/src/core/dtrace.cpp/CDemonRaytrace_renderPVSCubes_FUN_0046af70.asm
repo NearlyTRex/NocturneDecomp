@@ -10,9 +10,9 @@
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0 at 0046a620
 ;
 ; Referenced Globals:
-;   void* PTR_DAT_005ae700 = 01b4d738
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01b7b744
+;   void* PTR_g_CDemonRenderer_01b4d738_005ae700 = 01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   int g_INT_01b7b744
 ;   CVector3f[20000] g_CVector3f_ARRAY_01b8efcc
 ;
 ; Called Functions:
@@ -31,12 +31,12 @@ section .text
     PUSH 0xff                           ; 0046af72
     PUSH 0xff                           ; 0046af77
     PUSH 0xff                           ; 0046af7c
-    MOV EDX,dword ptr [0x005ae700]      ; 0046af81 | PTR_DAT_005ae700
-    PUSH EDX                            ; 0046af87 | DAT_01b4d738
+    MOV EDX,dword ptr [0x005ae700]      ; 0046af81 | PTR_g_CDemonRenderer_01b4d738_005ae700
+    PUSH EDX                            ; 0046af87 | g_CDemonRenderer_01b4d738
     XOR ESI,ESI                         ; 0046af88
     CALL engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20 ; 0046af8a
         ;   XREF to: 00460f20 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_00460f20(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)
-    MOV ECX,dword ptr [0x01b7b744]      ; 0046af8f | DAT_01b7b744
+    MOV ECX,dword ptr [0x01b7b744]      ; 0046af8f | g_INT_01b7b744
     ADD ESP,0x10                        ; 0046af95
     TEST ECX,ECX                        ; 0046af98
     JLE 0x0046afde                      ; 0046af9a
@@ -47,8 +47,8 @@ section .text
     XOR EDI,EDI                         ; 0046afa3
     PUSH EBX                            ; 0046afa5 | g_CVector3f_ARRAY_01b8efcc
         ;   Label: LAB_0046afa5
-    MOV EBP,dword ptr [0x005ae700]      ; 0046afa6 | PTR_DAT_005ae700
-    PUSH EBP                            ; 0046afac | DAT_01b4d738
+    MOV EBP,dword ptr [0x005ae700]      ; 0046afa6 | PTR_g_CDemonRenderer_01b4d738_005ae700
+    PUSH EBP                            ; 0046afac | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00 ; 0046afad
         ;   XREF to: 00460a00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00(CDemonRenderer * this_ptr, CVector3f * world_position)
     ADD ESP,0x8                         ; 0046afb2
@@ -62,7 +62,7 @@ section .text
     INC ESI                             ; 0046afc9
     CALL engine_special.cpp_sync_FUN_00532b30 ; 0046afca
         ;   XREF to: 00532b30 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_sync_FUN_00532b30()
-    MOV EDX,dword ptr [0x01b7b744]      ; 0046afcf | DAT_01b7b744
+    MOV EDX,dword ptr [0x01b7b744]      ; 0046afcf | g_INT_01b7b744
     ADD EBX,0xc                         ; 0046afd5
     CMP ESI,EDX                         ; 0046afd8
     JL 0x0046afa5                       ; 0046afda

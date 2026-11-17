@@ -11,12 +11,11 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
 {
   char cVar1;
   int index;
-  char *str;
+  char *pcVar2;
   _tm *time_ptr;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  uint *puVar5;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
@@ -35,51 +34,51 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
   int local_14;
   
   bVar8 = 0;
-  iVar4 = this_ptr->item_count + -1;
+  iVar5 = this_ptr->item_count + -1;
   local_14 = 0;
-  if (-1 < iVar4) {
+  if (-1 < iVar5) {
     do {
-      index = (local_14 + iVar4) / 2;
-      puVar5 = &DAT_005b7078;
-      pcVar7 = local_904;
-      for (iVar2 = 0x80; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(uint *)pcVar7 = *puVar5;
-        puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
+      index = (local_14 + iVar5) / 2;
+      pcVar7 = g_CHAR_ARRAY_005b7078;
+      pcVar6 = local_904;
+      for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *(uint *)pcVar6 = *(uint *)pcVar7;
         pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
+        pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
       }
       pcVar7 = local_904;
       format = "%[^\t]\t%[^\t]";
-      puVar5 = &DAT_005b7278;
-      pcVar6 = local_b04;
-      for (iVar2 = 0x80; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *(uint *)pcVar6 = *puVar5;
-        puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
-        pcVar6 = (char *)((int)pcVar6 + ((uint)bVar8 * -2 + 1) * 4);
+      pcVar6 = g_CHAR_ARRAY_005b7278;
+      pcVar2 = local_b04;
+      for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
+        *(uint *)pcVar2 = *(uint *)pcVar6;
+        pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
+        pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);
       }
       pcVar6 = local_b04;
-      str = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(this_ptr,index);
-      sscanf(str,format,pcVar7,pcVar6);
+      pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(this_ptr,index);
+      sscanf(pcVar2,format,pcVar7,pcVar6);
       makepath(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
-      iVar2 = _stricmp(search_key,local_600);
-      if (iVar2 == 0) {
+      iVar3 = _stricmp(search_key,local_600);
+      if (iVar3 == 0) {
         return;
       }
-      if (iVar2 < 0) {
-        iVar4 = index + -1;
+      if (iVar3 < 0) {
+        iVar5 = index + -1;
       }
       else {
         local_14 = index + 1;
       }
-    } while (local_14 <= iVar4);
+    } while (local_14 <= iVar5);
   }
   time_ptr = _localtime(&file_timestamp);
   _strftime(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-  puVar5 = &DAT_005b7478;
-  pcVar7 = local_704;
-  for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *(uint *)pcVar7 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar8 * -2 + 1;
+  pcVar7 = g_CHAR_ARRAY_005b7478;
+  pcVar6 = local_704;
+  for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *(uint *)pcVar6 = *(uint *)pcVar7;
     pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
+    pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
   }
   if (file_path != (char *)0x0) {
     splitpath(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
@@ -87,15 +86,15 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00474460(CSt
   }
   splitpath(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
   if (local_3fc == '.') {
-    uVar3 = 0xffffffff;
+    uVar4 = 0xffffffff;
     pcVar7 = &local_3fc;
     do {
-      if (uVar3 == 0) break;
-      uVar3 = uVar3 - 1;
+      if (uVar4 == 0) break;
+      uVar4 = uVar4 - 1;
       cVar1 = *pcVar7;
       pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    memmove(&local_3fc,local_3fb,~uVar3 - 1);
+    memmove(&local_3fc,local_3fb,~uVar4 - 1);
   }
   _sprintf(local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
   strupr(local_fc);

@@ -22,7 +22,7 @@
 ;   CBitFont* g_CBitFont_PTR_01511cb8
 ;   int g_INT_01c38af0
 ;   int g_INT_01c38af4
-;   byte g_BYTE_01c38b00
+;   DWORD g_DWORD_01c38b00
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.x_center
 ;   undefined4 g_CGameInstance.y_center
@@ -102,7 +102,7 @@ section .text
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004eb522
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004eb527
-    MOV EBX,dword ptr [0x01c38b00]      ; 004eb52a | g_BYTE_01c38b00
+    MOV EBX,dword ptr [0x01c38b00]      ; 004eb52a | g_DWORD_01c38b00
     PUSH EBX                            ; 004eb530
     MOV EAX,[0x01c38af4]                ; 004eb531 | g_INT_01c38af4
     PUSH EAX                            ; 004eb536
@@ -196,7 +196,7 @@ section .text
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004eb650
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004eb655
-    MOV EAX,[0x01c38b00]                ; 004eb658 | g_BYTE_01c38b00
+    MOV EAX,[0x01c38b00]                ; 004eb658 | g_DWORD_01c38b00
     PUSH EAX                            ; 004eb65d
     MOV EDX,dword ptr [0x01c38af4]      ; 004eb65e | g_INT_01c38af4
     PUSH EDX                            ; 004eb664

@@ -19,7 +19,7 @@
 ;   double DOUBLE_0058619a = 3.14159265350000
 ;   double DOUBLE_005861a2 = 0.785398163375000
 ;   double DOUBLE_005861aa = -0.785398163375000
-;   undefined4 DAT_01cae2c8
+;   undefined4 g_INT_ARRAY_01cae288[16]
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_getMotionList_FUN_004e1890
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 004e1010 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004e1010(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004ba7a7
     PUSH 0x51b650                       ; 004ba7aa
-    MOV EDI,dword ptr [0x01cae2c8]      ; 004ba7af | DAT_01cae2c8
+    MOV EDI,dword ptr [0x01cae2c8]      ; 004ba7af | g_INT_ARRAY_01cae288[16]
     PUSH EDI                            ; 004ba7b5
     PUSH dword ptr [EBX + 0x1fa64]      ; 004ba7b6
     PUSH 0x0                            ; 004ba7bc
@@ -107,7 +107,7 @@ section .text
     ADD ESP,0x4                         ; 004ba829
     LEA EDI,[ESP + 0x18]                ; 004ba82c
     PUSH 0x51b650                       ; 004ba830
-    MOV EBP,dword ptr [0x01cae2c8]      ; 004ba835 | DAT_01cae2c8
+    MOV EBP,dword ptr [0x01cae2c8]      ; 004ba835 | g_INT_ARRAY_01cae288[16]
     LEA ESI,[ESP + 0xc]                 ; 004ba83b
     PUSH EBP                            ; 004ba83f
     MOVSD ES:EDI,ESI                    ; 004ba840

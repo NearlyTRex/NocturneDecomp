@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_fr46_03d_raw_0058139c
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -42,7 +42,7 @@ section .text
     PUSH EBP                            ; 0048824c
     MOV EDX,dword ptr [0x005ae704]      ; 0048824d | g_CDemonRenderer_PTR_005ae704
     INC ESI                             ; 00488253
-    PUSH EDX                            ; 00488254 | DAT_01b4d738
+    PUSH EDX                            ; 00488254 | g_CDemonRenderer_01b4d738
     ADD EDI,0x18                        ; 00488255
     INC EBX                             ; 00488258
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 00488259

@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   MainScanlineFunc* g_ScanlineRenderFunc
-;   undefined4 DAT_01c038f4
+;   int g_INT_01c038f4
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -36,7 +36,7 @@ section .text
     TEST EAX,EAX                        ; 00406245
     JZ 0x0040629e                       ; 00406247
         ;   XREF to: 0040629e (CONDITIONAL_JUMP)  ; LAB_0040629e
-    CMP dword ptr [0x01c038f4],0x0      ; 00406249 | DAT_01c038f4
+    CMP dword ptr [0x01c038f4],0x0      ; 00406249 | g_INT_01c038f4
     JZ 0x004062d9                       ; 00406250
         ;   XREF to: 004062d9 (CONDITIONAL_JUMP)  ; LAB_004062d9
     CMP dword ptr [0x01c03948],0x0      ; 00406256 | g_MMXSupported

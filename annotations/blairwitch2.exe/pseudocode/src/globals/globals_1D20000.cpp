@@ -10,14 +10,14 @@ SHuffmanTable g_SHuffmanTable_ARRAY_01d23658[34] = {};
 // char[256]
 char g_CHAR_ARRAY_01d23558[256] = {};
 
-// double[12]
-double g_DOUBLE_ARRAY_01d21ed8[12] = {};
+// double[12][6]
+double g_DOUBLE_ARRAY_ARRAY_01d21ed8[12][6] = {};
 
-// double[36]
-double g_DOUBLE_ARRAY_01d22118[36] = {};
+// double[36][18]
+double g_DOUBLE_ARRAY_ARRAY_01d22118[36][18] = {};
 
-// double[4]
-double g_DOUBLE_ARRAY_01d21a58[4] = {};
+// double[4][36]
+double g_DOUBLE_ARRAY_ARRAY_01d21a58[4][36] = {};
 
 // double[8]
 double g_DOUBLE_ARRAY_01d219d8[8] = {};

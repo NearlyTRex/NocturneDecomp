@@ -37,10 +37,10 @@ LAB_0056f878:
     bStack_2b = 0xf8;
     uStack_2a = 0x56;
     set_range_error_errno();
-    uVar5 = 0x7FF00000;
-    uVar1 = DAT_005a4b78;
+    uVar5 = INFINITY._4_4_;
+    uVar1 = INFINITY._0_4_;
     if ((bStack_2b & 0x80) != 0) {
-      return -__BITCAST_DOUBLE(CONCAT44(0x7FF00000,DAT_005a4b78));
+      return -__BITCAST_DOUBLE(CONCAT44(INFINITY._4_4_,INFINITY._0_4_));
     }
     goto LAB_0056f878;
   }

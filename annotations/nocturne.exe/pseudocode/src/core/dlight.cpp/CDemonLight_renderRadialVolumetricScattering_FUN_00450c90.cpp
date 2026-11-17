@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004512f6) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00450c90(CDemonLight *this_ptr)
 
@@ -65,22 +64,22 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
             (g_CDemonRenderer_PTR_005ae704,(CVector3f *)(local_98 + 4),(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ae458);
+            (g_CDemonRenderer_PTR_005ae704,&g_SLightGlowTable_005ae458.fuzz);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   do {
-    fVar6 = (float10)1 * ((float10)_DAT_0057c8be / (float10)(this_ptr->base).focal_length) *
-            (float10)_DAT_0057c886;
+    fVar6 = (float10)1 * ((float10)18 / (float10)(this_ptr->base).focal_length) *
+            (float10)0.0625;
     local_e4.f = (float)fVar6;
     Var10 = fpatan(fVar6,(float10)1);
     fVar6 = (float10)fcos(Var10);
     local_4c = 0.0;
     local_48 = (float)fVar6;
     do {
-      fVar6 = (float10)(int)local_4c * (float10)_DAT_0057c88e * (float10)_DAT_0057c896 *
-              (float10)_DAT_0057c89e;
+      fVar6 = (float10)(int)local_4c * (float10)0.0625f * (float10)3.1415926535000001 *
+              (float10)2;
       fVar7 = (float10)fsin(fVar6);
-      fVar11 = (float10)((int)local_4c + 1) * (float10)_DAT_0057c88e * (float10)_DAT_0057c896 *
-               (float10)_DAT_0057c89e;
+      fVar11 = (float10)((int)local_4c + 1) * (float10)0.0625f * (float10)3.1415926535000001
+               * (float10)2;
       fVar8 = (float10)fsin(fVar11);
       fVar6 = (float10)fcos(fVar6);
       fVar11 = (float10)fcos(fVar11);
@@ -97,19 +96,19 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
       dVar12 = round((double)((float)local_20 * local_40 + (float)local_20))
       ;
       local_60 = (int)ROUND(dVar12);
-      local_34 = (float)this_ptr->shadow_depth_buffer[iVar5 + local_60] * (float)_DAT_0057c8a6;
+      local_34 = (float)this_ptr->shadow_depth_buffer[iVar5 + local_60] * (float)0.00390625;
       local_4c = (float)(fVar8 * fVar9);
       local_48 = (float)(fVar11 * fVar9);
       iVar5 = 0;
       local_30 = local_34;
       do {
         local_58 = (this_ptr->base).fixed_point_scale;
-        fVar1 = (float)iVar5 * local_50 * local_58 * _DAT_0057c8ae;
+        fVar1 = (float)iVar5 * local_50 * local_58 * 0.25f;
         fVar4 = 1.0 / local_58;
         local_20 = iVar5 + 1;
-        local_2c = (float)local_20 * local_50 * local_58 * _DAT_0057c8ae;
+        local_2c = (float)local_20 * local_50 * local_58 * 0.25f;
         fVar3 = local_58 - local_2c;
-        fVar2 = (float)_DAT_0057c8b6;
+        fVar2 = (float)1024;
         local_28 = fVar1;
         dVar12 = round((double)((local_58 - fVar1) * fVar4 * fVar2));
         dVar13 = round((double)(fVar3 * fVar4 * fVar2));
@@ -121,9 +120,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         }
         local_b0 = local_a8 * local_4c;
         local_ac = local_a8 * local_48;
-        local_c8.x = (int)ROUND(local_b0 * _DAT_0059c030);
-        local_c8.y = (int)ROUND(local_ac * _DAT_0059c030);
-        local_c8.z = (int)ROUND(local_a8 * _DAT_0059c030);
+        local_c8.x = (int)ROUND(local_b0 * 256.0f);
+        local_c8.y = (int)ROUND(local_ac * 256.0f);
+        local_c8.z = (int)ROUND(local_a8 * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_c8);
         local_a8 = local_3c;
@@ -132,9 +131,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         }
         local_b0 = local_a8 * local_54;
         local_ac = local_a8 * local_50;
-        local_bc.x = (int)ROUND(local_b0 * _DAT_0059c030);
-        local_bc.y = (int)ROUND(local_ac * _DAT_0059c030);
-        local_bc.z = (int)ROUND(local_a8 * _DAT_0059c030);
+        local_bc.x = (int)ROUND(local_b0 * 256.0f);
+        local_bc.y = (int)ROUND(local_ac * 256.0f);
+        local_bc.z = (int)ROUND(local_a8 * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_bc);
         local_a8 = local_3c;
@@ -143,9 +142,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         }
         local_b0 = local_a8 * local_54;
         local_ac = local_a8 * local_50;
-        local_8c[0].x = (int)ROUND(local_b0 * _DAT_0059c030);
-        local_8c[0].y = (int)ROUND(local_ac * _DAT_0059c030);
-        local_8c[0].z = (int)ROUND(local_a8 * _DAT_0059c030);
+        local_8c[0].x = (int)ROUND(local_b0 * 256.0f);
+        local_8c[0].y = (int)ROUND(local_ac * 256.0f);
+        local_8c[0].z = (int)ROUND(local_a8 * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,local_8c);
         local_a8 = local_38;
@@ -154,9 +153,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
         }
         local_b0 = local_a8 * local_4c;
         local_ac = local_a8 * local_48;
-        local_98._0_4_ = (uint)ROUND(local_b0 * _DAT_0059c030);
-        local_98._4_4_ = (uint)ROUND(local_ac * _DAT_0059c030);
-        local_90 = (int)ROUND(local_a8 * _DAT_0059c030);
+        local_98._0_4_ = (uint)ROUND(local_b0 * 256.0f);
+        local_98._4_4_ = (uint)ROUND(local_ac * 256.0f);
+        local_90 = (int)ROUND(local_a8 * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
                    (CVector3i *)local_98);

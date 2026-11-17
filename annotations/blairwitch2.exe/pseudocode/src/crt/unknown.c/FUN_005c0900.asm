@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005c0900(int param_1)
+; int crt_unknown_c_FUN_005c0900(HANDLE param_1)
 ;
 ;
 ; XREF[3]:
@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2d8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2dc = 005bce04
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
 ;   int g_INT_0061f4dc = 0x0
 ;
 ; Called Functions:
@@ -33,7 +33,7 @@ section .text
         ;   XREF to: 005c0941 (CONDITIONAL_JUMP)  ; LAB_005c0941
     LEA ECX,[EDX*0x4 + 0x0]             ; 005c0913
     XOR EAX,EAX                         ; 005c091a
-    MOV EDX,dword ptr [0x0061f4d8]      ; 005c091c | DAT_0061f4d8
+    MOV EDX,dword ptr [0x0061f4d8]      ; 005c091c | g_SIOControlBlock_PTR_0061f4d8
         ;   Label: LAB_005c091c
     ADD EDX,EAX                         ; 005c0922
     CMP dword ptr [EDX],0x0             ; 005c0924
@@ -56,14 +56,14 @@ section .text
     INC EAX                             ; 005c0946
     SHL EAX,0x2                         ; 005c0947
     PUSH EAX                            ; 005c094a
-    MOV EBX,dword ptr [0x0061f4d8]      ; 005c094b | DAT_0061f4d8
+    MOV EBX,dword ptr [0x0061f4d8]      ; 005c094b | g_SIOControlBlock_PTR_0061f4d8
     PUSH EBX                            ; 005c0951
     CALL crt_memory.c_realloc_FUN_005b8ce0 ; 005c0952
         ;   XREF to: 005b8ce0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_005b8ce0(void * ptr, ulong new_size)
     MOV EDX,dword ptr [0x0061f4dc]      ; 005c0957 | g_INT_0061f4dc
     MOV ECX,dword ptr [0x0061f4dc]      ; 005c095d | g_INT_0061f4dc
     ADD ESP,0x8                         ; 005c0963
-    MOV [0x0061f4d8],EAX                ; 005c0966 | DAT_0061f4d8
+    MOV [0x0061f4d8],EAX                ; 005c0966 | g_SIOControlBlock_PTR_0061f4d8
     SHL EDX,0x2                         ; 005c096b
     INC ECX                             ; 005c096e
     ADD EAX,EDX                         ; 005c096f

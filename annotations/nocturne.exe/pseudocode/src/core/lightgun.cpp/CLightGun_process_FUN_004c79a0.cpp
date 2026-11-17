@@ -65,7 +65,7 @@ void __cdecl core_lightgun_cpp_CLightGun_process_FUN_004c79a0(CLightGun *this_pt
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_0044bd20
                              (g_CFilterCachePtr,"lgunmask.raw",0);
       core_dlight_cpp_CDemonLight_applyFilter_FUN_004501c0(&g_CDemonLightInstance,filter_ptr,0,0,0);
-      core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);
+      core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(g_CWeather_PTR_005c15b8,0.1,0);
     }
     core_set_cpp_CDemonSet_addDynamicLight_FUN_0050a970(g_CDemonSetPtr,&g_CDemonLightInstance);
     this_ptr->fire_flash_pending = 0;

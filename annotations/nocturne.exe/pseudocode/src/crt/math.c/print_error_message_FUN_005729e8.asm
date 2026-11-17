@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_in_00599281
-;   undefined4 DAT_005c2148
+;   char*[7] g_CHAR_PTR_ARRAY_005c2148
 ;
 ; Called Functions:
 ;   crt_stdio.c_fputc_FUN_00566cc0
@@ -34,7 +34,7 @@ section .text
     MOV EBX,EAX                         ; 005729f6
     PUSH EAX                            ; 005729f8
     MOV EAX,dword ptr [EBP + 0x8]       ; 005729f9
-    MOV EDX,dword ptr [EAX*0x4 + 0x5c2148] ; 005729fc | DAT_005c2148
+    MOV EDX,dword ptr [EAX*0x4 + 0x5c2148] ; 005729fc | g_CHAR_PTR_ARRAY_005c2148
     PUSH EDX                            ; 00572a03
     CALL crt_stdio.c_fputs_FUN_00573660 ; 00572a04
         ;   XREF to: 00573660 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fputs_FUN_00573660(char * str, _FILE * file)

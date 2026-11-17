@@ -60,7 +60,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004ebf10(void)
     core_set_cpp_CDemonSet_setFlatColor_FUN_005344c0(this_ptr,50000,50000,0x10000);
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_CMoon_update_FUN_005024a0(&g_CMoonInstance,g_CGamePtr->delta_time_float);
-    pcVar8 = &DAT_005dcc8d;
+    pcVar8 = "tridx7.dll";
     core_moon_cpp_CMoon_render_FUN_00502510(&g_CMoonInstance);
     pcVar9 = g_CHAR_ARRAY_0061e180;
     g_CDemonSetPtr->rendering_mode = 0;

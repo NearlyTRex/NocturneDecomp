@@ -52,7 +52,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playChaseSound_FUN_0045cdf0(CDemnfolk *
   } while (cVar1 != '\0');
   iVar3 = core_actor_cpp_randomChance_FUN_0040cd00(0.5);
   if (iVar3 == 0) {
-    pcVar4 = &DAT_005d82e3;
+    pcVar4 = "_taunt?.wav @ 2";
   }
   else {
     pcVar4 = "_chase?.wav @ 2";

@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 133,
+    "complexity_score": 88,
     "cross_reference_count": 531,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 7,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_ref",
-      "undefined_data",
       "unrolled_strchr",
       "warning_noreturn"
     ],
@@ -3262,8 +3261,8 @@
     },
     {
       "addr": "01cc3700",
-      "name": "DAT_01cc3700",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cc3700",
+      "type": "char[4352]",
       "value": null
     },
     {
@@ -3274,8 +3273,8 @@
     },
     {
       "addr": "01cc4808",
-      "name": "DAT_01cc4808",
-      "type": "undefined4",
+      "name": "g_INT_01cc4808",
+      "type": "int",
       "value": null
     },
     {
@@ -3361,36 +3360,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_01cc4808",
-      "severity": "mild",
-      "text": "if (DAT_01cc4808 != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_01cc4808",
-      "severity": "mild",
-      "text": "DAT_01cc4808 = 1;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 12,
       "match": "&stack0xfffffff4",
       "severity": "moderate",
-      "text": "_vsprintf(&DAT_01cc3700,format,(va_list_t)&stack0xfffffff4);",
+      "text": "_vsprintf(g_CHAR_ARRAY_01cc3700,format,(va_list_t)&stack0xfffffff4);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_01cc3700",
-      "severity": "mild",
-      "text": "_vsprintf(&DAT_01cc3700,format,(va_list_t)&stack0xfffffff4);",
-      "type": "undefined_data"
     },
     {
       "description": "Subroutine marked as non-returning",
@@ -3399,14 +3374,6 @@
       "severity": "mild",
       "text": "/* WARNING: Subroutine does not return */",
       "type": "warning_noreturn"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_01cc3700",
-      "severity": "mild",
-      "text": "wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_00559500(&DAT_01cc3700);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '\\\\' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '\\\\') in a .keep.",

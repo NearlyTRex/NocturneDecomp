@@ -70,7 +70,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -89,7 +89,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -108,7 +108,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -127,7 +127,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -146,7 +146,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -165,7 +165,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -184,7 +184,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -203,7 +203,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -222,7 +222,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -241,7 +241,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -260,7 +260,7 @@ LAB_0050d66e:
         g_INT_01d1d404 = 0x8af;
         core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
       }
-      pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+      pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
       g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
       do {
         cVar1 = *pcVar2;
@@ -286,7 +286,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -305,7 +305,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -324,7 +324,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -343,7 +343,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -362,7 +362,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -381,7 +381,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -400,7 +400,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -419,7 +419,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -438,7 +438,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -457,7 +457,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -476,7 +476,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -495,7 +495,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -514,7 +514,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -533,7 +533,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -552,7 +552,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -571,7 +571,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -590,7 +590,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -609,7 +609,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -628,7 +628,7 @@ LAB_0050d66e:
       g_INT_01d1d404 = 0x8af;
       core_main_c_displayErrorAndQuit_FUN_005030e0("Too many custom keys!");
     }
-    pcVar34 = g_CHAR_ARRAY_01d214e0 + g_INT_01d21458 * 0x28;
+    pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[g_INT_01d21458];
     g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = piVar29;
     do {
       cVar1 = *pcVar2;
@@ -675,7 +675,7 @@ LAB_0050d66e:
         case 0x253:
         case 0x254:
           pcVar2 = local_8d4;
-          pcVar34 = g_CHAR_ARRAY_01d214e0 + iVar35 * 0x28;
+          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
           do {
             cVar1 = *pcVar34;
             *pcVar2 = cVar1;
@@ -713,7 +713,7 @@ LAB_0050d66e:
         case 0x255:
         case 0x256:
           pcVar2 = local_2d4;
-          pcVar34 = g_CHAR_ARRAY_01d214e0 + iVar35 * 0x28;
+          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
           do {
             cVar1 = *pcVar34;
             *pcVar2 = cVar1;
@@ -786,7 +786,7 @@ LAB_0050e832:
             pcVar2[1] = cVar1;
             pcVar2 = pcVar2 + 2;
           } while (cVar1 != '\0');
-          pcVar34 = g_CHAR_ARRAY_01d214e0 + iVar35 * 0x28;
+          pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
           iVar32 = -1;
           pcVar2 = acStack_4d4;
           do {
@@ -970,7 +970,7 @@ LAB_0050e9b4:
     *pcVar2 = cVar1;
     if (cVar1 == '\0') break;
   }
-  pcVar34 = g_CHAR_ARRAY_01d214e0 + iVar35 * 0x28;
+  pcVar34 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar35];
   iVar32 = -1;
   pcVar2 = acStack_6d4;
   do {

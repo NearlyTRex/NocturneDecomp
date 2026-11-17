@@ -150,6 +150,6 @@ LAB_004c8b36:
   g_SRenderVertex_ARRAY_00622014[3].b = 0;
 LAB_004c8b9a:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01cb8288);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
   return;
 }

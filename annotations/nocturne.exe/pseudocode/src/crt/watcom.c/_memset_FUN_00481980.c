@@ -9,7 +9,7 @@
 void __fastcall _memset(void *dest,int fill_byte,uint size)
 
 {
-  longlong lVar1;
+  ulonglong uVar1;
   uint uVar2;
   uint uVar3;
   longlong *plVar4;
@@ -17,8 +17,8 @@ void __fastcall _memset(void *dest,int fill_byte,uint size)
   uint uVar6;
   bool bVar7;
   
-  lVar1 = *(longlong *)(&DAT_005b7790 + (fill_byte & 0xffU) * 8);
-  uVar2 = *(uint *)(&DAT_005b7790 + (fill_byte & 0xffU) * 8);
+  uVar1 = g_ULONGLONG_ARRAY_005b7790[fill_byte & 0xffU];
+  uVar2 = (uint)g_ULONGLONG_ARRAY_005b7790[fill_byte & 0xffU];
   uVar3 = size - 8;
   if (size < 8 || uVar3 == 0) goto LAB_004819c8;
   uVar6 = -(int)dest & 7;
@@ -54,7 +54,7 @@ joined_r0x004819d6:
   if (!bVar7 && uVar3 != 0) {
 switchD_004819a9_caseD_0:
     do {
-      *plVar4 = (longlong)ROUND((float10)lVar1);
+      *plVar4 = (longlong)ROUND((float10)(longlong)uVar1);
       plVar4 = plVar4 + 1;
       bVar7 = 7 < uVar3;
       uVar3 = uVar3 - 8;

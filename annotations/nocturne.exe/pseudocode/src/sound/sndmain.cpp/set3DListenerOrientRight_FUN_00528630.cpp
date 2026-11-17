@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_set3DListenerOrientRight_FUN_00528630(float orient_right_x,float orient_right_y,float orient_right_z)
 
 {
-  _DAT_02dc8498 = orient_right_x;
-  _DAT_02dc849c = orient_right_y;
-  _DAT_02dc84a0 = orient_right_z;
-  if (_DAT_02dc8318 == (int *)0x0) {
+  g_SReverbSettings_02dc8498.volume = orient_right_x;
+  g_SReverbSettings_02dc8498.decay_time = orient_right_y;
+  g_SReverbSettings_02dc8498.damping = orient_right_z;
+  if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02dc8318 + 0x28))(_DAT_02dc8318,orient_right_x,orient_right_y,orient_right_z);
+  (*g_CSoundDevice_PTR_02dc8318->vtable->commitDeferredSettings)(g_CSoundDevice_PTR_02dc8318);
   return;
 }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
@@ -62,8 +60,8 @@
   "globals": [
     {
       "addr": "006b0260",
-      "name": "DAT_006b0260",
-      "type": "undefined4",
+      "name": "g_INT_006b0260",
+      "type": "int",
       "value": null
     }
   ],
@@ -192,14 +190,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_006b0260",
-      "severity": "mild",
-      "text": "DAT_006b0260 = color;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -21,7 +21,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_unknown.c_FUN_005c871c
     Address: 005c871c
-    Suspect count: 63
+    Suspect count: 62
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005c88be: SUB ESP,EAX
     - [alt_frame_pointer] at 005c88ce: MOV ESI,ESP
@@ -224,7 +224,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
   core_bmppuzzl.cpp_CAudioRecPuzzle_playClip_FUN_00417230
-    File: core/bmppuzzl.cpp, Suspects: 26
+    File: core/bmppuzzl.cpp, Suspects: 24
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_CBodyPart_process_FUN_00419740
@@ -269,4 +269,4 @@ CORRELATION: Stack patterns vs suspect counts
 Functions with stack patterns tend to have more suspects:
 
   With stack patterns:    avg 20.8 suspects/function
-  Without stack patterns: avg 4.5 suspects/function
+  Without stack patterns: avg 4.6 suspects/function

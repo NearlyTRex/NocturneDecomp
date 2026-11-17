@@ -9,37 +9,45 @@
 int __cdecl engine_prim_c_getTriangleWindingFromPackedIndices_FUN_004f9cb0(STrianglePackedIndices *triangle)
 
 {
-  int iVar1;
-  uint uVar2;
-  uint uVar3;
-  int iVar4;
+  ushort uVar1;
+  ushort uVar2;
+  ushort uVar3;
+  uint uVar4;
   int iVar5;
-  uint uVar6;
+  int iVar6;
+  int iVar7;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
   
-  uVar2 = (uint)triangle->vertex_index_0;
-  uVar3 = (uint)triangle->vertex_index_1;
-  iVar1 = uVar3 * 0x30;
-  uVar6 = (uint)triangle->vertex_index_2;
-  if (DAT_006b0280 == 1) {
-    local_24 = (&DAT_005c5024)[uVar3 * 0xc] - (&DAT_005c5024)[uVar2 * 0xc];
-    local_20 = *(int *)(&DAT_005c5028 + iVar1) - *(int *)(&DAT_005c5028 + uVar2 * 0x30);
-    local_1c = (&DAT_005c5024)[uVar6 * 0xc] - (&DAT_005c5024)[uVar3 * 0xc];
-    local_18 = *(int *)(&DAT_005c5028 + uVar6 * 0x30) - *(int *)(&DAT_005c5028 + iVar1);
+  uVar1 = triangle->vertex_index_0;
+  uVar2 = triangle->vertex_index_1;
+  uVar3 = triangle->vertex_index_2;
+  if (g_INT_006b0280 == 1) {
+    local_24 = g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_x -
+               g_SRenderVertex_ARRAY_005c5014[uVar1].projected_vertex.screen_x;
+    local_20 = g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_y -
+               g_SRenderVertex_ARRAY_005c5014[uVar1].projected_vertex.screen_y;
+    local_1c = g_SRenderVertex_ARRAY_005c5014[uVar3].projected_vertex.screen_x -
+               g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_x;
+    local_18 = g_SRenderVertex_ARRAY_005c5014[uVar3].projected_vertex.screen_y -
+               g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_y;
   }
   else {
-    local_1c = (&DAT_005c5024)[uVar3 * 0xc] - (&DAT_005c5024)[uVar2 * 0xc];
-    local_18 = *(int *)(&DAT_005c5028 + iVar1) - *(int *)(&DAT_005c5028 + uVar2 * 0x30);
-    local_24 = (&DAT_005c5024)[uVar6 * 0xc] - (&DAT_005c5024)[uVar3 * 0xc];
-    local_20 = *(int *)(&DAT_005c5028 + uVar6 * 0x30) - *(int *)(&DAT_005c5028 + iVar1);
+    local_1c = g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_x -
+               g_SRenderVertex_ARRAY_005c5014[uVar1].projected_vertex.screen_x;
+    local_18 = g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_y -
+               g_SRenderVertex_ARRAY_005c5014[uVar1].projected_vertex.screen_y;
+    local_24 = g_SRenderVertex_ARRAY_005c5014[uVar3].projected_vertex.screen_x -
+               g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_x;
+    local_20 = g_SRenderVertex_ARRAY_005c5014[uVar3].projected_vertex.screen_y -
+               g_SRenderVertex_ARRAY_005c5014[uVar2].projected_vertex.screen_y;
   }
-  iVar4 = (int)((ulonglong)((longlong)local_24 * (longlong)local_18) >> 0x20);
-  iVar5 = (int)((ulonglong)((longlong)local_20 * (longlong)local_1c) >> 0x20);
-  uVar2 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
+  iVar6 = (int)((ulonglong)((longlong)local_24 * (longlong)local_18) >> 0x20);
+  iVar7 = (int)((ulonglong)((longlong)local_20 * (longlong)local_1c) >> 0x20);
+  uVar4 = (uint)((uint)((longlong)local_20 * (longlong)local_1c) <
                 (uint)((longlong)local_24 * (longlong)local_18));
-  iVar1 = iVar5 - iVar4;
-  return (uint)((SBORROW4(iVar5,iVar4) != SBORROW4(iVar1,uVar2)) != (int)(iVar1 - uVar2) < 0);
+  iVar5 = iVar7 - iVar6;
+  return (uint)((SBORROW4(iVar7,iVar6) != SBORROW4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);
 }

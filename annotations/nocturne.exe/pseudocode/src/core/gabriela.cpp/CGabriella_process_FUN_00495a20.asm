@@ -286,7 +286,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00495bcf
     ADD ESP,0x8                         ; 00495bd2
     FLD float ptr [EBP + 0x76]          ; 00495bd5
-    FMUL float ptr [0x01c71358]         ; 00495bd8 | DAT_01c71358
+    FMUL float ptr [0x01c71358]         ; 00495bd8 | g_FLOAT_01c71358
     PUSH 0x2                            ; 00495bde
     FADD float ptr [EBX + 0x242c]       ; 00495be0
     PUSH EDI                            ; 00495be6
@@ -296,7 +296,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00495bf2
     ADD ESP,0x8                         ; 00495bf5
     FLD float ptr [EBP + 0x76]          ; 00495bf8
-    FMUL float ptr [0x01c7135c]         ; 00495bfb | DAT_01c7135c
+    FMUL float ptr [0x01c7135c]         ; 00495bfb | g_FLOAT_01c7135c
     PUSH 0x3                            ; 00495c01
     FADD float ptr [EBX + 0x242c]       ; 00495c03
     PUSH EDI                            ; 00495c09
@@ -306,7 +306,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00495c15
     ADD ESP,0x8                         ; 00495c18
     FLD float ptr [EBP + 0x76]          ; 00495c1b
-    FMUL float ptr [0x01c71360]         ; 00495c1e | DAT_01c71360
+    FMUL float ptr [0x01c71360]         ; 00495c1e | g_FLOAT_01c71360
     PUSH 0x14                           ; 00495c24
     FSUBR float ptr [EBX + 0x242c]      ; 00495c26
     PUSH EDI                            ; 00495c2c

@@ -25,8 +25,8 @@
 ;   TerminatedCString s_CNetGame_sendSimFrameAck_0058c8ef
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cea3f8
-;   undefined4 DAT_01cea408
+;   uint g_UINT_01cea3f8
+;   uint g_UINT_01cea408
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -95,9 +95,9 @@ section .text
     PUSH EBX                            ; 004edb97
     CALL core_netgame.cpp_CNetGame_send_FUN_004eb350 ; 004edb98
         ;   XREF to: 004eb350 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_004eb350(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
-    MOV EAX,[0x01cea3f8]                ; 004edb9d | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004edb9d | g_UINT_01cea3f8
     ADD ESP,0xc                         ; 004edba2
-    MOV [0x01cea408],EAX                ; 004edba5 | DAT_01cea408
+    MOV [0x01cea408],EAX                ; 004edba5 | g_UINT_01cea408
     ADD ESP,0x38                        ; 004edbaa
     POP EBP                             ; 004edbad
     POP EDI                             ; 004edbae

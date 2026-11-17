@@ -13,7 +13,7 @@ uint __cdecl engine_3d_c_lookupLitColor_FUN_00404680(int color_value,int lightin
   int iVar2;
   
   if (-1 < color_value) {
-    iVar2 = *(int *)(&DAT_005acbc4 + color_value * 4) * 3;
+    iVar2 = g_INT_ARRAY_005acbc4[color_value] * 3;
     uVar1 = g_LightTable[lighting_value >> 8]
             [g_ColorCubeLookup
              [(uint)(g_SourcePaletteData[iVar2 + 1] >> 3) * 0x20 +

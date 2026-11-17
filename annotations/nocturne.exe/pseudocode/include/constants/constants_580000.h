@@ -319,7 +319,9 @@ static TerminatedCString s_CBitFont_remapPalette_In_00581967 = "CBitFont::remapP
 static TerminatedCString s_one_00581995 = "one";
 static TerminatedCString s_two_0058199b = "two";
 static TerminatedCString s_three_005819a1 = "three";
+static TerminatedCString s_anon_005819a7 = "\t";
 static TerminatedCString s_four_005819a9 = "four";
+static TerminatedCString s_anon_005819ae = "  ";
 static TerminatedCString s_s_01234_5_6_7_8_9_0_8_8_005819b1 = "(01234)+5-6/7*8=9.0  8<>+-=*8";
 static TerminatedCString s_s_023_0_23_a_t_5_0_2_1_005819cf = "#023  $0.23  a@t  5.0%  2^1  ";
 static TerminatedCString s_s_0A_1B_1_O_I_I_O_x_005819ed = "{0A,1B} ~1 O<<I I|O &x;";
@@ -3235,6 +3237,21 @@ static TerminatedCString s_Bip01_Head_0058ffdb = "Bip01 Head";
 static TerminatedCString s_Bip01_L_UpperArm_0058ffe6 = "Bip01 L UpperArm";
 static TerminatedCString s_Bip01_R_UpperArm_0058fff7 = "Bip01 R UpperArm";
 
+// char[11] constants
+static char g_CHAR_ARRAY_00581ac5[11] = {(char)0x95, (char)0x96, (char)0x97, (char)0xAC, (char)0xAD, (char)0x20, (char)0xBB, (char)0xAB, (char)0x9B, (char)0x8B, (char)0x00};
+
+// char[14] constants
+static char g_CHAR_ARRAY_00581aa2[14] = {
+    (char)0xC5, (char)0x41, (char)0xE5, (char)0x61, (char)0x20, (char)0x8A, (char)0x9A, (char)0x9F, (char)0xCF, (char)0x20, (char)0x7F, (char)0x80,
+    (char)0x81, (char)0x00
+};
+
+// char[21] constants
+static char g_CHAR_ARRAY_00581ab0[21] = {
+    (char)0xE1, (char)0xB4, (char)0x88, (char)0x98, (char)0xA8, (char)0xB0, (char)0xE5, (char)0x20, (char)0xBA, (char)0xB9, (char)0xBC, (char)0x20,
+    (char)0xBF, (char)0x3F, (char)0xA1, (char)0x21, (char)0x20, (char)0xB8, (char)0xC7, (char)0xE7, (char)0x00
+};
+
 // double constants
 static double DOUBLE_00580217 = 0.017453292519444399;
 static double DOUBLE_0058021f = 0.01;
@@ -3601,6 +3618,8 @@ static double DOUBLE_0058780c = -0.20000000000000001;
 static double DOUBLE_00587814 = 32;
 static double DOUBLE_00587824 = -0.52359877558333301;
 static double DOUBLE_0058782c = 0.52359877558333301;
+static double g_DOUBLE_0058786c = 0.29999999999999999;
+static double g_DOUBLE_00587874 = 0.69999999999999996;
 static double DOUBLE_0058789c = 0.29999999999999999;
 static double DOUBLE_005878a4 = 0.69999999999999996;
 static double DOUBLE_00587925 = 6;
@@ -3633,6 +3652,8 @@ static double DOUBLE_005881d3 = 65536;
 static double DOUBLE_005881db = 1.52587890625e-05;
 static double DOUBLE_005881e3 = 65536;
 static double DOUBLE_00588283 = 65535;
+static double g_DOUBLE_005882b3 = 0.31830988619288902;
+static double g_DOUBLE_005882bb = 32768;
 static double DOUBLE_00588473 = 1.1499999999999999;
 static double DOUBLE_00588543 = 1.52587890625e-05;
 static double DOUBLE_00588b43 = 1.52587890625e-05;
@@ -3653,6 +3674,8 @@ static double DOUBLE_00589477 = 3.1415926535000001;
 static double DOUBLE_0058947f = 32;
 static double DOUBLE_00589507 = 1.3;
 static double DOUBLE_0058960a = 1.52587890625e-05;
+static double g_DOUBLE_0058a169 = 0.40000000000000002;
+static double g_DOUBLE_0058a179 = 0.40000000000000002;
 static double DOUBLE_0058a2d9 = 1.57079632675;
 static double DOUBLE_0058a2e1 = -1.57079632675;
 static double DOUBLE_0058a2e9 = 1.57079632675;
@@ -3708,6 +3731,12 @@ static double DOUBLE_0058b395 = 0.001;
 static double DOUBLE_0058b39d = -0.0001;
 static double DOUBLE_0058b3a5 = 0.001;
 static double DOUBLE_0058b3ad = 0.001;
+static double g_DOUBLE_0058b680 = 0.049087385211999998;
+static double g_DOUBLE_0058b688 = 1000000000;
+static double g_DOUBLE_0058b690 = 1.0000000000000001e-09;
+static double g_DOUBLE_0058b698 = 0.78539816339699997;
+static double g_DOUBLE_0058b6a0 = -0.5;
+static double g_DOUBLE_0058b6a8 = 0.5;
 static double DOUBLE_0058b6b0 = 0.049087385211999998;
 static double DOUBLE_0058b6b8 = 1000000000;
 static double DOUBLE_0058b6c0 = 1.0000000000000001e-09;
@@ -3729,6 +3758,9 @@ static double DOUBLE_0058b920 = -18;
 static double DOUBLE_0058b928 = -6;
 static double DOUBLE_0058b930 = 1.0000000000000001e-05;
 static double DOUBLE_0058b9b8 = 1000;
+static double g_DOUBLE_0058b9fa = 1.52587890625e-05;
+static double g_DOUBLE_0058ba02 = -30;
+static double g_DOUBLE_0058ba0a = 30;
 static double DOUBLE_0058ba12 = 1.52587890625e-05;
 static double DOUBLE_0058ba1a = 30;
 static double DOUBLE_0058bbba = 1.52587890625e-05;
@@ -3771,8 +3803,12 @@ static double DOUBLE_0058cd77 = -1.57079632675;
 static double DOUBLE_0058cd7f = 1.57079632675;
 static double DOUBLE_0058cd87 = 3.1415926535000001;
 static double DOUBLE_0058cd8f = 4;
+static double g_DOUBLE_0058ce27 = 256;
+static double g_DOUBLE_0058ce37 = 256;
 static double DOUBLE_0058d008 = 0.03125;
 static double DOUBLE_0058d010 = 6.2831853070000001;
+static double g_DOUBLE_0058d020 = -0.5;
+static double g_DOUBLE_0058d028 = 0.5;
 static double DOUBLE_0058d038 = 2;
 static double DOUBLE_0058d040 = 3.1415926535000001;
 static double DOUBLE_0058d048 = -1;
@@ -3893,6 +3929,7 @@ static float FLOAT_00585190 = -3.0f;
 static float FLOAT_00585194 = 0.08333334f;
 static float FLOAT_0058559d = 3.141593f;
 static float FLOAT_005855bd = 20.0f;
+static float g_FLOAT_00585827 = 0.5f;
 static float FLOAT_0058586b = -0.5f;
 static float FLOAT_0058586f = -2.0f;
 static float FLOAT_00585873 = 0.5f;
@@ -3929,6 +3966,8 @@ static float FLOAT_00588c9b = 0.2f;
 static float FLOAT_0058943f = 4.242857f;
 static float FLOAT_00589443 = 12.22222f;
 static float FLOAT_0058950f = 0.5f;
+static float g_FLOAT_0058a161 = 0.5f;
+static float g_FLOAT_0058a171 = 0.5f;
 static float FLOAT_0058a3a5 = 3.0f;
 static float FLOAT_0058a4c9 = 5.0f;
 static float FLOAT_0058a7f2 = 3.141593f;
@@ -3946,8 +3985,11 @@ static float FLOAT_0058cb8c = 2.0f;
 static float FLOAT_0058cb90 = -0.7f;
 static float FLOAT_0058cd47 = 100.0f;
 static float FLOAT_0058cd4b = 0.01f;
+static float g_FLOAT_0058ce1f = 256.0f;
+static float g_FLOAT_0058ce2f = 256.0f;
 static float FLOAT_0058d018 = 0.5f;
 static float FLOAT_0058d01c = 0.5f;
+static float g_FLOAT_0058d030 = -1.0f;
 static float FLOAT_0058d034 = 0.5f;
 static float FLOAT_0058d96d = -1.0f;
 static float FLOAT_0058debe = 3.141593f;

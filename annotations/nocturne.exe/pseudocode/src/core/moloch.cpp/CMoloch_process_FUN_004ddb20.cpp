@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_moloch_cpp_CMoloch_process_FUN_004ddb20(CMoloch *this_ptr,float delta_time)
 
@@ -203,7 +202,7 @@ LAB_004ddd8e:
   if (this_ptr->morphing == 0) {
     if (this_ptr->in_human_form == 0) {
       iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->demon_to_human_condition);
+                        (g_CEventList_PTR_005b7650,this_ptr->demon_to_human_condition);
       if (iVar7 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_004de700(this_ptr);
         return;
@@ -211,7 +210,7 @@ LAB_004ddd8e:
     }
     else {
       iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->human_to_demon_condition);
+                        (g_CEventList_PTR_005b7650,this_ptr->human_to_demon_condition);
       if (iVar7 != 0) {
         core_moloch_cpp_CMoloch_startMorph_FUN_004de700(this_ptr);
         return;
@@ -227,7 +226,7 @@ LAB_004ddd8e:
               (&this_ptr->model);
     fVar5 = this_ptr->morph_timer + delta_time;
     this_ptr->morph_timer = fVar5;
-    if (_DAT_005a0ab8 < fVar5) {
+    if (2.0f < fVar5) {
       if (this_ptr->in_human_form == 0) {
         model_name = "moloch_h.dfm";
         this_ptr->in_human_form = 1;

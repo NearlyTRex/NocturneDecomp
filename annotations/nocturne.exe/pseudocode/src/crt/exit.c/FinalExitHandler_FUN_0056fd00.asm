@@ -10,7 +10,7 @@
 ;   crt_startup.c_ExitApplication_FUN_0056fcd4 at 0056fcf7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1d94
+;   void* g_PTR_005c1d94 = 00000000
 ;   void* PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054 = 0056fcd0
 ;   void* PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2058 = 0056fcd0
 ;
@@ -26,10 +26,10 @@ section .text
         ;   Label: crt_exit.c_FinalExitHandler_FUN_0056fd00
     CALL dword ptr [0x005c2054]         ; 0056fd01 | PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2054
     CALL dword ptr [0x005c2058]         ; 0056fd07 | PTR_crt_unknown.c_ExitHookStub_FUN_0056fcd0_005c2058
-    CMP dword ptr [0x005c1d94],0x0      ; 0056fd0d | DAT_005c1d94
+    CMP dword ptr [0x005c1d94],0x0      ; 0056fd0d | g_PTR_005c1d94
     JZ 0x0056fd1c                       ; 0056fd14
         ;   XREF to: 0056fd1c (CONDITIONAL_JUMP)  ; LAB_0056fd1c
-    CALL dword ptr [0x005c1d94]         ; 0056fd16 | DAT_005c1d94
+    CALL dword ptr [0x005c1d94]         ; 0056fd16 | g_PTR_005c1d94
     MOV EBX,dword ptr [ESP + 0x8]       ; 0056fd1c
         ;   Label: LAB_0056fd1c
     PUSH EBX                            ; 0056fd20

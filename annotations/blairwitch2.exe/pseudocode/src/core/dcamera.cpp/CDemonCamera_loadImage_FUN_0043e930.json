@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 764,
+    "complexity_score": 765,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 60,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 469,
+    "pseudocode_lines": 470,
     "suspect_count": 27,
     "suspect_types": [
       "pointer_cast",
@@ -16,7 +16,7 @@
       "unrolled_strchr",
       "unrolled_strcpy"
     ],
-    "total_lines": 1547
+    "total_lines": 1548
   },
   "cross_references": [
     {
@@ -342,19 +342,19 @@
     },
     {
       "addr": "01326d20",
-      "name": "g_CHAR_ARRAY_01326d20",
-      "type": "char[76797]",
+      "name": "g_SFogImagePlane_01326d20",
+      "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "01326d21",
-      "name": "g_CHAR_ARRAY_01326d20+1",
+      "name": "g_SFogImagePlane_01326d20.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01326e60",
-      "name": "g_CHAR_ARRAY_01326d20+0x140",
+      "name": "g_SFogImagePlane_01326d20.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -878,7 +878,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 262,
+      "line": 263,
       "match": "(uint *)((int)g_UINT_ARRAY_00b65f9c",
       "severity": "moderate",
       "text": "*(uint *)((int)g_UINT_ARRAY_00b65f9c + iVar6) = uVar23;",
@@ -886,7 +886,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 273,
+      "line": 274,
       "match": "(int *)((int)this_ptr",
       "severity": "moderate",
       "text": "piVar27 = (int *)((int)this_ptr->framebuffer_aligned + local_20);",
@@ -894,7 +894,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 403,
+      "line": 404,
       "match": "(char *)((int)g_UINT_ARRAY_014b3550",
       "severity": "moderate",
       "text": "*(char *)((int)g_UINT_ARRAY_014b3550 + iVar14) =",
@@ -902,7 +902,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 424,
+      "line": 425,
       "match": "(uint *)((int)puVar13",
       "severity": "moderate",
       "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar32 * -2 + 1);",
@@ -910,7 +910,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 425,
+      "line": 426,
       "match": "(uint *)((int)puVar28",
       "severity": "moderate",
       "text": "puVar28 = (uint *)((int)puVar28 + (uint)bVar32 * -2 + 1);",
@@ -918,7 +918,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 431,
+      "line": 432,
       "match": "(SRGBColorPalette *)((int)pSVar24",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -8 + 4);",
@@ -926,7 +926,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 432,
+      "line": 433,
       "match": "(SRGBColorPalette *)((int)pSVar29",
       "severity": "moderate",
       "text": "pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -8 + 4);",
@@ -934,7 +934,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 436,
+      "line": 437,
       "match": "(SRGBColorPalette *)((int)pSVar24",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -2 + 1);",
@@ -942,7 +942,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 437,
+      "line": 438,
       "match": "(SRGBColorPalette *)((int)pSVar29",
       "severity": "moderate",
       "text": "pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -2 + 1);",
@@ -950,7 +950,7 @@
     },
     {
       "description": "Pointer value `puVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 424,
+      "line": 425,
       "match": "(int)puVar13",
       "severity": "moderate",
       "text": "puVar13 = (uint *)((int)puVar13 + (uint)bVar32 * -2 + 1);",
@@ -958,7 +958,7 @@
     },
     {
       "description": "Pointer value `puVar28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 425,
+      "line": 426,
       "match": "(int)puVar28",
       "severity": "moderate",
       "text": "puVar28 = (uint *)((int)puVar28 + (uint)bVar32 * -2 + 1);",
@@ -966,7 +966,7 @@
     },
     {
       "description": "Pointer value `pSVar24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 431,
+      "line": 432,
       "match": "(int)pSVar24",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -8 + 4);",
@@ -974,7 +974,7 @@
     },
     {
       "description": "Pointer value `pSVar29` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 432,
+      "line": 433,
       "match": "(int)pSVar29",
       "severity": "moderate",
       "text": "pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -8 + 4);",
@@ -982,7 +982,7 @@
     },
     {
       "description": "Pointer value `pSVar24` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 436,
+      "line": 437,
       "match": "(int)pSVar24",
       "severity": "moderate",
       "text": "pSVar24 = (SRGBColorPalette *)((int)pSVar24 + (uint)bVar32 * -2 + 1);",
@@ -990,7 +990,7 @@
     },
     {
       "description": "Pointer value `pSVar29` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 437,
+      "line": 438,
       "match": "(int)pSVar29",
       "severity": "moderate",
       "text": "pSVar29 = (SRGBColorPalette *)((int)pSVar29 + (uint)bVar32 * -2 + 1);",
@@ -1030,7 +1030,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 417,
+      "line": 418,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0x4000; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -1038,7 +1038,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 422,
+      "line": 423,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -1046,7 +1046,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 429,
+      "line": 430,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {",
@@ -1054,7 +1054,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 434,
+      "line": 435,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {",

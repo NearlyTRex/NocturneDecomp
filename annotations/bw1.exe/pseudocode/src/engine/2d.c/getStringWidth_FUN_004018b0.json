@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strlen"
     ],
     "total_lines": 81
@@ -69,8 +68,8 @@
   "globals": [
     {
       "addr": "00608570",
-      "name": "DAT_00608570",
-      "type": "undefined4",
+      "name": "g_SFontGlyph_ARRAY_00608570",
+      "type": "SFontGlyph[224]",
       "value": null
     }
   ],
@@ -235,14 +234,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_00608570",
-      "severity": "mild",
-      "text": "iVar6 = iVar6 + (byte)(&DAT_00608570)[(bVar2 - 0x20) * 0x91] + 1;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
       "line": 19,

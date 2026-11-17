@@ -2,13 +2,13 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 349,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 27,
+    "pseudocode_lines": 33,
+    "suspect_count": 26,
     "suspect_types": [
       "carry_arith_idiom",
       "concat_reconstruction",
@@ -17,10 +17,9 @@
       "unknown_type",
       "unresolved_funcptr",
       "warning_indirect_jump",
-      "warning_jumptable",
-      "warning_overlapping_globals"
+      "warning_jumptable"
     ],
-    "total_lines": 166
+    "total_lines": 165
   },
   "cross_references": [
     {
@@ -56,63 +55,63 @@
   "globals": [
     {
       "addr": "005c4084",
-      "name": "DAT_005c4084",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005c4084",
+      "type": "double",
+      "value": "1"
     },
     {
       "addr": "005c4094",
-      "name": "PTR_crt_unknown.c_FUN_00570eb0_005c4094",
-      "type": "undefined1*",
-      "value": "00570eb0"
+      "name": "g_ARRAY_PTR_005c4094",
+      "type": "void*[8]",
+      "value": null
     },
     {
       "addr": "005c40c8",
-      "name": "DAT_005c40c8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c40c8",
+      "type": "float",
+      "value": "16"
     },
     {
       "addr": "005c40cc",
-      "name": "DAT_005c40cc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c40cc",
+      "type": "float",
+      "value": "0.0625"
     },
     {
       "addr": "005c40d0",
-      "name": "DAT_005c40d0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c40d0",
+      "type": "float10",
+      "value": "-0.3333333333333333333"
     },
     {
       "addr": "005c40da",
-      "name": "DAT_005c40da",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c40da",
+      "type": "float10",
+      "value": "0.1999999999999994471"
     },
     {
       "addr": "005c40e4",
-      "name": "DAT_005c40e4",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c40e4",
+      "type": "float10",
+      "value": "-0.1428571428555127940"
     },
     {
       "addr": "005c40ee",
-      "name": "DAT_005c40ee",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c40ee",
+      "type": "float10",
+      "value": "0.1111111089064621512"
     },
     {
       "addr": "005c40f8",
-      "name": "DAT_005c40f8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c40f8",
+      "type": "float10",
+      "value": "-0.09090758475228815823"
     },
     {
       "addr": "005c4102",
-      "name": "DAT_005c4102",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT10_005c4102",
+      "type": "float10",
+      "value": "0.07641690805844016167"
     },
     {
       "addr": "005c410c",
@@ -246,16 +245,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 7,
+      "line": 5,
       "match": "in_EAX",
       "severity": "mild",
       "text": "uint in_EAX;",
@@ -263,7 +254,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 6,
       "match": "in_EDX",
       "severity": "mild",
       "text": "uint in_EDX;",
@@ -271,7 +262,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 10,
+      "line": 8,
       "match": "in_ST0",
       "severity": "mild",
       "text": "float10 in_ST0;",
@@ -279,7 +270,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 11,
+      "line": 9,
       "match": "in_ST1",
       "severity": "mild",
       "text": "float10 in_ST1;",
@@ -287,7 +278,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 18,
+      "line": 16,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_20 = (uint)((unkuint10)in_ST0 >> 0x20);",
@@ -295,7 +286,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 18,
+      "line": 16,
       "match": "in_ST0",
       "severity": "mild",
       "text": "uStack_20 = (uint)((unkuint10)in_ST0 >> 0x20);",
@@ -303,7 +294,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 19,
+      "line": 17,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_1c = (ushort)((unkuint10)in_ST0 >> 0x40);",
@@ -311,7 +302,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 19,
+      "line": 17,
       "match": "in_ST0",
       "severity": "mild",
       "text": "uStack_1c = (ushort)((unkuint10)in_ST0 >> 0x40);",
@@ -319,7 +310,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 20,
+      "line": 18,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_2c = (uint)((unkuint10)in_ST1 >> 0x20);",
@@ -327,7 +318,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 20,
+      "line": 18,
       "match": "in_ST1",
       "severity": "mild",
       "text": "uStack_2c = (uint)((unkuint10)in_ST1 >> 0x20);",
@@ -335,7 +326,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 21,
+      "line": 19,
       "match": "unkuint10",
       "severity": "mild",
       "text": "uStack_28 = (ushort)((unkuint10)in_ST1 >> 0x40);",
@@ -343,7 +334,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 21,
+      "line": 19,
       "match": "in_ST1",
       "severity": "mild",
       "text": "uStack_28 = (ushort)((unkuint10)in_ST1 >> 0x40);",
@@ -351,7 +342,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "CARRY4(uStack_2c,uStack_2c)",
       "severity": "moderate",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
@@ -359,7 +350,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "CARRY4(uStack_20,uStack_20)",
       "severity": "moderate",
       "text": "if ((((CARRY4(uStack_2c,uStack_2c)) && (CARRY4(uStack_20,uStack_20))) &&",
@@ -367,7 +358,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 26,
+      "line": 24,
       "match": "in_ST0",
       "severity": "mild",
       "text": "uVar1 = (uint)(ABS(in_ST0) <= ABS(in_ST1));",
@@ -375,7 +366,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 26,
+      "line": 24,
       "match": "in_ST1",
       "severity": "mild",
       "text": "uVar1 = (uint)(ABS(in_ST0) <= ABS(in_ST1));",
@@ -383,7 +374,7 @@
     },
     {
       "description": "Jump table recovery failed",
-      "line": 29,
+      "line": 27,
       "match": "WARNING: Could not recover jumptable",
       "severity": "mild",
       "text": "/* WARNING: Could not recover jumptable at 0x00570ea9. Too many branches */",
@@ -391,7 +382,7 @@
     },
     {
       "description": "Indirect jump treated as call",
-      "line": 30,
+      "line": 28,
       "match": "WARNING: Treating indirect jump as call",
       "severity": "mild",
       "text": "/* WARNING: Treating indirect jump as call */",
@@ -399,15 +390,15 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 29,
       "match": "code *",
       "severity": "moderate",
-      "text": "uVar2 = (*(code *)(&PTR_crt_unknown_c_FUN_00570eb0_005c4094)",
+      "text": "uVar2 = (*(code *)g_ARRAY_PTR_005c4094",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 32,
+      "line": 30,
       "match": "CARRY4((uint)",
       "severity": "moderate",
       "text": "[(uVar1 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) *",
@@ -415,7 +406,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 33,
+      "line": 31,
       "match": "CARRY4((uint)",
       "severity": "moderate",
       "text": "2 + (uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();",
@@ -423,7 +414,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 36,
+      "line": 34,
       "match": "in_ST1",
       "severity": "mild",
       "text": "fpatan(in_ST1,in_ST0);",
@@ -431,7 +422,7 @@
     },
     {
       "description": "FPU register input (calling convention issue)",
-      "line": 36,
+      "line": 34,
       "match": "in_ST0",
       "severity": "mild",
       "text": "fpatan(in_ST1,in_ST0);",
@@ -439,7 +430,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_EDX",
       "severity": "mild",
       "text": "return CONCAT44(in_EDX,in_EAX);",
@@ -447,7 +438,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_EAX",
       "severity": "mild",
       "text": "return CONCAT44(in_EDX,in_EAX);",
@@ -455,7 +446,7 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 37,
+      "line": 35,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(in_EDX,in_EAX);",

@@ -18,10 +18,10 @@
 ;   ... and 35 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c3f68
-;   undefined4 DAT_005c3f78
-;   undefined4 DAT_005c3f7c
-;   undefined4 DAT_005c3f80
+;   byte[16] g_BYTE_ARRAY_005c3f68
+;   float g_FLOAT_005c3f78 = 0.9375
+;   float g_FLOAT_005c3f7c = 1.0625
+;   float g_FLOAT_005c3f80 = 9.223372E+18
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     RET                                 ; 0056be72
     SHR EAX,0x1c                        ; 0056be73
         ;   Label: LAB_0056be73
-    CMP byte ptr [EAX + 0x5c3f68],0x0   ; 0056be76 | DAT_005c3f68
+    CMP byte ptr [EAX + 0x5c3f68],0x0   ; 0056be76 | g_BYTE_ARRAY_005c3f68
     JNZ 0x0056be82                      ; 0056be7d
         ;   XREF to: 0056be82 (CONDITIONAL_JUMP)  ; LAB_0056be82
     FDIVP                               ; 0056be7f
@@ -67,17 +67,17 @@ section .text
     CMP EAX,0x1                         ; 0056beb7
     JZ 0x0056bed3                       ; 0056beba
         ;   XREF to: 0056bed3 (CONDITIONAL_JUMP)  ; LAB_0056bed3
-    FMUL float ptr [0x005c3f78]         ; 0056bebc | DAT_005c3f78
+    FMUL float ptr [0x005c3f78]         ; 0056bebc | g_FLOAT_005c3f78
     FXCH                                ; 0056bec2
-    FMUL float ptr [0x005c3f78]         ; 0056bec4 | DAT_005c3f78
+    FMUL float ptr [0x005c3f78]         ; 0056bec4 | g_FLOAT_005c3f78
     FXCH                                ; 0056beca
     FLDCW word ptr [ESP + 0x1c]         ; 0056becc
     FDIVP                               ; 0056bed0
     RET                                 ; 0056bed2
-    FMUL float ptr [0x005c3f7c]         ; 0056bed3 | DAT_005c3f7c
+    FMUL float ptr [0x005c3f7c]         ; 0056bed3 | g_FLOAT_005c3f7c
         ;   Label: LAB_0056bed3
     FXCH                                ; 0056bed9
-    FMUL float ptr [0x005c3f7c]         ; 0056bedb | DAT_005c3f7c
+    FMUL float ptr [0x005c3f7c]         ; 0056bedb | g_FLOAT_005c3f7c
     FXCH                                ; 0056bee1
     FLDCW word ptr [ESP + 0x1c]         ; 0056bee3
     FDIVP                               ; 0056bee7
@@ -123,7 +123,7 @@ section .text
         ;   Label: LAB_0056bf40
     FSTP ST0                            ; 0056bf42
     FLD ST0                             ; 0056bf44
-    FMUL float ptr [0x005c3f80]         ; 0056bf46 | DAT_005c3f80
+    FMUL float ptr [0x005c3f80]         ; 0056bf46 | g_FLOAT_005c3f80
     FSTP extended double ptr [ESP + 0x4] ; 0056bf4c
     FLD extended double ptr [ESP + 0x10] ; 0056bf50
     FXCH                                ; 0056bf54

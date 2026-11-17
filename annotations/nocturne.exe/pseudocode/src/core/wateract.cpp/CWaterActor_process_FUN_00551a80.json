@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 73,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 58,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 172
   },
   "cross_references": [],
@@ -83,9 +81,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "01cc4800",
@@ -208,16 +206,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 24,
-      "match": "0x1c03a10",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C03A10;",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

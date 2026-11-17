@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_updateArmRecoilBlend_FUN_0053ecc0(CStranger *this_ptr,float delta_time,int is_weapon_active)
 
 {
@@ -111,7 +109,7 @@ LAB_0053ee02:
     local_8c.z = pCVar4->z;
   }
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                     (&(this_ptr->base).base.model,&local_bc,_DAT_02dc9f54);
+                     (&(this_ptr->base).base.model,&local_bc,g_INT_ARRAY_02dc9f50[1]);
   pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                      ((CDemonActor *)this_ptr,&local_80,pCVar4);
   if (&local_5c != pCVar4) {
@@ -133,7 +131,7 @@ LAB_0053ee02:
     local_f8 = fVar1;
   }
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                     (&(this_ptr->base).base.model,&local_50,_DAT_02dc9f58);
+                     (&(this_ptr->base).base.model,&local_50,g_INT_ARRAY_02dc9f50[2]);
   pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                      ((CDemonActor *)this_ptr,&local_44,pCVar4);
   if (&local_5c != pCVar4) {

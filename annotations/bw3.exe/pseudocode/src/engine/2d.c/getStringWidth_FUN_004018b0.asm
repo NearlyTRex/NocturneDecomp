@@ -15,7 +15,7 @@
 ;   engine_2d.c_wrapTextToWidth_FUN_00401d90 at 00401dea
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8840
+;   SFontGlyph[224] g_SFontGlyph_ARRAY_005e8840
 ;
 ; *****************************************************************************
 
@@ -57,7 +57,7 @@ section .text
         ;   XREF to: 004018d7 (CONDITIONAL_JUMP)  ; LAB_004018d7
     SUB EAX,0x20                        ; 004018e2
     IMUL EAX,EAX,0x91                   ; 004018e5
-    MOV AL,byte ptr [EAX + 0x5e8840]    ; 004018eb | DAT_005e8840
+    MOV AL,byte ptr [EAX + 0x5e8840]    ; 004018eb | g_SFontGlyph_ARRAY_005e8840
     AND EAX,0xff                        ; 004018f1
     INC EAX                             ; 004018f6
     ADD ESI,EAX                         ; 004018f7

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcard_pattern)
 
 {
@@ -18,9 +16,9 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
   int iVar4;
   
   index = 0;
-  _DAT_02dc9620 = 0;
+  g_INT_02dc9620 = 0;
   if (g_CStrList_02dc9610.item_count < 1) {
-    _DAT_02dc9620 = 0;
+    g_INT_02dc9620 = 0;
     return;
   }
   do {
@@ -29,7 +27,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
     iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_004775b0(wildcard_pattern,pcVar2,iVar4);
     if (iVar4 != 0) {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00474080(&g_CStrList_02dc9610,index);
-      pcVar3 = (char *)(_DAT_02dc9620 * 0x28 + 0x2dc9628);
+      pcVar3 = g_CHAR_ARRAY_ARRAY_02dc9628[g_INT_02dc9620];
       do {
         cVar1 = *pcVar2;
         *pcVar3 = cVar1;
@@ -39,8 +37,8 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_0052c930(char *wildcar
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      _DAT_02dc9620 = _DAT_02dc9620 + 1;
-      if (0x27 < _DAT_02dc9620) {
+      g_INT_02dc9620 = g_INT_02dc9620 + 1;
+      if (0x27 < g_INT_02dc9620) {
         return;
       }
     }

@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
     "pseudocode_lines": 37,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "flattened_array_index"
+    ],
     "total_lines": 114
   },
   "cross_references": [
@@ -140,5 +142,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "'g_CHAR_ARRAY_ARRAY_00aafdb8[0][iVar1]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar1 is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 25,
+      "severity": "major",
+      "text": "g_CHAR_ARRAY_ARRAY_00aafdb8[0][iVar1] = '\\0';",
+      "type": "flattened_array_index"
+    }
+  ]
 }

@@ -49,7 +49,7 @@ section .text
     PUSH EBX                            ; 004c6700
     CALL core_actor.cpp_CDemonActor_archive_FUN_0040d2d0 ; 004c6701
         ;   XREF to: 0040d2d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_archive_FUN_0040d2d0(CDemonActor * this_ptr)
-    MOV EDX,dword ptr [0x00763e88]      ; 004c6706 | DAT_00763e88
+    MOV EDX,dword ptr [0x00763e88]      ; 004c6706 | g_INT_00763e88
     ADD ESP,0x4                         ; 004c670c
     LEA EDI,[EBX + 0x150]               ; 004c670f
     CMP EDX,0x1                         ; 004c6715

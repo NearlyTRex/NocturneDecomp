@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 72,
+    "complexity_score": 27,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 11,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 79
   },
   "cross_references": [
@@ -163,14 +161,14 @@
     },
     {
       "addr": "00763e88",
-      "name": "DAT_00763e88",
-      "type": "undefined4",
+      "name": "g_INT_00763e88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00763e8c",
-      "name": "DAT_00763e8c",
-      "type": "undefined4",
+      "name": "g_CDemonActor_PTR_00763e8c",
+      "type": "CDemonActor*",
       "value": null
     },
     {
@@ -380,38 +378,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "pCVar1 = DAT_00763e8c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "if (DAT_00763e8c != (CDemonActor *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00763e8c",
-      "severity": "mild",
-      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00409fa0(DAT_00763e8c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "if (DAT_00763e88 == 2) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

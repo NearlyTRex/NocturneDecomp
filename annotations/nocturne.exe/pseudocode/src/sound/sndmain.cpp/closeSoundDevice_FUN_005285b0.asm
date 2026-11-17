@@ -9,8 +9,8 @@
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_00528500 at 00528501
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8318
-;   undefined4 DAT_02dc8320
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
+;   int g_INT_02dc8320
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00523a60
@@ -39,7 +39,7 @@ section .text
     CMP EBX,ESI                         ; 005285d5
     JNZ 0x005285c6                      ; 005285d7
         ;   XREF to: 005285c6 (CONDITIONAL_JUMP)  ; LAB_005285c6
-    MOV EDX,dword ptr [0x02dc8318]      ; 005285d9 | DAT_02dc8318
+    MOV EDX,dword ptr [0x02dc8318]      ; 005285d9 | g_CSoundDevice_PTR_02dc8318
     TEST EDX,EDX                        ; 005285df
     JNZ 0x005285eb                      ; 005285e1
         ;   XREF to: 005285eb (CONDITIONAL_JUMP)  ; LAB_005285eb
@@ -58,8 +58,8 @@ section .text
         ;   XREF to: 005285e8 (CONDITIONAL_JUMP)  ; LAB_005285e8
     XOR ECX,ECX                         ; 005285f7
     MOV EAX,0x1                         ; 005285f9
-    MOV dword ptr [0x02dc8320],ECX      ; 005285fe | DAT_02dc8320
-    MOV dword ptr [0x02dc8318],ECX      ; 00528604 | DAT_02dc8318
+    MOV dword ptr [0x02dc8320],ECX      ; 005285fe | g_INT_02dc8320
+    MOV dword ptr [0x02dc8318],ECX      ; 00528604 | g_CSoundDevice_PTR_02dc8318
     POP ESI                             ; 0052860a
     POP EBX                             ; 0052860b
     RET                                 ; 0052860c

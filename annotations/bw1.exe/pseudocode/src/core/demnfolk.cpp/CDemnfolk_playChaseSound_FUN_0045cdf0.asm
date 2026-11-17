@@ -13,10 +13,10 @@
 ;   undefined4 s_demn_005d82cd+3
 ;   TerminatedCString s_chase_wav_2_005d82d3
 ;   undefined4 s_chase_wav_2_005d82d3+1
-;   undefined1 DAT_005d82e3
-;   undefined1 DAT_005d82e4
-;   undefined1 DAT_005d82e5
-;   TerminatedCString s_unt_wav_2_005d82e6
+;   TerminatedCString s_taunt_wav_2_005d82e3
+;   undefined4 s_taunt_wav_2_005d82e3+1
+;   undefined4 s_taunt_wav_2_005d82e3+2
+;   undefined4 s_taunt_wav_2_005d82e3+3
 ;   undefined4 DAT_0152c320
 ;   undefined4 DAT_0152c321
 ;   undefined4 DAT_0152c322
@@ -82,7 +82,7 @@ section .text
     TEST EAX,EAX                        ; 0045ce50
     JNZ 0x0045ce92                      ; 0045ce52
         ;   XREF to: 0045ce92 (CONDITIONAL_JUMP)  ; LAB_0045ce92
-    MOV ESI,0x5d82e3                    ; 0045ce54 | DAT_005d82e3
+    MOV ESI,0x5d82e3                    ; 0045ce54 | = "_taunt?.wav @ 2"
     PUSH EDI                            ; 0045ce59 | DAT_0152c320
         ;   Label: LAB_0045ce59
     SUB ECX,ECX                         ; 0045ce5a
@@ -90,13 +90,13 @@ section .text
     MOV AL,0x0                          ; 0045ce5d
     SCASB.REPNE ES:EDI                  ; 0045ce5f | DAT_0152c320 | DAT_0152c321
     DEC EDI                             ; 0045ce61
-    MOV AL,byte ptr [ESI]               ; 0045ce62 | DAT_005d82e3 | DAT_005d82e5 | = "_chase?.wav @ 2"
+    MOV AL,byte ptr [ESI]               ; 0045ce62 | = "_taunt?.wav @ 2" | s_taunt_wav_2_005d82e3+2 | s_chase_wav_2_005d82d3
         ;   Label: LAB_0045ce62
     MOV byte ptr [EDI],AL               ; 0045ce64 | DAT_0152c320 | DAT_0152c322 | DAT_0152c321
     CMP AL,0x0                          ; 0045ce66
     JZ 0x0045ce7a                       ; 0045ce68
         ;   XREF to: 0045ce7a (CONDITIONAL_JUMP)  ; LAB_0045ce7a
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045ce6a | DAT_005d82e4 | = "unt?.wav @ 2" | s_chase_wav_2_005d82d3+1
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045ce6a | s_taunt_wav_2_005d82e3+1 | s_taunt_wav_2_005d82e3+3 | s_chase_wav_2_005d82d3+1
     ADD ESI,0x2                         ; 0045ce6d
     MOV byte ptr [EDI + 0x1],AL         ; 0045ce70 | DAT_0152c321 | DAT_0152c323 | DAT_0152c322
     ADD EDI,0x2                         ; 0045ce73

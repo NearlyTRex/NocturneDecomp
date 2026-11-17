@@ -16,10 +16,10 @@ void __cdecl core_path_cpp_queuePop_FUN_00511c10(int *out_x,int *out_cost,int *o
     g_INT_01d046a4 = 0xdf;
     core_main_c_displayErrorAndQuit_FUN_004e4500("queuePop - empty queue?!");
   }
-  *out_x = g_INT_ARRAY_01e5020c[g_INT_01e5ec6c * 3];
-  *out_cost = *(int *)(&DAT_01e50210 + g_INT_01e5ec6c * 0xc);
+  *out_x = g_CPathQueueNode_ARRAY_01e5020c[g_INT_01e5ec6c].x;
+  *out_cost = g_CPathQueueNode_ARRAY_01e5020c[g_INT_01e5ec6c].cost;
   iVar1 = g_INT_01e5ec6c + 1;
-  *out_z = *(int *)(&DAT_01e50214 + g_INT_01e5ec6c * 0xc);
+  *out_z = g_CPathQueueNode_ARRAY_01e5020c[g_INT_01e5ec6c].z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }

@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 149,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 10,
+    "pseudocode_lines": 26,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
-      "undefined_data",
-      "unresolved_funcptr"
+      "stack_param"
     ],
-    "total_lines": 109
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -66,8 +64,8 @@
     },
     {
       "addr": "02dc9244",
-      "name": "DAT_02dc9244",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_ARRAY_02dc9244",
+      "type": "IDirectSoundBuffer*[25]",
       "value": null
     }
   ],
@@ -177,79 +175,55 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 8,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "CSfxSample *in_stack_00000014;",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000014);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "DAT_02dc9244",
-      "severity": "mild",
-      "text": "if (((0 < buffer_id) && (buffer_id < 0x19)) && (*(int *)(&DAT_02dc9244 + buffer_id * 4) != 0)) {",
-      "type": "undefined_data"
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "size * iVar1,&in_stack_00000014->locked_ptr1,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "&in_stack_00000014->locked_bytes1,&in_stack_00000014->locked_ptr2,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "severity": "moderate",
+      "text": "&in_stack_00000014->locked_bytes1,&in_stack_00000014->locked_ptr2,",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000014",
       "severity": "moderate",
-      "text": "iStack_1b4 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "puStack_1a0 = &in_stack_00000014->locked_bytes2;",
+      "text": "&in_stack_00000014->locked_bytes2,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "ppvStack_1a4 = &in_stack_00000014->locked_ptr2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "puStack_1a8 = &in_stack_00000014->locked_bytes1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "severity": "moderate",
-      "text": "ppvStack_1ac = &in_stack_00000014->locked_ptr1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_02dc9244",
-      "severity": "mild",
-      "text": "piStack_1b8 = *(int **)(&DAT_02dc9244 + buffer_id * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 26,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "error_code = (**(code **)(*piStack_1b8 + 0x2c))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "return in_stack_00000014->locked_ptr1;",

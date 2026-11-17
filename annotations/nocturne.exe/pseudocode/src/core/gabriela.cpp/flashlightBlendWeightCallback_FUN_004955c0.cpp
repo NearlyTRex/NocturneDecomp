@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float __cdecl core_gabriela_cpp_flashlightBlendWeightCallback_FUN_004955c0(int current_bone_index,int target_bone_index,float blend_weight,int hierarchy_distance,CDeformableModelInstance *instance)
 
 {
   uint local_c;
   
-  local_c = blend_weight * _DAT_01c71394;
+  local_c = blend_weight * g_FLOAT_01c71394;
   if (hierarchy_distance < 1) {
     local_c = local_c * (float)0.69999999999999996;
   }

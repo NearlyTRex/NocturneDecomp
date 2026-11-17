@@ -51,7 +51,7 @@
 ;   TerminatedCString s_core_skeleton_cpp_00591a59
 ;   TerminatedCString s_CDeformableModel_shatter_00591a6e
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   undefined4 DAT_005a1eb0
+;   float g_FLOAT_005a1eb0 = 0.00390625
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -61,7 +61,7 @@
 ;   undefined4 g_CVector3f_ARRAY_02684234[1].x
 ;   undefined4 g_CVector3f_ARRAY_02684234[1].y
 ;   undefined4 g_CVector3f_ARRAY_02684234[1].z
-;   undefined4 DAT_0268ced4
+;   uchar g_UCHAR_0268ced4
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [ESP + 0xcc],EDX      ; 0051a79c
     CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0 ; 0051a7a3
         ;   XREF to: 0044d7a0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
-    MOV AH,byte ptr [0x0268ced4]        ; 0051a7a8 | DAT_0268ced4
+    MOV AH,byte ptr [0x0268ced4]        ; 0051a7a8 | g_UCHAR_0268ced4
     ADD ESP,0x8                         ; 0051a7ae
     TEST AH,0x1                         ; 0051a7b1
     JZ 0x0051abbd                       ; 0051a7b4
@@ -126,13 +126,13 @@ section .text
         ;   Label: LAB_0051a82c
     MOV EBX,ESI                         ; 0051a82e
     FILD dword ptr [EAX]                ; 0051a830
-    FMUL float ptr [0x005a1eb0]         ; 0051a832 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051a832 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051a838 | g_CVector3f_ARRAY_02684234 | g_CVector3f_ARRAY_02684234[1].x
     FILD dword ptr [EAX + 0x4]          ; 0051a83a
-    FMUL float ptr [0x005a1eb0]         ; 0051a83d | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051a83d | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051a843 | g_CVector3f_ARRAY_02684234[0].y | g_CVector3f_ARRAY_02684234[1].y
     FILD dword ptr [EAX + 0x8]          ; 0051a846
-    FMUL float ptr [0x005a1eb0]         ; 0051a849 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051a849 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051a84f | g_CVector3f_ARRAY_02684234[0].z | g_CVector3f_ARRAY_02684234[1].z
     PUSH ESI                            ; 0051a852 | g_CVector3f_ARRAY_02684234 | g_CVector3f_ARRAY_02684234[1].x
     LEA EAX,[ESP + 0x74]                ; 0051a853
@@ -366,7 +366,7 @@ section .text
     PUSH 0xbb8                          ; 0051abc4
     OR DL,0x1                           ; 0051abc9
     PUSH 0x2684234                      ; 0051abcc | g_CVector3f_ARRAY_02684234
-    MOV byte ptr [0x0268ced4],DL        ; 0051abd1 | DAT_0268ced4
+    MOV byte ptr [0x0268ced4],DL        ; 0051abd1 | g_UCHAR_0268ced4
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 0051abd7
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 0051abdc

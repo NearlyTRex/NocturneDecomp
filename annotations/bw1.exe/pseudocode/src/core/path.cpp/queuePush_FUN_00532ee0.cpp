@@ -11,12 +11,12 @@ void __cdecl core_path_cpp_queuePush_FUN_00532ee0(int grid_x,int cost,int grid_z
 {
   int iVar1;
   
-  g_CHAR_ARRAY_01e7abe8[grid_z * 100 + grid_x] = direction;
+  g_CHAR_ARRAY_ARRAY_01e7abe8[grid_z][grid_x] = direction;
   g_INT_01e7d35c = g_INT_01e7d35c + 1;
-  g_INT_ARRAY_01e6c17c[g_INT_01e7abe0 * 3] = grid_x;
-  *(int *)(&DAT_01e6c180 + g_INT_01e7abe0 * 0xc) = cost;
+  g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abe0].x = grid_x;
+  g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abe0].cost = cost;
   iVar1 = g_INT_01e7abe0 + 1;
-  *(int *)(&DAT_01e6c184 + g_INT_01e7abe0 * 0xc) = grid_z;
+  g_CPathQueueNode_ARRAY_01e6c17c[g_INT_01e7abe0].z = grid_z;
   if (4999 < iVar1) {
     iVar1 = 0;
   }

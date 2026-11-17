@@ -27,7 +27,7 @@ void __cdecl core_sound_cpp_filterSoundFilesByPattern_FUN_00558cb0(char *wildcar
     iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840(wildcard_pattern,pcVar2,iVar4);
     if (iVar4 != 0) {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(&g_CStrListInstance,index);
-      pcVar3 = g_CHAR_ARRAY_0264b468 + g_INT_0264b460 * 0x28;
+      pcVar3 = g_CHAR_ARRAY_ARRAY_0264b468[g_INT_0264b460];
       do {
         cVar1 = *pcVar2;
         *pcVar3 = cVar1;

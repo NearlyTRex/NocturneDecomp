@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 45,
+    "complexity_score": 14,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 43
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 42
   },
   "cross_references": [
     {
@@ -57,8 +54,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -69,8 +66,8 @@
     },
     {
       "addr": "01fba480",
-      "name": "DAT_01fba480",
-      "type": "undefined4",
+      "name": "g_INT_01fba480",
+      "type": "int",
       "value": null
     }
   ],
@@ -170,22 +167,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 12,
-      "match": "*(CDemonGlobe **)(_DAT_01fba480 * 4 + 0x1fba484",
-      "severity": "moderate",
-      "text": "*(CDemonGlobe **)(_DAT_01fba480 * 4 + 0x1fba484) = globe;",
-      "type": "raw_address_pointer_store"
-    }
-  ]
+  "suspects": []
 }

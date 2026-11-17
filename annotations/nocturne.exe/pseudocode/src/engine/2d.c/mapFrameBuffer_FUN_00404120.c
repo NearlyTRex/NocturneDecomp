@@ -11,7 +11,7 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
 {
   int iVar1;
   
-  if (DAT_006b023c != 0) {
+  if (g_INT_006b023c != 0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 2456;
     core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - already mapped!");
@@ -47,19 +47,19 @@ int __cdecl engine_2d_c_mapFrameBuffer_FUN_00404120(void *frame_buffer,int width
     g_CurrentLineNumber = 2468;
     core_main_c_displayErrorAndQuit_FUN_004c8440("mapFrameBuffer - invalid buffer!");
   }
-  DAT_006b023c = g_WindowWidth;
-  DAT_006b0240 = g_WindowHeight;
-  DAT_006b0244 = g_ClipLeft;
+  g_INT_006b023c = g_WindowWidth;
+  g_INT_006b0240 = g_WindowHeight;
+  g_INT_006b0244 = g_ClipLeft;
   g_WindowWidth = width;
-  DAT_006b0248 = g_ClipTop;
-  DAT_006b024c = g_ClipRight;
+  g_INT_006b0248 = g_ClipTop;
+  g_INT_006b024c = g_ClipRight;
   g_WindowHeight = height;
-  DAT_006b0250 = g_ClipBottom;
+  g_INT_006b0250 = g_ClipBottom;
   g_ClipLeft = 0;
-  DAT_006b0254 = g_BitsPerPixel;
+  g_INT_006b0254 = g_BitsPerPixel;
   g_ClipTop = 0;
-  DAT_006b0258 = g_ScreenBufferArray[0];
-  DAT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
+  g_PTR_006b0258 = g_ScreenBufferArray[0];
+  g_INT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   g_BitsPerPixel = bits_per_pixel;
   iVar1 = height + -1;
   g_ClipRight = width + -1;

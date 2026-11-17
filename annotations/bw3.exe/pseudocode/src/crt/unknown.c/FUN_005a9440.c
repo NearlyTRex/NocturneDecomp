@@ -28,8 +28,8 @@ DWORD FUN_005a9440(uint param_1,LPVOID param_2,DWORD param_3)
         return uVar2;
       }
     }
-    BVar3 = ReadFile(*(HANDLE *)(DAT_00607bdc + param_1 * 4),param_2,param_3,&DStack_14,
-                     (LPOVERLAPPED)0x0);
+    BVar3 = ReadFile(g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1],param_2,param_3,
+                     &DStack_14,(LPOVERLAPPED)0x0);
     if (BVar3 == 0) {
       (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1);
       uVar2 = FUN_005ab46c();

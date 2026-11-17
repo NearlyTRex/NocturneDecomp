@@ -50,8 +50,8 @@
 ;   TerminatedCString s_SfxSlot_mix_must_be_lock_00592f63
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc8340
-;   undefined4 DAT_02dc84bc
+;   undefined4 g_FLOAT_PTR_ARRAY_02dc833c[1]
+;   int g_INT_02dc84bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -76,7 +76,7 @@ section .text
     SUB ESP,0xb0                        ; 00524d16
     AND ESP,0xfffffff8                  ; 00524d1c
     MOV EDI,dword ptr [EBP + 0x14]      ; 00524d1f
-    CMP dword ptr [0x02dc84bc],0x0      ; 00524d22 | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 00524d22 | g_INT_02dc84bc
     JLE 0x00524e7e                      ; 00524d29
         ;   XREF to: 00524e7e (CONDITIONAL_JUMP)  ; LAB_00524e7e
     CMP dword ptr [EDI + 0x70],0x0      ; 00524d2f
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 00524ec9 (CONDITIONAL_JUMP)  ; LAB_00524ec9
     MOV EAX,dword ptr [ECX + EBP*0x1 + 0x18] ; 00524dec
     MOV dword ptr [ESP + ECX*0x1 + 0x1c],EAX ; 00524df0
-    MOV EAX,dword ptr [ECX + 0x2dc833c] ; 00524df4 | DAT_02dc8340
+    MOV EAX,dword ptr [ECX + 0x2dc833c] ; 00524df4 | g_FLOAT_PTR_ARRAY_02dc833c[1]
     MOV dword ptr [ECX + EBP*0x1 + 0x18],EAX ; 00524dfa
     MOV EAX,dword ptr [EBP + 0x38]      ; 00524dfe
     SHL EAX,0x2                         ; 00524e01

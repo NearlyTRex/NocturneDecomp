@@ -28,15 +28,15 @@ void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005537e0(void)
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      *(uchar *)(iVar2 + 0x2ddf570) = g_SourcePaletteData[iVar4];
-      *(uchar *)(iVar2 + 0x2ddf571) = g_SourcePaletteData[iVar4 + 1];
-      *(uchar *)(iVar2 + 0x2ddf572) = g_SourcePaletteData[iVar4 + 2];
+      (&g_PALETTEENTRY_ARRAY_02ddf570[0].red)[iVar2] = g_SourcePaletteData[iVar4];
+      (&g_PALETTEENTRY_ARRAY_02ddf570[0].green)[iVar2] = g_SourcePaletteData[iVar4 + 1];
+      (&g_PALETTEENTRY_ARRAY_02ddf570[0].blue)[iVar2] = g_SourcePaletteData[iVar4 + 2];
       iVar4 = iVar4 + 3;
-      *(byte *)(iVar2 + 0x2ddf573) = 1;
+      (&g_PALETTEENTRY_ARRAY_02ddf570[0].flags)[iVar2] = '\x01';
       iVar2 = iVar1;
     } while (iVar1 != 0x400);
     HVar3 = (*g_DirectDrawObject->vtable->CreatePalette)
-                      (g_DirectDrawObject,4,(PALETTEENTRY *)0x2ddf570,
+                      (g_DirectDrawObject,4,g_PALETTEENTRY_ARRAY_02ddf570,
                        (IDirectDrawPalette **)&g_DirectDrawUnknown,(IUnknown *)0x0);
     if (HVar3 != 0) {
       g_CurrentFilename = "..\\wincore\\wddvmem.cpp";

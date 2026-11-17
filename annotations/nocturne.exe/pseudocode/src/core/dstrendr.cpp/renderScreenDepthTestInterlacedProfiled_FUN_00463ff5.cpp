@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN_00463ff5(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 
 {
@@ -42,8 +40,8 @@ void __edi_esi_ebx core_dstrendr_cpp_renderScreenDepthTestInterlacedProfiled_FUN
     iVar5 = iVar4;
     do {
       if ((uVar9 >> 8 < (uint)*puVar7) &&
-         (_DAT_01b4d764 = _DAT_01b4d764 + 1, (uint)INT_005ae708 <= _DAT_01b4d764)) {
-        _DAT_01b4d768 = 1;
+         (g_INT_01b4d764 = g_INT_01b4d764 + 1, (uint)INT_005ae708 <= (uint)g_INT_01b4d764)) {
+        g_INT_01b4d768 = 1;
         return;
       }
       uVar9 = uVar9 + (int)((ulonglong)

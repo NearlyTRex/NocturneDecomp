@@ -101,7 +101,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 004c868c
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 004c8691
-    PUSH 0x5c18c8                       ; 004c8694 | DAT_005c18c8
+    PUSH 0x5c18c8                       ; 004c8694 | g_FILE_005c18c8
         ;   Label: LAB_004c8694
     PUSH 0x587bb5                       ; 004c8699 | = "wt"
     PUSH 0x587bb8                       ; 004c869e | = "stderr.txt"
@@ -181,7 +181,7 @@ section .text
     CALL core_dfont.cpp_initFonts_FUN_0044c560 ; 004c878f
         ;   XREF to: 0044c560 (UNCONDITIONAL_CALL)  ; void core_dfont.cpp_initFonts_FUN_0044c560()
         ;   Label: LAB_004c878f
-    CMP dword ptr [0x02de20a8],0x3c00000 ; 004c8794 | DAT_02de20a8
+    CMP dword ptr [0x02de20a8],0x3c00000 ; 004c8794 | g_INT_02de20a8
     JGE 0x004c8a11                      ; 004c879e
         ;   XREF to: 004c8a11 (CONDITIONAL_JUMP)  ; LAB_004c8a11
     PUSH 0x587ca2                       ; 004c87a4 | = "Windows is reporting "
@@ -206,7 +206,7 @@ section .text
         ;   XREF to: 004c87bb (CONDITIONAL_JUMP)  ; LAB_004c87bb
     POP EDI                             ; 004c87d3
         ;   Label: LAB_004c87d3
-    FILD dword ptr [0x02de20a8]         ; 004c87d4 | DAT_02de20a8
+    FILD dword ptr [0x02de20a8]         ; 004c87d4 | g_INT_02de20a8
     FMUL float ptr [0x00587e64]         ; 004c87da | FLOAT_00587e64
     SUB ESP,0x8                         ; 004c87e0
     FSTP double ptr [ESP]               ; 004c87e3
@@ -473,7 +473,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8a09
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c8a0e
-    CMP dword ptr [0x02de20ac],0xc800000 ; 004c8a11 | DAT_02de20ac
+    CMP dword ptr [0x02de20ac],0xc800000 ; 004c8a11 | g_INT_02de20ac
         ;   Label: LAB_004c8a11
     JGE 0x004c8b9b                      ; 004c8a1b
         ;   XREF to: 004c8b9b (CONDITIONAL_JUMP)  ; LAB_004c8b9b
@@ -499,7 +499,7 @@ section .text
         ;   XREF to: 004c8a33 (CONDITIONAL_JUMP)  ; LAB_004c8a33
     POP EDI                             ; 004c8a4b
         ;   Label: LAB_004c8a4b
-    FILD dword ptr [0x02de20ac]         ; 004c8a4c | DAT_02de20ac
+    FILD dword ptr [0x02de20ac]         ; 004c8a4c | g_INT_02de20ac
     FMUL float ptr [0x00587e64]         ; 004c8a52 | FLOAT_00587e64
     SUB ESP,0x8                         ; 004c8a58
     FSTP double ptr [ESP]               ; 004c8a5b
@@ -666,7 +666,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40 ; 004c8b93
         ;   XREF to: 0046fb40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0046fb40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 004c8b98
-    CMP dword ptr [0x01cae37c],0x0      ; 004c8b9b | DAT_01cae37c
+    CMP dword ptr [0x01cae37c],0x0      ; 004c8b9b | g_INT_01cae37c
         ;   Label: LAB_004c8b9b
     JNZ 0x004c8d81                      ; 004c8ba2
         ;   XREF to: 004c8d81 (CONDITIONAL_JUMP)  ; LAB_004c8d81
@@ -833,7 +833,7 @@ section .text
         ;   Label: LAB_004c8d81
     XOR ESI,ESI                         ; 004c8d86
     MOV dword ptr [EAX],0x280           ; 004c8d88 | g_CGameInstance
-    MOV dword ptr [0x01cae37c],ESI      ; 004c8d8e | DAT_01cae37c
+    MOV dword ptr [0x01cae37c],ESI      ; 004c8d8e | g_INT_01cae37c
     MOV dword ptr [EAX + 0x4],0x1e0     ; 004c8d94 | g_CGameInstance.game_pixy
     MOV dword ptr [0x02dc9d60],ESI      ; 004c8d9b | g_UseDirect3D
     MOV dword ptr [EAX + 0x8],0x20      ; 004c8da1 | g_CGameInstance.game_bpp

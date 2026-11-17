@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanlineTrueColor16_FUN_0055ca23(SSoftwareEdge *left_vertex,SSoftwareEdge *right_vertex,int scanline_y)
 {
 __asm {
@@ -90,8 +88,8 @@ __asm {
         imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_INT_0061c808],EBX
-        mov dword ptr [g_INT_0061c828],EDX
+        mov dword ptr [g_MMX_INTEGER_0061c808],EBX
+        mov dword ptr [g_MMX_INTEGER_0061c828],EDX
         mov EAX,dword ptr [EDI + 0x40]
         mov EBX,dword ptr [ESI + 0x40]
         shr EAX,0x1
@@ -100,18 +98,18 @@ __asm {
         imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_INT_0061c810],EBX
-        mov dword ptr [g_INT_0061c830],EDX
+        mov dword ptr [g_MMX_INTEGER_0061c810],EBX
+        mov dword ptr [g_MMX_INTEGER_0061c830],EDX
         movq MM5,qword ptr [g_QWORD_0061c800]
         movq MM6,qword ptr [g_QWORD_0061c820]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_INT_0061c808]
-        por MM6,qword ptr [g_INT_0061c828]
+        por MM5,qword ptr [g_MMX_INTEGER_0061c808]
+        por MM6,qword ptr [g_MMX_INTEGER_0061c828]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_INT_0061c810]
-        por MM6,qword ptr [g_INT_0061c830]
+        por MM5,qword ptr [g_MMX_INTEGER_0061c810]
+        por MM6,qword ptr [g_MMX_INTEGER_0061c830]
         movq qword ptr [g_QWORD_0061c860],MM6
         mov ECX,dword ptr [g_INT_0061c350]
         mov EDX,dword ptr [g_INT_0061c354]
@@ -168,14 +166,14 @@ __asm {
         add EBX,dword ptr [g_INT_PTR_0061c378]
         movzx EBX,word ptr [EBX]
         movd MM4,EBX
-        pand MM4,qword ptr [g_INT_0061c8e0]
+        pand MM4,qword ptr [g_MMX_INTEGER_0061c8e0]
         psllq MM4,qword ptr [g_QWORD_0061c970]
         movd MM2,EBX
-        pand MM2,qword ptr [g_INT_0061c8d8]
+        pand MM2,qword ptr [g_MMX_INTEGER_0061c8d8]
         psllq MM2,qword ptr [g_QWORD_0061c950]
         por MM4,MM2
         movd MM2,EBX
-        pand MM2,qword ptr [g_INT_0061c8d0]
+        pand MM2,qword ptr [g_MMX_INTEGER_0061c8d0]
         psllq MM2,qword ptr [g_QWORD_0061c930]
         por MM4,MM2
         punpcklbw MM4,MM7

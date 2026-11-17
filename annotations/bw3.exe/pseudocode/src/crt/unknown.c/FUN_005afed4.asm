@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005afed4(int param_1)
+; SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005afed4(int param_1)
 ;
 ;
 ; XREF[5]:
@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f3c_006079a0 = 005a7f3c
-;   undefined4 DAT_00607e88
+;   SIGNAL_HANDLER_TYPE[26] g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f3c
@@ -31,7 +31,7 @@ section .text
     CMP EBX,0x4                         ; 005afede
     JNZ 0x005afeec                      ; 005afee1
         ;   XREF to: 005afeec (CONDITIONAL_JUMP)  ; LAB_005afeec
-    MOV EAX,dword ptr [EBX*0x8 + 0x607e88] ; 005afee3 | DAT_00607e88
+    MOV EAX,dword ptr [EBX*0x8 + 0x607e88] ; 005afee3 | g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88
         ;   Label: LAB_005afee3
     POP EBX                             ; 005afeea
     RET                                 ; 005afeeb

@@ -61,11 +61,11 @@ LAB_005192c1:
     g_CurrentLineNumber = 1223;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Deformable model file is corrupt");
 LAB_005192e4:
-    if (0x00000007 < local_64) {
+    if (g_INT_005be97c < local_64) {
       g_CurrentFilename = "..\\core\\skeleton.cpp";
       g_CurrentLineNumber = 1226;
       core_main_c_displayErrorAndQuit_FUN_004c8440
-                ("Can't load model of version %d, this .exe can only handle up to version %d",local_64,0x00000007);
+                ("Can't load model of version %d, this .exe can only handle up to version %d",local_64,g_INT_005be97c);
     }
     if (local_64 < 3) {
       do {

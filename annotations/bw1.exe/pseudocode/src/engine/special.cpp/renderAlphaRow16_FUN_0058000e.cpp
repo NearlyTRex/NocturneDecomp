@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 
 {
@@ -51,9 +49,9 @@ LAB_00580057:
       uVar10 = g_QWORD_ARRAY_006247d0[uVar6 >> 8];
       uVar23 = uVar10 ^ g_QWORD_ARRAY_006247d0[0xff];
       uVar6 = (uint)*destPixels;
-      uVar24 = (uint7)((uVar6 & _g_INT_00623f30) << g_QWORD_00623fc0) |
-               (uint7)((uVar6 & _g_INT_00623f28) << g_QWORD_00623fa0) |
-               (uint7)((uVar6 & _g_INT_00623f20) << g_QWORD_00623f80);
+      uVar24 = (uint7)((uVar6 & g_MMX_INTEGER_00623f30.mm) << g_QWORD_00623fc0) |
+               (uint7)((uVar6 & g_MMX_INTEGER_00623f28.mm) << g_QWORD_00623fa0) |
+               (uint7)((uVar6 & g_MMX_INTEGER_00623f20.mm) << g_QWORD_00623f80);
       uVar9 = (ushort)(((uVar24 >> 0x18) << 0x30) >> 0x28);
       uVar5 = CONCAT21(uVar9,(char)(uVar24 >> 0x10));
       uVar8 = (ushort)uVar24;

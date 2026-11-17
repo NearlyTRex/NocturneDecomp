@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00475470(CPickList *this_ptr,char *dialog_title,uint window_flags)
 
 {
@@ -25,7 +23,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
   int local_18;
   int local_14;
   
-  this_ptr->row_height = _DAT_01bcd9bc + 1;
+  this_ptr->row_height = g_INT_01bcd9bc + 1;
   this_ptr->column_padding = 8;
   this_ptr->tab_column_count = 1;
   memset(this_ptr->tab_column_widths,0,0x28);
@@ -46,7 +44,8 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
           pcVar2 = pcVar3;
         }
         *pcVar8 = '\0';
-        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(_DAT_01bcd070,local_144);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
+                          (g_CBitFont_PTR_01bcd070,local_144);
         if (pCVar5->tab_column_widths[0] < iVar4) {
           pCVar5->tab_column_widths[0] = iVar4;
         }
@@ -81,7 +80,7 @@ void __cdecl shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN
     } while (iVar9 < this_ptr->tab_column_count);
   }
   this_ptr->column_width = this_ptr->column_width + this_ptr->column_padding * 2;
-  iVar9 = (g_WindowHeight + _DAT_01bcd9bc * -4) / this_ptr->row_height;
+  iVar9 = (g_WindowHeight + g_INT_01bcd9bc * -4) / this_ptr->row_height;
   this_ptr->rows_per_column = iVar9;
   if (iVar9 < 1) {
     this_ptr->rows_per_column = 1;

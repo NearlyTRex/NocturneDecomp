@@ -28,7 +28,7 @@
 ;   double g_DOUBLE_005d7c4b = 4294967296
 ;   double g_DOUBLE_005d7c53 = 65536
 ;   double g_DOUBLE_005d7c5b = 18
-;   undefined4 DAT_02d202b0
+;   DWORD g_DWORD_02d202b0
 ;   int g_INT_02d202b4
 ;   _struct_19 g_struct_19_02d202b8
 ;   undefined4 g_struct_19_02d202b8.HighPart
@@ -58,7 +58,7 @@ section .text
     MOV EDI,0x2d202b0                   ; 005806b8
     MOV ESI,0x2d202b8                   ; 005806bd
     PUSH 0x2d202b8                      ; 005806c2 | g_struct_19_02d202b8
-    MOVSD ES:EDI,ESI                    ; 005806c7 | g_struct_19_02d202b8 | DAT_02d202b0
+    MOVSD ES:EDI,ESI                    ; 005806c7 | g_struct_19_02d202b8 | g_DWORD_02d202b0
     MOVSD ES:EDI,ESI                    ; 005806c8 | g_struct_19_02d202b8.HighPart | g_INT_02d202b4
     CALL dword ptr CS:[0x5b360c]        ; 005806c9 | PTR_QueryPerformanceCounter_005b360c
     FLD double ptr [0x005d7c4b]         ; 005806d0 | g_DOUBLE_005d7c4b
@@ -67,7 +67,7 @@ section .text
     FILD dword ptr [0x02d202bc]         ; 005806de | g_struct_19_02d202b8.HighPart
     FMULP ST2                           ; 005806e4
     XOR ECX,ECX                         ; 005806e6
-    MOV EAX,[0x02d202b0]                ; 005806e8 | DAT_02d202b0
+    MOV EAX,[0x02d202b0]                ; 005806e8 | g_DWORD_02d202b0
     MOV dword ptr [ESP + 0x14],ECX      ; 005806ed
     MOV dword ptr [ESP + 0x10],EAX      ; 005806f1
     MOV EAX,[0x02d202b8]                ; 005806f5 | g_struct_19_02d202b8

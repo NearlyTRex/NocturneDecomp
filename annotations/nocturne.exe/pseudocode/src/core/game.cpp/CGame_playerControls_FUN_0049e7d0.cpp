@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x0049e87e) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
 
@@ -15,12 +14,12 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
   EControlMode EVar1;
   SPlayerInput *player_control;
   int iVar2;
-  uint *puVar3;
-  uint *puVar4;
+  char *pcVar3;
+  char *pcVar4;
   byte bVar5;
   
   bVar5 = 0;
-  if (_DAT_01c78420 != 0) {
+  if (g_INT_01c78420 != 0) {
     core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0(this_ptr);
     return;
   }
@@ -41,20 +40,20 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_0049e7d0(CGame *this_ptr)
       g_CurrentLineNumber = 1821;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CGame::playerControls - unknown control type");
     }
-    puVar3 = (uint *)&DAT_01c02598;
-    puVar4 = (uint *)&DAT_01c781c0;
+    pcVar3 = g_CHAR_ARRAY_01c02598;
+    pcVar4 = g_CHAR_ARRAY_01c781c0;
     for (iVar2 = 0x96; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = *puVar3;
-      puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
-      puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
+      *(uint *)pcVar4 = *(uint *)pcVar3;
+      pcVar3 = pcVar3 + ((uint)bVar5 * -2 + 1) * 4;
+      pcVar4 = pcVar4 + ((uint)bVar5 * -2 + 1) * 4;
     }
     for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(byte *)puVar4 = *(byte *)puVar3;
-      puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);
-      puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);
+      *pcVar4 = *pcVar3;
+      pcVar3 = pcVar3 + (uint)bVar5 * -2 + 1;
+      pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     }
-    _DAT_01c78418 = _DAT_01bd1d94;
-    _DAT_01c7841c = g_CDemonSetPtr->selected_camera_index;
+    g_INT_01c78418 = g_BIT_INTEGER32_01bd1d94.dword;
+    g_INT_01c7841c = g_CDemonSetPtr->selected_camera_index;
     return;
   }
   return;

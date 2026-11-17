@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 463,
+    "complexity_score": 470,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 268,
-    "suspect_count": 16,
+    "pseudocode_lines": 270,
+    "suspect_count": 17,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
       "sign_compare_idiom",
       "stack_alignment_array",
       "wrong_global"
     ],
-    "total_lines": 942
+    "total_lines": 944
   },
   "cross_references": [
     {
@@ -78,8 +77,8 @@
     },
     {
       "addr": "012a6558",
-      "name": "g_INT_012a6558",
-      "type": "int",
+      "name": "g_SCoronaLightCache_012a6558",
+      "type": "SCoronaLightCache",
       "value": null
     },
     {
@@ -507,7 +506,7 @@
   "suspects": [
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 20,
+      "line": 21,
       "match": "aiStackY_107c",
       "severity": "moderate",
       "text": "int aiStackY_107c [1014];",
@@ -515,7 +514,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 77,
       "match": "(int *)((int)g_INT_ARRAY_014fb300",
       "severity": "moderate",
       "text": "*(int *)((int)g_INT_ARRAY_014fb300 + iVar4) = this_ptr->framebuffer_width;",
@@ -523,23 +522,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 78,
       "match": "(uint *)((int)g_INT_ARRAY_014fb6c0",
       "severity": "moderate",
       "text": "*(uint *)((int)g_INT_ARRAY_014fb6c0 + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 87,
-      "match": "*(CDemonGlobe **)(iVar7 + 0x12a655c",
-      "severity": "moderate",
-      "text": "if (globe == *(CDemonGlobe **)(iVar7 + 0x12a655c)) {",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 223,
+      "line": 225,
       "match": "(int *)((int)g_INT_ARRAY_014fb300",
       "severity": "moderate",
       "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_INT_ARRAY_014fb300 + local_58)) {",
@@ -547,7 +538,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 226,
       "match": "(int *)((int)g_INT_ARRAY_014fb300",
       "severity": "moderate",
       "text": "local_28 = *(int *)((int)g_INT_ARRAY_014fb300 + local_58);",
@@ -555,7 +546,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 227,
       "match": "(int *)((int)g_INT_ARRAY_014fb6c0",
       "severity": "moderate",
       "text": "iVar7 = *(int *)((int)g_INT_ARRAY_014fb6c0 + local_58);",
@@ -563,7 +554,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 233,
+      "line": 235,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "while (SBORROW4(local_28,iVar7) != iVar4 < 0) {",
@@ -571,7 +562,7 @@
     },
     {
       "description": "Scalar global g_INT_015484d4 accessed via (&g_INT_015484d4)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_INT_015484d8 (at 0x015484d8, +4 bytes).",
-      "line": 57,
+      "line": 58,
       "match": "g_INT_015484d4",
       "severity": "moderate",
       "text": "(&g_INT_015484d4)[(uint)bVar3 * -2] = *(int *)((int)&local_94 + (uint)bVar3 * -8 + 4);",
@@ -579,7 +570,7 @@
     },
     {
       "description": "Scalar global g_INT_015484d8 accessed via (&g_INT_015484d8)[idx] \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: g_SCameraViewportState_015484dc (at 0x015484dc, +4 bytes).",
-      "line": 58,
+      "line": 59,
       "match": "g_INT_015484d8",
       "severity": "moderate",
       "text": "(&g_INT_015484d8)[(uint)bVar3 * -2 + (uint)bVar3 * -2] =",
@@ -587,7 +578,7 @@
     },
     {
       "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&local_94",
       "severity": "moderate",
       "text": "(&g_INT_015484d4)[(uint)bVar3 * -2] = *(int *)((int)&local_94 + (uint)bVar3 * -8 + 4);",
@@ -595,15 +586,31 @@
     },
     {
       "description": "Pointer value `&local_94` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)&local_94",
       "severity": "moderate",
       "text": "*(int *)((int)&local_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 88,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "if (globe == *(CDemonGlobe **)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 90,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
+      "severity": "moderate",
+      "text": "source_entry = (SCoronaLightEntry *)",
+      "type": "pointer_cast"
+    },
+    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(&g_INT_015484d4)[(uint)bVar3 * -2] = *(int *)((int)&local_94 + (uint)bVar3 * -8 + 4);",
@@ -611,7 +618,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 59,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_94 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
@@ -619,7 +626,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar10` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 101,
+      "line": 104,
       "match": "pSVar10 = (T *)pSVar10->ARRAY",
       "severity": "moderate",
       "text": "pSVar10 = (SCoronaLightEntry *)pSVar10->left_extents;",
@@ -627,7 +634,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_60` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_60->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 207,
+      "line": 209,
       "match": "local_60 = (T *)local_60->ARRAY",
       "severity": "moderate",
       "text": "local_60 = (SCoronaLightEntry *)local_60->left_extents;",

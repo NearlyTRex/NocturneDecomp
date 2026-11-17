@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(CStranger *this_ptr,CVector3f *out_position)
 
 {
@@ -24,9 +22,9 @@ CVector3f * __cdecl core_stranger_cpp_CStranger_getHandsMidpoint_FUN_00538440(CS
   
   this_ptr_00 = &(this_ptr->base).base.model;
   pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                     (this_ptr_00,local_30,_DAT_02dc9f88);
+                     (this_ptr_00,local_30,g_INT_ARRAY_02dc9f50[0xe]);
   pCVar7 = core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0051d2a0
-                     (this_ptr_00,&local_18,_DAT_02dc9f84);
+                     (this_ptr_00,&local_18,g_INT_ARRAY_02dc9f50[0xd]);
   fVar5 = 0.5f;
   fVar1 = pCVar7->y;
   fVar2 = pCVar6->y;

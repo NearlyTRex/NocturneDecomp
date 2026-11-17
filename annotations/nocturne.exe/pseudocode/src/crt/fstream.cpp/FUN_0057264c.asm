@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_00570630 at 00570688
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1795
+;   byte g_BYTE_005c1795 = 0x0
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
         ;   Label: LAB_00572668
     RCR EDX,0x1                         ; 00572669
         ;   Label: LAB_00572669
-    CMP byte ptr [0x005c1795],0x0       ; 0057266b | DAT_005c1795
+    CMP byte ptr [0x005c1795],0x0       ; 0057266b | g_BYTE_005c1795
         ;   Label: LAB_0057266b
     JZ 0x00572695                       ; 00572672
         ;   XREF to: 00572695 (CONDITIONAL_JUMP)  ; LAB_00572695

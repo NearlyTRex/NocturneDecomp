@@ -4,14 +4,24 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/dsound.h"
+#include "system/ksproxy.h"
+#include "system/mmsystem.h"
 #include "system/windef.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDirectSoundDevice.h"
+#include "types/classes/CLever.h"
 #include "types/classes/CSfxOptions.h"
 #include "types/classes/CSfxSample.h"
 #include "types/classes/CSound.h"
+#include "types/classes/CSoundDevice.h"
+#include "types/classes/CSpotView.h"
 #include "types/classes/CStrList.h"
 #include "types/classes/CTextureList.h"
+#include "types/classes/CVector3d.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWavOutDevice.h"
 #include "types/funcdefs/APIDLL_add3dLine.h"
 #include "types/funcdefs/APIDLL_addParticle.h"
 #include "types/funcdefs/APIDLL_beginScene.h"
@@ -48,6 +58,9 @@
 #include "types/funcdefs/APIDLL_unlockFrame.h"
 #include "types/funcdefs/APIDLL_unlockHoldBuffer.h"
 #include "types/funcdefs/APIDLL_updateTexture.h"
+#include "types/structs/SDirectSoundDeviceInfo.h"
+#include "types/structs/SReverbSettings.h"
+#include "types/structs/SSoundDeviceInfo.h"
 #include "types/structs/STrainNoise.h"
 
 // =============================================================================
@@ -175,6 +188,12 @@ extern CDemonActorType g_CTeleportDestActorType_02dca158;
 extern CDemonActorType g_CTeleportActorType_02dca194;
 extern CDemonActorType g_CTentacleActorType_02dca1e0;
 
+// CDirectSoundDevice
+extern CDirectSoundDevice g_CDirectSoundDevice_02dc93a0;
+
+// CLever*
+extern CLever* g_CLever_PTR_02dc9f2c;
+
 // CSfxOptions[8]
 extern CSfxOptions g_CSfxOptions_ARRAY_02dc1b78[8];
 
@@ -184,27 +203,172 @@ extern CSfxSample g_SfxSamples[64];
 // CSound
 extern CSound g_CSound_02dc9450;
 
+// CSoundDevice*
+extern CSoundDevice* g_CSoundDevice_PTR_02dc8318;
+
+// CSpotView
+extern CSpotView g_CSpotView_02dc9e64;
+
 // CStrList
 extern CStrList g_CStrList_02dc9610;
 
 // CTextureList
 extern CTextureList g_CTextureListInstance;
 
+// CVector3d
+extern CVector3d g_CVector3d_02dc7928;
+extern CVector3d g_CVector3d_02dc7940;
+
 // CVector3f
+extern CVector3f g_CVector3f_02dc9d44;
+extern CVector3f g_CVector3f_02dc9f20;
 extern CVector3f CVector3f_02dc9f34;
 extern CVector3f CVector3f_02dc9f40;
+
+// CWavOutDevice
+extern CWavOutDevice g_CWavOutDevice_02dc9440;
+
+// HANDLE
+extern HANDLE g_HANDLE_02dc84b8;
+
+// HGLOBAL[8]
+extern HGLOBAL g_HGLOBAL_ARRAY_02dc93e8[8];
+extern HGLOBAL g_HGLOBAL_ARRAY_02dc9408[8];
 
 // HMODULE
 extern HMODULE g_RendererDLLHandle;
 
+// HWAVEOUT
+extern HWAVEOUT g_HWAVEOUT_02dc93a4;
+
 // HWND
 extern HWND g_StoredWindowHandle;
+
+// IDirectSound*
+extern IDirectSound* g_IDirectSound_PTR_02dc9214;
+
+// IDirectSound3DListener*
+extern IDirectSound3DListener* g_IDirectSound3DListener_PTR_02dc9220;
+
+// IDirectSoundBuffer*
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02dc9218;
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02dc921c;
+
+// IDirectSoundBuffer*[25]
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[25];
+
+// IDirectSoundBuffer*[31]
+extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[31];
+
+// IKsPropertySet*
+extern IKsPropertySet* g_IKsPropertySet_PTR_02dc9224;
+
+// LPVOID[8]
+extern LPVOID g_LPVOID_ARRAY_02dc93c8[8];
+
+// LPWAVEHDR[8]
+extern LPWAVEHDR g_LPWAVEHDR_ARRAY_02dc93a8[8];
+
+// SDirectSoundDeviceInfo[8]
+extern SDirectSoundDeviceInfo g_SDirectSoundDeviceInfo_ARRAY_02dc84c4[8];
+
+// SReverbSettings
+extern SReverbSettings g_SReverbSettings_02dc8498;
+extern SReverbSettings g_SReverbSettings_02dc9474;
+
+// SSoundDeviceInfo[8]
+extern SSoundDeviceInfo g_SSoundDeviceInfo_ARRAY_02dc7a58[8];
 
 // STrainNoise[10]
 extern STrainNoise g_STrainNoise_ARRAY_02dc9ca4[10];
 
+// byte
+extern byte g_BYTE_02dc9f30;
+
+// char[40]
+extern char g_CHAR_ARRAY_02dc9c68[40];
+
+// char[40][40]
+extern char g_CHAR_ARRAY_ARRAY_02dc9628[40][40];
+
+// double
+extern double g_DOUBLE_02dc78e0;
+extern double g_DOUBLE_02dc78e8;
+extern double g_DOUBLE_02dc78f0;
+extern double g_DOUBLE_02dc78f8;
+extern double g_DOUBLE_02dc7900;
+extern double g_DOUBLE_02dc7908;
+extern double g_DOUBLE_02dc7910;
+extern double g_DOUBLE_02dc7918;
+extern double g_DOUBLE_02dc7920;
+extern double g_DOUBLE_02dc84a8;
+
+// double[8]
+extern double g_DOUBLE_ARRAY_02dc83d8[8];
+extern double g_DOUBLE_ARRAY_02dc8418[8];
+extern double g_DOUBLE_ARRAY_02dc8458[8];
+
+// float
+extern float g_FLOAT_02dc945c;
+extern float g_FLOAT_02dc9460;
+extern float g_FLOAT_02dc9464;
+extern float g_FLOAT_02dc9468;
+extern float g_FLOAT_02dc946c;
+extern float g_FLOAT_02dc9470;
+extern float g_FLOAT_02dc9c98;
+extern float g_FLOAT_02dc9c9c;
+extern float g_FLOAT_02dc9ca0;
+extern float g_FLOAT_02dc9d50;
+extern float g_FLOAT_02dc9ea0;
+extern float g_FLOAT_02dc9ea4;
+extern float g_FLOAT_02dc9fe8;
+
+// float*
+extern float* g_FLOAT_PTR_02dc8338;
+extern float* g_FLOAT_PTR_02dc835c;
+extern float* g_FLOAT_PTR_02dc8380;
+
+// float*[8]
+extern float* g_FLOAT_PTR_ARRAY_02dc833c[8];
+extern float* g_FLOAT_PTR_ARRAY_02dc8360[8];
+extern float* g_FLOAT_PTR_ARRAY_02dc8384[8];
+extern float* g_FLOAT_PTR_ARRAY_02dc83a4[8];
+
+// float[32]
+extern float g_FLOAT_ARRAY_02dc7958[32];
+
 // int
+extern int g_INT_02dc1b74;
+extern int g_INT_02dc1ed8;
+extern int g_INT_02dc831c;
+extern int g_INT_02dc8320;
 extern int g_SoundMuted;
+extern int g_INT_02dc8328;
+extern int g_INT_02dc832c;
+extern int g_INT_02dc8330;
+extern int g_INT_02dc8334;
+extern int g_INT_02dc83d0;
+extern int g_INT_02dc84b0;
+extern int g_INT_02dc84b4;
+extern int g_INT_02dc84bc;
+extern int g_INT_02dc84c0;
+extern int g_INT_02dc9228;
+extern int g_INT_02dc922c;
+extern int g_INT_02dc9230;
+extern int g_INT_02dc9234;
+extern int g_INT_02dc9238;
+extern int g_INT_02dc923c;
+extern int g_INT_02dc9240;
+extern int g_INT_02dc9428;
+extern int g_INT_02dc942c;
+extern int g_INT_02dc9430;
+extern int g_INT_02dc9434;
+extern int g_INT_02dc9438;
+extern int g_INT_02dc943c;
+extern int g_INT_02dc9620;
+extern int g_INT_02dc9c90;
+extern int g_INT_02dc9c94;
+extern int g_INT_02dc9d54;
 extern int g_UseDirect3D;
 extern int g_RendererCardIndex;
 extern int g_AGPTextureMode;
@@ -216,6 +380,33 @@ extern int g_FogColorBlue;
 extern int g_ExternalBitsPerPixel;
 extern int g_SavedBitsPerPixel;
 extern int g_ExternalFrameLocked;
+extern int g_INT_02dc9fec;
+extern int g_INT_02dca000;
+extern int g_INT_02dca004;
+extern int g_INT_02dca010;
+extern int g_INT_02dca018;
+extern int g_INT_02dca1d0;
+extern int g_INT_02dca1d4;
+extern int g_INT_02dca1d8;
+extern int g_INT_02dca1dc;
+
+// int[19]
+extern int g_INT_ARRAY_02dca058[19];
+
+// int[23]
+extern int g_INT_ARRAY_02dc9f50[23];
+
+// int[25]
+extern int g_INT_ARRAY_02dc9324[25];
+
+// int[32]
+extern int g_INT_ARRAY_02dc79d8[32];
+
+// uint
+extern uint g_UINT_02dc9454;
+extern uint g_UINT_02dc9458;
+extern uint g_UINT_02dc9d58;
+extern uint g_UINT_02dc9d5c;
 
 // void*
 extern void* g_FrameBufferPtr;

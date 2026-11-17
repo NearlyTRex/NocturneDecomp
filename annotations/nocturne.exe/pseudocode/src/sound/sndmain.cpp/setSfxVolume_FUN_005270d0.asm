@@ -17,7 +17,7 @@
 ;   core_sound.cpp_processTrainSounds_FUN_0052d790 at 0052db01
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00524830
@@ -57,7 +57,7 @@ section .text
     TEST ECX,ECX                        ; 00527104
     JZ 0x00527120                       ; 00527106
         ;   XREF to: 00527120 (CONDITIONAL_JUMP)  ; LAB_00527120
-    MOV EDI,dword ptr [0x02dc8318]      ; 00527108 | DAT_02dc8318
+    MOV EDI,dword ptr [0x02dc8318]      ; 00527108 | g_CSoundDevice_PTR_02dc8318
     TEST EDI,EDI                        ; 0052710e
     JZ 0x00527120                       ; 00527110
         ;   XREF to: 00527120 (CONDITIONAL_JUMP)  ; LAB_00527120

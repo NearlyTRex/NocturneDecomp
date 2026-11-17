@@ -21,3 +21,8 @@ extern CMuzzleFlash g_CMuzzleFlash_ARRAY_01c4e958[20];
 // CSpark[256]
 extern CSpark g_SparkPool[256];
 
+// int
+extern int g_INT_01c49d50;
+extern int g_INT_01c4e954;
+extern int g_INT_01c4f088;
+

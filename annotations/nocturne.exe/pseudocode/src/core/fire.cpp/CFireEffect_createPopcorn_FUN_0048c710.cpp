@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createPopcorn_FUN_0048c710(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity)
 
 {
-  (*(g_PopcornPool[_DAT_01c69610].base.vtable)->setup)
-            (&g_PopcornPool[_DAT_01c69610].base,position,velocity);
-  _DAT_01c69610 = _DAT_01c69610 + 1;
-  if (_DAT_01c69610 < 0x100) {
+  (*(g_PopcornPool[g_INT_01c69610].base.vtable)->setup)
+            (&g_PopcornPool[g_INT_01c69610].base,position,velocity);
+  g_INT_01c69610 = g_INT_01c69610 + 1;
+  if (g_INT_01c69610 < 0x100) {
     return;
   }
-  _DAT_01c69610 = 0;
+  g_INT_01c69610 = 0;
   return;
 }

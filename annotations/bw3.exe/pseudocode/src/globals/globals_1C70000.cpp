@@ -35,18 +35,14 @@ CSmokeParticle g_CSmokeParticle_ARRAY_01c74ea0[2048] = {};
 CVector3i g_CVector3i_01c73658 = {};
 CVector3i g_CVector3i_01c73664 = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c73670 = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c73670 = {};
 
 // char[256]
 char g_CHAR_ARRAY_01c734b0[256] = {};
 
 // int
 int g_INT_01c734ac = {};
-int g_INT_01c73688 = {};
-int g_INT_01c7368c = {};
-int g_INT_01c73690 = {};
-int g_INT_01c73694 = {};
 int g_INT_01c743f4 = {};
 int g_INT_01c743f8 = {};
 int g_INT_01c74b68 = {};

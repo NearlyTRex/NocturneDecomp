@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0050e190
@@ -123,7 +123,7 @@ section .text
     ADD ESP,0x10                        ; 0050a71e
     PUSH 0xffff                         ; 0050a721
     MOV ECX,dword ptr [0x005ae704]      ; 0050a726 | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 0050a72c | DAT_01b4d738
+    PUSH ECX                            ; 0050a72c | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 0050a72d
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050a732
@@ -138,7 +138,7 @@ section .text
     PUSH 0x1                            ; 0050a751
         ;   Label: LAB_0050a751
     MOV ESI,dword ptr [0x005ae704]      ; 0050a753 | g_CDemonRenderer_PTR_005ae704
-    PUSH ESI                            ; 0050a759 | DAT_01b4d738
+    PUSH ESI                            ; 0050a759 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a75a
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050a75f
@@ -165,7 +165,7 @@ section .text
     PUSH 0x1                            ; 0050a792
         ;   Label: LAB_0050a792
     MOV EDX,dword ptr [0x005ae704]      ; 0050a794 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0050a79a | DAT_01b4d738
+    PUSH EDX                            ; 0050a79a | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 0050a79b
         ;   XREF to: 00461050 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050(CDemonRenderer * this_ptr, int enabled)
     ADD ESP,0x8                         ; 0050a7a0

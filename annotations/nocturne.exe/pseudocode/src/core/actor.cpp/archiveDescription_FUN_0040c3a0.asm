@@ -21,9 +21,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_00577bf7
 ;   TerminatedCString s_anon_00577c02
-;   undefined4 DAT_00763e84
-;   undefined4 DAT_00763e88
-;   undefined4 DAT_00763e90
+;   _FILE* g_FILE_PTR_00763e84
+;   int g_INT_00763e88
+;   int g_INT_00763e90
 ;
 ; Called Functions:
 ;   core_actor.cpp_handleActorPropertyParseError_FUN_0040c320
@@ -41,10 +41,10 @@ section .text
     PUSH EBP                            ; 0040c3a3
     MOV EDI,dword ptr [ESP + 0x14]      ; 0040c3a4
     MOV ESI,dword ptr [ESP + 0x18]      ; 0040c3a8
-    CMP dword ptr [0x00763e88],0x1      ; 0040c3ac | DAT_00763e88
+    CMP dword ptr [0x00763e88],0x1      ; 0040c3ac | g_INT_00763e88
     JNZ 0x0040c3ea                      ; 0040c3b3
         ;   XREF to: 0040c3ea (CONDITIONAL_JUMP)  ; LAB_0040c3ea
-    MOV EAX,[0x00763e84]                ; 0040c3b5 | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 0040c3b5 | g_FILE_PTR_00763e84
         ;   Label: LAB_0040c3b5
     PUSH EAX                            ; 0040c3ba
     CALL crt_stdio.c_fgetc_FUN_00564570 ; 0040c3bb
@@ -58,7 +58,7 @@ section .text
         ;   Label: LAB_0040c3c9
     JNZ 0x0040c3b5                      ; 0040c3cc
         ;   XREF to: 0040c3b5 (CONDITIONAL_JUMP)  ; LAB_0040c3b5
-    MOV EAX,[0x00763e84]                ; 0040c3ce | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 0040c3ce | g_FILE_PTR_00763e84
     TEST byte ptr [EAX + 0xc],0x20      ; 0040c3d3
     JNZ 0x0040c440                      ; 0040c3d7
         ;   XREF to: 0040c440 (CONDITIONAL_JUMP)  ; LAB_0040c440
@@ -75,7 +75,7 @@ section .text
     ADD ESP,0x8                         ; 0040c3e5
     JMP 0x0040c3c9                      ; 0040c3e8
         ;   XREF to: 0040c3c9 (UNCONDITIONAL_JUMP)  ; LAB_0040c3c9
-    CMP dword ptr [0x00763e90],0x0      ; 0040c3ea | DAT_00763e90
+    CMP dword ptr [0x00763e90],0x0      ; 0040c3ea | g_INT_00763e90
         ;   Label: LAB_0040c3ea
     JNZ 0x0040c41c                      ; 0040c3f1
         ;   XREF to: 0040c41c (CONDITIONAL_JUMP)  ; LAB_0040c41c
@@ -84,12 +84,12 @@ section .text
         ;   XREF to: 0040c41c (CONDITIONAL_JUMP)  ; LAB_0040c41c
     PUSH ESI                            ; 0040c3f7
     PUSH 0x577bf7                       ; 0040c3f8 | = "    // %s\n"
-    MOV EBX,dword ptr [0x00763e84]      ; 0040c3fd | DAT_00763e84
+    MOV EBX,dword ptr [0x00763e84]      ; 0040c3fd | g_FILE_PTR_00763e84
     PUSH EBX                            ; 0040c403
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c404
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0xc                         ; 0040c409
-    MOV EAX,[0x00763e84]                ; 0040c40c | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 0040c40c | g_FILE_PTR_00763e84
     TEST byte ptr [EAX + 0xc],0x20      ; 0040c411
     JNZ 0x0040c440                      ; 0040c415
         ;   XREF to: 0040c440 (CONDITIONAL_JUMP)  ; LAB_0040c440
@@ -100,12 +100,12 @@ section .text
     RET                                 ; 0040c41b
     PUSH 0x577c02                       ; 0040c41c | = "\n"
         ;   Label: LAB_0040c41c
-    MOV EBP,dword ptr [0x00763e84]      ; 0040c421 | DAT_00763e84
+    MOV EBP,dword ptr [0x00763e84]      ; 0040c421 | g_FILE_PTR_00763e84
     PUSH EBP                            ; 0040c427
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 0040c428
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0040c42d
-    MOV EAX,[0x00763e84]                ; 0040c430 | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 0040c430 | g_FILE_PTR_00763e84
     TEST byte ptr [EAX + 0xc],0x20      ; 0040c435
     JNZ 0x0040c440                      ; 0040c439
         ;   XREF to: 0040c440 (CONDITIONAL_JUMP)  ; LAB_0040c440

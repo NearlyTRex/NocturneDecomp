@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
 
 {
@@ -138,7 +136,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004a6e90(CGame *this_ptr)
       if ((local_1c != 0) &&
          (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(local_1c), iVar2 == 0)) {
 LAB_004a722b:
-        if (_DAT_01d16810 != 0) {
+        if (g_INT_01d16810 != 0) {
           this_ptr_00->win_font_enabled = 1;
         }
         sound_sndmain_cpp_resetSoundDevice_FUN_00528080();

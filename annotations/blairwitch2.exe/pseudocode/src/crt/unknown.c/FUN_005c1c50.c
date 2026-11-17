@@ -11,31 +11,31 @@
 void FUN_005c1c50(void)
 
 {
-  int *piVar1;
-  int iVar2;
-  _FILE *p_Var3;
+  uint uVar1;
+  _FILE *p_Var2;
+  streambuf *psVar3;
   _FILE **pp_Var4;
   
   g_FILE_0061ef88._flag._1_1_ = g_FILE_0061ef88._flag._1_1_ & 0xf8 | 4;
   pp_Var4 = &g_FILE_PTR_0061ef54;
-  iVar2 = _DAT_0061ef60;
-  while (iVar2 != 0) {
-    p_Var3 = InternalHeapAlloc(0x1d);
-    if ((p_Var3 == (_FILE *)0x0) &&
-       (p_Var3 = malloc(0x1d), p_Var3 == (_FILE *)0x0)) {
+  uVar1 = _DAT_0061ef60;
+  while (uVar1 != 0) {
+    psVar3 = InternalHeapAlloc(0x1d);
+    if ((psVar3 == (streambuf *)0x0) &&
+       (psVar3 = malloc(0x1d), psVar3 == (streambuf *)0x0)) {
       FUN_005c1c20("Not enough memory to allocate file structures\r\n",1);
     }
-    p_Var3->_cnt = (int)pp_Var4;
-    p_Var3->_ptr = (char *)_DAT_02680160;
-    pp_Var4[2] = p_Var3;
-    p_Var3->_link = (streambuf *)0x0;
-    *(byte *)&pp_Var4[2]->_bufsize = 0;
-    pp_Var4[2]->_flag = 0;
-    piVar1 = (int *)((int)pp_Var4 + 0x26);
+    psVar3->__reserve_base = (char *)pp_Var4;
+    psVar3->__b_lock = g_FileListNode_PTR_02680160;
+    ((_FILE *)pp_Var4)->_link = psVar3;
+    psVar3->__reserve_end = (char *)0x0;
+    *(byte *)&((_FILE *)pp_Var4)->_link->__get_ptr = 0;
+    ((_FILE *)pp_Var4)->_link->__get_base = (char *)0x0;
+    p_Var2 = (_FILE *)((int)pp_Var4 + 0x1a);
     pp_Var4 = (_FILE **)((int)pp_Var4 + 0x1a);
-    _DAT_02680160 = p_Var3;
-    iVar2 = *piVar1;
+    g_FileListNode_PTR_02680160 = (FileListNode *)psVar3;
+    uVar1 = p_Var2->_flag;
   }
-  _DAT_02680164 = 0;
+  g_FileListNode_PTR_02680164 = (FileListNode *)0x0;
   return;
 }

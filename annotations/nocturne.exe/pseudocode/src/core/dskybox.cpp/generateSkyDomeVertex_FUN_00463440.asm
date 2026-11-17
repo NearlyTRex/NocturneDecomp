@@ -30,10 +30,10 @@
 ;   double DOUBLE_0057dfa6 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CVector3f CVector3f_005b0678
-;   undefined4 DAT_005c5034
-;   undefined4 DAT_005c5038
-;   undefined4 DAT_005c503c
-;   undefined4 DAT_005c5040
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].b
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].a
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -131,12 +131,12 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0046352e
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,dword ptr [EDI]             ; 00463533
-    MOV dword ptr [ESI + 0x5c5034],EAX  ; 00463535 | DAT_005c5034
-    MOV dword ptr [ESI + 0x5c5038],EAX  ; 0046353b | DAT_005c5038
+    MOV dword ptr [ESI + 0x5c5034],EAX  ; 00463535 | g_SRenderVertex_ARRAY_005c5014[0].r
+    MOV dword ptr [ESI + 0x5c5038],EAX  ; 0046353b | g_SRenderVertex_ARRAY_005c5014[0].g
     XOR ECX,ECX                         ; 00463541
-    MOV dword ptr [ESI + 0x5c503c],EAX  ; 00463543 | DAT_005c503c
+    MOV dword ptr [ESI + 0x5c503c],EAX  ; 00463543 | g_SRenderVertex_ARRAY_005c5014[0].b
     ADD ESP,0x8                         ; 00463549
-    MOV dword ptr [ESI + 0x5c5040],ECX  ; 0046354c | DAT_005c5040
+    MOV dword ptr [ESI + 0x5c5040],ECX  ; 0046354c | g_SRenderVertex_ARRAY_005c5014[0].a
     MOV ESP,EBP                         ; 00463552
     POP EBP                             ; 00463554
     POP EDI                             ; 00463555

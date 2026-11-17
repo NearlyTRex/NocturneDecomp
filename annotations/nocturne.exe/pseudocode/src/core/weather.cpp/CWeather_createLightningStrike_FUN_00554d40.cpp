@@ -72,7 +72,7 @@ void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(CWeath
     core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420
               (g_CFireEffect_PTR_005b80f0,&local_6c,local_18,0,0.0);
   }
-  this_ptr_00 = 0x01C03A10;
+  this_ptr_00 = g_CEventList_PTR_005b7650;
   local_14 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar2 = (float)g_CDemonCameraInstance.corona_blend_factor;
   fVar1 = (float)1.5259021896696401e-05;

@@ -9,18 +9,19 @@
 void __cdecl engine_3d_c_queueSortedPolygon_FUN_00405ab0(SMRGLHeaderExtended *primitive,SMRGLHeaderExtended *owner_block,SMRGLHeaderExtended *chain_root)
 
 {
-  int iVar1;
+  uint uVar1;
+  int iVar2;
   
-  if (DAT_006b0268 < 500) {
-    iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)&primitive->child_count);
-    if (iVar1 != 0) {
-      iVar1 = DAT_006b0268 * 0x20;
-      *(SMRGLHeaderExtended **)(&DAT_006b02dc + iVar1) = primitive;
-      *(SMRGLHeaderExtended **)(&DAT_006b02e0 + iVar1) = owner_block;
-      *(SMRGLHeaderExtended **)(&DAT_006b02e4 + iVar1) = chain_root;
+  if ((int)g_UINT_006b0268 < 500) {
+    iVar2 = engine_3d_c_isVisiblePlane_FUN_00404610((SClipPlane *)&primitive->child_count);
+    uVar1 = g_UINT_006b0268;
+    if (iVar2 != 0) {
+      g_INT_ARRAY_006b029c[g_UINT_006b0268 * 8 + 0x10] = (int)primitive;
+      g_INT_ARRAY_006b029c[uVar1 * 8 + 0x11] = (int)owner_block;
+      g_INT_ARRAY_006b029c[uVar1 * 8 + 0x12] = (int)chain_root;
       engine_3d_c_computeSortedPolygonKey_FUN_004059c0(primitive);
-      (&DAT_006b415c)[DAT_006b0268] = &DAT_006b02dc + DAT_006b0268 * 0x20;
-      DAT_006b0268 = DAT_006b0268 + 1;
+      g_INT_ARRAY_006b415c[g_UINT_006b0268] = g_UINT_006b0268 * 0x20 + 0x6b02dc;
+      g_UINT_006b0268 = g_UINT_006b0268 + 1;
       return;
     }
   }

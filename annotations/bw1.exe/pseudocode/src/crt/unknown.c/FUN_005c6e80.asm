@@ -15,7 +15,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626604 = 005c50d4
 ;   uint g_UINT_006267e0 = 0x14
-;   undefined4 DAT_00626838
+;   SIOControlBlock* g_SIOControlBlock_PTR_00626838 = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005c6450
@@ -70,7 +70,7 @@ section .text
     CALL crt_unknown.c_FUN_005c8b38     ; 005c6ec9
         ;   XREF to: 005c8b38 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c8b38()
     ADD ESP,0x8                         ; 005c6ece
-    MOV ESI,dword ptr [0x00626838]      ; 005c6ed1 | DAT_00626838
+    MOV ESI,dword ptr [0x00626838]      ; 005c6ed1 | g_SIOControlBlock_PTR_00626838
         ;   Label: LAB_005c6ed1
     MOV EAX,dword ptr [ESI + EBX*0x4]   ; 005c6ed7
     MOV ESI,dword ptr [ESP + 0x18]      ; 005c6eda

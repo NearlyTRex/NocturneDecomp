@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00590642
+;   double g_DOUBLE_00590642 = 65535
 ;   int g_FastInvSqrtMagic
 ;
 ; *****************************************************************************
@@ -118,7 +118,7 @@ section .text
     SUB EDX,EAX                         ; 0050bdf1
     MOV dword ptr [ESP + 0x24],EDX      ; 0050bdf3
     FLD float ptr [ESP + 0x24]          ; 0050bdf7
-    FMUL double ptr [0x00590642]        ; 0050bdfb | DAT_00590642
+    FMUL double ptr [0x00590642]        ; 0050bdfb | g_DOUBLE_00590642
     FXCH ST3                            ; 0050be01
     FMUL ST3                            ; 0050be03
     FXCH ST2                            ; 0050be05

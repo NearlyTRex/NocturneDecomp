@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00553190(void)
 
 {
   int iVar1;
   HRESULT HVar2;
   
-  _DAT_02ddf568 = 1;
+  g_INT_02ddf568 = 1;
   if (g_UseDirect3D != 0) {
     if (g_BitsPerPixel < 0x10) {
       wincore_wddvmem_cpp_setScreenResolution_FUN_00552e00(g_WindowWidth,g_WindowHeight,0x10);

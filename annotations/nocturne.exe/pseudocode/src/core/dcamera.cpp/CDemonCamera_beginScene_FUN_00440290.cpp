@@ -6,52 +6,53 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera *this_ptr,int skip_clear_buffers)
 
 {
   int iVar1;
   float fVar2;
   CDemonRenderer *this_ptr_00;
-  uint uVar3;
+  int iVar3;
   uint uVar4;
-  int iVar5;
-  bool bVar6;
+  uint uVar5;
+  int iVar6;
+  bool bVar7;
   char *format;
   
-  iVar5 = 0;
-  switch(DAT_005ad44c) {
+  iVar6 = 0;
+  switch(g_INT_005ad44c) {
   case 0:
-    _DAT_012ceb60 = _DAT_012ceb60 + _DAT_01bd1d80;
-    if (_DAT_012ceb5c < _DAT_012ceb60) {
-      _DAT_012ceb60 = _DAT_012ceb5c;
-      DAT_005ad44c = 1;
-      _DAT_012ceb58 = DAT_005ad448;
+    g_INT_012ceb60 = g_INT_012ceb60 + g_INT_01bd1d80;
+    if (g_INT_012ceb5c < g_INT_012ceb60) {
+      g_INT_012ceb60 = g_INT_012ceb5c;
+      g_INT_005ad44c = 1;
+      g_INT_012ceb58 = g_INT_005ad448;
     }
-    if (_DAT_012ceb5c != 0) {
-      iVar5 = (int)(((longlong)DAT_005ad444 * (longlong)_DAT_012ceb60) / (longlong)_DAT_012ceb5c);
+    if (g_INT_012ceb5c != 0) {
+      iVar6 = (int)(((longlong)g_INT_005ad444 * (longlong)g_INT_012ceb60) / (longlong)g_INT_012ceb5c
+                   );
     }
     format = "Attack : ";
     break;
   case 1:
-    _DAT_012ceb58 = _DAT_012ceb58 - _DAT_01bd1d80;
-    if (_DAT_012ceb58 < 0) {
-      _DAT_012ceb58 = 0;
-      DAT_005ad44c = 2;
-      _DAT_012ceb68 = _DAT_012ceb64;
+    g_INT_012ceb58 = g_INT_012ceb58 - g_INT_01bd1d80;
+    if (g_INT_012ceb58 < 0) {
+      g_INT_012ceb58 = 0;
+      g_INT_005ad44c = 2;
+      g_INT_012ceb68 = g_INT_012ceb64;
     }
     format = "Sustain : ";
-    iVar5 = DAT_005ad444;
+    iVar6 = g_INT_005ad444;
     break;
   case 2:
-    _DAT_012ceb68 = _DAT_012ceb68 - _DAT_01bd1d80;
-    if (_DAT_012ceb68 < 0) {
-      _DAT_012ceb68 = 0;
-      DAT_005ad44c = 3;
+    g_INT_012ceb68 = g_INT_012ceb68 - g_INT_01bd1d80;
+    if (g_INT_012ceb68 < 0) {
+      g_INT_012ceb68 = 0;
+      g_INT_005ad44c = 3;
     }
-    if (_DAT_012ceb64 != 0) {
-      iVar5 = (int)(((longlong)DAT_005ad444 * (longlong)_DAT_012ceb68) / (longlong)_DAT_012ceb64);
+    if (g_INT_012ceb64 != 0) {
+      iVar6 = (int)(((longlong)g_INT_005ad444 * (longlong)g_INT_012ceb68) / (longlong)g_INT_012ceb64
+                   );
     }
     format = "Decay : ";
     break;
@@ -60,25 +61,25 @@ void __cdecl core_dcamera_cpp_CDemonCamera_beginScene_FUN_00440290(CDemonCamera 
   }
   engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,format);
 switchD_004402a8_caseD_3:
-  _DAT_012ceb6c =
-       _DAT_012ceb6c +
-       ((uint)((longlong)iVar5 * (longlong)(int)_DAT_01bd1d80) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar5 * (longlong)(int)_DAT_01bd1d80) >> 0x20) << 0x10);
-  uVar4 = _DAT_012ceb74;
-  if (0xffff < _DAT_012ceb6c) {
-    uVar3 = _DAT_01bd1d80 & 1;
-    _DAT_012ceb6c = 0;
-    uVar4 = (int)(_DAT_01bd1d80 & 2) >> 1;
-    bVar6 = _DAT_012ceb70 == uVar3;
-    _DAT_012ceb70 = uVar3;
-    if ((bVar6) && (_DAT_012ceb74 == uVar4)) {
-      uVar4 = (uint)(uVar4 == 0);
+  g_INT_012ceb6c =
+       g_INT_012ceb6c +
+       ((uint)((longlong)iVar6 * (longlong)g_INT_01bd1d80) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar6 * (longlong)g_INT_01bd1d80) >> 0x20) << 0x10);
+  uVar5 = g_INT_012ceb74;
+  if (0xffff < g_INT_012ceb6c) {
+    uVar4 = g_INT_01bd1d80 & 1;
+    g_INT_012ceb6c = 0;
+    uVar5 = (int)(g_INT_01bd1d80 & 2U) >> 1;
+    bVar7 = g_INT_012ceb70 == uVar4;
+    g_INT_012ceb70 = uVar4;
+    if ((bVar7) && (g_INT_012ceb74 == uVar5)) {
+      uVar5 = (uint)(uVar5 == 0);
     }
   }
-  _DAT_012ceb74 = uVar4;
-  if (((int)this_ptr->max_distance < 0x1e0) || (DAT_005ad44c == 3)) {
-    _DAT_012ceb70 = 0;
-    _DAT_012ceb74 = 0;
+  g_INT_012ceb74 = uVar5;
+  if (((int)this_ptr->max_distance < 0x1e0) || (g_INT_005ad44c == 3)) {
+    g_INT_012ceb70 = 0;
+    g_INT_012ceb74 = 0;
   }
   if (this_ptr->scene_open_flag == 0) {
     this_ptr->scene_open_flag = 1;
@@ -92,16 +93,16 @@ switchD_004402a8_caseD_3:
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_00460e40
             (g_CDemonRenderer_PTR_005ae704,this_ptr->framebuffer_width,this_ptr->framebuffer_height,
              this_ptr->screen_width + -1,(int)this_ptr->max_distance + -1);
-  iVar5 = this_ptr->framebuffer_width;
+  iVar6 = this_ptr->framebuffer_width;
   iVar1 = this_ptr->screen_width;
   fVar2 = this_ptr->max_distance;
   this_ptr->rect_array_count = 0;
   (this_ptr->viewport_rect).x_min = this_ptr->framebuffer_width;
   (this_ptr->viewport_rect).x_max = this_ptr->framebuffer_height;
-  uVar4 = _DAT_012ceb70;
-  (this_ptr->viewport_rect).y_min = iVar5 + iVar1 + -1;
-  g_Projection.center_x_fixed = g_Projection.center_x_fixed + uVar4 * 0x10000;
-  g_Projection.center_y_fixed = g_Projection.center_y_fixed + _DAT_012ceb74 * -0x10000;
+  iVar3 = g_INT_012ceb70;
+  (this_ptr->viewport_rect).y_min = iVar6 + iVar1 + -1;
+  g_Projection.center_x_fixed = g_Projection.center_x_fixed + iVar3 * 0x10000;
+  g_Projection.center_y_fixed = g_Projection.center_y_fixed + g_INT_012ceb74 * -0x10000;
   (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + (int)fVar2 + -1;
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
   this_ptr->skip_clear_buffer_flag = skip_clear_buffers;

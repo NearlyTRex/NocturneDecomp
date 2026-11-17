@@ -21,7 +21,7 @@ SUMMARY STATISTICS
     Wrong return type (void):          0
     Wrong return type (wide/64-bit):   2
     Missing register params:           3
-    Wrong calling convention:          41
+    Wrong calling convention:          42
     Undefined types in variables:      1599
     Unresolved stack params:           71
 
@@ -142,7 +142,7 @@ Missing register parameters (likely wrong calling convention) (3)
     Suggested: Likely __fastcall (ECX, EDX params)
 
 --------------------------------------------------------------------------------
-Wrong calling convention (unaffected register usage) (41)
+Wrong calling convention (unaffected register usage) (42)
 --------------------------------------------------------------------------------
 
   drawLine3D
@@ -335,6 +335,12 @@ Wrong calling convention (unaffected register usage) (41)
     Address: 0x004fcd90  File: core/scat.cpp
     Evidence: unaff_EDI, unaff_EDI, unaff_EDI
     Signature: void __cdecl core_scat_cpp_CScat_updateWeaponState_FUN_004fcd90(CScat *this_ptr,float delta_time)
+    Suggested: Calling convention may be wrong (preserved registers being used)
+
+  processAudio
+    Address: 0x005288f0  File: sound/sndmain.cpp
+    Evidence: unaff_EBX, unaff_ESI, unaff_EBX, unaff_ESI
+    Signature: void __cdecl sound_sndmain_cpp_processAudio_FUN_005288f0(void)
     Suggested: Calling convention may be wrong (preserved registers being used)
 
   renderScanlineSwapped
@@ -733,7 +739,7 @@ Unresolved stack parameters (missing from signature) (71)
 
   CDirectSoundDevice_unlockSample
     Address: 0x0052ae90  File: sound/snddx.cpp
-    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014
+    Evidence: in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014, in_stack_00000014
     Signature: void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(CDirectSoundDevice *this_ptr,int buffer_id)
     Suggested: Signature is missing stack parameters entirely
 

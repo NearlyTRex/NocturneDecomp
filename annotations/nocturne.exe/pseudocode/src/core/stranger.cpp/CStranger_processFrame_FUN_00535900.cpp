@@ -121,7 +121,7 @@ void __cdecl core_stranger_cpp_CStranger_processFrame_FUN_00535900(CStranger *th
   CMotionController *pCStack_14;
   
   local_24 = (float)core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                              (0x01C03A10,"DebugActionPending");
+                              (g_CEventList_PTR_005b7650,"DebugActionPending");
   pCVar8 = (this_ptr->base).base.carry_hands[1].carry_actor;
   if ((pCVar8 != (CDemonActor *)0x0) && ((this_ptr->carry_object_bbox).max.x < -999999.0f)) {
     pCVar16 = (*((pCVar8->vtable)._ub)->getBoundingBox)

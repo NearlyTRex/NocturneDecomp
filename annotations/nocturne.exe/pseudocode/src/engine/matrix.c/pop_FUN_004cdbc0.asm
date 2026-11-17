@@ -14,9 +14,9 @@
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
-;   undefined4 DAT_01c039dc
-;   undefined4 DAT_01c039e0
-;   undefined4 DAT_01c039e4
+;   int g_INT_01c039dc
+;   int g_INT_01c039e0
+;   int g_INT_01c039e4
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
@@ -33,14 +33,14 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01cc5174]      ; 004cdbc0 | DAT_01cc5174
+    MOV EDX,dword ptr [0x01cc5174]      ; 004cdbc0 | g_INT_01cc5174
         ;   Label: engine_matrix.c_pop_FUN_004cdbc0
     DEC EDX                             ; 004cdbc6
-    MOV dword ptr [0x01cc5174],EDX      ; 004cdbc7 | DAT_01cc5174
+    MOV dword ptr [0x01cc5174],EDX      ; 004cdbc7 | g_INT_01cc5174
     TEST EDX,EDX                        ; 004cdbcd
     JL 0x004cdc9d                       ; 004cdbcf
         ;   XREF to: 004cdc9d (CONDITIONAL_JUMP)  ; LAB_004cdc9d
-    MOV EAX,[0x01cc5174]                ; 004cdbd5 | DAT_01cc5174
+    MOV EAX,[0x01cc5174]                ; 004cdbd5 | g_INT_01cc5174
         ;   Label: LAB_004cdbd5
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5178] ; 004cdbda
     MOV dword ptr [0x01c039e8],EDX      ; 004cdbe1 | g_TransformMatrix
@@ -67,11 +67,11 @@ section .text
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5330] ; 004cdc69
     MOV dword ptr [0x01c039c0],EDX      ; 004cdc70 | g_RelativeZ
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5358] ; 004cdc76
-    MOV dword ptr [0x01c039dc],EDX      ; 004cdc7d | DAT_01c039dc
+    MOV dword ptr [0x01c039dc],EDX      ; 004cdc7d | g_INT_01c039dc
     MOV EDX,dword ptr [EAX*0x4 + 0x1cc5380] ; 004cdc83
     MOV EAX,dword ptr [EAX*0x4 + 0x1cc53a8] ; 004cdc8a
-    MOV dword ptr [0x01c039e0],EDX      ; 004cdc91 | DAT_01c039e0
-    MOV [0x01c039e4],EAX                ; 004cdc97 | DAT_01c039e4
+    MOV dword ptr [0x01c039e0],EDX      ; 004cdc91 | g_INT_01c039e0
+    MOV [0x01c039e4],EAX                ; 004cdc97 | g_INT_01c039e4
     RET                                 ; 004cdc9c
     PUSH ESI                            ; 004cdc9d
         ;   Label: LAB_004cdc9d

@@ -7,17 +7,17 @@
 #include "nocturne.h"
 
 /* WARNING: Unable to track spacebase fully for stack */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
 
 {
   int iVar1;
   uint uVar2;
-  HMODULE pHVar3;
-  int iVar4;
-  uint uVar5;
-  byte *puVar6;
+  byte *puVar3;
+  HMODULE pHVar4;
+  int iVar5;
+  uint uVar6;
+  byte *puVar7;
   uint uStack_20;
   int aiStack_1c [2];
   uint uStack_14;
@@ -25,50 +25,50 @@ void __watcallRegister crt_startup_cpp_WinMainBootstrap_FUN_0056df10(void)
   
   uStack_14 = 0x56df21;
   ProcessInitTermHandlers(1);
-  iVar4 = -(0x000000F4 + 3U & 0xfffffffc);
-  *(int *)(local_10 + iVar4 + -4) = 0x000000F4;
-  *(uint *)((int)aiStack_1c + iVar4 + 4) = 0;
-  *(byte **)((int)aiStack_1c + iVar4) = local_10 + iVar4;
-  *(uint *)((int)&uStack_20 + iVar4) = 0x56df3e;
+  iVar5 = -(g_DWORD_005c20cc + 3 & 0xfffffffc);
+  *(DWORD *)(local_10 + iVar5 + -4) = g_DWORD_005c20cc;
+  *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;
+  *(byte **)((int)aiStack_1c + iVar5) = local_10 + iVar5;
+  *(uint *)((int)&uStack_20 + iVar5) = 0x56df3e;
   memset
-            (*(void **)((int)aiStack_1c + iVar4),*(int *)((int)aiStack_1c + iVar4 + 4),
-             *(ulong *)(local_10 + iVar4 + -4));
-  *(byte **)(local_10 + iVar4 + -4) = local_10 + iVar4;
-  *(int *)(&stack0x000000e0 + iVar4) = 0x000000F4;
-  *(byte **)((int)aiStack_1c + iVar4 + 4) = local_10;
-  *(uint *)((int)aiStack_1c + iVar4) = 0x56df56;
+            (*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),
+             *(ulong *)(local_10 + iVar5 + -4));
+  *(byte **)(local_10 + iVar5 + -4) = local_10 + iVar5;
+  *(DWORD *)(&stack0x000000e0 + iVar5) = g_DWORD_005c20cc;
+  *(byte **)((int)aiStack_1c + iVar5 + 4) = local_10;
+  *(uint *)((int)aiStack_1c + iVar5) = 0x56df56;
   crt_startup_cpp_InitializeWinAppRuntime_FUN_00567458(local_10);
-  puVar6 = local_10 + iVar4;
-  uVar5 = DAT_005c1cf0 + 3U & 0xfffffffc;
-  *(uint *)(local_10 + iVar4 + -4) = 0x56df6a;
+  puVar7 = local_10 + iVar5;
+  uVar6 = g_DWORD_005c1cf0 + 3 & 0xfffffffc;
+  *(uint *)(local_10 + iVar5 + -4) = 0x56df6a;
   uVar2 = GetStackUsage();
-  if (uVar5 < uVar2) {
-    *(uint *)(local_10 + iVar4 + -4) = uVar5;
-    *(uint *)((int)aiStack_1c + iVar4 + 4) = 0x56df74;
-    ProbeStackSpace(*(uint *)(local_10 + iVar4 + -4));
-    iVar1 = -(DAT_005c1cf0 + 3U & 0xfffffffc);
-    puVar6 = local_10 + iVar1 + iVar4;
-    _DAT_005c1cf4 = local_10 + iVar1 + iVar4;
+  if (uVar6 < uVar2) {
+    *(uint *)(local_10 + iVar5 + -4) = uVar6;
+    *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x56df74;
+    ProbeStackSpace(*(uint *)(local_10 + iVar5 + -4));
+    iVar1 = -(g_DWORD_005c1cf0 + 3 & 0xfffffffc);
+    puVar7 = local_10 + iVar1 + iVar5;
+    puVar3 = local_10 + iVar1 + iVar5;
   }
   else {
-    _DAT_005c1cf4 = (byte *)0x0;
+    puVar3 = (byte *)0x0;
   }
-  _DAT_005c1cf4 = _DAT_005c1cf4 + DAT_005c1cf0;
-  *(uint *)(puVar6 + -4) = 0x56df98;
+  g_PTR_005c1cf4 = puVar3 + g_DWORD_005c1cf0;
+  *(uint *)(puVar7 + -4) = 0x56df98;
   FUN_00571160();
-  *(uint *)(puVar6 + -4) = 10;
-  *(uint *)(puVar6 + -8) = DAT_005c1ccc;
-  *(uint *)(puVar6 + -0xc) = 0;
-  *(uint *)(puVar6 + -0x10) = 0;
-  *(uint *)(puVar6 + -0x14) = 0x56dfac;
-  pHVar3 = GetModuleHandleA(*(LPCSTR *)(puVar6 + -0x10));
-  *(HMODULE *)(puVar6 + -0x10) = pHVar3;
-  *(uint *)(puVar6 + -0x14) = 0x56dfb2;
-  iVar4 = wincore_winrun_cpp_winMain_FUN_00559260
-                    (*(HINSTANCE *)(puVar6 + -0x10),*(HINSTANCE *)(puVar6 + -0xc),
-                     *(LPSTR *)(puVar6 + -8),*(int *)(puVar6 + -4));
-  *(int *)(puVar6 + -4) = iVar4;
-  *(uint *)(puVar6 + -8) = 0x56dfb8;
-  ExitApplication(*(int *)(puVar6 + -4));
+  *(uint *)(puVar7 + -4) = 10;
+  *(DWORD *)(puVar7 + -8) = g_DWORD_005c1ccc;
+  *(uint *)(puVar7 + -0xc) = 0;
+  *(uint *)(puVar7 + -0x10) = 0;
+  *(uint *)(puVar7 + -0x14) = 0x56dfac;
+  pHVar4 = GetModuleHandleA(*(LPCSTR *)(puVar7 + -0x10));
+  *(HMODULE *)(puVar7 + -0x10) = pHVar4;
+  *(uint *)(puVar7 + -0x14) = 0x56dfb2;
+  iVar5 = wincore_winrun_cpp_winMain_FUN_00559260
+                    (*(HINSTANCE *)(puVar7 + -0x10),*(HINSTANCE *)(puVar7 + -0xc),
+                     *(LPSTR *)(puVar7 + -8),*(int *)(puVar7 + -4));
+  *(int *)(puVar7 + -4) = iVar5;
+  *(uint *)(puVar7 + -8) = 0x56dfb8;
+  ExitApplication(*(int *)(puVar7 + -4));
   return;
 }

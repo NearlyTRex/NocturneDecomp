@@ -23,14 +23,15 @@ CDemonActorType * __cdecl core_actor_cpp_getActorClassByName_FUN_0040d4d0(char *
       uVar3 = iVar2 * 0x20001 + uVar3 * 0x80 + (uVar3 >> 0x19);
     }
   }
-  if (0 < DAT_00763e94) {
+  if (0 < g_INT_00763e94) {
     iVar2 = 0;
     do {
-      if (uVar3 == (*(CDemonActorType **)((int)&DAT_00763e98 + iVar2))->name_hash) {
-        return *(CDemonActorType **)((int)&DAT_00763e98 + iVar2);
+      if (uVar3 == (*(CDemonActorType **)((int)g_CDemonActorType_PTR_ARRAY_00763e98 + iVar2))->
+                   name_hash) {
+        return *(CDemonActorType **)((int)g_CDemonActorType_PTR_ARRAY_00763e98 + iVar2);
       }
       iVar2 = iVar2 + 4;
-    } while (iVar2 < DAT_00763e94 * 4);
+    } while (iVar2 < g_INT_00763e94 * 4);
   }
   return (CDemonActorType *)0x0;
 }

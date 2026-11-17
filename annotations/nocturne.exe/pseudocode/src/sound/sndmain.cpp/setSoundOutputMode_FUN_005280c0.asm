@@ -20,12 +20,12 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005937cc
 ;   TerminatedCString s_setSoundOutputMode_can_t_005937e1
-;   undefined4 DAT_005bea64
-;   undefined4 DAT_005bea68
-;   undefined4 DAT_005bea6c
+;   int g_INT_005bea64 = 0x10
+;   int g_INT_005bea68 = 0x2
+;   int g_INT_005bea6c = 0x5622
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -48,12 +48,12 @@ section .text
         ;   XREF to: 00528100 (CONDITIONAL_JUMP)  ; LAB_00528100
     MOV EAX,dword ptr [ESP + 0x14]      ; 005280cf
         ;   Label: LAB_005280cf
-    MOV [0x005bea64],EAX                ; 005280d3 | DAT_005bea64
+    MOV [0x005bea64],EAX                ; 005280d3 | g_INT_005bea64
     MOV EAX,dword ptr [ESP + 0x18]      ; 005280d8
-    MOV [0x005bea68],EAX                ; 005280dc | DAT_005bea68
+    MOV [0x005bea68],EAX                ; 005280dc | g_INT_005bea68
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005280e1
-    MOV EBX,dword ptr [0x02dc8318]      ; 005280e5 | DAT_02dc8318
-    MOV [0x005bea6c],EAX                ; 005280eb | DAT_005bea6c
+    MOV EBX,dword ptr [0x02dc8318]      ; 005280e5 | g_CSoundDevice_PTR_02dc8318
+    MOV [0x005bea6c],EAX                ; 005280eb | g_INT_005bea6c
     TEST EBX,EBX                        ; 005280f0
     JNZ 0x00528125                      ; 005280f2
         ;   XREF to: 00528125 (CONDITIONAL_JUMP)  ; LAB_00528125

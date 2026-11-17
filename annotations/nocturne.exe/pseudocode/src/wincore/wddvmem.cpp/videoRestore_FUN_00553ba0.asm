@@ -22,7 +22,7 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02ddf568
+;   int g_INT_02ddf568
 ;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     CMP dword ptr [0x02dc9d60],0x0      ; 00553ba3 | g_UseDirect3D
     JZ 0x00553cb7                       ; 00553baa
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
-    CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | DAT_02ddf568
+    CMP dword ptr [0x02ddf568],0x0      ; 00553bb0 | g_INT_02ddf568
     JZ 0x00553cb7                       ; 00553bb7
         ;   XREF to: 00553cb7 (CONDITIONAL_JUMP)  ; LAB_00553cb7
     MOV EDX,dword ptr [0x005b7624]      ; 00553bbd | g_BitsPerPixel

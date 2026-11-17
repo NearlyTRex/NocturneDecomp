@@ -4,12 +4,60 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/C3DSLight.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
+#include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CVector3f.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1FF0000
 // =============================================================================
 
+// C3DSLight*[200]
+extern C3DSLight* g_C3DSLight_PTR_ARRAY_01fff228[200];
+
+// CDemonActor*[2000]
+extern CDemonActor* g_CDemonActor_PTR_ARRAY_01ffcfb8[2000];
+
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_01fff094[100];
+
+// CDemonLight*[4]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fff080[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01ffeefc[96];
+
+// CMatrix3x3f
+extern CMatrix3x3f g_CMatrix3x3f_01fff57c;
+
 // CVector3f[4000]
 extern CVector3f g_CVector3f_ARRAY_01fff5b0[4000];
+
+// float
+extern float g_FLOAT_01fff54c;
+extern float g_FLOAT_01fff554;
+extern float g_FLOAT_01fff558;
+extern float g_FLOAT_01fff560;
+extern float g_FLOAT_01fff564;
+extern float g_FLOAT_01fff56c;
+extern float g_FLOAT_01fff570;
+extern float g_FLOAT_01fff578;
+
+// int
+extern int g_INT_01ffb060;
+extern int g_INT_01ffb074;
+extern int g_INT_01ffeef8;
+extern int g_INT_01fff07c;
+extern int g_INT_01fff090;
+extern int g_INT_01fff224;
+extern int g_INT_01fff548;
+extern int g_INT_01fff5a4;
+extern int g_INT_01fff5a8;
+extern int g_INT_01fff5ac;
+
+// int[2000]
+extern int g_INT_ARRAY_01ffb078[2000];
 

@@ -16,9 +16,9 @@
 ;   TerminatedCString s_CElephantGun_0057f0fc
 ;   undefined4 s_CElephantGun_0057f0fc+1
 ;   undefined4 s_CElephantGun_0057f0fc+2
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bcd9b8
+;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -67,23 +67,23 @@ section .text
         ;   XREF to: 00477217 (CONDITIONAL_JUMP)  ; LAB_00477217
     POP EDI                             ; 0047722f
         ;   Label: LAB_0047722f
-    CMP dword ptr [0x01bcd070],0x0      ; 00477230 | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 00477230 | g_CBitFont_PTR_01bcd070
     JZ 0x004772aa                       ; 00477237
         ;   XREF to: 004772aa (CONDITIONAL_JUMP)  ; LAB_004772aa
-    MOV EAX,[0x01bcd070]                ; 00477239 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00477239 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_00477239
     PUSH 0x6a                           ; 0047723e
     MOV ESI,dword ptr [EAX + 0x3168]    ; 00477240
     PUSH EAX                            ; 00477246
-    MOV dword ptr [0x01bcd9b8],ESI      ; 00477247 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],ESI      ; 00477247 | g_INT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0047724d
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00477252
     LEA ESI,[EBX + 0x24]                ; 00477255
     PUSH ESI                            ; 00477258
-    MOV EDI,dword ptr [0x01bcd070]      ; 00477259 | DAT_01bcd070
+    MOV EDI,dword ptr [0x01bcd070]      ; 00477259 | g_CBitFont_PTR_01bcd070
     PUSH EDI                            ; 0047725f
-    MOV [0x01bcd9bc],EAX                ; 00477260 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00477260 | g_INT_01bcd9bc
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00477265
         ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)
     MOV EDI,EAX                         ; 0047726a
@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 00477370 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_00477370(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 0047728b
     PUSH ESI                            ; 0047728e
-    MOV EBP,dword ptr [0x01bcd070]      ; 0047728f | DAT_01bcd070
+    MOV EBP,dword ptr [0x01bcd070]      ; 0047728f | g_CBitFont_PTR_01bcd070
     PUSH EBP                            ; 00477295
     ADD EDI,EAX                         ; 00477296
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00477298

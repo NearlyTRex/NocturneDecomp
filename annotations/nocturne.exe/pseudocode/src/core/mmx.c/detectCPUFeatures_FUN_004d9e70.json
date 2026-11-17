@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 60,
+    "complexity_score": 9,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 10,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 26
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -56,21 +53,21 @@
     },
     {
       "addr": "005bb118",
-      "name": "DAT_005bb118",
-      "type": "undefined1",
-      "value": null
+      "name": "g_UCHAR_005bb118",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "005bb11c",
-      "name": "DAT_005bb11c",
-      "type": "undefined1",
-      "value": null
+      "name": "g_UCHAR_005bb11c",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "005bb121",
-      "name": "DAT_005bb121",
-      "type": "undefined1",
-      "value": null
+      "name": "g_UCHAR_005bb121",
+      "type": "uchar",
+      "value": "\u0000"
     },
     {
       "addr": "01c03948",
@@ -80,8 +77,8 @@
     },
     {
       "addr": "01c0394c",
-      "name": "DAT_01c0394c",
-      "type": "undefined4",
+      "name": "g_INT_01c0394c",
+      "type": "int",
       "value": null
     }
   ],
@@ -160,38 +157,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_005bb121",
-      "severity": "mild",
-      "text": "g_MMXSupported = (uint)DAT_005bb121;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_005bb118",
-      "severity": "mild",
-      "text": "INT_005b7638 = (uint)DAT_005bb118;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005bb11c",
-      "severity": "mild",
-      "text": "_DAT_01c0394c = (uint)DAT_005bb11c;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

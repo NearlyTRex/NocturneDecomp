@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 79,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 79,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 245
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 80,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unknown_field"
+    ],
+    "total_lines": 246
   },
   "cross_references": [
     {
@@ -160,5 +162,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._0_1_",
+      "severity": "mild",
+      "text": "g_CVector3f_ARRAY_ARRAY_00a38388[0x3d][0x12e].y._0_1_) != 0)) {",
+      "type": "unknown_field"
+    }
+  ]
 }

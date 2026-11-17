@@ -2,18 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 210,
-    "complexity_score": 107,
+    "complexity_score": 116,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 29,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
-    "suspect_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 66,
+    "suspect_count": 4,
     "suspect_types": [
       "suspect_float",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 277
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -118,109 +118,109 @@
     },
     {
       "addr": "01cc5118",
-      "name": "DAT_01cc5118",
-      "type": "undefined4",
+      "name": "g_INT_01cc5118",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc511c",
-      "name": "DAT_01cc511c",
-      "type": "undefined4",
+      "name": "g_INT_01cc511c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5120",
-      "name": "DAT_01cc5120",
-      "type": "undefined4",
+      "name": "g_INT_01cc5120",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5124",
-      "name": "DAT_01cc5124",
-      "type": "undefined4",
+      "name": "g_INT_01cc5124",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5128",
-      "name": "DAT_01cc5128",
-      "type": "undefined4",
+      "name": "g_INT_01cc5128",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc512c",
-      "name": "DAT_01cc512c",
-      "type": "undefined4",
+      "name": "g_INT_01cc512c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5130",
-      "name": "DAT_01cc5130",
-      "type": "undefined4",
+      "name": "g_INT_01cc5130",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5134",
-      "name": "DAT_01cc5134",
-      "type": "undefined4",
+      "name": "g_INT_01cc5134",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5138",
-      "name": "DAT_01cc5138",
-      "type": "undefined4",
+      "name": "g_INT_01cc5138",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc5140",
-      "name": "DAT_01cc5140",
-      "type": "undefined4",
+      "name": "g_CMatrix3x3i_01cc5140",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "01cc5144",
-      "name": "DAT_01cc5144",
+      "name": "g_CMatrix3x3i_01cc5140.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc5148",
-      "name": "DAT_01cc5148",
+      "name": "g_CMatrix3x3i_01cc5140.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc514c",
-      "name": "DAT_01cc514c",
+      "name": "g_CMatrix3x3i_01cc5140.m[1].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc5150",
-      "name": "DAT_01cc5150",
+      "name": "g_CMatrix3x3i_01cc5140.m[1].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc5154",
-      "name": "DAT_01cc5154",
+      "name": "g_CMatrix3x3i_01cc5140.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc5158",
-      "name": "DAT_01cc5158",
+      "name": "g_CMatrix3x3i_01cc5140.m[2].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc515c",
-      "name": "DAT_01cc515c",
+      "name": "g_CMatrix3x3i_01cc5140.m[2].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cc5160",
-      "name": "DAT_01cc5160",
+      "name": "g_CMatrix3x3i_01cc5140.m[2].z",
       "type": "undefined4",
       "value": null
     }
@@ -466,16 +466,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 60,
+      "line": 58,
       "match": "7.053105e-39",
       "severity": "mild",
       "text": "dVar19 = round((double)(uStack_54 * 7.053105e-39));",
@@ -483,11 +475,27 @@
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 61,
+      "line": 59,
       "match": "7.053133e-39",
       "severity": "mild",
       "text": "dVar20 = round((double)(-(fVar3 * fVar7 - fVar8 * fVar12) * 7.053133e-39))",
       "type": "suspect_float"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 38,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CMatrix3x3i_01cc5140.m[0].x = g_TransformMatrix.m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (6 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CMatrix3x3i_01cc5140.m[1].x = g_TransformMatrix.m[1].x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

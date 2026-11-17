@@ -15,7 +15,7 @@
 ;   float FLOAT_0059fd64 = 112
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -38,7 +38,7 @@ section .text
     AND ESP,0xfffffff8                  ; 004c7cac
     MOV ESI,dword ptr [EBP + 0x14]      ; 004c7caf
     MOV EDX,dword ptr [0x005ae704]      ; 004c7cb2 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004c7cb8 | DAT_01b4d738
+    PUSH EDX                            ; 004c7cb8 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004c7cb9
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c7cbe

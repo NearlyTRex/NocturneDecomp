@@ -25,13 +25,13 @@ void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_00494670(CSpark *this_ptr
   CVector3i local_18;
   
   bVar6 = 0;
-  g_SMRGLHeaderPrimitive_01c3ded0.base.count = 4;
-  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.A.i = 0;
-  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.B.i = 0;
-  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.C.i = 0;
-  g_SMRGLHeaderPrimitive_01c3ded0.surface_normal.D.i = 0;
-  g_INT_01c3dee8 = 0;
-  g_INT_01c3deec = 1;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.base.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[1] = 1;
   g_SRenderVertex_ARRAY_00622014[0].u = 0x80000;
   g_SRenderVertex_ARRAY_00622014[0].v = 0xf80000;
   g_SRenderVertex_ARRAY_00622014[1].u = 0xf80000;
@@ -40,8 +40,8 @@ void __cdecl core_fire_cpp_CSpark_setupRenderState_FUN_00494670(CSpark *this_ptr
   g_SRenderVertex_ARRAY_00622014[2].v = 0x80000;
   g_SRenderVertex_ARRAY_00622014[3].u = 0x80000;
   g_SRenderVertex_ARRAY_00622014[3].v = 0x80000;
-  g_INT_01c3def0 = 2;
-  g_INT_01c3def4 = 3;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01c3ded0.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
             (g_CDemonRenderer_PTR_0060b280,&local_18);
   g_CVector3i_01c3deb8.x = local_18.x;

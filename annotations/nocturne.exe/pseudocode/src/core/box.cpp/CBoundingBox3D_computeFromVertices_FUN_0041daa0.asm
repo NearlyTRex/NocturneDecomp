@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005797d5
+;   double g_DOUBLE_005797d5 = 0.00390625
 ;
 ; *****************************************************************************
 
@@ -77,7 +77,7 @@ section .text
         ;   Label: LAB_0041db15
     MOV dword ptr [ESP + 0x10],EAX      ; 0041db18
     MOV dword ptr [ESP + 0x14],ESI      ; 0041db1c
-    FLD double ptr [0x005797d5]         ; 0041db20 | DAT_005797d5
+    FLD double ptr [0x005797d5]         ; 0041db20 | g_DOUBLE_005797d5
     FILD dword ptr [ESP + 0x10]         ; 0041db26
     FMUL ST1                            ; 0041db2a
     FILD dword ptr [ESP + 0x14]         ; 0041db2c

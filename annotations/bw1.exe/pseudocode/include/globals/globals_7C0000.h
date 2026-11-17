@@ -131,8 +131,8 @@ extern float g_FLOAT_007c6340;
 // float[100]
 extern float g_FLOAT_ARRAY_007c6384[100];
 
-// float[12]
-extern float g_FLOAT_ARRAY_007c53b4[12];
+// float[12][12]
+extern float g_FLOAT_ARRAY_ARRAY_007c53b4[12][12];
 
 // int
 extern int g_INT_007c1070;

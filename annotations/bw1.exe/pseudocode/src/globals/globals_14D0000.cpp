@@ -7,5 +7,7 @@
 // int[240]
 int g_INT_ARRAY_014dea50[240] = {};
 int g_INT_ARRAY_014dee10[240] = {};
-int g_INT_ARRAY_014df1d0[240] = {};
+
+// int[240][320]
+int g_INT_ARRAY_ARRAY_014df1d0[240][320] = {};
 

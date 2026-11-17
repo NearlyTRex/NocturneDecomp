@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointLocal_FUN_004da000(CVector3f *out,CDemonActor *actor)
 
 {
@@ -15,9 +13,9 @@ CVector3f * __cdecl core_mobster_cpp_getObjectGrabPointLocal_FUN_004da000(CVecto
   CBoundingBox3D CStack_30;
   
   (*((actor->vtable)._ub)->getBoundingBox)(actor,&CStack_30);
-  fVar1 = _DAT_0058a161;
-  out->x = (CStack_30.min.x + CStack_30.max.x) * _DAT_0058a161;
+  fVar1 = 0.5f;
+  out->x = (CStack_30.min.x + CStack_30.max.x) * 0.5f;
   out->y = fVar1 * (CStack_30.min.y + CStack_30.max.y);
-  out->z = CStack_30.min.z + (float)_DAT_0058a169;
+  out->z = CStack_30.min.z + (float)0.40000000000000002;
   return out;
 }

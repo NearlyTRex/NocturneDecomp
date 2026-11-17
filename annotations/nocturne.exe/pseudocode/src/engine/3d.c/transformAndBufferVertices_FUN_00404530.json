@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 103,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 33,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "warning_overlapping_globals"
     ],
     "total_lines": 118
@@ -51,32 +50,32 @@
     },
     {
       "addr": "005c5014",
-      "name": "DAT_005c5014",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_005c5014",
+      "type": "SRenderVertex[20000]",
       "value": null
     },
     {
       "addr": "005c5027",
-      "name": "DAT_005c5024+3",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x+3",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5040",
-      "name": "DAT_005c5040",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].a",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006b0264",
-      "name": "DAT_006b0264",
-      "type": "undefined4",
+      "name": "g_UINT_006b0264",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "006b0268",
-      "name": "DAT_006b0268",
-      "type": "undefined4",
+      "name": "g_UINT_006b0268",
+      "type": "uint",
       "value": null
     },
     {
@@ -87,8 +86,8 @@
     },
     {
       "addr": "01c038f4",
-      "name": "DAT_01c038f4",
-      "type": "undefined4",
+      "name": "g_INT_01c038f4",
+      "type": "int",
       "value": null
     }
   ],
@@ -201,46 +200,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005c5014",
-      "severity": "mild",
-      "text": "output = (SProjectedVertex *)(&DAT_005c5014 + ((mrgl->base).count + DAT_006b0264) * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_006b0264",
-      "severity": "mild",
-      "text": "output = (SProjectedVertex *)(&DAT_005c5014 + ((mrgl->base).count + DAT_006b0264) * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 30,
-      "match": "DAT_006b0264",
-      "severity": "mild",
-      "text": "if (DAT_006b0264 == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_006b0268",
-      "severity": "mild",
-      "text": "DAT_006b0268 = DAT_006b0264;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 31,
-      "match": "DAT_006b0264",
-      "severity": "mild",
-      "text": "DAT_006b0268 = DAT_006b0264;",
-      "type": "undefined_data"
     }
   ],
   "vtable_info": {

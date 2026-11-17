@@ -7,7 +7,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CVector3f.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
@@ -25,8 +25,8 @@ extern CMini3D g_CMini3DInstance;
 extern CVector3f g_CVector3f_ARRAY_01d2c5d4[32];
 extern CVector3f g_CVector3f_ARRAY_01d2c758[32];
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d2c8d8;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d2c8d8;
 
 // SSoftwareEdge
 extern SSoftwareEdge g_SSoftwareEdge_01d2c0c8;
@@ -38,8 +38,8 @@ extern char* g_CHAR_PTR_01d21030;
 // char*[4]
 extern char* g_CHAR_PTR_ARRAY_01d21448[4];
 
-// char[10]
-extern char g_CHAR_ARRAY_01d219e8[10];
+// char[10][256]
+extern char g_CHAR_ARRAY_ARRAY_01d219e8[10][256];
 
 // char[256]
 extern char g_CHAR_ARRAY_01d20a30[256];
@@ -49,11 +49,11 @@ extern char g_CHAR_ARRAY_01d20d30[256];
 extern char g_CHAR_ARRAY_01d20e30[256];
 extern char g_CHAR_ARRAY_01d20f30[256];
 
-// char[30]
-extern char g_CHAR_ARRAY_01d214e0[30];
+// char[30][40]
+extern char g_CHAR_ARRAY_ARRAY_01d214e0[30][40];
 
-// char[4]
-extern char g_CHAR_ARRAY_01d21048[4];
+// char[4][256]
+extern char g_CHAR_ARRAY_ARRAY_01d21048[4][256];
 
 // float
 extern float g_FLOAT_01d224c0;

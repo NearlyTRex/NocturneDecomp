@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00448654 = 0044870c
 ;   undefined1* PTR_caseD_3_0044865c = 004486f1
-;   undefined4 DAT_014b848c
-;   undefined4 DAT_014b8550
+;   int g_INT_014b848c
+;   int g_INT_014b8550
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
@@ -27,14 +27,14 @@ section .text
     MOV EBP,ESP                         ; 00448664
     SUB ESP,0x4                         ; 00448666
     AND ESP,0xfffffff8                  ; 00448669
-    MOV EBX,dword ptr [0x014b8550]      ; 0044866c | DAT_014b8550
-    MOV EDX,dword ptr [0x014b848c]      ; 00448672 | DAT_014b848c
+    MOV EBX,dword ptr [0x014b8550]      ; 0044866c | g_INT_014b8550
+    MOV EDX,dword ptr [0x014b848c]      ; 00448672 | g_INT_014b848c
     XOR ESI,ESI                         ; 00448678
     TEST EDX,EDX                        ; 0044867a
     JLE 0x004486ff                      ; 0044867c
         ;   XREF to: 004486ff (CONDITIONAL_JUMP)  ; LAB_004486ff
     MOV EDI,0x14b8490                   ; 00448682
-    MOV EAX,[0x014b848c]                ; 00448687 | DAT_014b848c
+    MOV EAX,[0x014b848c]                ; 00448687 | g_INT_014b848c
         ;   Label: LAB_00448687
     LEA ECX,[ESI + 0x1]                 ; 0044868c
     CMP ECX,EAX                         ; 0044868f
@@ -84,14 +84,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 004486ed
     INC EBX                             ; 004486f0
         ;   Label: LAB_004486f0
-    MOV ECX,dword ptr [0x014b848c]      ; 004486f1 | DAT_014b848c
+    MOV ECX,dword ptr [0x014b848c]      ; 004486f1 | g_INT_014b848c
         ;   Label: caseD_3
     INC ESI                             ; 004486f7
     ADD EDI,0xc                         ; 004486f8
     CMP ESI,ECX                         ; 004486fb
     JL 0x00448687                       ; 004486fd
         ;   XREF to: 00448687 (CONDITIONAL_JUMP)  ; LAB_00448687
-    MOV dword ptr [0x014b8550],EBX      ; 004486ff | DAT_014b8550
+    MOV dword ptr [0x014b8550],EBX      ; 004486ff | g_INT_014b8550
         ;   Label: LAB_004486ff
     MOV ESP,EBP                         ; 00448705
     POP EBP                             ; 00448707
@@ -116,10 +116,10 @@ section .text
     PUSH EDX                            ; 00448730
     MOV EAX,dword ptr [ESP + 0x28]      ; 00448731
     PUSH EAX                            ; 00448735
-    MOV dword ptr [0x014b8550],EBX      ; 00448736 | DAT_014b8550
+    MOV dword ptr [0x014b8550],EBX      ; 00448736 | g_INT_014b8550
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044873c
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8550]      ; 00448741 | DAT_014b8550
+    MOV EBX,dword ptr [0x014b8550]      ; 00448741 | g_INT_014b8550
     ADD ESP,0x2c                        ; 00448747
     JMP 0x004486f0                      ; 0044874a
         ;   XREF to: 004486f0 (UNCONDITIONAL_JUMP)  ; LAB_004486f0
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 0044878e
     PUSH ECX                            ; 00448792
     PUSH EDX                            ; 00448793
-    MOV dword ptr [0x014b8550],EBX      ; 00448794 | DAT_014b8550
+    MOV dword ptr [0x014b8550],EBX      ; 00448794 | g_INT_014b8550
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044879a
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8550]      ; 0044879f | DAT_014b8550
+    MOV EBX,dword ptr [0x014b8550]      ; 0044879f | g_INT_014b8550
     ADD ESP,0x2c                        ; 004487a5
     JMP 0x004486f0                      ; 004487a8
         ;   XREF to: 004486f0 (UNCONDITIONAL_JUMP)  ; LAB_004486f0

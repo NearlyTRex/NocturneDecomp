@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00766c6c
+;   int g_INT_00766c6c
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x00766c6c]                ; 004301d0 | DAT_00766c6c
+    MOV EAX,[0x00766c6c]                ; 004301d0 | g_INT_00766c6c
         ;   Label: cockpit_ckptutil.c_isLineBlendingDisabled_FUN_004301d0
     RET                                 ; 004301d5
 

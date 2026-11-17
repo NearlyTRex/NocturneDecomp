@@ -55,11 +55,11 @@ section .text
     MOV EDI,0x3                         ; 004c9016
     MOV EBP,0x80000                     ; 004c901b
     XOR ECX,ECX                         ; 004c9020
-    MOV dword ptr [0x01cb82cc],EDX      ; 004c9022 | g_SMRGLHeaderPrimitive_01cb82c8.base.count
-    MOV dword ptr [0x01cb82e0],ECX      ; 004c9028 | DAT_01cb82e0
-    MOV dword ptr [0x01cb82e4],EBX      ; 004c902e | DAT_01cb82e4
-    MOV dword ptr [0x01cb82e8],ESI      ; 004c9034 | DAT_01cb82e8
-    MOV dword ptr [0x01cb82ec],EDI      ; 004c903a | DAT_01cb82ec
+    MOV dword ptr [0x01cb82cc],EDX      ; 004c9022 | g_SMRGLPrimitiveQuadIndex_01cb82c8.base.base.count
+    MOV dword ptr [0x01cb82e0],ECX      ; 004c9028 | g_SMRGLPrimitiveQuadIndex_01cb82c8.vertices[0]
+    MOV dword ptr [0x01cb82e4],EBX      ; 004c902e | g_SMRGLPrimitiveQuadIndex_01cb82c8.vertices[1]
+    MOV dword ptr [0x01cb82e8],ESI      ; 004c9034 | g_SMRGLPrimitiveQuadIndex_01cb82c8.vertices[2]
+    MOV dword ptr [0x01cb82ec],EDI      ; 004c903a | g_SMRGLPrimitiveQuadIndex_01cb82c8.vertices[3]
     MOV dword ptr [0x0062202c],EBP      ; 004c9040 | g_SRenderVertex_ARRAY_00622014[0].u
     MOV dword ptr [0x00622030],EBP      ; 004c9046 | g_SRenderVertex_ARRAY_00622014[0].v
     MOV EDX,0xf80000                    ; 004c904c
@@ -81,11 +81,11 @@ section .text
     MOV EBP,dword ptr [0x0060b280]      ; 004c9091 | g_CDemonRenderer_PTR_0060b280
     XOR ECX,ECX                         ; 004c9097
     PUSH 0x617968                       ; 004c9099 | g_SMRGLTextureBasic_00617968
-    MOV dword ptr [0x01cb82d0],ECX      ; 004c909e | g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.A
-    MOV dword ptr [0x01cb82d4],ECX      ; 004c90a4 | g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.B
+    MOV dword ptr [0x01cb82d0],ECX      ; 004c909e | g_SMRGLPrimitiveQuadIndex_01cb82c8.base.surface_normal.A
+    MOV dword ptr [0x01cb82d4],ECX      ; 004c90a4 | g_SMRGLPrimitiveQuadIndex_01cb82c8.base.surface_normal.B
     PUSH EBP                            ; 004c90aa | g_CDemonRenderer_01ba5c50
-    MOV dword ptr [0x01cb82d8],ECX      ; 004c90ab | g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.C
-    MOV dword ptr [0x01cb82dc],ECX      ; 004c90b1 | g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.D
+    MOV dword ptr [0x01cb82d8],ECX      ; 004c90ab | g_SMRGLPrimitiveQuadIndex_01cb82c8.base.surface_normal.C
+    MOV dword ptr [0x01cb82dc],ECX      ; 004c90b1 | g_SMRGLPrimitiveQuadIndex_01cb82c8.base.surface_normal.D
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00 ; 004c90b7
         ;   XREF to: 0046ca00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA EBP,[EBX + 0x8]                 ; 004c90bc

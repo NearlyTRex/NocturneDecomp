@@ -30,8 +30,8 @@
 ;   int g_INT_00604d18 = 0x0
 ;   double g_DOUBLE_00604d1c = 0.0
 ;   qword g_QWORD_00604d90 = 0x0
-;   int g_INT_00604d98 = 0x0
-;   int g_INT_00604da0 = 0x0
+;   _MMX_INTEGER g_MMX_INTEGER_00604d98
+;   _MMX_INTEGER g_MMX_INTEGER_00604da0
 ;   qword g_QWORD_00604db0 = 0x0
 ;   ... and 23 more
 ;
@@ -165,8 +165,8 @@ section .text
     IMUL dword ptr [ECX + 0x1c6b5d4]    ; 005610f6 | g_UINT_ARRAY_01c6b5d0[1]
     AND EBX,0xffff                      ; 005610fc
     AND EDX,0xffff                      ; 00561102
-    MOV dword ptr [0x00604d98],EBX      ; 00561108 | g_INT_00604d98
-    MOV dword ptr [0x00604db8],EDX      ; 0056110e | g_INT_00604db8
+    MOV dword ptr [0x00604d98],EBX      ; 00561108 | g_MMX_INTEGER_00604d98
+    MOV dword ptr [0x00604db8],EDX      ; 0056110e | g_MMX_INTEGER_00604db8
     MOV EAX,dword ptr [EDI + 0x40]      ; 00561114
     MOV EBX,dword ptr [ESI + 0x40]      ; 00561117
     SHR EAX,0x1                         ; 0056111a
@@ -175,18 +175,18 @@ section .text
     IMUL dword ptr [ECX + 0x1c6b5d4]    ; 00561120 | g_UINT_ARRAY_01c6b5d0[1]
     AND EBX,0xffff                      ; 00561126
     AND EDX,0xffff                      ; 0056112c
-    MOV dword ptr [0x00604da0],EBX      ; 00561132 | g_INT_00604da0
-    MOV dword ptr [0x00604dc0],EDX      ; 00561138 | g_INT_00604dc0
+    MOV dword ptr [0x00604da0],EBX      ; 00561132 | g_MMX_INTEGER_00604da0
+    MOV dword ptr [0x00604dc0],EDX      ; 00561138 | g_MMX_INTEGER_00604dc0
     MOVQ MM5,qword ptr [0x00604d90]     ; 0056113e | g_QWORD_00604d90
     MOVQ MM6,qword ptr [0x00604db0]     ; 00561145 | g_QWORD_00604db0
     PSLLQ MM5,0x10                      ; 0056114c
     PSLLQ MM6,0x10                      ; 00561150
-    POR MM5,qword ptr [0x00604d98]      ; 00561154 | g_INT_00604d98
-    POR MM6,qword ptr [0x00604db8]      ; 0056115b | g_INT_00604db8
+    POR MM5,qword ptr [0x00604d98]      ; 00561154 | g_MMX_INTEGER_00604d98
+    POR MM6,qword ptr [0x00604db8]      ; 0056115b | g_MMX_INTEGER_00604db8
     PSLLQ MM5,0x10                      ; 00561162
     PSLLQ MM6,0x10                      ; 00561166
-    POR MM5,qword ptr [0x00604da0]      ; 0056116a | g_INT_00604da0
-    POR MM6,qword ptr [0x00604dc0]      ; 00561171 | g_INT_00604dc0
+    POR MM5,qword ptr [0x00604da0]      ; 0056116a | g_MMX_INTEGER_00604da0
+    POR MM6,qword ptr [0x00604dc0]      ; 00561171 | g_MMX_INTEGER_00604dc0
     JMP 0x00561240                      ; 00561178
         ;   XREF to: 00561240 (UNCONDITIONAL_JUMP)  ; LAB_00561240
     MOV EAX,dword ptr [EDI + 0x10]      ; 00561180

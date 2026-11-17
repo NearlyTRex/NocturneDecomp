@@ -192,20 +192,20 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb9
       uVar12 = (uint)((ulonglong)
                       ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar15) *
                       (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-      g_INT_0061c808 = uVar15 & 0xffff;
-      g_INT_0061c828 = uVar12 & 0xffff;
+      g_MMX_INTEGER_0061c808.u32[0] = uVar15 & 0xffff;
+      g_MMX_INTEGER_0061c828.u32[0] = uVar12 & 0xffff;
       uVar14 = (uint)pSVar16->blue_current >> 1;
       uVar9 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar14) *
                      (longlong)(int)g_UINT_ARRAY_01c35e70[iVar11 + 1]) >> 0x20);
-      g_INT_0061c810 = uVar14 & 0xffff;
-      g_INT_0061c830 = uVar9 & 0xffff;
+      g_MMX_INTEGER_0061c810.u32[0] = uVar14 & 0xffff;
+      g_MMX_INTEGER_0061c830.u32[0] = uVar9 & 0xffff;
       uVar40 = ((CONCAT44(g_QWORD_0061c800._4_4_,uVar10) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c80c,uVar15) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c814,uVar14) & 0xffffffff0000ffff;
+               CONCAT44(g_MMX_INTEGER_0061c808.u32[1],uVar15) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_MMX_INTEGER_0061c810.u32[1],uVar14) & 0xffffffff0000ffff;
       uVar45 = ((CONCAT44(g_QWORD_0061c820._4_4_,uVar19) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c82c,uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c834,uVar9) & 0xffffffff0000ffff;
+               CONCAT44(g_MMX_INTEGER_0061c828.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_MMX_INTEGER_0061c830.u32[1],uVar9) & 0xffffffff0000ffff;
     }
     uVar19 = 0;
     sVar44 = (short)uVar45;
@@ -355,9 +355,9 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb9
               if ((((iVar11 < 0xff01) || (uVar10 < 0xff)) || (iVar11 < 0xff)) ||
                  (g_INT_01c38b4c != 0)) {
                 uVar15 = (uint)*(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378);
-                uVar37 = (uint7)((uVar15 & _g_INT_0061c8e0) << g_QWORD_0061c970) |
-                         (uint7)((uVar15 & _g_INT_0061c8d8) << g_QWORD_0061c950) |
-                         (uint7)((uVar15 & _g_INT_0061c8d0) << g_QWORD_0061c930);
+                uVar37 = (uint7)((uVar15 & g_MMX_INTEGER_0061c8e0.mm) << g_QWORD_0061c970) |
+                         (uint7)((uVar15 & g_MMX_INTEGER_0061c8d8.mm) << g_QWORD_0061c950) |
+                         (uint7)((uVar15 & g_MMX_INTEGER_0061c8d0.mm) << g_QWORD_0061c930);
                 uVar23 = (ushort)(((uVar37 >> 0x18) << 0x30) >> 0x28);
                 uVar7 = CONCAT21(uVar23,(char)(uVar37 >> 0x10));
                 uVar8 = CONCAT41((int)(((uint7)uVar7 << 0x20) >> 0x18),(char)(uVar37 >> 8));
@@ -495,9 +495,9 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb9
           uVar45 = 0;
           if ((g_BIT_INTEGER32_01c38b54.dword & 0x20) != 0) {
             uVar15 = (uint)*(ushort *)((uVar19 >> 1) + (int)g_INT_PTR_0061c378);
-            uVar37 = (uint7)((uVar15 & _g_INT_0061c8e0) << g_QWORD_0061c970) |
-                     (uint7)((uVar15 & _g_INT_0061c8d8) << g_QWORD_0061c950) |
-                     (uint7)((uVar15 & _g_INT_0061c8d0) << g_QWORD_0061c930);
+            uVar37 = (uint7)((uVar15 & g_MMX_INTEGER_0061c8e0.mm) << g_QWORD_0061c970) |
+                     (uint7)((uVar15 & g_MMX_INTEGER_0061c8d8.mm) << g_QWORD_0061c950) |
+                     (uint7)((uVar15 & g_MMX_INTEGER_0061c8d0.mm) << g_QWORD_0061c930);
             uVar45 = (ulonglong)
                      CONCAT52(CONCAT41((int)(((uint7)CONCAT21((short)(((uVar37 >> 0x18) << 0x30) >>
                                                                      0x28),(char)(uVar37 >> 0x10))

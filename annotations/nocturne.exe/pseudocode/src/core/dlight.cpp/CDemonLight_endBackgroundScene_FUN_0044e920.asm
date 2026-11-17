@@ -11,11 +11,11 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01ab99f0
-;   undefined4 DAT_01ab99f4
-;   undefined4 DAT_01ab99f8
-;   undefined4 DAT_01ab99f9
-;   undefined4 DAT_01b4d738
+;   int g_INT_01ab99f0
+;   void*[1200] g_ARRAY_PTR_01ab99f4
+;   undefined4 g_ARRAY_PTR_01ab99f4[1]
+;   undefined4 g_ARRAY_PTR_01ab99f4[1]+1
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   undefined4 g_ScreenBufferArray[1]+1
@@ -27,10 +27,10 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x01ab99f0]      ; 0044e920 | DAT_01ab99f0
+    MOV EDX,dword ptr [0x01ab99f0]      ; 0044e920 | g_INT_01ab99f0
         ;   Label: core_dlight.cpp_CDemonLight_endBackgroundScene_FUN_0044e920
     DEC EDX                             ; 0044e926
-    MOV dword ptr [0x01ab99f0],EDX      ; 0044e927 | DAT_01ab99f0
+    MOV dword ptr [0x01ab99f0],EDX      ; 0044e927 | g_INT_01ab99f0
     JZ 0x0044e930                       ; 0044e92d
         ;   XREF to: 0044e930 (CONDITIONAL_JUMP)  ; LAB_0044e930
     RET                                 ; 0044e92f
@@ -46,14 +46,14 @@ section .text
     PUSH EDI                            ; 0044e94a | g_ScreenBufferArray
     MOV EAX,ECX                         ; 0044e94b
     SHR ECX,0x2                         ; 0044e94d
-    MOVSD.REP ES:EDI,ESI                ; 0044e950 | DAT_01ab99f4 | g_ScreenBufferArray | DAT_01ab99f8
+    MOVSD.REP ES:EDI,ESI                ; 0044e950 | g_ARRAY_PTR_01ab99f4 | g_ScreenBufferArray | g_ARRAY_PTR_01ab99f4[1]
     MOV CL,AL                           ; 0044e952
     AND CL,0x3                          ; 0044e954
-    MOVSB.REP ES:EDI,ESI                ; 0044e957 | DAT_01ab99f8 | g_ScreenBufferArray[1] | DAT_01ab99f9
+    MOVSB.REP ES:EDI,ESI                ; 0044e957 | g_ARRAY_PTR_01ab99f4[1] | g_ScreenBufferArray[1] | g_ARRAY_PTR_01ab99f4[1]+1
     POP EDI                             ; 0044e959
     PUSH EDX                            ; 0044e95a
     MOV EBX,dword ptr [0x005ae704]      ; 0044e95b | g_CDemonRenderer_PTR_005ae704
-    PUSH EBX                            ; 0044e961 | DAT_01b4d738
+    PUSH EBX                            ; 0044e961 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070 ; 0044e962
         ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00461070(CDemonRenderer * this_ptr, int value)
     ADD ESP,0x8                         ; 0044e967

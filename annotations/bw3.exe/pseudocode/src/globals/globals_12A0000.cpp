@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x12A0000
 // =============================================================================
 
-// int
-int g_INT_012a6558 = {};
+// SCoronaLightCache
+SCoronaLightCache g_SCoronaLightCache_012a6558 = {};
 

@@ -11,10 +11,10 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_GetModuleHandleA_0057552c = 00175dbc
-;   undefined4 DAT_005c1ccc
-;   undefined4 DAT_005c1cf0
-;   undefined4 DAT_005c1cf4
-;   undefined4 DAT_005c20cc
+;   DWORD g_DWORD_005c1ccc = 0x0
+;   DWORD g_DWORD_005c1cf0 = 0x0
+;   void* g_PTR_005c1cf4 = 00000000
+;   DWORD g_DWORD_005c20cc = 0xf4
 ;
 ; Called Functions:
 ;   crt_init.c_ProcessInitTermHandlers_FUN_0056ef60
@@ -39,26 +39,26 @@ section .text
     MOV EAX,0x1                         ; 0056df17
     CALL crt_init.c_ProcessInitTermHandlers_FUN_0056ef60 ; 0056df1c
         ;   XREF to: 0056ef60 (UNCONDITIONAL_CALL)  ; void crt_init.c_ProcessInitTermHandlers_FUN_0056ef60(int max_priority)
-    MOV EAX,[0x005c20cc]                ; 0056df21 | DAT_005c20cc
+    MOV EAX,[0x005c20cc]                ; 0056df21 | g_DWORD_005c20cc
     ADD EAX,0x3                         ; 0056df26
     AND AL,0xfc                         ; 0056df29
     SUB ESP,EAX                         ; 0056df2b
     MOV EBX,ESP                         ; 0056df2d
-    MOV EDX,dword ptr [0x005c20cc]      ; 0056df2f | DAT_005c20cc
+    MOV EDX,dword ptr [0x005c20cc]      ; 0056df2f | g_DWORD_005c20cc
     PUSH EDX                            ; 0056df35
     PUSH 0x0                            ; 0056df36
     PUSH EBX                            ; 0056df38
     CALL crt_memory.c_memset_FUN_00563cc0 ; 0056df39
         ;   XREF to: 00563cc0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_00563cc0(void * dest, int value, ulong count)
     ADD ESP,0xc                         ; 0056df3e
-    MOV EAX,[0x005c20cc]                ; 0056df41 | DAT_005c20cc
+    MOV EAX,[0x005c20cc]                ; 0056df41 | g_DWORD_005c20cc
     PUSH EBX                            ; 0056df46
     MOV dword ptr [EBX + 0xf0],EAX      ; 0056df47
     LEA EAX,[EBP + -0x8]                ; 0056df4d
     PUSH EAX                            ; 0056df50
     CALL crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458 ; 0056df51
         ;   XREF to: 00567458 (UNCONDITIONAL_CALL)  ; void crt_startup.cpp_InitializeWinAppRuntime_FUN_00567458(void * pParam)
-    MOV EBX,dword ptr [0x005c1cf0]      ; 0056df56 | DAT_005c1cf0
+    MOV EBX,dword ptr [0x005c1cf0]      ; 0056df56 | g_DWORD_005c1cf0
     ADD EBX,0x3                         ; 0056df5c
     ADD ESP,0x8                         ; 0056df5f
     AND BL,0xfc                         ; 0056df62
@@ -70,7 +70,7 @@ section .text
     PUSH EBX                            ; 0056df6e
     CALL crt_unknown.c_ProbeStackSpace_FUN_005670ed ; 0056df6f
         ;   XREF to: 005670ed (UNCONDITIONAL_CALL)  ; void crt_unknown.c_ProbeStackSpace_FUN_005670ed(uint size)
-    MOV EAX,[0x005c1cf0]                ; 0056df74 | DAT_005c1cf0
+    MOV EAX,[0x005c1cf0]                ; 0056df74 | g_DWORD_005c1cf0
     ADD EAX,0x3                         ; 0056df79
     AND AL,0xfc                         ; 0056df7c
     SUB ESP,EAX                         ; 0056df7e
@@ -79,14 +79,14 @@ section .text
         ;   XREF to: 0056df86 (UNCONDITIONAL_JUMP)  ; LAB_0056df86
     XOR EAX,EAX                         ; 0056df84
         ;   Label: LAB_0056df84
-    MOV EBX,dword ptr [0x005c1cf0]      ; 0056df86 | DAT_005c1cf0
+    MOV EBX,dword ptr [0x005c1cf0]      ; 0056df86 | g_DWORD_005c1cf0
         ;   Label: LAB_0056df86
     ADD EAX,EBX                         ; 0056df8c
-    MOV [0x005c1cf4],EAX                ; 0056df8e | DAT_005c1cf4
+    MOV [0x005c1cf4],EAX                ; 0056df8e | g_PTR_005c1cf4
     CALL crt_unknown.c_FUN_00571160     ; 0056df93
         ;   XREF to: 00571160 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_00571160()
     PUSH 0xa                            ; 0056df98
-    MOV EBX,dword ptr [0x005c1ccc]      ; 0056df9a | DAT_005c1ccc
+    MOV EBX,dword ptr [0x005c1ccc]      ; 0056df9a | g_DWORD_005c1ccc
     PUSH EBX                            ; 0056dfa0
     PUSH 0x0                            ; 0056dfa1
     PUSH 0x0                            ; 0056dfa3

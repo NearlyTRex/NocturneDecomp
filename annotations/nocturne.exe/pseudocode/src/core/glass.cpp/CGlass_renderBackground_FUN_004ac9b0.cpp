@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_ptr,int layer_flag)
 
 {
@@ -45,9 +43,9 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004ac9b0(CGlass *this_pt
     pCVar2 = this_ptr->render_vertices;
     if (0 < this_ptr->broken_vertex_count) {
       do {
-        pCVar2->x = (int)ROUND(pCVar1->x * _DAT_0059e390);
-        pCVar2->y = (int)ROUND(pCVar1->y * _DAT_0059e390);
-        pCVar2->z = (int)ROUND(pCVar1->z * _DAT_0059e390);
+        pCVar2->x = (int)ROUND(pCVar1->x * 256.0f);
+        pCVar2->y = (int)ROUND(pCVar1->y * 256.0f);
+        pCVar2->z = (int)ROUND(pCVar1->z * 256.0f);
         iVar4 = iVar4 + 1;
         pCVar1 = pCVar1 + 1;
         pCVar2 = pCVar2 + 1;

@@ -18,19 +18,19 @@
 ; Referenced Globals:
 ;   double DOUBLE_005810d4 = -65536
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_005c505c
-;   undefined4 DAT_005c5060
-;   undefined4 DAT_005c508c
-;   undefined4 DAT_005c5090
-;   undefined4 DAT_005c50bc
-;   undefined4 DAT_005c50c0
-;   undefined4 DAT_007f7370
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c08d08
-;   undefined4 DAT_01c08d0c
-;   undefined4 DAT_01c08d10
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].v
+;   CDemonCamera* g_CDemonCamera_PTR_007f7370
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   CVector3i g_CVector3i_01c08d08
+;   undefined4 g_CVector3i_01c08d08.y
+;   undefined4 g_CVector3i_01c08d08.z
 ;   ... and 12 more
 ;
 ; Called Functions:
@@ -52,40 +52,40 @@ section .text
     MOV ESI,0xf80000                    ; 004837b5
     MOV EDI,0x1c08d08                   ; 004837ba
     XOR ECX,ECX                         ; 004837bf
-    MOV dword ptr [0x01c08d24],EDX      ; 004837c1 | DAT_01c08d24
-    MOV dword ptr [0x01c08d28],ECX      ; 004837c7 | DAT_01c08d28
-    MOV dword ptr [0x01c08d2c],ECX      ; 004837cd | DAT_01c08d2c
-    MOV dword ptr [0x01c08d30],ECX      ; 004837d3 | DAT_01c08d30
-    MOV dword ptr [0x01c08d34],ECX      ; 004837d9 | DAT_01c08d34
-    MOV dword ptr [0x01c08d38],ECX      ; 004837df | DAT_01c08d38
-    MOV [0x01c08d3c],EAX                ; 004837e5 | DAT_01c08d3c
-    MOV dword ptr [0x005c502c],EBX      ; 004837ea | DAT_005c502c
-    MOV dword ptr [0x005c5030],ESI      ; 004837f0 | DAT_005c5030
-    MOV dword ptr [0x005c505c],ESI      ; 004837f6 | DAT_005c505c
-    MOV dword ptr [0x005c5060],ESI      ; 004837fc | DAT_005c5060
-    MOV dword ptr [0x005c508c],ESI      ; 00483802 | DAT_005c508c
-    MOV dword ptr [0x005c5090],EBX      ; 00483808 | DAT_005c5090
-    MOV dword ptr [0x005c50bc],EBX      ; 0048380e | DAT_005c50bc
-    MOV dword ptr [0x005c50c0],EBX      ; 00483814 | DAT_005c50c0
+    MOV dword ptr [0x01c08d24],EDX      ; 004837c1 | g_SMRGLPrimitiveQuadIndex_01c08d20.base.base.count
+    MOV dword ptr [0x01c08d28],ECX      ; 004837c7 | g_SMRGLPrimitiveQuadIndex_01c08d20.base.surface_normal.A
+    MOV dword ptr [0x01c08d2c],ECX      ; 004837cd | g_SMRGLPrimitiveQuadIndex_01c08d20.base.surface_normal.B
+    MOV dword ptr [0x01c08d30],ECX      ; 004837d3 | g_SMRGLPrimitiveQuadIndex_01c08d20.base.surface_normal.C
+    MOV dword ptr [0x01c08d34],ECX      ; 004837d9 | g_SMRGLPrimitiveQuadIndex_01c08d20.base.surface_normal.D
+    MOV dword ptr [0x01c08d38],ECX      ; 004837df | g_SMRGLPrimitiveQuadIndex_01c08d20.vertices[0]
+    MOV [0x01c08d3c],EAX                ; 004837e5 | g_SMRGLPrimitiveQuadIndex_01c08d20.vertices[1]
+    MOV dword ptr [0x005c502c],EBX      ; 004837ea | g_SRenderVertex_ARRAY_005c5014[0].u
+    MOV dword ptr [0x005c5030],ESI      ; 004837f0 | g_SRenderVertex_ARRAY_005c5014[0].v
+    MOV dword ptr [0x005c505c],ESI      ; 004837f6 | g_SRenderVertex_ARRAY_005c5014[1].u
+    MOV dword ptr [0x005c5060],ESI      ; 004837fc | g_SRenderVertex_ARRAY_005c5014[1].v
+    MOV dword ptr [0x005c508c],ESI      ; 00483802 | g_SRenderVertex_ARRAY_005c5014[2].u
+    MOV dword ptr [0x005c5090],EBX      ; 00483808 | g_SRenderVertex_ARRAY_005c5014[2].v
+    MOV dword ptr [0x005c50bc],EBX      ; 0048380e | g_SRenderVertex_ARRAY_005c5014[3].u
+    MOV dword ptr [0x005c50c0],EBX      ; 00483814 | g_SRenderVertex_ARRAY_005c5014[3].v
     MOV EDX,0x2                         ; 0048381a
     MOV ECX,0x3                         ; 0048381f
     MOV ESI,dword ptr [0x005ae704]      ; 00483824 | g_CDemonRenderer_PTR_005ae704
-    MOV dword ptr [0x01c08d40],EDX      ; 0048382a | DAT_01c08d40
-    PUSH ESI                            ; 00483830 | DAT_01b4d738
+    MOV dword ptr [0x01c08d40],EDX      ; 0048382a | g_SMRGLPrimitiveQuadIndex_01c08d20.vertices[2]
+    PUSH ESI                            ; 00483830 | g_CDemonRenderer_01b4d738
     LEA ESI,[ESP + 0x54]                ; 00483831
-    MOV dword ptr [0x01c08d44],ECX      ; 00483835 | DAT_01c08d44
+    MOV dword ptr [0x01c08d44],ECX      ; 00483835 | g_SMRGLPrimitiveQuadIndex_01c08d20.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90 ; 0048383b
         ;   XREF to: 00460d90 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 00483840
     ADD ESP,0x4                         ; 00483844
-    MOVSD ES:EDI,ESI                    ; 00483847 | DAT_01c08d08
-    MOVSD ES:EDI,ESI                    ; 00483848 | DAT_01c08d0c
-    MOVSD ES:EDI,ESI                    ; 00483849 | DAT_01c08d10
-    MOV ESI,dword ptr [0x007f7370]      ; 0048384a | DAT_007f7370
+    MOVSD ES:EDI,ESI                    ; 00483847 | g_CVector3i_01c08d08
+    MOVSD ES:EDI,ESI                    ; 00483848 | g_CVector3i_01c08d08.y
+    MOVSD ES:EDI,ESI                    ; 00483849 | g_CVector3i_01c08d08.z
+    MOV ESI,dword ptr [0x007f7370]      ; 0048384a | g_CDemonCamera_PTR_007f7370
     MOV ECX,0xa                         ; 00483850
     XOR EDI,EDI                         ; 00483855
     LEA ESI,[ESI + 0x110]               ; 00483857
-    MOV dword ptr [0x01c08d0c],EDI      ; 0048385d | DAT_01c08d0c
+    MOV dword ptr [0x01c08d0c],EDI      ; 0048385d | g_CVector3i_01c08d08.y
     LEA EDI,[ESP + 0x28]                ; 00483863
     MOVSD.REP ES:EDI,ESI                ; 00483867
     MOV ECX,0xa                         ; 00483869
@@ -109,10 +109,10 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 0048389e
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004838a3
-    FISTP dword ptr [0x01c08d14]        ; 004838a5 | DAT_01c08d14
+    FISTP dword ptr [0x01c08d14]        ; 004838a5 | g_CVector3i_01c08d14
     FXCH                                ; 004838ab
-    FISTP dword ptr [0x01c08d18]        ; 004838ad | DAT_01c08d18
-    FISTP dword ptr [0x01c08d1c]        ; 004838b3 | DAT_01c08d1c
+    FISTP dword ptr [0x01c08d18]        ; 004838ad | g_CVector3i_01c08d14.y
+    FISTP dword ptr [0x01c08d1c]        ; 004838b3 | g_CVector3i_01c08d14.z
     ADD ESP,0x5c                        ; 004838b9
     POP EDI                             ; 004838bc
     POP ESI                             ; 004838bd

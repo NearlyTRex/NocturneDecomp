@@ -11,20 +11,22 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
 {
   uint uVar1;
   int iVar2;
-  SMRGLHeaderPrimitive *pSVar3;
-  int iVar4;
-  SMRGLTextureBasic *pSVar5;
-  int *piVar6;
-  int iVar7;
+  int iVar3;
+  SMRGLHeaderPrimitive *pSVar4;
+  SRenderBufferEntry *pSVar5;
+  SMRGLTextureBasic *pSVar6;
+  int *piVar7;
   int iVar8;
-  SRenderVertex *pSVar9;
-  int *piVar10;
-  byte bVar11;
+  int iVar9;
+  SRenderVertex *pSVar10;
+  SRenderVertex *pSVar11;
+  SMRGLTextureModel *pSVar12;
+  byte bVar13;
   int iStack_14;
   
-  bVar11 = 0;
-  iVar2 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal);
-  if (iVar2 != 0) {
+  bVar13 = 0;
+  iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal);
+  if (iVar3 != 0) {
     if (g_INT_01c38b40 == 0) {
       if (g_INT_006141c0 == 0x20) {
         g_PTR_01c35e6c = engine_special_cpp_renderPerspectiveCorrectScanline32_FUN_0055d0b3;
@@ -39,58 +41,59 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_F
     else {
       g_PTR_01c35e6c = engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0055bb93;
     }
-    piVar6 = g_INT_ARRAY_0070ca98;
+    piVar7 = g_INT_ARRAY_0070ca98;
     g_BIT_INTEGER32_01c38b54.dword = 0x1e7;
     g_INT_01c38b58 = 1;
-    pSVar3 = prim + 1;
-    for (iVar2 = 0; uVar1 = g_UINT_0070ca60, iVar2 < (prim->base).count * 3; iVar2 = iVar2 + 3) {
-      *piVar6 = (pSVar3->base).type + g_UINT_0070ca60;
-      g_SRenderVertex_ARRAY_00622014[(pSVar3->base).type + uVar1].u = (pSVar3->base).count;
-      piVar6 = piVar6 + 1;
-      g_SRenderVertex_ARRAY_00622014[(pSVar3->base).type + uVar1].v =
-           (int)(pSVar3->surface_normal).A;
-      pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+    pSVar4 = prim + 1;
+    for (iVar3 = 0; iVar2 = g_INT_0070cafc, uVar1 = g_UINT_0070ca60, iVar3 < (prim->base).count * 3;
+        iVar3 = iVar3 + 3) {
+      *piVar7 = (pSVar4->base).type + g_UINT_0070ca60;
+      g_SRenderVertex_ARRAY_00622014[(pSVar4->base).type + uVar1].u = (pSVar4->base).count;
+      piVar7 = piVar7 + 1;
+      g_SRenderVertex_ARRAY_00622014[(pSVar4->base).type + uVar1].v =
+           (int)(pSVar4->surface_normal).A;
+      pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
     }
     if (((g_INT_0070caf8 == 0) || (0x9c3 < g_INT_0070cafc)) ||
-       (iVar2 = (prim->base).count, 4 < iVar2)) {
+       (iVar3 = (prim->base).count, 4 < iVar3)) {
       engine_clipper_c_clipAndRasterize_FUN_00431d90((prim->base).count,g_INT_ARRAY_0070ca98);
     }
     else {
-      iVar8 = 0;
+      iVar9 = 0;
       iStack_14 = 0x7fffffff;
-      iVar4 = g_INT_0070cafc * 0x118;
+      pSVar5 = g_SRenderBufferEntry_ARRAY_0070cb00 + g_INT_0070cafc;
       g_INT_0070cafc = g_INT_0070cafc + 1;
-      piVar6 = (int *)(&DAT_0070cb00 + iVar4);
-      *piVar6 = iVar2;
-      if (0 < iVar2) {
-        iVar2 = 0;
+      pSVar5->vertex_count = iVar3;
+      if (0 < iVar3) {
+        iVar3 = 0;
         do {
-          pSVar9 = g_SRenderVertex_ARRAY_00622014 + *(int *)((int)g_INT_ARRAY_0070ca98 + iVar2);
-          piVar10 = piVar6 + 1;
-          for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
-            *piVar10 = (pSVar9->projected_vertex).transformed_x;
-            pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);
-            piVar10 = piVar10 + (uint)bVar11 * -2 + 1;
+          pSVar10 = g_SRenderVertex_ARRAY_00622014 + *(int *)((int)g_INT_ARRAY_0070ca98 + iVar3);
+          pSVar11 = pSVar5->vertices;
+          for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
+            (pSVar11->projected_vertex).transformed_x = (pSVar10->projected_vertex).transformed_x;
+            pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);
+            pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);
           }
-          if (piVar6[3] < iStack_14) {
-            iStack_14 = piVar6[3];
+          iVar8 = pSVar5->vertices[0].projected_vertex.transformed_z;
+          if (iVar8 < iStack_14) {
+            iStack_14 = iVar8;
           }
-          piVar6 = piVar6 + 0xc;
-          iVar8 = iVar8 + 1;
-          iVar2 = iVar2 + 4;
-        } while (iVar8 < (prim->base).count);
+          pSVar5 = (SRenderBufferEntry *)&pSVar5->vertices[0].a;
+          iVar9 = iVar9 + 1;
+          iVar3 = iVar3 + 4;
+        } while (iVar9 < (prim->base).count);
       }
-      pSVar5 = engine_texture_cpp_getCurrentTexture_FUN_005750e0();
-      iVar2 = g_INT_006141d8;
-      piVar6 = (int *)(&DAT_0070cbc4 + iVar4);
-      for (iVar8 = 0x12; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *piVar6 = (pSVar5->base).type;
-        pSVar5 = (SMRGLTextureBasic *)((int)pSVar5 + (uint)bVar11 * -8 + 4);
-        piVar6 = piVar6 + (uint)bVar11 * -2 + 1;
+      pSVar6 = engine_texture_cpp_getCurrentTexture_FUN_005750e0();
+      iVar3 = g_INT_006141d8;
+      pSVar12 = &g_SRenderBufferEntry_ARRAY_0070cb00[iVar2].texture_data;
+      for (iVar9 = 0x12; iVar9 != 0; iVar9 = iVar9 + -1) {
+        (pSVar12->base).type = (pSVar6->base).type;
+        pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);
+        pSVar12 = (SMRGLTextureModel *)((int)pSVar12 + ((uint)bVar13 * -2 + 1) * 4);
       }
-      *(int *)(&DAT_0070cc0c + iVar4) = iVar2;
-      *(int *)(&DAT_0070cc10 + iVar4) = g_INT_01c38b4c;
-      *(int *)(&DAT_0070cc14 + iVar4) = iStack_14;
+      g_SRenderBufferEntry_ARRAY_0070cb00[iVar2].alpha_value = iVar3;
+      g_SRenderBufferEntry_ARRAY_0070cb00[iVar2].blend_mode = g_INT_01c38b4c;
+      g_SRenderBufferEntry_ARRAY_0070cb00[iVar2].min_z_value = iStack_14;
     }
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);

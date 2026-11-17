@@ -17,3 +17,9 @@ extern CBulletHole g_CBulletHole_ARRAY_01c20148[256];
 // CStake[256]
 extern CStake g_StakePool[256];
 
+// int
+extern int g_INT_01c20140;
+extern int g_INT_01c20144;
+extern int g_INT_01c23d48;
+extern int g_INT_01c23d4c;
+

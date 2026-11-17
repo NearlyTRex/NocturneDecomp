@@ -23,8 +23,10 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_reset_FUN_0055df40(CWavInDevice *this_
   }
   iVar2 = 0;
   do {
-    if (*(LPWAVEHDR *)(iVar2 + 0x2cf5558) != (LPWAVEHDR)0x0) {
-      waveInUnprepareHeader((HWAVEIN)g_INT_02cf5504,*(LPWAVEHDR *)(iVar2 + 0x2cf5558),0x20);
+    if (*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar2) != (LPWAVEHDR)0x0) {
+      waveInUnprepareHeader
+                ((HWAVEIN)g_INT_02cf5504,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar2),
+                 0x20);
     }
     iVar2 = iVar2 + 4;
   } while (iVar2 != 0x50);

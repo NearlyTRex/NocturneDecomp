@@ -11,8 +11,8 @@
 ;   core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_005594e0 at 00559552
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005ecaa4
-;   undefined4 DAT_005ecab5
+;   TerminatedCString s_core_path_cpp_005ecaa4
+;   TerminatedCString s_Global_pathmap_list_corr_005ecab5
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;   int g_INT_01e6be48
@@ -39,9 +39,9 @@ section .text
         ;   Label: LAB_00535291
     JNZ 0x005352bc                      ; 00535298
         ;   XREF to: 005352bc (CONDITIONAL_JUMP)  ; LAB_005352bc
-    MOV EAX,0x5ecaa4                    ; 0053529a | DAT_005ecaa4
+    MOV EAX,0x5ecaa4                    ; 0053529a | = "..\\core\\path.cpp"
     MOV EDX,0x6a2                       ; 0053529f
-    PUSH 0x5ecab5                       ; 005352a4 | DAT_005ecab5
+    PUSH 0x5ecab5                       ; 005352a4 | = "Global pathmap list corruption"
     MOV [0x01d1d400],EAX                ; 005352a9 | g_CHAR_PTR_01d1d400
     MOV dword ptr [0x01d1d404],EDX      ; 005352ae | g_INT_01d1d404
     CALL core_main.c_displayErrorAndQuit_FUN_005030e0 ; 005352b4

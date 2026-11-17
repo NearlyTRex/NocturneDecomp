@@ -26,16 +26,16 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0059bddc = 256
-;   undefined4 DAT_005ad450
-;   undefined4 DAT_005ad454
-;   undefined4 DAT_005ad458
+;   char[4] g_CHAR_ARRAY_005ad450
+;   int g_INT_005ad454 = 0x40
+;   int g_INT_005ad458 = 0x40
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_00b0e2fc
-;   undefined4 DAT_0140efa8
+;   undefined4 g_UINT_ARRAY_00b0e1fc[64]
+;   int g_INT_0140efa8
 ;   _BIT_INTEGER32 g_RedBitPosition
 ;   _BIT_INTEGER32 g_GreenBitPosition
 ;   _BIT_INTEGER32 g_BlueBitPosition
-;   undefined4 DAT_01c038f4
+;   int g_INT_01c038f4
 ;   ulong g_SolidColorMode
 ;
 ; Called Functions:
@@ -52,15 +52,15 @@ section .text
     TEST EAX,EAX                        ; 00447678
     JZ 0x00447692                       ; 0044767a
         ;   XREF to: 00447692 (CONDITIONAL_JUMP)  ; LAB_00447692
-    CMP dword ptr [0x0140efa8],0x0      ; 0044767c | DAT_0140efa8
+    CMP dword ptr [0x0140efa8],0x0      ; 0044767c | g_INT_0140efa8
     JZ 0x0044769c                       ; 00447683
         ;   XREF to: 0044769c (CONDITIONAL_JUMP)  ; LAB_0044769c
     XOR EBP,EBP                         ; 00447685
-    MOV dword ptr [0x01c038f4],EBP      ; 00447687 | DAT_01c038f4
+    MOV dword ptr [0x01c038f4],EBP      ; 00447687 | g_INT_01c038f4
     ADD ESP,0xc                         ; 0044768d
     POP EBP                             ; 00447690
     RET                                 ; 00447691
-    MOV [0x01c038f4],EAX                ; 00447692 | DAT_01c038f4
+    MOV [0x01c038f4],EAX                ; 00447692 | g_INT_01c038f4
         ;   Label: LAB_00447692
     ADD ESP,0xc                         ; 00447697
     POP EBP                             ; 0044769a
@@ -87,16 +87,16 @@ section .text
     PUSH EBX                            ; 004476d3
     CALL core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0 ; 004476d4
         ;   XREF to: 004475a0 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0(CDemonCamera * this_ptr, CVector3i * world_position, SProjectedVertex * projected_vertex)
-    MOV EDX,dword ptr [0x005ad454]      ; 004476d9 | DAT_005ad454
+    MOV EDX,dword ptr [0x005ad454]      ; 004476d9 | g_INT_005ad454
     MOV EDI,dword ptr [0x005b7624]      ; 004476df | g_BitsPerPixel
     ADD ESP,0xc                         ; 004476e5
     MOV ESI,EAX                         ; 004476e8
-    MOV EAX,[0x005ad458]                ; 004476ea | DAT_005ad458
-    MOV EBX,dword ptr [EDX*0x4 + 0xb0e1fc] ; 004476ef | DAT_00b0e2fc
-    MOV EDX,dword ptr [0x005ad450]      ; 004476f6 | DAT_005ad450
+    MOV EAX,[0x005ad458]                ; 004476ea | g_INT_005ad458
+    MOV EBX,dword ptr [EDX*0x4 + 0xb0e1fc] ; 004476ef | g_UINT_ARRAY_00b0e1fc[64]
+    MOV EDX,dword ptr [0x005ad450]      ; 004476f6 | g_CHAR_ARRAY_005ad450
     AND EBX,0xff                        ; 004476fc
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447702 | DAT_00b0e2fc
-    MOV EDX,dword ptr [EDX*0x4 + 0xb0e1fc] ; 00447709 | DAT_00b0e2fc
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447702 | g_UINT_ARRAY_00b0e1fc[64]
+    MOV EDX,dword ptr [EDX*0x4 + 0xb0e1fc] ; 00447709 | g_UINT_ARRAY_00b0e1fc[64]
     AND EAX,0xff                        ; 00447710
     AND EDX,0xff                        ; 00447715
     CMP EDI,0x20                        ; 0044771b
@@ -112,7 +112,7 @@ section .text
     MOV ECX,EDX                         ; 0044773a
     OR ECX,EAX                          ; 0044773c
         ;   Label: LAB_0044773c
-    MOV dword ptr [0x01c038f4],ESI      ; 0044773e | DAT_01c038f4
+    MOV dword ptr [0x01c038f4],ESI      ; 0044773e | g_INT_01c038f4
     MOV dword ptr [0x01c039a8],ECX      ; 00447744 | g_SolidColorMode
     POP EBX                             ; 0044774a
     POP ESI                             ; 0044774b

@@ -18,7 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_archive_FUN_004244b0(CCharacter *this_
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   core_actor_cpp_archiveFloat_FUN_0040c880(&this_ptr->hit_points,"hitPoints");
   if (1 < g_INT_005ad1e8) {
-    if (DAT_00763e88 == 1) {
+    if (g_INT_00763e88 == 1) {
       core_actor_cpp_archiveInteger_FUN_0040c900(&local_1c,"numCarryHands");
       local_20 = 0;
       if (0 < local_1c) {

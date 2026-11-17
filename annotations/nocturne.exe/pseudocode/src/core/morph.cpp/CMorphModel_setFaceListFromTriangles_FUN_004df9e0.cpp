@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(CMorphModel *this_ptr,int part_index,SInputFace *face_data,STextureSet *texture_sets ,int *index_data,int start_face,int face_count)
 
 {
@@ -46,7 +44,7 @@ void __cdecl core_morph_cpp_CMorphModel_setFaceListFromTriangles_FUN_004df9e0(CM
       pSVar3 = local_24;
       do {
         iVar4 = iVar5;
-        if (_DAT_01cd4314 != 0) {
+        if (g_INT_01cd4314 != 0) {
           iVar4 = 2 - iVar5;
         }
         *(uint *)((int)&this_ptr->faces->vertices[iVar4].vertex_index + local_14) =

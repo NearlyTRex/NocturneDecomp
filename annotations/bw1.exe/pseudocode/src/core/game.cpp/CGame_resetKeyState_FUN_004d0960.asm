@@ -19,8 +19,8 @@
 ;   CKeys* g_CKeys_PTR_0061f2a4 = 01d1bca0
 ;   int g_INT_01c51cb0
 ;   int g_INT_01c51cb4
-;   byte g_BYTE_01c51cc0
-;   byte g_BYTE_01c51cc1
+;   DWORD g_DWORD_01c51cc0
+;   undefined4 g_DWORD_01c51cc0+1
 ;   int g_INT_01c51cc4
 ;   void* g_PTR_01d1bca0
 ;
@@ -40,13 +40,13 @@ section .text
     PUSH EBP                            ; 004d0963
     SUB ESP,0x4                         ; 004d0964
     MOV EBX,dword ptr [ESP + 0x18]      ; 004d0967
-    MOV EAX,[0x01c51cc0]                ; 004d096b | g_BYTE_01c51cc0
+    MOV EAX,[0x01c51cc0]                ; 004d096b | g_DWORD_01c51cc0
     MOV EDX,0x2                         ; 004d0970
     MOV dword ptr [ESP],EAX             ; 004d0975
     MOV dword ptr [0x01c51cc4],EDX      ; 004d0978 | g_INT_01c51cc4
     CALL wincore_winrun.cpp_getJoystickState_FUN_005b3b30 ; 004d097e
         ;   XREF to: 005b3b30 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_getJoystickState_FUN_005b3b30()
-    TEST byte ptr [0x01c51cc0],0x1      ; 004d0983 | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x1      ; 004d0983 | g_DWORD_01c51cc0
     JZ 0x004d0c39                       ; 004d098a
         ;   XREF to: 004d0c39 (CONDITIONAL_JUMP)  ; LAB_004d0c39
     TEST byte ptr [ESP],0x1             ; 004d0990
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d09a7
         ;   Label: LAB_004d09a7
-    TEST byte ptr [0x01c51cc0],0x2      ; 004d09aa | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x2      ; 004d09aa | g_DWORD_01c51cc0
         ;   Label: LAB_004d09aa
     JZ 0x004d0c4f                       ; 004d09b1
         ;   XREF to: 004d0c4f (CONDITIONAL_JUMP)  ; LAB_004d0c4f
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d09ce
         ;   Label: LAB_004d09ce
-    TEST byte ptr [0x01c51cc0],0x4      ; 004d09d1 | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x4      ; 004d09d1 | g_DWORD_01c51cc0
         ;   Label: LAB_004d09d1
     JZ 0x004d0c65                       ; 004d09d8
         ;   XREF to: 004d0c65 (CONDITIONAL_JUMP)  ; LAB_004d0c65
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d09f5
         ;   Label: LAB_004d09f5
-    TEST byte ptr [0x01c51cc0],0x8      ; 004d09f8 | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x8      ; 004d09f8 | g_DWORD_01c51cc0
         ;   Label: LAB_004d09f8
     JZ 0x004d0c7a                       ; 004d09ff
         ;   XREF to: 004d0c7a (CONDITIONAL_JUMP)  ; LAB_004d0c7a
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0a1c
         ;   Label: LAB_004d0a1c
-    TEST byte ptr [0x01c51cc0],0x10     ; 004d0a1f | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x10     ; 004d0a1f | g_DWORD_01c51cc0
         ;   Label: LAB_004d0a1f
     JZ 0x004d0c90                       ; 004d0a26
         ;   XREF to: 004d0c90 (CONDITIONAL_JUMP)  ; LAB_004d0c90
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0a43
         ;   Label: LAB_004d0a43
-    TEST byte ptr [0x01c51cc0],0x20     ; 004d0a46 | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x20     ; 004d0a46 | g_DWORD_01c51cc0
         ;   Label: LAB_004d0a46
     JZ 0x004d0ca6                       ; 004d0a4d
         ;   XREF to: 004d0ca6 (CONDITIONAL_JUMP)  ; LAB_004d0ca6
@@ -129,7 +129,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0a6a
         ;   Label: LAB_004d0a6a
-    TEST byte ptr [0x01c51cc0],0x40     ; 004d0a6d | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x40     ; 004d0a6d | g_DWORD_01c51cc0
         ;   Label: LAB_004d0a6d
     JZ 0x004d0cbb                       ; 004d0a74
         ;   XREF to: 004d0cbb (CONDITIONAL_JUMP)  ; LAB_004d0cbb
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0a91
         ;   Label: LAB_004d0a91
-    TEST byte ptr [0x01c51cc0],0x80     ; 004d0a94 | g_BYTE_01c51cc0
+    TEST byte ptr [0x01c51cc0],0x80     ; 004d0a94 | g_DWORD_01c51cc0
         ;   Label: LAB_004d0a94
     JZ 0x004d0cd1                       ; 004d0a9b
         ;   XREF to: 004d0cd1 (CONDITIONAL_JUMP)  ; LAB_004d0cd1
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0ab8
         ;   Label: LAB_004d0ab8
-    TEST byte ptr [0x01c51cc1],0x1      ; 004d0abb | g_BYTE_01c51cc1
+    TEST byte ptr [0x01c51cc1],0x1      ; 004d0abb | g_DWORD_01c51cc0+1
         ;   Label: LAB_004d0abb
     JZ 0x004d0ce7                       ; 004d0ac2
         ;   XREF to: 004d0ce7 (CONDITIONAL_JUMP)  ; LAB_004d0ce7
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 004fd290 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004fd290(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 004d0ae0
         ;   Label: LAB_004d0ae0
-    TEST byte ptr [0x01c51cc1],0x2      ; 004d0ae3 | g_BYTE_01c51cc1
+    TEST byte ptr [0x01c51cc1],0x2      ; 004d0ae3 | g_DWORD_01c51cc0+1
         ;   Label: LAB_004d0ae3
     JZ 0x004d0cfc                       ; 004d0aea
         ;   XREF to: 004d0cfc (CONDITIONAL_JUMP)  ; LAB_004d0cfc

@@ -99,7 +99,7 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_00496f60(CSmokeParticle *th
               (g_CDemonRenderer_PTR_005f2afc,
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01c73670);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01c73670.base);
     engine_drender_cpp_pop_FUN_0046d080();
   }
   return;

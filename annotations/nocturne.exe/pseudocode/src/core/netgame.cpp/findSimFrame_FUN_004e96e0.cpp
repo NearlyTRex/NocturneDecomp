@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_netgame_cpp_findSimFrame_FUN_004e96e0(int sequence_number)
 
 {
@@ -15,15 +13,16 @@ int __cdecl core_netgame_cpp_findSimFrame_FUN_004e96e0(int sequence_number)
   int iVar2;
   
   iVar2 = 0;
-  if (0 < _DAT_01d09c00) {
+  if (0 < g_INT_01d09c00) {
     iVar1 = 0;
     do {
-      if (sequence_number == *(int *)(iVar1 + 0x1d09c04)) {
+      if (sequence_number ==
+          *(int *)((int)g_SSimFrame_ARRAY_01d09c04[0].player_input + iVar1 + -0xc)) {
         return iVar2;
       }
       iVar1 = iVar1 + 100;
       iVar2 = iVar2 + 1;
-    } while (iVar1 < _DAT_01d09c00 * 100);
+    } while (iVar1 < g_INT_01d09c00 * 100);
   }
   return -1;
 }

@@ -22,7 +22,7 @@
 ;   char* g_CHAR_PTR_01d046a0
 ;   int g_INT_01d046a4
 ;   IDirectSound* g_IDirectSound_PTR_0264a5c4
-;   undefined4 DAT_0264a5d0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -131,7 +131,7 @@ section .text
     MOV dword ptr [EDI + 0xc],0x0       ; 00556395 | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[21]
     MOV dword ptr [EDI + 0x10],EAX      ; 0055639c | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[22]
     MOV dword ptr [ESI + 0x4],EBX       ; 0055639f
-    CMP dword ptr [0x0264a5d0],0x0      ; 005563a2 | DAT_0264a5d0
+    CMP dword ptr [0x0264a5d0],0x0      ; 005563a2 | g_IDirectSound3DListener_PTR_0264a5d0
     JNZ 0x005564b4                      ; 005563a9
         ;   XREF to: 005564b4 (CONDITIONAL_JUMP)  ; LAB_005564b4
     MOV dword ptr [EDI + 0x1c],0xffffffff ; 005563af | g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[25]

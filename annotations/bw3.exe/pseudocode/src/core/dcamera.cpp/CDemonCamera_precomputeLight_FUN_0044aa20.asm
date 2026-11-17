@@ -43,7 +43,7 @@
 ;   TerminatedCString s_core_dcamera_cpp_005b9d12
 ;   TerminatedCString s_CDemonCamera_precomputeL_005b9d26
 ;   int g_INT_00b9e554
-;   int g_INT_012a6558
+;   SCoronaLightCache g_SCoronaLightCache_012a6558
 ;   char* g_CHAR_PTR_01d71de0
 ;   int g_INT_01d71de4
 ;
@@ -85,7 +85,7 @@ section .text
     TEST EAX,EAX                        ; 0044aa5d
     JNZ 0x0044aa6b                      ; 0044aa5f
         ;   XREF to: 0044aa6b (CONDITIONAL_JUMP)  ; LAB_0044aa6b
-    MOV [0x012a6558],EAX                ; 0044aa61 | g_INT_012a6558
+    MOV [0x012a6558],EAX                ; 0044aa61 | g_SCoronaLightCache_012a6558
     MOV [0x00b9e554],EAX                ; 0044aa66 | g_INT_00b9e554
     MOV ESI,dword ptr [0x00b9e554]      ; 0044aa6b | g_INT_00b9e554
         ;   Label: LAB_0044aa6b

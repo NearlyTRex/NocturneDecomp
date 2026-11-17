@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WARNING: Exceeded maximum restarts with more pending */
 
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSoundDevice *this_ptr,int bits_per_sample,int channels,int sample_rate,int *out_samples_per_block)
@@ -31,9 +30,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
   uint uStack_18;
   float fStack_14;
   
-  if (_DAT_02cf49d4 != (int *)0x0) {
-    (**(code **)(*_DAT_02cf49d4 + 8))();
-    _DAT_02cf49d4 = (int *)0x0;
+  if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
+    (*g_IKsPropertySet_PTR_02cf49d4->vtable->Release)((IUnknown *)g_IKsPropertySet_PTR_02cf49d4);
+    g_IKsPropertySet_PTR_02cf49d4 = (IKsPropertySet *)0x0;
   }
   if (g_IDirectSoundBuffer_PTR_02cf49c8 != (IDirectSoundBuffer *)0x0) {
     memset(auStack_4c + 4,0,0x12);
@@ -54,9 +53,10 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
         g_INT_02cf49d8 = (int)uStack_3a;
         g_INT_02cf49dc = DStack_44;
         g_INT_02cf49e0 = (int)uStack_46;
-        if (_DAT_02cf49d4 != (int *)0x0) {
-          (**(code **)(*_DAT_02cf49d4 + 8))();
-          _DAT_02cf49d4 = (int *)0x0;
+        if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
+          (*g_IKsPropertySet_PTR_02cf49d4->vtable->Release)
+                    ((IUnknown *)g_IKsPropertySet_PTR_02cf49d4);
+          g_IKsPropertySet_PTR_02cf49d4 = (IKsPropertySet *)0x0;
         }
         pIStack_20 = (IDirectSoundBuffer *)0x0;
         piStack_1c = (int *)0x0;
@@ -99,10 +99,11 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_0055b100(CDirectSound
           _sprintf(acStack_540,"DirectSux: Unable to %s.  (%s)");
           sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_540);
         }
-        if (_DAT_02cf49d4 != (int *)0x0) {
+        if (g_IKsPropertySet_PTR_02cf49d4 != (IKsPropertySet *)0x0) {
           uStack_18 = 1;
-          (**(code **)(*_DAT_02cf49d4 + 0x10))
-                    (_DAT_02cf49d4,&g_DSPROPSETID_VoiceManager,0,0,0,&uStack_18);
+          (*g_IKsPropertySet_PTR_02cf49d4->vtable->Set)
+                    (g_IKsPropertySet_PTR_02cf49d4,(LPGUID)&g_DSPROPSETID_VoiceManager,0,(LPVOID)0x0
+                     ,0,&uStack_18,4);
         }
         uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005586d0();
         if (0 < (int)uVar1) {

@@ -20,11 +20,11 @@ SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e7d360 = {};
 SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7d5bc[16] = {};
 SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7dad0[16] = {};
 
-// char[101]
-char g_CHAR_ARRAY_01e7abe8[101] = {};
+// char[101][100]
+char g_CHAR_ARRAY_ARRAY_01e7abe8[101][100] = {};
 
-// char[10]
-char g_CHAR_ARRAY_01e7e0a8[10] = {};
+// char[10][1024]
+char g_CHAR_ARRAY_ARRAY_01e7e0a8[10][1024] = {};
 
 // int
 int g_INT_01e7abdc = {};

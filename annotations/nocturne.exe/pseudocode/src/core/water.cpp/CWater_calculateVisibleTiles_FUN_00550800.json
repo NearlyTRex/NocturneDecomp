@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 382,
+    "complexity_score": 304,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 147,
-    "suspect_count": 21,
+    "pseudocode_lines": 149,
+    "suspect_count": 14,
     "suspect_types": [
       "sign_compare_idiom",
       "stack_ref",
-      "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 497
+    "total_lines": 499
   },
   "cross_references": [
     {
@@ -117,9 +115,9 @@
     },
     {
       "addr": "005a3e8c",
-      "name": "DAT_005a3e8c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005a3e8c",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ad350",
@@ -141,25 +139,25 @@
     },
     {
       "addr": "005c5024",
-      "name": "DAT_005c5024",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5054",
-      "name": "DAT_005c5054",
+      "name": "g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5084",
-      "name": "DAT_005c5084",
+      "name": "g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c50b4",
-      "name": "DAT_005c50b4",
+      "name": "g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.screen_x",
       "type": "undefined4",
       "value": null
     },
@@ -171,8 +169,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -201,38 +199,38 @@
     },
     {
       "addr": "02dd1220",
-      "name": "DAT_02dd1220",
-      "type": "undefined4",
+      "name": "g_FLOAT_02dd1220",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02dd1224",
-      "name": "DAT_02dd1224",
-      "type": "undefined4",
+      "name": "g_FLOAT_02dd1224",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02dd1228",
-      "name": "DAT_02dd1228",
-      "type": "undefined4",
+      "name": "g_FLOAT_02dd1228",
+      "type": "float",
       "value": null
     },
     {
       "addr": "02dd1234",
-      "name": "DAT_02dd1234",
-      "type": "undefined4",
+      "name": "g_INT_02dd1234",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dd1238",
-      "name": "DAT_02dd1238",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_02dd1238",
+      "type": "int[4096]",
       "value": null
     },
     {
       "addr": "02dd5238",
-      "name": "DAT_02dd5238",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_02dd5238",
+      "type": "int[4096]",
       "value": null
     }
   ],
@@ -632,48 +630,40 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "g_FLOAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 50,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "g_FLOAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "g_FLOAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 51,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "g_FLOAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 52,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "_DAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "_DAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "_DAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "_DAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
@@ -681,7 +671,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 54,
+      "line": 52,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
@@ -689,7 +679,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 58,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
@@ -697,7 +687,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 58,
       "match": "._4_4_",
       "severity": "mild",
       "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
@@ -705,7 +695,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 62,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
@@ -713,7 +703,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 62,
       "match": "._8_4_",
       "severity": "mild",
       "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
@@ -721,7 +711,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 74,
+      "line": 72,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {",
@@ -729,75 +719,27 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 96,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);",
+      "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 105,
+      "line": 103,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_44._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);",
+      "text": "local_44._8_4_ = (uint)ROUND(local_54.x * 256.0f);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005c5024",
-      "severity": "mild",
-      "text": "uVar3 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005c5054",
-      "severity": "mild",
-      "text": "uVar3 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005c5084",
-      "severity": "mild",
-      "text": "uVar3 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005c50b4",
-      "severity": "mild",
-      "text": "uVar3 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 124,
+      "line": 125,
       "match": "&stack0xffffff48",
       "severity": "moderate",
       "text": "(SMRGLHeaderPrimitive *)&stack0xffffff48);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 131,
-      "match": "DAT_02dd1238",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_02dd1238 + _DAT_02dd1234 * 4) = iVar7;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_02dd5238",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_02dd5238 + _DAT_02dd1234 * 4) = iVar5;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -6,16 +6,14 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createCrater_FUN_0048c370(CFireEffect *this_ptr,CVector3f *position,float radius)
 
 {
-  core_fire_cpp_CCrater_activate_FUN_004876d0(g_CraterPool + _DAT_01c625f4,position,radius);
-  _DAT_01c625f4 = _DAT_01c625f4 + 1;
-  if (_DAT_01c625f4 < 0x14) {
+  core_fire_cpp_CCrater_activate_FUN_004876d0(g_CraterPool + g_INT_01c625f4,position,radius);
+  g_INT_01c625f4 = g_INT_01c625f4 + 1;
+  if (g_INT_01c625f4 < 0x14) {
     return;
   }
-  _DAT_01c625f4 = 0;
+  g_INT_01c625f4 = 0;
   return;
 }

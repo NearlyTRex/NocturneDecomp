@@ -14,7 +14,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079a8 = 005a7f44
 ;   void* g_PTR_00607b18 = 00000000
-;   undefined4 DAT_00607bdc
+;   SIOControlBlock* g_SIOControlBlock_PTR_00607bdc = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a7f44
@@ -46,7 +46,7 @@ section .text
     ADD ESP,0x4                         ; 005aeb63
     POP EBX                             ; 005aeb66
     RET                                 ; 005aeb67
-    MOV EAX,[0x00607bdc]                ; 005aeb68 | DAT_00607bdc
+    MOV EAX,[0x00607bdc]                ; 005aeb68 | g_SIOControlBlock_PTR_00607bdc
         ;   Label: LAB_005aeb68
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 005aeb6d
     PUSH EAX                            ; 005aeb70

@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)
 
 {
-  WPARAM WVar1;
+  int iVar1;
   LRESULT LVar2;
   HANDLE hThread;
   uint uVar3;
   
-  WVar1 = DAT_005c1660;
+  iVar1 = g_INT_005c1660;
   if (hWnd != g_HWND_02de2098) {
     LVar2 = DefWindowProcA(hWnd,message,wParam,lParam);
     return LVar2;
@@ -32,57 +30,57 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
       if (message < 0x205) {
         if (message < 0x201) {
           if (message == 0x200) {
-            _DAT_01bd1d8c = lParam & 0xffff;
-            _DAT_01bd1d90 = uVar3;
+            g_INT_01bd1d8c = lParam & 0xffff;
+            g_INT_01bd1d90 = uVar3;
             return 0;
           }
         }
         else {
           if (message < 0x202) {
-            _DAT_01bd1d8c = lParam & 0xffff;
-            _DAT_01bd1d90 = uVar3;
-            DAT_01bd1d94 = DAT_01bd1d94 | 1;
-            DAT_01c02798 = 1;
+            g_INT_01bd1d8c = lParam & 0xffff;
+            g_INT_01bd1d90 = uVar3;
+            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 1;
+            g_CHAR_ARRAY_01c02598[0x200] = '\x01';
             return 0;
           }
           if (message < 0x203) {
-            _DAT_01bd1d8c = lParam & 0xffff;
-            _DAT_01bd1d90 = uVar3;
-            _DAT_02de28b0 = 1;
-            DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
+            g_INT_01bd1d8c = lParam & 0xffff;
+            g_INT_01bd1d90 = uVar3;
+            g_INT_ARRAY_02de20b0[0x200] = 1;
+            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfe;
             return 0;
           }
           if (message == 0x204) {
-            _DAT_01bd1d8c = lParam & 0xffff;
-            _DAT_01bd1d90 = uVar3;
-            DAT_01c02799 = 1;
-            DAT_01bd1d94 = DAT_01bd1d94 | 2;
+            g_INT_01bd1d8c = lParam & 0xffff;
+            g_INT_01bd1d90 = uVar3;
+            g_CHAR_ARRAY_01c02598[0x201] = '\x01';
+            g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 2;
             return 0;
           }
         }
       }
       else {
         if (message < 0x206) {
-          _DAT_01bd1d8c = lParam & 0xffff;
-          _DAT_01bd1d90 = uVar3;
-          DAT_01bd1d94 = DAT_01bd1d94 & 0xfd;
-          _DAT_02de28b4 = 1;
+          g_INT_01bd1d8c = lParam & 0xffff;
+          g_INT_01bd1d90 = uVar3;
+          g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfd;
+          g_INT_ARRAY_02de20b0[0x201] = 1;
           return 0;
         }
         if (message < 0x30f) {
           if (0x206 < message) {
             if (message < 0x208) {
-              _DAT_01bd1d8c = lParam & 0xffff;
-              _DAT_01bd1d90 = uVar3;
-              DAT_01bd1d94 = DAT_01bd1d94 | 4;
-              DAT_01c027a4 = 1;
+              g_INT_01bd1d8c = lParam & 0xffff;
+              g_INT_01bd1d90 = uVar3;
+              g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] | 4;
+              g_CHAR_ARRAY_01c02598[0x20c] = '\x01';
               return 0;
             }
             if (message == 0x208) {
-              _DAT_01bd1d8c = lParam & 0xffff;
-              _DAT_01bd1d90 = uVar3;
-              _DAT_02de28e0 = 1;
-              DAT_01bd1d94 = DAT_01bd1d94 & 0xfb;
+              g_INT_01bd1d8c = lParam & 0xffff;
+              g_INT_01bd1d90 = uVar3;
+              g_INT_ARRAY_02de20b0[0x20c] = 1;
+              g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfb;
               return 0;
             }
           }
@@ -108,28 +106,28 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
     if (1 < message) {
       if (message < 3) {
         PostQuitMessage(0);
-        _DAT_02de20a0 = 1;
+        g_INT_02de20a0 = 1;
       }
       else if (0xe < message) {
         if (message < 0x10) {
           wincore_wddvmem_cpp_stubFunction_FUN_00553ca0();
         }
         else if (message == 0x1c) {
-          INT_005c1668 = DAT_005c1660;
-          DAT_005c1660 = wParam;
-          if (WVar1 != wParam) {
+          INT_005c1668 = g_INT_005c1660;
+          g_INT_005c1660 = wParam;
+          if (iVar1 != wParam) {
             hThread = GetCurrentProcess();
-            if (DAT_005c1660 == 0) {
+            if (g_INT_005c1660 == 0) {
               wincore_wddvmem_cpp_restoreVideoAndMinimizeWindow_FUN_00553b70();
               SetThreadPriority(hThread,-0xf);
-              _DAT_02de20a4 = 0;
+              g_INT_02de20a4 = 0;
             }
             else {
               SetThreadPriority(hThread,1);
               wincore_wddvmem_cpp_videoRestore_FUN_00553ba0();
               if (INT_005c1668 != -1) {
                 engine_2d_c_clearInputAndWait_FUN_00403f50();
-                _DAT_02de20a4 = 1;
+                g_INT_02de20a4 = 1;
               }
             }
           }
@@ -147,7 +145,7 @@ LRESULT __stdcall wincore_winrun_cpp_mainWindowProc_FUN_00558d90(HWND hWnd,UINT 
     if (message < 0x101) {
 LAB_00558ede:
       uVar3 = lParam >> 0x10 & INT_005b7630;
-      (&DAT_01c02598)[uVar3] = 1;
+      g_CHAR_ARRAY_01c02598[uVar3] = '\x01';
       if (uVar3 == 0x3e) {
         return 0;
       }
@@ -165,7 +163,7 @@ LAB_00558ede:
     if (message < 0x105) goto LAB_00558ede;
     if (message != 0x105) goto LAB_00558ddf;
   }
-  *(uint *)((lParam >> 0x10 & INT_005b7630) * 4 + 0x2de20b0) = 1;
+  g_INT_ARRAY_02de20b0[lParam >> 0x10 & INT_005b7630] = 1;
 LAB_00558ddf:
   LVar2 = DefWindowProcA(hWnd,message,wParam,lParam);
   return LVar2;

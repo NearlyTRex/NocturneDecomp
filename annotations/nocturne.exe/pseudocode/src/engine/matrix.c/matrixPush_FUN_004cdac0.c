@@ -6,28 +6,26 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_matrix_c_matrixPush_FUN_004cdac0(void)
 
 {
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52e0) = g_RelativeX;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5308) = g_RelativeY;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5330) = g_RelativeZ;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5358) = _DAT_01c039dc;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc5380) = _DAT_01c039e0;
-  *(uint *)(_DAT_01cc5174 * 4 + 0x1cc53a8) = _DAT_01c039e4;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5178) = g_TransformMatrix.m[0].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51a0) = g_TransformMatrix.m[0].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51c8) = g_TransformMatrix.m[0].z;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc51f0) = g_TransformMatrix.m[1].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5218) = g_TransformMatrix.m[1].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5240) = g_TransformMatrix.m[1].z;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5268) = g_TransformMatrix.m[2].x;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc5290) = g_TransformMatrix.m[2].y;
-  *(int *)(_DAT_01cc5174 * 4 + 0x1cc52b8) = g_TransformMatrix.m[2].z;
-  _DAT_01cc5174 = _DAT_01cc5174 + 1;
-  if (_DAT_01cc5174 < 10) {
+  g_INT_ARRAY_01cc52e0[g_INT_01cc5174] = g_RelativeX;
+  g_INT_ARRAY_01cc5308[g_INT_01cc5174] = g_RelativeY;
+  g_INT_ARRAY_01cc5330[g_INT_01cc5174] = g_RelativeZ;
+  g_INT_ARRAY_01cc5358[g_INT_01cc5174] = g_INT_01c039dc;
+  g_INT_ARRAY_01cc5380[g_INT_01cc5174] = g_INT_01c039e0;
+  g_INT_ARRAY_01cc53a8[g_INT_01cc5174] = g_INT_01c039e4;
+  g_INT_ARRAY_01cc5178[g_INT_01cc5174] = g_TransformMatrix.m[0].x;
+  g_INT_ARRAY_01cc51a0[g_INT_01cc5174] = g_TransformMatrix.m[0].y;
+  g_INT_ARRAY_01cc51c8[g_INT_01cc5174] = g_TransformMatrix.m[0].z;
+  g_INT_ARRAY_01cc51f0[g_INT_01cc5174] = g_TransformMatrix.m[1].x;
+  g_INT_ARRAY_01cc5218[g_INT_01cc5174] = g_TransformMatrix.m[1].y;
+  g_INT_ARRAY_01cc5240[g_INT_01cc5174] = g_TransformMatrix.m[1].z;
+  g_INT_ARRAY_01cc5268[g_INT_01cc5174] = g_TransformMatrix.m[2].x;
+  g_INT_ARRAY_01cc5290[g_INT_01cc5174] = g_TransformMatrix.m[2].y;
+  g_INT_ARRAY_01cc52b8[g_INT_01cc5174] = g_TransformMatrix.m[2].z;
+  g_INT_01cc5174 = g_INT_01cc5174 + 1;
+  if (g_INT_01cc5174 < 10) {
     return;
   }
   g_CurrentFilename = "..\\engine\\matrix.c";

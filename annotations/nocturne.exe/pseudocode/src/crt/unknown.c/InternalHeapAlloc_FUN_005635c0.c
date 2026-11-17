@@ -9,11 +9,11 @@
 void * __cdecl InternalHeapAlloc(ulong size)
 
 {
-  uint uVar1;
+  Heap *pHVar1;
   bool bVar2;
   void *pvVar3;
   int iVar4;
-  uint uVar5;
+  Heap *pHVar5;
   ushort in_DS;
   void *pvStack_28;
   uint local_24;
@@ -30,25 +30,25 @@ void * __cdecl InternalHeapAlloc(ulong size)
   bVar2 = false;
   while( true ) {
     while( true ) {
-      if (DAT_005c1688 < local_24) {
-        uVar5 = DAT_005c1684;
-        if (DAT_005c1684 == 0) {
-          DAT_005c1688 = DAT_005c1684;
-          uVar5 = DAT_005c1680;
+      if ((uint)g_INT_005c1688 < local_24) {
+        pHVar5 = g_Heap_PTR_005c1684;
+        if (g_Heap_PTR_005c1684 == (Heap *)0x0) {
+          g_INT_005c1688 = (int)g_Heap_PTR_005c1684;
+          pHVar5 = g_Heap_PTR_005c1680;
         }
       }
       else {
-        DAT_005c1688 = 0;
-        uVar5 = DAT_005c1680;
+        g_INT_005c1688 = 0;
+        pHVar5 = g_Heap_PTR_005c1680;
       }
-      for (; uVar5 != 0; uVar5 = *(uint *)(uVar5 + 8)) {
-        uVar1 = *(uint *)(uVar5 + 0x14);
-        DAT_005c1684 = uVar5;
-        if ((size <= uVar1) &&
+      for (; pHVar5 != (Heap *)0x0; pHVar5 = pHVar5->next_heap_block) {
+        pHVar1 = pHVar5[1].next_heap_block;
+        g_Heap_PTR_005c1684 = pHVar5;
+        if ((size <= pHVar1) &&
            (pvStack_28 = (void *)AllocateFromFreeList(size,in_DS),
            pvStack_28 != (void *)0x0)) goto LAB_005636b0;
-        if (DAT_005c1688 < uVar1) {
-          DAT_005c1688 = uVar1;
+        if ((uint)g_INT_005c1688 < pHVar1) {
+          g_INT_005c1688 = (int)pHVar1;
         }
       }
       if ((bVar2) ||
@@ -60,7 +60,7 @@ void * __cdecl InternalHeapAlloc(ulong size)
     bVar2 = false;
   }
 LAB_005636b0:
-  DAT_02de5460 = 0;
+  g_CHAR_ARRAY_02de5460[0] = '\0';
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();
   return pvStack_28;
 }

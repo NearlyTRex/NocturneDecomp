@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *time_remaining)
 
@@ -136,7 +135,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
   CVector3f local_148;
   CVector3f local_13c;
   CVector3f local_130;
-  uint local_124;
+  int local_124;
   float local_120;
   int local_11c;
   char *local_118;
@@ -178,7 +177,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
   int local_88;
   int local_84;
   int local_80;
-  uint local_7c;
+  int local_7c;
   CWeapon *local_78;
   int local_74;
   int local_70;
@@ -213,7 +212,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
     core_main_c_displayErrorAndQuit_FUN_004c8440("CScript::step - Invalid instruction pointer!\n(This is an internal script processing error,\nand doesn't mean there's anything wrong with the\nscript file.)");
   }
   pcVar18 = "(no error message provided)";
-  pcVar20 = &DAT_01e56420;
+  pcVar20 = g_CHAR_ARRAY_01e56420;
   do {
     cVar2 = *pcVar18;
     *pcVar20 = cVar2;
@@ -235,7 +234,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
   else if (cVar2 == ':') {
     local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 1);
     dVar1 = __BITCAST_DOUBLE(CONCAT44(local_11c,local_118));
-    if (_DAT_01e56418 != 0) {
+    if (g_INT_01e56418 != 0) {
       cVar2 = *local_118;
       for (pcVar18 = local_118;
           (cVar2 != '\0' &&
@@ -254,7 +253,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
         core_main_c_displayErrorAndQuit_FUN_004c8440("Internal script error checking for duplicate label.");
       }
       if (pcVar18 != local_114) {
-        _sprintf(&DAT_01e56420,"Duplicate label %s on lines %d and %d",local_118,local_11c,
+        _sprintf(g_CHAR_ARRAY_01e56420,"Duplicate label %s on lines %d and %d",local_118,local_11c,
                    this_ptr->parsed_lines[(int)pcVar18].line_number);
         return -1;
       }
@@ -264,8 +263,8 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
   else {
     iVar6 = _strnicmp(pcVar18,"syntaxCheckOn",0xd);
     if ((iVar6 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar18[0xd] + 1)] & 0xe0) == 0)) {
-      if (_DAT_01e56418 != 0) {
-        _DAT_01e56418 = 1;
+      if (g_INT_01e56418 != 0) {
+        g_INT_01e56418 = 1;
       }
       local_118 = &CHAR_00h_0058e5ea;
     }
@@ -273,12 +272,12 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
       iVar6 = _strnicmp(pcVar18,"syntaxCheckOff",0xe);
       if ((iVar6 == 0) && ((g_CharacterClassificationTable[(byte)(pcVar18[0xe] + 1)] & 0xe0) == 0))
       {
-        if (_DAT_01e56418 != 0) {
-          _DAT_01e56418 = 2;
+        if (g_INT_01e56418 != 0) {
+          g_INT_01e56418 = 2;
         }
         local_118 = &CHAR_00h_0058e5fa;
       }
-      else if (_DAT_01e56418 != 2) {
+      else if (g_INT_01e56418 != 2) {
         iVar6 = _strnicmp(pcVar18,"advanceLightFilter",0x12);
         if (((((((((iVar6 == 0) &&
                   ((g_CharacterClassificationTable[(byte)(pcVar18[0x12] + 1)] & 0xe0) == 0)) ||
@@ -363,11 +362,13 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
                       iVar6 == 0 &&
                       ((g_CharacterClassificationTable[(byte)(pcVar18[6] + 1)] & 0xe0) == 0)))))))))
                ))) {
-          if (_DAT_01e56418 == 0) {
-            core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,pcVar18);
+          if (g_INT_01e56418 == 0) {
+            core_event_cpp_CEventList_executeCommands_FUN_0047ab70
+                      (g_CEventList_PTR_005b7650,pcVar18);
           }
           else {
-            pcVar18 = core_event_cpp_CEventList_validateCommands_FUN_0047dcd0(0x01C03A10,pcVar18);
+            pcVar18 = core_event_cpp_CEventList_validateCommands_FUN_0047dcd0
+                                (g_CEventList_PTR_005b7650,pcVar18);
             if (pcVar18 != (char *)0x0) goto LAB_0050064d;
           }
           local_118 = &CHAR_00h_0058e756;
@@ -380,7 +381,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
             local_e8 = -1;
             sscanf(local_118," ( %[^,], %[^)])%n",local_e1c,local_27e4,&local_e8);
             if (local_e8 < 3) {
-              _sprintf(&DAT_01e56420,"Error parsing addItemToInventory command parms");
+              _sprintf(g_CHAR_ARRAY_01e56420,"Error parsing addItemToInventory command parms");
               return -1;
             }
             local_118 = local_118 + local_e8;
@@ -394,7 +395,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
                                     (local_27e4,g_CDemonActorActorType_00763e48.name_hash,
                                      &g_CDemonActorActorType_00763e48),
                pCVar12 == (CDemonActor *)0x0)) goto joined_r0x00500ad6;
-            if (_DAT_01e56418 == 0) {
+            if (g_INT_01e56418 == 0) {
               core_inv_cpp_CInventory_addItem_FUN_004bf360
                         ((CInventory *)&pCVar15[0x17e].orient_matrix.m[0].y,pCVar12,0);
             }
@@ -408,22 +409,22 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
               sscanf
                         (local_118,"( %[^,], %[^,], %f )%n",local_5d4,local_3e0,&local_a0,&local_e0);
               if (local_e0 < 5) {
-                _sprintf(&DAT_01e56420,"Error parsing addLightFilter command parms");
+                _sprintf(g_CHAR_ARRAY_01e56420,"Error parsing addLightFilter command parms");
                 return -1;
               }
               local_118 = local_118 + local_e0;
               core_set_cpp_CDemonSet_addLightFilter_FUN_0050e5d0
                         (g_CDemonSetPtr,local_5d4,&local_110,&local_100);
               if (local_110 == (C3DSLight *)0x0) {
-                _sprintf(&DAT_01e56420,"Light \"%s\" does not exist",local_5d4);
+                _sprintf(g_CHAR_ARRAY_01e56420,"Light \"%s\" does not exist",local_5d4);
                 return -1;
               }
               iVar6 = engine_dosio_cpp_getFileSize_FUN_004568c0("art",local_3e0);
               if (iVar6 < 1) {
-                _sprintf(&DAT_01e56420,"Can't open filter \"%s\"",local_3e0);
+                _sprintf(g_CHAR_ARRAY_01e56420,"Can't open filter \"%s\"",local_3e0);
                 return -1;
               }
-              if (_DAT_01e56418 == 0) {
+              if (g_INT_01e56418 == 0) {
                 core_setutil_cpp_C3DSLight_addFilter_FUN_00515710(local_110,local_3e0,local_a0,0);
               }
             }
@@ -435,7 +436,7 @@ int __cdecl core_script_cpp_CScript_step_FUN_004ff2c0(CScript *this_ptr,float *t
                 pcVar18 = core_script_cpp_parseConditionExpr_FUN_004fe140(&local_118,local_4a8);
                 if (pcVar18 != (char *)0x0) {
 LAB_0050064d:
-                  pcVar20 = &DAT_01e56420;
+                  pcVar20 = g_CHAR_ARRAY_01e56420;
                   do {
                     cVar2 = *pcVar18;
                     *pcVar20 = cVar2;
@@ -449,9 +450,9 @@ LAB_0050064d:
                   } while (cVar2 != '\0');
                   return -1;
                 }
-                if (_DAT_01e56418 == 0) {
+                if (g_INT_01e56418 == 0) {
                   iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                    (0x01C03A10,local_4a8);
+                                    (g_CEventList_PTR_005b7650,local_4a8);
                   g_CGamePtr->allow_enemy_attack_flag = iVar6;
                 }
               }
@@ -463,11 +464,11 @@ LAB_0050064d:
                   local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0x11);
                   pcVar18 = core_script_cpp_parseConditionExpr_FUN_004fe140(&local_118,local_b4c);
                   if (pcVar18 != (char *)0x0) goto LAB_0050064d;
-                  if (_DAT_01e56418 == 0) {
+                  if (g_INT_01e56418 == 0) {
                     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                      (0x01C03A10,local_b4c);
-                    _DAT_01e56c24 = (uint)(iVar6 == 0);
-                    g_CGamePtr->hero_controls_blocked = _DAT_01e56c24;
+                                      (g_CEventList_PTR_005b7650,local_b4c);
+                    g_INT_01e56c24 = (int)(iVar6 == 0);
+                    g_CGamePtr->hero_controls_blocked = g_INT_01e56c24;
                   }
                 }
                 else {
@@ -478,9 +479,9 @@ LAB_0050064d:
                     local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0xf);
                     pcVar18 = core_script_cpp_parseConditionExpr_FUN_004fe140(&local_118,local_ae8);
                     if (pcVar18 != (char *)0x0) goto LAB_0050064d;
-                    if (_DAT_01e56418 == 0) {
+                    if (g_INT_01e56418 == 0) {
                       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                        (0x01C03A10,local_ae8);
+                                        (g_CEventList_PTR_005b7650,local_ae8);
                       g_CGamePtr->allow_damage_flag = iVar6;
                     }
                   }
@@ -494,7 +495,7 @@ LAB_0050064d:
                       sscanf
                                 (local_118,"(%[^,], %[^)])%n",local_190c,local_d54,&local_10c);
                       if (local_10c < 2) {
-                        _sprintf(&DAT_01e56420,"Error parsing attachActorToPlatform command parms");
+                        _sprintf(g_CHAR_ARRAY_01e56420,"Error parsing attachActorToPlatform command parms");
                         return -1;
                       }
                       local_118 = local_118 + local_10c;
@@ -509,7 +510,7 @@ LAB_0050064d:
                                               (local_190c,g_CDemonActorActorType_00763e48.name_hash,
                                                &g_CDemonActorActorType_00763e48),
                          pCVar15 == (CDemonActor *)0x0)) goto joined_r0x00500ad6;
-                      if (_DAT_01e56418 == 0) {
+                      if (g_INT_01e56418 == 0) {
                         core_platfrm_cpp_CPlatform_attachActor_FUN_004f75c0(pCVar9,pCVar15);
                       }
                     }
@@ -519,7 +520,7 @@ LAB_0050064d:
                       if ((iVar6 == 0) &&
                          ((g_CharacterClassificationTable[(byte)(pcVar18[0xb] + 1)] & 0xe0) == 0)) {
                         local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0xb);
-                        if (_DAT_01e56418 == 0) {
+                        if (g_INT_01e56418 == 0) {
                           core_game_cpp_CGame_beginFadeIn_FUN_004a37e0(g_CGamePtr);
                         }
                       }
@@ -530,7 +531,7 @@ LAB_0050064d:
                            ((g_CharacterClassificationTable[(byte)(pcVar18[0xc] + 1)] & 0xe0) == 0))
                         {
                           local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 0xc);
-                          if (_DAT_01e56418 == 0) {
+                          if (g_INT_01e56418 == 0) {
                             core_game_cpp_CGame_beginFadeOut_FUN_004a3820(g_CGamePtr);
                           }
                         }
@@ -541,7 +542,7 @@ LAB_0050064d:
                              ((g_CharacterClassificationTable[(byte)(pcVar18[10] + 1)] & 0xe0) == 0)
                              ) {
                             local_118 = core_script_cpp_skipWhitespace_FUN_004fe070(pcVar18 + 10);
-                            if (_DAT_01e56418 == 0) {
+                            if (g_INT_01e56418 == 0) {
                               _sprintf(local_958,"Script breakpoint reached at line %d",local_11c);
                               core_game_cpp_CGame_displayMessage_FUN_0049aa30
                                         (g_CGamePtr,local_958,5.0);
@@ -556,7 +557,7 @@ LAB_0050064d:
                                 == 0)) {
                               local_118 = core_script_cpp_skipWhitespace_FUN_004fe070
                                                     (pcVar18 + 0x10);
-                              if (_DAT_01e56418 == 0) {
+                              if (g_INT_01e56418 == 0) {
                                 core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_005135f0
                                           (g_CDemonSetPtr);
                               }
@@ -572,7 +573,7 @@ LAB_0050064d:
                                 pcVar18 = core_script_cpp_parseArgument_FUN_004fe090
                                                     (&local_118,local_2334,200);
                                 if (pcVar18 != (char *)0x0) {
-                                  pcVar20 = &DAT_01e56420;
+                                  pcVar20 = g_CHAR_ARRAY_01e56420;
                                   do {
                                     cVar2 = *pcVar18;
                                     *pcVar20 = cVar2;
@@ -589,7 +590,7 @@ LAB_0050064d:
                                 iVar6 = _stricmp
                                                   (local_2334,"all");
                                 if (iVar6 == 0) {
-                                  if (_DAT_01e56418 == 0) {
+                                  if (g_INT_01e56418 == 0) {
                                     iVar11 = 0;
                                     for (iVar6 = 0; iVar6 < g_CDemonSetPtr->actor_count;
                                         iVar6 = iVar6 + 1) {
@@ -614,7 +615,7 @@ LAB_0050064d:
                                                        g_CCharacterActorType_00765a60.name_hash,
                                                        &g_CCharacterActorType_00765a60);
                                   if (pCVar14 == (CCharacter *)0x0) goto joined_r0x00500ad6;
-                                  if (_DAT_01e56418 == 0) {
+                                  if (g_INT_01e56418 == 0) {
                                     (*(((pCVar14->base).vtable._uc)->_uc).setWalkTarget)
                                               (pCVar14,(CDemonActor *)0x0,0.0,0.0);
                                   }
@@ -631,7 +632,7 @@ LAB_0050064d:
                                   pcVar18 = core_script_cpp_parseArgument_FUN_004fe090
                                                       (&local_118,local_2e24,200);
                                   if (pcVar18 != (char *)0x0) {
-                                    pcVar20 = &DAT_01e56420;
+                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                     do {
                                       cVar2 = *pcVar18;
                                       *pcVar20 = cVar2;
@@ -646,12 +647,12 @@ LAB_0050064d:
                                     return -1;
                                   }
                                   core_script_cpp_trimString_FUN_004fe000(local_2e24);
-                                  uVar16 = _DAT_01e56418;
-                                  if (_DAT_01e56418 == 0) {
+                                  iVar6 = g_INT_01e56418;
+                                  if (g_INT_01e56418 == 0) {
                                     core_mission_cpp_CDemonMission_setMissionName_FUN_004d9650
                                               (g_CDemonMission_PTR_005baf90,local_2e24);
                                     this_ptr->mission_ended = 1;
-                                    local_124 = uVar16;
+                                    local_124 = iVar6;
                                   }
                                 }
                                 else {
@@ -666,7 +667,7 @@ LAB_0050064d:
                                                         (&local_118,local_3658,300);
                                     if (pcVar18 != (char *)0x0) {
 LAB_00500e2e:
-                                      pcVar20 = &DAT_01e56420;
+                                      pcVar20 = g_CHAR_ARRAY_01e56420;
                                       do {
                                         cVar2 = *pcVar18;
                                         *pcVar20 = cVar2;
@@ -685,9 +686,10 @@ LAB_00500e2e:
                                     if (iVar6 == 0) {
                                       return -1;
                                     }
-                                    if (_DAT_01e56418 == 0) {
+                                    if (g_INT_01e56418 == 0) {
                                       core_event_cpp_CEventList_setActorVariable_FUN_00480950
-                                                (0x01C03A10,local_3658,(CDemonActor *)0x0);
+                                                (g_CEventList_PTR_005b7650,local_3658,
+                                                 (CDemonActor *)0x0);
                                     }
                                   }
                                   else {
@@ -702,8 +704,8 @@ LAB_00500e2e:
                                       sscanf
                                                 (local_118,"(%[^)])%n",local_570,&local_108);
                                       if (local_108 < 3) {
-                                        _sprintf(&DAT_01e56420,"Error parsing dbSay arguments"
-                                                  );
+                                        _sprintf(g_CHAR_ARRAY_01e56420,
+                                                   "Error parsing dbSay arguments");
                                         return -1;
                                       }
                                       core_script_cpp_trimString_FUN_004fe000(local_570);
@@ -743,11 +745,11 @@ LAB_00500e2e:
                                           return -1;
                                         }
                                       }
-                                      if ((_DAT_01e56418 == 0) &&
+                                      if ((g_INT_01e56418 == 0) &&
                                          (local_124 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00504b70
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             time_remaining), 0 < (int)local_124)) {
+                                                             time_remaining), 0 < local_124)) {
                                         core_script_cpp_CScript_setSpeaker_FUN_00504bf0
                                                   (this_ptr,this_ptr->who_is_speaking);
                                       }
@@ -764,7 +766,7 @@ LAB_00500e2e:
                                         sscanf
                                                   (local_118,"(%[^)])%n",local_444,&local_fc);
                                         if (local_fc < 3) {
-                                          _sprintf(&DAT_01e56420,
+                                          _sprintf(g_CHAR_ARRAY_01e56420,
                                                      "Error parsing dbSay arguments");
                                           return -1;
                                         }
@@ -817,7 +819,7 @@ joined_r0x00504194:
                                           pcVar18 = core_script_cpp_parseArgument_FUN_004fe090
                                                               (&local_118,local_3784,300);
                                           if (pcVar18 != (char *)0x0) goto LAB_00500e2e;
-                                          if (_DAT_01e56418 == 0) {
+                                          if (g_INT_01e56418 == 0) {
                                             shape_edittool_cpp_CEditorTools_showMessage_FUN_0046fe60
                                                       (g_CEditorToolsPtr,
                                                        "Script debug message at line %d:\n%s",local_11c,
@@ -837,7 +839,7 @@ joined_r0x00504194:
                                                       (local_118,"(%[^,], %[^,)]%n",local_2bcc,local_1844,
                                                        &local_5c);
                                             if (local_5c < 5) {
-                                              _sprintf(&DAT_01e56420,
+                                              _sprintf(g_CHAR_ARRAY_01e56420,
                                                          "Error parsing dismember command parms");
                                               return -1;
                                             }
@@ -866,7 +868,7 @@ joined_r0x00504194:
                                                          &local_148.y,&local_148.z,&local_3f80,
                                                          &local_5c);
                                               if (local_5c < 5) {
-                                                _sprintf(&DAT_01e56420,
+                                                _sprintf(g_CHAR_ARRAY_01e56420,
                                                            "Error parsing dismember command parms");
                                                 return -1;
                                               }
@@ -895,13 +897,13 @@ joined_r0x00504194:
                                               pCVar13 = &local_148;
                                             }
                                             if (*local_118 != ')') {
-                                              _sprintf(&DAT_01e56420,
+                                              _sprintf(g_CHAR_ARRAY_01e56420,
                                                          "Error parsing dismember command parms near '%s'",
                                                          local_118);
                                               return -1;
                                             }
                                             local_118 = local_118 + 1;
-                                            if (_DAT_01e56418 == 0) {
+                                            if (g_INT_01e56418 == 0) {
                                               local_ec = 
                                                   core_bodypart_cpp_createBodyPart_FUN_00415b30
                                                             (&(local_f0->base).location.position,
@@ -935,7 +937,7 @@ joined_r0x00504194:
                                                                   (&local_118,
                                                                    this_ptr->current_message,0x400);
                                               if (pcVar18 != (char *)0x0) {
-                                                _sprintf(&DAT_01e56420,
+                                                _sprintf(g_CHAR_ARRAY_01e56420,
                                                            "Error parsing message text on display statament: %s",
                                                            pcVar18);
                                                 return -1;
@@ -954,7 +956,7 @@ joined_r0x00504194:
                                                   core_script_cpp_CScript_skipCommands_FUN_00504c70
                                                             (this_ptr,this_ptr->next_cmd,1);
                                                 if (iVar6 < 0) {
-                                                  _sprintf(&DAT_01e56420,
+                                                  _sprintf(g_CHAR_ARRAY_01e56420,
                                                              "Can't skip next command after else statement on line %d",
                                                              local_11c);
                                                   return -1;
@@ -976,7 +978,7 @@ joined_r0x00504194:
                                                             (local_118,"(%[^,], %[^)])%n",local_307c,
                                                              local_2d5c,&local_48);
                                                   if (local_48 < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing enableCamera parms");
                                                     return -1;
                                                   }
@@ -989,24 +991,24 @@ joined_r0x00504194:
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
                                                             (g_CDemonSetPtr,local_307c);
                                                   if (iVar6 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Camera \"%s\" does not exist.",
                                                                local_307c);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     iVar11 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,local_2d5c);
+                                                            (g_CEventList_PTR_005b7650,local_2d5c);
                                                   core_set_cpp_CDemonSet_setCameraEnabled_FUN_0050e550
                                                             (g_CDemonSetPtr,iVar6,iVar11);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0047dc90
-                                                            (0x01C03A10,local_2d5c);
+                                                            (g_CEventList_PTR_005b7650,local_2d5c);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -1037,27 +1039,27 @@ joined_r0x00504194:
                                                             (local_118,"(%d , %[^)])%n",&local_a8,
                                                              local_1dbc,&local_44);
                                                   if (local_44 < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing enableCameraGroup parms");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_44;
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1dbc);
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     iVar6 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,local_1dbc);
+                                                            (g_CEventList_PTR_005b7650,local_1dbc);
                                                   core_set_cpp_CDemonSet_setCameraEnabledByGroup_FUN_0050e580
                                                             (g_CDemonSetPtr,local_a8,iVar6);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0047dc90
-                                                            (0x01C03A10,local_1dbc);
+                                                            (g_CEventList_PTR_005b7650,local_1dbc);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00501802:
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -1088,7 +1090,7 @@ LAB_00501802:
                                                             (local_118,"(%[^,], %[^)])%n",local_32d4,
                                                              local_1f4c,&local_dc);
                                                   if (local_dc < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing enableHealthBar parms");
                                                     return -1;
                                                   }
@@ -1118,7 +1120,7 @@ LAB_00501802:
                                                                         (local_1f4c,
                                                                          "always");
                                                       if (iVar6 != 0) {
-                                                        _sprintf(&DAT_01e56420,
+                                                        _sprintf(g_CHAR_ARRAY_01e56420,
                                                                                                                                       
                                                   "Invalid health bar mode '%s'",local_1f4c);
                                                   return -1;
@@ -1126,7 +1128,7 @@ LAB_00501802:
                                                   uVar8 = 2;
                                                   }
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     *(uint *)
                                                      (pCVar15[0x1b].create_event + 0x54) = uVar8;
                                                   }
@@ -1140,8 +1142,8 @@ LAB_00501802:
                                                       local_118 = 
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar18 + 3);
-                                                  if (_DAT_01e56418 == 0) {
-                                                    local_124 = _DAT_01e56418;
+                                                  if (g_INT_01e56418 == 0) {
+                                                    local_124 = g_INT_01e56418;
                                                     this_ptr->mission_ended = 1;
                                                   }
                                                   }
@@ -1154,8 +1156,8 @@ LAB_00501802:
                                                       local_118 = 
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar18 + 6);
-                                                  if (_DAT_01e56418 == 0) {
-                                                    local_124 = _DAT_01e56418;
+                                                  if (g_INT_01e56418 == 0) {
+                                                    local_124 = g_INT_01e56418;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
                                                   core_game_cpp_CGame_fadeIn_FUN_004a3a50
@@ -1182,11 +1184,11 @@ LAB_00501802:
                                                       local_118 = 
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar18 + 7);
-                                                  uVar16 = _DAT_01e56418;
+                                                  iVar6 = g_INT_01e56418;
                                                   pCVar4 = g_CGamePtr;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     g_CGamePtr->allow_damage_flag = 0;
-                                                    local_124 = uVar16;
+                                                    local_124 = iVar6;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       uVar16 = 
                                                   core_game_cpp_CGame_fadeIn_FUN_004a3a50(pCVar4);
@@ -1216,7 +1218,7 @@ LAB_00501802:
                                                             (local_118,"(%[^,], %[^)])%n",local_1a9c,
                                                              local_19d4,&local_d8);
                                                   if (local_d8 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing gesture command parms");
                                                     return -1;
                                                   }
@@ -1233,7 +1235,7 @@ LAB_00501802:
                                                   &g_CCharacterActorType_00765a60);
                                                   if (pCVar14 == (CCharacter *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     uVar16 = 
                                                   core_charactr_cpp_CCharacter_initGesture_FUN_00429520
                                                             (pCVar14,local_19d4);
@@ -1253,7 +1255,7 @@ LAB_00501802:
                                                     pcVar18 = 
                                                   core_bugs_cpp_getDeformableModelName_FUN_00423d30
                                                             (&pCVar14->model);
-                                                  _sprintf(&DAT_01e56420,
+                                                  _sprintf(g_CHAR_ARRAY_01e56420,
                                                              "Gesture name %s is not valid for actor %s, model %s",
                                                              local_19d4,local_1a9c,pcVar18);
                                                   return -1;
@@ -1274,7 +1276,7 @@ LAB_00501802:
                                                             (local_118,"(%[^,], %[^,)] )%n",local_145c,
                                                              local_1e84,&local_d4);
                                                   if (local_d4 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing getIniInt command parms");
                                                     return -1;
                                                   }
@@ -1283,18 +1285,19 @@ LAB_00501802:
                                                             (local_145c);
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1e84);
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004bd860
                                                               (&local_3d6c,
                                                                "system\\nocturne.ini",
                                                                "Game");
                                                     local_d0 = 
                                                   core_event_cpp_CEventList_getCounterValue_FUN_004807e0
-                                                            (0x01C03A10,local_1e84);
+                                                            (g_CEventList_PTR_005b7650,local_1e84);
                                                   engine_ini_cpp_CIniFile_getInteger_FUN_004bda20
                                                             (&local_3d6c,local_145c,&local_d0);
                                                   core_event_cpp_CEventList_setCounter_FUN_004806d0
-                                                            (0x01C03A10,local_1e84,local_d0);
+                                                            (g_CEventList_PTR_005b7650,local_1e84,
+                                                             local_d0);
                                                   }
                                                   }
                                                   else {
@@ -1312,7 +1315,7 @@ LAB_00501802:
                                                             (local_118,"(%[^,], %[^)])%n",local_16b4,
                                                              local_1b64,&local_c8);
                                                   if (local_c8 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing getTriggerActor command parms");
                                                     return -1;
                                                   }
@@ -1335,10 +1338,10 @@ LAB_00501802:
                                                                       );
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_00480950
-                                                            (0x01C03A10,local_16b4,
+                                                            (g_CEventList_PTR_005b7650,local_16b4,
                                                              (CDemonActor *)
                                                              pCVar15[2].orient_matrix.m[2].x);
                                                   }
@@ -1359,13 +1362,14 @@ LAB_00501802:
                                                     dVar1 = __BITCAST_DOUBLE(CONCAT44(local_11c,local_118));
                                                     pcVar18 = "Undefined label %s used in gosub statement on line %d";
 LAB_004ff42f:
-                                                    _sprintf(&DAT_01e56420,pcVar18,SUB84(__BITCAST_UINT64(dVar1),0),
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,pcVar18,
+                                                               SUB84(__BITCAST_UINT64(dVar1),0),
                                                                (int)((ulonglong)dVar1 >> 0x20));
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     if (7 < this_ptr->call_stack_count) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Call stack overflow detected on script line %d."
                                                                  ,local_11c);
                                                       return -1;
@@ -1398,7 +1402,7 @@ LAB_004ff42f:
                                                     pcVar18 = "Undefined label %s used in goto statement on line %d";
                                                     goto LAB_004ff42f;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     this_ptr->next_cmd = iVar6;
                                                     local_118 = &CHAR_00h_0058ee1f;
                                                   }
@@ -1419,7 +1423,7 @@ LAB_004ff42f:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_3400,300);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00501802;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
                                                             (g_CEditorToolsPtr,
@@ -1444,7 +1448,7 @@ LAB_004ff42f:
                                                             (local_118,"(%[^,)]%n",local_1524,
                                                              &local_c4);
                                                   if ((int)local_c4 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing holsterWeapon command parms");
                                                     return -1;
                                                   }
@@ -1473,7 +1477,7 @@ LAB_004ff42f:
                                                     uVar16 = ~uVar16 - 2;
                                                     local_c4 = uVar16;
                                                     if ((int)uVar16 < 1) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing holsterWeapon command parms"
                                                                 );
                                                       return -1;
@@ -1496,25 +1500,27 @@ LAB_004ff42f:
                                                     pcVar18 = local_118 + local_c4;
                                                     acStack_fad[local_c4 + 1] = '\0';
                                                     local_118 = pcVar18;
-                                                    if (_DAT_01e56418 == 0) {
+                                                    if (g_INT_01e56418 == 0) {
                                                       local_bc = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,acStack_fad + 1);
+                                                            (g_CEventList_PTR_005b7650,
+                                                             acStack_fad + 1);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCondition_FUN_0047dc90
-                                                            (0x01C03A10,acStack_fad + 1);
+                                                            (g_CEventList_PTR_005b7650,
+                                                             acStack_fad + 1);
                                                   if (pcVar18 != (char *)0x0) goto LAB_005021b8;
                                                   }
                                                   }
                                                   if (*local_118 != ')') {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Missing closing ')' in holsterWeapon command");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + 1;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     (*(((local_c0->base).base.vtable._ue)->_ue).
                                                       updateVictim)(local_c0,SUB14(local_bc == 0,0))
                                                     ;
@@ -1545,15 +1551,16 @@ LAB_004ff42f:
                                                   core_script_cpp_parseConditionExpr_FUN_004fe140
                                                             (&local_118,local_8f4);
                                                   if (pcVar18 != (char *)0x0) goto LAB_005021b8;
-                                                  if ((_DAT_01e56418 == 0) &&
+                                                  if ((g_INT_01e56418 == 0) &&
                                                      (iVar6 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,local_8f4), iVar6 == 0)) {
+                                                            (g_CEventList_PTR_005b7650,local_8f4),
+                                                  iVar6 == 0)) {
                                                     iVar6 = 
                                                   core_script_cpp_CScript_skipCommands_FUN_00504c70
                                                             (this_ptr,this_ptr->next_cmd,0);
                                                   if (iVar6 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Can't skip next command after if statement on line %d",
                                                                local_11c);
                                                     return -1;
@@ -1580,17 +1587,17 @@ LAB_004ff42f:
                                                   local_18 = -1;
                                                   sscanf
                                                             (local_118," ( )%n",&local_18);
-                                                  uVar16 = _DAT_01e56418;
+                                                  iVar6 = g_INT_01e56418;
                                                   pCVar4 = g_CGamePtr;
                                                   if (local_18 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing finishedAct command");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_18;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     this_ptr->mission_ended = 1;
-                                                    local_124 = uVar16;
+                                                    local_124 = iVar6;
                                                     pCVar4->act_completion_state = 1;
                                                   }
                                                   }
@@ -1609,7 +1616,7 @@ LAB_004ff42f:
                                                             (&local_118,local_890,100);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_005021b8:
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -1641,12 +1648,12 @@ LAB_005021b8:
                                                     iVar11 = 2;
                                                   }
                                                   else if (iVar11 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Invalid letterBox mode: %s",
                                                                local_890);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     g_CGamePtr->letterbox_mode = iVar11;
                                                     pCVar4->allow_damage_flag = (uint)(iVar11 == 0);
                                                     pCVar4->allow_enemy_attack_flag =
@@ -1655,7 +1662,7 @@ LAB_005021b8:
                                                          pCVar4->letterbox_mode;
                                                     this_ptr->saved_cmd_index = -1;
                                                     pCVar5 = g_CDemonSetPtr;
-                                                    _DAT_01e56c24 = 1;
+                                                    g_INT_01e56c24 = 1;
                                                     if ((pCVar4->goggles_active != 0) &&
                                                        (pCVar4->letterbox_mode != 0)) {
                                                       pCVar4->goggles_active = 0;
@@ -1692,10 +1699,10 @@ LAB_005021b8:
                                                   core_script_cpp_parseConditionExpr_FUN_004fe140
                                                             (&local_118,local_2b4);
                                                   if (pcVar18 != (char *)0x0) goto LAB_005021b8;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     iVar6 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,local_2b4);
+                                                            (g_CEventList_PTR_005b7650,local_2b4);
                                                   this_ptr->focus_actor_locked = iVar6;
                                                   }
                                                   }
@@ -1713,7 +1720,7 @@ LAB_005021b8:
                                                             (local_118,"(%[^,)]%n",local_1394,
                                                              &local_b4);
                                                   if (local_b4 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing lookAt command parms");
                                                     return -1;
                                                   }
@@ -1728,7 +1735,7 @@ LAB_005021b8:
                                                   &g_CCharacterActorType_00765a60);
                                                   if (pCVar14 == (CCharacter *)0x0) {
 joined_r0x00500ad6:
-                                                    if (_DAT_01e56c2c == 0) {
+                                                    if (g_INT_01e56c2c == 0) {
                                                       return -1;
                                                     }
                                                     goto LAB_004ff384;
@@ -1740,7 +1747,7 @@ joined_r0x00500ad6:
                                                               (local_118,", %[^)]%n",local_2fb4,
                                                                &local_b4);
                                                     if (local_b4 < 3) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing lookAt command parms"
                                                                 );
                                                       return -1;
@@ -1757,12 +1764,12 @@ joined_r0x00500ad6:
                                                   goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Missing closing ')' in lookAt command");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + 1;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_charactr_cpp_CCharacter_setLookAtTarget_FUN_00429f60
                                                             (pCVar14,pCVar15);
@@ -1783,7 +1790,7 @@ joined_r0x00500ad6:
                                                             (local_118,"(%[^,], %f , %f )%n",local_177c,
                                                              &local_3f70,&local_3f7c,&local_b0);
                                                   if (local_b0 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing movePlatform command parms");
                                                     return -1;
                                                   }
@@ -1800,7 +1807,7 @@ joined_r0x00500ad6:
                                                   if (pCVar9 == (CPlatform *)0x0)
                                                   goto joined_r0x00500ad6;
                                                   if ((local_3f70 < 0.0) || (1.0 < local_3f70)) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Paramater must be in range 0.0 .. 1.0");
                                                     return -1;
                                                   }
@@ -1809,7 +1816,7 @@ joined_r0x00500ad6:
                                                     pcVar18 = "Invalid movement rate %f";
                                                     goto LAB_004ff42f;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_platfrm_cpp_CPlatform_startMovement_FUN_004f6bd0
                                                             (pCVar9,local_3f70,local_3f7c);
@@ -1830,7 +1837,7 @@ joined_r0x00500ad6:
                                                             (local_118,"(%[^,], %[^)])%n",local_28ac,
                                                              local_3144,&local_ac);
                                                   if (local_ac < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing openDoor command parms");
                                                     return -1;
                                                   }
@@ -1854,8 +1861,8 @@ joined_r0x00500ad6:
                                                              &g_CCharacterActorType_00765a60),
                                                   pCVar14 == (CCharacter *)0x0))
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
-                                                    local_124 = _DAT_01e56418;
+                                                  if (g_INT_01e56418 == 0) {
+                                                    local_124 = g_INT_01e56418;
                                                     if (0.0 <= this_ptr->cmd_timer) {
                                                       iVar6 = (*(((pCVar14->base).vtable._uc)->_uc).
                                                                 hasDoorTarget)(pCVar14);
@@ -1885,7 +1892,7 @@ joined_r0x00500ad6:
                                                             (local_118,"( %[^,], %[^)])%n",local_250,
                                                              local_50c,&local_a4);
                                                   if (local_a4 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing pressButton() command parms");
                                                     return -1;
                                                   }
@@ -1907,17 +1914,17 @@ joined_r0x00500ad6:
                                                              &pCVar15[0x8f].platform_position_delta.
                                                               y,local_50c);
                                                   if (piVar10 == (int *)0x0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Invalid button name: %s",
                                                                local_50c);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
-                                                    if (_DAT_01e56c24 != 0) {
+                                                  if (g_INT_01e56418 == 0) {
+                                                    if (g_INT_01e56c24 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
                                                             (g_CGamePtr);
-                                                  _DAT_01e56c24 = 0;
+                                                  g_INT_01e56c24 = 0;
                                                   }
                                                   *piVar10 = 1;
                                                   }
@@ -1935,22 +1942,22 @@ joined_r0x00500ad6:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_1ec,100);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing event expression on raise statament: %s",
                                                                pcVar18);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                                                            (0x01C03A10,local_1ec);
+                                                            (g_CEventList_PTR_005b7650,local_1ec);
                                                   }
                                                   else {
                                                     pcVar18 = 
                                                   core_event_cpp_CEventList_validateCommands_FUN_0047dcd0
-                                                            (0x01C03A10,local_1ec);
+                                                            (g_CEventList_PTR_005b7650,local_1ec);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -1981,7 +1988,7 @@ joined_r0x00500ad6:
                                                             (local_118,"( %[^,], %[^)])%n",local_bb0,
                                                              local_c14,&local_9c);
                                                   if (local_9c < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing releaseButton() command parms");
                                                     return -1;
                                                   }
@@ -2002,19 +2009,19 @@ joined_r0x00500ad6:
                                                             ((SPlayerActionState *)
                                                              &pCVar15[0x8f].platform_position_delta.
                                                               y,local_c14);
-                                                  uVar16 = _DAT_01e56418;
+                                                  iVar6 = g_INT_01e56418;
                                                   if (piVar10 == (int *)0x0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Invalid button name: %s",
                                                                local_c14);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
-                                                    if (_DAT_01e56c24 != 0) {
+                                                  if (g_INT_01e56418 == 0) {
+                                                    if (g_INT_01e56c24 != 0) {
                                                                                                             
                                                   core_game_cpp_CGame_resetInputAndCenterCursor_FUN_0049f8c0
                                                             (g_CGamePtr);
-                                                  _DAT_01e56c24 = uVar16;
+                                                  g_INT_01e56c24 = iVar6;
                                                   }
                                                   *piVar10 = 0;
                                                   }
@@ -2034,7 +2041,7 @@ joined_r0x00500ad6:
                                                             (local_118," ( %[^)])%n",local_271c,
                                                              &local_98);
                                                   if (local_98 < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing removeAllItemsFromInventory command parms");
                                                     return -1;
                                                   }
@@ -2048,7 +2055,7 @@ joined_r0x00500ad6:
                                                                        &g_CHeroActorType_01cae0ec);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     core_inv_cpp_CInventory_initialize_FUN_004bef10
                                                               ((CInventory *)
                                                                &pCVar15[0x17e].orient_matrix.m[0].y)
@@ -2070,7 +2077,7 @@ joined_r0x00500ad6:
                                                             (local_118," ( %[^,], %[^)])%n",local_20dc,
                                                              local_2014,&local_94);
                                                   if (local_94 < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing removeItemFromInventory command parms");
                                                     return -1;
                                                   }
@@ -2086,7 +2093,7 @@ joined_r0x00500ad6:
                                                                        &g_CHeroActorType_01cae0ec);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if ((_DAT_01e56418 == 0) &&
+                                                  if ((g_INT_01e56418 == 0) &&
                                                      (pCVar12 = 
                                                   core_inv_cpp_CInventory_findItemByName_FUN_004c0710
                                                             (&g_HeroActors[g_LocalHeroIndex]->
@@ -2113,18 +2120,18 @@ joined_r0x00500ad6:
                                                             (local_118," (%d )%n",&local_90,
                                                              &local_8c);
                                                   if (local_8c < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing removeKeys() command parms");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_8c;
                                                   if (g_CNetGamePtr->connection_type !=
                                                       CONNECTION_NONE) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Can't use removeKeys command in multi-player");
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_hero_cpp_CHero_removeMatchingKeys_FUN_004b5cb0
                                                             (g_HeroActors[g_LocalHeroIndex],local_90
@@ -2140,10 +2147,10 @@ joined_r0x00500ad6:
                                                       local_118 = 
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (pcVar18 + 6);
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     iVar6 = this_ptr->call_stack_count;
                                                     if (iVar6 < 1) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Return without gosub detected on script line %d."
                                                                  ,local_11c);
                                                       return -1;
@@ -2166,17 +2173,17 @@ joined_r0x00500ad6:
                                                   local_88 = -1;
                                                   sscanf
                                                             (local_118," ( )%n",&local_88);
-                                                  uVar16 = _DAT_01e56418;
+                                                  iVar6 = g_INT_01e56418;
                                                   pCVar4 = g_CGamePtr;
                                                   if (local_88 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing rollCredits command");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_88;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     this_ptr->mission_ended = 1;
-                                                    local_124 = uVar16;
+                                                    local_124 = iVar6;
                                                     pCVar4->act_completion_state = 2;
                                                   }
                                                   }
@@ -2194,7 +2201,7 @@ joined_r0x00500ad6:
                                                             (&local_118,local_3978,500);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00503106:
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2213,7 +2220,7 @@ LAB_00503106:
                                                             (local_3978,"%[^,], %[^,], %n",local_2eec,
                                                              local_12cc,&local_84);
                                                   if (local_84 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing speaker and wav arguments");
                                                     return -1;
                                                   }
@@ -2234,11 +2241,11 @@ LAB_00503106:
                                                     return -1;
                                                   }
                                                   }
-                                                  if ((_DAT_01e56418 == 0) &&
+                                                  if ((g_INT_01e56418 == 0) &&
                                                      (local_124 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00504b70
                                                             (this_ptr,this_ptr->dialog_wav_time,
-                                                             time_remaining), 0 < (int)local_124)) {
+                                                             time_remaining), 0 < local_124)) {
                                                     core_script_cpp_CScript_setSpeaker_FUN_00504bf0
                                                               (this_ptr,this_ptr->who_is_speaking);
                                                   }
@@ -2258,7 +2265,7 @@ LAB_00503106:
                                                             (local_118," (%[^,], %[^)])%n",local_700,
                                                              local_69c,&local_80);
                                                   if (local_80 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing selectWeapon parameters.");
                                                     return -1;
                                                   }
@@ -2274,10 +2281,10 @@ LAB_00503106:
                                                                        &g_CHeroActorType_01cae0ec);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     inventory_ptr =
                                                          &pCVar15[0x17e].orient_matrix.m[0].y;
-                                                    local_7c = _DAT_01e56418;
+                                                    local_7c = g_INT_01e56418;
                                                     actor_ptr = 
                                                   core_gabriela_cpp_getSelectedWeapon_FUN_0049a160
                                                             ((CInventory *)inventory_ptr);
@@ -2326,7 +2333,7 @@ LAB_00503106:
                                                             (local_118,"(%[^,], %[^)])%n",local_258c,
                                                              local_24c4,&local_74);
                                                   if (local_74 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setActorVariable command parms");
                                                     return -1;
                                                   }
@@ -2346,13 +2353,14 @@ LAB_00503106:
                                                                                                                                               
                                                   g_CDemonActorActorType_00763e48.name_hash,
                                                   &g_CDemonActorActorType_00763e48);
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_event_cpp_CEventList_setActorVariable_FUN_00480950
-                                                            (0x01C03A10,local_258c,pCVar15);
+                                                            (g_CEventList_PTR_005b7650,local_258c,
+                                                             pCVar15);
                                                   }
                                                   else if ((pCVar15 == (CDemonActor *)0x0) &&
-                                                          (_DAT_01e56c2c == 0)) {
+                                                          (g_INT_01e56c2c == 0)) {
                                                     return -1;
                                                   }
                                                   }
@@ -2370,7 +2378,7 @@ LAB_00503106:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_37c,100);
                                                   if (pcVar18 != (char *)0x0) goto LAB_00503106;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_sound_cpp_CSound_playAmbientSound_FUN_0052e9d0
                                                             (g_CSound_PTR_005bed68,local_37c);
@@ -2391,7 +2399,7 @@ LAB_00503106:
                                                             (local_118,"(%[^,], %d)%n",local_2b04,
                                                              &local_70,&local_6c);
                                                   if (local_6c < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setCameragroup parms");
                                                     return -1;
                                                   }
@@ -2402,12 +2410,12 @@ LAB_00503106:
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
                                                             (g_CDemonSetPtr,local_2b04);
                                                   if (iVar6 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Camera \"%s\" does not exist.",
                                                                local_2b04);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     g_CDemonSetPtr->cameras[iVar6].camera_group =
                                                          local_70;
                                                   }
@@ -2427,7 +2435,7 @@ LAB_00503106:
                                                             (local_118,"(%[^,], %f)%n",local_23fc,
                                                              &local_68,&local_64);
                                                   if (local_64 < 3) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setCharacterHealth parms");
                                                     return -1;
                                                   }
@@ -2441,7 +2449,7 @@ LAB_00503106:
                                                   &g_CCharacterActorType_00765a60);
                                                   if (pCVar15 == (CDemonActor *)0x0)
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     *(float *)(pCVar15[0x1b].create_event + 0x4c) =
                                                          *(float *)(pCVar15[0x1b].create_event +
                                                                    0x50) * local_68;
@@ -2461,7 +2469,7 @@ LAB_00503106:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_9bc,100);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2502,7 +2510,7 @@ LAB_00503106:
                                                             (local_118," (%[^,], %[^)])%n",local_638,
                                                              local_82c,&local_60);
                                                   if (local_60 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setHeroTask parameters.");
                                                     return -1;
                                                   }
@@ -2545,7 +2553,7 @@ LAB_00503106:
                                                                             (local_82c,
                                                                              "suspend");
                                                           if (iVar6 != 0) {
-                                                            _sprintf(&DAT_01e56420,
+                                                            _sprintf(g_CHAR_ARRAY_01e56420,
                                                                        "Invalid Task: %s",
                                                                        local_82c);
                                                             return -1;
@@ -2555,7 +2563,7 @@ LAB_00503106:
                                                       }
                                                     }
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     core_hero_cpp_CHero_setAiTask_FUN_004b5cd0
                                                               (this_ptr_01,iVar6);
                                                   }
@@ -2575,14 +2583,14 @@ LAB_00503106:
                                                             (local_118,"(%[^,], %d )%n",local_1074,
                                                              &local_58,&local_54);
                                                   if (local_54 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setIniInt command parms");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_54;
                                                   core_script_cpp_trimString_FUN_004fe000
                                                             (local_1074);
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     engine_ini_cpp_CIniFile_ctor_FUN_004bd860
                                                               (&local_3f6c,
                                                                "system\\nocturne.ini",
@@ -2606,7 +2614,7 @@ LAB_00503106:
                                                             (local_118," (%n %n",&local_50,
                                                              &local_50);
                                                   if (local_50 < 1) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setSayTimeOverride parameters.");
                                                     return -1;
                                                   }
@@ -2621,14 +2629,14 @@ LAB_00503106:
                                                               (local_118,"%f )%n",&local_4c,
                                                                &local_50);
                                                     if (local_50 < 1) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing setSayTimeOverride parameters."
                                                                 );
                                                       return -1;
                                                     }
                                                     local_118 = local_118 + local_50;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     this_ptr->message_duration = local_4c;
                                                   }
                                                   }
@@ -2647,7 +2655,7 @@ LAB_00503106:
                                                             (&local_118,local_764,100);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_00503b62:
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2665,12 +2673,12 @@ LAB_00503b62:
                                                   core_script_cpp_CScript_findLabelIndex_FUN_00504c10
                                                             (this_ptr,local_764);
                                                   if (iVar6 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Undefined label '%s'",
                                                                local_764);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     this_ptr->saved_cmd_index = iVar6;
                                                   }
                                                   }
@@ -2725,7 +2733,7 @@ LAB_00503b62:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_318,100);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2744,12 +2752,12 @@ LAB_00503b62:
                                                             (local_318,"%f",&local_3f74);
                                                   if (((double)local_3f74 <= 0.0) ||
                                                      (4 < (double)local_3f74)) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Invalid time factor %s",
                                                                local_318);
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     g_CGamePtr->time_scale_factor = local_3f74;
                                                   }
                                                   }
@@ -2768,7 +2776,7 @@ LAB_00503b62:
                                                             (local_118,"(%[^,)]%n",local_1cf4,
                                                              &local_40);
                                                   if (local_40 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing setVictim command parms");
                                                     return -1;
                                                   }
@@ -2790,7 +2798,7 @@ LAB_00503b62:
                                                               (local_118,", %[^)]%n",local_1204,
                                                                &local_40);
                                                     if (local_40 < 3) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing setVictim command parms")
                                                       ;
                                                       return -1;
@@ -2801,7 +2809,7 @@ LAB_00503b62:
                                                     iVar6 = _stricmp
                                                                       (local_1204,"disable"
                                                                       );
-                                                    pCVar15 = 0xFFFFFFFF;
+                                                    pCVar15 = g_CDemonActor_PTR_005a16f0;
                                                     if ((iVar6 != 0) &&
                                                        (pCVar15 = 
                                                   core_script_cpp_getActor_FUN_004fe180
@@ -2813,12 +2821,12 @@ LAB_00503b62:
                                                   goto joined_r0x00500ad6;
                                                   }
                                                   if (*local_118 != ')') {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Missing closing ')' in setVictim command");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + 1;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     core_enemy_cpp_CEnemy_setVictim_FUN_00479f50
                                                               (this_ptr_02,pCVar15);
                                                   }
@@ -2838,7 +2846,7 @@ LAB_00503b62:
                                                             (local_118,"(%[^,], %[^)])%n",local_2c94,
                                                              local_1c2c,&local_3c);
                                                   if (local_3c < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error snaping turnToFace command parms");
                                                     return -1;
                                                   }
@@ -2861,7 +2869,7 @@ LAB_00503b62:
                                                              &g_CDemonActorActorType_00763e48),
                                                   pCVar12 == (CDemonActor *)0x0))
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     core_bodypart_cpp_subtractVector_FUN_00417f90
                                                               (&(pCVar12->location).position,
                                                                &local_13c,
@@ -2888,7 +2896,7 @@ LAB_00503b62:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_3b6c,500);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2907,7 +2915,7 @@ LAB_00503b62:
                                                             (local_3b6c,"%[^,], %[^,], %n",local_15ec,
                                                              local_21a4,&local_38);
                                                   if (local_38 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing speaker and wav arguments");
                                                     return -1;
                                                   }
@@ -2939,7 +2947,7 @@ LAB_00503b62:
                                                   core_script_cpp_parseArgument_FUN_004fe090
                                                             (&local_118,local_ee4,200);
                                                   if (pcVar18 != (char *)0x0) {
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -2992,7 +3000,7 @@ LAB_0050421a:
                                                              &local_34);
                                                   if (local_34 < 1) {
                                                     pcVar18 = "Error parsing out camera name";
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -3012,7 +3020,7 @@ LAB_0050421a:
                                                   core_set_cpp_CDemonSet_findCameraByName_FUN_005090a0
                                                             (g_CDemonSetPtr,local_7c8);
                                                   if (iVar6 < 0) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Camera \"%s\" doesn't exist.",
                                                                local_7c8);
                                                     return -1;
@@ -3024,13 +3032,13 @@ LAB_0050421a:
                                                                &local_3f78);
                                                     if (((double)local_3f78 < 0.0) ||
                                                        (99999 < (double)local_3f78)) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Invalid hold time value")
                                                       ;
                                                       return -1;
                                                     }
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                                                                         
                                                   core_setdir_cpp_CDemonSet_setPendingCamera_FUN_005135d0
                                                             (g_CDemonSetPtr,iVar6,local_3f78);
@@ -3051,7 +3059,7 @@ LAB_0050421a:
                                                             (&local_118,local_352c,300);
                                                   if (pcVar18 != (char *)0x0) {
 LAB_005043d6:
-                                                    pcVar20 = &DAT_01e56420;
+                                                    pcVar20 = g_CHAR_ARRAY_01e56420;
                                                     do {
                                                       cVar2 = *pcVar18;
                                                       *pcVar20 = cVar2;
@@ -3070,11 +3078,11 @@ LAB_005043d6:
                                                             (local_352c,"%f,%n",&local_2c,
                                                              &local_30);
                                                   if (local_30 < 2) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing time value");
                                                     return -1;
                                                   }
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     pcVar20 = 
                                                   core_script_cpp_skipWhitespace_FUN_004fe070
                                                             (local_352c + local_30);
@@ -3091,7 +3099,7 @@ LAB_005043d6:
                                                   local_124 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00504b70
                                                             (this_ptr,local_2c,time_remaining);
-                                                  if (0 < (int)local_124) {
+                                                  if (0 < local_124) {
                                                     this_ptr->current_message[0] = '\0';
                                                   }
                                                   }
@@ -3111,7 +3119,7 @@ LAB_005043d6:
                                                             (local_118,"(%[^,], %[^)])%n",local_320c,
                                                              local_2974,&local_cc);
                                                   if (local_cc < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing turnToFace command parms");
                                                     return -1;
                                                   }
@@ -3135,7 +3143,7 @@ LAB_005043d6:
                                                              &g_CDemonActorActorType_00763e48),
                                                   pCVar15 == (CDemonActor *)0x0))
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setWalkTargetImmediate)(pCVar14,pCVar15);
                                                   }
@@ -3154,12 +3162,12 @@ LAB_005043d6:
                                                             (local_118,"(%f)%n",&local_24,
                                                              &local_28);
                                                   if (local_28 < 1) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing time value on wait statament");
                                                     return -1;
                                                   }
                                                   local_118 = local_118 + local_28;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     local_124 = 
                                                   core_script_cpp_CScript_processTimer_FUN_00504b70
                                                             (this_ptr,local_24,time_remaining);
@@ -3179,10 +3187,11 @@ LAB_005043d6:
                                                   core_script_cpp_parseConditionExpr_FUN_004fe140
                                                             (&local_118,local_a84);
                                                   if (pcVar18 != (char *)0x0) goto LAB_005043d6;
-                                                  if ((_DAT_01e56418 == 0) &&
+                                                  if ((g_INT_01e56418 == 0) &&
                                                      (iVar6 = 
                                                   core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                                                            (0x01C03A10,local_a84), iVar6 == 0)) {
+                                                            (g_CEventList_PTR_005b7650,local_a84),
+                                                  iVar6 == 0)) {
                                                     local_124 = 0;
                                                   }
                                                   }
@@ -3204,7 +3213,7 @@ LAB_005043d6:
                                                             (local_118,"(%[^,], %[^,)] %n",local_2a3c,
                                                              local_113c,&local_20);
                                                   if (local_20 < 5) {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Error parsing walkTo command parms");
                                                     return -1;
                                                   }
@@ -3220,7 +3229,7 @@ LAB_005043d6:
                                                               (local_118,",%f %n",&local_120,
                                                                &local_20);
                                                     if (local_20 < 1) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing walkTo command parms"
                                                                 );
                                                       return -1;
@@ -3234,7 +3243,7 @@ LAB_005043d6:
                                                               (local_118,",%f %n",&local_1c,
                                                                &local_20);
                                                     if (local_20 < 1) {
-                                                      _sprintf(&DAT_01e56420,
+                                                      _sprintf(g_CHAR_ARRAY_01e56420,
                                                                  "Error parsing walkTo command parms"
                                                                 );
                                                       return -1;
@@ -3242,7 +3251,7 @@ LAB_005043d6:
                                                     local_118 = local_118 + local_20;
                                                   }
                                                   if (*local_118 != ')') {
-                                                    _sprintf(&DAT_01e56420,
+                                                    _sprintf(g_CHAR_ARRAY_01e56420,
                                                                "Missing closing parenthesis on walkTo parms");
                                                     return -1;
                                                   }
@@ -3262,7 +3271,7 @@ LAB_005043d6:
                                                              &g_CDemonActorActorType_00763e48),
                                                   pCVar15 == (CDemonActor *)0x0))
                                                   goto joined_r0x00500ad6;
-                                                  if (_DAT_01e56418 == 0) {
+                                                  if (g_INT_01e56418 == 0) {
                                                     (*(((pCVar14->base).vtable._uc)->_uc).
                                                       setWalkTarget)(pCVar14,pCVar15,local_120,
                                                                      local_1c);
@@ -3340,17 +3349,17 @@ LAB_005043d6:
     }
   }
 LAB_004ff36b:
-  if ((_DAT_01e56418 != 2) && (*local_114 != '\0')) {
-    _sprintf(&DAT_01e56420,"Extra characters \"%s\" on line %d",local_114,local_118);
+  if ((g_INT_01e56418 != 2) && (*local_114 != '\0')) {
+    _sprintf(g_CHAR_ARRAY_01e56420,"Extra characters \"%s\" on line %d",local_114,local_118);
     return -1;
   }
 LAB_004ff384:
   if (local_120 == 1.4013e-45) {
     this_ptr->dialog_wav_time = -1.0;
-    uVar16 = _DAT_01e56418;
+    iVar6 = g_INT_01e56418;
     this_ptr->cmd_timer = -1.0;
-    if ((uVar16 == 0) && (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
-      _sprintf(&DAT_01e56420,"Overrun past the end of the script.");
+    if ((iVar6 == 0) && (this_ptr->parsed_line_count <= this_ptr->next_cmd)) {
+      _sprintf(g_CHAR_ARRAY_01e56420,"Overrun past the end of the script.");
       return -1;
     }
   }

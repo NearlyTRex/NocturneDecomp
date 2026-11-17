@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Precomputing_lights_from_0059035d
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01fb99d0
+;   int g_INT_01fb99d0
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -47,7 +47,7 @@ section .text
     PUSH EBP                            ; 00507f83
     SUB ESP,0x160                       ; 00507f84
     XOR EDX,EDX                         ; 00507f8a
-    MOV ECX,dword ptr [0x01fb99d0]      ; 00507f8c | DAT_01fb99d0
+    MOV ECX,dword ptr [0x01fb99d0]      ; 00507f8c | g_INT_01fb99d0
     MOV dword ptr [ESP + 0x128],EDX     ; 00507f92
     TEST ECX,ECX                        ; 00507f99
     JZ 0x005083e3                       ; 00507f9b
@@ -205,7 +205,7 @@ section .text
     CMP dword ptr [EBX + 0x19648],0x0   ; 005081dd
     JNZ 0x0050841a                      ; 005081e4
         ;   XREF to: 0050841a (CONDITIONAL_JUMP)  ; LAB_0050841a
-    MOV ECX,dword ptr [0x01fb99d0]      ; 005081ea | DAT_01fb99d0
+    MOV ECX,dword ptr [0x01fb99d0]      ; 005081ea | g_INT_01fb99d0
     XOR EBX,EBX                         ; 005081f0
     TEST ECX,ECX                        ; 005081f2
     JLE 0x0050821a                      ; 005081f4
@@ -223,7 +223,7 @@ section .text
     TEST EAX,EAX                        ; 00508212
     JNZ 0x00508404                      ; 00508214
         ;   XREF to: 00508404 (CONDITIONAL_JUMP)  ; LAB_00508404
-    CMP EBX,dword ptr [0x01fb99d0]      ; 0050821a | DAT_01fb99d0
+    CMP EBX,dword ptr [0x01fb99d0]      ; 0050821a | g_INT_01fb99d0
         ;   Label: LAB_0050821a
     JNZ 0x00508244                      ; 00508220
         ;   XREF to: 00508244 (CONDITIONAL_JUMP)  ; LAB_00508244
@@ -360,7 +360,7 @@ section .text
     MOV dword ptr [ESP + 0x128],ESI     ; 005083f8
     JMP 0x00507fa1                      ; 005083ff
         ;   XREF to: 00507fa1 (UNCONDITIONAL_JUMP)  ; LAB_00507fa1
-    MOV EAX,[0x01fb99d0]                ; 00508404 | DAT_01fb99d0
+    MOV EAX,[0x01fb99d0]                ; 00508404 | g_INT_01fb99d0
         ;   Label: LAB_00508404
     INC EBX                             ; 00508409
     ADD ESI,0x4                         ; 0050840a

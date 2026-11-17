@@ -15,7 +15,7 @@
 ;   void* g_PTR_00607b18 = 00000000
 ;   void* g_PTR_00607b40 = 00000000
 ;   uint g_UINT_00607b84 = 0x14
-;   undefined4 DAT_00607bdc
+;   SIOControlBlock* g_SIOControlBlock_PTR_00607bdc = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -87,7 +87,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 005a94be
     PUSH EDI                            ; 005a94c2
     MOV EBP,dword ptr [ESP + 0x28]      ; 005a94c3
-    MOV ESI,dword ptr [0x00607bdc]      ; 005a94c7 | DAT_00607bdc
+    MOV ESI,dword ptr [0x00607bdc]      ; 005a94c7 | g_SIOControlBlock_PTR_00607bdc
     PUSH EBP                            ; 005a94cd
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005a94ce
     PUSH ESI                            ; 005a94d1

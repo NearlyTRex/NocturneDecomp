@@ -15,7 +15,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
-;   undefined4 DAT_005c20d8
+;   SIGNAL_HANDLER_TYPE[26] g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8
 ;
 ; Called Functions:
 ;   crt_thread.c_GetTLS_FUN_005671dc
@@ -37,8 +37,8 @@ section .text
     LEA EAX,[EBX*0x8 + 0x0]             ; 00571520
         ;   Label: LAB_00571520
     MOV ESI,dword ptr [ESP + 0x10]      ; 00571527
-    MOV EBX,dword ptr [EAX + 0x5c20d8]  ; 0057152b | DAT_005c20d8
-    MOV dword ptr [EAX + 0x5c20d8],ESI  ; 00571531 | DAT_005c20d8
+    MOV EBX,dword ptr [EAX + 0x5c20d8]  ; 0057152b | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8
+    MOV dword ptr [EAX + 0x5c20d8],ESI  ; 00571531 | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8
     MOV EAX,EBX                         ; 00571537
     POP ESI                             ; 00571539
     POP EBX                             ; 0057153a

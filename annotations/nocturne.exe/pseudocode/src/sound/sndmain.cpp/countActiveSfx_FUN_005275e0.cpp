@@ -19,6 +19,6 @@ int __cdecl sound_sndmain_cpp_countActiveSfx_FUN_005275e0(void)
       iVar2 = iVar2 + 1;
     }
     pCVar1 = pCVar1 + 1;
-  } while (pCVar1 != (CSfxSlot *)&DAT_02dc1b74);
+  } while (pCVar1 != g_CSfxSlot_ARRAY_02dbd374 + sizeof(g_CSfxSlot_ARRAY_02dbd374) / sizeof(g_CSfxSlot_ARRAY_02dbd374[0]));
   return iVar2;
 }

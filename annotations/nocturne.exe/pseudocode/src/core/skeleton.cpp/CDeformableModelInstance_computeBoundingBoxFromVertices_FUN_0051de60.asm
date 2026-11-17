@@ -27,7 +27,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00591c87 = 0.05000000
-;   undefined4 DAT_005a1eb0
+;   float g_FLOAT_005a1eb0 = 0.00390625
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0051e020
@@ -129,25 +129,25 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0051df37
     MOV EBX,EDX                         ; 0051df3b
     FILD dword ptr [EAX]                ; 0051df3d
-    FMUL float ptr [0x005a1eb0]         ; 0051df3f | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df3f | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051df45
     FILD dword ptr [EAX + 0x4]          ; 0051df47
-    FMUL float ptr [0x005a1eb0]         ; 0051df4a | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df4a | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051df50
     FILD dword ptr [EAX + 0x8]          ; 0051df53
-    FMUL float ptr [0x005a1eb0]         ; 0051df56 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df56 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051df5c
     ADD EBP,0x2244                      ; 0051df5f
     MOV EAX,ESP                         ; 0051df65
     MOV EBX,EBP                         ; 0051df67
     FILD dword ptr [EAX]                ; 0051df69
-    FMUL float ptr [0x005a1eb0]         ; 0051df6b | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df6b | g_FLOAT_005a1eb0
     FSTP float ptr [EBX]                ; 0051df71
     FILD dword ptr [EAX + 0x4]          ; 0051df73
-    FMUL float ptr [0x005a1eb0]         ; 0051df76 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df76 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x4]          ; 0051df7c
     FILD dword ptr [EAX + 0x8]          ; 0051df7f
-    FMUL float ptr [0x005a1eb0]         ; 0051df82 | DAT_005a1eb0
+    FMUL float ptr [0x005a1eb0]         ; 0051df82 | g_FLOAT_005a1eb0
     FSTP float ptr [EBX + 0x8]          ; 0051df88
     FLD float ptr [EBP]                 ; 0051df8b
     FSUB float ptr [EDX]                ; 0051df8e

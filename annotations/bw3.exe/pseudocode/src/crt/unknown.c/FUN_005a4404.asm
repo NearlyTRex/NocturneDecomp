@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_005a4404(int param_1)
+; _FILE * crt_unknown_c_FUN_005a4404(_FILE *param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b8 = 005a7f44
-;   undefined4 DAT_02d252a0
-;   undefined4 DAT_02d252a4
+;   FileListNode* g_FileListNode_PTR_02d252a0
+;   FileListNode* g_FileListNode_PTR_02d252a4
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005a4404
     MOV EBX,dword ptr [ESP + 0x8]       ; 005a4405
     CALL dword ptr [0x006079b4]         ; 005a4409 | PTR_crt_unknown.c_FUN_005a7f44_006079b4
-    MOV EAX,[0x02d252a0]                ; 005a440f | DAT_02d252a0
+    MOV EAX,[0x02d252a0]                ; 005a440f | g_FileListNode_PTR_02d252a0
     TEST EAX,EAX                        ; 005a4414
     JZ 0x005a4440                       ; 005a4416
         ;   XREF to: 005a4440 (CONDITIONAL_JUMP)  ; LAB_005a4440
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005a4418 (CONDITIONAL_JUMP)  ; LAB_005a4418
     MOV EDX,0x2d252a4                   ; 005a4440
         ;   Label: LAB_005a4440
-    MOV EAX,dword ptr [EDX]             ; 005a4445 | DAT_02d252a4
+    MOV EAX,dword ptr [EDX]             ; 005a4445 | g_FileListNode_PTR_02d252a4
         ;   Label: LAB_005a4445
     TEST EAX,EAX                        ; 005a4447
     JZ 0x005a446f                       ; 005a4449
@@ -64,9 +64,9 @@ section .text
     JNZ 0x005a446b                      ; 005a444e
         ;   XREF to: 005a446b (CONDITIONAL_JUMP)  ; LAB_005a446b
     MOV ECX,dword ptr [EAX]             ; 005a4450
-    MOV dword ptr [EDX],ECX             ; 005a4452 | DAT_02d252a4
-    MOV EDX,dword ptr [0x02d252a0]      ; 005a4454 | DAT_02d252a0
-    MOV [0x02d252a0],EAX                ; 005a445a | DAT_02d252a0
+    MOV dword ptr [EDX],ECX             ; 005a4452 | g_FileListNode_PTR_02d252a4
+    MOV EDX,dword ptr [0x02d252a0]      ; 005a4454 | g_FileListNode_PTR_02d252a0
+    MOV [0x02d252a0],EAX                ; 005a445a | g_FileListNode_PTR_02d252a0
     MOV dword ptr [EAX],EDX             ; 005a445f
     CALL dword ptr [0x006079b8]         ; 005a4461 | PTR_crt_unknown.c_FUN_005a7f44_006079b8
     MOV EAX,EBX                         ; 005a4467

@@ -24,12 +24,11 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame)
   if (pSVar1->layer == 2) {
     pSVar3 = frame->header;
     iVar2 = pSVar3->mpeg_version;
-    iVar4 = *(int *)(&DAT_005bbc88 +
-                    pSVar3->bitrate_index * 4 + (pSVar3->layer + -1) * 0x3c + iVar2 * 0xb4) /
+    iVar4 = g_INT_ARRAY_ARRAY_ARRAY_005bbc88[iVar2 + -1][pSVar3->layer + 2][pSVar3->bitrate_index] /
             frame->channel_count;
     uVar7 = 0x4e272f;
     dVar6 = round
-                      (*(double *)(&DAT_005bbc48 + pSVar3->sampling_rate_index * 8 + iVar2 * 0x20));
+                      (g_DOUBLE_ARRAY_ARRAY_005bbc48[iVar2][pSVar3->sampling_rate_index]);
     iVar5 = (int)ROUND(dVar6);
     if (iVar2 == 1) {
       if (((iVar5 == 0x30) && (0x37 < iVar4)) || ((0x37 < iVar4 && (iVar4 < 0x51)))) {
@@ -54,7 +53,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame)
       g_CurrentFilename = "..\\sound\\mp3.cpp";
       g_CurrentLineNumber = 417;
       core_main_c_displayErrorAndQuit_FUN_004c8440
-                ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",&DAT_01cd8b28,uVar7);
+                ("MPEG Layer 2 - pick_table - can't load tables!  File: %s",g_CHAR_ARRAY_01cd8b28,uVar7);
     }
     frame->sblimit = (int)frame;
   }
@@ -71,7 +70,7 @@ void __cdecl sound_mp3_cpp_calculateMpegFrame_FUN_004e2630(SMpegFrame *frame)
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 433;
     core_main_c_displayErrorAndQuit_FUN_004c8440
-              ("js_bound bad layer/modext (%d/%d)  File: %s",iVar5,iVar2,&DAT_01cd8b28);
+              ("js_bound bad layer/modext (%d/%d)  File: %s",iVar5,iVar2,g_CHAR_ARRAY_01cd8b28);
   }
   frame->js_bound = *(int *)("$CMotionController$$" + iVar5 * 0x10 + iVar2 * 4 + 10);
   return;

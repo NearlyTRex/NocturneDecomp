@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_ptr,float delta_time)
 
@@ -261,7 +260,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_00543c50(CTentacle *this_pt
         (this_ptr->base).base.turn_angle_accumulator = fStack_30;
       }
     }
-    fVar2 = delta_time / _DAT_005a30f8 + this_ptr->target_blend;
+    fVar2 = delta_time / 0.5f + this_ptr->target_blend;
     this_ptr->target_blend = fVar2;
     if (1.0 < fVar2) {
       this_ptr->target_blend = 1.0;

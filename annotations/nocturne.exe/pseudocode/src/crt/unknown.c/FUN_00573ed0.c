@@ -15,7 +15,10 @@ HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)
   byte bVar2;
   char acStackY_1034 [4048];
   char *buffer;
-  uint uStack_4c;
+  char cStack_4c;
+  char cStack_4b;
+  char cStack_4a;
+  char cStack_49;
   uint uStack_48;
   char acStack_44 [24];
   uint uStack_2c;
@@ -26,7 +29,7 @@ HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)
   DWORD DStack_18;
   
   bVar2 = 0;
-  if (DAT_005c1ab8 == -1) {
+  if (g_INT_005c1ab8 == -1) {
     iVar1 = FUN_0056e5ac();
     if (iVar1 == 0) {
       return (HANDLE)0x0;
@@ -39,13 +42,16 @@ HANDLE FUN_00573ed0(uint param_1,int param_2,uint param_3)
   iVar1 = 0x10;
   buffer = acStack_44;
   puStack_1c = (uint *)0x0;
-  uStack_4c = 0x67625F5F;
-  (&uStack_48)[(uint)bVar2 * -2] = (&DAT_005992a8)[(uint)bVar2 * -2];
+  cStack_4c = "__bgnthd"[0];
+  cStack_4b = "__bgnthd"[1];
+  cStack_4a = "__bgnthd"[2];
+  cStack_49 = "__bgnthd"[3];
+  (&uStack_48)[(uint)bVar2 * -2] = *(uint *)("__bgnthd" + (uint)bVar2 * -8 + 4);
   acStack_44[(uint)bVar2 * -8 + (uint)bVar2 * -8] =
-       (&DAT_005992ac)[(uint)bVar2 * -8 + (uint)bVar2 * -8];
+       "__bgnthd"[(uint)bVar2 * -8 + (uint)bVar2 * -8 + 8];
   value = GetCurrentThreadId();
   IntegerToString(value,buffer,iVar1);
-  pvStack_20 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)&uStack_4c);
+  pvStack_20 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);
   hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,
                          FUN_00573e30,&uStack_2c,0,&DStack_18);
   if (hObject == (HANDLE)0x0) {

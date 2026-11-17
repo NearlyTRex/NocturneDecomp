@@ -44,8 +44,8 @@
 ;   int[3] g_INT_ARRAY_006192ac
 ;   undefined4 g_INT_ARRAY_006192ac[1]
 ;   undefined4 g_INT_ARRAY_006192ac[2]
-;   int[2] g_INT_ARRAY_006192b8
-;   int[16] g_INT_ARRAY_006192f8
+;   int[2][16] g_INT_ARRAY_ARRAY_006192b8
+;   undefined4 g_INT_ARRAY_ARRAY_006192b8[1][0]
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30
@@ -124,7 +124,7 @@ section .text
     MOV EDX,EAX                         ; 005069ab
     SHL EDX,0x6                         ; 005069ad
     MOV EAX,dword ptr [ESI + 0xc]       ; 005069b0
-    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6192b8] ; 005069b3 | g_INT_ARRAY_006192b8
+    MOV ECX,dword ptr [EDX + EAX*0x4 + 0x6192b8] ; 005069b3 | g_INT_ARRAY_ARRAY_006192b8
     PUSH ECX                            ; 005069ba
     PUSH EDI                            ; 005069bb
     CALL sound_mp3.cpp_CMP3Decoder_readBits_FUN_00504d30 ; 005069bc
@@ -180,7 +180,7 @@ section .text
     ADD EBP,0x20                        ; 00506a43
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506a46
         ;   Label: LAB_00506a46
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506a49 | g_INT_ARRAY_006192b8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506a49 | g_INT_ARRAY_ARRAY_006192b8
     PUSH EDX                            ; 00506a50
     PUSH EDI                            ; 00506a51
     ADD EBX,0x4                         ; 00506a52
@@ -214,7 +214,7 @@ section .text
     ADD EBX,EAX                         ; 00506aa7
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506aa9
         ;   Label: LAB_00506aa9
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506aac | g_INT_ARRAY_006192b8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192b8] ; 00506aac | g_INT_ARRAY_ARRAY_006192b8
     PUSH EDX                            ; 00506ab3
     PUSH EDI                            ; 00506ab4
     ADD EBX,0x34                        ; 00506ab5
@@ -257,7 +257,7 @@ section .text
     ADD EBX,ECX                         ; 00506b24
     MOV EAX,dword ptr [ESI + 0xc]       ; 00506b26
         ;   Label: LAB_00506b26
-    MOV EDX,dword ptr [EAX*0x4 + 0x6192f8] ; 00506b29 | g_INT_ARRAY_006192f8
+    MOV EDX,dword ptr [EAX*0x4 + 0x6192f8] ; 00506b29 | g_INT_ARRAY_ARRAY_006192b8[1][0]
     PUSH EDX                            ; 00506b30
     PUSH EDI                            ; 00506b31
     ADD EBX,0x34                        ; 00506b32
@@ -332,7 +332,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x50]      ; 00506bf6
     SHL EAX,0x2                         ; 00506bfa
     ADD EAX,EDX                         ; 00506bfd
-    MOV ECX,dword ptr [EAX + 0x6192b8]  ; 00506bff | g_INT_ARRAY_006192b8
+    MOV ECX,dword ptr [EAX + 0x6192b8]  ; 00506bff | g_INT_ARRAY_ARRAY_006192b8
     PUSH ECX                            ; 00506c05
     PUSH EDI                            ; 00506c06
     ADD EBX,0x34                        ; 00506c07

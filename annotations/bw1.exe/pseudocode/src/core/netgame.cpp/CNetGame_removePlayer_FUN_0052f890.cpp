@@ -10,10 +10,10 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0052f890(CNetGame *this_
 
 {
   int iVar1;
-  byte *src;
-  void *dest;
-  byte *dest_00;
-  byte *local_14;
+  void *src;
+  uint *dest;
+  void *dest_00;
+  uint *local_14;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     g_CHAR_PTR_01d1d400 = "..\\core\\netgame.cpp";
@@ -38,18 +38,19 @@ void __cdecl core_netgame_cpp_CNetGame_removePlayer_FUN_0052f890(CNetGame *this_
              (iVar1 - player_index) * 0x7c);
   iVar1 = 0;
   if (0 < g_INT_01d6dfb8) {
-    dest_00 = &DAT_01d6dfc4 + player_index;
-    src = &DAT_01d6dfc5 + player_index;
-    local_14 = &DAT_01d6dfcc + player_index * 4;
-    dest = (void *)(player_index * 4 + 0x1d6dfc8);
+    dest_00 = (void *)((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps +
+                      player_index + -4);
+    src = (void *)((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + player_index + -3);
+    local_14 = g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + player_index + 1;
+    dest = g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + player_index;
     do {
       memmove(dest_00,src,this_ptr->player_count - player_index);
       iVar1 = iVar1 + 1;
-      src = src + 0x114;
+      src = (void *)((int)src + 0x114);
       memmove(dest,local_14,(this_ptr->player_count - player_index) * 4);
-      dest_00 = dest_00 + 0x114;
-      local_14 = local_14 + 0x114;
-      dest = (void *)((int)dest + 0x114);
+      dest_00 = (void *)((int)dest_00 + 0x114);
+      local_14 = local_14 + 0x45;
+      dest = dest + 0x45;
     } while (iVar1 < g_INT_01d6dfb8);
   }
   if (player_index < this_ptr->server_player_index) {

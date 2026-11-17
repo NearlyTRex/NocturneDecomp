@@ -12,7 +12,12 @@
 #include "types/classes/CGame.h"
 #include "types/classes/CGore.h"
 #include "types/classes/CPickList.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
+#include "types/structs/SHardwareEdge.h"
+#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C70000
@@ -52,6 +57,9 @@ extern CGore g_CGoreInstance;
 // CPickList
 extern CPickList g_CPickList;
 
+// CQuaternion4f
+extern CQuaternion4f g_CQuaternion4f_01c71344;
+
 // CVector3f
 extern CVector3f CVector3f_01c71364;
 extern CVector3f CVector3f_01c71370;
@@ -60,10 +68,122 @@ extern CVector3f CVector3f_01c71388;
 extern CVector3f CVector3f_01c78bc0;
 extern CVector3f CVector3f_01c78bcc;
 
+// CVector3i
+extern CVector3i g_CVector3i_01c78ca8;
+extern CVector3i g_CVector3i_01c78cb4;
+
+// SHardwareEdge[16]
+extern SHardwareEdge g_SHardwareEdge_ARRAY_01c70f7c[16];
+
+// SMRGLHeaderPrimitive
+extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c78cc0;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c78c80;
+
+// byte
+extern byte g_BYTE_01c71354;
+
+// char
+extern char g_CHAR_01c73240;
+
+// char[10][256]
+extern char g_CHAR_ARRAY_ARRAY_01c71430[10][256];
+
+// char[20]
+extern char g_CHAR_ARRAY_01c78aef[20];
+
+// char[256]
+extern char g_CHAR_ARRAY_01c780c0[256];
+extern char g_CHAR_ARRAY_01c78598[256];
+extern char g_CHAR_ARRAY_01c789c0[256];
+
+// char[5120]
+extern char g_CHAR_ARRAY_01c71e40[5120];
+
+// char[600]
+extern char g_CHAR_ARRAY_01c781c0[600];
+
+// double
+extern double g_DOUBLE_01c71e30;
+
 // float
 extern float g_FastSqrtMagicSeedOne;
+extern float g_FLOAT_01c71340;
+extern float g_FLOAT_01c71358;
+extern float g_FLOAT_01c7135c;
+extern float g_FLOAT_01c71360;
+extern float g_FLOAT_01c71394;
+extern float g_FLOAT_01c78ac4;
+extern float g_FLOAT_01c78b08;
+
+// float[64][8]
+extern float g_FLOAT_ARRAY_ARRAY_01c7075c[64][8];
 
 // int
 extern int g_FastSqrtMagic;
 extern int g_FastInvSqrtMagic;
+extern int g_INT_01c70714;
+extern int g_INT_01c70f60;
+extern int g_INT_01c70f64;
+extern int g_INT_01c70f68;
+extern int g_INT_01c70f6c;
+extern int g_INT_01c70f70;
+extern int g_INT_01c70f78;
+extern int g_INT_01c712fc;
+extern int g_INT_01c71300;
+extern int g_INT_01c71e38;
+extern int g_INT_01c780b8;
+extern int g_INT_01c78418;
+extern int g_INT_01c7841c;
+extern int g_INT_01c78420;
+extern int g_INT_01c78698;
+extern int g_INT_01c78ac0;
+extern int g_INT_01c78ac8;
+extern int g_INT_01c78acc;
+extern int g_INT_01c78ad0;
+extern int g_INT_01c78ad4;
+extern int g_INT_01c78ad8;
+extern int g_INT_01c78adc;
+extern int g_INT_01c78ae0;
+extern int g_INT_01c78ae4;
+extern int g_INT_01c78ae8;
+extern int g_INT_01c78b04;
+extern int g_INT_01c78b0c;
+extern int g_INT_01c78b10;
+extern int g_INT_01c78b14;
+extern int g_INT_01c78b18;
+extern int g_INT_01c78b20;
+extern int g_INT_01c78b2c;
+extern int g_INT_01c78b30;
+extern int g_INT_01c78b3c;
+extern int g_INT_01c78b44;
+extern int g_INT_01c78c14;
+extern int g_INT_01c78c18;
+extern int g_INT_01c78c1c;
+extern int g_INT_01c78c20;
+extern int g_INT_01c78c24;
+extern int g_INT_01c78c28;
+extern int g_INT_01c78c2c;
+extern int g_INT_01c78c38;
+extern int g_INT_01c78c3c;
+extern int g_INT_01c78ce8;
+extern int g_INT_01c7ccec;
+extern int g_INT_01c7ccf0;
+
+// int[201]
+extern int g_INT_ARRAY_01c7869c[201];
+
+// int[20]
+extern int g_INT_ARRAY_01c71398[20];
+
+// uchar
+extern uchar g_UCHAR_01c70f5c;
+
+// uint
+extern uint g_UINT_01c70754;
+extern uint g_UINT_01c70758;
+
+// ushort
+extern ushort g_USHORT_01c70f5e;
 

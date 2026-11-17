@@ -9,47 +9,48 @@
 void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00(CDemonGlobe *this_ptr)
 
 {
-  int *piVar1;
-  CDemonRenderer *pCVar2;
+  CDemonRenderer *pCVar1;
+  int iVar2;
   int iVar3;
-  int iVar4;
   SMRGLHeaderPrimitive *prim;
   CVector3i CStack_1c;
   
-  iVar4 = 0;
+  iVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (g_CDemonRenderer_PTR_0060b27c,&this_ptr->position);
-  iVar3 = 0;
+  iVar2 = 0;
   do {
-    CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].x + iVar4) *
+    CStack_1c.x = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].x + iVar3) *
                              (float)0.00390625 * this_ptr->radius * 256.0f);
-    CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].y + iVar4) *
+    CStack_1c.y = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].y + iVar3) *
                              (float)0.00390625 * this_ptr->radius * 256.0f);
-    CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].z + iVar4) *
+    CStack_1c.z = (int)ROUND((float)*(int *)((int)&g_CVector3i_ARRAY_0060a0fc[0].z + iVar3) *
                              (float)0.00390625 * this_ptr->radius * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0055d723
               ((SProjectedVertex *)
                ((int)&(g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->projected_vertex).
-                      transformed_x + iVar3),&CStack_1c);
-    pCVar2 = g_CDemonRenderer_PTR_0060b27c;
-    *(uint *)((int)&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u + iVar3) = 0x800000;
-    *(uint *)((int)&pCVar2->vertex_buffer_ptr->v + iVar3) = 0x800000;
-    *(uint *)((int)&pCVar2->vertex_buffer_ptr->a + iVar3) = 0x8000;
-    *(uint *)((int)&pCVar2->vertex_buffer_ptr->r + iVar3) = 0xffff;
-    *(uint *)((int)&pCVar2->vertex_buffer_ptr->g + iVar3) = 0xffff;
-    iVar4 = iVar4 + 0xc;
-    *(uint *)((int)&pCVar2->vertex_buffer_ptr->b + iVar3) = 0xffff;
-    iVar3 = iVar3 + 0x30;
-  } while (iVar4 != 0x2e8);
+                      transformed_x + iVar2),&CStack_1c);
+    pCVar1 = g_CDemonRenderer_PTR_0060b27c;
+    *(uint *)((int)&g_CDemonRenderer_PTR_0060b27c->vertex_buffer_ptr->u + iVar2) = 0x800000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->a + iVar2) = 0x8000;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->r + iVar2) = 0xffff;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->g + iVar2) = 0xffff;
+    iVar3 = iVar3 + 0xc;
+    *(uint *)((int)&pCVar1->vertex_buffer_ptr->b + iVar2) = 0xffff;
+    iVar2 = iVar2 + 0x30;
+  } while (iVar3 != 0x2e8);
   engine_texture_cpp_ensureTextureLoaded_FUN_00574e00(&g_SMRGLTextureBasic_0060a0e4);
-  iVar3 = 0;
+  iVar2 = 0;
   do {
-    pCVar2 = g_CDemonRenderer_PTR_0060b27c;
-    piVar1 = (int *)((int)&DAT_0060a3f4 + iVar3);
-    iVar3 = iVar3 + 0x24;
+    pCVar1 = g_CDemonRenderer_PTR_0060b27c;
+    iVar3 = iVar2 + -4;
+    iVar2 = iVar2 + 0x24;
     prim = (SMRGLHeaderPrimitive *)0x448c6d;
-    round((double)((float)*piVar1 * this_ptr->radius));
-    engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(pCVar2,prim);
-  } while (iVar3 != 0xbd0);
+    round
+              ((double)((float)*(int *)((int)g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices +
+                                       iVar3) * this_ptr->radius));
+    engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930(pCVar1,prim);
+  } while (iVar2 != 0xbd0);
   return;
 }

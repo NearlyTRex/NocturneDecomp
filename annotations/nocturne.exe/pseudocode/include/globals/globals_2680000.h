@@ -14,6 +14,19 @@
 // CDeformableModel[64]
 extern CDeformableModel g_DeformableModelPool[64];
 
+// CVector3f
+extern CVector3f g_CVector3f_0268cedc;
+
 // CVector3f[3000]
 extern CVector3f g_CVector3f_ARRAY_02684234[3000];
+
+// int
+extern int g_INT_0268ced8;
+extern int g_INT_0268cee8;
+extern int g_INT_0268ceec;
+extern int g_INT_0268cef0;
+
+// uchar
+extern uchar g_UCHAR_02684230;
+extern uchar g_UCHAR_0268ced4;
 

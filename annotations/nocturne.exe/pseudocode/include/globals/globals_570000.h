@@ -14,6 +14,8 @@ extern char CHAR_00h_00579c6e;
 extern char CHAR_00h_0057e72c;
 extern char CHAR_00h_0057ea91;
 extern char CHAR_00h_0057ea92;
+extern char g_CHAR_0057ed1b;
+extern char g_CHAR_0057f0fa;
 extern char CHAR_00h_0057f586;
 
 // dword
@@ -36,7 +38,6 @@ extern dword DAT_00575090;
 extern dword DAT_00575094;
 
 // undefined1
-extern undefined1 DAT_0057ed1b;
 extern undefined1 DAT_0057f0fb;
 
 // undefined1*

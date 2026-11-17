@@ -21,7 +21,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0
@@ -32,7 +32,7 @@ section .text
 
     MOV EDX,dword ptr [0x005ae704]      ; 00409f60 | g_CDemonRenderer_PTR_005ae704
         ;   Label: core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
-    PUSH EDX                            ; 00409f66 | DAT_01b4d738
+    PUSH EDX                            ; 00409f66 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00409f67
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00409f6c

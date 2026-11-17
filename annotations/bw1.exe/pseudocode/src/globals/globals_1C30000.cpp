@@ -36,6 +36,9 @@ CVector3f g_CVector3f_ARRAY_01c3d818[16] = {};
 // CVector3i
 CVector3i g_CVector3i_01c3d424 = {};
 
+// SWindow[5]
+SWindow g_SWindow_ARRAY_01c3eb60[5] = {};
+
 // byte
 byte g_BYTE_01c3d43c = {};
 
@@ -44,9 +47,6 @@ char* g_CHAR_PTR_01c3eb58 = {};
 
 // char[4000]
 char g_CHAR_ARRAY_01c3dbb0[4000] = {};
-
-// char[492]
-char g_CHAR_ARRAY_01c3eb60[492] = {};
 
 // float
 float g_FLOAT_01c3d444 = {};

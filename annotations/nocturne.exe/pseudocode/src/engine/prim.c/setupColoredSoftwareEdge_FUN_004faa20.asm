@@ -10,9 +10,9 @@
 ; Referenced Globals:
 ;   int g_ProcessorType
 ;   int g_VertexPreprocessMode
-;   undefined4 DAT_01e52efc
-;   undefined4 DAT_01e53380
-;   undefined4 DAT_01e53384
+;   int g_INT_01e52efc
+;   int g_INT_01e53380
+;   int g_INT_01e53384
 ;
 ; *****************************************************************************
 
@@ -43,24 +43,24 @@ section .text
     MOV EAX,EBX                         ; 004faa51
     MOV EBX,EDI                         ; 004faa53
     MOV EDI,EAX                         ; 004faa55
-    MOV EAX,[0x01e52efc]                ; 004faa57 | DAT_01e52efc
+    MOV EAX,[0x01e52efc]                ; 004faa57 | g_INT_01e52efc
         ;   Label: LAB_004faa57
     LEA ECX,[EAX*0x8 + 0x0]             ; 004faa5c
     ADD ECX,EAX                         ; 004faa63
     SHL ECX,0x3                         ; 004faa65
     ADD ECX,0x1e52f00                   ; 004faa68
     MOV dword ptr [ECX],EBX             ; 004faa6e
-    MOV EAX,[0x01e53380]                ; 004faa70 | DAT_01e53380
+    MOV EAX,[0x01e53380]                ; 004faa70 | g_INT_01e53380
     MOV dword ptr [ECX + 0x4],EDI       ; 004faa75
     CMP EBX,EAX                         ; 004faa78
     JGE 0x004faa82                      ; 004faa7a
         ;   XREF to: 004faa82 (CONDITIONAL_JUMP)  ; LAB_004faa82
-    MOV dword ptr [0x01e53380],EBX      ; 004faa7c | DAT_01e53380
-    CMP EDI,dword ptr [0x01e53384]      ; 004faa82 | DAT_01e53384
+    MOV dword ptr [0x01e53380],EBX      ; 004faa7c | g_INT_01e53380
+    CMP EDI,dword ptr [0x01e53384]      ; 004faa82 | g_INT_01e53384
         ;   Label: LAB_004faa82
     JLE 0x004faa90                      ; 004faa88
         ;   XREF to: 004faa90 (CONDITIONAL_JUMP)  ; LAB_004faa90
-    MOV dword ptr [0x01e53384],EDI      ; 004faa8a | DAT_01e53384
+    MOV dword ptr [0x01e53384],EDI      ; 004faa8a | g_INT_01e53384
     MOV EDI,dword ptr [ESI + 0x14]      ; 004faa90
         ;   Label: LAB_004faa90
     MOV EBX,dword ptr [EBP + 0x14]      ; 004faa93
@@ -213,10 +213,10 @@ section .text
     MOV EDX,EAX                         ; 004fac2c
     MOV EAX,dword ptr [ESI + 0x28]      ; 004fac2e
     ADD EAX,EDX                         ; 004fac31
-    MOV EDX,dword ptr [0x01e52efc]      ; 004fac33 | DAT_01e52efc
+    MOV EDX,dword ptr [0x01e52efc]      ; 004fac33 | g_INT_01e52efc
     INC EDX                             ; 004fac39
     MOV dword ptr [ECX + 0x40],EAX      ; 004fac3a
-    MOV dword ptr [0x01e52efc],EDX      ; 004fac3d | DAT_01e52efc
+    MOV dword ptr [0x01e52efc],EDX      ; 004fac3d | g_INT_01e52efc
     ADD ESP,0x8                         ; 004fac43
         ;   Label: LAB_004fac43
     POP EBP                             ; 004fac46

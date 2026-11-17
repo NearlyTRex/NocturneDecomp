@@ -17,13 +17,13 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initCameraFog_FUN_004474e0(CDemonCame
   double dVar6;
   double dVar7;
   
-  DAT_005ad450 = (fog_config->color_index).r;
-  DAT_005ad454 = (fog_config->color_index).g;
-  DAT_005ad458 = (fog_config->color_index).b;
+  g_CHAR_ARRAY_005ad450 = (char  [4])(fog_config->color_index).r;
+  g_INT_005ad454 = (fog_config->color_index).g;
+  g_INT_005ad458 = (fog_config->color_index).b;
   engine_special_cpp_setFogColor_FUN_00532af0
-            (*(uint *)(&DAT_00b0e1fc + (fog_config->color_index).r * 4) & 0xff,
-             *(uint *)(&DAT_00b0e1fc + (fog_config->color_index).g * 4) & 0xff,
-             *(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff);
+            (g_UINT_ARRAY_00b0e1fc[(fog_config->color_index).r] & 0xff,
+             g_UINT_ARRAY_00b0e1fc[(fog_config->color_index).g] & 0xff,
+             g_UINT_ARRAY_00b0e1fc[g_INT_005ad458] & 0xff);
   dVar4 = (double)(fog_config->scroll).y * 65536;
   dVar5 = (double)(fog_config->scroll).z * 65536;
   fVar1 = fog_config->height_threshold;

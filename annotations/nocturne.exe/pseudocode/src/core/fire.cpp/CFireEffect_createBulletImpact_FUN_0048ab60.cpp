@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffect *this_ptr,CVector3f *impact_pos,CVector3f *surface_normal,int ground_type,CDemonActor *hit_actor)
 
 {
@@ -16,7 +14,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
   CSmokeParticle *this_ptr_00;
   char *pcVar3;
   CBulletHole *pCVar4;
-  uint *puVar5;
+  char *pcVar5;
   byte bVar6;
   char acStack_60 [52];
   float local_2c;
@@ -34,7 +32,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
     local_14 = 1;
     if ((hit_actor == (CDemonActor *)0x0) ||
        (iVar2 = (*((hit_actor->vtable)._ub)->allowBulletHoles)(hit_actor), iVar2 != 0)) {
-      if ((local_14 != 0) && (iVar2 = 0, 0 < _DAT_01c20140)) {
+      if ((local_14 != 0) && (iVar2 = 0, 0 < g_INT_01c20140)) {
         do {
           local_20 = impact_pos->x - (pCVar4->position).x;
           local_1c = impact_pos->y - (pCVar4->position).y;
@@ -48,7 +46,7 @@ void __cdecl core_fire_cpp_CFireEffect_createBulletImpact_FUN_0048ab60(CFireEffe
               (float)0.057799999999999997) goto LAB_0048ac45;
           iVar2 = iVar2 + 1;
           pCVar4 = pCVar4 + 1;
-        } while (iVar2 < _DAT_01c20140);
+        } while (iVar2 < g_INT_01c20140);
       }
       if (local_14 != 0) {
         pCVar4 = core_fire_cpp_allocateBulletHole_FUN_0048a0e0();
@@ -62,11 +60,11 @@ LAB_0048ac45:
   if (iVar2 != 0) {
     iVar2 = 0;
     do {
-      iVar1 = _DAT_01c0a13c + 1;
-      this_ptr_00 = g_CSmokeParticle_ARRAY_01c0a140 + _DAT_01c0a13c;
-      _DAT_01c0a13c = iVar1;
+      iVar1 = g_INT_01c0a13c + 1;
+      this_ptr_00 = g_CSmokeParticle_ARRAY_01c0a140 + g_INT_01c0a13c;
+      g_INT_01c0a13c = iVar1;
       if (0x7ff < iVar1) {
-        _DAT_01c0a13c = 0;
+        g_INT_01c0a13c = 0;
       }
       iVar2 = iVar2 + 1;
       core_fire_cpp_CSmokeParticle_init_FUN_00482780
@@ -84,14 +82,14 @@ LAB_0048ac45:
       } while (iVar2 < 8);
     }
   }
-  puVar5 = &DAT_005b8bd8;
-  pcVar3 = acStack_60;
+  pcVar3 = g_CHAR_ARRAY_005b8bd8;
+  pcVar5 = acStack_60;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar3 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    *(uint *)pcVar5 = *(uint *)pcVar3;
     pcVar3 = pcVar3 + ((uint)bVar6 * -2 + 1) * 4;
+    pcVar5 = pcVar5 + ((uint)bVar6 * -2 + 1) * 4;
   }
-  *(ushort *)pcVar3 = *(ushort *)puVar5;
+  *(ushort *)pcVar5 = *(ushort *)pcVar3;
   switch(ground_type) {
   case 2:
   case 8:

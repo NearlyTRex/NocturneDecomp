@@ -20,7 +20,7 @@
 ;   GUID g_IID_IDirectSound3DListener = IDirectSound3DListener 279afa84-4981-11ce-a521-0020af0be560
 ;   IDirectSound* g_IDirectSound_PTR_02c81d94
 ;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02c81d98
-;   undefined4 DAT_02c81da0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
 ;   HWND g_HWND_02c9be68
 ;
 ; Called Functions:
@@ -161,7 +161,7 @@ section .text
     CMP dword ptr [EAX*0x4 + 0x2c8115c],0x2 ; 0057a480
     JL 0x0057a49e                       ; 0057a488
         ;   XREF to: 0057a49e (CONDITIONAL_JUMP)  ; LAB_0057a49e
-    PUSH 0x2c81da0                      ; 0057a48a | DAT_02c81da0
+    PUSH 0x2c81da0                      ; 0057a48a | g_IDirectSound3DListener_PTR_02c81da0
     MOV EAX,[0x02c81d98]                ; 0057a48f | g_IDirectSoundBuffer_PTR_02c81d98
     PUSH 0x627880                       ; 0057a494 | g_IID_IDirectSound3DListener
     MOV EDX,dword ptr [EAX]             ; 0057a499

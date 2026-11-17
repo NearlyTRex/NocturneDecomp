@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 501,
+    "complexity_score": 456,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 106,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 121,
-    "suspect_count": 36,
+    "suspect_count": 32,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
-      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 404
@@ -46,14 +45,14 @@
   "globals": [
     {
       "addr": "00618608",
-      "name": "DAT_00618608",
-      "type": "undefined8",
+      "name": "g_MMX_INTEGER_00618608",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
       "addr": "00618610",
-      "name": "DAT_00618610",
-      "type": "undefined8",
+      "name": "g_MMX_INTEGER_00618610",
+      "type": "_MMX_INTEGER",
       "value": null
     },
     {
@@ -911,38 +910,6 @@
       "severity": "mild",
       "text": "g_USHORT_ARRAY_00619b60._2040_8_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 80,
-      "match": "DAT_00618608",
-      "severity": "mild",
-      "text": "uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)DAT_00618608) >> 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_00618608",
-      "severity": "mild",
-      "text": "(short)((ulonglong)DAT_00618608 >> 0x10)) >> 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 84,
-      "match": "DAT_00618608",
-      "severity": "mild",
-      "text": "(short)((ulonglong)DAT_00618608 >> 0x20)) >> 4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_00618608",
-      "severity": "mild",
-      "text": "(short)((ulonglong)DAT_00618608 >> 0x30)) >> 4;",
-      "type": "undefined_data"
     },
     {
       "description": "Ghidra CONCAT52 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",

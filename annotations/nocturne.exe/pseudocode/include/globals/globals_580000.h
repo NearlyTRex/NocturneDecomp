@@ -82,14 +82,19 @@ extern byte BYTE_ARRAY_00582f76[65];
 
 // char
 extern char CHAR_1_0058153c;
+extern char g_CHAR_00581999;
+extern char g_CHAR_0058199f;
+extern char g_CHAR_00581ae0;
 extern char CHAR_00h_00583c06;
 extern char CHAR_00h_00583dcc;
+extern char g_CHAR_00586e60;
 extern char g_CHAR_00587ed1;
 extern char CHAR_00h_0058869e;
 extern char CHAR_00h_005886ab;
 extern char CHAR_00h_0058c059;
 extern char CHAR_00h_0058c922;
 extern char CHAR_00h_0058c926;
+extern char g_CHAR_0058d9a8;
 extern char CHAR_00h_0058e552;
 extern char CHAR_00h_0058e5db;
 extern char CHAR_00h_0058e5ea;

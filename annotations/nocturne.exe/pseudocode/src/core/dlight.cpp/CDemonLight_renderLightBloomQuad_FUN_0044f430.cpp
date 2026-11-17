@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemonLight *this_ptr)
 
 {
@@ -96,7 +94,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
     local_54 = local_54 * fVar2;
     local_50 = local_50 * fVar2;
   }
-  iVar3 = _DAT_01c038f4 / 2;
+  iVar3 = g_INT_01c038f4 / 2;
   local_1c = -(local_50 * (float)local_44.x + local_58 * local_4c + local_54 * local_48);
   dVar6 = round
                     ((double)(local_1c * local_1c * local_1c * local_1c * (float)65536));
@@ -107,34 +105,34 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
     local_b0 = 0x3f000000;
     local_ac = 0x3f000000;
     local_a8 = 0xbf000000;
-    local_44.x = (int)ROUND(_DAT_0059c030 * 0.5);
-    local_44.y = (int)ROUND(_DAT_0059c030 * 0.5);
-    local_44.z = (int)ROUND(_DAT_0059c030 * -0.5);
+    local_44.x = (int)ROUND(256.0f * 0.5);
+    local_44.y = (int)ROUND(256.0f * 0.5);
+    local_44.z = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_44);
     local_b0 = 0xbf000000;
     local_ac = 0x3f000000;
     local_a8 = 0xbf000000;
-    local_34._8_4_ = (uint)ROUND(_DAT_0059c030 * -0.5);
-    local_28 = (int)ROUND(_DAT_0059c030 * 0.5);
-    local_24 = (int)ROUND(_DAT_0059c030 * -0.5);
+    local_34._8_4_ = (uint)ROUND(256.0f * -0.5);
+    local_28 = (int)ROUND(256.0f * 0.5);
+    local_24 = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
                (CVector3i *)(local_34 + 8));
     local_b0 = 0xbf000000;
     local_ac = 0xbf000000;
     local_a8 = 0xbf000000;
-    local_8c.x = (int)ROUND(_DAT_0059c030 * -0.5);
-    local_8c.y = (int)ROUND(_DAT_0059c030 * -0.5);
-    local_8c.z = (int)ROUND(_DAT_0059c030 * -0.5);
+    local_8c.x = (int)ROUND(256.0f * -0.5);
+    local_8c.y = (int)ROUND(256.0f * -0.5);
+    local_8c.z = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_8c);
     local_b0 = 0x3f000000;
     local_a8 = 0xbf000000;
     local_ac = 0xbf000000;
-    local_98.x = (int)ROUND(_DAT_0059c030 * 0.5);
-    local_98.y = (int)ROUND(_DAT_0059c030 * -0.5);
-    local_98.z = (int)ROUND(_DAT_0059c030 * -0.5);
+    local_98.x = (int)ROUND(256.0f * 0.5);
+    local_98.y = (int)ROUND(256.0f * -0.5);
+    local_98.z = (int)ROUND(256.0f * -0.5);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_98);
     this_ptr_00 = g_CDemonRenderer_PTR_005ae704;
@@ -163,7 +161,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_0044f430(CDemo
     this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
     this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (this_ptr_00,(SMRGLTextureBasic *)&DAT_005ae470);
+              (this_ptr_00,&g_SLightGlowTable_005ae458.headlight);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
     local_d8.base.count = 4;
     local_d8.surface_normal.A.i = 0;

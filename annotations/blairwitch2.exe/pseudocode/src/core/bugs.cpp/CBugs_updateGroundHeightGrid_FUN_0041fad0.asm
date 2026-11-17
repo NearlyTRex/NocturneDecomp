@@ -51,8 +51,8 @@
 ;   float g_FLOAT_005cca11 = 11
 ;   double g_DOUBLE_005cca19 = 0.5
 ;   float g_FLOAT_005f3e28 = 0.5
-;   float[12] g_FLOAT_ARRAY_007bcd08
-;   undefined4 g_FLOAT_ARRAY_007bcd08[1]
+;   float[12][12] g_FLOAT_ARRAY_ARRAY_007bcd08
+;   undefined4 g_FLOAT_ARRAY_ARRAY_007bcd08[0][1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -203,20 +203,20 @@ section .text
     MOV EAX,dword ptr [ESP + 0x88]      ; 0041fcb1
     MOV ECX,0x240                       ; 0041fcb8
     ADD EAX,0xb                         ; 0041fcbd
-    MOV EDI,0x7bcd08                    ; 0041fcc0 | g_FLOAT_ARRAY_007bcd08
+    MOV EDI,0x7bcd08                    ; 0041fcc0 | g_FLOAT_ARRAY_ARRAY_007bcd08
     MOV dword ptr [ESP + 0x80],EAX      ; 0041fcc5
     MOV EAX,dword ptr [ESP + 0x84]      ; 0041fccc
     MOV ESI,dword ptr [ESP + 0xac]      ; 0041fcd3
     ADD EAX,0xb                         ; 0041fcda
     ADD ESI,0x174f4                     ; 0041fcdd
     MOV dword ptr [ESP + 0x7c],EAX      ; 0041fce3
-    PUSH EDI                            ; 0041fce7 | g_FLOAT_ARRAY_007bcd08
+    PUSH EDI                            ; 0041fce7 | g_FLOAT_ARRAY_ARRAY_007bcd08
     MOV EAX,ECX                         ; 0041fce8
     SHR ECX,0x2                         ; 0041fcea
-    MOVSD.REP ES:EDI,ESI                ; 0041fced | g_FLOAT_ARRAY_007bcd08 | g_FLOAT_ARRAY_007bcd08[1]
+    MOVSD.REP ES:EDI,ESI                ; 0041fced | g_FLOAT_ARRAY_ARRAY_007bcd08 | g_FLOAT_ARRAY_ARRAY_007bcd08[0][1]
     MOV CL,AL                           ; 0041fcef
     AND CL,0x3                          ; 0041fcf1
-    MOVSB.REP ES:EDI,ESI                ; 0041fcf4 | g_FLOAT_ARRAY_007bcd08[1]
+    MOVSB.REP ES:EDI,ESI                ; 0041fcf4 | g_FLOAT_ARRAY_ARRAY_007bcd08[0][1]
     POP EDI                             ; 0041fcf6
     MOV ESI,dword ptr [ESP + 0xac]      ; 0041fcf7
     LEA EDI,[ESP + 0x3c]                ; 0041fcfe
@@ -283,7 +283,7 @@ section .text
     CMP EBX,dword ptr [ESP + 0x7c]      ; 0041fdf5
     JG 0x0041fe70                       ; 0041fdf9
         ;   XREF to: 0041fe70 (CONDITIONAL_JUMP)  ; LAB_0041fe70
-    MOV EAX,dword ptr [ESI + 0x7bcd08]  ; 0041fdfb | g_FLOAT_ARRAY_007bcd08 | g_FLOAT_ARRAY_007bcd08[1]
+    MOV EAX,dword ptr [ESI + 0x7bcd08]  ; 0041fdfb | g_FLOAT_ARRAY_ARRAY_007bcd08 | g_FLOAT_ARRAY_ARRAY_007bcd08[0][1]
     MOV dword ptr [EDI + 0x174f4],EAX   ; 0041fe01
     ADD EDI,0x4                         ; 0041fe07
         ;   Label: LAB_0041fe07

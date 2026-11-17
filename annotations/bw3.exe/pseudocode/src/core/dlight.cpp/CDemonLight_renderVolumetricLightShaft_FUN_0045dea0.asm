@@ -103,7 +103,7 @@
 ;   double g_DOUBLE_005bb504 = 8192
 ;   float g_FLOAT_005de4f0 = 256
 ;   float g_FLOAT_005de4f8 = 0.00390625
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005f2840
+;   undefined4 g_SLightGlowTable_005f2828.headlight.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
@@ -543,7 +543,7 @@ section .text
     CALL engine_special.cpp_transformAndProjectPoint_FUN_005632a3 ; 0045e4c8
         ;   XREF to: 005632a3 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_005632a3(SProjectedVertex * output, CVector3i * input)
     ADD ESP,0x8                         ; 0045e4cd
-    PUSH 0x5f2840                       ; 0045e4d0 | g_SMRGLTextureBasic_005f2840
+    PUSH 0x5f2840                       ; 0045e4d0 | g_SLightGlowTable_005f2828.headlight.base.type
     MOV ESI,dword ptr [0x005f2afc]      ; 0045e4d5 | g_CDemonRenderer_PTR_005f2afc
     PUSH ESI                            ; 0045e4db | g_CDemonRenderer_01bdd7e4
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0045e4dc

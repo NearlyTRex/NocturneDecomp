@@ -17,10 +17,10 @@
 ;   core_tentacle.cpp_CTentacle_process_FUN_00543c50 at 00543e04
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dca1d0
-;   undefined4 DAT_02dca1d4
-;   undefined4 DAT_02dca1d8
-;   undefined4 DAT_02dca1dc
+;   int g_INT_02dca1d0
+;   int g_INT_02dca1d4
+;   int g_INT_02dca1d8
+;   int g_INT_02dca1dc
 ;
 ; Called Functions:
 ;   core_xform.cpp_lerpMatrix3x4_FUN_0055cc30
@@ -35,7 +35,7 @@ section .text
     PUSH EBP                            ; 00544762
     SUB ESP,0xf0                        ; 00544763
     MOV EBX,ESI                         ; 00544769
-    MOV EBP,dword ptr [0x02dca1d4]      ; 0054476b | DAT_02dca1d4
+    MOV EBP,dword ptr [0x02dca1d4]      ; 0054476b | g_INT_02dca1d4
     LEA EAX,[EBP*0x4 + 0x0]             ; 00544771
     SUB EAX,EBP                         ; 00544778
     MOV EBP,dword ptr [ESP + 0x100]     ; 0054477a
@@ -43,7 +43,7 @@ section .text
     ADD EBP,0xfd0                       ; 00544784
     PUSH 0x3f000000                     ; 0054478a
     ADD EAX,EBP                         ; 0054478f
-    MOV ESI,dword ptr [0x02dca1d0]      ; 00544791 | DAT_02dca1d0
+    MOV ESI,dword ptr [0x02dca1d0]      ; 00544791 | g_INT_02dca1d0
     PUSH EAX                            ; 00544797
     LEA EAX,[ESI*0x4 + 0x0]             ; 00544798
     SUB EAX,ESI                         ; 0054479f
@@ -58,13 +58,13 @@ section .text
     LEA ESI,[ESP + 0x9c]                ; 005447bc
     ADD ESP,0xc                         ; 005447c3
     MOVSD.REP ES:EDI,ESI                ; 005447c6
-    MOV ESI,dword ptr [0x02dca1dc]      ; 005447c8 | DAT_02dca1dc
+    MOV ESI,dword ptr [0x02dca1dc]      ; 005447c8 | g_INT_02dca1dc
     LEA EAX,[ESI*0x4 + 0x0]             ; 005447ce
     SUB EAX,ESI                         ; 005447d5
     SHL EAX,0x4                         ; 005447d7
     PUSH 0x3f000000                     ; 005447da
     ADD EAX,EBP                         ; 005447df
-    MOV ESI,dword ptr [0x02dca1d8]      ; 005447e1 | DAT_02dca1d8
+    MOV ESI,dword ptr [0x02dca1d8]      ; 005447e1 | g_INT_02dca1d8
     PUSH EAX                            ; 005447e7
     LEA EAX,[ESI*0x4 + 0x0]             ; 005447e8
     SUB EAX,ESI                         ; 005447ef

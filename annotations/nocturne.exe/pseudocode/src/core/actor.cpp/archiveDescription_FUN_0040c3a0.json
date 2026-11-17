@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 115,
+    "complexity_score": 30,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 5,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 8,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 121
   },
   "cross_references": [
@@ -114,20 +112,20 @@
     },
     {
       "addr": "00763e84",
-      "name": "DAT_00763e84",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_00763e84",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "00763e88",
-      "name": "DAT_00763e88",
-      "type": "undefined4",
+      "name": "g_INT_00763e88",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00763e90",
-      "name": "DAT_00763e90",
-      "type": "undefined4",
+      "name": "g_INT_00763e90",
+      "type": "int",
       "value": null
     }
   ],
@@ -206,70 +204,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "if (DAT_00763e88 == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar1 = _fgetc(DAT_00763e84);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "if ((DAT_00763e84->_flag & 0x20) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00763e90",
-      "severity": "mild",
-      "text": "else if ((DAT_00763e90 == 0) && (property_name != (char *)0x0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"    // %s\\n\",property_name);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "if ((DAT_00763e84->_flag & 0x20) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"\\n\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "if ((DAT_00763e84->_flag & 0x20) == 0) {",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

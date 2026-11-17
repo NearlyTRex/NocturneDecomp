@@ -29,9 +29,9 @@ void __cdecl engine_matrix_c_initializeTrigTables_FUN_004cc9d0(void)
     fVar6 = (float10)fcos(fVar6);
     round((double)(fVar7 * fVar3));
     dVar8 = round((double)(fVar6 * fVar3));
-    *(uint *)(iVar2 + 0x1cc4910) = 0x4cca1e;
+    *(uint *)((int)g_INT_ARRAY_01cc4910 + iVar2) = 0x4cca1e;
     iVar1 = iVar1 + 1;
-    *(int *)(iVar2 + 0x1cc4d14) = (int)ROUND(dVar8);
+    *(int *)((int)g_INT_ARRAY_01cc4d14 + iVar2) = (int)ROUND(dVar8);
     iVar2 = iVar2 + 4;
   } while (iVar1 < 0x101);
   return;

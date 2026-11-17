@@ -18,6 +18,7 @@
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
 #include "types/classes/CZombiePriest_full_vtable.h"
+#include "types/structs/SFontGlyph.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5E0000
@@ -141,6 +142,9 @@ extern CWeapon_full_vtable g_CWeaponVTable;
 
 // CZombiePriest_full_vtable
 extern CZombiePriest_full_vtable g_CZombiePriestVTable;
+
+// SFontGlyph[224]
+extern SFontGlyph g_SFontGlyph_ARRAY_005e8840[224];
 
 // TerminatedCString
 extern TerminatedCString g_CInStreamFileVTable;

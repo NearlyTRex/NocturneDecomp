@@ -12,9 +12,9 @@
 ;   void* PTR_InitializeCriticalSection_00575558 = 00175e76
 ;   TerminatedCString s_Unable_to_allocate_semap_00598c1c
 ;   TerminatedCString s_Unable_to_allocate_semap_00598c40
-;   undefined4 DAT_02de5c10
-;   undefined4 DAT_02de5c14
-;   undefined4 DAT_02de5c18
+;   int g_INT_02de5c10
+;   int g_INT_02de5c14
+;   void* g_PTR_02de5c18
 ;
 ; Called Functions:
 ;   crt_memory.c_calloc_FUN_00565c50
@@ -30,7 +30,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_0056e254
     PUSH ESI                            ; 0056e255
     PUSH EDI                            ; 0056e256
-    MOV EDX,dword ptr [0x02de5c10]      ; 0056e257 | DAT_02de5c10
+    MOV EDX,dword ptr [0x02de5c10]      ; 0056e257 | g_INT_02de5c10
     CMP EDX,0x40                        ; 0056e25d
     JGE 0x0056e280                      ; 0056e260
         ;   XREF to: 0056e280 (CONDITIONAL_JUMP)  ; LAB_0056e280
@@ -39,7 +39,7 @@ section .text
     SUB EAX,EDX                         ; 0056e26e
     LEA EDI,[EDX + 0x1]                 ; 0056e270
     SHL EAX,0x3                         ; 0056e273
-    MOV dword ptr [0x02de5c10],EDI      ; 0056e276 | DAT_02de5c10
+    MOV dword ptr [0x02de5c10],EDI      ; 0056e276 | g_INT_02de5c10
     ADD EBX,EAX                         ; 0056e27c
     JMP 0x0056e2e9                      ; 0056e27e
         ;   XREF to: 0056e2e9 (UNCONDITIONAL_JUMP)  ; LAB_0056e2e9
@@ -58,17 +58,17 @@ section .text
     CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0056e299
         ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 0056e29e
-    MOV EAX,[0x02de5c14]                ; 0056e2a1 | DAT_02de5c14
+    MOV EAX,[0x02de5c14]                ; 0056e2a1 | g_INT_02de5c14
         ;   Label: LAB_0056e2a1
     INC EAX                             ; 0056e2a6
     SHL EAX,0x2                         ; 0056e2a7
     PUSH EAX                            ; 0056e2aa
-    MOV ECX,dword ptr [0x02de5c18]      ; 0056e2ab | DAT_02de5c18
+    MOV ECX,dword ptr [0x02de5c18]      ; 0056e2ab | g_PTR_02de5c18
     PUSH ECX                            ; 0056e2b1
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e2b2
         ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 0056e2b7
-    MOV [0x02de5c18],EAX                ; 0056e2ba | DAT_02de5c18
+    MOV [0x02de5c18],EAX                ; 0056e2ba | g_PTR_02de5c18
     TEST EAX,EAX                        ; 0056e2bf
     JNZ 0x0056e2d2                      ; 0056e2c1
         ;   XREF to: 0056e2d2 (CONDITIONAL_JUMP)  ; LAB_0056e2d2
@@ -77,12 +77,12 @@ section .text
     CALL crt_startup.c_HandleRuntimeError_FUN_0056ddc0 ; 0056e2ca
         ;   XREF to: 0056ddc0 (UNCONDITIONAL_CALL)  ; void crt_startup.c_HandleRuntimeError_FUN_0056ddc0(char * error_message, int error_level)
     ADD ESP,0x8                         ; 0056e2cf
-    MOV EAX,[0x02de5c14]                ; 0056e2d2 | DAT_02de5c14
+    MOV EAX,[0x02de5c14]                ; 0056e2d2 | g_INT_02de5c14
         ;   Label: LAB_0056e2d2
-    MOV EDX,dword ptr [0x02de5c18]      ; 0056e2d7 | DAT_02de5c18
+    MOV EDX,dword ptr [0x02de5c18]      ; 0056e2d7 | g_PTR_02de5c18
     LEA ESI,[EAX + 0x1]                 ; 0056e2dd
     MOV dword ptr [EDX + EAX*0x4],EBX   ; 0056e2e0
-    MOV dword ptr [0x02de5c14],ESI      ; 0056e2e3 | DAT_02de5c14
+    MOV dword ptr [0x02de5c14],ESI      ; 0056e2e3 | g_INT_02de5c14
     PUSH EBX                            ; 0056e2e9
         ;   Label: LAB_0056e2e9
     CALL dword ptr CS:[0x575558]        ; 0056e2ea | PTR_InitializeCriticalSection_00575558

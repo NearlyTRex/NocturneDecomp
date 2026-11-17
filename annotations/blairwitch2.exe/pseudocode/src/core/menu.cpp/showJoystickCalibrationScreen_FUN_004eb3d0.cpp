@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3d0(char *instruction_text,char *message_text)
 
 {

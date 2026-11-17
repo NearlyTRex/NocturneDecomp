@@ -16,7 +16,7 @@ void __cdecl core_netgame_cpp_removeChatOut_FUN_0052c240(int index)
   }
   g_INT_01d6dfb8 = g_INT_01d6dfb8 + -1;
   memmove
-            (&DAT_01d6dfbc + index * 0x114,&DAT_01d6dfbc + (index + 1) * 0x114,
+            (g_SChatOutMessage_ARRAY_01d6dfbc + index,g_SChatOutMessage_ARRAY_01d6dfbc + index + 1,
              (g_INT_01d6dfb8 - index) * 0x114);
   return;
 }

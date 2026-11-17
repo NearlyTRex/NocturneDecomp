@@ -2,34 +2,38 @@
 // Address: 005c0900
 // Address Range: [[005c0900, 005c098a]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_005c0900(int param_1)
+// Signature: int crt_unknown_c_FUN_005c0900(HANDLE param_1)
 
 #include "nocturne.h"
 
-int FUN_005c0900(int param_1)
+int FUN_005c0900(HANDLE param_1)
 
 {
   int iVar1;
-  int iVar2;
+  HANDLE *ppvVar2;
+  int *piVar3;
+  int iVar4;
   
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2d8)();
-  iVar2 = 0;
+  iVar4 = 0;
   if (0 < g_INT_0061f4dc) {
     iVar1 = 0;
     do {
-      if (*(int *)((int)DAT_0061f4d8 + iVar1) == 0) {
-        *(int *)((int)DAT_0061f4d8 + iVar1) = param_1;
+      piVar3 = (int *)((int)g_SIOControlBlock_PTR_0061f4d8->standard_handles + iVar1);
+      if (*piVar3 == 0) {
+        *piVar3 = (int)param_1;
         (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2dc)();
-        return iVar2;
+        return iVar4;
       }
       iVar1 = iVar1 + 4;
-      iVar2 = iVar2 + 1;
+      iVar4 = iVar4 + 1;
     } while (iVar1 < g_INT_0061f4dc * 4);
   }
-  DAT_0061f4d8 = realloc(DAT_0061f4d8,(g_INT_0061f4dc + 1) * 4);
-  iVar2 = g_INT_0061f4dc * 4;
+  g_SIOControlBlock_PTR_0061f4d8 =
+       realloc(g_SIOControlBlock_PTR_0061f4d8,(g_INT_0061f4dc + 1) * 4);
+  ppvVar2 = g_SIOControlBlock_PTR_0061f4d8->standard_handles + g_INT_0061f4dc;
   g_INT_0061f4dc = g_INT_0061f4dc + 1;
-  *(int *)((int)DAT_0061f4d8 + iVar2) = param_1;
+  *ppvVar2 = param_1;
   (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2dc)();
   return g_INT_0061f4dc + -1;
 }

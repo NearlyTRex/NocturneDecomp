@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0xB10000
 // =============================================================================
 
-// char[241]
-char g_CHAR_ARRAY_00b10718[241] = {};
+// char[241][320]
+char g_CHAR_ARRAY_ARRAY_00b10718[241][320] = {};
 

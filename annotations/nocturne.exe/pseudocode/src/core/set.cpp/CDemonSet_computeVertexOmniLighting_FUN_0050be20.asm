@@ -28,14 +28,14 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0059064a = 255
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_005c5034
-;   undefined4 DAT_005c5038
-;   undefined4 DAT_005c503c
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].r
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].g
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].b
 ;   int g_FastSqrtMagic
-;   undefined4 DAT_01fba9a4
-;   undefined4 DAT_01fba9a8
-;   undefined4 DAT_01fba9ac
+;   int g_INT_01fba9a4
+;   C3DSLight*[200] g_C3DSLight_PTR_ARRAY_01fba9a8
+;   undefined4 g_C3DSLight_PTR_ARRAY_01fba9a8[1]
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -66,13 +66,13 @@ section .text
     FSTP float ptr [ESP + 0x1c]         ; 0050be52
     FLD float ptr [EDX + 0x8]           ; 0050be56
     FADD float ptr [EAX + 0x8]          ; 0050be59
-    MOV EAX,[0x01fba9a4]                ; 0050be5c | DAT_01fba9a4
+    MOV EAX,[0x01fba9a4]                ; 0050be5c | g_INT_01fba9a4
     FSTP float ptr [ESP + 0x20]         ; 0050be61
     TEST EAX,EAX                        ; 0050be65
     JLE 0x0050be8d                      ; 0050be67
         ;   XREF to: 0050be8d (CONDITIONAL_JUMP)  ; LAB_0050be8d
     LEA EBX,[EAX*0x4 + 0x0]             ; 0050be69
-    MOV EDX,dword ptr [ECX + 0x1fba9a8] ; 0050be70 | DAT_01fba9a8 | DAT_01fba9ac
+    MOV EDX,dword ptr [ECX + 0x1fba9a8] ; 0050be70 | g_C3DSLight_PTR_ARRAY_01fba9a8 | g_C3DSLight_PTR_ARRAY_01fba9a8[1]
         ;   Label: LAB_0050be70
     TEST dword ptr [EDX + 0x11d4],0x7fffffff ; 0050be76
     JNZ 0x0050bf4d                      ; 0050be80
@@ -82,7 +82,7 @@ section .text
     CMP ECX,EBX                         ; 0050be89
     JL 0x0050be70                       ; 0050be8b
         ;   XREF to: 0050be70 (CONDITIONAL_JUMP)  ; LAB_0050be70
-    CMP dword ptr [0x01fba9a4],0x0      ; 0050be8d | DAT_01fba9a4
+    CMP dword ptr [0x01fba9a4],0x0      ; 0050be8d | g_INT_01fba9a4
         ;   Label: LAB_0050be8d
     JNZ 0x0050bea6                      ; 0050be94
         ;   XREF to: 0050bea6 (CONDITIONAL_JUMP)  ; LAB_0050bea6
@@ -94,7 +94,7 @@ section .text
         ;   Label: LAB_0050bea6
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050bea9
     SUB EAX,EDX                         ; 0050beb0
-    MOV EBX,0x5c5014                    ; 0050beb2 | DAT_005c5014
+    MOV EBX,0x5c5014                    ; 0050beb2 | g_SRenderVertex_ARRAY_005c5014
     SHL EAX,0x4                         ; 0050beb7
     FLD float ptr [ESP + 0x4]           ; 0050beba
     ADD EBX,EAX                         ; 0050bebe
@@ -132,16 +132,16 @@ section .text
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     SHL EAX,0x8                         ; 0050bf1a
     FISTP dword ptr [ESP + 0x28]        ; 0050bf1d
-    MOV dword ptr [EBX + 0x20],EAX      ; 0050bf21 | DAT_005c5034
+    MOV dword ptr [EBX + 0x20],EAX      ; 0050bf21 | g_SRenderVertex_ARRAY_005c5014[0].r
     MOV EAX,dword ptr [ESP + 0x28]      ; 0050bf24
     CALL crt_math.c_round_FUN_00563a30  ; 0050bf28
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     SHL EAX,0x8                         ; 0050bf2d
     FISTP dword ptr [ESP + 0x28]        ; 0050bf30
-    MOV dword ptr [EBX + 0x24],EAX      ; 0050bf34 | DAT_005c5038
+    MOV dword ptr [EBX + 0x24],EAX      ; 0050bf34 | g_SRenderVertex_ARRAY_005c5014[0].g
     MOV EAX,dword ptr [ESP + 0x28]      ; 0050bf37
     SHL EAX,0x8                         ; 0050bf3b
-    MOV dword ptr [EBX + 0x28],EAX      ; 0050bf3e | DAT_005c503c
+    MOV dword ptr [EBX + 0x28],EAX      ; 0050bf3e | g_SRenderVertex_ARRAY_005c5014[0].b
     MOV dword ptr [0x01c7070c],ESI      ; 0050bf41 | g_FastSqrtMagic
     MOV ESP,EBP                         ; 0050bf47
     POP EBP                             ; 0050bf49

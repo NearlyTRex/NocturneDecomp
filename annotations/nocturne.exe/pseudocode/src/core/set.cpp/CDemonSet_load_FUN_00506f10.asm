@@ -362,7 +362,7 @@ section .text
     TEST EAX,EAX                        ; 00507246
     JNZ 0x00507a49                      ; 00507248
         ;   XREF to: 00507a49 (CONDITIONAL_JUMP)  ; LAB_00507a49
-    MOV EAX,[0x005c1144]                ; 0050724e | DAT_005c1144
+    MOV EAX,[0x005c1144]                ; 0050724e | g_CTerrain_PTR_005c1144
     PUSH EAX                            ; 00507253
     MOV dword ptr [EBP + 0x15a8c0],0x1  ; 00507254
     CALL core_terrain.cpp_CTerrain_init_FUN_005492b0 ; 0050725e
@@ -1066,7 +1066,7 @@ section .text
         ;   Label: LAB_00507a3a
     JMP 0x0050722f                      ; 00507a44
         ;   XREF to: 0050722f (UNCONDITIONAL_JUMP)  ; LAB_0050722f
-    MOV EDI,dword ptr [0x005c1144]      ; 00507a49 | DAT_005c1144
+    MOV EDI,dword ptr [0x005c1144]      ; 00507a49 | g_CTerrain_PTR_005c1144
         ;   Label: LAB_00507a49
     PUSH EDI                            ; 00507a4f
     CALL core_terrain.cpp_CTerrain_free_FUN_005492f0 ; 00507a50

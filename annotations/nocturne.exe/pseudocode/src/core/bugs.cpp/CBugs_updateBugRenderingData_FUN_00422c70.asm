@@ -73,7 +73,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00579d6d = 1.58735232019473E-314
 ;   double DOUBLE_00579d75 = 0.00100000000000000
-;   undefined4 DAT_0059ae98
+;   float g_FLOAT_0059ae98 = 0.00390625
 ;   float FLOAT_0059aeac = 1
 ;
 ; Called Functions:
@@ -155,13 +155,13 @@ section .text
     LEA EBX,[ESP + 0x94]                ; 00422d17
     ADD EAX,EDX                         ; 00422d1e
     FILD dword ptr [EAX]                ; 00422d20
-    FMUL float ptr [0x0059ae98]         ; 00422d22 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d22 | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 00422d28
     FILD dword ptr [EAX + 0x4]          ; 00422d2a
-    FMUL float ptr [0x0059ae98]         ; 00422d2d | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d2d | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00422d33
     FILD dword ptr [EAX + 0x8]          ; 00422d36
-    FMUL float ptr [0x0059ae98]         ; 00422d39 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d39 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00422d3f
     MOV EDX,dword ptr [ESI + 0x30]      ; 00422d42
     LEA EAX,[EDX*0x4 + 0x0]             ; 00422d45
@@ -172,13 +172,13 @@ section .text
     LEA EBX,[ESP + 0xe8]                ; 00422d5d
     ADD EAX,EDX                         ; 00422d64
     FILD dword ptr [EAX]                ; 00422d66
-    FMUL float ptr [0x0059ae98]         ; 00422d68 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d68 | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 00422d6e
     FILD dword ptr [EAX + 0x4]          ; 00422d70
-    FMUL float ptr [0x0059ae98]         ; 00422d73 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d73 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00422d79
     FILD dword ptr [EAX + 0x8]          ; 00422d7c
-    FMUL float ptr [0x0059ae98]         ; 00422d7f | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422d7f | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00422d85
     LEA EAX,[ESI + 0x34]                ; 00422d88
     FLD float ptr [ESP + 0xe8]          ; 00422d8b
@@ -283,13 +283,13 @@ section .text
     LEA EBX,[ESP + 0x94]                ; 00422f20
     ADD EAX,ECX                         ; 00422f27
     FILD dword ptr [EAX]                ; 00422f29
-    FMUL float ptr [0x0059ae98]         ; 00422f2b | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f2b | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 00422f31
     FILD dword ptr [EAX + 0x4]          ; 00422f33
-    FMUL float ptr [0x0059ae98]         ; 00422f36 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f36 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00422f3c
     FILD dword ptr [EAX + 0x8]          ; 00422f3f
-    FMUL float ptr [0x0059ae98]         ; 00422f42 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f42 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00422f48
     XOR EBX,EBX                         ; 00422f4b
     MOV BX,word ptr [EDX + 0x2]         ; 00422f4d
@@ -301,13 +301,13 @@ section .text
     ADD EAX,EBX                         ; 00422f6d
     LEA EBX,[ESP + 0xe8]                ; 00422f6f
     FILD dword ptr [EAX]                ; 00422f76
-    FMUL float ptr [0x0059ae98]         ; 00422f78 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f78 | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 00422f7e
     FILD dword ptr [EAX + 0x4]          ; 00422f80
-    FMUL float ptr [0x0059ae98]         ; 00422f83 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f83 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00422f89
     FILD dword ptr [EAX + 0x8]          ; 00422f8c
-    FMUL float ptr [0x0059ae98]         ; 00422f8f | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422f8f | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00422f95
     MOV EBX,dword ptr [EDI + 0x12964]   ; 00422f98
     MOV DX,word ptr [EDX + 0x4]         ; 00422f9e
@@ -319,13 +319,13 @@ section .text
     LEA EBX,[ESP + 0xb8]                ; 00422fba
     ADD EAX,EDX                         ; 00422fc1
     FILD dword ptr [EAX]                ; 00422fc3
-    FMUL float ptr [0x0059ae98]         ; 00422fc5 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422fc5 | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 00422fcb
     FILD dword ptr [EAX + 0x4]          ; 00422fcd
-    FMUL float ptr [0x0059ae98]         ; 00422fd0 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422fd0 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00422fd6
     FILD dword ptr [EAX + 0x8]          ; 00422fd9
-    FMUL float ptr [0x0059ae98]         ; 00422fdc | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00422fdc | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00422fe2
     FLD float ptr [ESP + 0xc0]          ; 00422fe5
     FLD float ptr [ESP + 0xec]          ; 00422fec
@@ -567,13 +567,13 @@ section .text
     LEA EBX,[ESP + 0xac]                ; 0042334a
     ADD EAX,EDX                         ; 00423351
     FILD dword ptr [EAX]                ; 00423353
-    FMUL float ptr [0x0059ae98]         ; 00423355 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00423355 | g_FLOAT_0059ae98
     FSTP float ptr [EBX]                ; 0042335b
     FILD dword ptr [EAX + 0x4]          ; 0042335d
-    FMUL float ptr [0x0059ae98]         ; 00423360 | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 00423360 | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x4]          ; 00423366
     FILD dword ptr [EAX + 0x8]          ; 00423369
-    FMUL float ptr [0x0059ae98]         ; 0042336c | DAT_0059ae98
+    FMUL float ptr [0x0059ae98]         ; 0042336c | g_FLOAT_0059ae98
     FSTP float ptr [EBX + 0x8]          ; 00423372
     LEA EAX,[EDI + 0x12968]             ; 00423375
     PUSH EAX                            ; 0042337b

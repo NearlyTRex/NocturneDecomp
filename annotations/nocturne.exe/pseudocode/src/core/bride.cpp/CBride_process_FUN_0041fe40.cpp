@@ -191,7 +191,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_a4,&CVector3f_00764ae4,
                                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                                    DAT_00764b30);
+                                    g_INT_ARRAY_00764b2c[1]);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_68,pCVar6);
                 core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -211,7 +211,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
               pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                  (&local_e0,&CVector3f_00764ae4,
                                   (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                                  DAT_00764b34);
+                                  g_INT_ARRAY_00764b2c[2]);
               pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                  ((CDemonActor *)this_ptr,&local_f8,pCVar6);
               core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -256,7 +256,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_80,&CVector3f_00764ae4,
                                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                                    DAT_00764b34);
+                                    g_INT_ARRAY_00764b2c[2]);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_b0,pCVar6);
                 core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -281,7 +281,7 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
                 pCVar6 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                                    (&local_98,&CVector3f_00764ae4,
                                     (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                                    DAT_00764b30);
+                                    g_INT_ARRAY_00764b2c[1]);
                 pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                                    ((CDemonActor *)this_ptr,&local_74,pCVar6);
                 core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -370,19 +370,19 @@ void __cdecl core_bride_cpp_CBride_process_FUN_0041fe40(CBride *this_ptr,float d
     core_charactr_cpp_CCharacter_applyGestureLookAt_FUN_0042a150((CCharacter *)this_ptr,delta_time);
     if ((this_ptr->base).pool_me == 0) {
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[0],g_INT_ARRAY_00764b2c[5],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[1],g_INT_ARRAY_00764b2c[3],0.2);
       }
       core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
-                ((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[2],g_INT_ARRAY_00764b2c[6],0.2);
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         core_charactr_cpp_CCharacter_spawnGoreAtBone_FUN_004278e0
-                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);
+                  ((CCharacter *)this_ptr,this_ptr->part_indices[3],g_INT_ARRAY_00764b2c[4],0.2);
       }
       core_charactr_cpp_CCharacter_spawnBloodAtBone_FUN_00427990
-                ((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);
+                ((CCharacter *)this_ptr,this_ptr->part_indices[8],g_INT_ARRAY_00764b2c[0],0.7);
       core_charactr_cpp_CCharacter_processDamageDecals_FUN_004277f0((CCharacter *)this_ptr);
     }
   }

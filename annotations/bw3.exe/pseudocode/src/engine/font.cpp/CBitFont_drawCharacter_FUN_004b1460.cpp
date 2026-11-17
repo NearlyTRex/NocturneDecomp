@@ -190,27 +190,29 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                 if (iVar8 != 0) {
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] & g_INT_00604e60
-                                         ) >> (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
+                  *puVar14 = (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] &
+                                         g_MMX_INTEGER_00604e60.u32[0]) >>
+                                        (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_INT_00604e60 & uVar10) >>
+                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
-                             (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] & g_INT_00604e68
-                                         ) >> (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
+                             (ushort)(((((this_ptr->palettes_display[iVar15][uVar4] &
+                                         g_MMX_INTEGER_00604e68.u32[0]) >>
+                                        (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_INT_00604e68 & uVar10) >>
+                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
                              (ushort)((iVar8 * (((this_ptr->palettes_display[iVar15][uVar4] &
-                                                 g_INT_00604e70) >>
+                                                 g_MMX_INTEGER_00604e70.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) +
-                                       iVar9 * (((uVar10 & g_INT_00604e70) >>
+                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -260,26 +262,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                   uVar4 = (uint)g_USHORT_01d1ad62;
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((g_INT_00604e68 & uVar4) >>
+                  *puVar14 = (ushort)(((((g_MMX_INTEGER_00604e68.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_INT_00604e68 & uVar10) >>
+                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_00604e60 & uVar10) >>
+                             (ushort)(((((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9 +
-                                       (((g_INT_00604e60 & uVar4) >>
+                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
-                             (ushort)(((((uVar4 & g_INT_00604e70) >>
+                             (ushort)(((((uVar4 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar10 & g_INT_00604e70) >>
+                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -328,26 +330,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                 if (iVar8 != 0) {
                   uVar4 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((uint)(g_INT_01d1ad74 & g_INT_00604e68) >>
+                  *puVar14 = (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e68.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((uVar4 & g_INT_00604e68) >>
+                                       (((uVar4 & g_MMX_INTEGER_00604e68.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((uint)(g_INT_01d1ad74 & g_INT_00604e60) >>
+                             (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e60.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((uVar4 & g_INT_00604e60) >>
+                                       (((uVar4 & g_MMX_INTEGER_00604e60.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<
                                      (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) |
-                             (ushort)(((((uint)(g_INT_01d1ad74 & g_INT_00604e70) >>
+                             (ushort)(((((g_INT_01d1ad74 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar4 & g_INT_00604e70) >>
+                                       iVar9 * (((uVar4 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
@@ -394,26 +396,26 @@ int __cdecl engine_font_cpp_CBitFont_drawCharacter_FUN_004b1460(CBitFont *this_p
                   uVar4 = (uint)uVar1;
                   uVar10 = (uint)*puVar14;
                   iVar9 = 0xff - iVar8;
-                  *puVar14 = (ushort)(((((g_INT_00604e70 & uVar4) >>
+                  *puVar14 = (ushort)(((((g_MMX_INTEGER_00604e70.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       iVar9 * (((uVar10 & g_INT_00604e70) >>
+                                       iVar9 * (((uVar10 & g_MMX_INTEGER_00604e70.u32[0]) >>
                                                 (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) <<
                                                 (g_BIT_INTEGER32_01c6af94.bytes[0] & 0x1f) & 0xff)
                                       >> 8) / (uint)g_INT_01c6af90 <<
                                      (g_BIT_INTEGER32_01c6af8c.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_00604e68 & uVar4) >>
+                             (ushort)(((((g_MMX_INTEGER_00604e68.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_INT_00604e68 & uVar10) >>
+                                       (((g_MMX_INTEGER_00604e68.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af88.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af84 <<
                                      (g_BIT_INTEGER32_01c6af80.bytes[0] & 0x1f)) |
-                             (ushort)(((((g_INT_00604e60 & uVar4) >>
+                             (ushort)(((((g_MMX_INTEGER_00604e60.u32[0] & uVar4) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar8 +
-                                       (((g_INT_00604e60 & uVar10) >>
+                                       (((g_MMX_INTEGER_00604e60.u32[0] & uVar10) >>
                                         (g_BIT_INTEGER32_01c6af74.bytes[0] & 0x1f)) <<
                                         (g_BIT_INTEGER32_01c6af7c.bytes[0] & 0x1f) & 0xff) * iVar9
                                       >> 8) / (uint)g_INT_01c6af78 <<

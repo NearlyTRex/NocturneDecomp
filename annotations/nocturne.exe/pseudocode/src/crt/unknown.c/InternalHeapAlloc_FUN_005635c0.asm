@@ -14,12 +14,12 @@
 ;   crt_unknown.c_realloc__FUN_00564a88 at 00564a99
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1680
-;   undefined4 DAT_005c1684
-;   undefined4 DAT_005c1688
+;   Heap* g_Heap_PTR_005c1680 = 00000000
+;   Heap* g_Heap_PTR_005c1684 = 00000000
+;   int g_INT_005c1688 = 0x0
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0 = 005671e4
-;   undefined4 DAT_02de5460
+;   char[16] g_CHAR_ARRAY_02de5460
 ;
 ; Called Functions:
 ;   crt_heap.c_AllocateFromFreeList_FUN_00568b00
@@ -67,31 +67,31 @@ section .text
     MOV byte ptr [ESP + 0x8],AH         ; 00563603
     MOV EAX,dword ptr [ESP + 0x4]       ; 00563607
         ;   Label: LAB_00563607
-    CMP EAX,dword ptr [0x005c1688]      ; 0056360b | DAT_005c1688
+    CMP EAX,dword ptr [0x005c1688]      ; 0056360b | g_INT_005c1688
     JBE 0x0056362b                      ; 00563611
         ;   XREF to: 0056362b (CONDITIONAL_JUMP)  ; LAB_0056362b
-    MOV ESI,dword ptr [0x005c1684]      ; 00563613 | DAT_005c1684
+    MOV ESI,dword ptr [0x005c1684]      ; 00563613 | g_Heap_PTR_005c1684
     TEST ESI,ESI                        ; 00563619
     JNZ 0x00563639                      ; 0056361b
         ;   XREF to: 00563639 (CONDITIONAL_JUMP)  ; LAB_00563639
-    MOV dword ptr [0x005c1688],ESI      ; 0056361d | DAT_005c1688
-    MOV ESI,dword ptr [0x005c1680]      ; 00563623 | DAT_005c1680
+    MOV dword ptr [0x005c1688],ESI      ; 0056361d | g_INT_005c1688
+    MOV ESI,dword ptr [0x005c1680]      ; 00563623 | g_Heap_PTR_005c1680
     JMP 0x00563639                      ; 00563629
         ;   XREF to: 00563639 (UNCONDITIONAL_JUMP)  ; LAB_00563639
     XOR EDI,EDI                         ; 0056362b
         ;   Label: LAB_0056362b
-    MOV ESI,dword ptr [0x005c1680]      ; 0056362d | DAT_005c1680
-    MOV dword ptr [0x005c1688],EDI      ; 00563633 | DAT_005c1688
+    MOV ESI,dword ptr [0x005c1680]      ; 0056362d | g_Heap_PTR_005c1680
+    MOV dword ptr [0x005c1688],EDI      ; 00563633 | g_INT_005c1688
     TEST ESI,ESI                        ; 00563639
         ;   Label: LAB_00563639
     JZ 0x0056367a                       ; 0056363b
         ;   XREF to: 0056367a (CONDITIONAL_JUMP)  ; LAB_0056367a
     MOV EDI,dword ptr [ESI + 0x14]      ; 0056363d
-    MOV dword ptr [0x005c1684],ESI      ; 00563640 | DAT_005c1684
+    MOV dword ptr [0x005c1684],ESI      ; 00563640 | g_Heap_PTR_005c1684
     CMP EDI,EBP                         ; 00563646
     JC 0x00563667                       ; 00563648
         ;   XREF to: 00563667 (CONDITIONAL_JUMP)  ; LAB_00563667
-    MOV EAX,0x5c1680                    ; 0056364a | DAT_005c1680
+    MOV EAX,0x5c1680                    ; 0056364a | g_Heap_PTR_005c1680
     MOV DX,DS                           ; 0056364f
     AND EDX,0xffff                      ; 00563651
     MOV EBX,ESI                         ; 00563657
@@ -102,11 +102,11 @@ section .text
     TEST EAX,EAX                        ; 00563663
     JNZ 0x005636b0                      ; 00563665
         ;   XREF to: 005636b0 (CONDITIONAL_JUMP)  ; LAB_005636b0
-    CMP EDI,dword ptr [0x005c1688]      ; 00563667 | DAT_005c1688
+    CMP EDI,dword ptr [0x005c1688]      ; 00563667 | g_INT_005c1688
         ;   Label: LAB_00563667
     JBE 0x00563675                      ; 0056366d
         ;   XREF to: 00563675 (CONDITIONAL_JUMP)  ; LAB_00563675
-    MOV dword ptr [0x005c1688],EDI      ; 0056366f | DAT_005c1688
+    MOV dword ptr [0x005c1688],EDI      ; 0056366f | g_INT_005c1688
     MOV ESI,dword ptr [ESI + 0x8]       ; 00563675
         ;   Label: LAB_00563675
     JMP 0x00563639                      ; 00563678
@@ -140,7 +140,7 @@ section .text
         ;   XREF to: 00563607 (UNCONDITIONAL_JUMP)  ; LAB_00563607
     XOR BH,BH                           ; 005636b0
         ;   Label: LAB_005636b0
-    MOV byte ptr [0x02de5460],BH        ; 005636b2 | DAT_02de5460
+    MOV byte ptr [0x02de5460],BH        ; 005636b2 | g_CHAR_ARRAY_02de5460
     CALL dword ptr [0x005c1ae0]         ; 005636b8 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae0
     MOV EAX,dword ptr [ESP]             ; 005636be
     ADD ESP,0xc                         ; 005636c1

@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   uint g_UINT_006267e0 = 0x14
-;   undefined4 DAT_00626838
+;   SIOControlBlock* g_SIOControlBlock_PTR_00626838 = 00000000
 ;   int g_INT_0062683c = 0x0
 ;
 ; *****************************************************************************
@@ -18,7 +18,7 @@ section .text
 
     PUSH EBX                            ; 005c8b70
         ;   Label: crt_unknown.c_FUN_005c8b70
-    MOV ECX,dword ptr [0x00626838]      ; 005c8b71 | DAT_00626838
+    MOV ECX,dword ptr [0x00626838]      ; 005c8b71 | g_SIOControlBlock_PTR_00626838
     MOV EAX,[0x0062683c]                ; 005c8b77 | g_INT_0062683c
     CMP EAX,dword ptr [0x006267e0]      ; 005c8b7c | g_UINT_006267e0
     JNC 0x005c8b88                      ; 005c8b82
@@ -39,7 +39,7 @@ section .text
     JNZ 0x005c8ba9                      ; 005c8b9d
         ;   XREF to: 005c8ba9 (CONDITIONAL_JUMP)  ; LAB_005c8ba9
     XOR EAX,EAX                         ; 005c8b9f
-    MOV dword ptr [0x00626838],ECX      ; 005c8ba1 | DAT_00626838
+    MOV dword ptr [0x00626838],ECX      ; 005c8ba1 | g_SIOControlBlock_PTR_00626838
     POP EBX                             ; 005c8ba7
     RET                                 ; 005c8ba8
     ADD EAX,0x4                         ; 005c8ba9
@@ -49,7 +49,7 @@ section .text
         ;   XREF to: 005c8b99 (CONDITIONAL_JUMP)  ; LAB_005c8b99
     MOV EAX,0x1                         ; 005c8bb0
         ;   Label: LAB_005c8bb0
-    MOV dword ptr [0x00626838],ECX      ; 005c8bb5 | DAT_00626838
+    MOV dword ptr [0x00626838],ECX      ; 005c8bb5 | g_SIOControlBlock_PTR_00626838
         ;   Label: LAB_005c8bb5
     POP EBX                             ; 005c8bbb
     RET                                 ; 005c8bbc

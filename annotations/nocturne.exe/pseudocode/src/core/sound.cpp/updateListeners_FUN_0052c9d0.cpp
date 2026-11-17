@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
 
 {
@@ -66,9 +64,9 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
       local_c8 = g_CDemonCameraInstance.position.y;
       local_c4 = g_CDemonCameraInstance.position.z;
     }
-    local_68 = local_c8 - _DAT_02dc9460;
-    local_6c = local_cc - _DAT_02dc945c;
-    local_64 = local_c4 - _DAT_02dc9464;
+    local_68 = local_c8 - g_FLOAT_02dc9460;
+    local_6c = local_cc - g_FLOAT_02dc945c;
+    local_64 = local_c4 - g_FLOAT_02dc9464;
     if (SQRT(local_64 * local_64 + local_6c * local_6c + local_68 * local_68) <
         (float)0.0001) {
       return;
@@ -127,7 +125,7 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
             ((double)local_30.x,(double)local_30.y,(double)local_30.z,(double)local_c0.x,
              (double)local_c0.y,(double)local_c0.z,(double)local_78.x,(double)local_78.y,
              (double)local_78.z);
-  _DAT_02dc9468 = 0.0;
+  g_FLOAT_02dc9468 = 0.0;
   if (g_CGamePtr->goggles_active == 0) {
     iVar3 = _strnicmp
                       (g_CDemonSetPtr->geometry_filename,"castle",6);
@@ -191,25 +189,25 @@ void __cdecl core_sound_cpp_updateListeners_FUN_0052c9d0(void)
           if (1.0 < local_160) {
             local_160 = 1.0;
           }
-          _DAT_02dc9468 = local_160 * 0.015625f + _DAT_02dc9468;
+          g_FLOAT_02dc9468 = local_160 * 0.015625f + g_FLOAT_02dc9468;
           iVar3 = iVar3 + 2;
         } while (iVar3 != 0x21);
         local_1c = local_1c + 2;
       } while (local_1c != 0x21);
     }
-    _DAT_02dc9468 = _DAT_02dc9468 * _DAT_02dc9468;
-    if (0.0 < _DAT_02dc9468) {
-      _DAT_02dc9468 = _DAT_02dc9468 + 0.3f;
+    g_FLOAT_02dc9468 = g_FLOAT_02dc9468 * g_FLOAT_02dc9468;
+    if (0.0 < g_FLOAT_02dc9468) {
+      g_FLOAT_02dc9468 = g_FLOAT_02dc9468 + 0.3f;
     }
-    if (1.0 < _DAT_02dc9468) {
-      _DAT_02dc9468 = 1.0;
+    if (1.0 < g_FLOAT_02dc9468) {
+      g_FLOAT_02dc9468 = 1.0;
     }
   }
   if (&stack0x00000000 == (byte *)0x2dc9528) {
     return;
   }
-  _DAT_02dc945c = local_cc;
-  _DAT_02dc9460 = local_c8;
-  _DAT_02dc9464 = local_c4;
+  g_FLOAT_02dc945c = local_cc;
+  g_FLOAT_02dc9460 = local_c8;
+  g_FLOAT_02dc9464 = local_c4;
   return;
 }

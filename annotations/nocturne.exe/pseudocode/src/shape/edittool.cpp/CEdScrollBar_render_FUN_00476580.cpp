@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00476580(CEdScrollBar *this_ptr)
 
 {
@@ -41,7 +39,7 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00476580(CEdScrollBar *t
     top = iVar3;
     local_1c = bottom;
   }
-  if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 0)) {
+  if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 0)) {
     pressed = 1;
   }
   else {
@@ -49,26 +47,26 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00476580(CEdScrollBar *t
   }
   shape_edittool_cpp_draw3DBorder_FUN_00476260(iVar2,top,local_20,local_1c,pressed);
   if (this_ptr->orientation != 0) {
-    if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 1)) {
+    if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 1)) {
       iVar2 = 1;
     }
     else {
       iVar2 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_00476260(iVar1,iVar3,this_ptr->track_start,bottom,iVar2);
-    if ((this_ptr != _DAT_01bcde24) || (iVar2 = 1, _DAT_01bcde28 != 1)) {
+    if ((this_ptr != (CEdScrollBar *)g_PTR_01bcde24) || (iVar2 = 1, g_INT_01bcde28 != 1)) {
       iVar2 = 0;
     }
     shape_edittool_cpp_draw3DInsetBorder_FUN_00476310
               (iVar1,iVar3,this_ptr->track_start,bottom,iVar2,2);
-    if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 2)) {
+    if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 2)) {
       iVar1 = 1;
     }
     else {
       iVar1 = 0;
     }
     shape_edittool_cpp_draw3DBorder_FUN_00476260(this_ptr->track_end,iVar3,right,bottom,iVar1);
-    if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 2)) {
+    if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 2)) {
       iVar1 = 1;
     }
     else {
@@ -78,26 +76,26 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_render_FUN_00476580(CEdScrollBar *t
               (this_ptr->track_end,iVar3,right,bottom,iVar1,3);
     return;
   }
-  if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 1)) {
+  if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 1)) {
     iVar2 = 1;
   }
   else {
     iVar2 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_00476260(iVar1,iVar3,right,this_ptr->track_start,iVar2);
-  if ((this_ptr != _DAT_01bcde24) || (iVar2 = 1, _DAT_01bcde28 != 1)) {
+  if ((this_ptr != (CEdScrollBar *)g_PTR_01bcde24) || (iVar2 = 1, g_INT_01bcde28 != 1)) {
     iVar2 = 0;
   }
   shape_edittool_cpp_draw3DInsetBorder_FUN_00476310(iVar1,iVar3,right,this_ptr->track_start,iVar2,0)
   ;
-  if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 2)) {
+  if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 2)) {
     iVar3 = 1;
   }
   else {
     iVar3 = 0;
   }
   shape_edittool_cpp_draw3DBorder_FUN_00476260(iVar1,this_ptr->track_end,right,bottom,iVar3);
-  if ((this_ptr == _DAT_01bcde24) && (_DAT_01bcde28 == 2)) {
+  if ((this_ptr == (CEdScrollBar *)g_PTR_01bcde24) && (g_INT_01bcde28 == 2)) {
     iVar3 = 1;
   }
   else {

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 {
 __asm {
@@ -38,8 +36,8 @@ __asm {
         movd MM0,dword ptr [g_ActiveRenderColor]
         pxor MM7,MM7
         movd MM1,dword ptr [EDI]
-        movd MM2,dword ptr [DAT_01c70754]
-        movd MM3,dword ptr [DAT_01c70758]
+        movd MM2,dword ptr [g_UINT_01c70754]
+        movd MM3,dword ptr [g_UINT_01c70758]
         punpcklbw MM0,MM7
         punpcklbw MM1,MM7
         punpcklbw MM2,MM7

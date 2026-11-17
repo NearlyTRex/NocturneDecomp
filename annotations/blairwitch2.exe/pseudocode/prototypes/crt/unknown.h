@@ -135,7 +135,7 @@ undefined4 FUN_005b90b0(undefined4 param_1,undefined1 *param_2,undefined4 param_
 
 // Original: crt_unknown.c_FUN_005b9124
 // Address: 005b9124
-int FUN_005b9124(int param_1);
+_FILE * FUN_005b9124(_FILE *param_1);
 
 // Original: crt_unknown.c_FUN_005b9240
 // Address: 005b9240
@@ -571,11 +571,11 @@ undefined4 FUN_005be740(void);
 
 // Original: crt_unknown.c_FUN_005be750
 // Address: 005be750
-_FILE ** FUN_005be750(void);
+_FILE * FUN_005be750(void);
 
 // Original: crt_unknown.c_FUN_005be810
 // Address: 005be810
-void FUN_005be810(int param_1);
+void FUN_005be810(_FILE *param_1);
 
 // Original: crt_unknown.c_FUN_005be848
 // Address: 005be848
@@ -971,7 +971,7 @@ undefined4 FUN_005c08b0(void);
 
 // Original: crt_unknown.c_FUN_005c0900
 // Address: 005c0900
-int FUN_005c0900(int param_1);
+int FUN_005c0900(HANDLE param_1);
 
 // Original: crt_unknown.c_FUN_005c098c
 // Address: 005c098c
@@ -1651,15 +1651,15 @@ void FUN_005c4de0(void);
 
 // Original: crt_unknown.c_FUN_005c4df0
 // Address: 005c4df0
-undefined4 FUN_005c4df0(int param_1,undefined4 param_2);
+SIGNAL_HANDLER_TYPE FUN_005c4df0(int param_1,SIGNAL_HANDLER_TYPE param_2);
 
 // Original: crt_unknown.c_FUN_005c4e44
 // Address: 005c4e44
-undefined4 FUN_005c4e44(int param_1);
+SIGNAL_HANDLER_TYPE FUN_005c4e44(int param_1);
 
 // Original: crt_unknown.c_FUN_005c4e68
 // Address: 005c4e68
-undefined4 FUN_005c4e68(int param_1);
+SIGNAL_HANDLER_TYPE FUN_005c4e68(int param_1);
 
 // Original: crt_unknown.c_FUN_005c4eb0
 // Address: 005c4eb0

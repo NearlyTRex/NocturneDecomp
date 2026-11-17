@@ -23,7 +23,7 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
-;   undefined4 DAT_02ddf56c
+;   int g_INT_02ddf56c
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -37,7 +37,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_openScreenDevice_FUN_00553470
     PUSH EBP                            ; 00553471
     SUB ESP,0x6c                        ; 00553472
-    MOV EDX,dword ptr [0x02ddf56c]      ; 00553475 | DAT_02ddf56c
+    MOV EDX,dword ptr [0x02ddf56c]      ; 00553475 | g_INT_02ddf56c
     TEST EDX,EDX                        ; 0055347b
     JNZ 0x00553490                      ; 0055347d
         ;   XREF to: 00553490 (CONDITIONAL_JUMP)  ; LAB_00553490

@@ -46,7 +46,7 @@ void __cdecl core_dcamera_cpp_renderCoronaDepthScanline_FUN_0044d060(int scanlin
     iVar4 = (right->base).depth_current;
     iVar2 = uVar9 - uVar3;
     iVar6 = (pSVar5->base).depth_current - iVar4;
-    piVar1 = g_INT_ARRAY_014fba80 + iVar8 * 0x140 + uVar3;
+    piVar1 = g_INT_ARRAY_ARRAY_014fba80[iVar8] + uVar3;
     for (; (int)uVar3 < (int)uVar9; uVar3 = uVar3 + 1) {
       iVar8 = iVar4 >> 8;
       iVar4 = iVar4 + iVar6 / (iVar2 + 1);

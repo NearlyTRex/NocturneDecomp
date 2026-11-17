@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDemonRaytrace *this_ptr,float fov_or_radius,int render_mode)
 
 {
@@ -115,17 +113,17 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
   int local_20;
   
   bVar12 = 0;
-  if ((_DAT_01b7b748 != 0) && (render_mode != 0)) {
+  if ((g_INT_01b7b748 != 0) && (render_mode != 0)) {
     core_dtrace_cpp_CDemonRaytrace_renderPVSCubes_FUN_0046af70(this_ptr);
     return;
   }
-  _DAT_01b7b734 = 0;
-  _DAT_01b7b738 = 0;
-  _DAT_01b7b73c = 0;
-  _DAT_01b7b740 = 0;
-  _DAT_01b7b744 = 0;
+  g_INT_01b7b734 = 0;
+  g_INT_01b7b738 = 0;
+  g_INT_01b7b73c = 0;
+  g_INT_01b7b740 = 0;
+  g_INT_01b7b744 = 0;
   engine_drender_cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10
-            ((CDemonRenderer *)PTR_DAT_005ae700,&local_150);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,&local_150);
   local_138 = local_150.x;
   local_134[(uint)bVar12 * -2] = *(int *)((int)&local_150 + (uint)bVar12 * -8 + 4);
   local_134[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1] =
@@ -146,7 +144,7 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
   fVar11 = (this_ptr->bbox_min).z;
   fVar2 = (this_ptr->cell_size).z;
   dVar14 = round((double)(fov_or_radius * 5.5951060894592141e-315._0_4_));
-  iVar7 = _DAT_01cc5118;
+  iVar7 = g_INT_01cc5118;
   iVar9 = (int)ROUND(dVar14);
   local_150.x = iVar9;
   local_150.y = iVar9;
@@ -155,96 +153,93 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
   local_140 = (int)ROUND(dVar14);
   local_1a8[0] = ((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
                  (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) +
-                 ((uint)((longlong)_DAT_01cc5124 * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5124 * (longlong)(int)local_154) >> 0x20) <<
-                 0x10) + ((uint)((longlong)(int)_DAT_01cc5130 * (longlong)(int)local_154) >> 0x10 |
-                         (int)((ulonglong)((longlong)(int)_DAT_01cc5130 * (longlong)(int)local_154)
-                              >> 0x20) << 0x10);
-  local_1a8[1] = ((uint)((longlong)_DAT_01cc511c * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc511c * (longlong)(int)local_154) >> 0x20) <<
-                 0x10) + ((uint)((longlong)_DAT_01cc5128 * (longlong)(int)local_154) >> 0x10 |
-                         (int)((ulonglong)((longlong)_DAT_01cc5128 * (longlong)(int)local_154) >>
+                 ((uint)((longlong)g_INT_01cc5124 * (longlong)(int)local_154) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5124 * (longlong)(int)local_154) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01cc5130 * (longlong)(int)local_154) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01cc5130 * (longlong)(int)local_154) >>
+                              0x20) << 0x10);
+  local_1a8[1] = ((uint)((longlong)g_INT_01cc511c * (longlong)(int)local_154) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc511c * (longlong)(int)local_154) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01cc5128 * (longlong)(int)local_154) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01cc5128 * (longlong)(int)local_154) >>
                               0x20) << 0x10) +
-                 ((uint)((longlong)(int)_DAT_01cc5134 * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)(int)_DAT_01cc5134 * (longlong)(int)local_154) >> 0x20)
-                 << 0x10);
-  local_1a8[2] = ((uint)((longlong)_DAT_01cc5120 * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5120 * (longlong)(int)local_154) >> 0x20) <<
-                 0x10) + ((uint)((longlong)_DAT_01cc512c * (longlong)(int)local_154) >> 0x10 |
-                         (int)((ulonglong)((longlong)_DAT_01cc512c * (longlong)(int)local_154) >>
+                 ((uint)((longlong)g_INT_01cc5134 * (longlong)(int)local_154) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5134 * (longlong)(int)local_154) >> 0x20) <<
+                 0x10);
+  local_1a8[2] = ((uint)((longlong)g_INT_01cc5120 * (longlong)(int)local_154) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5120 * (longlong)(int)local_154) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01cc512c * (longlong)(int)local_154) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01cc512c * (longlong)(int)local_154) >>
                               0x20) << 0x10) +
-                 ((uint)((longlong)(int)_DAT_01cc5138 * (longlong)(int)local_154) >> 0x10 |
-                 (int)((ulonglong)((longlong)(int)_DAT_01cc5138 * (longlong)(int)local_154) >> 0x20)
-                 << 0x10);
+                 ((uint)((longlong)g_INT_01cc5138 * (longlong)(int)local_154) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5138 * (longlong)(int)local_154) >> 0x20) <<
+                 0x10);
   iVar9 = -(int)local_154;
-  local_1a8[3] = ((uint)((longlong)_DAT_01cc5118 * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5118 * (longlong)iVar9) >> 0x20) << 0x10) +
-                 ((uint)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x20) << 0x10
-                 ) + ((uint)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x10 |
-                     (int)((ulonglong)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x20
-                          ) << 0x10);
-  local_1a8[4] = ((uint)((longlong)_DAT_01cc511c * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc511c * (longlong)iVar9) >> 0x20) << 0x10) +
-                 ((uint)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x20) << 0x10
-                 ) + ((uint)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x10 |
-                     (int)((ulonglong)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x20
-                          ) << 0x10);
+  local_1a8[3] = ((uint)((longlong)g_INT_01cc5118 * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5118 * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x20
+                              ) << 0x10);
+  local_1a8[4] = ((uint)((longlong)g_INT_01cc511c * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc511c * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x20) <<
+                 0x10) + ((uint)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x10 |
+                         (int)((ulonglong)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x20
+                              ) << 0x10);
   lVar3 = (longlong)local_150.x;
   local_150.x = -local_150.x;
-  local_1a8[5] = ((uint)((longlong)_DAT_01cc5120 * (longlong)iVar9) >> 0x10 |
-                 (int)((ulonglong)((longlong)_DAT_01cc5120 * (longlong)iVar9) >> 0x20) << 0x10) +
-                 ((uint)(_DAT_01cc512c * lVar3) >> 0x10 |
-                 (int)((ulonglong)(_DAT_01cc512c * lVar3) >> 0x20) << 0x10) +
-                 ((uint)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x10 |
-                 (int)((ulonglong)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x20) <<
+  local_1a8[5] = ((uint)((longlong)g_INT_01cc5120 * (longlong)iVar9) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5120 * (longlong)iVar9) >> 0x20) << 0x10) +
+                 ((uint)(g_INT_01cc512c * lVar3) >> 0x10 |
+                 (int)((ulonglong)(g_INT_01cc512c * lVar3) >> 0x20) << 0x10) +
+                 ((uint)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x10 |
+                 (int)((ulonglong)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x20) <<
                  0x10);
-  local_190 = ((uint)((longlong)_DAT_01cc5118 * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5118 * (longlong)iVar9) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
-  local_18c = ((uint)((longlong)_DAT_01cc511c * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc511c * (longlong)iVar9) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
-  local_188 = ((uint)((longlong)_DAT_01cc5120 * (longlong)iVar9) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5120 * (longlong)iVar9) >> 0x20) << 0x10) +
-              ((uint)((longlong)_DAT_01cc512c * (longlong)local_150.x) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc512c * (longlong)local_150.x) >> 0x20) << 0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
-  local_184 = ((uint)((longlong)_DAT_01cc5118 * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5118 * (longlong)(int)local_154) >> 0x20) << 0x10
-              ) + ((uint)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)_DAT_01cc5124 * (longlong)local_150.x) >> 0x20) <<
-                  0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5130 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
-  local_180 = ((uint)((longlong)_DAT_01cc511c * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc511c * (longlong)(int)local_154) >> 0x20) << 0x10
-              ) + ((uint)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)_DAT_01cc5128 * (longlong)local_150.x) >> 0x20) <<
-                  0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5134 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
-  local_17c = ((uint)((longlong)_DAT_01cc5120 * (longlong)(int)local_154) >> 0x10 |
-              (int)((ulonglong)((longlong)_DAT_01cc5120 * (longlong)(int)local_154) >> 0x20) << 0x10
-              ) + ((uint)((longlong)_DAT_01cc512c * (longlong)local_150.x) >> 0x10 |
-                  (int)((ulonglong)((longlong)_DAT_01cc512c * (longlong)local_150.x) >> 0x20) <<
-                  0x10) +
-              ((uint)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x10 |
-              (int)((ulonglong)((longlong)(int)_DAT_01cc5138 * (longlong)local_150.y) >> 0x20) <<
-              0x10);
+  local_190 = ((uint)((longlong)g_INT_01cc5118 * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5118 * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x20) << 0x10
+                );
+  local_18c = ((uint)((longlong)g_INT_01cc511c * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc511c * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x20) << 0x10
+                );
+  local_188 = ((uint)((longlong)g_INT_01cc5120 * (longlong)iVar9) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5120 * (longlong)iVar9) >> 0x20) << 0x10) +
+              ((uint)((longlong)g_INT_01cc512c * (longlong)local_150.x) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc512c * (longlong)local_150.x) >> 0x20) << 0x10)
+              + ((uint)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x10 |
+                (int)((ulonglong)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x20) << 0x10
+                );
+  local_184 = ((uint)((longlong)g_INT_01cc5118 * (longlong)(int)local_154) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5118 * (longlong)(int)local_154) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01cc5124 * (longlong)local_150.x) >> 0x20)
+                      << 0x10) +
+              ((uint)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5130 * (longlong)local_150.y) >> 0x20) << 0x10);
+  local_180 = ((uint)((longlong)g_INT_01cc511c * (longlong)(int)local_154) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc511c * (longlong)(int)local_154) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01cc5128 * (longlong)local_150.x) >> 0x20)
+                      << 0x10) +
+              ((uint)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5134 * (longlong)local_150.y) >> 0x20) << 0x10);
+  local_17c = ((uint)((longlong)g_INT_01cc5120 * (longlong)(int)local_154) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5120 * (longlong)(int)local_154) >> 0x20) <<
+              0x10) + ((uint)((longlong)g_INT_01cc512c * (longlong)local_150.x) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_INT_01cc512c * (longlong)local_150.x) >> 0x20)
+                      << 0x10) +
+              ((uint)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x10 |
+              (int)((ulonglong)((longlong)g_INT_01cc5138 * (longlong)local_150.y) >> 0x20) << 0x10);
   local_178 = 0;
   local_174 = 0;
   local_170 = 0;
@@ -325,15 +320,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
   }
   g_RenderedTriangleCount = 0;
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3i *)0x1bc9950);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,&g_CVector3i_01bc9950);
   engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
-            ((CDemonRenderer *)PTR_DAT_005ae700,0xff,0xff,0xff);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,0xff,0xff,0xff);
   if ((4 < this_ptr->rendering_mode) || (this_ptr->rendering_mode < 0)) {
     this_ptr->rendering_mode = 1;
   }
-  iStack_118 = (_DAT_01cc5130 ^ (int)_DAT_01cc5130 >> 0x1f) - ((int)_DAT_01cc5130 >> 0x1f);
-  iVar9 = (_DAT_01cc5134 ^ (int)_DAT_01cc5134 >> 0x1f) - ((int)_DAT_01cc5134 >> 0x1f);
-  iVar7 = (_DAT_01cc5138 ^ (int)_DAT_01cc5138 >> 0x1f) - ((int)_DAT_01cc5138 >> 0x1f);
+  iStack_118 = (g_INT_01cc5130 ^ g_INT_01cc5130 >> 0x1f) - (g_INT_01cc5130 >> 0x1f);
+  iVar9 = (g_INT_01cc5134 ^ g_INT_01cc5134 >> 0x1f) - (g_INT_01cc5134 >> 0x1f);
+  iVar7 = (g_INT_01cc5138 ^ g_INT_01cc5138 >> 0x1f) - (g_INT_01cc5138 >> 0x1f);
   if ((iStack_118 < iVar9) || (iStack_118 < iVar7)) {
     if ((iVar9 < iStack_118) || (iVar9 < iVar7)) {
       if (local_150.y <= (this_ptr->grid_bounds_max).z) {
@@ -722,6 +717,6 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00469ce0(CDem
       } while ((this_ptr->grid_bounds_min).x <= iVar9);
     }
   }
-  _DAT_01b7b748 = 1;
+  g_INT_01b7b748 = 1;
   return;
 }

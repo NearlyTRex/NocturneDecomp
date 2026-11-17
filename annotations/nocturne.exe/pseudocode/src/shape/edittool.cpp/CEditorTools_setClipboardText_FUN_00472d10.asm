@@ -21,7 +21,7 @@
 ;   void* PTR_GlobalUnlock_00575554 = 00175e66
 ;   char CHAR_00h_0057ea92 = \x00
 ;   TerminatedCString s_XYZ_0057ea93
-;   undefined4 DAT_01bcd078
+;   char* g_CHAR_PTR_01bcd078
 ;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
@@ -94,12 +94,12 @@ section .text
         ;   Label: LAB_00472d8f
     PUSH EBX                            ; 00472d96
         ;   Label: LAB_00472d96
-    MOV EDI,dword ptr [0x01bcd078]      ; 00472d97 | DAT_01bcd078
+    MOV EDI,dword ptr [0x01bcd078]      ; 00472d97 | g_CHAR_PTR_01bcd078
     PUSH EDI                            ; 00472d9d
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00472d9e
         ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00472da3
-    MOV [0x01bcd078],EAX                ; 00472da6 | DAT_01bcd078
+    MOV [0x01bcd078],EAX                ; 00472da6 | g_CHAR_PTR_01bcd078
     TEST EAX,EAX                        ; 00472dab
     JNZ 0x00472dbe                      ; 00472dad
         ;   XREF to: 00472dbe (CONDITIONAL_JUMP)  ; LAB_00472dbe

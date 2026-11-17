@@ -26,8 +26,8 @@
 ;   double DOUBLE_0058117c = 5.16407569540752E-315
 ;   float FLOAT_0059d1f8 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b7648
-;   undefined4 DAT_01b4d738
+;   int g_INT_005b7648 = 0x10000
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;
@@ -60,16 +60,16 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 004859e1
     MOV EAX,ESP                         ; 004859e4
     PUSH EAX                            ; 004859e6
-    MOV EAX,dword ptr [EDX]             ; 004859e7 | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 004859e7 | g_CDemonRenderer_01b4d738
     PUSH EAX                            ; 004859e9
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004859ea
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 004859ef | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,dword ptr [EAX]             ; 004859f4 | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 004859f4 | g_CDemonRenderer_01b4d738
     FILD dword ptr [EAX + 0x8]          ; 004859f6
     FMUL double ptr [0x0058116c]        ; 004859f9 | DOUBLE_0058116c
     FLD double ptr [0x00581174]         ; 004859ff | DOUBLE_00581174
-    FILD dword ptr [0x005b7648]         ; 00485a05 | DAT_005b7648
+    FILD dword ptr [0x005b7648]         ; 00485a05 | g_INT_005b7648
     FMUL ST1                            ; 00485a0b
     FDIVP ST2,ST0                       ; 00485a0d
     FILD dword ptr [0x01c00c48]         ; 00485a0f | g_Projection

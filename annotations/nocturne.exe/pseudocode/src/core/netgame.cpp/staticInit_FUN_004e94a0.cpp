@@ -13,7 +13,7 @@ void __cdecl core_netgame_cpp_staticInit_FUN_004e94a0(void)
   _atexit(&g_CNetGameInstanceDestructorNode);
   __arrinit
             (g_SChatHistory_ARRAY_01cea410,400,&g_SChatHistoryTypeInfo_005a0de0);
-  g_INT_01d16408 = 0x405;
-  DAT_01d1640c = 0;
+  g_UNetPacket_01d16408.header.size = 0x405;
+  g_UNetPacket_01d16408.header.type = PACKET_NONE;
   return;
 }

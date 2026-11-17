@@ -45,11 +45,11 @@ SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed31a0[16] = {};
 // byte
 byte g_BYTE_01ed36bc = {};
 
-// char[101]
-char g_CHAR_ARRAY_01ed02b8[101] = {};
+// char[101][100]
+char g_CHAR_ARRAY_ARRAY_01ed02b8[101][100] = {};
 
-// char[10]
-char g_CHAR_ARRAY_01ed3808[10] = {};
+// char[10][1024]
+char g_CHAR_ARRAY_ARRAY_01ed3808[10][1024] = {};
 
 // char[2048]
 char g_CHAR_ARRAY_01ed6008[2048] = {};

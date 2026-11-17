@@ -15,5 +15,5 @@ SIGNAL_HANDLER_TYPE __watcallStack getSignalHandler(int signal_number)
     iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
     return *(SIGNAL_HANDLER_TYPE *)(iVar1 + 0x58 + signal_number * 8);
   }
-  return *(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8);
+  return g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[signal_number * 2];
 }

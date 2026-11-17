@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8d0(CDemonRenderer *this_ptr,SInputFace *face)
 
 {
@@ -25,9 +23,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8
       this_ptr->vertex_buffer_ptr[uVar2].v = (uint)*puVar1 << 8;
     } while (pSVar3 != (SInputFace *)&face->u_coord_0);
   }
-  _DAT_01b4d76c = (uint)(face->vertex_indices).vertex_index_0;
-  _DAT_01b4d770 = (uint)(face->vertex_indices).vertex_index_1;
-  _DAT_01b4d774 = (uint)(face->vertex_indices).vertex_index_2;
+  g_INT_ARRAY_01b4d76c[0] = (int)(face->vertex_indices).vertex_index_0;
+  g_INT_ARRAY_01b4d76c[1] = (int)(face->vertex_indices).vertex_index_1;
+  g_INT_ARRAY_01b4d76c[2] = (int)(face->vertex_indices).vertex_index_2;
   if (this_ptr->shadow_pass_active == 0) {
     if (g_BitsPerPixel == 0x20) {
       g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0052f031;
@@ -43,6 +41,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderAlphaBlendedFace_FUN_0045f8
     g_VertexPreprocessMode = 0;
     g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
   }
-  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(this_ptr,3,(int *)&DAT_01b4d76c);
+  engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(this_ptr,3,g_INT_ARRAY_01b4d76c);
   return;
 }

@@ -84,20 +84,20 @@ void __cdecl core_dstrendr_cpp_blendHBilerpLightmapSharedU64toU16pBB56Px2MMX_FUN
     sVar20 = (short)((ulonglong)uVar22 >> 0x10);
     sVar21 = (short)((ulonglong)uVar22 >> 0x20);
     sVar23 = (short)((ulonglong)uVar22 >> 0x30);
-    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)DAT_005f8b88) >> 4;
+    uVar7 = (ushort)((short)uVar8 + (short)uVar22 + (short)g_MMX_INTEGER_005f8b88.mm) >> 4;
     uVar10 = (ushort)((short)((ulonglong)uVar8 >> 0x10) + sVar20 +
-                     (short)((ulonglong)DAT_005f8b88 >> 0x10)) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b88.mm >> 0x10)) >> 4;
     uVar11 = (ushort)((short)((ulonglong)uVar8 >> 0x20) + sVar21 +
-                     (short)((ulonglong)DAT_005f8b88 >> 0x20)) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b88.mm >> 0x20)) >> 4;
     uVar12 = (ushort)((short)((ulonglong)uVar8 >> 0x30) + sVar23 +
-                     (short)((ulonglong)DAT_005f8b88 >> 0x30)) >> 4;
-    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)0x0040004000400040) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b88.mm >> 0x30)) >> 4;
+    uVar13 = (ushort)((short)uVar14 + (short)uVar22 + (short)g_MMX_INTEGER_005f8b90.mm) >> 4;
     uVar15 = (ushort)((short)((ulonglong)uVar14 >> 0x10) + sVar20 +
-                     (short)((ulonglong)0x0040004000400040 >> 0x10)) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b90.mm >> 0x10)) >> 4;
     uVar16 = (ushort)((short)((ulonglong)uVar14 >> 0x20) + sVar21 +
-                     (short)((ulonglong)0x0040004000400040 >> 0x20)) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b90.mm >> 0x20)) >> 4;
     uVar17 = (ushort)((short)((ulonglong)uVar14 >> 0x30) + sVar23 +
-                     (short)((ulonglong)0x0040004000400040 >> 0x30)) >> 4;
+                     (short)(g_MMX_INTEGER_005f8b90.mm >> 0x30)) >> 4;
     uVar9 = (ulonglong)
             CONCAT13((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                      CONCAT12((uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 - (0xff < uVar11),

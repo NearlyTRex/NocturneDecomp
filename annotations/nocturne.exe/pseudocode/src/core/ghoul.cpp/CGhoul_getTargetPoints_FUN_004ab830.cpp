@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004ab830(CGhoul *this_ptr,CVector3f *out_points_array)
 
@@ -26,7 +25,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004ab830(CGhoul *this_ptr,
   int local_18;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-            (&(this_ptr->base).base.model,&local_30,_DAT_01c78c38);
+            (&(this_ptr->base).base.model,&local_30,g_INT_01c78c38);
   if (&local_30 != out_points_array) {
     out_points_array->x = local_30.x;
     out_points_array->y = local_30.y;
@@ -40,7 +39,7 @@ int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004ab830(CGhoul *this_ptr,
     case 0:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[0]] != 0) {
         pCVar1 = &local_24;
-        bone_index = _DAT_01c78c28;
+        bone_index = g_INT_01c78c28;
 LAB_004ab8bc:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
                            (this_ptr_00,pCVar1,bone_index);
@@ -64,14 +63,14 @@ LAB_004ab93e:
     case 1:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[2]] != 0) {
         pCVar1 = &local_54;
-        bone_index = _DAT_01c78c2c;
+        bone_index = g_INT_01c78c2c;
         goto LAB_004ab8bc;
       }
       break;
     case 2:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[10]] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                           (this_ptr_00,&local_3c,_DAT_01c78c14);
+                           (this_ptr_00,&local_3c,g_INT_01c78c14);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;
@@ -84,7 +83,7 @@ LAB_004ab93e:
     case 3:
       if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[9]] != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                           (this_ptr_00,&local_60,_DAT_01c78c3c);
+                           (this_ptr_00,&local_60,g_INT_01c78c3c);
         pCVar2 = out_points_array + iVar3;
         if (pCVar2 != pCVar1) {
           pCVar2->x = pCVar1->x;

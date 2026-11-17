@@ -44,10 +44,10 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057e47e = -0.340000000000000
 ;   double DOUBLE_0057e486 = 0.0100000000000000
-;   undefined4 DAT_01bc995c
-;   undefined4 DAT_01bc9960
-;   undefined4 DAT_01bc9964
-;   undefined4 DAT_01bc9968
+;   CVector3f g_CVector3f_01bc995c
+;   undefined4 g_CVector3f_01bc995c.y
+;   undefined4 g_CVector3f_01bc995c.z
+;   byte g_BYTE_01bc9968
 ;
 ; Called Functions:
 ;   core_dtri.cpp_rayEdgeHeightTest_FUN_0046cfa0
@@ -242,7 +242,7 @@ section .text
     OR EDI,EAX                          ; 0046d308
     FSQRT                               ; 0046d30a
     ADD ESP,0x10                        ; 0046d30c
-    MOV AH,byte ptr [0x01bc9968]        ; 0046d30f | DAT_01bc9968
+    MOV AH,byte ptr [0x01bc9968]        ; 0046d30f | g_BYTE_01bc9968
     FSTP double ptr [ESP]               ; 0046d315
     TEST AH,0x1                         ; 0046d318
     JZ 0x0046d3fb                       ; 0046d31b
@@ -257,7 +257,7 @@ section .text
     TEST EDI,EDI                        ; 0046d333
     JNZ 0x0046d36b                      ; 0046d335
         ;   XREF to: 0046d36b (CONDITIONAL_JUMP)  ; LAB_0046d36b
-    PUSH 0x1bc995c                      ; 0046d337 | DAT_01bc995c
+    PUSH 0x1bc995c                      ; 0046d337 | g_CVector3f_01bc995c
     PUSH ESI                            ; 0046d33c
     PUSH EBX                            ; 0046d33d
     CALL core_dtri.cpp_rayTriangleIntersection_FUN_0046c620 ; 0046d33e
@@ -338,11 +338,11 @@ section .text
         ;   Label: LAB_0046d3fb
     OR DL,0x1                           ; 0046d3fd
     MOV ECX,0xc2c80000                  ; 0046d400
-    MOV byte ptr [0x01bc9968],DL        ; 0046d405 | DAT_01bc9968
+    MOV byte ptr [0x01bc9968],DL        ; 0046d405 | g_BYTE_01bc9968
     XOR EDX,EDX                         ; 0046d40b
-    MOV dword ptr [0x01bc9960],ECX      ; 0046d40d | DAT_01bc9960
-    MOV dword ptr [0x01bc995c],EDX      ; 0046d413 | DAT_01bc995c
-    MOV dword ptr [0x01bc9964],EDX      ; 0046d419 | DAT_01bc9964
+    MOV dword ptr [0x01bc9960],ECX      ; 0046d40d | g_CVector3f_01bc995c.y
+    MOV dword ptr [0x01bc995c],EDX      ; 0046d413 | g_CVector3f_01bc995c
+    MOV dword ptr [0x01bc9964],EDX      ; 0046d419 | g_CVector3f_01bc995c.z
     JMP 0x0046d321                      ; 0046d41f
         ;   XREF to: 0046d321 (UNCONDITIONAL_JUMP)  ; LAB_0046d321
     FLD float ptr [EBX + 0x24]          ; 0046d424
@@ -357,7 +357,7 @@ section .text
     FADD float ptr [ESI + 0x8]          ; 0046d43a
     FSTP float ptr [ESP + 0x2c]         ; 0046d43d
     MOV EAX,dword ptr [ESI + 0x4]       ; 0046d441
-    PUSH 0x1bc995c                      ; 0046d444 | DAT_01bc995c
+    PUSH 0x1bc995c                      ; 0046d444 | g_CVector3f_01bc995c
     MOV dword ptr [ESP + 0x2c],EAX      ; 0046d449
     LEA EAX,[ESP + 0x28]                ; 0046d44d
     PUSH EAX                            ; 0046d451
@@ -375,7 +375,7 @@ section .text
     JA 0x0046d36b                       ; 0046d474
         ;   XREF to: 0046d36b (CONDITIONAL_JUMP)  ; LAB_0046d36b
     FLD float ptr [ESP + 0x8]           ; 0046d47a
-    FMUL float ptr [0x01bc9960]         ; 0046d47e | DAT_01bc9960
+    FMUL float ptr [0x01bc9960]         ; 0046d47e | g_CVector3f_01bc995c.y
     FADD float ptr [ESP + 0x28]         ; 0046d484
     MOV EAX,dword ptr [EBP + 0x20]      ; 0046d488
     FST float ptr [ESP + 0x70]          ; 0046d48b

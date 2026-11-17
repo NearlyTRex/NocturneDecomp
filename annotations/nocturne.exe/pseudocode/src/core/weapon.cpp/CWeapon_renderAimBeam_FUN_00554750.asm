@@ -60,7 +60,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
 ;   CDemonSet g_CDemonSetInstance
 ;
@@ -88,7 +88,7 @@ section .text
     SUB EBP,0x7e                        ; 0055475c
     MOV EBX,dword ptr [EBP + 0x92]      ; 0055475f
     MOV EDX,dword ptr [0x005ae704]      ; 00554765 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0055476b | DAT_01b4d738
+    PUSH EDX                            ; 0055476b | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0055476c
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00554771

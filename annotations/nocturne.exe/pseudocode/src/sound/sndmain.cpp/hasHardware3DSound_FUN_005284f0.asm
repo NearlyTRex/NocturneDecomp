@@ -14,7 +14,7 @@
 ;   sound_sndmain.cpp_startSfx_FUN_005265a0 at 0052681a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8320
+;   int g_INT_02dc8320
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_isSoundSystemActive_FUN_00528480
@@ -29,7 +29,7 @@ section .text
     TEST EAX,EAX                        ; 005284f5
     JZ 0x005284fe                       ; 005284f7
         ;   XREF to: 005284fe (CONDITIONAL_JUMP)  ; LAB_005284fe
-    MOV EAX,[0x02dc8320]                ; 005284f9 | DAT_02dc8320
+    MOV EAX,[0x02dc8320]                ; 005284f9 | g_INT_02dc8320
     RET                                 ; 005284fe
         ;   Label: LAB_005284fe
 

@@ -102,7 +102,7 @@ section .text
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 0050569d
     SUB ESP,0x8                         ; 005056a0
-    FLD float ptr [0x01e56c20]          ; 005056a3 | DAT_01e56c20
+    FLD float ptr [0x01e56c20]          ; 005056a3 | g_FLOAT_01e56c20
     FSTP double ptr [ESP]               ; 005056a9
     PUSH 0x58fe61                       ; 005056ac | = "%g\n"
     PUSH EDI                            ; 005056b1

@@ -8,7 +8,7 @@
 ;   crt_string.c_mbstrncpy_FUN_0056db80 at 0056dba0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c30
+;   int g_INT_02de5c30
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -46,7 +46,7 @@ section .text
     CMP EDX,ESI                         ; 00570d0a
     JBE 0x00570d32                      ; 00570d0c
         ;   XREF to: 00570d32 (CONDITIONAL_JUMP)  ; LAB_00570d32
-    CMP dword ptr [0x02de5c30],0x0      ; 00570d0e | DAT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 00570d0e | g_INT_02de5c30
     JZ 0x00570d32                       ; 00570d15
         ;   XREF to: 00570d32 (CONDITIONAL_JUMP)  ; LAB_00570d32
     MOV AL,byte ptr [EAX + -0x1]        ; 00570d17

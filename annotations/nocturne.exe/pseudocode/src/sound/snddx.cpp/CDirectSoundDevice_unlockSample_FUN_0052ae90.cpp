@@ -12,25 +12,25 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_0052ae90(CDirec
   uint error_code;
   char *pcVar1;
   int in_stack_00000014;
-  int *piStack_1b4;
-  uint uStack_1b0;
-  uint uStack_1ac;
+  char acStack_1a0 [400];
   
-  if (((buffer_id < 1) || (0x18 < buffer_id)) || (*(int *)(&DAT_02dc9244 + buffer_id * 4) == 0)) {
+  if (((buffer_id < 1) || (0x18 < buffer_id)) ||
+     (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id] == (IDirectSoundBuffer *)0x0)) {
     g_CurrentFilename = "..\\sound\\snddx.cpp";
     g_CurrentLineNumber = 694;
-    uStack_1ac = 0x52aed2;
-    core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d");
+    core_main_c_displayErrorAndQuit_FUN_004c8440("DirectSoundDevice::unlockSample - Can't unlock invalid handle: %d",buffer_id);
   }
-  uStack_1ac = *(uint *)(in_stack_00000014 + 0x158);
-  uStack_1b0 = *(uint *)(in_stack_00000014 + 0x160);
-  piStack_1b4 = *(int **)(&DAT_02dc9244 + buffer_id * 4);
-  error_code = (**(code **)(*piStack_1b4 + 0x4c))();
+  error_code = (*g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id]->vtable->Unlock)
+                         (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id],
+                          *(LPVOID *)(in_stack_00000014 + 0x160),
+                          *(DWORD *)(in_stack_00000014 + 0x158),
+                          *(LPVOID *)(in_stack_00000014 + 0x164),
+                          *(DWORD *)(in_stack_00000014 + 0x15c));
   if (error_code != 0) {
     pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
-    _sprintf((char *)&piStack_1b4,"DirectSux: Unable to %s.  (%s)",
-               "Unlock hw sample buffer",pcVar1);
-    sound_sndmain_cpp_logSoundError_FUN_00529980((char *)&piStack_1b4);
+    _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
+               pcVar1);
+    sound_sndmain_cpp_logSoundError_FUN_00529980(acStack_1a0);
     return;
   }
   return;

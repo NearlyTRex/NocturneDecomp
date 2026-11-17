@@ -13,8 +13,8 @@
 ;   core_water.cpp_CWater_render_FUN_00550cb0 at 00551191
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
+;   int[16] g_INT_ARRAY_01b4d76c
+;   undefined4 g_INT_ARRAY_01b4d76c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -52,7 +52,7 @@ section .text
     XOR EDX,EDX                         ; 0045fa01
     MOV ESI,dword ptr [ECX + 0x18]      ; 0045fa03
         ;   Label: LAB_0045fa03
-    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fa06 | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fa06 | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0045fa0c
     ADD EDX,0x4                         ; 0045fa10
     INC EAX                             ; 0045fa13
@@ -73,7 +73,7 @@ section .text
     MOV dword ptr [0x01c00c7c],EDI      ; 0045fa3d | g_ScanlineRenderFunc
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0045fa43
         ;   Label: LAB_0045fa43
-    PUSH 0x1b4d76c                      ; 0045fa47 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045fa47 | g_INT_ARRAY_01b4d76c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045fa4c
     PUSH EDX                            ; 0045fa4f
     PUSH EBX                            ; 0045fa50
@@ -111,7 +111,7 @@ section .text
     TEST EDI,EDI                        ; 0045fa8c
     JZ 0x0045faae                       ; 0045fa8e
         ;   XREF to: 0045faae (CONDITIONAL_JUMP)  ; LAB_0045faae
-    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fa90 | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045fa90 | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
         ;   Label: LAB_0045fa90
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0045fa96
     ADD EAX,0xc                         ; 0045fa9a

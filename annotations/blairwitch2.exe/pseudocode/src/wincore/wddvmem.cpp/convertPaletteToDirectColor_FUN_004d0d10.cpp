@@ -40,11 +40,11 @@ void __cdecl wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004d0d10(void)
       iVar5 = iVar8;
     } while (iVar8 != 0x200);
     uVar4 = 0xff >> (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f);
-    g_INT_0061c8d0 = uVar4 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
+    g_MMX_INTEGER_0061c8d0.u32[0] = uVar4 << (g_BIT_INTEGER32_01c35814.bytes[0] & 0x1f);
     uVar7 = 0xff >> (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f);
-    g_INT_0061c8d8 = uVar7 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
+    g_MMX_INTEGER_0061c8d8.u32[0] = uVar7 << (g_BIT_INTEGER32_01c35820.bytes[0] & 0x1f);
     uVar9 = 0xff >> (g_BIT_INTEGER32_01c35834.bytes[0] & 0x1f);
-    g_INT_0061c8e0 = uVar9 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
+    g_MMX_INTEGER_0061c8e0.u32[0] = uVar9 << (g_BIT_INTEGER32_01c3582c.bytes[0] & 0x1f);
     g_QWORD_0061c8e8._0_4_ = (uVar4 << (g_BIT_INTEGER32_01c3581c.bytes[0] & 0x1f)) << 0x10;
     g_QWORD_0061c908._0_4_ = (uVar7 << (g_BIT_INTEGER32_01c35828.bytes[0] & 0x1f)) << 8;
     g_QWORD_0061c970._0_4_ = g_BIT_INTEGER32_01c35834;

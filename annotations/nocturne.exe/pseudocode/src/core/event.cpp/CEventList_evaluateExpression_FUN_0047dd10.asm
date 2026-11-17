@@ -18,10 +18,10 @@
 ;   undefined4 s_yntax_error_00580235+1
 ;   undefined4 s_ntax_error_00580235+2
 ;   undefined4 s_tax_error_00580235+3
-;   undefined4 DAT_01c08b60
-;   undefined4 DAT_01c08b61
-;   undefined4 DAT_01c08b62
-;   undefined4 DAT_01c08b63
+;   char[256] g_CHAR_ARRAY_01c08b60
+;   undefined4 g_CHAR_ARRAY_01c08b60+1
+;   undefined4 g_CHAR_ARRAY_01c08b60+2
+;   undefined4 g_CHAR_ARRAY_01c08b60+3
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateLogicalExpr_FUN_00480220
@@ -34,7 +34,7 @@ section .text
         ;   Label: core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10
     SUB ESP,0x4                         ; 0047dd11
     XOR AH,AH                           ; 0047dd14
-    MOV byte ptr [0x01c08b60],AH        ; 0047dd16 | DAT_01c08b60
+    MOV byte ptr [0x01c08b60],AH        ; 0047dd16 | g_CHAR_ARRAY_01c08b60
     MOV EAX,ESP                         ; 0047dd1c
     PUSH EAX                            ; 0047dd1e
     MOV ECX,dword ptr [ESP + 0x14]      ; 0047dd1f
@@ -63,16 +63,16 @@ section .text
     PUSH ESI                            ; 0047dd4d
     MOV ESI,0x580235                    ; 0047dd4e | = "Syntax error"
     MOV EDI,0x1c08b60                   ; 0047dd53
-    PUSH EDI                            ; 0047dd58 | DAT_01c08b60
+    PUSH EDI                            ; 0047dd58 | g_CHAR_ARRAY_01c08b60
     MOV AL,byte ptr [ESI]               ; 0047dd59 | = "Syntax error" | s_ntax_error_00580235+2
         ;   Label: LAB_0047dd59
-    MOV byte ptr [EDI],AL               ; 0047dd5b | DAT_01c08b60 | DAT_01c08b62
+    MOV byte ptr [EDI],AL               ; 0047dd5b | g_CHAR_ARRAY_01c08b60 | g_CHAR_ARRAY_01c08b60+2
     CMP AL,0x0                          ; 0047dd5d
     JZ 0x0047dd71                       ; 0047dd5f
         ;   XREF to: 0047dd71 (CONDITIONAL_JUMP)  ; LAB_0047dd71
     MOV AL,byte ptr [ESI + 0x1]         ; 0047dd61 | s_yntax_error_00580235+1 | s_tax_error_00580235+3
     ADD ESI,0x2                         ; 0047dd64
-    MOV byte ptr [EDI + 0x1],AL         ; 0047dd67 | DAT_01c08b61 | DAT_01c08b63
+    MOV byte ptr [EDI + 0x1],AL         ; 0047dd67 | g_CHAR_ARRAY_01c08b60+1 | g_CHAR_ARRAY_01c08b60+3
     ADD EDI,0x2                         ; 0047dd6a
     CMP AL,0x0                          ; 0047dd6d
     JNZ 0x0047dd59                      ; 0047dd6f

@@ -25,13 +25,13 @@ void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_00498a10(CFirefly *this
   CVector3i local_18;
   
   bVar6 = 0;
-  g_SMRGLHeaderPrimitive_01c73670.base.count = 4;
-  g_SMRGLHeaderPrimitive_01c73670.surface_normal.A.i = 0;
-  g_SMRGLHeaderPrimitive_01c73670.surface_normal.B.i = 0;
-  g_SMRGLHeaderPrimitive_01c73670.surface_normal.C.i = 0;
-  g_SMRGLHeaderPrimitive_01c73670.surface_normal.D.i = 0;
-  g_INT_01c73688 = 0;
-  g_INT_01c7368c = 1;
+  g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1] = 1;
   g_SRenderVertex_ARRAY_0060b014[0].u = 0x80000;
   g_SRenderVertex_ARRAY_0060b014[0].v = 0xf80000;
   g_SRenderVertex_ARRAY_0060b014[1].u = 0xf80000;
@@ -40,8 +40,8 @@ void __cdecl core_fire_cpp_CFirefly_setupRenderState_FUN_00498a10(CFirefly *this
   g_SRenderVertex_ARRAY_0060b014[2].v = 0x80000;
   g_SRenderVertex_ARRAY_0060b014[3].u = 0x80000;
   g_SRenderVertex_ARRAY_0060b014[3].v = 0x80000;
-  g_INT_01c73690 = 2;
-  g_INT_01c73694 = 3;
+  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230
             (g_CDemonRenderer_PTR_005f2afc,&local_18);
   g_CVector3i_01c73658.x = local_18.x;

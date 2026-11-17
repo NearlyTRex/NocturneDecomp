@@ -11,9 +11,9 @@
 ;   core_game.cpp_CGame_processCheatCodes_FUN_004b90d0 at 004ba6fd
 ;
 ; Referenced Globals:
-;   char[76797] g_CHAR_ARRAY_01326d20
-;   undefined4 g_CHAR_ARRAY_01326d20+1
-;   undefined4 g_CHAR_ARRAY_01326d20+0x140
+;   SFogImagePlane g_SFogImagePlane_01326d20
+;   undefined4 g_SFogImagePlane_01326d20.pixels[0][1]
+;   undefined4 g_SFogImagePlane_01326d20.pixels[1][0]
 ;   undefined4 g_CHAR_ARRAY_01339920+0x140
 ;
 ; *****************************************************************************
@@ -63,7 +63,7 @@ section .text
     INC EAX                             ; 0044329b
         ;   Label: LAB_0044329b
     MOV byte ptr [EAX + 0x133991f],BL   ; 0044329c | g_CHAR_ARRAY_01339920+0x140
-    MOV byte ptr [EAX + 0x1326d1f],BL   ; 004432a2 | g_CHAR_ARRAY_01326d20 | g_CHAR_ARRAY_01326d20+1 | g_CHAR_ARRAY_01326d20+0x140
+    MOV byte ptr [EAX + 0x1326d1f],BL   ; 004432a2 | g_SFogImagePlane_01326d20 | g_SFogImagePlane_01326d20.pixels[0][1] | g_SFogImagePlane_01326d20.pixels[1][0]
     CMP EAX,EDX                         ; 004432a8
     JNZ 0x0044329b                      ; 004432aa
         ;   XREF to: 0044329b (CONDITIONAL_JUMP)  ; LAB_0044329b

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(CDemonSet *this_ptr)
 
 {
@@ -17,14 +15,14 @@ void __cdecl core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00511590(CDemonSet
   CDemonSet *pCVar4;
   int iVar5;
   
-  if (_DAT_020842d0 < 1) {
+  if (g_INT_020842d0 < 1) {
     g_CurrentFilename = "..\\core\\setcolid.cpp";
     g_CurrentLineNumber = 1066;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::popRaytraceState - stack empty");
   }
-  iVar5 = _DAT_020842d0 + -1;
+  iVar5 = g_INT_020842d0 + -1;
   pSVar2 = g_SRaytraceState_ARRAY_020842d4 + iVar5;
-  _DAT_020842d0 = iVar5;
+  g_INT_020842d0 = iVar5;
   (this_ptr->ray_query).ray_type = (pSVar2->ray_query).ray_type;
   (this_ptr->ray_query).laser_type = g_SRaytraceState_ARRAY_020842d4[iVar5].ray_query.laser_type;
   (this_ptr->ray_query).laser_color.r =

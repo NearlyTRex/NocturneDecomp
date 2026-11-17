@@ -47,13 +47,13 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410(C
       pSVar4 = local_1c;
       _sprintf(local_1c->table_id,"%d");
       *(uint *)(g_SHuffmanTable_ARRAY_01d405c8[0].huffman_data + iVar8 + 0x804) =
-           *(uint *)(&DAT_00622240 + local_18);
+           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].table_size + local_18);
       *(uint *)(g_SHuffmanTable_ARRAY_01d405c8[0].table_id + iVar8 + 4) =
-           *(uint *)(&DAT_00622244 + local_18);
+           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].xlen + local_18);
       *(uint *)(g_SHuffmanTable_ARRAY_01d405c8[0].table_id + iVar8 + 8) =
-           *(uint *)(&DAT_00622248 + local_18);
+           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].ylen + local_18);
       *(uint *)(g_SHuffmanTable_ARRAY_01d405c8[0].table_id + iVar8 + 0xc) =
-           *(uint *)(&DAT_0062224c + local_18);
+           *(uint *)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].bits + local_18);
       *(int *)(g_SHuffmanTable_ARRAY_01d405c8[0].table_id + iVar8 + 0x10) =
            (1 << (g_SHuffmanTable_ARRAY_01d405c8[0].table_id[iVar8 + 0xc] & 0x1fU)) + -1;
       sscanf(pSVar4->table_id,"%u");
@@ -62,7 +62,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410(C
         g_INT_01d1d404 = 0xdfb;
         core_main_c_displayErrorAndQuit_FUN_005030e0("wrong table number %u.  File: %s");
       }
-      iVar7 = *(int *)(&DAT_00622250 + local_18);
+      iVar7 = *(int *)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].reference_index + local_18);
       if (iVar7 < 0) {
         if (iVar7 != -1) {
           g_CHAR_PTR_01d1d400 = "..\\sound\\mp3.cpp";
@@ -82,7 +82,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410(C
           core_main_c_displayErrorAndQuit_FUN_005030e0("MP3 Huffman tree overflow!  File: %s");
         }
         uVar9 = 0;
-        pcVar12 = *(char **)(&DAT_00622254 + local_18);
+        pcVar12 = *(char **)((int)&g_SHuffmanTableSource_ARRAY_00622240[0].huffman_data_ptr +
+                            local_18);
         iVar7 = iVar8;
         if (*(int *)(g_SHuffmanTable_ARRAY_01d405c8[0].huffman_data + iVar8 + 0x804) != 0) {
           do {
@@ -137,10 +138,9 @@ LAB_005287a4:
   if ((side_info->channels[channel].granules[granule].window_switching_flag == 0) ||
      (side_info->channels[channel].granules[granule].block_type != 2)) {
     iVar8 = side_info->channels[channel].granules[granule].region0_count;
-    local_20 = g_INT_ARRAY_0062079c[local_34 * 0x25 + iVar8];
-    iVar8 = *(int *)(&DAT_006207a0 +
-                    (side_info->channels[channel].granules[granule].region1_count + iVar8) * 4 +
-                    local_34 * 0x94);
+    local_20 = *(int *)(local_34 * 0x94 + 0x62079c + iVar8 * 4);
+    iVar8 = *(int *)(local_34 * 0x94 + 0x6207a0 +
+                    (side_info->channels[channel].granules[granule].region1_count + iVar8) * 4);
   }
   else {
     iVar8 = 0x240;

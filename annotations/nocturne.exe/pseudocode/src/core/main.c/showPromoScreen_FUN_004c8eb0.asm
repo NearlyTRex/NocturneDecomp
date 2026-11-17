@@ -14,7 +14,7 @@
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   CBitFont* g_CBitFont_PTR_014b98f8
 ;   CBitFont* g_CBitFont_PTR_014b9900
-;   undefined4 DAT_01bd1d80
+;   int g_INT_01bd1d80
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -147,18 +147,18 @@ section .text
     MOV ESI,0x12                        ; 004c8fd6
     SAR EDX,0x1f                        ; 004c8fdb
     IDIV ESI                            ; 004c8fde
-    MOV [0x01bd1d80],EAX                ; 004c8fe0 | DAT_01bd1d80
+    MOV [0x01bd1d80],EAX                ; 004c8fe0 | g_INT_01bd1d80
     CMP EBP,EAX                         ; 004c8fe5
     JG 0x004c90b3                       ; 004c8fe7
         ;   XREF to: 004c90b3 (CONDITIONAL_JUMP)  ; LAB_004c90b3
-    MOV EDX,dword ptr [0x01bd1d80]      ; 004c8fed | DAT_01bd1d80
+    MOV EDX,dword ptr [0x01bd1d80]      ; 004c8fed | g_INT_01bd1d80
         ;   Label: LAB_004c8fed
     MOV ESI,ECX                         ; 004c8ff3
     CMP EDX,0x4000                      ; 004c8ff5
     JLE 0x004c9007                      ; 004c8ffb
         ;   XREF to: 004c9007 (CONDITIONAL_JUMP)  ; LAB_004c9007
-    MOV dword ptr [0x01bd1d80],0x4000   ; 004c8ffd | DAT_01bd1d80
-    MOV EAX,[0x01bd1d80]                ; 004c9007 | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],0x4000   ; 004c8ffd | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004c9007 | g_INT_01bd1d80
         ;   Label: LAB_004c9007
     PUSH 0x2a                           ; 004c900c
     SUB EBX,EAX                         ; 004c900e
@@ -228,7 +228,7 @@ section .text
     POP ESI                             ; 004c90b0
     POP EBX                             ; 004c90b1
     RET                                 ; 004c90b2
-    MOV dword ptr [0x01bd1d80],EBP      ; 004c90b3 | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],EBP      ; 004c90b3 | g_INT_01bd1d80
         ;   Label: LAB_004c90b3
     JMP 0x004c8fed                      ; 004c90b9
         ;   XREF to: 004c8fed (UNCONDITIONAL_JUMP)  ; LAB_004c8fed

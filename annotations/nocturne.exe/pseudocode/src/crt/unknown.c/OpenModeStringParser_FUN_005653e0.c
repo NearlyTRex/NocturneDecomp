@@ -21,7 +21,7 @@ int __cdecl OpenModeStringParser(char *mode_string,char *output_flags)
   bVar5 = false;
   bVar3 = false;
   if (output_flags != (char *)0x0) {
-    if (DAT_005c1d50 == 1) {
+    if (g_INT_005c1d50 == 1) {
       output_flags[0] = '\x01';
       output_flags[1] = '\0';
       output_flags[2] = '\0';
@@ -106,7 +106,7 @@ LAB_00565432:
     bVar1 = mode_string[2];
     mode_string = mode_string + 1;
   }
-  if ((!bVar4) && (0x00000100 == 0x200)) {
+  if ((!bVar4) && (g_INT_005c1aa0 == 0x200)) {
     uVar6 = uVar6 | 0x40;
   }
   return uVar6;

@@ -20,7 +20,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
@@ -43,7 +43,7 @@ section .text
     MOV dword ptr [ESP],EAX             ; 0044145b
     MOV EDX,dword ptr [0x005ae704]      ; 0044145e | g_CDemonRenderer_PTR_005ae704
     MOV EAX,dword ptr [ECX + 0x4]       ; 00441464
-    PUSH EDX                            ; 00441467 | DAT_01b4d738
+    PUSH EDX                            ; 00441467 | g_CDemonRenderer_01b4d738
     MOV dword ptr [ESP + 0x8],EAX       ; 00441468
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 0044146c
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)

@@ -11,7 +11,7 @@
 ; float            Stack[0x14]:4   param_5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c58c8c
+;   int g_INT_01c58c8c
 ;
 ; Called Functions:
 ;   core_fire.cpp_CBulletTrail_init_FUN_00485640
@@ -24,19 +24,19 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createBulletTrail_FUN_0048b220
     PUSH EDI                            ; 0048b221
     PUSH EBP                            ; 0048b222
-    MOV EDX,dword ptr [0x01c58c8c]      ; 0048b223 | DAT_01c58c8c
+    MOV EDX,dword ptr [0x01c58c8c]      ; 0048b223 | g_INT_01c58c8c
     LEA EAX,[EDX*0x8 + 0x0]             ; 0048b229
     ADD EAX,EDX                         ; 0048b230
     SHL EAX,0x2                         ; 0048b232
     INC EDX                             ; 0048b235
     ADD EAX,0x1c58c90                   ; 0048b236
-    MOV dword ptr [0x01c58c8c],EDX      ; 0048b23b | DAT_01c58c8c
+    MOV dword ptr [0x01c58c8c],EDX      ; 0048b23b | g_INT_01c58c8c
     CMP EDX,0xa                         ; 0048b241
     JL 0x0048b250                       ; 0048b244
         ;   XREF to: 0048b250 (CONDITIONAL_JUMP)  ; LAB_0048b250
     PUSH EBX                            ; 0048b246
     XOR EBX,EBX                         ; 0048b247
-    MOV dword ptr [0x01c58c8c],EBX      ; 0048b249 | DAT_01c58c8c
+    MOV dword ptr [0x01c58c8c],EBX      ; 0048b249 | g_INT_01c58c8c
     POP EBX                             ; 0048b24f
     MOV ESI,dword ptr [ESP + 0x1c]      ; 0048b250
         ;   Label: LAB_0048b250

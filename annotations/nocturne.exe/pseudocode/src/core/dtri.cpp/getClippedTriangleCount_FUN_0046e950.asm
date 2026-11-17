@@ -10,13 +10,13 @@
 ;   core_dtri.cpp_buildClipTriangleFan_FUN_0046e960 at 0046e969
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bc9e04
+;   int g_INT_01bc9e04
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x01bc9e04]                ; 0046e950 | DAT_01bc9e04
+    MOV EAX,[0x01bc9e04]                ; 0046e950 | g_INT_01bc9e04
         ;   Label: core_dtri.cpp_getClippedTriangleCount_FUN_0046e950
     SUB EAX,0x2                         ; 0046e955
     TEST EAX,EAX                        ; 0046e958

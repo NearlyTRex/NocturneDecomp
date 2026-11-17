@@ -2,22 +2,20 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 475,
+    "complexity_score": 444,
     "cross_reference_count": 45,
     "function_call_count": 0,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 45,
-    "suspect_count": 40,
+    "pseudocode_lines": 44,
+    "suspect_count": 38,
     "suspect_types": [
       "carry_arith_idiom",
       "concat_reconstruction",
       "stack_param",
-      "undefined_data",
-      "unknown_type",
-      "warning_overlapping_globals"
+      "unknown_type"
     ],
-    "total_lines": 153
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -307,27 +305,27 @@
   "globals": [
     {
       "addr": "005c3f68",
-      "name": "DAT_005c3f68",
-      "type": "undefined4",
+      "name": "g_BYTE_ARRAY_005c3f68",
+      "type": "byte[16]",
       "value": null
     },
     {
       "addr": "005c3f78",
-      "name": "DAT_005c3f78",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c3f78",
+      "type": "float",
+      "value": "0.9375"
     },
     {
       "addr": "005c3f7c",
-      "name": "DAT_005c3f7c",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c3f7c",
+      "type": "float",
+      "value": "1.0625"
     },
     {
       "addr": "005c3f80",
-      "name": "DAT_005c3f80",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005c3f80",
+      "type": "float",
+      "value": "9.223372E+18"
     }
   ],
   "param_estimates": {
@@ -405,16 +403,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 7,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "int in_stack_00000004;",
@@ -422,7 +412,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 8,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "uint in_stack_00000008;",
@@ -430,7 +420,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "ushort in_stack_0000000c;",
@@ -438,7 +428,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "uint in_stack_00000010;",
@@ -446,7 +436,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "uint in_stack_00000014;",
@@ -454,7 +444,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "ushort in_stack_00000018;",
@@ -462,7 +452,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
@@ -470,7 +460,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
@@ -478,7 +468,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
@@ -486,7 +476,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",
@@ -494,7 +484,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",
@@ -502,7 +492,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000010",
       "severity": "moderate",
       "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",
@@ -510,7 +500,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
@@ -518,7 +508,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
@@ -526,7 +516,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 19,
+      "line": 17,
       "match": "CARRY4(in_stack_00000008,in_stack_00000008)",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000008,in_stack_00000008)) break;",
@@ -534,7 +524,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "if ((in_stack_00000004 == 0 && in_stack_00000008 == 0) || ((in_stack_0000000c & 0x7fff) != 0))",
@@ -542,7 +532,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if ((in_stack_00000004 == 0 && in_stack_00000008 == 0) || ((in_stack_0000000c & 0x7fff) != 0))",
@@ -550,7 +540,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if ((in_stack_00000004 == 0 && in_stack_00000008 == 0) || ((in_stack_0000000c & 0x7fff) != 0))",
@@ -558,7 +548,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 20,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if ((in_stack_00000018 & 0x7fff) == 0) {",
@@ -566,7 +556,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_0056bf60;",
@@ -574,7 +564,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_0056bf60;",
@@ -582,7 +572,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "CARRY4(in_stack_00000014,in_stack_00000014)",
       "severity": "moderate",
       "text": "if (CARRY4(in_stack_00000014,in_stack_00000014)) goto LAB_0056bf60;",
@@ -590,7 +580,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "else if (((in_stack_00000018 & 0x7fff) == 0x7fff) ||",
@@ -598,7 +588,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
@@ -606,7 +596,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
@@ -614,7 +604,7 @@
     },
     {
       "description": "Carry term in 64-bit arithmetic (multiply-high `(int)(L>>0x1f)` or add-carry `(a+b)<a`), not a comparison; reduce in a .keep.",
-      "line": 26,
+      "line": 24,
       "match": "CARRY4(in_stack_00000014,in_stack_00000014)",
       "severity": "moderate",
       "text": "(!CARRY4(in_stack_00000014,in_stack_00000014))) {",
@@ -622,7 +612,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000004",
       "severity": "moderate",
       "text": "in_stack_00000004 = SUB104(fVar2,0);",
@@ -630,7 +620,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);",
@@ -638,7 +628,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 32,
+      "line": 30,
       "match": "unkuint10",
       "severity": "mild",
       "text": "in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);",
@@ -646,7 +636,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 31,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "in_stack_0000000c = (ushort)((unkuint10)fVar2 >> 0x40);",
@@ -654,7 +644,7 @@
     },
     {
       "description": "Unknown/unresolved type",
-      "line": 33,
+      "line": 31,
       "match": "unkuint10",
       "severity": "mild",
       "text": "in_stack_0000000c = (ushort)((unkuint10)fVar2 >> 0x40);",
@@ -662,7 +652,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_00000008",
       "severity": "moderate",
       "text": "if (((in_stack_00000008 * 2 ^ 0xe000000) & 0xe000000) != 0) {",
@@ -670,23 +660,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_00000008",
       "severity": "moderate",
-      "text": "if ((&DAT_005c3f68)[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == '\\0') {",
+      "text": "if (g_BYTE_ARRAY_005c3f68[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {",
       "type": "stack_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_005c3f68",
-      "severity": "mild",
-      "text": "if ((&DAT_005c3f68)[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == '\\0') {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (((in_stack_0000000c & 0x7fff) != 0) && ((in_stack_0000000c & 0x7fff) != 0x7fff)) {",
@@ -694,7 +676,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_0000000c",
       "severity": "moderate",
       "text": "if (((in_stack_0000000c & 0x7fff) != 0) && ((in_stack_0000000c & 0x7fff) != 0x7fff)) {",
@@ -702,7 +684,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "if ((in_stack_00000018 & 0x7fff) == 1) {",
@@ -710,7 +692,7 @@
     },
     {
       "description": "Ghidra CONCAT28 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 16,
+      "line": 14,
       "match": "CONCAT28",
       "severity": "moderate",
       "text": "fVar1 = (float10)CONCAT28(in_stack_0000000c,CONCAT44(in_stack_00000008,in_stack_00000004));",
@@ -718,7 +700,7 @@
     },
     {
       "description": "Ghidra CONCAT28 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 18,
+      "line": 16,
       "match": "CONCAT28",
       "severity": "moderate",
       "text": "fVar2 = (float10)CONCAT28(in_stack_00000018,CONCAT44(in_stack_00000014,in_stack_00000010));",

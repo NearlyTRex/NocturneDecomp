@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -61,7 +61,7 @@ section .text
     MOV EDX,dword ptr [0x005ae704]      ; 00441044 | g_CDemonRenderer_PTR_005ae704
     MOV dword ptr [EBX + 0x194],ESI     ; 0044104a
     MOV ESI,dword ptr [0x01c03a08]      ; 00441050 | g_TransformMatrix.m[2].z
-    PUSH EDX                            ; 00441056 | DAT_01b4d738
+    PUSH EDX                            ; 00441056 | g_CDemonRenderer_01b4d738
     MOV dword ptr [EBX + 0x198],ESI     ; 00441057
     LEA ESI,[ESP + 0x4]                 ; 0044105d
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginFixed_FUN_00460d10 ; 00441061

@@ -31,7 +31,7 @@
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.letterbox_mode
 ;   int g_LocalHeroIndex
-;   undefined4 DAT_01cc30a0
+;   int g_INT_01cc30a0
 ;
 ; Called Functions:
 ;   core_inv.cpp_CInventory_renderItemModel_FUN_004c0b40
@@ -61,7 +61,7 @@ section .text
     JNZ 0x004c23c9                      ; 004c217d
         ;   XREF to: 004c23c9 (CONDITIONAL_JUMP)  ; LAB_004c23c9
     MOV ESI,dword ptr [0x005b7620]      ; 004c2183 | g_WindowHeight
-    CMP ESI,dword ptr [0x01cc30a0]      ; 004c2189 | DAT_01cc30a0
+    CMP ESI,dword ptr [0x01cc30a0]      ; 004c2189 | g_INT_01cc30a0
     JNZ 0x004c23d1                      ; 004c218f
         ;   XREF to: 004c23d1 (CONDITIONAL_JUMP)  ; LAB_004c23d1
     CMP dword ptr [EBX + 0x330],0x0     ; 004c2195

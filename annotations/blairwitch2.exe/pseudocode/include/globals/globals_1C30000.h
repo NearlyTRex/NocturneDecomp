@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
@@ -13,7 +14,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CSmokeParticle.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SRGBColorPalette.h"
 
@@ -55,8 +56,12 @@ extern CSmokeParticle g_CSmokeParticle_ARRAY_01c3f8e0[2048];
 extern CVector3i g_CVector3i_01c3deb8;
 extern CVector3i g_CVector3i_01c3dec4;
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c3ded0;
+// DWORD
+extern DWORD g_DWORD_01c38af8;
+extern DWORD g_DWORD_01c38b00;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c3ded0;
 
 // SMRGLTextureBasic[20]
 extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c3f3c8[20];
@@ -72,10 +77,6 @@ extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35828;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c3582c;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c35834;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c38b54;
-
-// byte
-extern byte g_BYTE_01c38b00;
-extern byte g_BYTE_01c38b01;
 
 // char[256]
 extern char g_CHAR_ARRAY_01c3dd10[256];
@@ -144,10 +145,6 @@ extern int g_INT_01c38bb4;
 extern int g_INT_01c38bb8;
 extern int g_INT_01c38bbc;
 extern int g_INT_01c3dd0c;
-extern int g_INT_01c3dee8;
-extern int g_INT_01c3deec;
-extern int g_INT_01c3def0;
-extern int g_INT_01c3def4;
 extern int g_INT_01c3ec54;
 extern int g_INT_01c3ec58;
 extern int g_INT_01c3f5a8;

@@ -16,7 +16,7 @@
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01c78af0
+;   undefined4 g_CHAR_ARRAY_01c78aef+1
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_004a045f
     MOV AL,byte ptr [ESI]               ; 004a0461
     PUSH EAX                            ; 004a0463
-    MOVZX EDI,byte ptr [EBX + 0x1c78aef] ; 004a0464 | DAT_01c78af0
+    MOVZX EDI,byte ptr [EBX + 0x1c78aef] ; 004a0464 | g_CHAR_ARRAY_01c78aef+1
     CALL crt_ctype.c_toupper_FUN_00565e20 ; 004a046b
         ;   XREF to: 00565e20 (UNCONDITIONAL_CALL)  ; int crt_ctype.c_toupper_FUN_00565e20(int c)
     ADD ESP,0x4                         ; 004a0470
@@ -86,7 +86,7 @@ section .text
         ;   Label: LAB_004a048f
     XOR AH,AH                           ; 004a0493
     PUSH EBX                            ; 004a0495
-    MOV byte ptr [0x01c78af0],AH        ; 004a0496 | DAT_01c78af0
+    MOV byte ptr [0x01c78af0],AH        ; 004a0496 | g_CHAR_ARRAY_01c78aef+1
     CALL core_game.cpp_giveHeroWeapon_FUN_004a02e0 ; 004a049c
         ;   XREF to: 004a02e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_giveHeroWeapon_FUN_004a02e0(char * class_name)
     ADD ESP,0x4                         ; 004a04a1

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 116,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 67
+    "total_lines": 66
   },
   "cross_references": [],
   "function": {
@@ -46,8 +45,8 @@
   "globals": [
     {
       "addr": "01c78c14",
-      "name": "DAT_01c78c14",
-      "type": "undefined4",
+      "name": "g_INT_01c78c14",
+      "type": "int",
       "value": null
     }
   ],
@@ -173,16 +172,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 20,
       "match": "(CMatrix3x4f *)((int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -190,7 +181,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 21,
       "match": "(CMatrix3x4f *)((int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -198,7 +189,7 @@
     },
     {
       "description": "Pointer value `pCVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 20,
       "match": "(int)pCVar2",
       "severity": "moderate",
       "text": "pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -206,7 +197,7 @@
     },
     {
       "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "(int)pCVar3",
       "severity": "moderate",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
@@ -214,7 +205,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 20,
+      "line": 18,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",

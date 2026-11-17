@@ -11,7 +11,7 @@ float10 __fpureg atan2(float10 y,float10 x)
 {
   float10 fVar1;
   
-  if ((DAT_005c1d98 & 1) == 0) {
+  if ((g_BYTE_005c1d98 & 1) == 0) {
     fVar1 = (float10)fpatan(y,x);
   }
   else {

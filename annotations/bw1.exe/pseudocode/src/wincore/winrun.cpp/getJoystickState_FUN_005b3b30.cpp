@@ -6,23 +6,21 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005b3b30(void)
 
 {
   int local_50;
   uint local_4c;
   int iStack_48;
-  uint uStack_44;
-  uint uStack_38;
+  DWORD DStack_44;
+  DWORD DStack_38;
   uint uStack_30;
   joyinfo_tag local_1c;
   
   if (g_INT_01c51cc4 != 0) {
     if (g_PTR_02c9cf0c == (byte *)0x0) {
       joyGetPos(0,&local_1c);
-      _g_BYTE_01c51cc0 = local_1c.wButtons;
+      g_DWORD_01c51cc0 = local_1c.wButtons;
       g_INT_01c51cb0 = local_1c.wXpos;
       g_INT_01c51cb4 = local_1c.wYpos;
       g_INT_01c51cbc = local_1c.wZpos;
@@ -40,10 +38,10 @@ void __cdecl wincore_winrun_cpp_getJoystickState_FUN_005b3b30(void)
       local_4c = local_4c | 8;
     }
     (*(code *)g_PTR_02c9cf0c)(0,&local_50);
-    _g_BYTE_01c51cc0 = uStack_38;
+    g_DWORD_01c51cc0 = DStack_38;
     g_INT_01c51cb0 = local_50;
     g_INT_01c51cb4 = local_4c;
-    _DAT_01c51cb8 = uStack_44;
+    g_DWORD_01c51cb8 = DStack_44;
     g_INT_01c51cbc = iStack_48;
     if (g_INT_01c51cd4 != 0) {
       if (uStack_30 < 18000) {

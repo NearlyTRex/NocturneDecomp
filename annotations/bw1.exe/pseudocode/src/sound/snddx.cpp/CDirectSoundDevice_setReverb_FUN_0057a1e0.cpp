@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_0057a1e0(CDirectSoundDevice *this_ptr,float volume,float decay_time,float damping)
 
 {
@@ -16,14 +14,15 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_setReverb_FUN_0057a1e0(CDirectSo
   float fStack_8;
   float fStack_4;
   
-  if (_DAT_02c81da4 == (int *)0x0) {
+  if (g_IKsPropertySet_PTR_02c81da4 == (IKsPropertySet *)0x0) {
     return;
   }
   fStack_c = volume;
   fStack_8 = decay_time;
   uStack_10 = 0;
   fStack_4 = damping;
-  (**(code **)(*_DAT_02c81da4 + 0x10))
-            (_DAT_02c81da4,&g_DSPROPSETID_EAX_ReverbProperties,0,0,0,&uStack_10,0x10);
+  (*g_IKsPropertySet_PTR_02c81da4->vtable->Set)
+            (g_IKsPropertySet_PTR_02c81da4,(LPGUID)&g_DSPROPSETID_EAX_ReverbProperties,0,(LPVOID)0x0
+             ,0,&uStack_10,0x10);
   return;
 }

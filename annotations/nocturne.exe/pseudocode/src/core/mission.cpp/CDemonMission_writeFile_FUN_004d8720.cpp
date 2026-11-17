@@ -41,17 +41,17 @@ void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004d8720(CDemonMission
     } while (iVar5 < this_ptr->num_sets);
   }
   _fprintf(file_handle,"// actorTypeList\n");
-  _fprintf(file_handle,"%d\n",DAT_00763e94);
+  _fprintf(file_handle,"%d\n",g_INT_00763e94);
   core_actor_cpp_syncActorTypeIDs_FUN_0040d8c0();
   iVar5 = 0;
-  if (0 < DAT_00763e94) {
+  if (0 < g_INT_00763e94) {
     iVar8 = 0;
     do {
-      piVar1 = (int *)((int)&DAT_00763e98 + iVar8);
+      piVar1 = (int *)((int)g_CDemonActorType_PTR_ARRAY_00763e98 + iVar8);
       iVar8 = iVar8 + 4;
       iVar5 = iVar5 + 1;
       _fprintf(file_handle,"%s %d\n",*piVar1,*(uint *)(*piVar1 + 0x34));
-    } while (iVar5 < DAT_00763e94);
+    } while (iVar5 < g_INT_00763e94);
   }
   _fprintf(file_handle,"// actor count\n");
   iVar5 = core_mission_cpp_CDemonMission_countActors_FUN_004d8d80(this_ptr);

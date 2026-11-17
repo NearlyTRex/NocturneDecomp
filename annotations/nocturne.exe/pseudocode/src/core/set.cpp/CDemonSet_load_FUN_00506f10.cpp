@@ -144,13 +144,13 @@ void __cdecl core_set_cpp_CDemonSet_load_FUN_00506f10(CDemonSet *this_ptr,char *
     _fscanf(p_Var4,"%d\n",&this_ptr->weather_type);
   }
   iVar10 = _strnicmp(local_128,"train",5);
-  this_ptr_00 = 0x02DD10C8;
+  this_ptr_00 = g_CTerrain_PTR_005c1144;
   if (iVar10 == 0) {
     this_ptr->player_on_train = 1;
     core_terrain_cpp_CTerrain_init_FUN_005492b0(this_ptr_00);
   }
   else {
-    core_terrain_cpp_CTerrain_free_FUN_005492f0(0x02DD10C8);
+    core_terrain_cpp_CTerrain_free_FUN_005492f0(g_CTerrain_PTR_005c1144);
     this_ptr->player_on_train = 0;
   }
   if (10 < this_ptr->set_file_version) {

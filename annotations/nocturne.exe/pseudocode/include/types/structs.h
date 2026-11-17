@@ -189,6 +189,7 @@
 #include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SResolutionEntry.h"
+#include "types/structs/SReverbSettings.h"
 #include "types/structs/SRoom.h"
 #include "types/structs/SS3DFaceMatch.h"
 #include "types/structs/SScanlineSpans.h"

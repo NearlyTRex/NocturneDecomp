@@ -17,14 +17,14 @@
 ;   TerminatedCString s_d_005d4008
 ;   TerminatedCString s_f_005d400b
 ;   TerminatedCString s_f_005d400e
-;   undefined1 DAT_005d4011
-;   undefined1 DAT_005d4012
-;   undefined1 DAT_005d4013
-;   TerminatedCString s_s_1_wav_005d4014
-;   undefined1 DAT_005d401d
-;   undefined1 DAT_005d401e
-;   undefined1 DAT_005d401f
-;   TerminatedCString s_s_1_wav_005d4020
+;   TerminatedCString s_AB_1_wav_005d4011
+;   undefined4 s_AB_1_wav_005d4011+1
+;   undefined4 s_AB_1_wav_005d4011+2
+;   undefined4 s_AB_1_wav_005d4011+3
+;   TerminatedCString s_AT_1_wav_005d401d
+;   undefined4 s_AT_1_wav_005d401d+1
+;   undefined4 s_AT_1_wav_005d401d+2
+;   undefined4 s_AT_1_wav_005d401d+3
 ;   TerminatedCString s_f_005d4029
 ;   TerminatedCString s_AR_d_005d402c
 ;   ... and 7 more
@@ -105,16 +105,16 @@ section .text
     CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417313
         ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00417318
-    MOV ESI,0x5d4011                    ; 0041731b | DAT_005d4011
+    MOV ESI,0x5d4011                    ; 0041731b | = "AB_1.wav @ "
     LEA EDI,[ESP + 0x404]               ; 00417320
     PUSH EDI                            ; 00417327
-    MOV AL,byte ptr [ESI]               ; 00417328 | DAT_005d4011 | DAT_005d4013
+    MOV AL,byte ptr [ESI]               ; 00417328 | = "AB_1.wav @ " | s_AB_1_wav_005d4011+2
         ;   Label: LAB_00417328
     MOV byte ptr [EDI],AL               ; 0041732a
     CMP AL,0x0                          ; 0041732c
     JZ 0x00417340                       ; 0041732e
         ;   XREF to: 00417340 (CONDITIONAL_JUMP)  ; LAB_00417340
-    MOV AL,byte ptr [ESI + 0x1]         ; 00417330 | DAT_005d4012 | = "1.wav @ "
+    MOV AL,byte ptr [ESI + 0x1]         ; 00417330 | s_AB_1_wav_005d4011+1 | s_AB_1_wav_005d4011+3
     ADD ESI,0x2                         ; 00417333
     MOV byte ptr [EDI + 0x1],AL         ; 00417336
     ADD EDI,0x2                         ; 00417339
@@ -146,16 +146,16 @@ section .text
         ;   XREF to: 00417355 (CONDITIONAL_JUMP)  ; LAB_00417355
     POP EDI                             ; 0041736d
         ;   Label: LAB_0041736d
-    MOV ESI,0x5d401d                    ; 0041736e | DAT_005d401d
+    MOV ESI,0x5d401d                    ; 0041736e | = "AT_1.wav @ "
     LEA EDI,[ESP + 0x504]               ; 00417373
     PUSH EDI                            ; 0041737a
-    MOV AL,byte ptr [ESI]               ; 0041737b | DAT_005d401d | DAT_005d401f
+    MOV AL,byte ptr [ESI]               ; 0041737b | = "AT_1.wav @ " | s_AT_1_wav_005d401d+2
         ;   Label: LAB_0041737b
     MOV byte ptr [EDI],AL               ; 0041737d
     CMP AL,0x0                          ; 0041737f
     JZ 0x00417393                       ; 00417381
         ;   XREF to: 00417393 (CONDITIONAL_JUMP)  ; LAB_00417393
-    MOV AL,byte ptr [ESI + 0x1]         ; 00417383 | DAT_005d401e | = "1.wav @ "
+    MOV AL,byte ptr [ESI + 0x1]         ; 00417383 | s_AT_1_wav_005d401d+1 | s_AT_1_wav_005d401d+3
     ADD ESI,0x2                         ; 00417386
     MOV byte ptr [EDI + 0x1],AL         ; 00417389
     ADD EDI,0x2                         ; 0041738c

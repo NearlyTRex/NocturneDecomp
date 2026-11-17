@@ -16,7 +16,7 @@
 ;   int g_WindowHeight = 0xc8
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CBitFont* g_CBitFont_PTR_014b9900
-;   undefined4 DAT_01bcd070
+;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -94,7 +94,7 @@ section .text
     RET                                 ; 0049d9f8
     MOV EAX,[0x014b9900]                ; 0049d9f9 | g_CBitFont_PTR_014b9900
         ;   Label: LAB_0049d9f9
-    MOV [0x01bcd070],EAX                ; 0049d9fe | DAT_01bcd070
+    MOV [0x01bcd070],EAX                ; 0049d9fe | g_CBitFont_PTR_01bcd070
     JMP 0x0049d99e                      ; 0049da03
         ;   XREF to: 0049d99e (UNCONDITIONAL_JUMP)  ; LAB_0049d99e
 

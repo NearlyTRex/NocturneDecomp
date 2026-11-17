@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0055d360(CDirectSoundDevice *this_ptr)
 
 {
   uint error_code;
-  int *apiStack_194 [101];
+  char acStack_190 [400];
   
-  if (_DAT_02cf49d0 != (int *)0x0) {
-    apiStack_194[0] = _DAT_02cf49d0;
-    error_code = (**(code **)(*_DAT_02cf49d0 + 0x44))();
+  if (g_IDirectSound3DListener_PTR_02cf49d0 != (IDirectSound3DListener *)0x0) {
+    error_code = (*g_IDirectSound3DListener_PTR_02cf49d0->vtable->CommitDeferredSettings)
+                           (g_IDirectSound3DListener_PTR_02cf49d0);
     if (error_code != 0) {
       sound_snddx_cpp_getDirectSoundErrorString_FUN_0055a670(error_code);
-      _sprintf((char *)apiStack_194,"DirectSux: Unable to %s.  (%s)");
-      sound_sndmain_cpp_logSoundError_FUN_0055a560((char *)apiStack_194);
+      _sprintf(acStack_190,"DirectSux: Unable to %s.  (%s)");
+      sound_sndmain_cpp_logSoundError_FUN_0055a560(acStack_190);
       return;
     }
   }

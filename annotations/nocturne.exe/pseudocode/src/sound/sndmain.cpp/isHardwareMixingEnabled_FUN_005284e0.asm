@@ -11,13 +11,13 @@
 ;   sound_sndmain.cpp_writeIni_FUN_00528c80 at 00528d64
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bea78
+;   int g_INT_005bea78 = 0x1
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EAX,[0x005bea78]                ; 005284e0 | DAT_005bea78
+    MOV EAX,[0x005bea78]                ; 005284e0 | g_INT_005bea78
         ;   Label: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005284e0
     RET                                 ; 005284e5
 

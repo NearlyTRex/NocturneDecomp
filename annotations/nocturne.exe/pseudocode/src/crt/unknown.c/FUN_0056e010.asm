@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int crt_unknown_c_FUN_0056e010(int param_1)
+; int crt_unknown_c_FUN_0056e010(HANDLE param_1)
 ;
 ;
 ; XREF[3]:
@@ -12,8 +12,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4 = 005671e4
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f58
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   int g_INT_005c1f58 = 0x0
 ;
 ; Called Functions:
 ;   crt_memory.c_realloc_FUN_00564a70
@@ -26,14 +26,14 @@ section .text
     PUSH EBX                            ; 0056e010
         ;   Label: crt_unknown.c_FUN_0056e010
     CALL dword ptr [0x005c1af0]         ; 0056e011 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af0
-    MOV EDX,dword ptr [0x005c1f58]      ; 0056e017 | DAT_005c1f58
+    MOV EDX,dword ptr [0x005c1f58]      ; 0056e017 | g_INT_005c1f58
     XOR EBX,EBX                         ; 0056e01d
     TEST EDX,EDX                        ; 0056e01f
     JLE 0x0056e051                      ; 0056e021
         ;   XREF to: 0056e051 (CONDITIONAL_JUMP)  ; LAB_0056e051
     LEA ECX,[EDX*0x4 + 0x0]             ; 0056e023
     XOR EAX,EAX                         ; 0056e02a
-    MOV EDX,dword ptr [0x005c1f54]      ; 0056e02c | DAT_005c1f54
+    MOV EDX,dword ptr [0x005c1f54]      ; 0056e02c | g_SIOControlBlock_PTR_005c1f54
         ;   Label: LAB_0056e02c
     ADD EDX,EAX                         ; 0056e032
     CMP dword ptr [EDX],0x0             ; 0056e034
@@ -51,27 +51,27 @@ section .text
     CMP EAX,ECX                         ; 0056e04d
     JL 0x0056e02c                       ; 0056e04f
         ;   XREF to: 0056e02c (CONDITIONAL_JUMP)  ; LAB_0056e02c
-    MOV EAX,[0x005c1f58]                ; 0056e051 | DAT_005c1f58
+    MOV EAX,[0x005c1f58]                ; 0056e051 | g_INT_005c1f58
         ;   Label: LAB_0056e051
     INC EAX                             ; 0056e056
     SHL EAX,0x2                         ; 0056e057
     PUSH EAX                            ; 0056e05a
-    MOV EBX,dword ptr [0x005c1f54]      ; 0056e05b | DAT_005c1f54
+    MOV EBX,dword ptr [0x005c1f54]      ; 0056e05b | g_SIOControlBlock_PTR_005c1f54
     PUSH EBX                            ; 0056e061
     CALL crt_memory.c_realloc_FUN_00564a70 ; 0056e062
         ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
-    MOV EDX,dword ptr [0x005c1f58]      ; 0056e067 | DAT_005c1f58
-    MOV ECX,dword ptr [0x005c1f58]      ; 0056e06d | DAT_005c1f58
+    MOV EDX,dword ptr [0x005c1f58]      ; 0056e067 | g_INT_005c1f58
+    MOV ECX,dword ptr [0x005c1f58]      ; 0056e06d | g_INT_005c1f58
     ADD ESP,0x8                         ; 0056e073
-    MOV [0x005c1f54],EAX                ; 0056e076 | DAT_005c1f54
+    MOV [0x005c1f54],EAX                ; 0056e076 | g_SIOControlBlock_PTR_005c1f54
     SHL EDX,0x2                         ; 0056e07b
     INC ECX                             ; 0056e07e
     ADD EAX,EDX                         ; 0056e07f
     MOV EDX,dword ptr [ESP + 0x8]       ; 0056e081
-    MOV dword ptr [0x005c1f58],ECX      ; 0056e085 | DAT_005c1f58
+    MOV dword ptr [0x005c1f58],ECX      ; 0056e085 | g_INT_005c1f58
     MOV dword ptr [EAX],EDX             ; 0056e08b
     CALL dword ptr [0x005c1af4]         ; 0056e08d | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1af4
-    MOV EAX,[0x005c1f58]                ; 0056e093 | DAT_005c1f58
+    MOV EAX,[0x005c1f58]                ; 0056e093 | g_INT_005c1f58
     DEC EAX                             ; 0056e098
     POP EBX                             ; 0056e099
     RET                                 ; 0056e09a

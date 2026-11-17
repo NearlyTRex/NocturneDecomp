@@ -12,9 +12,9 @@
 ;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_00507f80 at 00508496
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01fb99d0
-;   undefined4 DAT_01fb99d4
-;   undefined4 DAT_01fb99d8
+;   int g_INT_01fb99d0
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fb99d4
+;   undefined4 g_CDemonLight_PTR_ARRAY_01fb99d4[1]
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_free_FUN_004401d0
@@ -33,23 +33,23 @@ section .text
     PUSH EDI                            ; 0050ad22
     PUSH EBP                            ; 0050ad23
     MOV EDI,dword ptr [ESP + 0x14]      ; 0050ad24
-    MOV EDX,dword ptr [0x01fb99d0]      ; 0050ad28 | DAT_01fb99d0
+    MOV EDX,dword ptr [0x01fb99d0]      ; 0050ad28 | g_INT_01fb99d0
     XOR ESI,ESI                         ; 0050ad2e
     TEST EDX,EDX                        ; 0050ad30
     JLE 0x0050ad56                      ; 0050ad32
         ;   XREF to: 0050ad56 (CONDITIONAL_JUMP)  ; LAB_0050ad56
     XOR EBX,EBX                         ; 0050ad34
-    MOV EAX,dword ptr [EBX + 0x1fb99d4] ; 0050ad36 | DAT_01fb99d4 | DAT_01fb99d8
+    MOV EAX,dword ptr [EBX + 0x1fb99d4] ; 0050ad36 | g_CDemonLight_PTR_ARRAY_01fb99d4 | g_CDemonLight_PTR_ARRAY_01fb99d4[1]
         ;   Label: LAB_0050ad36
     TEST EAX,EAX                        ; 0050ad3c
     JNZ 0x0050ada7                      ; 0050ad3e
         ;   XREF to: 0050ada7 (CONDITIONAL_JUMP)  ; LAB_0050ada7
-    MOV EBP,dword ptr [0x01fb99d0]      ; 0050ad40 | DAT_01fb99d0
+    MOV EBP,dword ptr [0x01fb99d0]      ; 0050ad40 | g_INT_01fb99d0
         ;   Label: LAB_0050ad40
     ADD EBX,0x4                         ; 0050ad46
     XOR ECX,ECX                         ; 0050ad49
     INC ESI                             ; 0050ad4b
-    MOV dword ptr [EBX + 0x1fb99d0],ECX ; 0050ad4c | DAT_01fb99d4 | DAT_01fb99d8
+    MOV dword ptr [EBX + 0x1fb99d0],ECX ; 0050ad4c | g_CDemonLight_PTR_ARRAY_01fb99d4 | g_CDemonLight_PTR_ARRAY_01fb99d4[1]
     CMP ESI,EBP                         ; 0050ad52
     JL 0x0050ad36                       ; 0050ad54
         ;   XREF to: 0050ad36 (CONDITIONAL_JUMP)  ; LAB_0050ad36
@@ -57,7 +57,7 @@ section .text
         ;   Label: LAB_0050ad56
     XOR EAX,EAX                         ; 0050ad5c
     XOR ESI,ESI                         ; 0050ad5e
-    MOV [0x01fb99d0],EAX                ; 0050ad60 | DAT_01fb99d0
+    MOV [0x01fb99d0],EAX                ; 0050ad60 | g_INT_01fb99d0
     TEST EDX,EDX                        ; 0050ad65
     JLE 0x0050ad90                      ; 0050ad67
         ;   XREF to: 0050ad90 (CONDITIONAL_JUMP)  ; LAB_0050ad90

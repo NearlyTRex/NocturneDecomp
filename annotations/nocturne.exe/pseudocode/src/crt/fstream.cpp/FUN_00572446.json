@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 883,
+    "complexity_score": 858,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 193,
-    "suspect_count": 65,
+    "suspect_count": 63,
     "suspect_types": [
       "bitcast_double_numeric",
       "bitcast_double_pair",
@@ -16,8 +16,7 @@
       "concat_reconstruction",
       "fnstsw_flag_artifact",
       "register_param",
-      "unaffected_reg",
-      "undefined_data"
+      "unaffected_reg"
     ],
     "total_lines": 457
   },
@@ -51,15 +50,15 @@
   "globals": [
     {
       "addr": "005c1795",
-      "name": "DAT_005c1795",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BYTE_005c1795",
+      "type": "byte",
+      "value": "0x0"
     },
     {
       "addr": "005c1d98",
-      "name": "DAT_005c1d98",
-      "type": "undefined4",
-      "value": null
+      "name": "g_BYTE_005c1d98",
+      "type": "byte",
+      "value": "0x0"
     }
   ],
   "pcode_summary": {
@@ -258,14 +257,6 @@
       "type": "carry_arith_idiom"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_005c1795",
-      "severity": "mild",
-      "text": "if (DAT_005c1795 != '\\0') {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Inferred register parameter",
       "line": 48,
       "match": "in_EDX",
@@ -288,14 +279,6 @@
       "severity": "moderate",
       "text": "fVar22 = (float10)__BITCAST_DOUBLE(CONCAT44(in_EDX,in_EAX));",
       "type": "bitcast_double_pair"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_005c1d98",
-      "severity": "mild",
-      "text": "if ((DAT_005c1d98 & 1) == 0) {",
-      "type": "undefined_data"
     },
     {
       "description": "Inferred register parameter",

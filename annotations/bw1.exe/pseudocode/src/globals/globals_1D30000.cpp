@@ -23,18 +23,18 @@ CVector3i g_CVector3i_ARRAY_01d33f70[2000] = {};
 char g_CHAR_01d33b20 = {};
 char g_CHAR_01d33b88 = {};
 
-// double[12]
-double g_DOUBLE_ARRAY_01d3ee48[12] = {};
+// double[12][6]
+double g_DOUBLE_ARRAY_ARRAY_01d3ee48[12][6] = {};
 
 // double[200]
 double g_DOUBLE_ARRAY_01d3bd48[200] = {};
 double g_DOUBLE_ARRAY_01d3c388[200] = {};
 
-// double[36]
-double g_DOUBLE_ARRAY_01d3f088[36] = {};
+// double[36][18]
+double g_DOUBLE_ARRAY_ARRAY_01d3f088[36][18] = {};
 
-// double[4]
-double g_DOUBLE_ARRAY_01d3e9c8[4] = {};
+// double[4][36]
+double g_DOUBLE_ARRAY_ARRAY_01d3e9c8[4][36] = {};
 
 // double[8]
 double g_DOUBLE_ARRAY_01d3e948[8] = {};
@@ -44,8 +44,8 @@ double g_DOUBLE_ARRAY_01d3e988[8] = {};
 float g_FLOAT_01d33f6c = {};
 float g_FLOAT_01d3d748 = {};
 
-// float[64]
-float g_FLOAT_ARRAY_01d39d40[64] = {};
+// float[64][32]
+float g_FLOAT_ARRAY_ARRAY_01d39d40[64][32] = {};
 
 // int
 int g_INT_01d33f64 = {};

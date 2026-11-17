@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 67,
+    "complexity_score": 12,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 5,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 38
   },
   "cross_references": [],
@@ -49,14 +47,14 @@
     },
     {
       "addr": "007678f8",
-      "name": "DAT_007678f8",
-      "type": "undefined4",
+      "name": "g_SRenderVertex_ARRAY_007678f8",
+      "type": "SRenderVertex[12]",
       "value": null
     },
     {
       "addr": "00767b38",
-      "name": "DAT_00767b38",
-      "type": "undefined4",
+      "name": "g_INT_00767b38",
+      "type": "int",
       "value": null
     },
     {
@@ -127,46 +125,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00767b38",
-      "severity": "mild",
-      "text": "if (0xb < DAT_00767b38) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_00767b38",
-      "severity": "mild",
-      "text": "iVar1 = DAT_00767b38 * 0x30;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00767b38",
-      "severity": "mild",
-      "text": "DAT_00767b38 = DAT_00767b38 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_00767b38",
-      "severity": "mild",
-      "text": "DAT_00767b38 = DAT_00767b38 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_007678f8",
-      "severity": "mild",
-      "text": "return (SRenderVertex *)(&DAT_007678f8 + iVar1);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -20,9 +20,9 @@
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00451350 at 0045197e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_012b022c
-;   undefined4 DAT_012b0230
-;   undefined4 DAT_012b0660
+;   int g_INT_012b022c
+;   int g_INT_012b0230
+;   _BIT_INTEGER32 g_BIT_INTEGER32_012b0660
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_ClipLeft
 ;   int g_ClipTop
@@ -41,7 +41,7 @@ section .text
     MOV EDI,dword ptr [EBP + 0x18]      ; 004442a9
     MOV EDX,dword ptr [EBP + 0x14]      ; 004442ac
     SUB EDX,dword ptr [0x01c00c5c]      ; 004442af | g_ClipTop
-    MOV ECX,dword ptr [0x012b0660]      ; 004442b5 | DAT_012b0660
+    MOV ECX,dword ptr [0x012b0660]      ; 004442b5 | g_BIT_INTEGER32_012b0660
     MOV dword ptr [EBP + 0x14],EDX      ; 004442bb
     CMP ECX,0x1                         ; 004442be
     JNZ 0x004442cd                      ; 004442c1
@@ -49,7 +49,7 @@ section .text
     TEST byte ptr [EBP + 0x14],0x1      ; 004442c3
     JNZ 0x00444436                      ; 004442c7
         ;   XREF to: 00444436 (CONDITIONAL_JUMP)  ; LAB_00444436
-    CMP dword ptr [0x012b0660],0x2      ; 004442cd | DAT_012b0660
+    CMP dword ptr [0x012b0660],0x2      ; 004442cd | g_BIT_INTEGER32_012b0660
         ;   Label: LAB_004442cd
     JNZ 0x004442e0                      ; 004442d4
         ;   XREF to: 004442e0 (CONDITIONAL_JUMP)  ; LAB_004442e0
@@ -58,7 +58,7 @@ section .text
         ;   XREF to: 00444436 (CONDITIONAL_JUMP)  ; LAB_00444436
     MOV ESI,dword ptr [EBP + 0x14]      ; 004442e0
         ;   Label: LAB_004442e0
-    MOV CL,byte ptr [0x012b0660]        ; 004442e3 | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 004442e3 | g_BIT_INTEGER32_012b0660
     SAR ESI,CL                          ; 004442e9
     MOV dword ptr [EBP + 0x14],ESI      ; 004442eb
     MOV ESI,dword ptr [EBP + 0x1c]      ; 004442ee
@@ -121,7 +121,7 @@ section .text
     SAR EDX,0x1f                        ; 0044437b
     IDIV ECX                            ; 0044437e
     MOV dword ptr [EBP + -0x10],EAX     ; 00444380
-    MOV CL,byte ptr [0x012b0660]        ; 00444383 | DAT_012b0660
+    MOV CL,byte ptr [0x012b0660]        ; 00444383 | g_BIT_INTEGER32_012b0660
     MOV EDX,EBX                         ; 00444389
     MOV EAX,dword ptr [EBP + 0x14]      ; 0044438b
     SHL EDX,CL                          ; 0044438e
@@ -142,7 +142,7 @@ section .text
     MOV ECX,dword ptr [EBP + 0xfffffffc] ; 004443bf
     SHL ECX,0x2                         ; 004443c5
     MOV ESI,dword ptr [EBP + 0xfffffff8] ; 004443c8
-    MOV EDI,dword ptr [0x012b0230]      ; 004443ce | DAT_012b0230
+    MOV EDI,dword ptr [0x012b0230]      ; 004443ce | g_INT_012b0230
     MOV EBX,dword ptr [EBP + 0xffffffe4] ; 004443d4
     MOV EDX,dword ptr [EBP + 0xffffffec] ; 004443da
     MOV EAX,ECX                         ; 004443e0
@@ -171,8 +171,8 @@ section .text
     SUB ECX,0x4                         ; 00444421
     JG 0x004443e0                       ; 00444424
         ;   XREF to: 004443e0 (CONDITIONAL_JUMP)  ; LAB_004443e0
-    MOV dword ptr [0x012b0230],EDI      ; 00444426 | DAT_012b0230
-    MOV dword ptr [0x012b022c],0x1      ; 0044442c | DAT_012b022c
+    MOV dword ptr [0x012b0230],EDI      ; 00444426 | g_INT_012b0230
+    MOV dword ptr [0x012b022c],0x1      ; 0044442c | g_INT_012b022c
     MOV ESP,EBP                         ; 00444436
         ;   Label: LAB_00444436
     POP EBP                             ; 00444438

@@ -13,8 +13,8 @@
 ;   IDirectSound* g_IDirectSound_PTR_02cf49c4
 ;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8
 ;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49cc
-;   undefined4 DAT_02cf49d0
-;   undefined4 DAT_02cf49d4
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
+;   IKsPropertySet* g_IKsPropertySet_PTR_02cf49d4
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     CMP EBX,0x41                        ; 0055ac2b
     JL 0x0055ac20                       ; 0055ac2e
         ;   XREF to: 0055ac20 (CONDITIONAL_JUMP)  ; LAB_0055ac20
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055ac30 | DAT_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055ac30 | g_IDirectSound3DListener_PTR_02cf49d0
     TEST EDX,EDX                        ; 0055ac36
     JZ 0x0055ac48                       ; 0055ac38
         ;   XREF to: 0055ac48 (CONDITIONAL_JUMP)  ; LAB_0055ac48
@@ -54,7 +54,7 @@ section .text
     MOV EBX,dword ptr [EDX]             ; 0055ac3b
     CALL dword ptr [EBX + 0x8]          ; 0055ac3d
     XOR ECX,ECX                         ; 0055ac40
-    MOV dword ptr [0x02cf49d0],ECX      ; 0055ac42 | DAT_02cf49d0
+    MOV dword ptr [0x02cf49d0],ECX      ; 0055ac42 | g_IDirectSound3DListener_PTR_02cf49d0
     MOV EBX,dword ptr [0x02cf49cc]      ; 0055ac48 | g_IDirectSoundBuffer_PTR_02cf49cc
         ;   Label: LAB_0055ac48
     TEST EBX,EBX                        ; 0055ac4e
@@ -66,7 +66,7 @@ section .text
     XOR ESI,ESI                         ; 0055ac57
     CALL dword ptr [EBX + 0x8]          ; 0055ac59
     MOV dword ptr [0x02cf49cc],ESI      ; 0055ac5c | g_IDirectSoundBuffer_PTR_02cf49cc
-    MOV EBP,dword ptr [0x02cf49d4]      ; 0055ac62 | DAT_02cf49d4
+    MOV EBP,dword ptr [0x02cf49d4]      ; 0055ac62 | g_IKsPropertySet_PTR_02cf49d4
         ;   Label: LAB_0055ac62
     TEST EBP,EBP                        ; 0055ac68
     JZ 0x0055ac7a                       ; 0055ac6a
@@ -75,7 +75,7 @@ section .text
     MOV EBX,dword ptr [EBP]             ; 0055ac6d
     CALL dword ptr [EBX + 0x8]          ; 0055ac70
     XOR EAX,EAX                         ; 0055ac73
-    MOV [0x02cf49d4],EAX                ; 0055ac75 | DAT_02cf49d4
+    MOV [0x02cf49d4],EAX                ; 0055ac75 | g_IKsPropertySet_PTR_02cf49d4
     MOV EDX,dword ptr [0x02cf49c8]      ; 0055ac7a | g_IDirectSoundBuffer_PTR_02cf49c8
         ;   Label: LAB_0055ac7a
     TEST EDX,EDX                        ; 0055ac80

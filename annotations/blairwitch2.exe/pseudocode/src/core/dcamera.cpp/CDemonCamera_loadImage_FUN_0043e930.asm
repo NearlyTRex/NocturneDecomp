@@ -421,7 +421,7 @@ section .text
     JLE 0x0043ecf2                      ; 0043ece4
         ;   XREF to: 0043ecf2 (CONDITIONAL_JUMP)  ; LAB_0043ecf2
     LEA ESI,[EDI + EDX*0x1]             ; 0043ece6
-    MOVZX ESI,byte ptr [ESI + 0x1339920] ; 0043ece9 | g_CHAR_ARRAY_01326d20 | g_CHAR_ARRAY_01326d20+1 | g_CHAR_ARRAY_01326d20+0x140
+    MOVZX ESI,byte ptr [ESI + 0x1339920] ; 0043ece9 | g_SFogImagePlane_01326d20 | g_SFogImagePlane_01326d20.pixels[0][1] | g_SFogImagePlane_01326d20.pixels[1][0]
     ADD EAX,ESI                         ; 0043ecf0
     INC ECX                             ; 0043ecf2
         ;   Label: LAB_0043ecf2

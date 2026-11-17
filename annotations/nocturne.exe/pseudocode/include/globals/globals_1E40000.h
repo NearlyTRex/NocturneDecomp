@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E40000
@@ -13,4 +14,21 @@
 // CDemonActorType
 extern CDemonActorType g_CPendulumActorType_01e42858;
 extern CDemonActorType g_CPlatformActorType_01e42894;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e42810;
+
+// char[101][100]
+extern char g_CHAR_ARRAY_ARRAY_01e40098[101][100];
+
+// char[65536]
+extern char g_CHAR_ARRAY_01e428d0[65536];
+
+// int
+extern int g_INT_01e4008c;
+extern int g_INT_01e40090;
+extern int g_INT_01e4280c;
+
+// uchar
+extern uchar g_UCHAR_01e40097;
 

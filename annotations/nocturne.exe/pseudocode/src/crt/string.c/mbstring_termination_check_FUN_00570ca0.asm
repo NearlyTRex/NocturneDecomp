@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_00574000 at 00574009
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c30
+;   int g_INT_02de5c30
 ;
 ; *****************************************************************************
 
@@ -29,7 +29,7 @@ section .text
         ;   XREF to: 00570caf (CONDITIONAL_JUMP)  ; LAB_00570caf
     MOV EAX,0x1                         ; 00570ca9
     RET                                 ; 00570cae
-    CMP dword ptr [0x02de5c30],0x0      ; 00570caf | DAT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 00570caf | g_INT_02de5c30
         ;   Label: LAB_00570caf
     JZ 0x00570cd7                       ; 00570cb6
         ;   XREF to: 00570cd7 (CONDITIONAL_JUMP)  ; LAB_00570cd7

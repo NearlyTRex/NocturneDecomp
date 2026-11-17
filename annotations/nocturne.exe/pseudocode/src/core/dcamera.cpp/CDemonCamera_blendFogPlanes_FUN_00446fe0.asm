@@ -14,8 +14,8 @@
 ;   core_dcamera.cpp_CDemonCamera_processCorona_FUN_00444f90 at 00444ff6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_012cecb8
-;   undefined4 DAT_012e18b8
+;   undefined4 g_SFogImagePlane_012ceb78.pixels[1][0]
+;   undefined4 g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]
 ;
 ; Called Functions:
 ;   core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50
@@ -88,9 +88,9 @@ section .text
     PUSH EAX                            ; 00447092
     MOV EDX,dword ptr [ESP + 0x28]      ; 00447093
     PUSH EDX                            ; 00447097
-    PUSH EBX                            ; 00447098 | DAT_012e18b8
+    PUSH EBX                            ; 00447098 | g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]
     PUSH EBP                            ; 00447099
-    PUSH ESI                            ; 0044709a | DAT_012cecb8
+    PUSH ESI                            ; 0044709a | g_SFogImagePlane_012ceb78.pixels[1][0]
     CALL core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50 ; 0044709b
         ;   XREF to: 00465f50 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_alphaBlendPixelsMMX_FUN_00465f50(uint * output_buffer, uint * source1_buffer, uint * source2_buffer, uint alpha1, ...)
     ADD ESP,0x18                        ; 004470a0

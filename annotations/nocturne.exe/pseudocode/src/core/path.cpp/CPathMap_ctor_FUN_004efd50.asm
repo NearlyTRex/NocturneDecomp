@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Too_many_pathmaps_0058ccaa
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01e312f8
+;   int g_INT_01e312f8
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -36,16 +36,16 @@ section .text
     MOV dword ptr [EBX + 0x138b0],EAX   ; 004efd6d
     CALL core_path.cpp_CPathMap_reset_FUN_004f1e10 ; 004efd73
         ;   XREF to: 004f1e10 (UNCONDITIONAL_CALL)  ; void core_path.cpp_CPathMap_reset_FUN_004f1e10(CPathMap * this_ptr)
-    MOV EDX,dword ptr [0x01e312f8]      ; 004efd78 | DAT_01e312f8
+    MOV EDX,dword ptr [0x01e312f8]      ; 004efd78 | g_INT_01e312f8
     ADD ESP,0x4                         ; 004efd7e
     CMP EDX,0xc8                        ; 004efd81
     JGE 0x004efda3                      ; 004efd87
         ;   XREF to: 004efda3 (CONDITIONAL_JUMP)  ; LAB_004efda3
-    MOV EAX,[0x01e312f8]                ; 004efd89 | DAT_01e312f8
+    MOV EAX,[0x01e312f8]                ; 004efd89 | g_INT_01e312f8
         ;   Label: LAB_004efd89
     LEA EDI,[EAX + 0x1]                 ; 004efd8e
     MOV dword ptr [EAX*0x4 + 0x1e312fc],EBX ; 004efd91
-    MOV dword ptr [0x01e312f8],EDI      ; 004efd98 | DAT_01e312f8
+    MOV dword ptr [0x01e312f8],EDI      ; 004efd98 | g_INT_01e312f8
     MOV EAX,EBX                         ; 004efd9e
     POP EDI                             ; 004efda0
     POP EBX                             ; 004efda1

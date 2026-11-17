@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 43,
+    "complexity_score": 18,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 18,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 59
   },
   "cross_references": [],
@@ -152,22 +150,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 13,
-      "match": "DAT_01ec1850",
-      "severity": "mild",
-      "text": "*out_cost = *(int *)(&DAT_01ec1850 + g_INT_01ed02ac * 0xc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_01ec1854",
-      "severity": "mild",
-      "text": "*out_z = *(int *)(&DAT_01ec1854 + g_INT_01ed02ac * 0xc);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

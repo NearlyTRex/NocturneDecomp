@@ -76,7 +76,7 @@ void __cdecl core_gore_cpp_CBloodPool_render_FUN_004cdd30(CBloodPool *this_ptr,i
               (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[3].r,
                &g_SRenderVertex_ARRAY_0060b014[3].g,&g_SRenderVertex_ARRAY_0060b014[3].b);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01d22e48.base);
   }
   return;
 }

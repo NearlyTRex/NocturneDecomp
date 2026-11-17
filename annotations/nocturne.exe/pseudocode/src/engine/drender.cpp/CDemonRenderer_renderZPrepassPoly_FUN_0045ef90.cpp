@@ -26,7 +26,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(C
       pSVar3 = poly;
       do {
         iVar1 = pSVar3->vertices[0].vertex_index;
-        *(int *)(&DAT_01b4d76c + iVar2) = iVar1;
+        *(int *)((int)g_INT_ARRAY_01b4d76c + iVar2) = iVar1;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
         {
@@ -53,7 +53,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderZPrepassPoly_FUN_0045ef90(C
         g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepth16BitConditional_FUN_00463ac7;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);
+                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01b4d76c);
       this_ptr->face_capture_enabled = iVar4;
     }
   }

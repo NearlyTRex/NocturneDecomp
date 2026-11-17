@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dstrendr_cpp_blendLightmapSharedU32toU16pNoBiasPx1MMX_FUN_00466886(ushort *output_pixel,uint *texture_pixel,byte *texture_index,byte *lightmap_index)
 {
 __asm {
@@ -21,17 +19,17 @@ __asm {
         psllw MM5,0x6
         movzx EDX,byte ptr [EBX]
         movd MM0,dword ptr [ESI]
-        movd MM2,dword ptr [DAT_00b0e1fc + EDX*0x4]
+        movd MM2,dword ptr [g_UINT_ARRAY_00b0e1fc + EDX*0x4]
         movzx EAX,byte ptr [EBP]
         punpcklbw MM0,MM7
         shr EDX,0x1
         punpcklbw MM2,MM7
         add EAX,EDX
         pmullw MM0,MM2
-        movq MM3,qword ptr [DAT_005b5d00 + EAX*0x8]
+        movq MM3,qword ptr [g_USHORT_ARRAY_005b5d00 + EAX*0x8]
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005b64f8]
+        pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4

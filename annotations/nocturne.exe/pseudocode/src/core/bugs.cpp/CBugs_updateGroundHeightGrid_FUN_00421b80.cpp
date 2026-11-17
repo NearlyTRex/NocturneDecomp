@@ -18,8 +18,8 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs *this
   int unaff_EBX;
   int iVar5;
   int iVar6;
-  uint *puVar7;
-  uint *puVar8;
+  float *pfVar7;
+  float (*pafVar8) [12];
   int iVar9;
   byte bVar10;
   double dVar11;
@@ -73,17 +73,17 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs *this
     local_24 = *(int *)(unaff_EBX + 0x19850) - local_18;
     local_2c = local_20 + 0xb;
     local_28 = local_24 + 0xb;
-    puVar7 = (uint *)(unaff_EBX + 0x12720);
-    puVar8 = &DAT_00764b58;
+    pfVar7 = (float *)(unaff_EBX + 0x12720);
+    pafVar8 = g_FLOAT_ARRAY_ARRAY_00764b58;
     for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar8 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+      (*pafVar8)[0] = *pfVar7;
+      pfVar7 = pfVar7 + (uint)bVar10 * -2 + 1;
+      pafVar8 = (float (*) [12])((int)pafVar8 + ((uint)bVar10 * -2 + 1) * 4);
     }
     for (iVar4 = 0; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(byte *)puVar8 = *(byte *)puVar7;
-      puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
-      puVar8 = (uint *)((int)puVar8 + (uint)bVar10 * -2 + 1);
+      *(byte *)*pafVar8 = *(byte *)pfVar7;
+      pfVar7 = (float *)((int)pfVar7 + (uint)bVar10 * -2 + 1);
+      pafVar8 = (float (*) [12])((int)pafVar8 + (uint)bVar10 * -2 + 1);
     }
     local_54.y = *(float *)(unaff_EBX + 0x24);
     fVar2 = *(float *)(unaff_EBX + 0x28);
@@ -109,7 +109,8 @@ void __cdecl core_bugs_cpp_CBugs_updateGroundHeightGrid_FUN_00421b80(CBugs *this
           *(float *)(iVar9 + 0x12720) = fVar3 - *(float *)(unaff_EBX + 0x24);
         }
         else {
-          *(uint *)(iVar4 + 0x12720) = *(uint *)((int)&DAT_00764b58 + iVar6);
+          *(uint *)(iVar4 + 0x12720) =
+               *(uint *)((int)g_FLOAT_ARRAY_ARRAY_00764b58[0] + iVar6);
         }
         iVar4 = iVar4 + 4;
         iVar6 = iVar6 + 4;

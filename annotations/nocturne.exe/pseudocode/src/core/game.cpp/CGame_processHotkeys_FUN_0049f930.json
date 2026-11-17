@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 880,
-    "complexity_score": 372,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 35,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 282,
-    "suspect_count": 7,
+    "pseudocode_lines": 281,
+    "suspect_count": 6,
     "suspect_types": [
       "stack_param",
       "stack_ref",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 1162
+    "total_lines": 1161
   },
   "cross_references": [
     {
@@ -292,20 +291,20 @@
     },
     {
       "addr": "01bd1d94",
-      "name": "DAT_01bd1d94",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_01bd1d94",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "01c78420",
-      "name": "DAT_01c78420",
-      "type": "undefined4",
+      "name": "g_INT_01c78420",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c78ac8",
-      "name": "DAT_01c78ac8",
-      "type": "undefined4",
+      "name": "g_INT_01c78ac8",
+      "type": "int",
       "value": null
     },
     {
@@ -316,8 +315,8 @@
     },
     {
       "addr": "01cd4318",
-      "name": "DAT_01cd4318",
-      "type": "undefined4",
+      "name": "g_INT_01cd4318",
+      "type": "int",
       "value": null
     },
     {
@@ -478,16 +477,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "float in_stack_00000080;",
@@ -495,7 +486,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 240,
+      "line": 238,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffffe4c,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
@@ -503,7 +494,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 241,
+      "line": 239,
       "match": "&stack0xfffffe4c",
       "severity": "moderate",
       "text": "core_game_cpp_CGame_displayMessage_FUN_0049aa30(this_ptr,&stack0xfffffe4c,1.0);",
@@ -511,7 +502,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 270,
+      "line": 268,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080 = -0.02;",
@@ -519,7 +510,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 274,
+      "line": 272,
       "match": "in_stack_00000080",
       "severity": "moderate",
       "text": "in_stack_00000080;",
@@ -527,7 +518,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 176,
+      "line": 174,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

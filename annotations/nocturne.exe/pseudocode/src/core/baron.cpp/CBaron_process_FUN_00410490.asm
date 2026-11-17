@@ -36,15 +36,15 @@
 ;   double DOUBLE_00578658 = 12.5663706140000
 ;   double DOUBLE_00578660 = 0.333333333333333
 ;   double DOUBLE_00578668 = 32
-;   undefined4 DAT_005acf40
+;   SMRGLTextureBasic g_SMRGLTextureBasic_005acf40
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 DAT_007642e8
-;   undefined4 DAT_0076431c
-;   undefined4 DAT_00764320
-;   undefined4 DAT_0076432c
+;   int g_INT_007642e8
+;   int g_INT_0076431c
+;   int g_INT_00764320
+;   float g_FLOAT_0076432c
 ;   CConsole g_CConsoleInstance
 ;   ... and 2 more
 ;
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 004104f3 (CONDITIONAL_JUMP)  ; LAB_004104f3
     LEA EAX,[EBP + 0x1faa0]             ; 004104b0
     PUSH EAX                            ; 004104b6
-    MOV ECX,dword ptr [0x005b7650]      ; 004104b7 | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004104b7 | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 004104bd
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004104be
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -113,7 +113,7 @@ section .text
     LEA EAX,[EBP + 0x1fa3c]             ; 004104f3
         ;   Label: LAB_004104f3
     PUSH EAX                            ; 004104f9
-    MOV ESI,dword ptr [0x005b7650]      ; 004104fa | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004104fa | g_CEventList_PTR_005b7650
     PUSH ESI                            ; 00410500
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00410501
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -265,7 +265,7 @@ section .text
         ;   XREF to: 0051b8a0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0051b8a0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004106e9
     PUSH 0x51b650                       ; 004106ec
-    MOV ESI,dword ptr [0x007642e8]      ; 004106f1 | DAT_007642e8
+    MOV ESI,dword ptr [0x007642e8]      ; 004106f1 | g_INT_007642e8
     PUSH ESI                            ; 004106f7
     LEA EAX,[EBP + 0x1fb04]             ; 004106f8
     PUSH dword ptr [EBP + 0x1fb10]      ; 004106fe
@@ -338,9 +338,9 @@ section .text
     CMP EBX,0x2                         ; 004107d8
     JL 0x00410745                       ; 004107db
         ;   XREF to: 00410745 (CONDITIONAL_JUMP)  ; LAB_00410745
-    FLD float ptr [0x0076432c]          ; 004107e1 | DAT_0076432c
+    FLD float ptr [0x0076432c]          ; 004107e1 | g_FLOAT_0076432c
     FADD float ptr [ESP + 0xb0]         ; 004107e7
-    FSTP float ptr [0x0076432c]         ; 004107ee | DAT_0076432c
+    FSTP float ptr [0x0076432c]         ; 004107ee | g_FLOAT_0076432c
     POP EDI                             ; 004107f4
     ADD ESP,0x98                        ; 004107f5
     POP EBP                             ; 004107fb
@@ -387,7 +387,7 @@ section .text
     LEA EAX,[EBP + 0x150]               ; 0041084b
     JMP 0x0041061b                      ; 00410851
         ;   XREF to: 0041061b (UNCONDITIONAL_JUMP)  ; LAB_0041061b
-    MOV EBX,dword ptr [0x0076431c]      ; 00410856 | DAT_0076431c
+    MOV EBX,dword ptr [0x0076431c]      ; 00410856 | g_INT_0076431c
         ;   Label: caseD_4
     LEA EAX,[EBX*0x4 + 0x0]             ; 0041085c
     SUB EAX,EBX                         ; 00410863
@@ -419,7 +419,7 @@ section .text
     MOV dword ptr [ESP + 0x7c],EAX      ; 004108a8
     MOV EAX,dword ptr [EBX + 0x8]       ; 004108ac
     MOV dword ptr [ESP + 0x80],EAX      ; 004108af
-    MOV EBX,dword ptr [0x00764320]      ; 004108b6 | DAT_00764320
+    MOV EBX,dword ptr [0x00764320]      ; 004108b6 | g_INT_00764320
         ;   Label: LAB_004108b6
     LEA EAX,[EBX*0x4 + 0x0]             ; 004108bc
     SUB EAX,EBX                         ; 004108c3
@@ -455,7 +455,7 @@ section .text
         ;   Label: LAB_00410913
     JNZ 0x0041097c                      ; 0041091a
         ;   XREF to: 0041097c (CONDITIONAL_JUMP)  ; LAB_0041097c
-    PUSH 0x5acf40                       ; 0041091c | DAT_005acf40
+    PUSH 0x5acf40                       ; 0041091c | g_SMRGLTextureBasic_005acf40
     PUSH 0x3f000000                     ; 00410921
     PUSH 0x3f000000                     ; 00410926
     LEA EAX,[EBP + 0x1fb1c]             ; 0041092b
@@ -468,7 +468,7 @@ section .text
     CALL core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590 ; 00410946
         ;   XREF to: 0048c590 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_0048c590(CFireEffect * this_ptr, CVector3f * start_point, CVector3f * end_point, float size, ...)
     ADD ESP,0x1c                        ; 0041094b
-    PUSH 0x5acf40                       ; 0041094e | DAT_005acf40
+    PUSH 0x5acf40                       ; 0041094e | g_SMRGLTextureBasic_005acf40
     PUSH 0x3f000000                     ; 00410953
     PUSH 0x3f000000                     ; 00410958
     LEA EAX,[EBP + 0x1fb28]             ; 0041095d

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)
 
 {
@@ -70,7 +68,7 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
     } while (local_20 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
-  if (_DAT_01d16810 == 0) {
+  if (g_INT_01d16810 == 0) {
     iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0
                       (g_CBitFont_PTR_014b9904,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
     iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_00492e60
@@ -101,10 +99,10 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440(char **menu_text_a
   } while (*pcVar6 != '\0');
   pcVar6 = (char *)0x0;
 LAB_004cf677:
-  _DAT_01cc5b68 = 0;
+  g_INT_01cc5b68 = 0;
   iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD8);
   if (iVar1 != 0) {
-    _DAT_01cc5b68 = 1;
+    g_INT_01cc5b68 = 1;
     iVar1 = *selected_index_ptr;
     *selected_index_ptr = iVar1 + -1;
     if (iVar1 + -1 < 0) {
@@ -114,17 +112,17 @@ LAB_004cf677:
   iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD2);
   if (iVar1 != 0) {
     iVar1 = *selected_index_ptr;
-    _DAT_01cc5b68 = 1;
+    g_INT_01cc5b68 = 1;
     *selected_index_ptr = iVar1 + 1;
     if (menu_count <= iVar1 + 1) {
       *selected_index_ptr = 0;
     }
   }
   if (pcVar6 != (char *)0x0) {
-    _DAT_01cc5b5c = 0;
+    g_INT_01cc5b5c = 0;
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {
-      _DAT_01cc5b5c = 1;
+      g_INT_01cc5b5c = 1;
       return *selected_index_ptr;
     }
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD6);

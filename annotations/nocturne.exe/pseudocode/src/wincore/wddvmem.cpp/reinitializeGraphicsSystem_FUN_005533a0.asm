@@ -16,7 +16,7 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02ddf568
+;   int g_INT_02ddf568
 ;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
         ;   Label: wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005533a0
     XOR EDX,EDX                         ; 005533a1
     MOV ECX,dword ptr [0x02dc9d60]      ; 005533a3 | g_UseDirect3D
-    MOV dword ptr [0x02ddf568],EDX      ; 005533a9 | DAT_02ddf568
+    MOV dword ptr [0x02ddf568],EDX      ; 005533a9 | g_INT_02ddf568
     TEST ECX,ECX                        ; 005533af
     JNZ 0x005533b5                      ; 005533b1
         ;   XREF to: 005533b5 (CONDITIONAL_JUMP)  ; LAB_005533b5

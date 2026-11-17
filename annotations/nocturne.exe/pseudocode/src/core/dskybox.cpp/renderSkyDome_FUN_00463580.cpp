@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor)
 
 {
@@ -52,11 +50,11 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_0046b9c0(&g_CDemonRaytraceInstance,&local_60);
   core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0(&g_CDemonRaytraceInstance,&local_54);
   fVar4 = (float)0.5;
-  _DAT_01b7b728 = (local_60.x + local_54.x) * fVar4;
-  _DAT_01b7b730 = (local_60.z + local_54.z) * fVar4;
+  g_CVector3f_01b7b728.x = (local_60.x + local_54.x) * fVar4;
+  g_CVector3f_01b7b728.z = (local_60.z + local_54.z) * fVar4;
   local_34 = (local_54.x - local_60.x) * fVar4 * (float)1.4139999999999999;
   CVector3f_005b0678.x = 0.0;
-  _DAT_01b7b72c = local_60.y;
+  g_CVector3f_01b7b728.y = local_60.y;
   if (0.0 < local_34) {
     CVector3f_005b0678.x = local_34;
   }
@@ -69,7 +67,7 @@ void __cdecl core_dskybox_cpp_renderSkyDome_FUN_00463580(SMRGLSkyTexture *sky_te
     CVector3f_005b0678.x = local_30;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            (g_CDemonRenderer_PTR_005ae704,(CVector3f *)&DAT_01b7b728);
+            (g_CDemonRenderer_PTR_005ae704,&g_CVector3f_01b7b728);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&(sky_texture->base).count);
   fVar7 = (float10)fsin((float10)0.58904862253125001);

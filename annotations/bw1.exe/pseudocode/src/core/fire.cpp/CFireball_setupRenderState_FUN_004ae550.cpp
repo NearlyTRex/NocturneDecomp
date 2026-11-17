@@ -25,15 +25,15 @@ void __cdecl core_fire_cpp_CFireball_setupRenderState_FUN_004ae550(CFireball *th
   CVector3i local_18;
   
   bVar6 = 0;
-  g_SMRGLHeaderPrimitive_01c57090.base.count = 4;
-  g_SMRGLHeaderPrimitive_01c57090.surface_normal.A.i = 0;
-  g_SMRGLHeaderPrimitive_01c57090.surface_normal.B.i = 0;
-  g_SMRGLHeaderPrimitive_01c57090.surface_normal.C.i = 0;
-  g_SMRGLHeaderPrimitive_01c57090.surface_normal.D.i = 0;
-  g_INT_01c570a8 = 0;
-  g_INT_01c570ac = 1;
-  g_INT_01c570b0 = 2;
-  g_INT_01c570b4 = 3;
+  g_SMRGLPrimitiveQuadIndex_01c57090.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c57090.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01c57090.vertices[1] = 1;
+  g_SMRGLPrimitiveQuadIndex_01c57090.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01c57090.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00483b50
             (g_CDemonRenderer_PTR_00612560,&local_18);
   g_CVector3i_01c57078.x = local_18.x;

@@ -10,7 +10,7 @@
 ;   TerminatedCString s_DirectSux_Unable_to_s_s_005d452f
 ;   TerminatedCString s_Querry_DirectSound_capab_005d46cb
 ;   IDirectSound* g_IDirectSound_PTR_02cf49c4
-;   undefined4 DAT_02cf49d0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005a28f0
@@ -28,7 +28,7 @@ section .text
     CMP dword ptr [0x02cf49c4],0x0      ; 0055b707 | g_IDirectSound_PTR_02cf49c4
     JZ 0x0055b727                       ; 0055b70e
         ;   XREF to: 0055b727 (CONDITIONAL_JUMP)  ; LAB_0055b727
-    MOV ECX,dword ptr [0x02cf49d0]      ; 0055b710 | DAT_02cf49d0
+    MOV ECX,dword ptr [0x02cf49d0]      ; 0055b710 | g_IDirectSound3DListener_PTR_02cf49d0
     TEST ECX,ECX                        ; 0055b716
     JZ 0x0055b72b                       ; 0055b718
         ;   XREF to: 0055b72b (CONDITIONAL_JUMP)  ; LAB_0055b72b

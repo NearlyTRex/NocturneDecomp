@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "system/winnt.h"
 #include "types/classes/CVector3i.h"
 
@@ -13,6 +14,10 @@
 
 // CVector3i
 extern CVector3i g_CVector3i_026810c0;
+
+// FileListNode*
+extern FileListNode* g_FileListNode_PTR_02680160;
+extern FileListNode* g_FileListNode_PTR_02680164;
 
 // WCHAR*
 extern WCHAR* g_WCHAR_PTR_02680178;
@@ -57,6 +62,10 @@ extern void* g_PTR_0268017c;
 extern void* g_PTR_02681078;
 extern void* g_PTR_026810a0;
 extern void* g_PTR_026810b0;
+
+// wchar_t[260]
+extern wchar_t g_WCHAR_T_ARRAY_02680284[260];
+extern wchar_t g_WCHAR_T_ARRAY_02680590[260];
 
 // word
 extern word DAT_026820D6;

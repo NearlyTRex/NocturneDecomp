@@ -68,9 +68,9 @@
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
 ;   int g_INT_006141d8 = 0xff
-;   int g_INT_0061c8d0 = 0xf800
-;   int g_INT_0061c8d8 = 0x7e0
-;   int g_INT_0061c8e0 = 0x1f
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8d0
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8d8
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8e0
 ;   void*[1200] g_ARRAY_PTR_01c2a38c
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01c35814
 ;   int g_INT_01c35818
@@ -531,7 +531,7 @@ section .text
     SHL ECX,0x2                         ; 004a9dac
     MOV DX,word ptr [EBX]               ; 004a9daf
     ADD EDI,ECX                         ; 004a9db2
-    MOV EBP,dword ptr [0x0061c8d0]      ; 004a9db4 | g_INT_0061c8d0
+    MOV EBP,dword ptr [0x0061c8d0]      ; 004a9db4 | g_MMX_INTEGER_0061c8d0
     MOV dword ptr [ESP + 0xc4],EDX      ; 004a9dba
     MOV EDX,dword ptr [EDI + 0xdb4]     ; 004a9dc1
     MOV CL,byte ptr [0x01c35814]        ; 004a9dc7 | g_BIT_INTEGER32_01c35814
@@ -540,7 +540,7 @@ section .text
     MOV CL,byte ptr [0x01c3581c]        ; 004a9dd1 | g_BIT_INTEGER32_01c3581c
     MOV ESI,dword ptr [EDI + 0xdb4]     ; 004a9dd7
     SHL EDX,CL                          ; 004a9ddd
-    AND ESI,dword ptr [0x0061c8d8]      ; 004a9ddf | g_INT_0061c8d8
+    AND ESI,dword ptr [0x0061c8d8]      ; 004a9ddf | g_MMX_INTEGER_0061c8d8
     MOV CL,byte ptr [0x01c35820]        ; 004a9de5 | g_BIT_INTEGER32_01c35820
     SHR ESI,CL                          ; 004a9deb
     MOV CL,byte ptr [0x01c35828]        ; 004a9ded | g_BIT_INTEGER32_01c35828
@@ -548,7 +548,7 @@ section .text
     AND ESI,0xff                        ; 004a9df5
     IMUL ESI,EAX                        ; 004a9dfb
     MOV EBP,dword ptr [EDI + 0xdb4]     ; 004a9dfe
-    AND EBP,dword ptr [0x0061c8e0]      ; 004a9e04 | g_INT_0061c8e0
+    AND EBP,dword ptr [0x0061c8e0]      ; 004a9e04 | g_MMX_INTEGER_0061c8e0
     MOV CL,byte ptr [0x01c3582c]        ; 004a9e0a | g_BIT_INTEGER32_01c3582c
     SHR EBP,CL                          ; 004a9e10
     MOV CL,byte ptr [0x01c35834]        ; 004a9e12 | g_BIT_INTEGER32_01c35834
@@ -559,7 +559,7 @@ section .text
     MOV dword ptr [ESP + 0x34],EDX      ; 004a9e29
     XOR EDX,EDX                         ; 004a9e2d
     MOV DX,word ptr [ESP + 0xc4]        ; 004a9e2f
-    MOV ECX,dword ptr [0x0061c8d0]      ; 004a9e37 | g_INT_0061c8d0
+    MOV ECX,dword ptr [0x0061c8d0]      ; 004a9e37 | g_MMX_INTEGER_0061c8d0
     AND ECX,EDX                         ; 004a9e3d
     MOV dword ptr [ESP + 0x98],ECX      ; 004a9e3f
     MOV EDI,dword ptr [ESP + 0x98]      ; 004a9e46
@@ -570,7 +570,7 @@ section .text
     MOV ECX,EDI                         ; 004a9e5d
     AND ECX,0xff                        ; 004a9e5f
     MOV dword ptr [ESP + 0x38],ECX      ; 004a9e65
-    MOV ECX,dword ptr [0x0061c8d8]      ; 004a9e69 | g_INT_0061c8d8
+    MOV ECX,dword ptr [0x0061c8d8]      ; 004a9e69 | g_MMX_INTEGER_0061c8d8
     AND ECX,EDX                         ; 004a9e6f
     MOV dword ptr [ESP + 0x98],ECX      ; 004a9e71
     MOV EDI,dword ptr [ESP + 0x98]      ; 004a9e78
@@ -578,7 +578,7 @@ section .text
     SHR EDI,CL                          ; 004a9e85
     MOV CL,byte ptr [0x01c35828]        ; 004a9e87 | g_BIT_INTEGER32_01c35828
     SHL EDI,CL                          ; 004a9e8d
-    MOV ECX,dword ptr [0x0061c8e0]      ; 004a9e8f | g_INT_0061c8e0
+    MOV ECX,dword ptr [0x0061c8e0]      ; 004a9e8f | g_MMX_INTEGER_0061c8e0
     AND ECX,EDX                         ; 004a9e95
     MOV dword ptr [ESP + 0x98],ECX      ; 004a9e97
     MOV EDX,dword ptr [ESP + 0x98]      ; 004a9e9e
@@ -768,7 +768,7 @@ section .text
     MOV DX,word ptr [EBX]               ; 004aa103
     MOV dword ptr [ESP + 0xc0],EDX      ; 004aa106
     XOR EDX,EDX                         ; 004aa10d
-    MOV ESI,dword ptr [0x0061c8d0]      ; 004aa10f | g_INT_0061c8d0
+    MOV ESI,dword ptr [0x0061c8d0]      ; 004aa10f | g_MMX_INTEGER_0061c8d0
     MOV DX,word ptr [0x01cb0242]        ; 004aa115 | g_USHORT_01cb0242
     MOV CL,byte ptr [0x01c35814]        ; 004aa11c | g_BIT_INTEGER32_01c35814
     AND ESI,EDX                         ; 004aa122
@@ -777,10 +777,10 @@ section .text
     SHL ESI,CL                          ; 004aa12c
     AND ESI,0xff                        ; 004aa12e
     MOV dword ptr [ESP + 0x54],ESI      ; 004aa134
-    MOV ESI,dword ptr [0x0061c8d8]      ; 004aa138 | g_INT_0061c8d8
+    MOV ESI,dword ptr [0x0061c8d8]      ; 004aa138 | g_MMX_INTEGER_0061c8d8
     MOV CL,byte ptr [0x01c35820]        ; 004aa13e | g_BIT_INTEGER32_01c35820
     AND ESI,EDX                         ; 004aa144
-    MOV EDI,dword ptr [0x0061c8e0]      ; 004aa146 | g_INT_0061c8e0
+    MOV EDI,dword ptr [0x0061c8e0]      ; 004aa146 | g_MMX_INTEGER_0061c8e0
     SHR ESI,CL                          ; 004aa14c
     MOV CL,byte ptr [0x01c35828]        ; 004aa14e | g_BIT_INTEGER32_01c35828
     AND EDI,EDX                         ; 004aa154
@@ -791,7 +791,7 @@ section .text
     MOV CL,byte ptr [0x01c35834]        ; 004aa162 | g_BIT_INTEGER32_01c35834
     MOV DX,word ptr [ESP + 0xc0]        ; 004aa168
     SHL EDI,CL                          ; 004aa170
-    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa172 | g_INT_0061c8d0
+    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa172 | g_MMX_INTEGER_0061c8d0
     AND ECX,EDX                         ; 004aa178
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa17a
     MOV EBP,dword ptr [ESP + 0x98]      ; 004aa181
@@ -802,7 +802,7 @@ section .text
     MOV ECX,EBP                         ; 004aa198
     AND ECX,0xff                        ; 004aa19a
     MOV dword ptr [ESP + 0x58],ECX      ; 004aa1a0
-    MOV ECX,dword ptr [0x0061c8d8]      ; 004aa1a4 | g_INT_0061c8d8
+    MOV ECX,dword ptr [0x0061c8d8]      ; 004aa1a4 | g_MMX_INTEGER_0061c8d8
     AND ECX,EDX                         ; 004aa1aa
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa1ac
     MOV EBP,dword ptr [ESP + 0x98]      ; 004aa1b3
@@ -810,7 +810,7 @@ section .text
     SHR EBP,CL                          ; 004aa1c0
     MOV CL,byte ptr [0x01c35828]        ; 004aa1c2 | g_BIT_INTEGER32_01c35828
     SHL EBP,CL                          ; 004aa1c8
-    MOV ECX,dword ptr [0x0061c8e0]      ; 004aa1ca | g_INT_0061c8e0
+    MOV ECX,dword ptr [0x0061c8e0]      ; 004aa1ca | g_MMX_INTEGER_0061c8e0
     AND ECX,EDX                         ; 004aa1d0
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa1d2
     MOV EDX,dword ptr [ESP + 0x98]      ; 004aa1d9
@@ -1001,7 +1001,7 @@ section .text
     JZ 0x004aa5d5                       ; 004aa443
         ;   XREF to: 004aa5d5 (CONDITIONAL_JUMP)  ; LAB_004aa5d5
     MOV EBP,dword ptr [0x01cb0254]      ; 004aa449 | g_INT_01cb0254
-    MOV ESI,dword ptr [0x0061c8d0]      ; 004aa44f | g_INT_0061c8d0
+    MOV ESI,dword ptr [0x0061c8d0]      ; 004aa44f | g_MMX_INTEGER_0061c8d0
     MOV CL,byte ptr [0x01c35814]        ; 004aa455 | g_BIT_INTEGER32_01c35814
     AND EBP,ESI                         ; 004aa45b
     SHR EBP,CL                          ; 004aa45d
@@ -1010,7 +1010,7 @@ section .text
     AND EBP,0xff                        ; 004aa467
     IMUL EBP,EAX                        ; 004aa46d
     MOV DX,word ptr [EBX]               ; 004aa470
-    MOV EDI,dword ptr [0x0061c8d8]      ; 004aa473 | g_INT_0061c8d8
+    MOV EDI,dword ptr [0x0061c8d8]      ; 004aa473 | g_MMX_INTEGER_0061c8d8
     MOV dword ptr [ESP + 0xbc],EDX      ; 004aa479
     MOV EDX,dword ptr [0x01cb0254]      ; 004aa480 | g_INT_01cb0254
     AND EDI,EDX                         ; 004aa486
@@ -1021,7 +1021,7 @@ section .text
     AND EDI,0xff                        ; 004aa498
     IMUL EDI,EAX                        ; 004aa49e
     MOV ESI,EDX                         ; 004aa4a1
-    AND ESI,dword ptr [0x0061c8e0]      ; 004aa4a3 | g_INT_0061c8e0
+    AND ESI,dword ptr [0x0061c8e0]      ; 004aa4a3 | g_MMX_INTEGER_0061c8e0
     MOV CL,byte ptr [0x01c3582c]        ; 004aa4a9 | g_BIT_INTEGER32_01c3582c
     SHR ESI,CL                          ; 004aa4af
     MOV CL,byte ptr [0x01c35834]        ; 004aa4b1 | g_BIT_INTEGER32_01c35834
@@ -1030,7 +1030,7 @@ section .text
     IMUL ESI,EAX                        ; 004aa4bf
     XOR EDX,EDX                         ; 004aa4c2
     MOV DX,word ptr [ESP + 0xbc]        ; 004aa4c4
-    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa4cc | g_INT_0061c8d0
+    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa4cc | g_MMX_INTEGER_0061c8d0
     MOV dword ptr [ESP + 0x98],EDX      ; 004aa4d2
     AND EDX,ECX                         ; 004aa4d9
     MOV CL,byte ptr [0x01c35814]        ; 004aa4db | g_BIT_INTEGER32_01c35814
@@ -1041,7 +1041,7 @@ section .text
     AND ECX,0xff                        ; 004aa4ed
     MOV EDX,dword ptr [ESP + 0x98]      ; 004aa4f3
     MOV dword ptr [ESP + 0x70],ECX      ; 004aa4fa
-    AND EDX,dword ptr [0x0061c8d8]      ; 004aa4fe | g_INT_0061c8d8
+    AND EDX,dword ptr [0x0061c8d8]      ; 004aa4fe | g_MMX_INTEGER_0061c8d8
     MOV CL,byte ptr [0x01c35820]        ; 004aa504 | g_BIT_INTEGER32_01c35820
     SHR EDX,CL                          ; 004aa50a
     MOV CL,byte ptr [0x01c35828]        ; 004aa50c | g_BIT_INTEGER32_01c35828
@@ -1050,7 +1050,7 @@ section .text
     AND ECX,0xff                        ; 004aa516
     MOV EDX,dword ptr [ESP + 0x98]      ; 004aa51c
     MOV dword ptr [ESP + 0x74],ECX      ; 004aa523
-    AND EDX,dword ptr [0x0061c8e0]      ; 004aa527 | g_INT_0061c8e0
+    AND EDX,dword ptr [0x0061c8e0]      ; 004aa527 | g_MMX_INTEGER_0061c8e0
     MOV CL,byte ptr [0x01c3582c]        ; 004aa52d | g_BIT_INTEGER32_01c3582c
     SHR EDX,CL                          ; 004aa533
     MOV CL,byte ptr [0x01c35834]        ; 004aa535 | g_BIT_INTEGER32_01c35834
@@ -1231,7 +1231,7 @@ section .text
     JZ 0x004aa941                       ; 004aa786
         ;   XREF to: 004aa941 (CONDITIONAL_JUMP)  ; LAB_004aa941
     XOR ESI,ESI                         ; 004aa78c
-    MOV EDI,dword ptr [0x0061c8d0]      ; 004aa78e | g_INT_0061c8d0
+    MOV EDI,dword ptr [0x0061c8d0]      ; 004aa78e | g_MMX_INTEGER_0061c8d0
     MOV SI,word ptr [ESP + 0xb8]        ; 004aa794
     MOV CL,byte ptr [0x01c35814]        ; 004aa79c | g_BIT_INTEGER32_01c35814
     AND EDI,ESI                         ; 004aa7a2
@@ -1242,7 +1242,7 @@ section .text
     IMUL EDI,EAX                        ; 004aa7b4
     MOV DX,word ptr [EBX]               ; 004aa7b7
     MOV dword ptr [ESP + 0xb4],EDX      ; 004aa7ba
-    MOV EDX,dword ptr [0x0061c8d8]      ; 004aa7c1 | g_INT_0061c8d8
+    MOV EDX,dword ptr [0x0061c8d8]      ; 004aa7c1 | g_MMX_INTEGER_0061c8d8
     AND EDX,ESI                         ; 004aa7c7
     MOV CL,byte ptr [0x01c35820]        ; 004aa7c9 | g_BIT_INTEGER32_01c35820
     SHR EDX,CL                          ; 004aa7cf
@@ -1250,7 +1250,7 @@ section .text
     SHL EDX,CL                          ; 004aa7d7
     AND EDX,0xff                        ; 004aa7d9
     IMUL EDX,EAX                        ; 004aa7df
-    AND ESI,dword ptr [0x0061c8e0]      ; 004aa7e2 | g_INT_0061c8e0
+    AND ESI,dword ptr [0x0061c8e0]      ; 004aa7e2 | g_MMX_INTEGER_0061c8e0
     MOV CL,byte ptr [0x01c3582c]        ; 004aa7e8 | g_BIT_INTEGER32_01c3582c
     SHR ESI,CL                          ; 004aa7ee
     MOV CL,byte ptr [0x01c35834]        ; 004aa7f0 | g_BIT_INTEGER32_01c35834
@@ -1258,7 +1258,7 @@ section .text
     AND ESI,0xff                        ; 004aa7f8
     MOV dword ptr [ESP + 0x8c],ESI      ; 004aa7fe
     XOR ESI,ESI                         ; 004aa805
-    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa807 | g_INT_0061c8d0
+    MOV ECX,dword ptr [0x0061c8d0]      ; 004aa807 | g_MMX_INTEGER_0061c8d0
     MOV SI,word ptr [ESP + 0xb4]        ; 004aa80d
     AND ECX,ESI                         ; 004aa815
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa817
@@ -1270,7 +1270,7 @@ section .text
     MOV ECX,EBP                         ; 004aa835
     AND ECX,0xff                        ; 004aa837
     MOV dword ptr [ESP + 0x90],ECX      ; 004aa83d
-    MOV ECX,dword ptr [0x0061c8d8]      ; 004aa844 | g_INT_0061c8d8
+    MOV ECX,dword ptr [0x0061c8d8]      ; 004aa844 | g_MMX_INTEGER_0061c8d8
     AND ECX,ESI                         ; 004aa84a
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa84c
     MOV EBP,dword ptr [ESP + 0x98]      ; 004aa853
@@ -1278,7 +1278,7 @@ section .text
     SHR EBP,CL                          ; 004aa860
     MOV CL,byte ptr [0x01c35828]        ; 004aa862 | g_BIT_INTEGER32_01c35828
     SHL EBP,CL                          ; 004aa868
-    MOV ECX,dword ptr [0x0061c8e0]      ; 004aa86a | g_INT_0061c8e0
+    MOV ECX,dword ptr [0x0061c8e0]      ; 004aa86a | g_MMX_INTEGER_0061c8e0
     AND ECX,ESI                         ; 004aa870
     MOV dword ptr [ESP + 0x98],ECX      ; 004aa872
     MOV ESI,dword ptr [ESP + 0x98]      ; 004aa879

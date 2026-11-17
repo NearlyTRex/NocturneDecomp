@@ -15,8 +15,8 @@ int __cdecl WideCharToSingleByte(wchar_t wide_char,char *output_buffer)
   if (_wide_char == (LPSTR)0x0) {
     return 0;
   }
-  iVar1 = WideCharToMultiByte(DAT_005c2144,0x200,(LPCWSTR)&output_buffer,1,_wide_char,2,(LPCSTR)0x0,
-                              (LPBOOL)0x0);
+  iVar1 = WideCharToMultiByte(g_UINT_005c2144,0x200,(LPCWSTR)&output_buffer,1,_wide_char,2,
+                              (LPCSTR)0x0,(LPBOOL)0x0);
   if (iVar1 != 0) {
     return iVar1;
   }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void)
 
 {
@@ -42,14 +40,14 @@ void __cdecl core_main_c_showPromoScreen_FUN_004c8eb0(void)
   do {
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     iVar4 = wincore_winrun_cpp_getTime_FUN_00558a30();
-    _DAT_01bd1d80 = (iVar4 - iVar3) / 0x12;
-    if (0x7fffffff < _DAT_01bd1d80) {
-      _DAT_01bd1d80 = 0;
+    g_INT_01bd1d80 = (iVar4 - iVar3) / 0x12;
+    if (0x7fffffff < (uint)g_INT_01bd1d80) {
+      g_INT_01bd1d80 = 0;
     }
-    if (0x4000 < (int)_DAT_01bd1d80) {
-      _DAT_01bd1d80 = 0x4000;
+    if (0x4000 < g_INT_01bd1d80) {
+      g_INT_01bd1d80 = 0x4000;
     }
-    iVar5 = iVar5 - _DAT_01bd1d80;
+    iVar5 = iVar5 - g_INT_01bd1d80;
     iVar3 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_LSHIFT);
   } while (((iVar3 == 0) ||
            (iVar3 = (*g_CKeys_PTR_005bac64->vtable->getKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE),

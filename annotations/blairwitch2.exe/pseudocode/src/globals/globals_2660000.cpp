@@ -68,6 +68,12 @@ CVector3f g_CVector3f_ARRAY_02661fb8[200] = {};
 // CWeather
 CWeather g_CWeather_02661f80 = {};
 
+// DWORD
+DWORD g_DWORD_02662d60 = {};
+
+// HMODULE
+HMODULE g_HMODULE_026656c0 = {};
+
 // HWND
 HWND g_HWND_02664628 = {};
 

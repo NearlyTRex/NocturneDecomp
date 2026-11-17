@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winrun_cpp_initJoystick_FUN_0058ffd0(void)
 
 {
   MMRESULT MVar1;
   tagJOYCAPSA local_194;
   
-  _DAT_026656c0 = GetModuleHandleA("winmm.dll");
-  if (_DAT_026656c0 != (HMODULE)0x0) {
-    g_PTR_026656bc = GetProcAddress(_DAT_026656c0,"joyGetPosEx");
+  g_HMODULE_026656c0 = GetModuleHandleA("winmm.dll");
+  if (g_HMODULE_026656c0 != (HMODULE)0x0) {
+    g_PTR_026656bc = GetProcAddress(g_HMODULE_026656c0,"joyGetPosEx");
   }
   MVar1 = joyGetDevCapsA(0,&local_194,0x194);
   if (MVar1 == 0) {

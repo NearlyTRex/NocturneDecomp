@@ -7,11 +7,11 @@
 // CLZWDecompress
 CLZWDecompress g_CLZWDecompressInstance = {};
 
+// SFogImagePlane
+SFogImagePlane g_SFogImagePlane_01342220 = {};
+
 // char[4096]
 char g_CHAR_ARRAY_01341200[4096] = {};
-
-// char[76797]
-char g_CHAR_ARRAY_01342220[76797] = {};
 
 // int
 int g_INT_01342200 = {};

@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonMission.h"
@@ -22,6 +23,8 @@
 #include "types/classes/CLevelLoader.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SLightGlowTable.h"
+#include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -83,6 +86,12 @@ extern CMini3D* g_CMini3DPtr;
 // CVector3i[62]
 extern CVector3i g_CVector3i_ARRAY_006113a0[62];
 
+// SLightGlowTable
+extern SLightGlowTable g_SLightGlowTable_006122a8;
+
+// SMRGLLightPrimitive[84]
+extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_00611688[84];
+
 // SMRGLPrimitiveQuad*[2000]
 extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_00612568[2000];
 
@@ -96,9 +105,6 @@ extern SMRGLTextureBasic g_SMRGLTextureBasic_00611130;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061127c;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00611388;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00612258;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006122a8;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006122c0;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_006122d8;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c3ec;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0061c404;
@@ -224,6 +230,13 @@ extern WatcomStaticDestructorNode DAT_0061F800;
 extern WatcomStaticDestructorNode DAT_0061F810;
 extern WatcomStaticDestructorNode DAT_0061F820;
 
+// _MMX_INTEGER
+extern _MMX_INTEGER g_MMX_INTEGER_006185a8;
+extern _MMX_INTEGER g_MMX_INTEGER_00618608;
+extern _MMX_INTEGER g_MMX_INTEGER_00618610;
+extern _MMX_INTEGER g_MMX_INTEGER_00618618;
+extern _MMX_INTEGER g_MMX_INTEGER_00618620;
+
 // byte
 extern byte g_BYTE_0061f7bb;
 
@@ -318,7 +331,6 @@ extern int g_INT_00614534;
 extern int g_INT_00614538;
 extern int g_INT_0061453c;
 extern int g_INT_00614544;
-extern int g_INT_006185a8;
 extern int g_INT_0061ab60;
 extern int g_CDynamiteClassVersion;
 extern int g_INT_0061abc4;
@@ -443,9 +455,6 @@ extern ulonglong g_ULONGLONG_ARRAY_0061b6a0[256];
 extern undefined1 DAT_006106bf;
 
 // undefined4
-extern undefined4 DAT_006116a4;
-extern undefined4 DAT_006116a8;
-extern undefined4 DAT_006116c8;
 extern undefined4 DAT_0061b4d4;
 extern undefined4 DAT_0061b514;
 extern undefined4 DAT_0061b518;
@@ -456,9 +465,6 @@ extern undefined4 DAT_0061b630;
 extern undefined4 DAT_0061b634;
 extern undefined4 DAT_0061d420;
 extern undefined4 DAT_0061d424;
-
-// undefined8
-extern undefined8 DAT_00618608;
 
 // ushort
 extern ushort g_USHORT_0061f5d8;

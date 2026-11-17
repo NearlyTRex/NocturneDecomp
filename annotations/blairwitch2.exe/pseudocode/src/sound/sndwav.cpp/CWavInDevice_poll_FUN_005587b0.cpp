@@ -45,11 +45,10 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005587b0(CWavInDevice *this_p
     if (g_INT_0264b260 <= iVar1) {
       iVar1 = 0;
     }
-    iVar2 = *(int *)(iVar1 * 4 + 0x264b15c);
-    if (iVar2 == 0) {
+    if (g_LPWAVEHDR_ARRAY_0264b15c[iVar1] == (LPWAVEHDR)0x0) {
       return -1;
     }
-    if ((*(byte *)(iVar2 + 0x10) & 1) == 0) {
+    if ((g_LPWAVEHDR_ARRAY_0264b15c[iVar1]->dwFlags & 1) == 0) {
       return iVar4;
     }
     iVar2 = sound_sndwav_cpp_writeWavInBuffer_FUN_00558190(iVar1);

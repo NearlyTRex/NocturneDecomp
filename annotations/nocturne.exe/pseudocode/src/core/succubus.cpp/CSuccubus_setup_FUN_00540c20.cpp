@@ -45,15 +45,15 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00540c20(CSuccubus *this_ptr)
             (&(this_ptr->base).base.cloth_list,&position->position,&euler->vec,0.05,
              (this_ptr->base).base.closest_distance_threshold,this_ptr_00);
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0(pCVar1);
-  _DAT_02dc9fec =
+  g_INT_02dc9fec =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Head",1);
   _DAT_02dc9ff8 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 L ForeArm",1);
   _DAT_02dc9ffc =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 R ForeArm",1);
-  _DAT_02dca000 =
+  g_INT_02dca000 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 L UpperArm",1);
-  _DAT_02dca004 =
+  g_INT_02dca004 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 R UpperArm",1);
   _DAT_02dca008 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 L Foot",1);
@@ -63,21 +63,21 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00540c20(CSuccubus *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 L Hand",1);
   _DAT_02dc9ff4 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 R Hand",1);
-  _DAT_02dca010 =
+  g_INT_02dca010 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Spine",1);
   _DAT_02dca014 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Spine1",1);
-  _DAT_02dca018 =
+  g_INT_02dca018 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Spine2",1);
-  _DAT_02dc9fec =
+  g_INT_02dc9fec =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Head",1);
-  _DAT_02dca000 =
+  g_INT_02dca000 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 L UpperArm",1);
-  _DAT_02dca004 =
+  g_INT_02dca004 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 R UpperArm",1);
-  _DAT_02dca010 =
+  g_INT_02dca010 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Spine",1);
-  _DAT_02dca018 =
+  g_INT_02dca018 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_02,"Bip01 Spine2",1);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0051b800(pCVar1);
@@ -88,13 +88,13 @@ void __cdecl core_succubus_cpp_CSuccubus_setup_FUN_00540c20(CSuccubus *this_ptr)
   this_ptr_01 = &this_ptr->morph;
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(this_ptr_01,0,pCVar1);
   core_morph_cpp_CMorph_setupModelFromDeformable_FUN_004e0170(this_ptr_01,1,this_ptr_00);
-  _DAT_01cd4314 = 0;
+  g_INT_01cd4314 = 0;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0
             (this_ptr_01,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0);
-  _DAT_01cd4314 = 1;
+  g_INT_01cd4314 = 1;
   core_morph_cpp_CMorph_addPartFromKeyframedModel_FUN_004e02c0
             (this_ptr_01,1,&(this_ptr->hotdemon_cloth_list).cloths[0]->model,0);
-  _DAT_01cd4314 = 0;
+  g_INT_01cd4314 = 0;
   (this_ptr->morph).rescale_enabled = 0;
   core_morph_cpp_CMorph_getReady_FUN_004e03c0(this_ptr_01);
   this_ptr->morph_started = 0;

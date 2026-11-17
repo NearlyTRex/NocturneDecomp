@@ -6,29 +6,27 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLTextureBasic * __cdecl engine_texture_cpp_getCurrentTexture_FUN_00545ad0(void)
 
 {
   char cVar1;
-  char *pcVar2;
+  char (*pacVar2) [64];
   char *pcVar3;
   
-  _DAT_02dd0f8c = _DAT_02dd0f80;
-  pcVar3 = &DAT_02dd0f90;
-  pcVar2 = (char *)(_DAT_02dd0f84 + 0x3008 + _DAT_02dd0f80 * 0x40);
-  _DAT_02dd0f88 = 0xd;
+  g_SMRGLTextureModel_02dd0f88.base.count = g_INT_02dd0f80;
+  pcVar3 = g_SMRGLTextureModel_02dd0f88.texture_name;
+  pacVar2 = g_CTextureCache_PTR_02dd0f84->texture_names + g_INT_02dd0f80;
+  g_SMRGLTextureModel_02dd0f88.base.type = 0xd;
   do {
-    cVar1 = *pcVar2;
+    cVar1 = (*pacVar2)[0];
     *pcVar3 = cVar1;
     if (cVar1 == '\0') {
-      return (SMRGLTextureBasic *)&DAT_02dd0f88;
+      return (SMRGLTextureBasic *)&g_SMRGLTextureModel_02dd0f88;
     }
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
+    cVar1 = (*pacVar2)[1];
+    pacVar2 = (char (*) [64])(*pacVar2 + 2);
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  return (SMRGLTextureBasic *)&DAT_02dd0f88;
+  return (SMRGLTextureBasic *)&g_SMRGLTextureModel_02dd0f88;
 }

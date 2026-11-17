@@ -4,13 +4,13 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              487
-Fully clean structs:        477
+Total structs:              506
+Fully clean structs:        496
 Structs with issues:        10
 Unreferenced structs:       10
 
-Total fields:               3913
-Clean fields:               3903
+Total fields:               3984
+Clean fields:               3974
 Unknown (unk*) fields:      6
 Padding (pad*) fields:      2
 Reserved (reserved*) fields:2
@@ -78,7 +78,7 @@ CAudioRecPuzzle                            96.3% complete  (26/27 fields clean)
   Fields: unknown_0x54
 
 ======================================================================
-FULLY CLEAN STRUCTS (477)
+FULLY CLEAN STRUCTS (496)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -303,6 +303,7 @@ FULLY CLEAN STRUCTS (477)
   CParticle_vtable
   CPassenger
   CPathMap
+  CPathQueueNode
   CPendulum
   CPickList
   CPickList_full_vtable
@@ -399,6 +400,7 @@ FULLY CLEAN STRUCTS (477)
   SActorRayHit
   SActorVarBlock
   SArmAimData
+  SAudioFormatDescriptor
   SBitBuffer
   SBodyPartFire
   SBodyPartModel
@@ -407,15 +409,18 @@ FULLY CLEAN STRUCTS (477)
   SBug
   SButtonStruct
   SCPUInfo
+  SCameraEdge
   SCameraViewportState
   SCarryHand
   SChainVertex
   SChatHistory
+  SChatOutMessage
   SClipPlane
   SClothBone
   SClothVertex
   SCollisionInfo
   SCollisionReturnInfo
+  SCoronaLightCache
   SCoronaLightEntry
   SCounterBlock
   SCurtainMeshData
@@ -423,6 +428,7 @@ FULLY CLEAN STRUCTS (477)
   SDamageDecal
   SDamageInfo
   SDialogEntry
+  SDirectSoundDeviceInfo
   SDisplayListSortEntry
   SDjienBox
   SDynamicLight
@@ -435,6 +441,8 @@ FULLY CLEAN STRUCTS (477)
   SFog
   SFogGrid
   SFogGridPlane
+  SFogImagePlane
+  SFontGlyph
   SFoundFileInfo
   SFreaky
   SGameSettingsPlayer
@@ -442,6 +450,7 @@ FULLY CLEAN STRUCTS (477)
   SGroundCell
   SHardwareEdge
   SHuffmanTable
+  SHuffmanTableSource
   SInputFace
   SInteractionInfo
   SIntersectXZCylinder
@@ -449,19 +458,25 @@ FULLY CLEAN STRUCTS (477)
   SIpAddr
   SLaserInfo
   SLayerAction
+  SLightGlowParams
+  SLightGlowSprite
+  SLightGlowTable
   SLineStrip
   SLod
   SMRGLAnimatedTexture
   SMRGLHeaderBasic
+  SMRGLHeaderBasicCountOnly
   SMRGLHeaderExtended
   SMRGLHeaderPrimitive
   SMRGLKeyframe
   SMRGLKeyframeModel
+  SMRGLLightPrimitive
   SMRGLModelBounds
   SMRGLPoint
   SMRGLPrimitivePoly
   SMRGLPrimitivePolyIndex
   SMRGLPrimitiveQuad
+  SMRGLPrimitiveQuadIndex
   SMRGLPrimitiveTriangle
   SMRGLPrimitiveTriangleIndex
   SMRGLTextureBasic
@@ -476,6 +491,7 @@ FULLY CLEAN STRUCTS (477)
   SMovieFrame
   SMpegAllocationEntry
   SMpegFrame
+  SMpegLayer3BandIndex
   SMpegLayer3GranuleInfo
   SMpegLayer3ScalefactorGranule
   SMpegLayer3SideInfo
@@ -527,6 +543,7 @@ FULLY CLEAN STRUCTS (477)
   SRaytraceState
   SRecordingDeviceInfo
   SReflector
+  SRenderBufferEntry
   SRenderVertex
   SReverbPreset
   SReverbSettings
@@ -557,3 +574,5 @@ FULLY CLEAN STRUCTS (477)
   SVoxelGrid
   SWaterVertex
   SWayPointAdjacency
+  SWindow
+  SWindowRect

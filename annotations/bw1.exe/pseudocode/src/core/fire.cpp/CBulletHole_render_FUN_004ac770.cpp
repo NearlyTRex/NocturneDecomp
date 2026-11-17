@@ -111,7 +111,7 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr
     core_set_cpp_CDemonSet_computeLighting_FUN_00552a70(g_CDemonSetPtr,&local_70,&local_58,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLHeaderPrimitive_01c57090);
+            (g_CDemonRenderer_PTR_00612560,&g_SMRGLPrimitiveQuadIndex_01c57090.base);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_pop_FUN_004839a0();
     return;

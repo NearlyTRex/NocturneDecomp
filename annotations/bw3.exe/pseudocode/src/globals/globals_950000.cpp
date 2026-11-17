@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x950000
 // =============================================================================
 
-// CVector3i[241]
-CVector3i g_CVector3i_ARRAY_00956488[241] = {};
+// CVector3i[241][320]
+CVector3i g_CVector3i_ARRAY_ARRAY_00956488[241][320] = {};
 

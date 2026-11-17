@@ -17,9 +17,9 @@
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_004ea370 at 004ea502
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
-;   int g_INT_01d16408
+;   int g_INT_01cea3f4
+;   uint g_UINT_01cea3f8
+;   UNetPacket g_UNetPacket_01d16408
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_processPacket_FUN_004ea830
@@ -43,17 +43,17 @@ section .text
     MOV EBX,0x12                        ; 004ea750
     SAR EDX,0x1f                        ; 004ea755
     IDIV EBX                            ; 004ea758
-    MOV ECX,dword ptr [0x01cea3f4]      ; 004ea75a | DAT_01cea3f4
+    MOV ECX,dword ptr [0x01cea3f4]      ; 004ea75a | g_INT_01cea3f4
     MOV EDX,EAX                         ; 004ea760
     SUB EAX,ECX                         ; 004ea762
-    MOV dword ptr [0x01cea3f4],EDX      ; 004ea764 | DAT_01cea3f4
+    MOV dword ptr [0x01cea3f4],EDX      ; 004ea764 | g_INT_01cea3f4
     TEST EAX,EAX                        ; 004ea76a
     JL 0x004ea794                       ; 004ea76c
         ;   XREF to: 004ea794 (CONDITIONAL_JUMP)  ; LAB_004ea794
     CMP EAX,0x20000                     ; 004ea76e
     JG 0x004ea798                       ; 004ea773
         ;   XREF to: 004ea798 (CONDITIONAL_JUMP)  ; LAB_004ea798
-    ADD dword ptr [0x01cea3f8],EAX      ; 004ea775 | DAT_01cea3f8
+    ADD dword ptr [0x01cea3f8],EAX      ; 004ea775 | g_UINT_01cea3f8
         ;   Label: LAB_004ea775
     LEA EBX,[ESI + 0x170]               ; 004ea77b
     PUSH EBX                            ; 004ea781
@@ -89,8 +89,8 @@ section .text
     JLE 0x004ea7d4                      ; 004ea7b7
         ;   XREF to: 004ea7d4 (CONDITIONAL_JUMP)  ; LAB_004ea7d4
     INC EAX                             ; 004ea7b9
-    PUSH 0x1d16408                      ; 004ea7ba | g_INT_01d16408
-    MOV [0x01d16408],EAX                ; 004ea7bf | g_INT_01d16408
+    PUSH 0x1d16408                      ; 004ea7ba | g_UNetPacket_01d16408
+    MOV [0x01d16408],EAX                ; 004ea7bf | g_UNetPacket_01d16408
     LEA EAX,[ESP + 0x4]                 ; 004ea7c4
     PUSH EAX                            ; 004ea7c8
     PUSH ESI                            ; 004ea7c9

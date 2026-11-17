@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Unlock_hw_sample_buffer_00594353
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc9244
+;   IDirectSoundBuffer*[25] g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -58,7 +58,7 @@ section .text
     MOV ECX,dword ptr [ESI + 0x158]     ; 0052aee3
     PUSH ECX                            ; 0052aee9
     MOV EDI,dword ptr [ESI + 0x160]     ; 0052aeea
-    MOV EAX,dword ptr [EBX*0x4 + 0x2dc9244] ; 0052aef0 | DAT_02dc9244
+    MOV EAX,dword ptr [EBX*0x4 + 0x2dc9244] ; 0052aef0 | g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
     PUSH EDI                            ; 0052aef7
     MOV EBX,dword ptr [EAX]             ; 0052aef8
     PUSH EAX                            ; 0052aefa
@@ -72,7 +72,7 @@ section .text
     POP ESI                             ; 0052af0a
     POP EBX                             ; 0052af0b
     RET                                 ; 0052af0c
-    CMP dword ptr [EBX*0x4 + 0x2dc9244],0x0 ; 0052af0d | DAT_02dc9244
+    CMP dword ptr [EBX*0x4 + 0x2dc9244],0x0 ; 0052af0d | g_IDirectSoundBuffer_PTR_ARRAY_02dc9244
         ;   Label: LAB_0052af0d
     JZ 0x0052aeb1                       ; 0052af15
         ;   XREF to: 0052aeb1 (CONDITIONAL_JUMP)  ; LAB_0052aeb1

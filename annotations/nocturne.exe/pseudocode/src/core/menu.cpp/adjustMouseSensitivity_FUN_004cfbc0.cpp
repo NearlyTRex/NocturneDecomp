@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_adjustMouseSensitivity_FUN_004cfbc0(int *sensitivity_value_ptr,char *window_title)
 
 {
@@ -42,13 +40,12 @@ LAB_004cfc23:
   engine_2d_c_clearInputAndWait_FUN_00403f50();
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60
             ((int)(((longlong)(g_WindowWidth + -1) * (longlong)(iVar3 + -0x4000)) / 0x3c000),
-             _DAT_01bd1d90);
+             g_INT_01bd1d90);
   pCVar6 = (CKeys *)0x0;
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(g_CEditorToolsPtr);
-    if (_DAT_01bd1d8c != pCVar6) {
-      iVar3 = (int)(((longlong)(int)_DAT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) +
-              0x4000;
+    if ((CKeys *)g_INT_01bd1d8c != pCVar6) {
+      iVar3 = (int)(((longlong)g_INT_01bd1d8c * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
     }
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_NUMPAD4);
     if (iVar1 != 0) {
@@ -78,10 +75,10 @@ LAB_004cfc23:
     iVar5 = 0;
     iVar4 = 0xff;
     iVar2 = g_ClipBottom + g_ClipTop;
-    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x41);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30
-              (_DAT_01bcd070,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string,
-               dVar7);
+              (g_CBitFont_PTR_01bcd070,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,
+               format_string,dVar7);
     wincore_wddvmem_cpp_swapBuffers_FUN_00553910();
     pCVar6 = g_CKeys_PTR_005bac64;
     iVar1 = (*g_CKeys_PTR_005bac64->vtable->getAndClearKeyState)(g_CKeys_PTR_005bac64,DIK_ESCAPE);

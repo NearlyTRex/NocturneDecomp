@@ -12,7 +12,7 @@
 ;   TerminatedCString s_Create_secondary_buffer_005d46f1
 ;   TerminatedCString s_DirectSoundDevice_alloca_005d4709
 ;   IDirectSound* g_IDirectSound_PTR_02cf49c4
-;   undefined4 DAT_02cf49d0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[6]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[12]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[14]
@@ -75,7 +75,7 @@ section .text
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV EAX,0xa0                        ; 0055b8f9
     ADD ESP,0xc                         ; 0055b8fe
-    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b901 | DAT_02cf49d0
+    MOV EDX,dword ptr [0x02cf49d0]      ; 0055b901 | g_IDirectSound3DListener_PTR_02cf49d0
     MOV dword ptr [ESP + 0x190],EBP     ; 0055b907
     MOV dword ptr [ESP + 0x194],EAX     ; 0055b90e
     TEST EDX,EDX                        ; 0055b915

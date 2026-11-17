@@ -10,7 +10,7 @@
 ;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_004e9d50 at 004e9de4
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1664
+;   int g_INT_005c1664 = 0x1
 ;
 ; Called Functions:
 ;   support_trisock.cpp_CSocket_isSocketValid_FUN_00548f60
@@ -36,8 +36,8 @@ section .text
     PUSH EDI                            ; 004ea6f9
     PUSH EBX                            ; 004ea6fa
     XOR EDX,EDX                         ; 004ea6fb
-    MOV EDI,dword ptr [0x005c1664]      ; 004ea6fd | DAT_005c1664
-    MOV dword ptr [0x005c1664],EDX      ; 004ea703 | DAT_005c1664
+    MOV EDI,dword ptr [0x005c1664]      ; 004ea6fd | g_INT_005c1664
+    MOV dword ptr [0x005c1664],EDX      ; 004ea703 | g_INT_005c1664
     XOR EBP,EBP                         ; 004ea709
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 004ea70b
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
@@ -60,7 +60,7 @@ section .text
         ;   XREF to: 004ea712 (CONDITIONAL_JUMP)  ; LAB_004ea712
     JMP 0x004ea70b                      ; 004ea730
         ;   XREF to: 004ea70b (UNCONDITIONAL_JUMP)  ; LAB_004ea70b
-    MOV dword ptr [0x005c1664],EDI      ; 004ea732 | DAT_005c1664
+    MOV dword ptr [0x005c1664],EDI      ; 004ea732 | g_INT_005c1664
         ;   Label: LAB_004ea732
     POP EBX                             ; 004ea738
     POP EDI                             ; 004ea739

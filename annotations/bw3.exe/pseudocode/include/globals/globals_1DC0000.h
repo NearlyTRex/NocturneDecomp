@@ -4,11 +4,15 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SChatOutMessage.h"
 #include "types/structs/SSimFrame.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1DC0000
 // =============================================================================
+
+// SChatOutMessage[50]
+extern SChatOutMessage g_SChatOutMessage_ARRAY_01dc2694[50];
 
 // SSimFrame[512]
 extern SSimFrame g_SSimFrame_ARRAY_01dc5c84[512];

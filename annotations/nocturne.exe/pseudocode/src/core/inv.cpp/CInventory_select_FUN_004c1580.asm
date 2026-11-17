@@ -28,7 +28,7 @@
 ;   TerminatedCString s_CGasMask_005873e9
 ;   TerminatedCString s_CBoxActor_005873f2
 ;   double DOUBLE_00587401 = 98
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CGame* g_CGamePtr = 01c775ec
 ;   undefined4 g_CAmmoActorType_007641bc.name_hash
 ;   ... and 7 more
@@ -320,7 +320,7 @@ section .text
     ADD ESP,0x8                         ; 004c1806
     ADD EAX,0x5f8                       ; 004c1809
     PUSH EAX                            ; 004c180e
-    MOV ECX,dword ptr [0x005b7650]      ; 004c180f | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004c180f | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 004c1815
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c1816
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

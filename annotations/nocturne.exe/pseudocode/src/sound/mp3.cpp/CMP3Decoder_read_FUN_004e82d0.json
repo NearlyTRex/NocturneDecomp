@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 183,
+    "complexity_score": 168,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_strcpy"
     ],
@@ -54,25 +53,25 @@
   "globals": [
     {
       "addr": "01cd8b28",
-      "name": "DAT_01cd8b28",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cd8b28",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "01cd8b29",
-      "name": "DAT_01cd8b29",
+      "name": "g_CHAR_ARRAY_01cd8b28+1",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd8b2a",
-      "name": "DAT_01cd8b2a",
+      "name": "g_CHAR_ARRAY_01cd8b28+2",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd8b2b",
-      "name": "DAT_01cd8b2b",
+      "name": "g_CHAR_ARRAY_01cd8b28+3",
       "type": "undefined4",
       "value": null
     }
@@ -214,14 +213,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "pcVar7 = &DAT_01cd8b28;",
-      "type": "undefined_data"
-    },
     {
       "description": "Complex pointer cast",
       "line": 45,

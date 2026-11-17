@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_hotdemon_cpp_CHotDemon_process_FUN_004b8f20(CHotDemon *this_ptr,float delta_time)
 
@@ -263,7 +262,7 @@ LAB_004b93d5:
     pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&local_4c,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                        _DAT_01cae1e8);
+                        g_INT_ARRAY_01cae1e0[2]);
     pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                        ((CDemonActor *)this_ptr,&local_d0,pCVar8);
     core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar8,fVar10,damage_info);

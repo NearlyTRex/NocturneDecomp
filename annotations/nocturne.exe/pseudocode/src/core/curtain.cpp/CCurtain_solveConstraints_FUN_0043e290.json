@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 498,
+    "complexity_score": 473,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 193,
-    "suspect_count": 28,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_memset"
     ],
     "total_lines": 844
@@ -55,8 +54,8 @@
     },
     {
       "addr": "0077bdb8",
-      "name": "DAT_0077bdb8",
-      "type": "undefined4",
+      "name": "g_INT_0077bdb8",
+      "type": "int",
       "value": null
     },
     {
@@ -812,22 +811,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "if (0 < DAT_0077bdb8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 143,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "} while (local_18 < DAT_0077bdb8);",
-      "type": "undefined_data"
-    },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_0077bdbc[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 47,

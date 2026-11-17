@@ -15,7 +15,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 DAT_01cc9454
 ;
 ; Called Functions:
@@ -99,7 +99,7 @@ section .text
     ADD ESP,0x10                        ; 005087fb
     PUSH 0xffff                         ; 005087fe
     MOV EAX,[0x005ae704]                ; 00508803 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 00508808 | DAT_01b4d738
+    PUSH EAX                            ; 00508808 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00508809
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0050880e
@@ -118,7 +118,7 @@ section .text
     ADD ESP,0x10                        ; 00508838
     PUSH 0x1                            ; 0050883b
     MOV ECX,dword ptr [0x005ae704]      ; 0050883d | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 00508843 | DAT_01b4d738
+    PUSH ECX                            ; 00508843 | g_CDemonRenderer_01b4d738
     ADD EDI,0x4                         ; 00508844
     INC EBP                             ; 00508847
     CALL engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00461050 ; 00508848

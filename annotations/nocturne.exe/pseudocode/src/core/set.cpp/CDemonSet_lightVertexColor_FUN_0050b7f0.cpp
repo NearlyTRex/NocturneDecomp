@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *this_ptr,CVector3i *world_position,CVector3i *surface_normal,int vertex_index,int skip_lighting_calculation)
 
 {
@@ -44,15 +42,15 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
       iVar8 = 0xffff;
     }
     lVar1 = (longlong)(this_ptr->flat_color).r * (longlong)iVar8;
-    (&DAT_005c5034)[vertex_index * 0xc] =
+    g_SRenderVertex_ARRAY_005c5014[vertex_index].r =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)(this_ptr->flat_color).g * (longlong)iVar8;
-    (&DAT_005c5038)[vertex_index * 0xc] =
+    g_SRenderVertex_ARRAY_005c5014[vertex_index].g =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)(this_ptr->flat_color).b * (longlong)iVar8;
-    (&DAT_005c503c)[vertex_index * 0xc] =
+    g_SRenderVertex_ARRAY_005c5014[vertex_index].b =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    (&DAT_005c5040)[vertex_index * 0xc] = _DAT_01c038f4;
+    g_SRenderVertex_ARRAY_005c5014[vertex_index].a = g_INT_01c038f4;
     return;
   }
   if (skip_lighting_calculation == 0) {
@@ -92,7 +90,7 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
     iVar8 = 0xffff;
     local_14 = 0;
   }
-  if (_DAT_01fff224 < 1) {
+  if (g_INT_01fff224 < 1) {
     iVar8 = iVar8 + local_14;
     lVar1 = (longlong)iVar8 * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -102,18 +100,18 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
   }
   else {
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)_DAT_01fff5a4) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_01fff5a4) >> 0x20) << 0x10) +
+            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_01fff5a4) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5a4) >> 0x20) << 0x10) +
                  local_14) * (longlong)(this_ptr->flat_color).r;
     local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
-            (int)(((uint)((longlong)iVar8 * (longlong)_DAT_01fff5a8) >> 0x10 |
-                  (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_01fff5a8) >> 0x20) << 0x10) +
+            (int)(((uint)((longlong)iVar8 * (longlong)g_INT_01fff5a8) >> 0x10 |
+                  (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5a8) >> 0x20) << 0x10) +
                  local_14) * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar10 = (this_ptr->flat_color).b;
-    iVar8 = ((uint)((longlong)iVar8 * (longlong)_DAT_01fff5ac) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_01fff5ac) >> 0x20) << 0x10) +
+    iVar8 = ((uint)((longlong)iVar8 * (longlong)g_INT_01fff5ac) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar8 * (longlong)g_INT_01fff5ac) >> 0x20) << 0x10) +
             local_14;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
@@ -155,8 +153,8 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_0050b7f0(CDemonSet *thi
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  (&DAT_005c5034)[vertex_index * 0xc] = *(uint *)(local_18 * 4 + 0x1fbb060);
-  (&DAT_005c5038)[vertex_index * 0xc] = *(uint *)(uVar4 * 4 + 0x1fbb060);
-  (&DAT_005c503c)[vertex_index * 0xc] = *(uint *)(uVar5 * 4 + 0x1fbb060);
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].r = g_INT_ARRAY_01fbb060[local_18];
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].g = g_INT_ARRAY_01fbb060[uVar4];
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].b = g_INT_ARRAY_01fbb060[uVar5];
   return;
 }

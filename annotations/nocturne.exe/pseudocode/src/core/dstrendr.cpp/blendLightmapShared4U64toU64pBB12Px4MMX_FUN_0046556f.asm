@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   pixel_count
 ;
 ; Referenced Globals:
-;   undefined8 DAT_005b4788
-;   undefined8 DAT_005b4790
-;   undefined4 DAT_005b64f8
+;   _MMX_INTEGER g_MMX_INTEGER_005b4788
+;   _MMX_INTEGER g_MMX_INTEGER_005b4790
+;   undefined4 g_USHORT_ARRAY_005b5d00[1020]
 ;   ulong g_SolidColorMode
 ;
 ; *****************************************************************************
@@ -52,14 +52,14 @@ section .text
     PMULLW MM1,MM2                      ; 004655c6
     MOVQ MM2,MM3                        ; 004655c9
     MOVQ MM4,MM5                        ; 004655cc
-    PXOR MM2,qword ptr [0x005b64f8]     ; 004655cf | DAT_005b64f8
+    PXOR MM2,qword ptr [0x005b64f8]     ; 004655cf | g_USHORT_ARRAY_005b5d00[1020]
     PMULHW MM0,MM2                      ; 004655d6
     PMULHW MM1,MM2                      ; 004655d9
     PMULHW MM4,MM3                      ; 004655dc
     PADDW MM0,MM4                       ; 004655df
     PADDW MM1,MM4                       ; 004655e2
-    PADDW MM0,qword ptr [0x005b4788]    ; 004655e5 | DAT_005b4788
-    PADDW MM1,qword ptr [0x005b4790]    ; 004655ec | DAT_005b4790
+    PADDW MM0,qword ptr [0x005b4788]    ; 004655e5 | g_MMX_INTEGER_005b4788
+    PADDW MM1,qword ptr [0x005b4790]    ; 004655ec | g_MMX_INTEGER_005b4790
     PSRLW MM0,0x4                       ; 004655f3
     PSRLW MM1,0x4                       ; 004655f7
     PACKUSWB MM0,MM1                    ; 004655fb
@@ -82,14 +82,14 @@ section .text
     PMULLW MM1,MM2                      ; 00465638
     MOVQ MM2,MM3                        ; 0046563b
     MOVQ MM4,MM5                        ; 0046563e
-    PXOR MM2,qword ptr [0x005b64f8]     ; 00465641 | DAT_005b64f8
+    PXOR MM2,qword ptr [0x005b64f8]     ; 00465641 | g_USHORT_ARRAY_005b5d00[1020]
     PMULHW MM0,MM2                      ; 00465648
     PMULHW MM1,MM2                      ; 0046564b
     PMULHW MM4,MM3                      ; 0046564e
     PADDW MM0,MM4                       ; 00465651
     PADDW MM1,MM4                       ; 00465654
-    PADDW MM0,qword ptr [0x005b4788]    ; 00465657 | DAT_005b4788
-    PADDW MM1,qword ptr [0x005b4790]    ; 0046565e | DAT_005b4790
+    PADDW MM0,qword ptr [0x005b4788]    ; 00465657 | g_MMX_INTEGER_005b4788
+    PADDW MM1,qword ptr [0x005b4790]    ; 0046565e | g_MMX_INTEGER_005b4790
     PSRLW MM0,0x4                       ; 00465665
     PSRLW MM1,0x4                       ; 00465669
     PACKUSWB MM0,MM1                    ; 0046566d

@@ -15,10 +15,10 @@
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00456d90 at 00456ed0
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4a78
-;   undefined4 DAT_005a4a92
-;   undefined4 DAT_005c1f14
-;   undefined4 DAT_005c1f1c
+;   short g_SHORT_005a4a78 = 0x0
+;   short g_SHORT_005a4a92 = 0x0
+;   int g_INT_005c1f14 = 0x4650
+;   int g_INT_005c1f1c = 0xe10
 ;
 ; Called Functions:
 ;   crt_time.c_determine_dst_status_FUN_0056d034
@@ -42,7 +42,7 @@ section .text
     MOV EBX,0xc                         ; 00565fc0
     SAR EDX,0x1f                        ; 00565fc5
     IDIV EBX                            ; 00565fc8
-    MOV EBP,0x5a4a78                    ; 00565fca | DAT_005a4a78
+    MOV EBP,0x5a4a78                    ; 00565fca | g_SHORT_005a4a78
     MOV ESI,dword ptr [EDI + 0x14]      ; 00565fcf
     MOV EBX,EDX                         ; 00565fd2
     CMP ESI,0xf4fb7ea1                  ; 00565fd4
@@ -87,7 +87,7 @@ section .text
     TEST EAX,EAX                        ; 00566023
     JZ 0x0056602c                       ; 00566025
         ;   XREF to: 0056602c (CONDITIONAL_JUMP)  ; LAB_0056602c
-    MOV EBP,0x5a4a92                    ; 00566027 | DAT_005a4a92
+    MOV EBP,0x5a4a92                    ; 00566027 | g_SHORT_005a4a92
     LEA EDX,[ESI + 0x3]                 ; 0056602c
         ;   Label: LAB_0056602c
     MOV EAX,EDX                         ; 0056602f
@@ -118,7 +118,7 @@ section .text
     SAR EDX,0x1f                        ; 00566079
     IDIV ESI                            ; 0056607c
     ADD ECX,EAX                         ; 0056607e
-    MOVSX EAX,word ptr [EBP + EBX*0x2]  ; 00566080 | DAT_005a4a92
+    MOVSX EAX,word ptr [EBP + EBX*0x2]  ; 00566080 | g_SHORT_005a4a92
     MOV EDX,dword ptr [EDI + 0xc]       ; 00566085
     ADD EAX,ECX                         ; 00566088
     ADD EAX,EDX                         ; 0056608a
@@ -155,7 +155,7 @@ section .text
     ADD ESP,0x10                        ; 005660c8
     CALL crt_time.c_tzset_FUN_0056d608  ; 005660cb
         ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; void crt_time.c_tzset_FUN_0056d608()
-    MOV ECX,dword ptr [0x005c1f14]      ; 005660d0 | DAT_005c1f14
+    MOV ECX,dword ptr [0x005c1f14]      ; 005660d0 | g_INT_005c1f14
     MOV EBP,dword ptr [EDI + 0x20]      ; 005660d6
     ADD EBX,ECX                         ; 005660d9
     TEST EBP,EBP                        ; 005660db
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_005660e8
     JLE 0x005660f4                      ; 005660ec
         ;   XREF to: 005660f4 (CONDITIONAL_JUMP)  ; LAB_005660f4
-    SUB EBX,dword ptr [0x005c1f1c]      ; 005660ee | DAT_005c1f1c
+    SUB EBX,dword ptr [0x005c1f1c]      ; 005660ee | g_INT_005c1f1c
     TEST EBX,EBX                        ; 005660f4
         ;   Label: LAB_005660f4
     JGE 0x00566101                      ; 005660f6
@@ -192,7 +192,7 @@ section .text
     JNZ 0x00566139                      ; 00566116
         ;   XREF to: 00566139 (CONDITIONAL_JUMP)  ; LAB_00566139
         ;   Label: LAB_00566116
-    MOV ECX,dword ptr [0x005c1f14]      ; 00566118 | DAT_005c1f14
+    MOV ECX,dword ptr [0x005c1f14]      ; 00566118 | g_INT_005c1f14
     SUB EBX,0x15180                     ; 0056611e
     TEST ECX,ECX                        ; 00566124
     JLE 0x0056612c                      ; 00566126

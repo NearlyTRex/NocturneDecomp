@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 62,
+    "complexity_score": 36,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data"
-    ],
-    "total_lines": 116
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 36,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -86,13 +84,13 @@
     },
     {
       "addr": "005bc010",
-      "name": "DAT_005bc010",
-      "type": "undefined4",
+      "name": "g_UINT_ARRAY_005bc010",
+      "type": "uint[18]",
       "value": null
     },
     {
       "addr": "005bc030",
-      "name": "DAT_005bc030",
+      "name": "g_UINT_ARRAY_005bc010[8]",
       "type": "undefined4",
       "value": null
     },
@@ -318,22 +316,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"Buffer overflow!!  File: %s\",&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005bc010",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_005bc010 + uVar1 * 4)) >> (local_14 & 0x1f)) <<",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

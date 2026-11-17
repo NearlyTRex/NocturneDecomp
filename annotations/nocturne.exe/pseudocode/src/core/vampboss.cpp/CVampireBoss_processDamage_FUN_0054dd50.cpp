@@ -55,7 +55,7 @@ void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_0054dd50(CVampireB
       core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40
                 ((CCharacter *)this_ptr,0,this_ptr_01,0.2);
       core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                (0x01C03A10,"VampireBossBitesIt");
+                (g_CEventList_PTR_005b7650,"VampireBossBitesIt");
       sound_sndmain_cpp_killSfx_FUN_00527230(this_ptr->sfx_handle);
       core_sound_cpp_CSound_playSound_FUN_0052ea40
                 (g_CSound_PTR_005bed68,this_ptr,"voicudeath.wav @ 2.5");

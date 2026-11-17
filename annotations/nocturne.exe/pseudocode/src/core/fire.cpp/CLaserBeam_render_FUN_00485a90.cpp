@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
 
 {
@@ -125,7 +123,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
   
   bVar8 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b852c);
+            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b852c);
   local_1a4.x = (this_ptr->hit_position).x - (this_ptr->origin).x;
   local_1a4.y = (this_ptr->hit_position).y - (this_ptr->origin).y;
   local_1a4.z = (this_ptr->hit_position).z - (this_ptr->origin).z;
@@ -254,7 +252,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_174);
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-                (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b8574);
+                (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b8574);
       pCVar3 = g_CDemonRenderer_PTR_005ae704;
       local_24c.surface_normal.A.i = 4;
       local_234 = 0;
@@ -299,7 +297,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
   }
   if (0.0 < (float)local_2e0._0_4_) {
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b8544);
+              (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b8544);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
               (g_CDemonRenderer_PTR_005ae704,&this_ptr->origin);
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
@@ -378,9 +376,9 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
           local_2e0._52_4_ = 2;
           local_38 = (float)(int)ROUND(dVar11);
           if (this_ptr->cone_angle <= 0.0) {
-            local_2e0._48_4_ = ((iVar5 << 8) / (int)local_28 + _DAT_01c094b8) * 0x10000;
+            local_2e0._48_4_ = ((iVar5 << 8) / (int)local_28 + g_INT_01c094b8) * 0x10000;
             local_2e0._68_4_ = 0;
-            local_2e0._72_4_ = (local_34 / (int)local_28 + _DAT_01c094b8) * 0x10000;
+            local_2e0._72_4_ = (local_34 / (int)local_28 + g_INT_01c094b8) * 0x10000;
             local_2e0._32_4_ = 0;
             local_2e0._56_4_ = local_38;
           }
@@ -455,7 +453,7 @@ void __cdecl core_fire_cpp_CLaserBeam_render_FUN_00485a90(CLaserBeam *this_ptr)
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
               (g_CDemonRenderer_PTR_005ae704,&local_9c,(CVector3f *)0x0);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-              (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b855c);
+              (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b855c);
     local_b4 = 0.2;
     local_ac = 0.0;
     local_b0 = 0.2;

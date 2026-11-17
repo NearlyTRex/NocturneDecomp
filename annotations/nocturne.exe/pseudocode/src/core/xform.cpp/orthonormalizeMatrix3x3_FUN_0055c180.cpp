@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(CMatrix3x3f *matrix,int preserve_scale)
 
 {
@@ -78,15 +76,15 @@ void __cdecl core_xform_cpp_orthonormalizeMatrix3x3_FUN_0055c180(CMatrix3x3f *ma
   local_d0 = (double)fVar9 * local_d0;
   iVar16 = 0;
   do {
-    dVar10 = local_f0 * _DAT_0059832e + (local_e0 * local_d0 - local_c8 * local_d8);
-    dVar15 = local_90 * _DAT_0059832e + (local_c8 * local_c0 - local_b8 * local_d0);
-    dVar11 = local_e8 * _DAT_0059832e + (local_b8 * local_d8 - local_c0 * local_e0);
-    dVar14 = local_b8 * _DAT_0059832e + (local_d8 * local_e8 - local_d0 * local_90);
-    dVar13 = local_e0 * _DAT_0059832e + (local_d0 * local_f0 - local_c0 * local_e8);
-    dVar12 = local_c8 * _DAT_0059832e + (local_c0 * local_90 - local_d8 * local_f0);
-    local_c0 = local_c0 * _DAT_0059832e + (local_90 * local_c8 - local_e8 * local_e0);
-    local_d8 = local_d8 * _DAT_0059832e + (local_e8 * local_b8 - local_f0 * local_c8);
-    local_d0 = local_d0 * _DAT_0059832e + (local_f0 * local_e0 - local_90 * local_b8);
+    dVar10 = local_f0 * 0.5 + (local_e0 * local_d0 - local_c8 * local_d8);
+    dVar15 = local_90 * 0.5 + (local_c8 * local_c0 - local_b8 * local_d0);
+    dVar11 = local_e8 * 0.5 + (local_b8 * local_d8 - local_c0 * local_e0);
+    dVar14 = local_b8 * 0.5 + (local_d8 * local_e8 - local_d0 * local_90);
+    dVar13 = local_e0 * 0.5 + (local_d0 * local_f0 - local_c0 * local_e8);
+    dVar12 = local_c8 * 0.5 + (local_c0 * local_90 - local_d8 * local_f0);
+    local_c0 = local_c0 * 0.5 + (local_90 * local_c8 - local_e8 * local_e0);
+    local_d8 = local_d8 * 0.5 + (local_e8 * local_b8 - local_f0 * local_c8);
+    local_d0 = local_d0 * 0.5 + (local_f0 * local_e0 - local_90 * local_b8);
     local_c8 = 1.0 / SQRT(dVar12 * dVar12 + dVar13 * dVar13 + dVar14 * dVar14);
     local_e8 = 1.0 / SQRT(dVar11 * dVar11 + dVar15 * dVar15 + dVar10 * dVar10);
     local_f0 = dVar10 * local_e8;

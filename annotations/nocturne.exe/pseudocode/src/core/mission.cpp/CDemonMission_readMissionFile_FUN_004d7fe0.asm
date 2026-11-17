@@ -544,18 +544,18 @@ section .text
         ;   Label: LAB_004d850e
     LEA EDI,[ESP + 0xc8]                ; 004d8513
     LEA EAX,[ESP + 0x64]                ; 004d851a
-    MOV ESI,0x5bb000                    ; 004d851e | DAT_005bb000
+    MOV ESI,0x5bb000                    ; 004d851e | g_CHAR_ARRAY_005bb000
     PUSH EAX                            ; 004d8523
     LEA EAX,[ESP + 0xcc]                ; 004d8524
-    MOVSD.REP ES:EDI,ESI                ; 004d852b | DAT_005bb000 | DAT_005bb004
+    MOVSD.REP ES:EDI,ESI                ; 004d852b | g_CHAR_ARRAY_005bb000 | g_CHAR_ARRAY_005bb000+4
     PUSH EAX                            ; 004d852d
     MOV EBP,dword ptr [ESP + 0x168]     ; 004d852e
     MOV ECX,0x19                        ; 004d8535
     PUSH 0x589849                       ; 004d853a | = "%s \"%[^\"]\"\n"
     LEA EDI,[ESP + 0x70]                ; 004d853f
-    MOV ESI,0x5bb068                    ; 004d8543 | DAT_005bb068
+    MOV ESI,0x5bb068                    ; 004d8543 | g_CHAR_ARRAY_005bb068
     PUSH EBP                            ; 004d8548
-    MOVSD.REP ES:EDI,ESI                ; 004d8549 | DAT_005bb068 | DAT_005bb06c
+    MOVSD.REP ES:EDI,ESI                ; 004d8549 | g_CHAR_ARRAY_005bb068 | g_CHAR_ARRAY_005bb068+4
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 004d854b
         ;   XREF to: 00563350 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fscanf_FUN_00563350(_FILE * file, char * format)
     ADD ESP,0x10                        ; 004d8550

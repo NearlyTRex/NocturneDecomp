@@ -77,7 +77,7 @@ section .text
     MOV EBP,ESP                         ; 00521e14
     SUB ESP,0x474                       ; 00521e16
     AND ESP,0xfffffff8                  ; 00521e1c
-    FLD double ptr [0x005bea88]         ; 00521e1f | DAT_005bea88
+    FLD double ptr [0x005bea88]         ; 00521e1f | g_DOUBLE_005bea88
     FLD float ptr [0x005a216c]          ; 00521e25 | FLOAT_005a216c
     FMUL ST1                            ; 00521e2b
     FLD float ptr [0x02dbd370]          ; 00521e2d | g_FLOAT_02dbd370

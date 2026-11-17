@@ -7,6 +7,7 @@
 #include "system/winnt.h"
 #include "types/classes/CDemonLight.h"
 #include "types/classes/CMatrix3x3i.h"
+#include "types/structs/SCameraEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1340000
@@ -17,6 +18,9 @@ extern CDemonLight* g_CDemonLight_PTR_01340584;
 
 // CMatrix3x3i
 extern CMatrix3x3i g_CMatrix3x3i_01340588;
+
+// SCameraEdge[10000]
+extern SCameraEdge g_SCameraEdge_ARRAY_013405b8[10000];
 
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_BIT_INTEGER32_013405b0;

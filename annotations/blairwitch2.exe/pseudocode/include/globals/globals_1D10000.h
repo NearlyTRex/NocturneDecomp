@@ -7,7 +7,7 @@
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
@@ -29,8 +29,8 @@ extern CDemonActorType g_CMolochClassInfo;
 extern CVector3f g_CVector3f_ARRAY_01d17fc4[32];
 extern CVector3f g_CVector3f_ARRAY_01d18148[32];
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d182c8;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d182c8;
 
 // SSoftwareEdge
 extern SSoftwareEdge g_SSoftwareEdge_01d17ab8;
@@ -73,8 +73,8 @@ extern float g_FLOAT_01d1cdc4;
 // float*
 extern float* g_FLOAT_PTR_01d12114;
 
-// float[64]
-extern float g_FLOAT_ARRAY_01d1cdd0[64];
+// float[64][32]
+extern float g_FLOAT_ARRAY_ARRAY_01d1cdd0[64][32];
 
 // int
 extern int g_INT_01d12124;

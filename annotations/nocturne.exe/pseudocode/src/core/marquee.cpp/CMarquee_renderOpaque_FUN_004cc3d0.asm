@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00409f60
@@ -27,7 +27,7 @@ section .text
     SUB ESP,0x18                        ; 004cc3d1
     MOV EBX,dword ptr [ESP + 0x20]      ; 004cc3d4
     MOV EDX,dword ptr [0x005ae704]      ; 004cc3d8 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004cc3de | DAT_01b4d738
+    PUSH EDX                            ; 004cc3de | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004cc3df
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004cc3e4

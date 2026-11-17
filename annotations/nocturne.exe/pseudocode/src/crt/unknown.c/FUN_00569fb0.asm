@@ -13,10 +13,10 @@
 ;   void* PTR_WriteFile_005755ec = 0017613e
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   undefined4 DAT_005c1d54
-;   undefined4 DAT_005c1d80
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f90
+;   void* g_PTR_005c1d54 = 00000000
+;   void* g_PTR_005c1d80 = 00000000
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   uint g_UINT_005c1f90 = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
@@ -41,7 +41,7 @@ section .text
     TEST EBX,EBX                        ; 00569fbf
     JL 0x00569fcb                       ; 00569fc1
         ;   XREF to: 00569fcb (CONDITIONAL_JUMP)  ; LAB_00569fcb
-    CMP EBX,dword ptr [0x005c1f90]      ; 00569fc3 | DAT_005c1f90
+    CMP EBX,dword ptr [0x005c1f90]      ; 00569fc3 | g_UINT_005c1f90
     JBE 0x00569fdf                      ; 00569fc9
         ;   XREF to: 00569fdf (CONDITIONAL_JUMP)  ; LAB_00569fdf
     PUSH 0x4                            ; 00569fcb
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x4                         ; 00569fd7
     JMP 0x0056a0b2                      ; 00569fda
         ;   XREF to: 0056a0b2 (UNCONDITIONAL_JUMP)  ; LAB_0056a0b2
-    MOV ESI,dword ptr [0x005c1f54]      ; 00569fdf | DAT_005c1f54
+    MOV ESI,dword ptr [0x005c1f54]      ; 00569fdf | g_SIOControlBlock_PTR_005c1f54
         ;   Label: LAB_00569fdf
     PUSH EBX                            ; 00569fe5
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 00569fe6
@@ -84,12 +84,12 @@ section .text
     POP ESI                             ; 0056a026
     POP EBX                             ; 0056a027
     RET                                 ; 0056a028
-    CMP dword ptr [0x005c1d80],0x0      ; 0056a029 | DAT_005c1d80
+    CMP dword ptr [0x005c1d80],0x0      ; 0056a029 | g_PTR_005c1d80
         ;   Label: LAB_0056a029
     JZ 0x0056a066                       ; 0056a030
         ;   XREF to: 0056a066 (CONDITIONAL_JUMP)  ; LAB_0056a066
     PUSH EBX                            ; 0056a032
-    CALL dword ptr [0x005c1d54]         ; 0056a033 | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 0056a033 | g_PTR_005c1d54
     ADD ESP,0x4                         ; 0056a039
     TEST EAX,EAX                        ; 0056a03c
     JZ 0x0056a066                       ; 0056a03e
@@ -98,7 +98,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x20]      ; 0056a041
     PUSH EDX                            ; 0056a045
     PUSH EAX                            ; 0056a046
-    CALL dword ptr [0x005c1d80]         ; 0056a047 | DAT_005c1d80
+    CALL dword ptr [0x005c1d80]         ; 0056a047 | g_PTR_005c1d80
     ADD ESP,0xc                         ; 0056a04d
     PUSH EBX                            ; 0056a050
     MOV ESI,EAX                         ; 0056a051

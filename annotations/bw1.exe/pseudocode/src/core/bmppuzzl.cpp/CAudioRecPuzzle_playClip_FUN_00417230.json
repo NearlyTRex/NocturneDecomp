@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 501,
+    "complexity_score": 476,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 221,
-    "suspect_count": 26,
+    "suspect_count": 24,
     "suspect_types": [
-      "undefined_data",
       "unrolled_strcat",
       "unrolled_strcpy",
       "unrolled_strlen"
@@ -76,50 +75,50 @@
     },
     {
       "addr": "005d4011",
-      "name": "DAT_005d4011",
-      "type": "undefined1",
+      "name": "s_AB_1_wav_005d4011",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d4012",
-      "name": "DAT_005d4012",
-      "type": "undefined1",
+      "name": "s_AB_1_wav_005d4011+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d4013",
-      "name": "DAT_005d4013",
-      "type": "undefined1",
+      "name": "s_AB_1_wav_005d4011+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d4014",
-      "name": "s_s_1_wav_005d4014",
-      "type": "TerminatedCString",
+      "name": "s_AB_1_wav_005d4011+3",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d401d",
-      "name": "DAT_005d401d",
-      "type": "undefined1",
+      "name": "s_AT_1_wav_005d401d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005d401e",
-      "name": "DAT_005d401e",
-      "type": "undefined1",
+      "name": "s_AT_1_wav_005d401d+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d401f",
-      "name": "DAT_005d401f",
-      "type": "undefined1",
+      "name": "s_AT_1_wav_005d401d+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005d4020",
-      "name": "s_s_1_wav_005d4020",
-      "type": "TerminatedCString",
+      "name": "s_AT_1_wav_005d401d+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -295,22 +294,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005d4011",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005d4011;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_005d401d",
-      "severity": "mild",
-      "text": "pcVar4 = &DAT_005d401d;",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 37,

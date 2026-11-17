@@ -34,7 +34,7 @@ void __cdecl engine_2d_c_drawTextMultiline_FUN_00401d00(char *text,int x_start,i
       char_code = (uint)(byte)*text;
       if ((0x1f < (byte)*text) && (char_code < 0x100)) {
         engine_2d_c_drawCharacter_FUN_00401620(char_code,x_pos,y_start);
-        x_pos = x_pos + (byte)(&DAT_00608570)[(char_code - 0x20) * 0x91] + 1;
+        x_pos = x_pos + g_SFontGlyph_ARRAY_00608570[char_code - 0x20].width + 1;
       }
       iVar4 = iVar4 + 1;
       text = text + 1;

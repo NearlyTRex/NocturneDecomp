@@ -127,8 +127,12 @@ static char* g_CHAR_PTR_ARRAY_006227d0[9] = {
     "SW"
 };
 
-// char[12] constants
-static char g_CHAR_ARRAY_00626270[12] = "Jan";
+// char[12][4] constants
+static char g_CHAR_ARRAY_ARRAY_00626270[12][4] = {
+    "Jan", "Feb", "Mar", "Apr",
+    "May", "Jun", "Jul", "Aug",
+    "Sep", "Oct", "Nov", "Dec"
+};
 
 // char[256] constants
 static char g_CHAR_ARRAY_00626c09[256] = {
@@ -156,16 +160,19 @@ static char g_CHAR_ARRAY_00626c09[256] = {
     (char)0x0C, (char)0x00, (char)0x00, (char)0x00
 };
 
-// char[7] constants
-static char g_CHAR_ARRAY_00626238[7] = "Sun";
+// char[7][4] constants
+static char g_CHAR_ARRAY_ARRAY_00626238[7][4] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 // double constants
 static double g_DOUBLE_006267bc = 709.78271289338397;
 static double g_DOUBLE_006267c4 = -709.78271289338397;
 static double g_DOUBLE_00628ccc = 1;
 
-// double[2] constants
-static double g_DOUBLE_ARRAY_006202e8[2] = {22.050000000000001, 24};
+// double[2][4] constants
+static double g_DOUBLE_ARRAY_ARRAY_006202e8[2][4] = {
+    {22.050000000000001, 24.0, 16.0, 0.0},
+    {44.100000000000001, 48.0, 32.0, 0.0}
+};
 
 // double[64] constants
 static double g_DOUBLE_ARRAY_00620490[64] = {
@@ -309,14 +316,6 @@ static undefined2 DAT_00626500 = 0x4002;
 static undefined4 DAT_00622fe4 = 0xFFFFFFFF;
 static undefined4 DAT_0062302c = 0x00000001;
 static undefined4 DAT_0062303c = 0x00000001;
-static undefined4 DAT_006235dc = 0x00000001;
-static undefined4 DAT_006235e0 = 0x00000008;
-static undefined4 DAT_006235e4 = 0x00000001;
-static undefined4 DAT_006235e8 = 0x00002B11;
-static undefined4 DAT_006235ec = 0x00000004;
-static undefined4 DAT_006235f0 = 0x00000010;
-static undefined4 DAT_006235f4 = 0x00000001;
-static undefined4 DAT_006235f8 = 0x00002B11;
 static undefined4 DAT_006264fc = 0xA0000000;
 static undefined4 DAT_006267dc = 0xFF010806;
 static undefined4 DAT_00626874 = 0x00000005;

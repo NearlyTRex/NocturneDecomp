@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuantizedSamples *quantized_samples,SMpegSubbandSamples *output_samples,int *scalefactor_data,SMpegLayer3GranuleInfo *granule,int channel_index,SMpegFrame *frame)
 
 {
@@ -15,8 +13,8 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
   float10 fVar2;
   int iVar3;
   float *pfVar4;
-  int iVar5;
-  uint uVar6;
+  uint uVar5;
+  int iVar6;
   int iVar7;
   int iVar8;
   int iVar9;
@@ -37,49 +35,45 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
   float *local_1c;
   float *local_18;
   
-  iVar8 = 0;
-  iVar9 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
+  iVar7 = 0;
+  iVar8 = frame->header->sampling_rate_index + frame->header->mpeg_version * 3;
   if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
-    local_1c = *(float **)(&DAT_005bc0fc + iVar9 * 0x94);
+    local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[1];
+  }
+  else if (granule->mixed_block_flag == 0) {
+    local_1c = (float *)(g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[1] * 3);
+    local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[1];
+    local_2c = 0;
   }
   else {
-    iVar5 = iVar9 * 0x94;
-    if (granule->mixed_block_flag == 0) {
-      local_1c = (float *)(*(int *)(&DAT_005bc158 + iVar5) * 3);
-      local_28 = *(int *)(&DAT_005bc158 + iVar5);
-      local_2c = 0;
-    }
-    else {
-      local_1c = *(float **)(&DAT_005bc0fc + iVar5);
-    }
+    local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[1];
   }
-  if (_DAT_01cd6324 == 0) {
+  if (g_INT_01cd6324 == 0) {
     fVar12 = (float10)1.3333333333333299;
-    iVar5 = 0;
-    iVar7 = 0;
+    iVar6 = 0;
+    iVar9 = 0;
     do {
-      fVar10 = pow((float10)iVar5,fVar12);
-      iVar5 = iVar5 + 1;
-      *(double *)(iVar7 + 0x1cd6328) = (double)fVar10;
-      iVar7 = iVar7 + 8;
-    } while (iVar5 < 200);
-    iVar7 = 0;
+      fVar10 = pow((float10)iVar6,fVar12);
+      iVar6 = iVar6 + 1;
+      *(double *)((int)g_DOUBLE_ARRAY_01cd6328 + iVar9) = (double)fVar10;
+      iVar9 = iVar9 + 8;
+    } while (iVar6 < 200);
+    iVar9 = 0;
     fVar10 = (float10)2;
     fVar12 = (float10)0.25;
-    iVar5 = 0;
+    iVar6 = 0;
     do {
-      fVar2 = (float10)-iVar7 * fVar12;
-      fVar11 = pow(fVar10,(float10)-iVar7 * fVar12);
+      fVar2 = (float10)-iVar9 * fVar12;
+      fVar11 = pow(fVar10,(float10)-iVar9 * fVar12);
       fVar10 = fVar12;
       fVar12 = fVar2;
-      iVar7 = iVar7 + 1;
-      *(double *)(iVar5 + 0x1cd6968) = (double)fVar11;
-      iVar5 = iVar5 + 8;
-    } while (iVar7 < 200);
-    _DAT_01cd6324 = 1;
+      iVar9 = iVar9 + 1;
+      *(double *)((int)g_DOUBLE_ARRAY_01cd6968 + iVar6) = (double)fVar11;
+      iVar6 = iVar6 + 8;
+    } while (iVar9 < 200);
+    g_INT_01cd6324 = 1;
   }
   local_44 = 0;
-  iVar9 = iVar9 * 0x94;
   local_64 = (float *)output_samples;
   local_70 = (int *)quantized_samples;
   local_6c = (float *)0x0;
@@ -90,91 +84,93 @@ void __cdecl sound_mp3_cpp_requantizeLayer3Samples_FUN_004e58d0(SMpegSubbandQuan
     local_3c = local_64;
     local_18 = local_64;
     local_30 = local_70;
-    iVar5 = 0;
+    iVar9 = 0;
+    iVar6 = iVar7;
     do {
+      iVar7 = iVar6;
       if (local_20 == local_1c) {
         if ((granule->window_switching_flag == 0) || (granule->block_type != 2)) {
-          iVar8 = iVar8 + 1;
-          local_1c = *(float **)(&DAT_005bc0fc + iVar8 * 4 + iVar9);
+          iVar7 = iVar6 + 1;
+          local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[iVar6 + 2];
         }
         else {
-          iVar8 = iVar8 + 1;
-          iVar7 = iVar8 * 4 + iVar9;
+          iVar7 = iVar6 + 1;
           if (granule->mixed_block_flag == 0) {
 LAB_004e5bd0:
-            iVar1 = *(int *)(&DAT_005bc158 + iVar7);
-            iVar3 = *(int *)(iVar7 + 0x5bc154);
-            local_28 = *(int *)(&DAT_005bc158 + iVar7) - iVar3;
+            iVar3 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 2];
+            iVar1 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 1];
+            local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[iVar6 + 2] - iVar1;
           }
           else {
-            if (local_20 != *(float **)(&DAT_005bc118 + iVar9)) {
-              if ((int)local_20 < (int)*(float **)(&DAT_005bc118 + iVar9)) {
-                local_1c = *(float **)(&DAT_005bc0fc + iVar7);
+            if (local_20 != (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[8]) {
+              if ((int)local_20 < g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[8]) {
+                local_1c = (float *)g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].l[iVar6 + 2];
                 goto LAB_004e5a60;
               }
               goto LAB_004e5bd0;
             }
-            iVar1 = *(int *)(&DAT_005bc164 + iVar9);
-            iVar3 = *(int *)(&DAT_005bc160 + iVar9);
-            local_28 = *(int *)(&DAT_005bc164 + iVar9) - iVar3;
-            iVar8 = 3;
+            iVar3 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[4];
+            iVar1 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[3];
+            local_28 = g_SMpegLayer3BandIndex_ARRAY_005bc0f8[iVar8].s[4] - iVar1;
+            iVar7 = 3;
           }
-          local_1c = (float *)(iVar1 * 3);
-          local_2c = iVar3 * 3;
+          local_1c = (float *)(iVar3 * 3);
+          local_2c = iVar1 * 3;
         }
       }
 LAB_004e5a60:
-      if (*(int *)((int)quantized_samples->samples[0] + iVar5 + local_68) == 0) {
-        *(uint *)((int)output_samples->samples[0] + iVar5 + local_68) = 0;
+      if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) == 0) {
+        *(uint *)((int)output_samples->samples[0] + iVar9 + local_68) = 0;
       }
       else {
-        iVar7 = granule->global_gain + -0xd2;
+        iVar6 = granule->global_gain + -0xd2;
         if ((granule->window_switching_flag == 0) ||
            (((granule->block_type != 2 || (granule->mixed_block_flag != 0)) &&
             ((granule->block_type != 2 || ((granule->mixed_block_flag == 0 || (local_44 < 2))))))))
         {
           iVar3 = (granule->scalefac_scale + 1) * -2 *
-                  (scalefactor_data[channel_index * 0x3e + iVar8] +
-                  granule->preflag * *(int *)(iVar8 * 4 + 0x5bbba4));
+                  (scalefactor_data[channel_index * 0x3e + iVar7] +
+                  granule->preflag * g_INT_ARRAY_005bbba4[iVar7]);
         }
         else {
           iVar3 = ((int)local_38 - local_2c) / local_28;
-          iVar7 = iVar7 + granule->subblock_gain[iVar3] * -8;
+          iVar6 = iVar6 + granule->subblock_gain[iVar3] * -8;
           iVar3 = (granule->scalefac_scale + 1) * -2 *
-                  scalefactor_data[channel_index * 0x3e + iVar3 * 0xd + iVar8 + 0x17];
+                  scalefactor_data[channel_index * 0x3e + iVar3 * 0xd + iVar7 + 0x17];
         }
-        iVar7 = iVar7 + iVar3;
-        if ((iVar7 < 1) && (-200 < iVar7)) {
-          fVar12 = (float10)*(double *)(iVar7 * -8 + 0x1cd6968);
+        iVar6 = iVar6 + iVar3;
+        if ((iVar6 < 1) && (-200 < iVar6)) {
+          fVar12 = (float10)g_DOUBLE_ARRAY_01cd6968[-iVar6];
           pfVar4 = local_3c;
         }
         else {
           fVar12 = pow
-                             ((float10)2,(float10)iVar7 * (float10)0.25);
+                             ((float10)2,(float10)iVar6 * (float10)0.25);
           pfVar4 = local_38;
         }
         *pfVar4 = (float)fVar12;
-        uVar6 = *local_30 >> 0x1f;
-        iVar7 = (*local_30 ^ uVar6) - uVar6;
-        if (iVar7 < 200) {
-          *local_18 = *local_18 * (float)*(double *)(iVar7 * 8 + 0x1cd6328);
+        uVar5 = *local_30 >> 0x1f;
+        iVar6 = (*local_30 ^ uVar5) - uVar5;
+        if (iVar6 < 200) {
+          *local_18 = *local_18 * (float)g_DOUBLE_ARRAY_01cd6328[iVar6];
         }
         else {
-          fVar12 = pow((float10)iVar7,(float10)1.3333333333333299);
+          fVar12 = pow((float10)iVar6,(float10)1.3333333333333299);
           *local_1c = (float)(fVar12 * (float10)*local_1c);
         }
-        if (*(int *)((int)quantized_samples->samples[0] + iVar5 + local_68) < 0) {
-          *(float *)((int)output_samples->samples[0] + iVar5 + local_68) =
-               -*(float *)((int)output_samples->samples[0] + iVar5 + local_68);
+        if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) < 0) {
+          *(float *)((int)output_samples->samples[0] + iVar9 + local_68) =
+               -*(float *)((int)output_samples->samples[0] + iVar9 + local_68);
         }
       }
-      iVar5 = iVar5 + 4;
+      iVar9 = iVar9 + 4;
       local_20 = (float *)((int)local_20 + 1);
       local_38 = (float *)((int)local_38 + 1);
       local_3c = local_3c + 1;
       local_18 = local_18 + 1;
       local_30 = local_30 + 1;
-    } while (iVar5 != 0x48);
+      iVar6 = iVar7;
+    } while (iVar9 != 0x48);
     local_6c = (float *)((int)local_6c + 0x12);
     local_68 = local_68 + 0x48;
     local_64 = local_64 + 0x12;

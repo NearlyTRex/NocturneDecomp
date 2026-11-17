@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 float10 __fpustack_safe fdiv(float10 dividend,float10 divisor)
 
 {
@@ -34,7 +32,7 @@ float10 __fpustack_safe fdiv(float10 dividend,float10 divisor)
 LAB_0056bf60:
       return fVar2 / fVar1;
     }
-    fVar2 = fVar1 * (float10)_DAT_005c3f80;
+    fVar2 = fVar1 * (float10)9.223372e+18f;
     in_stack_00000004 = SUB104(fVar2,0);
     in_stack_00000008 = (uint)((unkuint10)fVar2 >> 0x20);
     in_stack_0000000c = (ushort)((unkuint10)fVar2 >> 0x40);
@@ -42,14 +40,14 @@ LAB_0056bf60:
   if (((in_stack_00000008 * 2 ^ 0xe000000) & 0xe000000) != 0) {
     return fVar2 / fVar1;
   }
-  if ((&DAT_005c3f68)[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == '\0') {
+  if (g_BYTE_ARRAY_005c3f68[(in_stack_00000008 & 0x7fffffff) >> 0x1b] == 0) {
     return fVar2 / fVar1;
   }
   if (((in_stack_0000000c & 0x7fff) != 0) && ((in_stack_0000000c & 0x7fff) != 0x7fff)) {
     if ((in_stack_00000018 & 0x7fff) == 1) {
-      return (fVar2 * (float10)_DAT_005c3f7c) / (fVar1 * (float10)_DAT_005c3f7c);
+      return (fVar2 * (float10)1.0625f) / (fVar1 * (float10)1.0625f);
     }
-    return (fVar2 * (float10)_DAT_005c3f78) / (fVar1 * (float10)_DAT_005c3f78);
+    return (fVar2 * (float10)0.9375f) / (fVar1 * (float10)0.9375f);
   }
 LAB_0056bef4:
   return fVar2 / fVar1;

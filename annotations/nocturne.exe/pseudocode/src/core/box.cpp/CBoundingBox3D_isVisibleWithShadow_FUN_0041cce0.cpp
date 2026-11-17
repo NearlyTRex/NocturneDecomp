@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundingBox3D *this_ptr)
 
 {
@@ -19,7 +17,7 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundi
   int local_c;
   int local_8;
   
-  if (_DAT_014b9920 != (CDemonLight *)0x0) {
+  if (g_CDemonLight_PTR_014b9920 != (CDemonLight *)0x0) {
     pSVar3 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
     local_c = g_Projection.center_x_fixed + g_Projection.half_width_fixed;
     local_20.x_max = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
@@ -93,7 +91,8 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0(CBoundi
     local_20.x_min = local_c >> 0x10;
     local_c = local_20.x_min;
     local_8 = local_20.y_min;
-    iVar2 = core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0(_DAT_014b9920,&local_20);
+    iVar2 = core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_00451aa0
+                      (g_CDemonLight_PTR_014b9920,&local_20);
     return iVar2;
   }
   return 1;

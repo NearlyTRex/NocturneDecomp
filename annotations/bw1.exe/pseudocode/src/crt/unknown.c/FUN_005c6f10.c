@@ -19,7 +19,7 @@ uint FUN_005c6f10(uint param_1)
     uVar1 = 0xffffffff;
   }
   else {
-    hObject = *(HANDLE *)(DAT_00626838 + param_1 * 4);
+    hObject = g_SIOControlBlock_PTR_00626838->standard_handles[param_1];
     uVar1 = 0;
     if ((g_PTR_00626780 == (byte *)0x0) ||
        (iVar2 = (*(code *)g_PTR_00626774)(param_1), iVar2 == 0)) {

@@ -15,5 +15,5 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_abortOldFuncOp16_FUN_004054f0(SMRGLHea
   g_CurrentLineNumber = 217;
   g_CurrentFilename = "..\\engine\\3d.c";
   core_main_c_displayErrorAndQuit_FUN_004c8440(local_54);
-  return (SMRGLHeaderExtended *)&DAT_006b0288;
+  return (SMRGLHeaderExtended *)&g_INT_006b0288;
 }

@@ -13,10 +13,10 @@
 ;   TerminatedCString s_Stop_hardware_sfx_second_00594104
 ;   TerminatedCString s_Stop_secondary_sound_buf_0059416f
 ;   TerminatedCString s_Stop_primary_sound_buffe_0059418b
-;   undefined4 DAT_02dc9218
-;   undefined4 DAT_02dc921c
-;   undefined4 DAT_02dc92ac
-;   undefined4 DAT_02dc9328
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02dc9218
+;   IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02dc921c
+;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[1]
+;   undefined4 g_INT_ARRAY_02dc9324[1]
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -35,12 +35,12 @@ section .text
     PUSH EBP                            ; 0052a0d3
     SUB ESP,0x4b4                       ; 0052a0d4
     MOV EDX,0x1                         ; 0052a0da
-    MOV ECX,dword ptr [0x02dc921c]      ; 0052a0df | DAT_02dc921c
+    MOV ECX,dword ptr [0x02dc921c]      ; 0052a0df | g_IDirectSoundBuffer_PTR_02dc921c
     MOV dword ptr [ESP + 0x4b0],EDX     ; 0052a0e5
     TEST ECX,ECX                        ; 0052a0ec
     JNZ 0x0052a187                      ; 0052a0ee
         ;   XREF to: 0052a187 (CONDITIONAL_JUMP)  ; LAB_0052a187
-    MOV ESI,dword ptr [0x02dc9218]      ; 0052a0f4 | DAT_02dc9218
+    MOV ESI,dword ptr [0x02dc9218]      ; 0052a0f4 | g_IDirectSoundBuffer_PTR_02dc9218
         ;   Label: LAB_0052a0f4
     TEST ESI,ESI                        ; 0052a0fa
     JNZ 0x0052a1d7                      ; 0052a0fc
@@ -48,7 +48,7 @@ section .text
     XOR ESI,ESI                         ; 0052a102
         ;   Label: LAB_0052a102
     XOR EBX,EBX                         ; 0052a104
-    MOV EAX,dword ptr [ESI + 0x2dc92a8] ; 0052a106 | DAT_02dc92ac
+    MOV EAX,dword ptr [ESI + 0x2dc92a8] ; 0052a106 | g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[1]
         ;   Label: LAB_0052a106
     MOV EBP,EBX                         ; 0052a10c
     TEST EAX,EAX                        ; 0052a10e
@@ -63,7 +63,7 @@ section .text
     LEA EDI,[EBP*0x4 + 0x0]             ; 0052a120
         ;   Label: LAB_0052a120
     ADD EDI,0x2dc9324                   ; 0052a127
-    MOV ECX,dword ptr [EDI]             ; 0052a12d | DAT_02dc9328
+    MOV ECX,dword ptr [EDI]             ; 0052a12d | g_INT_ARRAY_02dc9324[1]
     TEST ECX,ECX                        ; 0052a12f
     JZ 0x0052a13f                       ; 0052a131
         ;   XREF to: 0052a13f (CONDITIONAL_JUMP)  ; LAB_0052a13f
@@ -74,7 +74,7 @@ section .text
     LEA EDI,[EBP*0x4 + 0x0]             ; 0052a13f
         ;   Label: LAB_0052a13f
     ADD EDI,0x2dc92a8                   ; 0052a146
-    MOV EBP,dword ptr [EDI]             ; 0052a14c | DAT_02dc92ac
+    MOV EBP,dword ptr [EDI]             ; 0052a14c | g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[1]
     TEST EBP,EBP                        ; 0052a14e
     JZ 0x0052a15f                       ; 0052a150
         ;   XREF to: 0052a15f (CONDITIONAL_JUMP)  ; LAB_0052a15f

@@ -9,6 +9,6 @@
 void __cdecl core_actor_cpp_setRandomSeed_FUN_0040dd20(uint seed_value)
 
 {
-  DAT_007641b8 = seed_value;
+  g_UINT_007641b8 = seed_value;
   return;
 }

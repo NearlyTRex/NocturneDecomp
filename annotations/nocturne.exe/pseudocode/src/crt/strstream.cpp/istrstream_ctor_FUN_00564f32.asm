@@ -14,8 +14,8 @@
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0 at 004390d2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a4730
-;   undefined4 DAT_005a4738
+;   WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4730
+;   int g_INT_005a4738 = 0x48
 ;   void* PTR_crt_strstream.cpp_istrstream_dtor_FUN_00564fd8_005a4744 = 00564fd8
 ;   void* PTR_crt_unknown.c_FUN_00564faa_005a474c = 00564faa
 ;   void* PTR_crt_unknown.c_FUN_00564fc0_005a4754 = 00564fc0
@@ -62,11 +62,11 @@ section .text
     ADD ESP,0x8                         ; 00564f80
     MOV dword ptr [EDX + EAX*0x1 + 0x28],0x5a4754 ; 00564f83 | PTR_crt_unknown.c_FUN_00564fc0_005a4754
     RET                                 ; 00564f8b
-    MOV dword ptr [EAX],0x5a4730        ; 00564f8c | DAT_005a4730
+    MOV dword ptr [EAX],0x5a4730        ; 00564f8c | g_WatcomVirtualBaseDescriptor_005a4730
         ;   Label: LAB_00564f8c
     ADD EAX,0x58                        ; 00564f92
     PUSH EAX                            ; 00564f95
-    MOV dword ptr [EAX + -0x10],0x5a4738 ; 00564f96 | DAT_005a4738
+    MOV dword ptr [EAX + -0x10],0x5a4738 ; 00564f96 | g_INT_005a4738
     CALL crt_iostream.cpp_ios_ctor_FUN_0056b503 ; 00564f9d
         ;   XREF to: 0056b503 (UNCONDITIONAL_CALL)  ; ios * crt_iostream.cpp_ios_ctor_FUN_0056b503(ios * this_ptr)
     ADD ESP,0x4                         ; 00564fa2

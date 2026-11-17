@@ -28,8 +28,8 @@
 ;   TerminatedCString s_core_actor_cpp_00577f3b
 ;   TerminatedCString s_Too_many_actor_types_00577f4d
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 DAT_00763e94
-;   undefined4 DAT_00763e98
+;   int g_INT_00763e94
+;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_00763e98
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -82,16 +82,16 @@ section .text
     TEST EAX,EAX                        ; 0040d43d
     JNZ 0x0040d46e                      ; 0040d43f
         ;   XREF to: 0040d46e (CONDITIONAL_JUMP)  ; LAB_0040d46e
-    MOV EDX,dword ptr [0x00763e94]      ; 0040d441 | DAT_00763e94
+    MOV EDX,dword ptr [0x00763e94]      ; 0040d441 | g_INT_00763e94
     MOV dword ptr [EBP + 0x38],EBX      ; 0040d447
     CMP EDX,0xc8                        ; 0040d44a
     JGE 0x0040d49f                      ; 0040d450
         ;   XREF to: 0040d49f (CONDITIONAL_JUMP)  ; LAB_0040d49f
-    MOV EAX,[0x00763e94]                ; 0040d452 | DAT_00763e94
+    MOV EAX,[0x00763e94]                ; 0040d452 | g_INT_00763e94
         ;   Label: LAB_0040d452
     LEA ESI,[EAX + 0x1]                 ; 0040d457
-    MOV dword ptr [EAX*0x4 + 0x763e98],EBP ; 0040d45a | DAT_00763e98
-    MOV dword ptr [0x00763e94],ESI      ; 0040d461 | DAT_00763e94
+    MOV dword ptr [EAX*0x4 + 0x763e98],EBP ; 0040d45a | g_CDemonActorType_PTR_ARRAY_00763e98
+    MOV dword ptr [0x00763e94],ESI      ; 0040d461 | g_INT_00763e94
     MOV EAX,EBP                         ; 0040d467
     POP EBP                             ; 0040d469
     POP EDI                             ; 0040d46a

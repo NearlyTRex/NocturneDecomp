@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
 
 {
@@ -18,7 +16,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
   CBoundingBox3D *this_ptr_00;
   uint uVar5;
   int iVar6;
-  float *out_basis;
+  float (*out_basis) [8];
   SRenderVertex *pSVar7;
   SRenderVertex *vertices;
   SRenderVertex *pSVar8;
@@ -44,29 +42,29 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)
                           (&this_ptr->base,(CBoundingBox3D *)local_58);
   iStack_28 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
-  iVar4 = _DAT_01c70714;
+  iVar4 = g_INT_01c70714;
   if (iStack_28 != 0) {
     this_ptr->is_visible = 1;
     if (iVar4 == 0) {
-      out_basis = (float *)0x1c7075c;
+      out_basis = g_FLOAT_ARRAY_ARRAY_01c7075c;
       iVar4 = 0;
       do {
         iVar6 = iVar4 + 1;
         iStack_18 = iVar4;
         core_spline_cpp_computeSplineBasis_FUN_00533ce0
-                  (out_basis,((float)iVar4 + (float)0.5) * (float)0.015625,0.0);
-        out_basis = out_basis + 8;
+                  (*out_basis,((float)iVar4 + (float)0.5) * (float)0.015625,0.0);
+        out_basis = out_basis + 1;
         iVar4 = iVar6;
       } while (iVar6 < 0x40);
-      _DAT_01c70714 = 1;
+      g_INT_01c70714 = 1;
     }
     pCVar2 = g_CDemonRenderer_PTR_005ae704;
     if (g_UseExternalRenderer == 0) {
       engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_00460f20
                 (g_CDemonRenderer_PTR_005ae704,0,0,0);
-      uVar5 = _DAT_01c038f4 >> 8;
-      _DAT_01c70754 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
-      _DAT_01c70758 = _DAT_01c70754 ^ 0xffffff;
+      uVar5 = g_INT_01c038f4 >> 8;
+      g_UINT_01c70754 = uVar5 | uVar5 << 8 | uVar5 << 0x10;
+      g_UINT_01c70758 = g_UINT_01c70754 ^ 0xffffff;
     }
     else {
       g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->r = 0;
@@ -77,13 +75,13 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
       pCVar2->vertex_buffer_ptr[1].b = 0;
       pCVar2->vertex_buffer_ptr[2].r = 0;
       pCVar2->vertex_buffer_ptr[2].g = 0;
-      iVar4 = _DAT_01c038f4;
+      iVar4 = g_INT_01c038f4;
       pCVar2->vertex_buffer_ptr[2].b = 0;
       iVar4 = 0xffff - iVar4;
       pCVar2->vertex_buffer_ptr->a = iVar4;
       pCVar2->vertex_buffer_ptr[1].a = iVar4;
       pCVar2->vertex_buffer_ptr[2].a = iVar4;
-      engine_texture_cpp_ensureTextureLoaded_FUN_00545920((SMRGLTextureBasic *)&DAT_005b9214);
+      engine_texture_cpp_ensureTextureLoaded_FUN_00545920(&g_SMRGLTextureBasic_005b9214);
     }
     iStack_24 = 0;
     if (0 < this_ptr->fly_count) {
@@ -99,12 +97,12 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_0048f490(CFlies *this_ptr)
           pSStack_20 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00533f10
-                  ((float *)((int)pSStack_20 * 0x20 + 0x1c7075c),(CVector3f *)(local_58 + 0x14),
+                  (g_FLOAT_ARRAY_ARRAY_01c7075c[(int)pSStack_20],(CVector3f *)(local_58 + 0x14),
                    pSVar3->control_points,pSVar3->control_points + 1,pSVar3->control_points + 2,
                    pSVar3->control_points + 3);
-        CStack_38.x = (int)ROUND((float)local_58._20_4_ * _DAT_0059da10);
-        CStack_38.y = (int)ROUND(fStack_40 * _DAT_0059da10);
-        CStack_38.z = (int)ROUND(fStack_3c * _DAT_0059da10);
+        CStack_38.x = (int)ROUND((float)local_58._20_4_ * 256.0f);
+        CStack_38.y = (int)ROUND(fStack_40 * 256.0f);
+        CStack_38.z = (int)ROUND(fStack_3c * 256.0f);
         engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                   (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&CStack_38);
         pCVar2 = g_CDemonRenderer_PTR_005ae704;

@@ -667,7 +667,7 @@ void __cdecl core_prye_cpp_CPrye_updateProceduralAnimation_FUN_0051c1c0(CPrye *t
       afStack_178[(uint)bVar10 * -2] = afStack_dc[(uint)bVar10 * -2];
       afStack_178[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
            afStack_dc[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
-      if (&stack0x00000000 != (byte *)0x1ed3828) {
+      if (&stack0x00000000 != g_CHAR_ARRAY_ARRAY_01ed3808[0] + 0x20) {
         g_CVector3f_01ed36ac.x = fStack_17c;
         g_CVector3f_01ed36ac.y = afStack_178[0];
         g_CVector3f_01ed36ac.z = afStack_178[1];

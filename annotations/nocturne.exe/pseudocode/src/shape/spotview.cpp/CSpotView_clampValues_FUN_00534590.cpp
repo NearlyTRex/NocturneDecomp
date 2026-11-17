@@ -6,33 +6,31 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_spotview_cpp_CSpotView_clampValues_FUN_00534590(CSpotView *this_ptr)
 
 {
-  if (this_ptr->yaw < (float)_DAT_00595132) {
-    this_ptr->yaw = this_ptr->yaw + _DAT_0059513a;
+  if (this_ptr->yaw < (float)3.1415926535000001) {
+    this_ptr->yaw = this_ptr->yaw + 6.283185f;
   }
-  if ((float)_DAT_00595132 < this_ptr->yaw) {
-    this_ptr->yaw = this_ptr->yaw + _DAT_0059513e;
+  if ((float)3.1415926535000001 < this_ptr->yaw) {
+    this_ptr->yaw = this_ptr->yaw + -6.283185f;
   }
-  if (this_ptr->pitch < (float)_DAT_00595142) {
+  if (this_ptr->pitch < (float)-1.57079632675) {
     this_ptr->pitch = -1.5707964;
   }
-  if ((float)_DAT_0059514a < this_ptr->pitch) {
+  if ((float)1.57079632675 < this_ptr->pitch) {
     this_ptr->pitch = 1.5707964;
   }
-  if (this_ptr->distance < (float)_DAT_00595152) {
+  if (this_ptr->distance < (float)0.10000000000000001) {
     this_ptr->distance = 0.1;
   }
-  if ((float)_DAT_0059515a < this_ptr->distance) {
+  if ((float)10000 < this_ptr->distance) {
     this_ptr->distance = 10000.0;
   }
-  if (this_ptr->zoom < (float)_DAT_00595162) {
+  if (this_ptr->zoom < (float)0.01) {
     this_ptr->zoom = 0.01;
   }
-  if (this_ptr->zoom <= (float)_DAT_0059516a) {
+  if (this_ptr->zoom <= (float)100) {
     return;
   }
   this_ptr->zoom = 100.0;

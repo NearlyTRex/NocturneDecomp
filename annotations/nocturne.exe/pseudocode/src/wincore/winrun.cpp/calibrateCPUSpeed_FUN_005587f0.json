@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 81,
+    "complexity_score": 42,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 224
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 42,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -114,38 +111,38 @@
     },
     {
       "addr": "01c03950",
-      "name": "DAT_01c03950",
-      "type": "undefined4",
+      "name": "g_INT_01c03950",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02de07d8",
-      "name": "DAT_02de07d8",
-      "type": "undefined4",
+      "name": "g_struct_19_02de07d8",
+      "type": "_struct_19",
       "value": null
     },
     {
       "addr": "02de07e0",
-      "name": "DAT_02de07e0",
-      "type": "undefined4",
+      "name": "g_struct_19_02de07e0",
+      "type": "_struct_19",
       "value": null
     },
     {
       "addr": "02de07e4",
-      "name": "DAT_02de07e4",
+      "name": "g_struct_19_02de07e0.HighPart",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02de07e8",
-      "name": "DAT_02de07e8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02de07e8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02de07f4",
-      "name": "DAT_02de07f4",
-      "type": "undefined4",
+      "name": "g_BOOL_02de07f4",
+      "type": "BOOL",
       "value": null
     },
     {
@@ -156,8 +153,8 @@
     },
     {
       "addr": "02de20a0",
-      "name": "DAT_02de20a0",
-      "type": "undefined4",
+      "name": "g_INT_02de20a0",
+      "type": "int",
       "value": null
     }
   ],
@@ -280,30 +277,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_02de07e0",
-      "severity": "mild",
-      "text": "BVar1 = QueryPerformanceFrequency((LARGE_INTEGER *)&DAT_02de07e0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_02de07d8",
-      "severity": "mild",
-      "text": "QueryPerformanceCounter((LARGE_INTEGER *)&DAT_02de07d8);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

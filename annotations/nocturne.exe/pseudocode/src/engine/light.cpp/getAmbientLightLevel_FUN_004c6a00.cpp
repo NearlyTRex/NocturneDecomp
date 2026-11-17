@@ -9,5 +9,5 @@
 int __cdecl engine_light_cpp_getAmbientLightLevel_FUN_004c6a00(void)
 
 {
-  return DAT_005bacd0;
+  return g_INT_005bacd0;
 }

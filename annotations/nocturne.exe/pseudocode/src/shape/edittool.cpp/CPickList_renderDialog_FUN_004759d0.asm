@@ -22,12 +22,12 @@
 ;
 ; Referenced Globals:
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcde08
-;   undefined4 DAT_01bcde0c
-;   undefined4 DAT_01bcde10
-;   undefined4 DAT_01bcde14
-;   undefined4 DAT_01bcde18
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bcde08
+;   int g_INT_01bcde0c
+;   int g_INT_01bcde10
+;   int g_INT_01bcde14
+;   int g_INT_01bcde18
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipBottom
@@ -95,7 +95,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x134]     ; 00475a73
     PUSH EDI                            ; 00475a7a
     MOV ESI,dword ptr [0x01c00c70]      ; 00475a7b | g_ActiveRenderColor
-    MOV EAX,[0x01bcde18]                ; 00475a81 | DAT_01bcde18
+    MOV EAX,[0x01bcde18]                ; 00475a81 | g_INT_01bcde18
     PUSH EBP                            ; 00475a86
     MOV [0x01c00c70],EAX                ; 00475a87 | g_ActiveRenderColor
     MOV EAX,[0x01c00c5c]                ; 00475a8c | g_ClipTop
@@ -176,7 +176,7 @@ section .text
     CMP dword ptr [EDX + 0x10c],0x0     ; 00475bae
     JZ 0x00475cfe                       ; 00475bb5
         ;   XREF to: 00475cfe (CONDITIONAL_JUMP)  ; LAB_00475cfe
-    MOV EAX,[0x01bcde14]                ; 00475bbb | DAT_01bcde14
+    MOV EAX,[0x01bcde14]                ; 00475bbb | g_INT_01bcde14
     MOV EDX,dword ptr [ESP + 0x160]     ; 00475bc0
         ;   Label: LAB_00475bc0
     PUSH EAX                            ; 00475bc7
@@ -213,7 +213,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x138]     ; 00475c37
     PUSH EBX                            ; 00475c3e
     MOV EDX,dword ptr [EAX + 0x114]     ; 00475c3f
-    MOV EAX,[0x01bcde08]                ; 00475c45 | DAT_01bcde08
+    MOV EAX,[0x01bcde08]                ; 00475c45 | g_INT_01bcde08
     ADD EDI,EDX                         ; 00475c4a
     MOV dword ptr [ESP + 0x144],EAX     ; 00475c4c
     CALL shape_edittool.cpp_CPickList_isItemEnabled_FUN_00476040 ; 00475c53
@@ -257,7 +257,7 @@ section .text
     PUSH EDI                            ; 00475cc3
     LEA EAX,[ESP + 0x10]                ; 00475cc4
     PUSH EAX                            ; 00475cc8
-    MOV ECX,dword ptr [0x01bcd070]      ; 00475cc9 | DAT_01bcd070
+    MOV ECX,dword ptr [0x01bcd070]      ; 00475cc9 | g_CBitFont_PTR_01bcd070
     PUSH ECX                            ; 00475ccf
     ADD EBP,0x4                         ; 00475cd0
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00475cd3
@@ -274,11 +274,11 @@ section .text
         ;   XREF to: 00475b51 (CONDITIONAL_JUMP)  ; LAB_00475b51
     JMP 0x00475c78                      ; 00475cf9
         ;   XREF to: 00475c78 (UNCONDITIONAL_JUMP)  ; LAB_00475c78
-    MOV EAX,[0x01bcde10]                ; 00475cfe | DAT_01bcde10
+    MOV EAX,[0x01bcde10]                ; 00475cfe | g_INT_01bcde10
         ;   Label: LAB_00475cfe
     JMP 0x00475bc0                      ; 00475d03
         ;   XREF to: 00475bc0 (UNCONDITIONAL_JUMP)  ; LAB_00475bc0
-    MOV EAX,[0x01bcde0c]                ; 00475d08 | DAT_01bcde0c
+    MOV EAX,[0x01bcde0c]                ; 00475d08 | g_INT_01bcde0c
         ;   Label: LAB_00475d08
     MOV dword ptr [ESP + 0x13c],EAX     ; 00475d0d
     JMP 0x00475c63                      ; 00475d14

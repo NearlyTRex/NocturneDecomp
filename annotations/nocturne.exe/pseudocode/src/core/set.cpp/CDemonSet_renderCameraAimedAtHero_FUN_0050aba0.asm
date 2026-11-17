@@ -20,8 +20,8 @@
 ;   double DOUBLE_005905d2 = 4
 ;   int g_LocalHeroIndex
 ;   undefined4 g_CDemonCameraInstance.rotation_matrix.m[0].x
-;   undefined4 DAT_01fb9b54
-;   undefined4 DAT_01fb9b58
+;   int g_INT_01fb9b54
+;   CDemonLight*[96] g_CDemonLight_PTR_ARRAY_01fb9b58
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_00440290
@@ -138,20 +138,20 @@ section .text
     XOR EBX,EBX                         ; 0050acdc
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20 ; 0050acde
         ;   XREF to: 00440a20 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_00440a20(CDemonCamera * this_ptr, int skip_zbuffer_copy)
-    MOV ECX,dword ptr [0x01fb9b54]      ; 0050ace3 | DAT_01fb9b54
+    MOV ECX,dword ptr [0x01fb9b54]      ; 0050ace3 | g_INT_01fb9b54
     ADD ESP,0x8                         ; 0050ace9
     TEST ECX,ECX                        ; 0050acec
     JLE 0x0050ad10                      ; 0050acee
         ;   XREF to: 0050ad10 (CONDITIONAL_JUMP)  ; LAB_0050ad10
     XOR ESI,ESI                         ; 0050acf0
-    MOV EDI,dword ptr [ESI + 0x1fb9b58] ; 0050acf2 | DAT_01fb9b58
+    MOV EDI,dword ptr [ESI + 0x1fb9b58] ; 0050acf2 | g_CDemonLight_PTR_ARRAY_01fb9b58
         ;   Label: LAB_0050acf2
     PUSH EDI                            ; 0050acf8
     ADD ESI,0x4                         ; 0050acf9
     INC EBX                             ; 0050acfc
     CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970 ; 0050acfd
         ;   XREF to: 0044e970 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044e970(CDemonLight * this_ptr)
-    MOV EAX,[0x01fb9b54]                ; 0050ad02 | DAT_01fb9b54
+    MOV EAX,[0x01fb9b54]                ; 0050ad02 | g_INT_01fb9b54
     ADD ESP,0x4                         ; 0050ad07
     CMP EBX,EAX                         ; 0050ad0a
     JL 0x0050acf2                       ; 0050ad0c

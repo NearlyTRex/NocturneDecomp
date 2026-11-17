@@ -60,9 +60,8 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_parseHeader_FUN_00502890(CMP3Decoder *this
   sound_mp3_cpp_calculateMpegFrame_FUN_004fd150(&local_38);
   iVar5 = 0x5029ad;
   dVar4 = round
-                    (g_DOUBLE_ARRAY_006011b8
-                     [local_68.mpeg_version * 4 + local_68.sampling_rate_index] * 1000)
-  ;
+                    (g_DOUBLE_ARRAY_ARRAY_006011b8[local_68.mpeg_version]
+                     [local_68.sampling_rate_index] * 1000);
   this_ptr->sample_rate = (int)ROUND(dVar4);
   this_ptr->num_channels = local_38.table_index;
   iVar5 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00502bc0(this_ptr,iVar5);

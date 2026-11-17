@@ -799,7 +799,7 @@ undefined4 FUN_0056dfc0(void);
 
 // Original: crt_unknown.c_FUN_0056e010
 // Address: 0056e010
-int FUN_0056e010(int param_1);
+int FUN_0056e010(HANDLE param_1);
 
 // Original: crt_unknown.c_FUN_0056e09c
 // Address: 0056e09c
@@ -979,7 +979,7 @@ undefined4 FUN_0056f2d0(void);
 
 // Original: crt_unknown.c_FUN_0056f30c
 // Address: 0056f30c
-undefined4 FUN_0056f30c(LPVOID param_1);
+undefined4 FUN_0056f30c(Heap *param_1);
 
 // Original: crt_unknown.c_FUN_0056f36c
 // Address: 0056f36c
@@ -1151,7 +1151,7 @@ undefined4 FUN_00571280(undefined4 param_1,int param_2);
 
 // Original: crt_unknown.c_FUN_005712ec
 // Address: 005712ec
-void FUN_005712ec(int param_1);
+void FUN_005712ec(undefined *param_1);
 
 // Original: crt_unknown.c_FUN_00571364
 // Address: 00571364
@@ -1191,7 +1191,7 @@ void __cdecl ClearFPUExceptions(void);
 
 // Original: crt_unknown.c_FUN_00571588
 // Address: 00571588
-undefined4 FUN_00571588(int param_1);
+SIGNAL_HANDLER_TYPE FUN_00571588(int param_1);
 
 // Original: crt_unknown.c_FUN_005715ac
 // Address: 005715ac
@@ -1287,7 +1287,7 @@ void FUN_00572e90(undefined4 param_1);
 
 // Original: crt_unknown.c_FUN_00572ea0
 // Address: 00572ea0
-void FUN_00572ea0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3);
+void FUN_00572ea0(undefined4 *param_1,undefined4 *param_2,char *param_3);
 
 // Original: crt_unknown.c_FUN_00572ef0
 // Address: 00572ef0

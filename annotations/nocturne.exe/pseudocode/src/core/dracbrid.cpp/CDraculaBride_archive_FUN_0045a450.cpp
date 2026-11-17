@@ -29,7 +29,7 @@ void __cdecl core_dracbrid_cpp_CDraculaBride_archive_FUN_0045a450(CDraculaBride 
       (core_actor_cpp_archiveString_FUN_0040c6d0(this_ptr->rise_event,"riseEvent"),
       g_INT_005ae6c8 < 4)) &&
      (core_actor_cpp_archiveInteger_FUN_0040c900(&local_14,"initialState"),
-     DAT_00763e88 == 1)) {
+     g_INT_00763e88 == 1)) {
     if (local_14 == 1) {
       motion_name = "vincoffin";
     }

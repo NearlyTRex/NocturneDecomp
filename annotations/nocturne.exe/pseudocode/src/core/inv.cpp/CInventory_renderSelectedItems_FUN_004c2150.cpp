@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(CInventory *this_ptr)
 
 {
@@ -24,7 +22,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_004c2150(CInventory
   
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
-    if (g_WindowHeight != _DAT_01cc30a0) {
+    if (g_WindowHeight != g_INT_01cc30a0) {
       iStack_40 = 0x4c23d6;
       core_inv_cpp_loadAssets_FUN_004befa0();
     }

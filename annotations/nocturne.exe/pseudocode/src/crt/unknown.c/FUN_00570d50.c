@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ulonglong FUN_00570d50(void)
 
 {
@@ -35,7 +33,7 @@ ulonglong FUN_00570d50(void)
     function_dispatch(0xf);
                     /* WARNING: Could not recover jumptable at 0x00570ea9. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    uVar2 = (*(code *)(&PTR_crt_unknown_c_FUN_00570eb0_005c4094)
+    uVar2 = (*(code *)g_ARRAY_PTR_005c4094
                       [(uVar1 * 2 + (uint)CARRY4((uint)uStack_1c << 0x10,(uint)uStack_1c << 0x10)) *
                        2 + (uint)CARRY4((uint)uStack_28 << 0x10,(uint)uStack_28 << 0x10)])();
     return uVar2;

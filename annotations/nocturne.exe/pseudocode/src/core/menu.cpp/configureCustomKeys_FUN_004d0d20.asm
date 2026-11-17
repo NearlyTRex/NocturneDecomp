@@ -341,7 +341,7 @@ section .text
         ;   XREF to: 004d1056 (CONDITIONAL_JUMP)  ; default
     JMP dword ptr [EBX*0x4 + 0x4d0cf4]  ; 004d1025 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    MOV EDI,dword ptr [0x01cc5b5c]      ; 004d102c | DAT_01cc5b5c
+    MOV EDI,dword ptr [0x01cc5b5c]      ; 004d102c | g_INT_01cc5b5c
         ;   Label: caseD_0
     CMP EDI,0x1                         ; 004d1032
     JNZ 0x004d1152                      ; 004d1035

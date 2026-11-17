@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CDynamite *this_ptr,float delta_time)
 
 {
@@ -36,7 +34,7 @@ void __cdecl core_dynamite_cpp_CDynamite_process_FUN_0046edc0(CDynamite *this_pt
     }
     else {
       iVar2 = core_actor_cpp_randomChance_FUN_0040dea0
-                        ((delta_time * (float)5 * fVar1) / _DAT_0059c91c);
+                        ((delta_time * (float)5 * fVar1) / 3.5f);
       if (iVar2 != 0) {
         pCVar3 = (*((this_ptr->base).base.vtable._ub)->getBoundingBox)
                            ((CDemonActor *)this_ptr,&local_48);

@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void FUN_005be848(void)
 
 {
-  uint *puVar1;
+  FileListNode *pFVar1;
   
-  while (_DAT_02680164 != (uint *)0x0) {
-    puVar1 = (uint *)*_DAT_02680164;
-    debugFree(_DAT_02680164);
-    _DAT_02680164 = puVar1;
+  while (g_FileListNode_PTR_02680164 != (FileListNode *)0x0) {
+    pFVar1 = g_FileListNode_PTR_02680164->next;
+    debugFree(g_FileListNode_PTR_02680164);
+    g_FileListNode_PTR_02680164 = pFVar1;
   }
   return;
 }

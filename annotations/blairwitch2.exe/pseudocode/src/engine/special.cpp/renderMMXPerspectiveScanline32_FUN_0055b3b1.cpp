@@ -191,20 +191,20 @@ void __edi_esi_ebx engine_special_cpp_renderMMXPerspectiveScanline32_FUN_0055b3b
       uVar9 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->green_current >> 1) - uVar12) *
                      (longlong)(int)g_UINT_ARRAY_01c35e70[iVar8 + 1]) >> 0x20);
-      g_INT_0061c808 = uVar12 & 0xffff;
-      g_INT_0061c828 = uVar9 & 0xffff;
+      g_MMX_INTEGER_0061c808.u32[0] = uVar12 & 0xffff;
+      g_MMX_INTEGER_0061c828.u32[0] = uVar9 & 0xffff;
       uVar13 = (uint)pSVar14->blue_current >> 1;
       uVar7 = (uint)((ulonglong)
                      ((longlong)(int)(((uint)left_vertex->blue_current >> 1) - uVar13) *
                      (longlong)(int)g_UINT_ARRAY_01c35e70[iVar8 + 1]) >> 0x20);
-      g_INT_0061c810 = uVar13 & 0xffff;
-      g_INT_0061c830 = uVar7 & 0xffff;
+      g_MMX_INTEGER_0061c810.u32[0] = uVar13 & 0xffff;
+      g_MMX_INTEGER_0061c830.u32[0] = uVar7 & 0xffff;
       uVar38 = ((CONCAT44(g_QWORD_0061c800._4_4_,uVar11) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c80c,uVar12) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c814,uVar13) & 0xffffffff0000ffff;
+               CONCAT44(g_MMX_INTEGER_0061c808.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_MMX_INTEGER_0061c810.u32[1],uVar13) & 0xffffffff0000ffff;
       uVar43 = ((CONCAT44(g_QWORD_0061c820._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c82c,uVar9) & 0xffffffff0000ffff) << 0x10 |
-               CONCAT44(uRam0061c834,uVar7) & 0xffffffff0000ffff;
+               CONCAT44(g_MMX_INTEGER_0061c828.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |
+               CONCAT44(g_MMX_INTEGER_0061c830.u32[1],uVar7) & 0xffffffff0000ffff;
     }
     uVar17 = 0;
     sVar42 = (short)uVar43;

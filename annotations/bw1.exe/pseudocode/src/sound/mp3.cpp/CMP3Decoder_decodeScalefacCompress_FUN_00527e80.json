@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 312,
-    "complexity_score": 222,
+    "complexity_score": 191,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 112,
-    "suspect_count": 9,
+    "pseudocode_lines": 111,
+    "suspect_count": 7,
     "suspect_types": [
       "concat_reconstruction",
-      "pointer_cast",
-      "undefined_data",
       "unknown_field"
     ],
-    "total_lines": 424
+    "total_lines": 423
   },
   "cross_references": [
     {
@@ -47,8 +45,8 @@
   "globals": [
     {
       "addr": "00620b10",
-      "name": "DAT_00620b10",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_ARRAY_ARRAY_00620b10",
+      "type": "int[6][3][4]",
       "value": null
     }
   ],
@@ -244,16 +242,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_00620b10",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00620b10 +",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 111,
       "match": "._2_2_",
       "severity": "mild",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
@@ -301,19 +291,11 @@
     },
     {
       "description": "Ghidra CONCAT22 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 112,
+      "line": 111,
       "match": "CONCAT22",
       "severity": "moderate",
       "text": "local_16 = CONCAT22(local_16._2_2_ + 1,(ushort)local_16);",
       "type": "concat_reconstruction"
-    },
-    {
-      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 99,
-      "match": "(TYPE *) ((int)NAME ...) split across lines",
-      "severity": "moderate",
-      "text": "*(uint *)(&DAT_00620b10 +",
-      "type": "pointer_cast"
     }
   ]
 }

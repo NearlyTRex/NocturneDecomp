@@ -14,14 +14,14 @@
 ; Referenced Globals:
 ;   double DOUBLE_005851c8 = 0.5
 ;   double DOUBLE_005851d0 = 1.33300000000000
-;   undefined4 DAT_01c7ccf0
+;   int g_INT_01c7ccf0
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[0].is_wall_splat
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[1].position.x
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[1].position.y
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[1].position.z
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[1].is_wall_splat
 ;   undefined4 g_CBloodSplat_ARRAY_01c7ccf4[1].blood_type
-;   undefined4 DAT_01c9e038
+;   int g_INT_01c9e038
 ;   undefined4 g_CBloodPool_ARRAY_01c9e03c[0].position.y
 ;   undefined4 g_CBloodPool_ARRAY_01c9e03c[1].position.x
 ;   undefined4 g_CBloodPool_ARRAY_01c9e03c[1].position.y
@@ -39,8 +39,8 @@ section .text
     PUSH EBP                            ; 004b0733
     MOV EBP,ESP                         ; 004b0734
     AND ESP,0xfffffff8                  ; 004b0736
-    MOV ESI,dword ptr [0x01c7ccf0]      ; 004b0739 | DAT_01c7ccf0
-    MOV EDI,dword ptr [0x01c9e038]      ; 004b073f | DAT_01c9e038
+    MOV ESI,dword ptr [0x01c7ccf0]      ; 004b0739 | g_INT_01c7ccf0
+    MOV EDI,dword ptr [0x01c9e038]      ; 004b073f | g_INT_01c9e038
     MOV ECX,dword ptr [EBP + 0x18]      ; 004b0745
     XOR EBX,EBX                         ; 004b0748
     TEST EDI,EDI                        ; 004b074a
@@ -82,8 +82,8 @@ section .text
         ;   Label: LAB_004b0787
     MOV EAX,EDX                         ; 004b0789
         ;   Label: LAB_004b0789
-    MOV dword ptr [0x01c9e038],EDI      ; 004b078b | DAT_01c9e038
-    MOV dword ptr [0x01c7ccf0],ESI      ; 004b0791 | DAT_01c7ccf0
+    MOV dword ptr [0x01c9e038],EDI      ; 004b078b | g_INT_01c9e038
+    MOV dword ptr [0x01c7ccf0],ESI      ; 004b0791 | g_INT_01c7ccf0
     MOV ESP,EBP                         ; 004b0797
     POP EBP                             ; 004b0799
     POP EDI                             ; 004b079a

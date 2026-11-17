@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 154,
+    "complexity_score": 130,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 104,
-    "suspect_count": 4,
+    "pseudocode_lines": 105,
+    "suspect_count": 2,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "undefined_data"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 389
+    "total_lines": 390
   },
   "cross_references": [
     {
@@ -161,27 +160,27 @@
     },
     {
       "addr": "005b0674",
-      "name": "PTR_DAT_005b0674",
+      "name": "PTR_g_SMRGLSkyTexture_ARRAY_01b7b4e8_005b0674",
       "type": "void*",
       "value": "01b7b4e8"
     },
     {
       "addr": "005be36c",
-      "name": "DAT_005be36c",
-      "type": "undefined4",
+      "name": "g_CVector3i_005be36c",
+      "type": "CVector3i",
       "value": null
     },
     {
       "addr": "005be378",
-      "name": "DAT_005be378",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005be378",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "005c1144",
-      "name": "DAT_005c1144",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CTerrain_PTR_005c1144",
+      "type": "CTerrain*",
+      "value": "02dd10c8"
     },
     {
       "addr": "005c11ec",
@@ -191,8 +190,8 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
@@ -422,24 +421,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_005be36c",
-      "severity": "mild",
-      "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&DAT_005be36c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 90,
-      "match": "DAT_005be378",
-      "severity": "mild",
-      "text": "else if ((DAT_005be378 != 0) &&",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 87,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",
@@ -447,7 +430,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 101,
+      "line": 102,
       "match": "pCVar2 = (T *)pCVar2->ARRAY",
       "severity": "moderate",
       "text": "pCVar2 = (CDemonSet *)pCVar2->cameras;",

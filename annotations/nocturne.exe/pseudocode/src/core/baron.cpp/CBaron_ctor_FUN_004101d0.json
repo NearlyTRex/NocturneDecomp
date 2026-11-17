@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 100,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memset",
       "unrolled_strcpy"
     ],
@@ -122,8 +121,8 @@
     },
     {
       "addr": "0076436c",
-      "name": "DAT_0076436c",
-      "type": "undefined4",
+      "name": "g_CKeyFramedModelInstance_0076436c",
+      "type": "CKeyFramedModelInstance",
       "value": null
     }
   ],
@@ -209,14 +208,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_0076436c",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&DAT_0076436c,\"baronshell.kfm\");",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 24,

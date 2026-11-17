@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int grid_z,int red,int green,int blue,int alpha)
 
 {
@@ -28,14 +26,14 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   float local_2c;
   
   pCVar4 = g_CDemonRenderer_PTR_005ae704;
-  dVar3 = _DAT_0058ce27;
-  fVar1 = g_CDemonRaytraceInstance.adjusted_size.y * _DAT_0058ce1f;
-  fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * _DAT_0058ce1f;
-  dVar10 = (double)g_CDemonRaytraceInstance.bbox_min.y * _DAT_0058ce27;
+  dVar3 = 256;
+  fVar1 = g_CDemonRaytraceInstance.adjusted_size.y * 256.0f;
+  fVar2 = g_CDemonRaytraceInstance.adjusted_size.z * 256.0f;
+  dVar10 = (double)g_CDemonRaytraceInstance.bbox_min.y * 256;
   local_38 = 7.263381e-39;
   dVar8 = round
                     ((double)((float)grid_x *
-                             g_CDemonRaytraceInstance.adjusted_size.x * _DAT_0058ce1f));
+                             g_CDemonRaytraceInstance.adjusted_size.x * 256.0f));
   local_3c = 0x4f1761;
   dVar9 = round((double)((float)grid_z * fVar2));
   local_38 = (float)(int)ROUND(dVar8);
@@ -82,6 +80,6 @@ void __cdecl core_path_cpp_renderGridQuad_FUN_004f16d0(int grid_x,int grid_y,int
   pCVar4->vertex_buffer_ptr[3].b = iVar7;
   pCVar4->vertex_buffer_ptr[3].a = grid_x;
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_00460150
-            (pCVar4,(SMRGLPrimitivePoly *)0x1e42810);
+            (pCVar4,(SMRGLPrimitivePoly *)&g_SMRGLPrimitiveQuad_01e42810);
   return;
 }

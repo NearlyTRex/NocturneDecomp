@@ -1612,7 +1612,7 @@ static TerminatedCString s_s_2_Turn_your_brightness_005c7313 = "2. Turn your bri
 static TerminatedCString s_s_3_Turn_down_the_bright_005c7366 = "3. Turn down the brightness, so that the left 2 bars become the same color.";
 static TerminatedCString s_s_4_Turn_your_contrast_a_005c73b2 = "4. Turn your contrast all the way up.";
 static TerminatedCString s_You_re_done_with_calibra_005c73d8 = "You're done with calibration.";
-static TerminatedCString s_dx7_dll_005c73f9 = "dx7.dll";
+static TerminatedCString s_tridx7_dll_005c73f6 = "tridx7.dll";
 static TerminatedCString s_Resolution_320x240_005c7401 = "Resolution : 320x240";
 static TerminatedCString s_Resolution_400x300_005c7416 = "Resolution : 400x300";
 static TerminatedCString s_Resolution_512x384_005c742b = "Resolution : 512x384";
@@ -4079,8 +4079,5 @@ static undefined1 DAT_005c6d72 = 0x0A;
 static undefined1 DAT_005c6d8e = 0x0A;
 static undefined1 DAT_005c6dec = 0x0A;
 static undefined1 DAT_005c6e20 = 0x0A;
-static undefined1 DAT_005c73f6 = 0x74;
-static undefined1 DAT_005c73f7 = 0x72;
-static undefined1 DAT_005c73f8 = 0x69;
 static undefined1 DAT_005cf826 = 0x2C;
 

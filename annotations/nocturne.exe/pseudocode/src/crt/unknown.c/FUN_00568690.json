@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 161,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 51,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 184
@@ -75,14 +74,14 @@
   "globals": [
     {
       "addr": "00598b50",
-      "name": "DAT_00598b50",
-      "type": "undefined4",
+      "name": "s_wb_00598b50",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c1a9c",
-      "name": "DAT_005c1a9c",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_005c1a9c",
+      "type": "char[4]",
       "value": null
     },
     {
@@ -145,46 +144,6 @@
       "severity": "moderate",
       "text": "iVar1 = (*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_00598b50",
-      "severity": "mild",
-      "text": "p_Var3 = _fopen(acStack_124,&DAT_00598b50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005c1a9c",
-      "severity": "mild",
-      "text": "file_handle = (uint)DAT_005c1a9c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_00598b50",
-      "severity": "mild",
-      "text": "p_Var3 = _fopen(acStack_238,&DAT_00598b50);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005c1a9c",
-      "severity": "mild",
-      "text": "DAT_005c1a9c = (byte)file_handle;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005c1a9c",
-      "severity": "mild",
-      "text": "*(byte *)&p_Var3->_link->__get_ptr = DAT_005c1a9c;",
-      "type": "undefined_data"
     },
     {
       "description": "Pointer value `&p_Var3->_flag` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

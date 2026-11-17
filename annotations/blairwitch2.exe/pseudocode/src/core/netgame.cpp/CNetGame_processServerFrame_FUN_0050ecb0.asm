@@ -407,11 +407,11 @@ section .text
     ADD EDX,0x1d54644                   ; 0050f074
     MOV dword ptr [ESP],ECX             ; 0050f07a
     MOV byte ptr [ESP + 0x4],AH         ; 0050f07d
-    MOV EAX,dword ptr [EDX]             ; 0050f081 | DAT_01d545d0 | g_SSimFrame_ARRAY_01d54644[1].sequence_number
+    MOV EAX,dword ptr [EDX]             ; 0050f081 | g_SChatOutMessage_ARRAY_01d51054[49].message[148] | g_SSimFrame_ARRAY_01d54644[1].sequence_number
     MOV dword ptr [ESP + 0x5],EAX       ; 0050f083
-    MOV EAX,dword ptr [EDX + 0x4]       ; 0050f087 | DAT_01d545d4 | g_SSimFrame_ARRAY_01d54644[1].random_seed
+    MOV EAX,dword ptr [EDX + 0x4]       ; 0050f087 | g_SChatOutMessage_ARRAY_01d51054[49].message[152] | g_SSimFrame_ARRAY_01d54644[1].random_seed
     MOV dword ptr [ESP + 0x9],EAX       ; 0050f08a
-    MOV EAX,dword ptr [EDX + 0x8]       ; 0050f08e | DAT_01d545d8 | g_SSimFrame_ARRAY_01d54644[1].delta_time
+    MOV EAX,dword ptr [EDX + 0x8]       ; 0050f08e | g_SChatOutMessage_ARRAY_01d51054[49].message[156] | g_SSimFrame_ARRAY_01d54644[1].delta_time
     MOV dword ptr [ESP + 0xd],EAX       ; 0050f091
     MOV ESI,dword ptr [EBX + 0x1c]      ; 0050f095
     XOR EAX,EAX                         ; 0050f098

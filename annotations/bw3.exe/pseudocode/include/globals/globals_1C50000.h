@@ -11,6 +11,7 @@
 #include "types/classes/CEditorTools.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SWindow.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C50000
@@ -46,6 +47,9 @@ extern CVector3f g_CVector3f_ARRAY_01c59db4[16];
 // CVector3i
 extern CVector3i g_CVector3i_01c599c0;
 
+// SWindow[5]
+extern SWindow g_SWindow_ARRAY_01c5b108[5];
+
 // _BIT_INTEGER32
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c5fae4;
 
@@ -57,9 +61,6 @@ extern char* g_CHAR_PTR_01c5b0e8;
 
 // char[4000]
 extern char g_CHAR_ARRAY_01c5a140[4000];
-
-// char[492]
-extern char g_CHAR_ARRAY_01c5b108[492];
 
 // float
 extern float g_FLOAT_01c599e0;

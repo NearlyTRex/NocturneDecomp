@@ -12,9 +12,9 @@
 ;
 ; Referenced Globals:
 ;   uchar[257] g_CharacterClassificationTable
-;   undefined4 DAT_00763e94
-;   undefined4 DAT_00763e98
-;   undefined4 DAT_00763e9c
+;   int g_INT_00763e94
+;   CDemonActorType*[200] g_CDemonActorType_PTR_ARRAY_00763e98
+;   undefined4 g_CDemonActorType_PTR_ARRAY_00763e98[1]
 ;
 ; Called Functions:
 ;   crt_ctype.c_tolower_FUN_00564860
@@ -35,13 +35,13 @@ section .text
     TEST EAX,EAX                        ; 0040d4dd
     JNZ 0x0040d507                      ; 0040d4df
         ;   XREF to: 0040d507 (CONDITIONAL_JUMP)  ; LAB_0040d507
-    MOV EDX,dword ptr [0x00763e94]      ; 0040d4e1 | DAT_00763e94
+    MOV EDX,dword ptr [0x00763e94]      ; 0040d4e1 | g_INT_00763e94
     MOV ESI,EBX                         ; 0040d4e7
     TEST EDX,EDX                        ; 0040d4e9
     JLE 0x0040d502                      ; 0040d4eb
         ;   XREF to: 0040d502 (CONDITIONAL_JUMP)  ; LAB_0040d502
     SHL EDX,0x2                         ; 0040d4ed
-    MOV EBX,dword ptr [EAX + 0x763e98]  ; 0040d4f0 | DAT_00763e98 | DAT_00763e9c
+    MOV EBX,dword ptr [EAX + 0x763e98]  ; 0040d4f0 | g_CDemonActorType_PTR_ARRAY_00763e98 | g_CDemonActorType_PTR_ARRAY_00763e98[1]
         ;   Label: LAB_0040d4f0
     CMP ESI,dword ptr [EBX + 0x38]      ; 0040d4f6
     JZ 0x0040d538                       ; 0040d4f9

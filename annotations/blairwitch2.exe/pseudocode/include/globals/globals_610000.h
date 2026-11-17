@@ -4,10 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
 #include "system/time.h"
 #include "system/watcom.h"
+#include "system/wincon.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CDemonPod.h"
@@ -33,8 +35,11 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
+#include "types/structs/SAudioFormatDescriptor.h"
+#include "types/structs/SHuffmanTableSource.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMpegLayer3BandIndex.h"
 #include "types/structs/SReverbPreset.h"
 
 // =============================================================================
@@ -128,6 +133,18 @@ extern RuntimeHandlerEntry g_RuntimeHandlerEntry_0061fe4c;
 // RuntimeHandlerEntry[203]
 extern RuntimeHandlerEntry g_InitHandlers[203];
 
+// SAudioFormatDescriptor[12]
+extern SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0061bf8c[12];
+
+// SHuffmanTableSource[34]
+extern SHuffmanTableSource g_SHuffmanTableSource_ARRAY_0061ade0[34];
+
+// SIGNAL_HANDLER_TYPE[26]
+extern SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[26];
+
+// SIOControlBlock*
+extern SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8;
+
 // SMRGLPrimitiveQuad
 extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_0061e6ac;
 
@@ -185,6 +202,9 @@ extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00616868[64];
 
 // SMRGLTextureBasic[6]
 extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006157cc[6];
+
+// SMpegLayer3BandIndex[6]
+extern SMpegLayer3BandIndex g_SMpegLayer3BandIndex_ARRAY_00619338[6];
 
 // SReverbPreset[27]
 extern SReverbPreset g_ReverbPresetTable[27];
@@ -299,6 +319,20 @@ extern _FILE g_FILE_0061ef88;
 // _FILE*
 extern _FILE* g_FILE_PTR_0061ef54;
 
+// _MMX_INTEGER
+extern _MMX_INTEGER g_MMX_INTEGER_006112c8;
+extern _MMX_INTEGER g_MMX_INTEGER_00611328;
+extern _MMX_INTEGER g_MMX_INTEGER_00611330;
+extern _MMX_INTEGER g_MMX_INTEGER_00611338;
+extern _MMX_INTEGER g_MMX_INTEGER_00611340;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c808;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c810;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c828;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c830;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c8d0;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c8d8;
+extern _MMX_INTEGER g_MMX_INTEGER_0061c8e0;
+
 // byte
 extern byte g_BYTE_006182db;
 extern byte g_BYTE_0061ee9c;
@@ -369,7 +403,6 @@ extern float g_FLOAT_0061bcc4;
 extern float g_FLOAT_0061e524;
 
 // int
-extern int g_INT_006112c8;
 extern int g_INT_00613880;
 extern int g_CDynamiteClassVersion;
 extern int g_INT_006138e4;
@@ -503,17 +536,10 @@ extern int g_INT_0061c7e0;
 extern int g_INT_0061c7e8;
 extern int g_INT_0061c7ec;
 extern int g_INT_0061c7f0;
-extern int g_INT_0061c808;
-extern int g_INT_0061c810;
-extern int g_INT_0061c828;
-extern int g_INT_0061c830;
 extern int g_INT_0061c840;
 extern int g_INT_0061c848;
 extern int g_INT_0061c850;
 extern int g_INT_0061c858;
-extern int g_INT_0061c8d0;
-extern int g_INT_0061c8d8;
-extern int g_INT_0061c8e0;
 extern int g_INT_0061c978;
 extern int g_INT_0061e280;
 extern int g_INT_0061e28c;
@@ -605,23 +631,23 @@ extern int* g_INT_PTR_0061c37c;
 // int[12]
 extern int g_INT_ARRAY_0061b2f8[12];
 
-// int[16]
-extern int g_INT_ARRAY_006192f8[16];
-
-// int[1]
-extern int g_INT_ARRAY_0061933c[1];
-
 // int[22]
 extern int g_INT_ARRAY_00618de4[22];
 
-// int[2]
-extern int g_INT_ARRAY_006192b8[2];
+// int[2][16]
+extern int g_INT_ARRAY_ARRAY_006192b8[2][16];
+
+// int[2][3][15]
+extern int g_INT_ARRAY_ARRAY_ARRAY_00618ec8[2][3][15];
 
 // int[3]
 extern int g_INT_ARRAY_006192ac[3];
 
 // int[5]
 extern int g_INT_ARRAY_00619298[5];
+
+// int[6][3][4]
+extern int g_INT_ARRAY_ARRAY_ARRAY_006196b0[6][3][4];
 
 // int[96]
 extern int g_INT_ARRAY_0061b5bc[96];
@@ -701,14 +727,10 @@ extern undefined4 DAT_0061423c;
 extern undefined4 DAT_00616048;
 extern undefined4 DAT_0061604c;
 extern undefined4 DAT_0061f1a0;
-extern undefined4 DAT_0061f4d8;
 extern undefined4 DAT_0061f504;
 extern undefined4 DAT_0061f520;
 extern undefined4 DAT_0061f524;
 extern undefined4 DAT_0061f528;
-
-// undefined8
-extern undefined8 DAT_00611328;
 
 // ushort
 extern ushort g_USHORT_006180f0;

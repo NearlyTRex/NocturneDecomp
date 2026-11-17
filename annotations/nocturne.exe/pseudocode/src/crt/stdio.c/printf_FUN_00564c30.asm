@@ -12,7 +12,7 @@
 ;   cockpit_ckptutil.c_loadEdgeListFile_FUN_0042eb90 at 0042ed8f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c18ae
+;   _FILE g_FILE_005c18ae
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_0056ae10
@@ -29,7 +29,7 @@ section .text
     PUSH EAX                            ; 00564c3c
     MOV EDX,dword ptr [ESP + 0xc]       ; 00564c3d
     PUSH EDX                            ; 00564c41
-    PUSH 0x5c18ae                       ; 00564c42 | DAT_005c18ae
+    PUSH 0x5c18ae                       ; 00564c42 | g_FILE_005c18ae
     CALL crt_unknown.c_FUN_0056ae10     ; 00564c47
         ;   XREF to: 0056ae10 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_0056ae10()
     ADD ESP,0xc                         ; 00564c4c

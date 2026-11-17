@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24_FUN_00405c90(SMRGLHeaderPrimitive *primitive)
 
 {
@@ -18,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonLitAlphaPlaneMaskedUVOp24
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&primitive->surface_normal);
   if (iVar1 == 0) goto LAB_00405cb0;
   engine_3d_c_calculatePolygonLighting_FUN_00404710(primitive);
-  if (_DAT_01c038f4 == 0) {
+  if (g_INT_01c038f4 == 0) {
     if (g_MMXSupported == 0) {
       if (g_BitsPerPixel == 0x20) goto LAB_00405d06;
       g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderPerspectiveCorrectScanline16_FUN_00530322;
@@ -44,19 +42,19 @@ LAB_00405d06:
 LAB_00405d98:
     g_ScanlineRenderFunc = (MainScanlineFunc *)engine_special_cpp_renderMMXPerspectiveScanline16_FUN_0052f823;
   }
-  piVar3 = &DAT_006b029c;
+  piVar3 = g_INT_ARRAY_006b029c;
   g_VertexPreprocessMode = 1;
   g_RenderStateFlags.dword = (RENDER_TEX_ENABLE | RENDER_SOLID_ALPHA_BLEND | RENDER_LIGHTING_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
   pSVar2 = primitive + 1;
   for (iVar1 = 0; iVar1 < (primitive->base).count * 3; iVar1 = iVar1 + 3) {
-    *piVar3 = (pSVar2->base).type + DAT_006b0264;
-    (&DAT_005c502c)[((pSVar2->base).type + DAT_006b0264) * 0xc] = (pSVar2->base).count;
+    *piVar3 = (pSVar2->base).type + g_UINT_006b0264;
+    g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].u = (pSVar2->base).count;
     piVar3 = piVar3 + 1;
-    *(UIntegerFloat *)(&DAT_005c5030 + ((pSVar2->base).type + DAT_006b0264) * 0x30) =
-         (pSVar2->surface_normal).A;
+    g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].v =
+         (int)(pSVar2->surface_normal).A;
     pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
   }
-  engine_clipper_c_clipAndRasterize_FUN_00432cd0((primitive->base).count,&DAT_006b029c);
+  engine_clipper_c_clipAndRasterize_FUN_00432cd0((primitive->base).count,g_INT_ARRAY_006b029c);
 LAB_00405cb0:
   return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);
 }

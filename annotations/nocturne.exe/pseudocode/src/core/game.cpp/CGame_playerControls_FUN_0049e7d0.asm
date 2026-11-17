@@ -14,14 +14,14 @@
 ;   TerminatedCString s_CGame_playerControls_unk_005829bb
 ;   CNetGame* g_CNetGamePtr = 01cea280
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01bd1d94
-;   undefined4 DAT_01c02598
-;   undefined4 DAT_01c0259c
-;   undefined4 DAT_01c781c0
-;   undefined4 DAT_01c781c4
-;   undefined4 DAT_01c78418
-;   undefined4 DAT_01c7841c
-;   undefined4 DAT_01c78420
+;   _BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94
+;   char[4952] g_CHAR_ARRAY_01c02598
+;   undefined4 g_CHAR_ARRAY_01c02598+4
+;   char[600] g_CHAR_ARRAY_01c781c0
+;   undefined4 g_CHAR_ARRAY_01c781c0+4
+;   int g_INT_01c78418
+;   int g_INT_01c7841c
+;   int g_INT_01c78420
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   CNetGame g_CNetGameInstance
@@ -43,7 +43,7 @@ section .text
         ;   Label: core_game.cpp_CGame_playerControls_FUN_0049e7d0
     PUSH EBP                            ; 0049e7d1
     MOV ESI,dword ptr [ESP + 0xc]       ; 0049e7d2
-    CMP dword ptr [0x01c78420],0x0      ; 0049e7d6 | DAT_01c78420
+    CMP dword ptr [0x01c78420],0x0      ; 0049e7d6 | g_INT_01c78420
     JNZ 0x0049e7f8                      ; 0049e7dd
         ;   XREF to: 0049e7f8 (CONDITIONAL_JUMP)  ; LAB_0049e7f8
     CMP dword ptr [ESI + 0x1fc],0x0     ; 0049e7df
@@ -75,19 +75,19 @@ section .text
         ;   Label: LAB_0049e80e
     MOV ESI,0x1c02598                   ; 0049e813
     MOV EDI,0x1c781c0                   ; 0049e818
-    PUSH EDI                            ; 0049e81d | DAT_01c781c0
+    PUSH EDI                            ; 0049e81d | g_CHAR_ARRAY_01c781c0
     MOV EAX,ECX                         ; 0049e81e
     SHR ECX,0x2                         ; 0049e820
-    MOVSD.REP ES:EDI,ESI                ; 0049e823 | DAT_01c02598 | DAT_01c781c0 | DAT_01c0259c
+    MOVSD.REP ES:EDI,ESI                ; 0049e823 | g_CHAR_ARRAY_01c02598 | g_CHAR_ARRAY_01c781c0 | g_CHAR_ARRAY_01c02598+4
     MOV CL,AL                           ; 0049e825
     AND CL,0x3                          ; 0049e827
-    MOVSB.REP ES:EDI,ESI                ; 0049e82a | DAT_01c0259c | DAT_01c781c4
+    MOVSB.REP ES:EDI,ESI                ; 0049e82a | g_CHAR_ARRAY_01c02598+4 | g_CHAR_ARRAY_01c781c0+4
     POP EDI                             ; 0049e82c
-    MOV EAX,[0x01bd1d94]                ; 0049e82d | DAT_01bd1d94
-    MOV [0x01c78418],EAX                ; 0049e832 | DAT_01c78418
+    MOV EAX,[0x01bd1d94]                ; 0049e82d | g_BIT_INTEGER32_01bd1d94
+    MOV [0x01c78418],EAX                ; 0049e832 | g_INT_01c78418
     MOV EAX,[0x005be368]                ; 0049e837 | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049e83c | g_CDemonSetInstance.selected_camera_index
-    MOV [0x01c7841c],EAX                ; 0049e842 | DAT_01c7841c
+    MOV [0x01c7841c],EAX                ; 0049e842 | g_INT_01c7841c
     POP EDI                             ; 0049e847
     POP EBP                             ; 0049e848
     POP ESI                             ; 0049e849

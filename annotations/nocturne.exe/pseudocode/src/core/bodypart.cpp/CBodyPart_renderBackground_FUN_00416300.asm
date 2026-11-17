@@ -15,7 +15,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CDemonSet g_CDemonSetInstance
 ;   undefined4 g_CDemonSetInstance.disable_directional_lighting
 ;
@@ -95,7 +95,7 @@ section .text
     ADD ESP,0x8                         ; 004163ab
     MOV EAX,[0x005ae704]                ; 004163ae | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004163ae
-    PUSH EAX                            ; 004163b3 | DAT_01b4d738
+    PUSH EAX                            ; 004163b3 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 004163b4
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     MOV EAX,[0x005be368]                ; 004163b9 | g_CDemonSetPtr | g_CDemonSetInstance
@@ -128,7 +128,7 @@ section .text
         ;   XREF to: 0041632f (UNCONDITIONAL_JUMP)  ; LAB_0041632f
     MOV EBP,dword ptr [0x005ae704]      ; 00416411 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00416411
-    PUSH EBP                            ; 00416417 | DAT_01b4d738
+    PUSH EBP                            ; 00416417 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00416418
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0041641d

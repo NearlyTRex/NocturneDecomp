@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)
 
 {
   _FILE *p_Var1;
   int iVar2;
   
-  _DAT_01cc30a0 = g_WindowHeight;
+  g_INT_01cc30a0 = g_WindowHeight;
   p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60
                      ("data","invsize.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
@@ -62,15 +60,15 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004befa0(void)
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_SilverBulletIconBitmap,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040e9e0(&g_HolyBulletIconBitmap,2,2);
   }
-  _DAT_01cb03d0 = 0;
+  g_INT_01cb03d0 = 0;
   p_Var1 = engine_dosio_cpp_getFile_FUN_00456a60
-                     (&DAT_00586e60,"itemlist.txt","rt");
+                     (&g_CHAR_00586e60,"itemlist.txt","rt");
   if (p_Var1 != (_FILE *)0x0) {
     while ((p_Var1->_flag & 0x10) == 0) {
       iVar2 = core_inv_cpp_loadItem_FUN_004bed80
-                        ((SInventoryItemInfo *)(_DAT_01cb03d0 * 0x300 + 0x1cb03d8),p_Var1);
+                        (g_SInventoryItemInfo_ARRAY_01cb03d8 + g_INT_01cb03d0,p_Var1);
       if (iVar2 == 0) break;
-      _DAT_01cb03d0 = _DAT_01cb03d0 + 1;
+      g_INT_01cb03d0 = g_INT_01cb03d0 + 1;
     }
     _fclose(p_Var1);
   }

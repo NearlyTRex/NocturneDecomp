@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 221,
+    "complexity_score": 277,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 151,
-    "suspect_count": 5,
+    "pseudocode_lines": 152,
+    "suspect_count": 10,
     "suspect_types": [
       "bitcast_double_pair",
+      "pointer_cast",
       "raw_address_constant",
       "sub84_truncation",
       "warning_unreachable"
     ],
-    "total_lines": 649
+    "total_lines": 650
   },
   "cross_references": [
     {
@@ -637,8 +638,32 @@
       "type": "warning_unreachable"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "if (((int)ROUND(dVar8) != *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1f0)) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "(0x47ffff < iVar5 - *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 500))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 128,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "fVar4 = (float)(x1 - *(int *)((int)g_SWindow_ARRAY_01c255a0 +",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Two uint locals reconstructed as a double via __BITCAST_DOUBLE(CONCAT44(...)) \u2014 fixable by merging into a single double local",
-      "line": 138,
+      "line": 139,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
       "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar8),0),uVar10)) + 0.5)",
@@ -646,15 +671,31 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 138,
+      "line": 139,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "round(__BITCAST_DOUBLE(CONCAT44(SUB84(__BITCAST_UINT64(dVar8),0),uVar10)) + 0.5)",
       "type": "sub84_truncation"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 0x1f0) = local_30;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 153,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 500) = iVar1;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Raw hex address 0x47e02c assigned to bare local `uVar10`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar10` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 132,
+      "line": 133,
       "match": "0x47e02c",
       "severity": "moderate",
       "text": "uVar10 = 0x47e02c;",

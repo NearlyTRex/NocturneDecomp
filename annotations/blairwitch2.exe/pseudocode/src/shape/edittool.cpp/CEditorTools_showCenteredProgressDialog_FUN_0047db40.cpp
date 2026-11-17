@@ -33,8 +33,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_0047
             (this_ptr,iVar1,g_INT_01c25f7c * 6,message_text,0);
   iVar2 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar1 = (g_INT_01c2559c + -1) * 0x1f8;
-  *(int *)(iVar1 + 0x1c2578c) = iVar2;
-  *(uint *)(iVar1 + 0x1c25790) = 0xffffffff;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1ec) = iVar2;
+  *(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1f0) = 0xffffffff;
   shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047dc40(this_ptr,0.0,1.0);
   return;
 }

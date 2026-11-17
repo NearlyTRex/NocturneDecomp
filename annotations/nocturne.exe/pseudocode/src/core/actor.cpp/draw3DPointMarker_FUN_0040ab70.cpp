@@ -19,8 +19,9 @@ void __cdecl core_actor_cpp_draw3DPointMarker_FUN_0040ab70(CVector3f *world_posi
   local_14.y = (int)ROUND(world_position->y * 256.0f);
   local_14.z = (int)ROUND(world_position->z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
-            ((SProjectedVertex *)(*(int *)PTR_DAT_005ae700 + 0xea5d0),&local_14);
-  iVar3 = *(int *)PTR_DAT_005ae700;
+            ((SProjectedVertex *)(*(int *)PTR_g_CDemonRenderer_01b4d738_005ae700 + 0xea5d0),
+             &local_14);
+  iVar3 = *(int *)PTR_g_CDemonRenderer_01b4d738_005ae700;
   if ((*(byte *)(iVar3 + 0xea5e3) & 0x80) == 0) {
     iVar4 = *(int *)(iVar3 + 0xea5e0) >> 0x10;
     g_ActiveRenderColor = marker_color;

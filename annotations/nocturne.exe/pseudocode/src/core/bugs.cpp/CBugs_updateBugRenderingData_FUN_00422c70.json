@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 590,
-    "complexity_score": 314,
+    "complexity_score": 298,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 214,
-    "suspect_count": 7,
+    "pseudocode_lines": 213,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
       "unknown_field",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 804
+    "total_lines": 803
   },
   "cross_references": [
     {
@@ -87,9 +86,9 @@
     },
     {
       "addr": "0059ae98",
-      "name": "DAT_0059ae98",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059ae98",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "0059aeac",
@@ -642,16 +641,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 88,
+      "line": 86,
       "match": "._0_4_",
       "severity": "mild",
       "text": "bug_data->interp_t = bug_data->interp_t + 1.5873523201947252e-314._0_4_;",
@@ -659,7 +650,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 129,
       "match": "(int *)((int)pCVar7",
       "severity": "moderate",
       "text": "puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);",
@@ -667,7 +658,7 @@
     },
     {
       "description": "Pointer value `pCVar7->tri_data_ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 131,
+      "line": 129,
       "match": "(int)pCVar7->tri_data_ptr",
       "severity": "moderate",
       "text": "puVar8 = (ushort *)(*(int *)((int)pCVar7->tri_data_ptr + local_18) + iVar9 * 0x12);",
@@ -675,7 +666,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 120,
+      "line": 118,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(bug_data->position).x = pCVar6->x;",
@@ -683,7 +674,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 211,
+      "line": 209,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(bug_data->orientation).x = pCVar6->x;",
@@ -691,7 +682,7 @@
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_c0 != &local_cc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 159,
+      "line": 157,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_c0 != &local_cc) {",

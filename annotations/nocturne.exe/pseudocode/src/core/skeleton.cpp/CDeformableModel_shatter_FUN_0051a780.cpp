@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(CDeformableModel *this_ptr,CVector3f *center_position,CVector3f *orientation_vector,int lod_index,CVector3i *skinned_vertices,int *part_visibility_flags,int *texture_set_indices)
 
 {
@@ -50,8 +48,8 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(CDeformable
   
   local_1c = 0xffff;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0(&local_e0,orientation_vector);
-  if ((DAT_0268ced4 & 1) == 0) {
-    DAT_0268ced4 = DAT_0268ced4 | 1;
+  if ((g_UCHAR_0268ced4 & 1) == 0) {
+    g_UCHAR_0268ced4 = g_UCHAR_0268ced4 | 1;
     __arrinit(g_CVector3f_ARRAY_02684234,3000,&g_CVectorTypeInfo_005993b0)
     ;
   }
@@ -65,9 +63,9 @@ void __cdecl core_skeleton_cpp_CDeformableModel_shatter_FUN_0051a780(CDeformable
   iVar6 = 0;
   if (0 < *(int *)(local_5c + 0x2c)) {
     do {
-      pCVar7->x = (float)skinned_vertices->x * _DAT_005a1eb0;
-      pCVar7->y = (float)skinned_vertices->y * _DAT_005a1eb0;
-      pCVar7->z = (float)skinned_vertices->z * _DAT_005a1eb0;
+      pCVar7->x = (float)skinned_vertices->x * 0.00390625f;
+      pCVar7->y = (float)skinned_vertices->y * 0.00390625f;
+      pCVar7->z = (float)skinned_vertices->z * 0.00390625f;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_0044da40(&local_e0,&local_70,pCVar7);
       local_7c.x = center_position->x + pCVar3->x;
       local_7c.y = center_position->y + pCVar3->y;

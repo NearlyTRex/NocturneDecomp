@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_00403770(void)
 
 {
   HRESULT HVar1;
   
-  _DAT_02ddf568 = 0;
+  g_INT_02ddf568 = 0;
   if (g_UseDirect3D == 0) {
     return;
   }

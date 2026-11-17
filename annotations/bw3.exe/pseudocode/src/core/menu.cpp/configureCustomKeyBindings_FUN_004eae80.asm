@@ -147,16 +147,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eaf95
     ADD EDI,0x1d75d20                   ; 004eaf98
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eaf9e | g_INT_PTR_ARRAY_01d75c9c[1] | g_CGameInstance.key_action
-    PUSH EDI                            ; 004eafa5 | DAT_01d75d48
+    PUSH EDI                            ; 004eafa5 | g_CHAR_ARRAY_ARRAY_01d75d20[1][0]
     MOV AL,byte ptr [ESI]               ; 004eafa6
         ;   Label: LAB_004eafa6
-    MOV byte ptr [EDI],AL               ; 004eafa8 | DAT_01d75d48 | DAT_01d75d4a
+    MOV byte ptr [EDI],AL               ; 004eafa8 | g_CHAR_ARRAY_ARRAY_01d75d20[1][0] | g_CHAR_ARRAY_ARRAY_01d75d20[1][2]
     CMP AL,0x0                          ; 004eafaa
     JZ 0x004eafbe                       ; 004eafac
         ;   XREF to: 004eafbe (CONDITIONAL_JUMP)  ; LAB_004eafbe
     MOV AL,byte ptr [ESI + 0x1]         ; 004eafae
     ADD ESI,0x2                         ; 004eafb1
-    MOV byte ptr [EDI + 0x1],AL         ; 004eafb4 | DAT_01d75d49 | DAT_01d75d4b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eafb4 | g_CHAR_ARRAY_ARRAY_01d75d20[1][1] | g_CHAR_ARRAY_ARRAY_01d75d20[1][3]
     ADD EDI,0x2                         ; 004eafb7
     CMP AL,0x0                          ; 004eafba
     JNZ 0x004eafa6                      ; 004eafbc
@@ -190,16 +190,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb016
     ADD EDI,0x1d75d20                   ; 004eb019
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb01f | g_INT_PTR_ARRAY_01d75c9c[2]
-    PUSH EDI                            ; 004eb026 | DAT_01d75d70
+    PUSH EDI                            ; 004eb026 | g_CHAR_ARRAY_ARRAY_01d75d20[2][0]
     MOV AL,byte ptr [ESI]               ; 004eb027
         ;   Label: LAB_004eb027
-    MOV byte ptr [EDI],AL               ; 004eb029 | DAT_01d75d70 | DAT_01d75d72
+    MOV byte ptr [EDI],AL               ; 004eb029 | g_CHAR_ARRAY_ARRAY_01d75d20[2][0] | g_CHAR_ARRAY_ARRAY_01d75d20[2][2]
     CMP AL,0x0                          ; 004eb02b
     JZ 0x004eb03f                       ; 004eb02d
         ;   XREF to: 004eb03f (CONDITIONAL_JUMP)  ; LAB_004eb03f
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb02f
     ADD ESI,0x2                         ; 004eb032
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb035 | DAT_01d75d71 | DAT_01d75d73
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb035 | g_CHAR_ARRAY_ARRAY_01d75d20[2][1] | g_CHAR_ARRAY_ARRAY_01d75d20[2][3]
     ADD EDI,0x2                         ; 004eb038
     CMP AL,0x0                          ; 004eb03b
     JNZ 0x004eb027                      ; 004eb03d
@@ -233,16 +233,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb097
     ADD EDI,0x1d75d20                   ; 004eb09a
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb0a0 | g_INT_PTR_ARRAY_01d75c9c[3]
-    PUSH EDI                            ; 004eb0a7 | DAT_01d75d98
+    PUSH EDI                            ; 004eb0a7 | g_CHAR_ARRAY_ARRAY_01d75d20[3][0]
     MOV AL,byte ptr [ESI]               ; 004eb0a8
         ;   Label: LAB_004eb0a8
-    MOV byte ptr [EDI],AL               ; 004eb0aa | DAT_01d75d98 | DAT_01d75d9a
+    MOV byte ptr [EDI],AL               ; 004eb0aa | g_CHAR_ARRAY_ARRAY_01d75d20[3][0] | g_CHAR_ARRAY_ARRAY_01d75d20[3][2]
     CMP AL,0x0                          ; 004eb0ac
     JZ 0x004eb0c0                       ; 004eb0ae
         ;   XREF to: 004eb0c0 (CONDITIONAL_JUMP)  ; LAB_004eb0c0
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb0b0
     ADD ESI,0x2                         ; 004eb0b3
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb0b6 | DAT_01d75d99 | DAT_01d75d9b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb0b6 | g_CHAR_ARRAY_ARRAY_01d75d20[3][1] | g_CHAR_ARRAY_ARRAY_01d75d20[3][3]
     ADD EDI,0x2                         ; 004eb0b9
     CMP AL,0x0                          ; 004eb0bc
     JNZ 0x004eb0a8                      ; 004eb0be
@@ -276,16 +276,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb118
     ADD EDI,0x1d75d20                   ; 004eb11b
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb121 | g_INT_PTR_ARRAY_01d75c9c[4]
-    PUSH EDI                            ; 004eb128 | DAT_01d75dc0
+    PUSH EDI                            ; 004eb128 | g_CHAR_ARRAY_ARRAY_01d75d20[4][0]
     MOV AL,byte ptr [ESI]               ; 004eb129
         ;   Label: LAB_004eb129
-    MOV byte ptr [EDI],AL               ; 004eb12b | DAT_01d75dc0 | DAT_01d75dc2
+    MOV byte ptr [EDI],AL               ; 004eb12b | g_CHAR_ARRAY_ARRAY_01d75d20[4][0] | g_CHAR_ARRAY_ARRAY_01d75d20[4][2]
     CMP AL,0x0                          ; 004eb12d
     JZ 0x004eb141                       ; 004eb12f
         ;   XREF to: 004eb141 (CONDITIONAL_JUMP)  ; LAB_004eb141
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb131
     ADD ESI,0x2                         ; 004eb134
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb137 | DAT_01d75dc1 | DAT_01d75dc3
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb137 | g_CHAR_ARRAY_ARRAY_01d75d20[4][1] | g_CHAR_ARRAY_ARRAY_01d75d20[4][3]
     ADD EDI,0x2                         ; 004eb13a
     CMP AL,0x0                          ; 004eb13d
     JNZ 0x004eb129                      ; 004eb13f
@@ -319,16 +319,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb199
     ADD EDI,0x1d75d20                   ; 004eb19c
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb1a2 | g_INT_PTR_ARRAY_01d75c9c[5]
-    PUSH EDI                            ; 004eb1a9 | DAT_01d75de8
+    PUSH EDI                            ; 004eb1a9 | g_CHAR_ARRAY_ARRAY_01d75d20[5][0]
     MOV AL,byte ptr [ESI]               ; 004eb1aa
         ;   Label: LAB_004eb1aa
-    MOV byte ptr [EDI],AL               ; 004eb1ac | DAT_01d75de8 | DAT_01d75dea
+    MOV byte ptr [EDI],AL               ; 004eb1ac | g_CHAR_ARRAY_ARRAY_01d75d20[5][0] | g_CHAR_ARRAY_ARRAY_01d75d20[5][2]
     CMP AL,0x0                          ; 004eb1ae
     JZ 0x004eb1c2                       ; 004eb1b0
         ;   XREF to: 004eb1c2 (CONDITIONAL_JUMP)  ; LAB_004eb1c2
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb1b2
     ADD ESI,0x2                         ; 004eb1b5
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb1b8 | DAT_01d75de9 | DAT_01d75deb
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb1b8 | g_CHAR_ARRAY_ARRAY_01d75d20[5][1] | g_CHAR_ARRAY_ARRAY_01d75d20[5][3]
     ADD EDI,0x2                         ; 004eb1bb
     CMP AL,0x0                          ; 004eb1be
     JNZ 0x004eb1aa                      ; 004eb1c0
@@ -362,16 +362,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb21a
     ADD EDI,0x1d75d20                   ; 004eb21d
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb223 | g_INT_PTR_ARRAY_01d75c9c[6]
-    PUSH EDI                            ; 004eb22a | DAT_01d75e10
+    PUSH EDI                            ; 004eb22a | g_CHAR_ARRAY_ARRAY_01d75d20[6][0]
     MOV AL,byte ptr [ESI]               ; 004eb22b
         ;   Label: LAB_004eb22b
-    MOV byte ptr [EDI],AL               ; 004eb22d | DAT_01d75e10 | DAT_01d75e12
+    MOV byte ptr [EDI],AL               ; 004eb22d | g_CHAR_ARRAY_ARRAY_01d75d20[6][0] | g_CHAR_ARRAY_ARRAY_01d75d20[6][2]
     CMP AL,0x0                          ; 004eb22f
     JZ 0x004eb243                       ; 004eb231
         ;   XREF to: 004eb243 (CONDITIONAL_JUMP)  ; LAB_004eb243
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb233
     ADD ESI,0x2                         ; 004eb236
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb239 | DAT_01d75e11 | DAT_01d75e13
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb239 | g_CHAR_ARRAY_ARRAY_01d75d20[6][1] | g_CHAR_ARRAY_ARRAY_01d75d20[6][3]
     ADD EDI,0x2                         ; 004eb23c
     CMP AL,0x0                          ; 004eb23f
     JNZ 0x004eb22b                      ; 004eb241
@@ -405,16 +405,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb29b
     ADD EDI,0x1d75d20                   ; 004eb29e
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb2a4 | g_INT_PTR_ARRAY_01d75c9c[7]
-    PUSH EDI                            ; 004eb2ab | DAT_01d75e38
+    PUSH EDI                            ; 004eb2ab | g_CHAR_ARRAY_ARRAY_01d75d20[7][0]
     MOV AL,byte ptr [ESI]               ; 004eb2ac
         ;   Label: LAB_004eb2ac
-    MOV byte ptr [EDI],AL               ; 004eb2ae | DAT_01d75e38 | DAT_01d75e3a
+    MOV byte ptr [EDI],AL               ; 004eb2ae | g_CHAR_ARRAY_ARRAY_01d75d20[7][0] | g_CHAR_ARRAY_ARRAY_01d75d20[7][2]
     CMP AL,0x0                          ; 004eb2b0
     JZ 0x004eb2c4                       ; 004eb2b2
         ;   XREF to: 004eb2c4 (CONDITIONAL_JUMP)  ; LAB_004eb2c4
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb2b4
     ADD ESI,0x2                         ; 004eb2b7
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb2ba | DAT_01d75e39 | DAT_01d75e3b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb2ba | g_CHAR_ARRAY_ARRAY_01d75d20[7][1] | g_CHAR_ARRAY_ARRAY_01d75d20[7][3]
     ADD EDI,0x2                         ; 004eb2bd
     CMP AL,0x0                          ; 004eb2c0
     JNZ 0x004eb2ac                      ; 004eb2c2
@@ -448,16 +448,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb31c
     ADD EDI,0x1d75d20                   ; 004eb31f
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb325 | g_INT_PTR_ARRAY_01d75c9c[8]
-    PUSH EDI                            ; 004eb32c | DAT_01d75e60
+    PUSH EDI                            ; 004eb32c | g_CHAR_ARRAY_ARRAY_01d75d20[8][0]
     MOV AL,byte ptr [ESI]               ; 004eb32d
         ;   Label: LAB_004eb32d
-    MOV byte ptr [EDI],AL               ; 004eb32f | DAT_01d75e60 | DAT_01d75e62
+    MOV byte ptr [EDI],AL               ; 004eb32f | g_CHAR_ARRAY_ARRAY_01d75d20[8][0] | g_CHAR_ARRAY_ARRAY_01d75d20[8][2]
     CMP AL,0x0                          ; 004eb331
     JZ 0x004eb345                       ; 004eb333
         ;   XREF to: 004eb345 (CONDITIONAL_JUMP)  ; LAB_004eb345
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb335
     ADD ESI,0x2                         ; 004eb338
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb33b | DAT_01d75e61 | DAT_01d75e63
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb33b | g_CHAR_ARRAY_ARRAY_01d75d20[8][1] | g_CHAR_ARRAY_ARRAY_01d75d20[8][3]
     ADD EDI,0x2                         ; 004eb33e
     CMP AL,0x0                          ; 004eb341
     JNZ 0x004eb32d                      ; 004eb343
@@ -491,16 +491,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb39d
     ADD EDI,0x1d75d20                   ; 004eb3a0
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb3a6 | g_INT_PTR_ARRAY_01d75c9c[9]
-    PUSH EDI                            ; 004eb3ad | DAT_01d75e88
+    PUSH EDI                            ; 004eb3ad | g_CHAR_ARRAY_ARRAY_01d75d20[9][0]
     MOV AL,byte ptr [ESI]               ; 004eb3ae
         ;   Label: LAB_004eb3ae
-    MOV byte ptr [EDI],AL               ; 004eb3b0 | DAT_01d75e88 | DAT_01d75e8a
+    MOV byte ptr [EDI],AL               ; 004eb3b0 | g_CHAR_ARRAY_ARRAY_01d75d20[9][0] | g_CHAR_ARRAY_ARRAY_01d75d20[9][2]
     CMP AL,0x0                          ; 004eb3b2
     JZ 0x004eb3c6                       ; 004eb3b4
         ;   XREF to: 004eb3c6 (CONDITIONAL_JUMP)  ; LAB_004eb3c6
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb3b6
     ADD ESI,0x2                         ; 004eb3b9
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb3bc | DAT_01d75e89 | DAT_01d75e8b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb3bc | g_CHAR_ARRAY_ARRAY_01d75d20[9][1] | g_CHAR_ARRAY_ARRAY_01d75d20[9][3]
     ADD EDI,0x2                         ; 004eb3bf
     CMP AL,0x0                          ; 004eb3c2
     JNZ 0x004eb3ae                      ; 004eb3c4
@@ -534,16 +534,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb41e
     ADD EDI,0x1d75d20                   ; 004eb421
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb427 | g_INT_PTR_ARRAY_01d75c9c[10]
-    PUSH EDI                            ; 004eb42e | DAT_01d75eb0
+    PUSH EDI                            ; 004eb42e | g_CHAR_ARRAY_ARRAY_01d75d20[10][0]
     MOV AL,byte ptr [ESI]               ; 004eb42f
         ;   Label: LAB_004eb42f
-    MOV byte ptr [EDI],AL               ; 004eb431 | DAT_01d75eb0 | DAT_01d75eb2
+    MOV byte ptr [EDI],AL               ; 004eb431 | g_CHAR_ARRAY_ARRAY_01d75d20[10][0] | g_CHAR_ARRAY_ARRAY_01d75d20[10][2]
     CMP AL,0x0                          ; 004eb433
     JZ 0x004eb447                       ; 004eb435
         ;   XREF to: 004eb447 (CONDITIONAL_JUMP)  ; LAB_004eb447
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb437
     ADD ESI,0x2                         ; 004eb43a
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb43d | DAT_01d75eb1 | DAT_01d75eb3
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb43d | g_CHAR_ARRAY_ARRAY_01d75d20[10][1] | g_CHAR_ARRAY_ARRAY_01d75d20[10][3]
     ADD EDI,0x2                         ; 004eb440
     CMP AL,0x0                          ; 004eb443
     JNZ 0x004eb42f                      ; 004eb445
@@ -577,16 +577,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb49f
     ADD EDI,0x1d75d20                   ; 004eb4a2
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb4a8 | g_INT_PTR_ARRAY_01d75c9c[11]
-    PUSH EDI                            ; 004eb4af | DAT_01d75ed8
+    PUSH EDI                            ; 004eb4af | g_CHAR_ARRAY_ARRAY_01d75d20[11][0]
     MOV AL,byte ptr [ESI]               ; 004eb4b0
         ;   Label: LAB_004eb4b0
-    MOV byte ptr [EDI],AL               ; 004eb4b2 | DAT_01d75ed8 | DAT_01d75eda
+    MOV byte ptr [EDI],AL               ; 004eb4b2 | g_CHAR_ARRAY_ARRAY_01d75d20[11][0] | g_CHAR_ARRAY_ARRAY_01d75d20[11][2]
     CMP AL,0x0                          ; 004eb4b4
     JZ 0x004eb4c8                       ; 004eb4b6
         ;   XREF to: 004eb4c8 (CONDITIONAL_JUMP)  ; LAB_004eb4c8
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb4b8
     ADD ESI,0x2                         ; 004eb4bb
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb4be | DAT_01d75ed9 | DAT_01d75edb
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb4be | g_CHAR_ARRAY_ARRAY_01d75d20[11][1] | g_CHAR_ARRAY_ARRAY_01d75d20[11][3]
     ADD EDI,0x2                         ; 004eb4c1
     CMP AL,0x0                          ; 004eb4c4
     JNZ 0x004eb4b0                      ; 004eb4c6
@@ -627,13 +627,13 @@ section .text
     PUSH EDI                            ; 004eb53b
     MOV AL,byte ptr [ESI]               ; 004eb53c
         ;   Label: LAB_004eb53c
-    MOV byte ptr [EDI],AL               ; 004eb53e | DAT_01d75f00
+    MOV byte ptr [EDI],AL               ; 004eb53e | g_CHAR_ARRAY_ARRAY_01d75d20[12][0]
     CMP AL,0x0                          ; 004eb540
     JZ 0x004eb554                       ; 004eb542
         ;   XREF to: 004eb554 (CONDITIONAL_JUMP)  ; LAB_004eb554
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb544
     ADD ESI,0x2                         ; 004eb547
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb54a | DAT_01d75f01
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb54a | g_CHAR_ARRAY_ARRAY_01d75d20[12][1]
     ADD EDI,0x2                         ; 004eb54d
     CMP AL,0x0                          ; 004eb550
     JNZ 0x004eb53c                      ; 004eb552
@@ -665,16 +665,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb5a5
     ADD EDI,0x1d75d20                   ; 004eb5a8
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb5ae | g_INT_PTR_ARRAY_01d75c9c[13] | g_CGameInstance.key_use_item
-    PUSH EDI                            ; 004eb5b5 | DAT_01d75f28
+    PUSH EDI                            ; 004eb5b5 | g_CHAR_ARRAY_ARRAY_01d75d20[13][0]
     MOV AL,byte ptr [ESI]               ; 004eb5b6
         ;   Label: LAB_004eb5b6
-    MOV byte ptr [EDI],AL               ; 004eb5b8 | DAT_01d75f28 | DAT_01d75f2a
+    MOV byte ptr [EDI],AL               ; 004eb5b8 | g_CHAR_ARRAY_ARRAY_01d75d20[13][0] | g_CHAR_ARRAY_ARRAY_01d75d20[13][2]
     CMP AL,0x0                          ; 004eb5ba
     JZ 0x004eb5ce                       ; 004eb5bc
         ;   XREF to: 004eb5ce (CONDITIONAL_JUMP)  ; LAB_004eb5ce
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb5be
     ADD ESI,0x2                         ; 004eb5c1
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb5c4 | DAT_01d75f29 | DAT_01d75f2b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb5c4 | g_CHAR_ARRAY_ARRAY_01d75d20[13][1] | g_CHAR_ARRAY_ARRAY_01d75d20[13][3]
     ADD EDI,0x2                         ; 004eb5c7
     CMP AL,0x0                          ; 004eb5ca
     JNZ 0x004eb5b6                      ; 004eb5cc
@@ -708,16 +708,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb626
     ADD EDI,0x1d75d20                   ; 004eb629
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb62f | g_INT_PTR_ARRAY_01d75c9c[14] | g_CGameInstance.key_light
-    PUSH EDI                            ; 004eb636 | DAT_01d75f50
+    PUSH EDI                            ; 004eb636 | g_CHAR_ARRAY_ARRAY_01d75d20[14][0]
     MOV AL,byte ptr [ESI]               ; 004eb637
         ;   Label: LAB_004eb637
-    MOV byte ptr [EDI],AL               ; 004eb639 | DAT_01d75f50 | DAT_01d75f52
+    MOV byte ptr [EDI],AL               ; 004eb639 | g_CHAR_ARRAY_ARRAY_01d75d20[14][0] | g_CHAR_ARRAY_ARRAY_01d75d20[14][2]
     CMP AL,0x0                          ; 004eb63b
     JZ 0x004eb64f                       ; 004eb63d
         ;   XREF to: 004eb64f (CONDITIONAL_JUMP)  ; LAB_004eb64f
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb63f
     ADD ESI,0x2                         ; 004eb642
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb645 | DAT_01d75f51 | DAT_01d75f53
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb645 | g_CHAR_ARRAY_ARRAY_01d75d20[14][1] | g_CHAR_ARRAY_ARRAY_01d75d20[14][3]
     ADD EDI,0x2                         ; 004eb648
     CMP AL,0x0                          ; 004eb64b
     JNZ 0x004eb637                      ; 004eb64d
@@ -751,16 +751,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb6a7
     ADD EDI,0x1d75d20                   ; 004eb6aa
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb6b0 | g_INT_PTR_ARRAY_01d75c9c[15]
-    PUSH EDI                            ; 004eb6b7 | DAT_01d75f78
+    PUSH EDI                            ; 004eb6b7 | g_CHAR_ARRAY_ARRAY_01d75d20[15][0]
     MOV AL,byte ptr [ESI]               ; 004eb6b8
         ;   Label: LAB_004eb6b8
-    MOV byte ptr [EDI],AL               ; 004eb6ba | DAT_01d75f78 | DAT_01d75f7a
+    MOV byte ptr [EDI],AL               ; 004eb6ba | g_CHAR_ARRAY_ARRAY_01d75d20[15][0] | g_CHAR_ARRAY_ARRAY_01d75d20[15][2]
     CMP AL,0x0                          ; 004eb6bc
     JZ 0x004eb6d0                       ; 004eb6be
         ;   XREF to: 004eb6d0 (CONDITIONAL_JUMP)  ; LAB_004eb6d0
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb6c0
     ADD ESI,0x2                         ; 004eb6c3
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb6c6 | DAT_01d75f79 | DAT_01d75f7b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb6c6 | g_CHAR_ARRAY_ARRAY_01d75d20[15][1] | g_CHAR_ARRAY_ARRAY_01d75d20[15][3]
     ADD EDI,0x2                         ; 004eb6c9
     CMP AL,0x0                          ; 004eb6cc
     JNZ 0x004eb6b8                      ; 004eb6ce
@@ -794,16 +794,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb728
     ADD EDI,0x1d75d20                   ; 004eb72b
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb731 | g_INT_PTR_ARRAY_01d75c9c[16]
-    PUSH EDI                            ; 004eb738 | DAT_01d75fa0
+    PUSH EDI                            ; 004eb738 | g_CHAR_ARRAY_ARRAY_01d75d20[16][0]
     MOV AL,byte ptr [ESI]               ; 004eb739
         ;   Label: LAB_004eb739
-    MOV byte ptr [EDI],AL               ; 004eb73b | DAT_01d75fa0 | DAT_01d75fa2
+    MOV byte ptr [EDI],AL               ; 004eb73b | g_CHAR_ARRAY_ARRAY_01d75d20[16][0] | g_CHAR_ARRAY_ARRAY_01d75d20[16][2]
     CMP AL,0x0                          ; 004eb73d
     JZ 0x004eb751                       ; 004eb73f
         ;   XREF to: 004eb751 (CONDITIONAL_JUMP)  ; LAB_004eb751
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb741
     ADD ESI,0x2                         ; 004eb744
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb747 | DAT_01d75fa1 | DAT_01d75fa3
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb747 | g_CHAR_ARRAY_ARRAY_01d75d20[16][1] | g_CHAR_ARRAY_ARRAY_01d75d20[16][3]
     ADD EDI,0x2                         ; 004eb74a
     CMP AL,0x0                          ; 004eb74d
     JNZ 0x004eb739                      ; 004eb74f
@@ -837,16 +837,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb7a9
     ADD EDI,0x1d75d20                   ; 004eb7ac
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb7b2 | g_INT_PTR_ARRAY_01d75c9c[17]
-    PUSH EDI                            ; 004eb7b9 | DAT_01d75fc8
+    PUSH EDI                            ; 004eb7b9 | g_CHAR_ARRAY_ARRAY_01d75d20[17][0]
     MOV AL,byte ptr [ESI]               ; 004eb7ba
         ;   Label: LAB_004eb7ba
-    MOV byte ptr [EDI],AL               ; 004eb7bc | DAT_01d75fc8 | DAT_01d75fca
+    MOV byte ptr [EDI],AL               ; 004eb7bc | g_CHAR_ARRAY_ARRAY_01d75d20[17][0] | g_CHAR_ARRAY_ARRAY_01d75d20[17][2]
     CMP AL,0x0                          ; 004eb7be
     JZ 0x004eb7d2                       ; 004eb7c0
         ;   XREF to: 004eb7d2 (CONDITIONAL_JUMP)  ; LAB_004eb7d2
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb7c2
     ADD ESI,0x2                         ; 004eb7c5
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb7c8 | DAT_01d75fc9 | DAT_01d75fcb
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb7c8 | g_CHAR_ARRAY_ARRAY_01d75d20[17][1] | g_CHAR_ARRAY_ARRAY_01d75d20[17][3]
     ADD EDI,0x2                         ; 004eb7cb
     CMP AL,0x0                          ; 004eb7ce
     JNZ 0x004eb7ba                      ; 004eb7d0
@@ -880,16 +880,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb82a
     ADD EDI,0x1d75d20                   ; 004eb82d
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb833 | g_INT_PTR_ARRAY_01d75c9c[18]
-    PUSH EDI                            ; 004eb83a | DAT_01d75ff0
+    PUSH EDI                            ; 004eb83a | g_CHAR_ARRAY_ARRAY_01d75d20[18][0]
     MOV AL,byte ptr [ESI]               ; 004eb83b
         ;   Label: LAB_004eb83b
-    MOV byte ptr [EDI],AL               ; 004eb83d | DAT_01d75ff0 | DAT_01d75ff2
+    MOV byte ptr [EDI],AL               ; 004eb83d | g_CHAR_ARRAY_ARRAY_01d75d20[18][0] | g_CHAR_ARRAY_ARRAY_01d75d20[18][2]
     CMP AL,0x0                          ; 004eb83f
     JZ 0x004eb853                       ; 004eb841
         ;   XREF to: 004eb853 (CONDITIONAL_JUMP)  ; LAB_004eb853
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb843
     ADD ESI,0x2                         ; 004eb846
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb849 | DAT_01d75ff1 | DAT_01d75ff3
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb849 | g_CHAR_ARRAY_ARRAY_01d75d20[18][1] | g_CHAR_ARRAY_ARRAY_01d75d20[18][3]
     ADD EDI,0x2                         ; 004eb84c
     CMP AL,0x0                          ; 004eb84f
     JNZ 0x004eb83b                      ; 004eb851
@@ -923,16 +923,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb8ae
     ADD EDI,0x1d75d20                   ; 004eb8b1
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb8b7 | g_INT_PTR_ARRAY_01d75c9c[19]
-    PUSH EDI                            ; 004eb8be | DAT_01d76018
+    PUSH EDI                            ; 004eb8be | g_CHAR_ARRAY_ARRAY_01d75d20[19][0]
     MOV AL,byte ptr [ESI]               ; 004eb8bf
         ;   Label: LAB_004eb8bf
-    MOV byte ptr [EDI],AL               ; 004eb8c1 | DAT_01d76018 | DAT_01d7601a
+    MOV byte ptr [EDI],AL               ; 004eb8c1 | g_CHAR_ARRAY_ARRAY_01d75d20[19][0] | g_CHAR_ARRAY_ARRAY_01d75d20[19][2]
     CMP AL,0x0                          ; 004eb8c3
     JZ 0x004eb8d7                       ; 004eb8c5
         ;   XREF to: 004eb8d7 (CONDITIONAL_JUMP)  ; LAB_004eb8d7
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb8c7
     ADD ESI,0x2                         ; 004eb8ca
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb8cd | DAT_01d76019 | DAT_01d7601b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb8cd | g_CHAR_ARRAY_ARRAY_01d75d20[19][1] | g_CHAR_ARRAY_ARRAY_01d75d20[19][3]
     ADD EDI,0x2                         ; 004eb8d0
     CMP AL,0x0                          ; 004eb8d3
     JNZ 0x004eb8bf                      ; 004eb8d5
@@ -966,16 +966,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb932
     ADD EDI,0x1d75d20                   ; 004eb935
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb93b | g_INT_PTR_ARRAY_01d75c9c[20]
-    PUSH EDI                            ; 004eb942 | DAT_01d76040
+    PUSH EDI                            ; 004eb942 | g_CHAR_ARRAY_ARRAY_01d75d20[20][0]
     MOV AL,byte ptr [ESI]               ; 004eb943
         ;   Label: LAB_004eb943
-    MOV byte ptr [EDI],AL               ; 004eb945 | DAT_01d76040 | DAT_01d76042
+    MOV byte ptr [EDI],AL               ; 004eb945 | g_CHAR_ARRAY_ARRAY_01d75d20[20][0] | g_CHAR_ARRAY_ARRAY_01d75d20[20][2]
     CMP AL,0x0                          ; 004eb947
     JZ 0x004eb95b                       ; 004eb949
         ;   XREF to: 004eb95b (CONDITIONAL_JUMP)  ; LAB_004eb95b
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb94b
     ADD ESI,0x2                         ; 004eb94e
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb951 | DAT_01d76041 | DAT_01d76043
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb951 | g_CHAR_ARRAY_ARRAY_01d75d20[20][1] | g_CHAR_ARRAY_ARRAY_01d75d20[20][3]
     ADD EDI,0x2                         ; 004eb954
     CMP AL,0x0                          ; 004eb957
     JNZ 0x004eb943                      ; 004eb959
@@ -1009,16 +1009,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eb9b6
     ADD EDI,0x1d75d20                   ; 004eb9b9
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eb9bf | g_INT_PTR_ARRAY_01d75c9c[21]
-    PUSH EDI                            ; 004eb9c6 | DAT_01d76068
+    PUSH EDI                            ; 004eb9c6 | g_CHAR_ARRAY_ARRAY_01d75d20[21][0]
     MOV AL,byte ptr [ESI]               ; 004eb9c7
         ;   Label: LAB_004eb9c7
-    MOV byte ptr [EDI],AL               ; 004eb9c9 | DAT_01d76068 | DAT_01d7606a
+    MOV byte ptr [EDI],AL               ; 004eb9c9 | g_CHAR_ARRAY_ARRAY_01d75d20[21][0] | g_CHAR_ARRAY_ARRAY_01d75d20[21][2]
     CMP AL,0x0                          ; 004eb9cb
     JZ 0x004eb9df                       ; 004eb9cd
         ;   XREF to: 004eb9df (CONDITIONAL_JUMP)  ; LAB_004eb9df
     MOV AL,byte ptr [ESI + 0x1]         ; 004eb9cf
     ADD ESI,0x2                         ; 004eb9d2
-    MOV byte ptr [EDI + 0x1],AL         ; 004eb9d5 | DAT_01d76069 | DAT_01d7606b
+    MOV byte ptr [EDI + 0x1],AL         ; 004eb9d5 | g_CHAR_ARRAY_ARRAY_01d75d20[21][1] | g_CHAR_ARRAY_ARRAY_01d75d20[21][3]
     ADD EDI,0x2                         ; 004eb9d8
     CMP AL,0x0                          ; 004eb9db
     JNZ 0x004eb9c7                      ; 004eb9dd
@@ -1052,16 +1052,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004eba3a
     ADD EDI,0x1d75d20                   ; 004eba3d
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004eba43 | g_INT_PTR_ARRAY_01d75c9c[22]
-    PUSH EDI                            ; 004eba4a | DAT_01d76090
+    PUSH EDI                            ; 004eba4a | g_CHAR_ARRAY_ARRAY_01d75d20[22][0]
     MOV AL,byte ptr [ESI]               ; 004eba4b
         ;   Label: LAB_004eba4b
-    MOV byte ptr [EDI],AL               ; 004eba4d | DAT_01d76090 | DAT_01d76092
+    MOV byte ptr [EDI],AL               ; 004eba4d | g_CHAR_ARRAY_ARRAY_01d75d20[22][0] | g_CHAR_ARRAY_ARRAY_01d75d20[22][2]
     CMP AL,0x0                          ; 004eba4f
     JZ 0x004eba63                       ; 004eba51
         ;   XREF to: 004eba63 (CONDITIONAL_JUMP)  ; LAB_004eba63
     MOV AL,byte ptr [ESI + 0x1]         ; 004eba53
     ADD ESI,0x2                         ; 004eba56
-    MOV byte ptr [EDI + 0x1],AL         ; 004eba59 | DAT_01d76091 | DAT_01d76093
+    MOV byte ptr [EDI + 0x1],AL         ; 004eba59 | g_CHAR_ARRAY_ARRAY_01d75d20[22][1] | g_CHAR_ARRAY_ARRAY_01d75d20[22][3]
     ADD EDI,0x2                         ; 004eba5c
     CMP AL,0x0                          ; 004eba5f
     JNZ 0x004eba4b                      ; 004eba61
@@ -1095,16 +1095,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004ebabe
     ADD EDI,0x1d75d20                   ; 004ebac1
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebac7 | g_INT_PTR_ARRAY_01d75c9c[23]
-    PUSH EDI                            ; 004ebace | DAT_01d760b8
+    PUSH EDI                            ; 004ebace | g_CHAR_ARRAY_ARRAY_01d75d20[23][0]
     MOV AL,byte ptr [ESI]               ; 004ebacf
         ;   Label: LAB_004ebacf
-    MOV byte ptr [EDI],AL               ; 004ebad1 | DAT_01d760b8 | DAT_01d760ba
+    MOV byte ptr [EDI],AL               ; 004ebad1 | g_CHAR_ARRAY_ARRAY_01d75d20[23][0] | g_CHAR_ARRAY_ARRAY_01d75d20[23][2]
     CMP AL,0x0                          ; 004ebad3
     JZ 0x004ebae7                       ; 004ebad5
         ;   XREF to: 004ebae7 (CONDITIONAL_JUMP)  ; LAB_004ebae7
     MOV AL,byte ptr [ESI + 0x1]         ; 004ebad7
     ADD ESI,0x2                         ; 004ebada
-    MOV byte ptr [EDI + 0x1],AL         ; 004ebadd | DAT_01d760b9 | DAT_01d760bb
+    MOV byte ptr [EDI + 0x1],AL         ; 004ebadd | g_CHAR_ARRAY_ARRAY_01d75d20[23][1] | g_CHAR_ARRAY_ARRAY_01d75d20[23][3]
     ADD EDI,0x2                         ; 004ebae0
     CMP AL,0x0                          ; 004ebae3
     JNZ 0x004ebacf                      ; 004ebae5
@@ -1138,16 +1138,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004ebb42
     ADD EDI,0x1d75d20                   ; 004ebb45
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebb4b | g_INT_PTR_ARRAY_01d75c9c[24] | g_CGameInstance.key_next_weapon
-    PUSH EDI                            ; 004ebb52 | DAT_01d760e0
+    PUSH EDI                            ; 004ebb52 | g_CHAR_ARRAY_ARRAY_01d75d20[24][0]
     MOV AL,byte ptr [ESI]               ; 004ebb53
         ;   Label: LAB_004ebb53
-    MOV byte ptr [EDI],AL               ; 004ebb55 | DAT_01d760e0 | DAT_01d760e2
+    MOV byte ptr [EDI],AL               ; 004ebb55 | g_CHAR_ARRAY_ARRAY_01d75d20[24][0] | g_CHAR_ARRAY_ARRAY_01d75d20[24][2]
     CMP AL,0x0                          ; 004ebb57
     JZ 0x004ebb6b                       ; 004ebb59
         ;   XREF to: 004ebb6b (CONDITIONAL_JUMP)  ; LAB_004ebb6b
     MOV AL,byte ptr [ESI + 0x1]         ; 004ebb5b
     ADD ESI,0x2                         ; 004ebb5e
-    MOV byte ptr [EDI + 0x1],AL         ; 004ebb61 | DAT_01d760e1 | DAT_01d760e3
+    MOV byte ptr [EDI + 0x1],AL         ; 004ebb61 | g_CHAR_ARRAY_ARRAY_01d75d20[24][1] | g_CHAR_ARRAY_ARRAY_01d75d20[24][3]
     ADD EDI,0x2                         ; 004ebb64
     CMP AL,0x0                          ; 004ebb67
     JNZ 0x004ebb53                      ; 004ebb69
@@ -1181,16 +1181,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004ebbc6
     ADD EDI,0x1d75d20                   ; 004ebbc9
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebbcf | g_INT_PTR_ARRAY_01d75c9c[25] | g_CGameInstance.key_prev_weapon
-    PUSH EDI                            ; 004ebbd6 | DAT_01d76108
+    PUSH EDI                            ; 004ebbd6 | g_CHAR_ARRAY_ARRAY_01d75d20[25][0]
     MOV AL,byte ptr [ESI]               ; 004ebbd7
         ;   Label: LAB_004ebbd7
-    MOV byte ptr [EDI],AL               ; 004ebbd9 | DAT_01d76108 | DAT_01d7610a
+    MOV byte ptr [EDI],AL               ; 004ebbd9 | g_CHAR_ARRAY_ARRAY_01d75d20[25][0] | g_CHAR_ARRAY_ARRAY_01d75d20[25][2]
     CMP AL,0x0                          ; 004ebbdb
     JZ 0x004ebbef                       ; 004ebbdd
         ;   XREF to: 004ebbef (CONDITIONAL_JUMP)  ; LAB_004ebbef
     MOV AL,byte ptr [ESI + 0x1]         ; 004ebbdf
     ADD ESI,0x2                         ; 004ebbe2
-    MOV byte ptr [EDI + 0x1],AL         ; 004ebbe5 | DAT_01d76109 | DAT_01d7610b
+    MOV byte ptr [EDI + 0x1],AL         ; 004ebbe5 | g_CHAR_ARRAY_ARRAY_01d75d20[25][1] | g_CHAR_ARRAY_ARRAY_01d75d20[25][3]
     ADD EDI,0x2                         ; 004ebbe8
     CMP AL,0x0                          ; 004ebbeb
     JNZ 0x004ebbd7                      ; 004ebbed
@@ -1224,16 +1224,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004ebc4a
     ADD EDI,0x1d75d20                   ; 004ebc4d
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebc53 | g_INT_PTR_ARRAY_01d75c9c[26] | g_CGameInstance.key_next_item
-    PUSH EDI                            ; 004ebc5a | DAT_01d76130
+    PUSH EDI                            ; 004ebc5a | g_CHAR_ARRAY_ARRAY_01d75d20[26][0]
     MOV AL,byte ptr [ESI]               ; 004ebc5b
         ;   Label: LAB_004ebc5b
-    MOV byte ptr [EDI],AL               ; 004ebc5d | DAT_01d76130 | DAT_01d76132
+    MOV byte ptr [EDI],AL               ; 004ebc5d | g_CHAR_ARRAY_ARRAY_01d75d20[26][0] | g_CHAR_ARRAY_ARRAY_01d75d20[26][2]
     CMP AL,0x0                          ; 004ebc5f
     JZ 0x004ebc73                       ; 004ebc61
         ;   XREF to: 004ebc73 (CONDITIONAL_JUMP)  ; LAB_004ebc73
     MOV AL,byte ptr [ESI + 0x1]         ; 004ebc63
     ADD ESI,0x2                         ; 004ebc66
-    MOV byte ptr [EDI + 0x1],AL         ; 004ebc69 | DAT_01d76131 | DAT_01d76133
+    MOV byte ptr [EDI + 0x1],AL         ; 004ebc69 | g_CHAR_ARRAY_ARRAY_01d75d20[26][1] | g_CHAR_ARRAY_ARRAY_01d75d20[26][3]
     ADD EDI,0x2                         ; 004ebc6c
     CMP AL,0x0                          ; 004ebc6f
     JNZ 0x004ebc5b                      ; 004ebc71
@@ -1267,16 +1267,16 @@ section .text
     IMUL EDI,EAX,0x28                   ; 004ebcce
     ADD EDI,0x1d75d20                   ; 004ebcd1
     MOV dword ptr [EAX*0x4 + 0x1d75c9c],EBX ; 004ebcd7 | g_INT_PTR_ARRAY_01d75c9c[27] | g_CGameInstance.key_prev_item
-    PUSH EDI                            ; 004ebcde | DAT_01d76158
+    PUSH EDI                            ; 004ebcde | g_CHAR_ARRAY_ARRAY_01d75d20[27][0]
     MOV AL,byte ptr [ESI]               ; 004ebcdf
         ;   Label: LAB_004ebcdf
-    MOV byte ptr [EDI],AL               ; 004ebce1 | DAT_01d76158 | DAT_01d7615a
+    MOV byte ptr [EDI],AL               ; 004ebce1 | g_CHAR_ARRAY_ARRAY_01d75d20[27][0] | g_CHAR_ARRAY_ARRAY_01d75d20[27][2]
     CMP AL,0x0                          ; 004ebce3
     JZ 0x004ebcf7                       ; 004ebce5
         ;   XREF to: 004ebcf7 (CONDITIONAL_JUMP)  ; LAB_004ebcf7
     MOV AL,byte ptr [ESI + 0x1]         ; 004ebce7
     ADD ESI,0x2                         ; 004ebcea
-    MOV byte ptr [EDI + 0x1],AL         ; 004ebced | DAT_01d76159 | DAT_01d7615b
+    MOV byte ptr [EDI + 0x1],AL         ; 004ebced | g_CHAR_ARRAY_ARRAY_01d75d20[27][1] | g_CHAR_ARRAY_ARRAY_01d75d20[27][3]
     ADD EDI,0x2                         ; 004ebcf0
     CMP AL,0x0                          ; 004ebcf3
     JNZ 0x004ebcdf                      ; 004ebcf5

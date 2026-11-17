@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_ptr)
 
 {
@@ -58,8 +56,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
     local_44 = (float)wincore_winrun_cpp_getTime_FUN_00558a30();
     local_20 = 0;
   }
-  _DAT_01fba2d8 = 0;
-  _DAT_01fba2ec = 0;
+  g_INT_01fba2d8 = 0;
+  g_INT_01fba2ec = 0;
   damage_info = (CPathMap *)g_CGamePtr->delta_time_float;
   if (0.0 < (float)damage_info) {
     local_50 = damage_info;
@@ -91,35 +89,39 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
                 CStack_64.z = (pCVar3->orient).vec.x;
                 local_58 = (pCVar3->orient).vec.y;
                 local_54 = (pCVar3->orient).vec.z;
-                DAT_00763e44 = pCVar3;
+                g_CDemonActor_PTR_00763e44 = pCVar3;
                 if (g_CGamePtr->profile_mode == 2) {
                   local_28 = wincore_winrun_cpp_getTime_FUN_00558a30();
                 }
-                (*((DAT_00763e44->vtable)._ub)->process)(DAT_00763e44,(float)damage_info);
+                (*((g_CDemonActor_PTR_00763e44->vtable)._ub)->process)
+                          (g_CDemonActor_PTR_00763e44,(float)damage_info);
                 if (g_CGamePtr->profile_mode == 2) {
                   iVar10 = wincore_winrun_cpp_getTime_FUN_00558a30();
-                  *(int *)(iVar8 + 0x1ffb078) = iVar10 - local_20;
-                  *(CDemonActor **)(iVar8 + 0x1ffcfb8) = DAT_00763e44;
+                  *(int *)((int)g_INT_ARRAY_01ffb078 + iVar8) = iVar10 - local_20;
+                  *(CDemonActor **)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + iVar8) =
+                       g_CDemonActor_PTR_00763e44;
                 }
                 if (g_CGamePtr->profile_mode != 0) {
                   iStack_18 = iStack_18 + 1;
                   iVar8 = iVar8 + 4;
                 }
                 damage_info = (CPathMap *)0x509346;
-                this_ptr_00 = (*((DAT_00763e44->vtable)._ub)->getPathMap)(DAT_00763e44);
+                this_ptr_00 = (*((g_CDemonActor_PTR_00763e44->vtable)._ub)->getPathMap)
+                                        (g_CDemonActor_PTR_00763e44);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_004f0360
-                            (this_ptr_00,&(DAT_00763e44->location).position,0);
+                            (this_ptr_00,&(g_CDemonActor_PTR_00763e44->location).position,0);
                   damage_info = this_ptr_00;
                 }
-                if (((fStack_4c == (DAT_00763e44->orient).vec.y) &&
-                    ((float)local_50 == (DAT_00763e44->orient).vec.x)) &&
-                   (fStack_48 == (DAT_00763e44->orient).vec.z)) {
-                  DAT_00763e44 = (CDemonActor *)0x0;
+                if (((fStack_4c == (g_CDemonActor_PTR_00763e44->orient).vec.y) &&
+                    ((float)local_50 == (g_CDemonActor_PTR_00763e44->orient).vec.x)) &&
+                   (fStack_48 == (g_CDemonActor_PTR_00763e44->orient).vec.z)) {
+                  g_CDemonActor_PTR_00763e44 = (CDemonActor *)0x0;
                 }
                 else {
-                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000(DAT_00763e44);
-                  DAT_00763e44 = (CDemonActor *)0x0;
+                  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
+                            (g_CDemonActor_PTR_00763e44);
+                  g_CDemonActor_PTR_00763e44 = (CDemonActor *)0x0;
                 }
               }
               else if ((local_24 < iVar10) && (iVar10 < local_1c)) {
@@ -214,13 +216,15 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
             if (local_2c + 1 < local_20) {
               iVar5 = (local_2c + 1) * 4;
               do {
-                iVar8 = *(int *)(local_30 + 0x1ffb078);
-                if (iVar8 < *(int *)(iVar5 + 0x1ffb078)) {
-                  *(uint *)(local_30 + 0x1ffb078) = *(uint *)(iVar5 + 0x1ffb078);
-                  *(int *)(iVar5 + 0x1ffb078) = iVar8;
-                  uVar4 = *(uint *)(local_30 + 0x1ffcfb8);
-                  *(uint *)(local_30 + 0x1ffcfb8) = *(uint *)(iVar5 + 0x1ffcfb8);
-                  *(uint *)(iVar5 + 0x1ffcfb8) = uVar4;
+                iVar8 = *(int *)((int)g_INT_ARRAY_01ffb078 + local_30);
+                if (iVar8 < *(int *)((int)g_INT_ARRAY_01ffb078 + iVar5)) {
+                  *(uint *)((int)g_INT_ARRAY_01ffb078 + local_30) =
+                       *(uint *)((int)g_INT_ARRAY_01ffb078 + iVar5);
+                  *(int *)((int)g_INT_ARRAY_01ffb078 + iVar5) = iVar8;
+                  uVar4 = *(uint *)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + local_30);
+                  *(uint *)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + local_30) =
+                       *(uint *)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + iVar5);
+                  *(uint *)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + iVar5) = uVar4;
                 }
                 iVar5 = iVar5 + 4;
               } while (iVar5 < (int)local_40);
@@ -237,8 +241,8 @@ void __cdecl core_set_cpp_CDemonSet_processActors_FUN_00509140(CDemonSet *this_p
           iVar10 = 0;
           iVar8 = 0;
           do {
-            piVar1 = (int *)(iVar10 + 0x1ffb078);
-            puVar2 = (uint *)(iVar10 + 0x1ffcfb8);
+            piVar1 = (int *)((int)g_INT_ARRAY_01ffb078 + iVar10);
+            puVar2 = (uint *)((int)g_CDemonActor_PTR_ARRAY_01ffcfb8 + iVar10);
             iVar10 = iVar10 + 4;
             iVar9 = iVar8 + 1;
             engine_console_cpp_CConsole_printf_FUN_0043ac60

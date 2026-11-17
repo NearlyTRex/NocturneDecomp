@@ -9,12 +9,12 @@
 void FUN_0056b1ee(void)
 
 {
-  int *piVar1;
+  WatcomDestructorCall **ppWVar1;
   
-  while (DAT_005c1f50 != (uint *)0x0) {
-    piVar1 = DAT_005c1f50 + 1;
-    DAT_005c1f50 = (uint *)*DAT_005c1f50;
-    (**(code **)(*piVar1 + 4))(*(uint *)(*piVar1 + 8),0);
+  while (g_WatcomStaticDestructorNode_PTR_005c1f50 != (WatcomStaticDestructorNode *)0x0) {
+    ppWVar1 = &g_WatcomStaticDestructorNode_PTR_005c1f50->destructor_info;
+    g_WatcomStaticDestructorNode_PTR_005c1f50 = g_WatcomStaticDestructorNode_PTR_005c1f50->next;
+    (*(*ppWVar1)->destructor_func)((*ppWVar1)->object_instance,0);
   }
   return;
 }

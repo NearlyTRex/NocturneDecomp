@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __edi_esi_ebx core_dstrendr_cpp_renderTexturedAlphaMMXScanline_FUN_00463b27(SSoftwareEdge *left_edge,SSoftwareEdge *right_edge,int scanline_y)
 {
 __asm {
@@ -25,32 +23,32 @@ __asm {
         jle LAB_00463c3c
         shl ECX,0x1
         lea EBP,[EBP + EAX*0x2]
-        mov dword ptr [DAT_005b06e4],ECX
-        mov dword ptr [DAT_005b06e8],EBP
+        mov dword ptr [g_INT_005b06e4],ECX
+        mov dword ptr [g_UINT_PTR_005b06e8],EBP
         mov EAX,dword ptr [EDI + 0x18]
         mov EBX,dword ptr [ESI + 0x18]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c00c84]
-        mov dword ptr [DAT_005b06b8],EBX
-        mov dword ptr [DAT_005b06d4],EDX
+        mov dword ptr [g_UINT_005b06b8],EBX
+        mov dword ptr [g_INT_005b06d4],EDX
         mov EAX,dword ptr [EDI + 0x20]
         mov EBX,dword ptr [ESI + 0x20]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c00c84]
-        mov dword ptr [DAT_005b06bc],EBX
-        mov dword ptr [DAT_005b06d8],EDX
+        mov dword ptr [g_UINT_005b06bc],EBX
+        mov dword ptr [g_INT_005b06d8],EDX
         mov EAX,dword ptr [EDI + 0x28]
         mov EBX,dword ptr [ESI + 0x28]
         sub EAX,EBX
         imul dword ptr [ECX*0x2 + 0x1c00c84]
-        mov dword ptr [DAT_005b06c4],EBX
-        mov dword ptr [DAT_005b06dc],EDX
-        mov ECX,dword ptr [DAT_005b06b8]
-        mov EDX,dword ptr [DAT_005b06bc]
+        mov dword ptr [g_UINT_005b06c4],EBX
+        mov dword ptr [g_INT_005b06dc],EDX
+        mov ECX,dword ptr [g_UINT_005b06b8]
+        mov EDX,dword ptr [g_UINT_005b06bc]
         mov EDI,0x0
-        mov ESI,dword ptr [DAT_005b06c4]
+        mov ESI,dword ptr [g_UINT_005b06c4]
     LAB_00463bc6:
-        mov EBP,dword ptr [DAT_005b06e8]
+        mov EBP,dword ptr [g_UINT_PTR_005b06e8]
         add EBP,EDI
         movzx EAX,word ptr [EBP]
         cmp ESI,EAX
@@ -75,11 +73,11 @@ __asm {
         mov word ptr [EBP],SI
     LAB_00463c1d:
         add EDI,0x2
-        cmp EDI,dword ptr [DAT_005b06e4]
+        cmp EDI,dword ptr [g_INT_005b06e4]
         ja LAB_00463c3c
-        add ECX,dword ptr [DAT_005b06d4]
-        add EDX,dword ptr [DAT_005b06d8]
-        add ESI,dword ptr [DAT_005b06dc]
+        add ECX,dword ptr [g_INT_005b06d4]
+        add EDX,dword ptr [g_INT_005b06d8]
+        add ESI,dword ptr [g_INT_005b06dc]
         jmp LAB_00463bc6
     LAB_00463c3c:
         pop EBP

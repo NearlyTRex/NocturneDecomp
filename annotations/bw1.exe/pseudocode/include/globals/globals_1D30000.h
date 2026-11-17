@@ -31,18 +31,18 @@ extern CVector3i g_CVector3i_ARRAY_01d33f70[2000];
 extern char g_CHAR_01d33b20;
 extern char g_CHAR_01d33b88;
 
-// double[12]
-extern double g_DOUBLE_ARRAY_01d3ee48[12];
+// double[12][6]
+extern double g_DOUBLE_ARRAY_ARRAY_01d3ee48[12][6];
 
 // double[200]
 extern double g_DOUBLE_ARRAY_01d3bd48[200];
 extern double g_DOUBLE_ARRAY_01d3c388[200];
 
-// double[36]
-extern double g_DOUBLE_ARRAY_01d3f088[36];
+// double[36][18]
+extern double g_DOUBLE_ARRAY_ARRAY_01d3f088[36][18];
 
-// double[4]
-extern double g_DOUBLE_ARRAY_01d3e9c8[4];
+// double[4][36]
+extern double g_DOUBLE_ARRAY_ARRAY_01d3e9c8[4][36];
 
 // double[8]
 extern double g_DOUBLE_ARRAY_01d3e948[8];
@@ -52,8 +52,8 @@ extern double g_DOUBLE_ARRAY_01d3e988[8];
 extern float g_FLOAT_01d33f6c;
 extern float g_FLOAT_01d3d748;
 
-// float[64]
-extern float g_FLOAT_ARRAY_01d39d40[64];
+// float[64][32]
+extern float g_FLOAT_ARRAY_ARRAY_01d39d40[64][32];
 
 // int
 extern int g_INT_01d33f64;

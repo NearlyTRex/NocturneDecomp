@@ -2,16 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 54,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 24
   },
   "cross_references": [
@@ -44,14 +42,14 @@
   "globals": [
     {
       "addr": "005acbc4",
-      "name": "DAT_005acbc4",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_005acbc4",
+      "type": "int[16]",
       "value": null
     },
     {
       "addr": "006b0260",
-      "name": "DAT_006b0260",
-      "type": "undefined4",
+      "name": "g_INT_006b0260",
+      "type": "int",
       "value": null
     },
     {
@@ -147,38 +145,5 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_006b0260",
-      "severity": "mild",
-      "text": "if (-1 < DAT_006b0260) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_005acbc4",
-      "severity": "mild",
-      "text": "g_ActiveRenderColor = *(int *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_006b0260",
-      "severity": "mild",
-      "text": "g_ActiveRenderColor = *(int *)(&DAT_005acbc4 + DAT_006b0260 * 4);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 9,
-      "match": "DAT_006b0260",
-      "severity": "mild",
-      "text": "g_ActiveRenderColor = -DAT_006b0260;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __watcallStack mbtowc_peek(char *str)
 
 {
-  if ((_DAT_02de5c30 != 0) && ((*(byte *)((byte)*str + 0x2de5c41) & 1) != 0)) {
+  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*str] & 1U) != 0)) {
     return (uint)CONCAT11(*str,str[1]);
   }
   return (uint)(byte)*str;

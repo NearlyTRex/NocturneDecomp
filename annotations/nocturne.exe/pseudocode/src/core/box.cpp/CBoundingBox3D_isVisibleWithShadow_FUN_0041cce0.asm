@@ -19,8 +19,8 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_014b9920
-;   undefined4 DAT_01b4d738
+;   CDemonLight* g_CDemonLight_PTR_014b9920
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -36,7 +36,7 @@ section .text
     PUSH EBP                            ; 0041cce0
         ;   Label: core_box.cpp_CBoundingBox3D_isVisibleWithShadow_FUN_0041cce0
     SUB ESP,0x1c                        ; 0041cce1
-    CMP dword ptr [0x014b9920],0x0      ; 0041cce4 | DAT_014b9920
+    CMP dword ptr [0x014b9920],0x0      ; 0041cce4 | g_CDemonLight_PTR_014b9920
     JZ 0x0041ce6d                       ; 0041cceb
         ;   XREF to: 0041ce6d (CONDITIONAL_JUMP)  ; LAB_0041ce6d
     PUSH EDI                            ; 0041ccf1
@@ -48,7 +48,7 @@ section .text
     MOV EDI,dword ptr [0x01c00c50]      ; 0041cd05 | g_Projection.center_x_fixed
     MOV ESI,dword ptr [0x01c00c4c]      ; 0041cd0b | g_Projection.neg_half_height_fixed
     MOV EBP,dword ptr [0x01c00c54]      ; 0041cd11 | g_Projection.center_y_fixed
-    MOV EDX,dword ptr [EDX]             ; 0041cd17 | DAT_01b4d738
+    MOV EDX,dword ptr [EDX]             ; 0041cd17 | g_CDemonRenderer_01b4d738
     ADD EAX,ECX                         ; 0041cd19
     SUB EDI,ECX                         ; 0041cd1b
     MOV dword ptr [ESP + 0x20],EAX      ; 0041cd1d
@@ -160,7 +160,7 @@ section .text
         ;   XREF to: 0041cd3a (CONDITIONAL_JUMP)  ; LAB_0041cd3a
     MOV ESI,dword ptr [ESP + 0x20]      ; 0041ce25
     MOV EAX,dword ptr [ESP + 0x24]      ; 0041ce29
-    MOV EDX,dword ptr [0x014b9920]      ; 0041ce2d | DAT_014b9920
+    MOV EDX,dword ptr [0x014b9920]      ; 0041ce2d | g_CDemonLight_PTR_014b9920
     SAR EDI,0x10                        ; 0041ce33
     SAR EAX,0x10                        ; 0041ce36
     SAR EBP,0x10                        ; 0041ce39

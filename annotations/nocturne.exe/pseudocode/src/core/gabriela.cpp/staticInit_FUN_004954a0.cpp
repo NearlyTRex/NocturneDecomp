@@ -6,14 +6,12 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gabriela_cpp_staticInit_FUN_004954a0(void)
 
 {
-  _DAT_01c71358 = 0.1414286f * 30.0f;
-  _DAT_01c7135c = 0.4074074f * 30.0f;
-  _DAT_01c71360 = 0.1052632f * 20.0f;
+  g_FLOAT_01c71358 = 0.1414286f * 30.0f;
+  g_FLOAT_01c7135c = 0.4074074f * 30.0f;
+  g_FLOAT_01c71360 = 0.1052632f * 20.0f;
   CVector3f_01c71364.x = 0.51;
   CVector3f_01c71364.y = -0.02;
   CVector3f_01c71364.z = 0.09;

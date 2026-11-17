@@ -31,6 +31,16 @@ CVector3i g_CVector3i_ARRAY_02c94468[1000] = {};
 // CWeather
 CWeather g_CWeather_02c997c0 = {};
 
+// DWORD
+DWORD g_DWORD_02c9a5a0 = {};
+
+// FileListNode*
+FileListNode* g_FileListNode_PTR_02c9f050 = {};
+FileListNode* g_FileListNode_PTR_02c9f054 = {};
+
+// HMODULE
+HMODULE g_HMODULE_02c9cf10 = {};
+
 // HWND
 HWND g_HWND_02c9be68 = {};
 
@@ -177,4 +187,8 @@ void* g_PTR_02c9f06c = {};
 void* g_PTR_02c9ff68 = {};
 void* g_PTR_02c9ff90 = {};
 void* g_PTR_02c9ffa0 = {};
+
+// wchar_t[260]
+wchar_t g_WCHAR_T_ARRAY_02c9f174[260] = {};
+wchar_t g_WCHAR_T_ARRAY_02c9f480[260] = {};
 

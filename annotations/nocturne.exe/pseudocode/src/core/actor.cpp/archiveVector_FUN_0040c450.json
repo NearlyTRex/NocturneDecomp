@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 62,
+    "complexity_score": 17,
     "cross_reference_count": 24,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 17,
-    "suspect_count": 4,
-    "suspect_types": [
-      "undefined_data"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 78
   },
   "cross_references": [
@@ -215,20 +213,20 @@
     },
     {
       "addr": "005acc90",
-      "name": "DAT_005acc90",
-      "type": "undefined1",
+      "name": "g_CHAR_ARRAY_005acc90",
+      "type": "char[104]",
       "value": null
     },
     {
       "addr": "00763e84",
-      "name": "DAT_00763e84",
-      "type": "undefined4",
+      "name": "g_FILE_PTR_00763e84",
+      "type": "_FILE*",
       "value": null
     },
     {
       "addr": "00763e88",
-      "name": "DAT_00763e88",
-      "type": "undefined4",
+      "name": "g_INT_00763e88",
+      "type": "int",
       "value": null
     }
   ],
@@ -448,38 +446,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00763e88",
-      "severity": "mild",
-      "text": "if (DAT_00763e88 == 1) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 8,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(DAT_00763e84,\"%f,%f,%f\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00763e84",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g\",&DAT_005acc90,(double)vector_ptr->x,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_005acc90",
-      "severity": "mild",
-      "text": "_fprintf(DAT_00763e84,\"%s%g,%g,%g\",&DAT_005acc90,(double)vector_ptr->x,",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

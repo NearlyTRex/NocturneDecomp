@@ -59,6 +59,9 @@ SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074[2000] = {};
 // SMRGLTextureBasic
 SMRGLTextureBasic g_SMRGLTextureBasic_007bda78 = {};
 
+// SRenderBufferEntry*[2500]
+SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007b7960[2500] = {};
+
 // SRenderVertex*[16]
 SRenderVertex* g_SRenderVertex_PTR_ARRAY_007bf434[16] = {};
 
@@ -85,8 +88,8 @@ float g_FLOAT_007bc4dc = {};
 // float[100]
 float g_FLOAT_ARRAY_007bdc9c[100] = {};
 
-// float[12]
-float g_FLOAT_ARRAY_007bcd08[12] = {};
+// float[12][12]
+float g_FLOAT_ARRAY_ARRAY_007bcd08[12][12] = {};
 
 // int
 int g_INT_007ba070 = {};

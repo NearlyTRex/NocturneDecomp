@@ -210,8 +210,8 @@
 ;   undefined4 g_CLightActorActorType_00764a9c.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc9f84
-;   undefined4 DAT_02dc9f88
+;   undefined4 g_INT_ARRAY_02dc9f50[13]
+;   undefined4 g_INT_ARRAY_02dc9f50[14]
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
@@ -1053,7 +1053,7 @@ section .text
     FSTP float ptr [EBP + 0xfffff656]   ; 0053b2de
     JMP 0x0053a8f6                      ; 0053b2e4
         ;   XREF to: 0053a8f6 (UNCONDITIONAL_JUMP)  ; LAB_0053a8f6
-    MOV EDX,dword ptr [0x02dc9f88]      ; 0053b2e9 | DAT_02dc9f88
+    MOV EDX,dword ptr [0x02dc9f88]      ; 0053b2e9 | g_INT_ARRAY_02dc9f50[14]
         ;   Label: LAB_0053b2e9
     LEA EAX,[EDX*0x4 + 0x0]             ; 0053b2ef
     SUB EAX,EDX                         ; 0053b2f6
@@ -1065,7 +1065,7 @@ section .text
     PUSH EAX                            ; 0053b306
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0053b307
         ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-    MOV EDX,dword ptr [0x02dc9f84]      ; 0053b30c | DAT_02dc9f84
+    MOV EDX,dword ptr [0x02dc9f84]      ; 0053b30c | g_INT_ARRAY_02dc9f50[13]
     MOV ESI,EAX                         ; 0053b312
     LEA EAX,[EDX*0x4 + 0x0]             ; 0053b314
     SUB EAX,EDX                         ; 0053b31b

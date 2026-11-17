@@ -293,7 +293,7 @@ int __cdecl core_path_cpp_CPathMap_findPathToDestination_FUN_00533dc0(CPathMap *
       do {
         local_34[2] = (float)local_28;
         local_28 = uVar4;
-        uVar4 = (uint)(byte)g_CHAR_ARRAY_01e7abe8[iVar1 * 100 + iVar2];
+        uVar4 = (uint)(byte)g_CHAR_ARRAY_ARRAY_01e7abe8[iVar1][iVar2];
         if (uVar4 == 0) {
           local_19c[2] = (this_ptr->current_position).x - unaff_ESI->x;
           local_19c[3] = (this_ptr->current_position).y - unaff_ESI->y;

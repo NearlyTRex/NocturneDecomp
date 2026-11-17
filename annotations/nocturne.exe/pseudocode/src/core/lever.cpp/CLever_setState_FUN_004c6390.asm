@@ -12,7 +12,7 @@
 ;   core_lever.cpp_CLever_process_FUN_004c6190 at 004c62e1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   undefined4 g_CLeverActorType_01cc3628.name_hash
@@ -104,7 +104,7 @@ section .text
         ;   XREF to: 004c644c (CONDITIONAL_JUMP)  ; LAB_004c644c
     LEA EAX,[EDI + 0x33c]               ; 004c6436
     PUSH EAX                            ; 004c643c
-    MOV ECX,dword ptr [0x005b7650]      ; 004c643d | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004c643d | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 004c6443
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c6444
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)
@@ -126,7 +126,7 @@ section .text
         ;   XREF to: 004c63b2 (CONDITIONAL_JUMP)  ; LAB_004c63b2
     LEA EAX,[EDI + 0x2d8]               ; 004c6470
     PUSH EAX                            ; 004c6476
-    MOV EBX,dword ptr [0x005b7650]      ; 004c6477 | DAT_005b7650
+    MOV EBX,dword ptr [0x005b7650]      ; 004c6477 | g_CEventList_PTR_005b7650
     PUSH EBX                            ; 004c647d
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 004c647e
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

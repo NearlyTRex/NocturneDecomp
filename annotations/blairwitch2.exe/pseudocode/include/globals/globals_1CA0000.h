@@ -91,8 +91,8 @@ extern float g_FLOAT_01caf5e0;
 extern float g_FLOAT_01caf5e4;
 extern float g_FLOAT_01caf5e8;
 
-// float[64]
-extern float g_FLOAT_ARRAY_01caf634[64];
+// float[64][8]
+extern float g_FLOAT_ARRAY_ARRAY_01caf634[64][8];
 
 // int
 extern int g_INT_01ca13e8;

@@ -49,8 +49,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
                     ((double)(local_54 * (float)100 + (float)0.5));
   iVar5 = wincore_winrun_cpp_getTime_FUN_005806a0();
   iVar1 = (g_INT_01c5b104 + -1) * 0x1f8;
-  if (((int)ROUND(dVar8) != *(int *)(iVar1 + 0x1c5b2f8)) ||
-     (0x47ffff < iVar5 - *(int *)(iVar1 + 0x1c5b2fc))) {
+  if (((int)ROUND(dVar8) != *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 0x1f0)) ||
+     (0x47ffff < iVar5 - *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar1 + 500))) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_0047fa80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
     engine_mini3d_cpp_setAlpha_FUN_004edaf0(1.0);
@@ -132,7 +132,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
       }
     }
     if (0 < iVar5) {
-      fVar4 = (float)(x1 - *(int *)((g_INT_01c5b104 + -1) * 0x1f8 + 0x1c5b2f4)) *
+      fVar4 = (float)(x1 - *(int *)((int)g_SWindow_ARRAY_01c5b108 +
+                                   (g_INT_01c5b104 + -1) * 0x1f8 + 0x1ec)) *
               (float)8.4771050347222196e-07;
       dVar8 = (double)fVar4;
       if ((float)5 < fVar4) {
@@ -155,8 +156,8 @@ void __cdecl shape_edittool_cpp_CEditorTools_updatePercentage_FUN_0047ee50(CEdit
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar5 = (g_INT_01c5b104 + -1) * 0x1f8;
-    *(int *)(iVar5 + 0x1c5b2f8) = local_30;
-    *(int *)(iVar5 + 0x1c5b2fc) = iVar1;
+    *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 0x1f0) = local_30;
+    *(int *)((int)g_SWindow_ARRAY_01c5b108 + iVar5 + 500) = iVar1;
   }
   return;
 }

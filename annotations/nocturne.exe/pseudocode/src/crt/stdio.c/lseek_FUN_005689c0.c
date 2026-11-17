@@ -12,14 +12,14 @@ int __watcallStack lseek(int file_handle_index,long distance_to_move,int move_me
   uint uVar1;
   DWORD DVar2;
   
-  if ((-1 < file_handle_index) && ((uint)file_handle_index <= 0x00000014)) {
+  if ((-1 < file_handle_index) && ((uint)file_handle_index <= g_UINT_005c1f90)) {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(file_handle_index);
     uVar1 = FUN_0056f220(file_handle_index);
     if ((0 < distance_to_move) && ((uVar1 & 0x80) == 0)) {
       FUN_0056f278(file_handle_index,uVar1 | 0x8000);
     }
-    DVar2 = SetFilePointer(*(HANDLE *)(DAT_005c1f54 + file_handle_index * 4),distance_to_move,
-                           (PLONG)0x0,move_method);
+    DVar2 = SetFilePointer(g_SIOControlBlock_PTR_005c1f54->standard_handles[file_handle_index],
+                           distance_to_move,(PLONG)0x0,move_method);
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(file_handle_index);
     if (DVar2 == 0xffffffff) {
       __set_errno();

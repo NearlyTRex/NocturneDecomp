@@ -9,7 +9,6 @@
 int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_ptr)
 
 {
-  char *filename;
   uchar uVar1;
   CPodDirectoryEntry *pCVar2;
   _FILE *p_Var3;
@@ -17,7 +16,7 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
   int iVar5;
   uint uVar6;
   uint uVar7;
-  uchar *puVar8;
+  char *pcVar8;
   SIZE_T size;
   int iVar9;
   CPickList local_198;
@@ -75,41 +74,41 @@ int __cdecl engine_pod_cpp_CPodFile_verifyChecksum_FUN_004f8240(CPodFile *this_p
     g_CurrentLineNumber = 463;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Invalid pod version!");
   }
-  filename = this_ptr->filename;
+  pcVar8 = this_ptr->filename;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0046fff0
-            (g_CEditorToolsPtr,"Verifying CRC for %s...",filename);
-  p_Var3 = _fopen(filename,"rb");
+            (g_CEditorToolsPtr,"Verifying CRC for %s...",pcVar8);
+  p_Var3 = _fopen(pcVar8,"rb");
   uVar6 = 0;
   if (p_Var3 != (_FILE *)0x0) {
     _fseek(p_Var3,local_1c + -4,0);
     _fread(&local_28,4,1,p_Var3);
     _fclose(p_Var3);
-    iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&DAT_0058d9a8,filename);
+    iVar4 = engine_dosio_cpp_getFileSize_FUN_004568c0(&g_CHAR_0058d9a8,pcVar8);
     iVar9 = local_1c;
     local_24 = iVar4 - local_1c;
-    p_Var3 = _fopen(filename,"rb");
+    p_Var3 = _fopen(pcVar8,"rb");
     local_20 = p_Var3;
     _fseek(p_Var3,iVar9,0);
     uVar6 = 0xffffffff;
     for (size = local_24; 0xffff < (int)size; size = size - 0x10000) {
-      puVar8 = &DAT_01e428d0;
-      _fread(&DAT_01e428d0,0x10000,1,p_Var3);
+      pcVar8 = g_CHAR_ARRAY_01e428d0;
+      _fread(g_CHAR_ARRAY_01e428d0,0x10000,1,p_Var3);
       uVar7 = 0;
       do {
-        uVar1 = *puVar8;
-        puVar8 = puVar8 + 1;
+        uVar1 = *pcVar8;
+        pcVar8 = pcVar8 + 1;
         uVar7 = uVar7 + 1;
         uVar6 = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(uVar6,uVar1);
       } while (uVar7 < 0x10000);
     }
-    puVar8 = &DAT_01e428d0;
-    _fread(&DAT_01e428d0,size,1,p_Var3);
+    pcVar8 = g_CHAR_ARRAY_01e428d0;
+    _fread(g_CHAR_ARRAY_01e428d0,size,1,p_Var3);
     uVar7 = 0;
     local_18 = size;
     if (size != 0) {
       do {
-        uVar1 = *puVar8;
-        puVar8 = puVar8 + 1;
+        uVar1 = *pcVar8;
+        pcVar8 = pcVar8 + 1;
         uVar6 = engine_pod_cpp_crc32UpdateByte_FUN_004f77d0(uVar6,uVar1);
         uVar7 = uVar7 + 1;
       } while (uVar7 < local_18);

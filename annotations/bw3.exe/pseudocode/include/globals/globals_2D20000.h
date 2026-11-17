@@ -4,6 +4,8 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
@@ -49,6 +51,16 @@ extern CVector3f g_CVector3f_02d24a60;
 
 // CVector3i
 extern CVector3i g_CVector3i_02d26200;
+
+// DWORD
+extern DWORD g_DWORD_02d202b0;
+
+// FileListNode*
+extern FileListNode* g_FileListNode_PTR_02d252a0;
+extern FileListNode* g_FileListNode_PTR_02d252a4;
+
+// HMODULE
+extern HMODULE g_HMODULE_02d22c20;
 
 // HWND
 extern HWND g_HWND_02d21b78;
@@ -175,6 +187,10 @@ extern void* g_PTR_02d252bc;
 extern void* g_PTR_02d261b8;
 extern void* g_PTR_02d261e0;
 extern void* g_PTR_02d261f0;
+
+// wchar_t[260]
+extern wchar_t g_WCHAR_T_ARRAY_02d253c4[260];
+extern wchar_t g_WCHAR_T_ARRAY_02d256d0[260];
 
 // word
 extern word DAT_02D270D6;

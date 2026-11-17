@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_ptr)
 
 {
@@ -19,29 +17,29 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_
   int iVar6;
   int iVar7;
   int iVar8;
-  char *text;
+  char (*text) [1024];
   CBitFont *this_ptr_00;
   
   if (g_CGamePtr->letterbox_mode == 0) {
     fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGamePtr);
-    _DAT_01e56c20 = _DAT_01e56c20 - fVar3 / 0.35f;
+    g_FLOAT_01e56c20 = g_FLOAT_01e56c20 - fVar3 / 0.35f;
   }
   else {
-    _DAT_01e53410 = g_CGamePtr->letterbox_mode;
+    g_INT_01e53410 = g_CGamePtr->letterbox_mode;
     fVar3 = core_charactr_cpp_getGameDeltaTime_FUN_0042b5c0(g_CGamePtr);
-    _DAT_01e56c20 = fVar3 / 0.35f + _DAT_01e56c20;
+    g_FLOAT_01e56c20 = fVar3 / 0.35f + g_FLOAT_01e56c20;
   }
   iVar8 = g_WindowHeight;
   iVar1 = g_WindowWidth;
-  if (_DAT_01e56c20 < 0.0) {
-    _DAT_01e56c20 = 0.0;
+  if (g_FLOAT_01e56c20 < 0.0) {
+    g_FLOAT_01e56c20 = 0.0;
   }
-  if (1.0 < _DAT_01e56c20) {
-    _DAT_01e56c20 = 1.0;
+  if (1.0 < g_FLOAT_01e56c20) {
+    g_FLOAT_01e56c20 = 1.0;
   }
   iVar4 = core_script_cpp_CScript_getLetterboxHeight_FUN_004fe710(this_ptr);
   if (0 < iVar4) {
-    if (_DAT_01e53410 != 2) {
+    if (g_INT_01e53410 != 2) {
       engine_2d_c_fillRectColor_FUN_00403e60(0,0,iVar1 + -1,iVar4 + -1,0);
     }
     engine_2d_c_fillRectColor_FUN_00403e60(0,iVar8 - iVar4,iVar1 + -1,iVar8 + -1,0);
@@ -52,12 +50,12 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_
     if (g_WindowHeight < 0x1e0) {
       this_ptr_00 = g_CBitFont_PTR_014b98fc;
     }
-    if ((g_WindowHeight < 0x180) && (this_ptr_00 = g_CBitFont_PTR_014b990c, _DAT_01d16810 != 0)) {
+    if ((g_WindowHeight < 0x180) && (this_ptr_00 = g_CBitFont_PTR_014b990c, g_INT_01d16810 != 0)) {
       this_ptr_00 = g_CBitFont_PTR_014b9904;
     }
     iVar5 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
-                      (this_ptr_00,this_ptr->current_message,(char *)0x1e53418,10,0x400,
-                       (g_WindowWidth * 9) / 10);
+                      (this_ptr_00,this_ptr->current_message,g_CHAR_ARRAY_ARRAY_01e53418[0],10,0x400
+                       ,(g_WindowWidth * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(this_ptr_00,0x58);
     iVar4 = ((iVar8 * 2 - iVar4) - iVar6 * iVar5) / 2;
     iVar8 = iVar8 - iVar6 * iVar5;
@@ -67,13 +65,13 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_004fe770(CScript *this_
     engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
     iVar8 = 0;
     if (0 < iVar5) {
-      text = (char *)0x1e53418;
+      text = g_CHAR_ARRAY_ARRAY_01e53418;
       do {
-        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(this_ptr_00,text);
+        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_00492da0(this_ptr_00,*text);
         iVar8 = iVar8 + 1;
         engine_font_cpp_CBitFont_drawText_FUN_00490980
-                  (this_ptr_00,text,(iVar1 - iVar7) / 2,iVar4,0xf8,0);
-        text = text + 0x400;
+                  (this_ptr_00,*text,(iVar1 - iVar7) / 2,iVar4,0xf8,0);
+        text = text + 1;
         iVar4 = iVar4 + iVar6;
       } while (iVar8 < iVar5);
     }

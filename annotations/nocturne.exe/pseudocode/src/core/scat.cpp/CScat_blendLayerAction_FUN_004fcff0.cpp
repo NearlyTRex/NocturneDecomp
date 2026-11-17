@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr)
 
 {
@@ -55,7 +53,7 @@ void __cdecl core_scat_cpp_CScat_blendLayerAction_FUN_004fcff0(CScat *this_ptr)
     fVar2 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_004e1f50
                       (&pCVar1->base,iVar7,(this_ptr->base).base.layer_action_t);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (pCVar1,iVar7,fVar2,local_28,_DAT_01e533c8,
+              (pCVar1,iVar7,fVar2,local_28,g_INT_ARRAY_01e53388[0x10],
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     if ((this_ptr->base).base.layer_action_index == 1) {
       core_scat_cpp_CScat_blendAimBones_FUN_004fd1d0(this_ptr,1);

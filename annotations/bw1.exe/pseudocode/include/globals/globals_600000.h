@@ -19,6 +19,7 @@
 #include "types/classes/CSoundDeviceBasic_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
 #include "types/classes/CWeapon_full_vtable.h"
+#include "types/structs/SFontGlyph.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
@@ -144,6 +145,9 @@ extern CWeapon_full_vtable g_CShovelVTable;
 extern CWeapon_full_vtable g_CTommyGunVTable;
 extern CWeapon_full_vtable g_CTurretVTable;
 extern CWeapon_full_vtable g_CWeaponVTable;
+
+// SFontGlyph[224]
+extern SFontGlyph g_SFontGlyph_ARRAY_00608570[224];
 
 // TerminatedCString
 extern TerminatedCString g_CLeafVTable;

@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_0057ce51
 ;   TerminatedCString s_Can_t_load_s_because_key_0057ce64
-;   undefined4 DAT_01abb658
+;   int g_INT_01abb658
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 004543b3
     MOV EBP,ESP                         ; 004543b4
     MOV EDI,dword ptr [EBP + 0x14]      ; 004543b6
-    MOV EDX,dword ptr [0x01abb658]      ; 004543b9 | DAT_01abb658
+    MOV EDX,dword ptr [0x01abb658]      ; 004543b9 | g_INT_01abb658
     XOR ESI,ESI                         ; 004543bf
     TEST EDX,EDX                        ; 004543c1
     JLE 0x004543e9                      ; 004543c3
@@ -53,13 +53,13 @@ section .text
     TEST EAX,EAX                        ; 004543d4
     JZ 0x0045444b                       ; 004543d6
         ;   XREF to: 0045444b (CONDITIONAL_JUMP)  ; LAB_0045444b
-    MOV ECX,dword ptr [0x01abb658]      ; 004543d8 | DAT_01abb658
+    MOV ECX,dword ptr [0x01abb658]      ; 004543d8 | g_INT_01abb658
     INC ESI                             ; 004543de
     ADD EBX,0x398                       ; 004543df
     CMP ESI,ECX                         ; 004543e5
     JL 0x004543ca                       ; 004543e7
         ;   XREF to: 004543ca (CONDITIONAL_JUMP)  ; LAB_004543ca
-    CMP dword ptr [0x01abb658],0x100    ; 004543e9 | DAT_01abb658
+    CMP dword ptr [0x01abb658],0x100    ; 004543e9 | g_INT_01abb658
         ;   Label: LAB_004543e9
     JL 0x0045441d                       ; 004543f3
         ;   XREF to: 0045441d (CONDITIONAL_JUMP)  ; LAB_0045441d
@@ -73,14 +73,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00454415
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 0045441a
-    MOV EDX,dword ptr [0x01abb658]      ; 0045441d | DAT_01abb658
+    MOV EDX,dword ptr [0x01abb658]      ; 0045441d | g_INT_01abb658
         ;   Label: LAB_0045441d
     IMUL EBX,EDX,0x398                  ; 00454423
     PUSH EDI                            ; 00454429
     ADD EBX,0x1abb65c                   ; 0045442a
     LEA ECX,[EDX + 0x1]                 ; 00454430
     PUSH EBX                            ; 00454433
-    MOV dword ptr [0x01abb658],ECX      ; 00454434 | DAT_01abb658
+    MOV dword ptr [0x01abb658],ECX      ; 00454434 | g_INT_01abb658
     CALL core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650 ; 0045443a
         ;   XREF to: 00452650 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_00452650(CKeyFramedModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0045443f

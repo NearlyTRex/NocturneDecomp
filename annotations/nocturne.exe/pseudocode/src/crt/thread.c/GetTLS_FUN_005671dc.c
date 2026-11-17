@@ -6,10 +6,8 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 ThreadData * __cdecl GetTLS(void)
 
 {
-  return _DAT_02de4e3c;
+  return (ThreadData *)g_PTR_02de4e3c;
 }

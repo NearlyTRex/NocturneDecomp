@@ -8,7 +8,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_00579c55 = 0.25
-;   undefined4 DAT_0059ae90
+;   float g_FLOAT_0059ae90 = 256
 ;   float FLOAT_0059aea8 = 0.5
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;
@@ -60,13 +60,13 @@ section .text
     MOV EAX,ESP                         ; 00421749
     FSTP float ptr [ESP + 0x4]          ; 0042174b
     FLD float ptr [EAX]                 ; 0042174f
-    FMUL float ptr [0x0059ae90]         ; 00421751 | DAT_0059ae90
+    FMUL float ptr [0x0059ae90]         ; 00421751 | g_FLOAT_0059ae90
     FISTP dword ptr [EBX]               ; 00421757
     FLD float ptr [EAX + 0x4]           ; 00421759
-    FMUL float ptr [0x0059ae90]         ; 0042175c | DAT_0059ae90
+    FMUL float ptr [0x0059ae90]         ; 0042175c | g_FLOAT_0059ae90
     FISTP dword ptr [EBX + 0x4]         ; 00421762
     FLD float ptr [EAX + 0x8]           ; 00421765
-    FMUL float ptr [0x0059ae90]         ; 00421768 | DAT_0059ae90
+    FMUL float ptr [0x0059ae90]         ; 00421768 | g_FLOAT_0059ae90
     FISTP dword ptr [EBX + 0x8]         ; 0042176e
     LEA EAX,[ESP + 0xc]                 ; 00421771
     MOV EBX,dword ptr [ESP + 0x2c]      ; 00421775

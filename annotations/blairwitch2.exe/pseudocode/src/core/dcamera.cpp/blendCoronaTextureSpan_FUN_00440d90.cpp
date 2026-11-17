@@ -15,8 +15,8 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y
   uint uVar4;
   int iVar5;
   int iVar6;
-  char *pcVar7;
-  uint uVar8;
+  uint uVar7;
+  char *pcVar8;
   char *pcVar9;
   ushort uVar10;
   short sVar11;
@@ -26,16 +26,16 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y
   ushort uVar15;
   uint7 uVar16;
   
-  pcVar7 = g_CHAR_ARRAY_00af5218 + x_start + scanline_y * 0x140;
-  pcVar9 = source_entry->lightmap[scanline_y] + x_start;
-  uVar8 = (uint)g_CDemonGlobe_PTR_01510718->intensity_multiplier >> 10;
-  uVar16 = (uint7)uVar8 | (uint7)uVar8 << 0x18 | (uint7)uVar8 << 0x10 | (uint7)uVar8 << 8;
+  pcVar9 = g_CHAR_ARRAY_ARRAY_00af5218[scanline_y] + x_start;
+  pcVar8 = source_entry->lightmap[scanline_y] + x_start;
+  uVar7 = (uint)g_CDemonGlobe_PTR_01510718->intensity_multiplier >> 10;
+  uVar16 = (uint7)uVar7 | (uint7)uVar7 << 0x18 | (uint7)uVar7 << 0x10 | (uint7)uVar7 << 8;
   uVar3 = (ushort)(((uVar16 >> 0x18) << 0x30) >> 0x28);
   iVar6 = x_end - x_start;
-  while (((uint)pcVar7 & 3) != 0) {
-    *pcVar7 = *pcVar7 + g_CHAR_ARRAY_01325d00[(uint)(byte)*pcVar9 * 0x40 + uVar8];
+  while (((uint)pcVar9 & 3) != 0) {
+    *pcVar9 = *pcVar9 + g_CHAR_ARRAY_01325d00[(uint)(byte)*pcVar8 * 0x40 + uVar7];
+    pcVar8 = pcVar8 + 1;
     pcVar9 = pcVar9 + 1;
-    pcVar7 = pcVar7 + 1;
     iVar5 = iVar6 + -1;
     bVar2 = iVar6 < 1;
     iVar6 = iVar5;
@@ -44,35 +44,35 @@ void __cdecl core_dcamera_cpp_blendCoronaTextureSpan_FUN_00440d90(int scanline_y
     }
   }
   while (3 < iVar6) {
-    uVar1 = *(uint *)pcVar9;
+    uVar1 = *(uint *)pcVar8;
     uVar4 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)((uint)uVar1 >> 0x18) << 0x30) >>
                                                    0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar13 = (uint5)uVar4 & 0xffffffff00;
-    uVar10 = (ushort)(((ushort)uVar1 & 0xff) * (ushort)(byte)uVar8) >> 6;
+    uVar10 = (ushort)(((ushort)uVar1 & 0xff) * (ushort)(byte)uVar7) >> 6;
     uVar12 = (ushort)(((ushort)(CONCAT43(uVar4,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >>
                                0x10) & 0xff) * (ushort)(byte)(uVar16 >> 8)) >> 6;
     uVar14 = (ushort)((short)(uVar13 >> 8) * (short)CONCAT21(uVar3,(char)(uVar16 >> 0x10))) >> 6;
     uVar15 = (ushort)((short)(uVar13 >> 0x18) * (uVar3 >> 8)) >> 6;
     sVar11 = CONCAT11((uVar12 != 0) * (uVar12 < 0x100) * (char)uVar12 - (0xff < uVar12),
                       (uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10));
-    *(uint *)pcVar7 =
+    *(uint *)pcVar9 =
          CONCAT22((short)(CONCAT13((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15)
                                    ,CONCAT12((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 -
                                              (0xff < uVar14),sVar11)) >> 0x10) +
-                  (short)((uint)*(uint *)pcVar7 >> 0x10),sVar11 + (short)*(uint *)pcVar7
+                  (short)((uint)*(uint *)pcVar9 >> 0x10),sVar11 + (short)*(uint *)pcVar9
                  );
+    pcVar8 = pcVar8 + 4;
     pcVar9 = pcVar9 + 4;
-    pcVar7 = pcVar7 + 4;
     iVar6 = iVar6 + -4;
   }
   if (iVar6 == 0) {
     return;
   }
   do {
-    *pcVar7 = *pcVar7 + g_CHAR_ARRAY_01325d00[(uint)(byte)*pcVar9 * 0x40 + uVar8];
+    *pcVar9 = *pcVar9 + g_CHAR_ARRAY_01325d00[(uint)(byte)*pcVar8 * 0x40 + uVar7];
+    pcVar8 = pcVar8 + 1;
     pcVar9 = pcVar9 + 1;
-    pcVar7 = pcVar7 + 1;
     iVar5 = iVar6 + -1;
     bVar2 = 0 < iVar6;
     iVar6 = iVar5;

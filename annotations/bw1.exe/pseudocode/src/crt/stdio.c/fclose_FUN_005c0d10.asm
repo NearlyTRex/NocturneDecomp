@@ -22,7 +22,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626610 = 005c50d4
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626614 = 005c50d4
-;   undefined4 DAT_02c9f050
+;   FileListNode* g_FileListNode_PTR_02c9f050
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0d54
@@ -36,7 +36,7 @@ section .text
         ;   Label: crt_stdio.c_fclose_FUN_005c0d10
     MOV EBX,dword ptr [ESP + 0x8]       ; 005c0d11
     CALL dword ptr [0x00626610]         ; 005c0d15 | PTR_crt_unknown.c_FUN_005c50d4_00626610
-    MOV EAX,[0x02c9f050]                ; 005c0d1b | DAT_02c9f050
+    MOV EAX,[0x02c9f050]                ; 005c0d1b | g_FileListNode_PTR_02c9f050
     TEST EAX,EAX                        ; 005c0d20
     JNZ 0x005c0d31                      ; 005c0d22
         ;   XREF to: 005c0d31 (CONDITIONAL_JUMP)  ; LAB_005c0d31

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880(CDirectSoundDevice *this_ptr,CSampleInfo *sample_info)
 
 {
@@ -35,7 +33,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSample_FUN_0055b880(CDire
       memset(&tStack_24,0,0x12);
       memset(&DStack_48,0,0x24);
       DStack_48.dwSize = 0x24;
-      if (_DAT_02cf49d0 == 0) {
+      if (g_IDirectSound3DListener_PTR_02cf49d0 == (IDirectSound3DListener *)0x0) {
         DStack_48.dwFlags = 0xe0;
       }
       else {

@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 344,
-    "complexity_score": 393,
+    "complexity_score": 336,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 143,
-    "suspect_count": 23,
+    "pseudocode_lines": 146,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 487
+    "total_lines": 490
   },
   "cross_references": [
     {
@@ -102,21 +100,21 @@
   "globals": [
     {
       "addr": "005ad450",
-      "name": "DAT_005ad450",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_005ad450",
+      "type": "char[4]",
       "value": null
     },
     {
       "addr": "005ad454",
-      "name": "DAT_005ad454",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005ad454",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "005ad458",
-      "name": "DAT_005ad458",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005ad458",
+      "type": "int",
+      "value": "0x40"
     },
     {
       "addr": "005b7624",
@@ -126,50 +124,50 @@
     },
     {
       "addr": "00b0e2fc",
-      "name": "DAT_00b0e2fc",
+      "name": "g_UINT_ARRAY_00b0e1fc[64]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012b0660",
-      "name": "DAT_012b0660",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_012b0660",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
       "addr": "012b0664",
-      "name": "DAT_012b0664",
-      "type": "undefined4",
+      "name": "g_INT_012b0664",
+      "type": "int",
       "value": null
     },
     {
       "addr": "012ceb70",
-      "name": "DAT_012ceb70",
-      "type": "undefined4",
+      "name": "g_INT_012ceb70",
+      "type": "int",
       "value": null
     },
     {
       "addr": "012ceb74",
-      "name": "DAT_012ceb74",
-      "type": "undefined4",
+      "name": "g_INT_012ceb74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0140d778",
-      "name": "DAT_0140d778",
-      "type": "undefined4",
+      "name": "g_INT_0140d778",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0140d77c",
-      "name": "DAT_0140d77c",
-      "type": "undefined4",
+      "name": "g_INT_0140d77c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01bd1d80",
-      "name": "DAT_01bd1d80",
-      "type": "undefined4",
+      "name": "g_INT_01bd1d80",
+      "type": "int",
       "value": null
     },
     {
@@ -343,132 +341,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff) << (g_BlueBitPosition.bytes[0] & 0x1f)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_005ad458",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff) << (g_BlueBitPosition.bytes[0] & 0x1f)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "| (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) <<",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 33,
-      "match": "DAT_005ad454",
-      "severity": "mild",
-      "text": "| (*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) <<",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) <<",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_005ad450",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) <<",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << 8 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005ad454",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad454 * 4) & 0xff) << 8 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << 0x10 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005ad450",
-      "severity": "mild",
-      "text": "(*(uint *)(&DAT_00b0e1fc + DAT_005ad450 * 4) & 0xff) << 0x10 |",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_00b0e1fc",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005ad458",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00b0e1fc + DAT_005ad458 * 4) & 0xff;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(uint *)((int)g_ScreenBufferArray",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)g_ScreenBufferArray",
+      "text": "(uint *)((int)g_ScreenBufferArray",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "iVar3 = ((int)uVar8 >> (DAT_012b0660 & 0x1f)) * 0x140;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_012ceb78",
-      "severity": "mild",
-      "text": "pbVar4 = &DAT_012ceb78 + iVar3;",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
@@ -479,40 +357,72 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 103,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "iVar3 = ((int)uVar8 >> (DAT_012b0660 & 0x1f)) * 0x140;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_012ceb78",
-      "severity": "mild",
-      "text": "pbVar7 = &DAT_012ceb78 + iVar3;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]",
+      "description": "Pointer value `g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74]",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)g_ScreenBufferArray",
+      "text": "(uint *)((int)g_ScreenBufferArray",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 99,
-      "match": "(int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74]",
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 78,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].y",
       "severity": "moderate",
-      "text": "((int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - _DAT_012ceb74] +",
+      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].v",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 81,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].x",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74]` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 99,
+      "match": "(int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74]",
+      "severity": "moderate",
+      "text": "((int)g_ScreenBufferArray[(this_ptr->framebuffer_height + uVar8) - g_INT_012ceb74] +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 131,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].y",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].v` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 133,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].v",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SCameraEdge_ARRAY_012b0668[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 134,
+      "match": "(int)&g_SCameraEdge_ARRAY_012b0668[0].x",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
-      "line": 50,
+      "line": 49,
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "puVar6 = (ulonglong *)",
@@ -524,6 +434,54 @@
       "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
       "text": "puVar6 = (ulonglong *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 78,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 80,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 81,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 131,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "uVar3 = *(uint *)((int)&g_SCameraEdge_ARRAY_012b0668[0].y + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 133,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar1 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].v + iVar4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 134,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&g_SCameraEdge_ARRAY_012b0668[0].x + iVar4);",
       "type": "pointer_cast"
     }
   ]

@@ -2,19 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 257,
+    "complexity_score": 186,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 132,
-    "suspect_count": 11,
+    "pseudocode_lines": 131,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 470
+    "total_lines": 469
   },
   "cross_references": [
     {
@@ -82,26 +80,26 @@
     },
     {
       "addr": "01bc995c",
-      "name": "DAT_01bc995c",
-      "type": "undefined4",
+      "name": "g_CVector3f_01bc995c",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "01bc9960",
-      "name": "DAT_01bc9960",
+      "name": "g_CVector3f_01bc995c.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9964",
-      "name": "DAT_01bc9964",
+      "name": "g_CVector3f_01bc995c.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bc9968",
-      "name": "DAT_01bc9968",
-      "type": "undefined4",
+      "name": "g_BYTE_01bc9968",
+      "type": "byte",
       "value": null
     }
   ],
@@ -523,56 +521,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_01bc9968",
-      "severity": "mild",
-      "text": "if ((DAT_01bc9968 & 1) == 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_01bc9968",
-      "severity": "mild",
-      "text": "DAT_01bc9968 = DAT_01bc9968 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_01bc9968",
-      "severity": "mild",
-      "text": "DAT_01bc9968 = DAT_01bc9968 | 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 116,
-      "match": "DAT_01bc995c",
-      "severity": "mild",
-      "text": "(triangle,&local_64,(CVector3f *)&DAT_01bc995c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 125,
-      "match": "DAT_01bc995c",
-      "severity": "mild",
-      "text": "(triangle,position,(CVector3f *)&DAT_01bc995c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 39,
+      "line": 37,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c.x = local_58.x;",
@@ -580,7 +530,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 59,
+      "line": 57,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_34[0].x = local_58.x;",
@@ -588,7 +538,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 63,
+      "line": 61,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_58.x = local_70.x;",
@@ -596,7 +546,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 75,
+      "line": 73,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_7c.x = local_4c.x;",
@@ -604,7 +554,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 79,
+      "line": 77,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_4c.x = local_58.x;",

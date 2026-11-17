@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *this_ptr)
 
 {
@@ -49,7 +47,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
   if (iVar4 == 0) {
     return 0;
   }
-  if ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] != 0) {
+  if ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02dc9f50[0x16]] != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr);
     local_34.y = 3.1415927;
     local_34.x = 0.0;
@@ -62,8 +60,8 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
     core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
               (&local_16c,
                (CMatrix3x4f *)
-               (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f50].m,
-               (CMatrix3x4f *)&stack0xfffffdd4);
+               (this_ptr->base).base.model.bone_transform.bone_model_matrices
+               [g_INT_ARRAY_02dc9f50[0]].m,(CMatrix3x4f *)&stack0xfffffdd4);
     pfVar6 = (float *)&stack0xfffffdd4;
     pCVar5 = &local_13c;
     for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -117,7 +115,7 @@ int __cdecl core_stranger_cpp_CStranger_renderOpaque_FUN_0053d100(CStranger *thi
   if ((((pCVar2 == (CWeapon *)0x0) ||
        (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[0].carry_actor)) ||
       (pCVar2 == (CWeapon *)(this_ptr->base).base.carry_hands[1].carry_actor)) ||
-     ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] == 0))
+     ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02dc9f50[0x16]] == 0))
   goto LAB_0053d387;
   (*((this_ptr->weapon->base).vtable._ub)->renderOpaque)(&this_ptr->weapon->base);
   if (this_ptr->weapon == (CWeapon *)0x0) {
@@ -167,7 +165,7 @@ LAB_0053d31f:
   core_stranger_cpp_CStranger_updateWeaponPosition_FUN_0053a660(this_ptr,0);
 LAB_0053d387:
   if ((((this_ptr->base).is_wearing_gas_mask != GAS_MASK_AWAY) &&
-      ((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] != 0)) &&
+      ((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02dc9f50[0x16]] != 0)) &&
      (local_1c = (this_ptr->base).inventory.light_gun_ptr, local_1c != (CLightGun *)0x0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00409f20((CDemonActor *)this_ptr);
     if ((this_ptr->base).is_wearing_gas_mask == GAS_MASK_ON_FACE) {
@@ -182,8 +180,8 @@ LAB_0053d387:
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1cc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f50].m,
-                 &local_10c);
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
+                 [g_INT_ARRAY_02dc9f50[0]].m,&local_10c);
       pCVar5 = &local_10c;
     }
     else {
@@ -198,8 +196,8 @@ LAB_0053d387:
       core_xform_cpp_multiplyMatrix3x4_FUN_0055aa00
                 (&local_1fc,
                  (CMatrix3x4f *)
-                 (this_ptr->base).base.model.bone_transform.bone_model_matrices[_DAT_02dc9f88].m,
-                 &local_19c);
+                 (this_ptr->base).base.model.bone_transform.bone_model_matrices
+                 [g_INT_ARRAY_02dc9f50[0xe]].m,&local_19c);
       pCVar5 = &local_19c;
     }
     pCVar7 = &local_dc;
@@ -217,7 +215,7 @@ LAB_0053d387:
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00409f60((CDemonActor *)this_ptr);
   }
-  if ((((this_ptr->base).base.model.part_data.visibility_flags[_DAT_02dc9fa8] == 0) &&
+  if ((((this_ptr->base).base.model.part_data.visibility_flags[g_INT_ARRAY_02dc9f50[0x16]] == 0) &&
       (iVar4 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                          (g_CDemonRenderer_PTR_005ae704), iVar4 == 0)) &&
      (0 < (this_ptr->base).base.cloth_list.count)) {

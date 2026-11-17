@@ -14,7 +14,7 @@
 ;   void* PTR_GetClipboardData_00575430 = 0017596c
 ;   void* PTR_OpenClipboard_00575454 = 001759fc
 ;   char CHAR_00h_0057ea91 = \x00
-;   undefined4 DAT_01bcd078
+;   char* g_CHAR_PTR_01bcd078
 ;   HWND g_HWND_02de2098
 ;
 ; Called Functions:
@@ -35,7 +35,7 @@ section .text
     TEST EAX,EAX                        ; 00472c9f
     JNZ 0x00472cb4                      ; 00472ca1
         ;   XREF to: 00472cb4 (CONDITIONAL_JUMP)  ; LAB_00472cb4
-    MOV EBX,dword ptr [0x01bcd078]      ; 00472ca3 | DAT_01bcd078
+    MOV EBX,dword ptr [0x01bcd078]      ; 00472ca3 | g_CHAR_PTR_01bcd078
         ;   Label: LAB_00472ca3
     TEST EBX,EBX                        ; 00472ca9
     JNZ 0x00472d0c                      ; 00472cab
@@ -61,12 +61,12 @@ section .text
     DEC ECX                             ; 00472cd0
     LEA EBX,[ECX + 0x1]                 ; 00472cd1
     PUSH EBX                            ; 00472cd4
-    MOV ECX,dword ptr [0x01bcd078]      ; 00472cd5 | DAT_01bcd078
+    MOV ECX,dword ptr [0x01bcd078]      ; 00472cd5 | g_CHAR_PTR_01bcd078
     PUSH ECX                            ; 00472cdb
     CALL crt_memory.c_realloc_FUN_00564a70 ; 00472cdc
         ;   XREF to: 00564a70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_realloc_FUN_00564a70(void * ptr, ulong new_size)
     ADD ESP,0x8                         ; 00472ce1
-    MOV [0x01bcd078],EAX                ; 00472ce4 | DAT_01bcd078
+    MOV [0x01bcd078],EAX                ; 00472ce4 | g_CHAR_PTR_01bcd078
     TEST EAX,EAX                        ; 00472ce9
     JZ 0x00472d01                       ; 00472ceb
         ;   XREF to: 00472d01 (CONDITIONAL_JUMP)  ; LAB_00472d01

@@ -115,9 +115,6 @@ static TerminatedCString s_CActorDestination_005f1884 = "$CActorDestination$$";
 static TerminatedCString s_CFilterFX_005f1918 = "$CFilterFX$$";
 static TerminatedCString s_CFilterCache_005f192c = "$CFilterCache$$";
 static TerminatedCString s_CDisease_005f2814 = "$CDisease$$";
-static TerminatedCString s_SUNCRAM_RAW_005f2908 = "SUNCRAM.RAW";
-static TerminatedCString s_SUNCRAM_RAW_005f29c8 = "SUNCRAM.RAW";
-static TerminatedCString s_SUNCRAM_RAW_005f29f8 = "SUNCRAM.RAW";
 static TerminatedCString s_CDemonLight_005f2a24 = "$CDemonLight$$";
 static TerminatedCString s_CKeyFramedModel_005f2a47 = "$CKeyFramedModel$$";
 static TerminatedCString s_CZombieDog_005f2a70 = "$CZombieDog$$";
@@ -281,8 +278,11 @@ static char* g_CHAR_PTR_ARRAY_005feb0c[7] = {
 // float constants
 static float g_FLOAT_005fe9e8 = 30.0f;
 
-// float[2] constants
-static float g_FLOAT_ARRAY_005ffe8c[2] = {1.0f, -1.0f};
+// float[2][4] constants
+static float g_FLOAT_ARRAY_ARRAY_005ffe8c[2][4] = {
+    {1.0f, -1.0f, -1.0f, 1.0f},
+    {1.0f, 1.0f, -1.0f, -1.0f}
+};
 
 // float[6] constants
 static float g_FLOAT_ARRAY_005f0f30[6] = {
@@ -315,28 +315,8 @@ static undefined1* DAT_005FC4B0 = (undefined1*)0x0049600C; // LAB_0049600c
 // undefined4 constants
 static undefined4 DAT_005f18e0 = 0x01548C4C;
 static undefined4 DAT_005f1900 = 0x01548C4C;
-static undefined4 DAT_005f1c3c = 0x00000003;
-static undefined4 DAT_005f1c40 = 0x00004219;
-static undefined4 DAT_005f1c44 = 0xFFFF0952;
-static undefined4 DAT_005f1c48 = 0x000011B5;
-static undefined4 DAT_005f1c4c = 0xFF0951BE;
-static undefined4 DAT_005f1c50 = 0x00000002;
-static undefined4 DAT_005f1c54 = 0x00000001;
-static undefined4 DAT_005f1c60 = 0x00000003;
-static undefined4 DAT_005f1c64 = 0x00003063;
-static undefined4 DAT_005f1c68 = 0xFFFF0952;
-static undefined4 DAT_005f1c6c = 0x00003063;
-static undefined4 DAT_005f1c70 = 0xFF0951BE;
-static undefined4 DAT_005f1c74 = 0x00000001;
-static undefined4 DAT_005f1c78 = 0x00000003;
 static undefined4 DAT_005fe398 = 0x0000001F;
 static undefined4 DAT_005fe39c = 0x00000001;
-static undefined4 DAT_005ffe9c = 0x3F800000;
-
-// undefined8 constants
-static undefined8 DAT_005f8b90 = 0x0040004000400040;
-static undefined8 DAT_005f8b98 = 0x0020002000200020;
-static undefined8 DAT_005f8ba0 = 0x0060006000600060;
 
 // void* constants
 static void* DAT_005FC434 = (void*)0x00495F28; // caseD_1

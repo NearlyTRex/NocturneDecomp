@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 180,
+    "complexity_score": 155,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 231
   },
@@ -46,25 +45,25 @@
   "globals": [
     {
       "addr": "00608570",
-      "name": "DAT_00608570",
-      "type": "undefined4",
+      "name": "g_SFontGlyph_ARRAY_00608570",
+      "type": "SFontGlyph[224]",
       "value": null
     },
     {
       "addr": "00608571",
-      "name": "DAT_00608571",
+      "name": "g_SFontGlyph_ARRAY_00608570[0].bitmap[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00608572",
-      "name": "DAT_00608572",
+      "name": "g_SFontGlyph_ARRAY_00608570[0].bitmap[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00608573",
-      "name": "DAT_00608573",
+      "name": "g_SFontGlyph_ARRAY_00608570[0].bitmap[2]",
       "type": "undefined4",
       "value": null
     },
@@ -261,27 +260,11 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_00608570",
-      "severity": "mild",
-      "text": "uVar10 = (uint)(byte)(&DAT_00608570)[iVar5];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_00608571",
-      "severity": "mild",
-      "text": "pbVar2 = &DAT_00608571 + iVar5;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 31,
       "match": "(int *)((int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "pbVar6 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos);",
+      "text": "puVar7 = (uchar *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos);",
       "type": "pointer_cast"
     },
     {
@@ -289,7 +272,7 @@
       "line": 50,
       "match": "(int *)((int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "puVar3 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos * 2);",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
@@ -297,7 +280,7 @@
       "line": 69,
       "match": "(int *)((int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos * 4);",
+      "text": "puVar9 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos * 4);",
       "type": "pointer_cast"
     },
     {
@@ -305,7 +288,7 @@
       "line": 31,
       "match": "(int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "pbVar6 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos);",
+      "text": "puVar7 = (uchar *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos);",
       "type": "pointer_truncation"
     },
     {
@@ -313,7 +296,7 @@
       "line": 50,
       "match": "(int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "puVar3 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos * 2);",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos * 2);",
       "type": "pointer_truncation"
     },
     {
@@ -321,7 +304,7 @@
       "line": 69,
       "match": "(int)g_ARRAY_PTR_01c4354c",
       "severity": "moderate",
-      "text": "puVar8 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar12) + x_pos * 4);",
+      "text": "puVar9 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c4354c + iVar13) + x_pos * 4);",
       "type": "pointer_truncation"
     }
   ]

@@ -15,8 +15,8 @@
 ;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040db50 at 0040dc20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c9e53c
-;   undefined4 DAT_01c9e540
+;   int g_INT_01c9e53c
+;   int g_INT_01c9e540
 ;
 ; Called Functions:
 ;   core_gore.cpp_CFootstep_init_FUN_004af8a0
@@ -32,22 +32,22 @@ section .text
     PUSH EBP                            ; 004b06b3
     MOV EBP,ESP                         ; 004b06b4
     MOV EDX,0x1c9e544                   ; 004b06b6
-    MOV ECX,dword ptr [0x01c9e53c]      ; 004b06bb | DAT_01c9e53c
-    MOV EAX,[0x01c9e53c]                ; 004b06c1 | DAT_01c9e53c
+    MOV ECX,dword ptr [0x01c9e53c]      ; 004b06bb | g_INT_01c9e53c
+    MOV EAX,[0x01c9e53c]                ; 004b06c1 | g_INT_01c9e53c
     INC ECX                             ; 004b06c6
     SHL EAX,0x6                         ; 004b06c7
-    MOV dword ptr [0x01c9e53c],ECX      ; 004b06ca | DAT_01c9e53c
+    MOV dword ptr [0x01c9e53c],ECX      ; 004b06ca | g_INT_01c9e53c
     ADD EDX,EAX                         ; 004b06d0
     CMP ECX,0x3e8                       ; 004b06d2
     JGE 0x004b071d                      ; 004b06d8
         ;   XREF to: 004b071d (CONDITIONAL_JUMP)  ; LAB_004b071d
-    MOV EDI,dword ptr [0x01c9e540]      ; 004b06da | DAT_01c9e540
+    MOV EDI,dword ptr [0x01c9e540]      ; 004b06da | g_INT_01c9e540
         ;   Label: LAB_004b06da
     CMP EDI,0x3e8                       ; 004b06e0
     JGE 0x004b06f0                      ; 004b06e6
         ;   XREF to: 004b06f0 (CONDITIONAL_JUMP)  ; LAB_004b06f0
     LEA EAX,[EDI + 0x1]                 ; 004b06e8
-    MOV [0x01c9e540],EAX                ; 004b06eb | DAT_01c9e540
+    MOV [0x01c9e540],EAX                ; 004b06eb | g_INT_01c9e540
     MOV ECX,dword ptr [EBP + 0x28]      ; 004b06f0
         ;   Label: LAB_004b06f0
     PUSH ECX                            ; 004b06f3
@@ -73,7 +73,7 @@ section .text
     RET                                 ; 004b071c
     XOR ESI,ESI                         ; 004b071d
         ;   Label: LAB_004b071d
-    MOV dword ptr [0x01c9e53c],ESI      ; 004b071f | DAT_01c9e53c
+    MOV dword ptr [0x01c9e53c],ESI      ; 004b071f | g_INT_01c9e53c
     JMP 0x004b06da                      ; 004b0725
         ;   XREF to: 004b06da (UNCONDITIONAL_JUMP)  ; LAB_004b06da
 

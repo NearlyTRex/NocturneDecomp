@@ -16,7 +16,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00404610(&prim->surface_normal);
   if (iVar1 != 0) {
     if (g_TexturesDisabled == 0) {
-      if (DAT_006b0274 == 0) {
+      if (g_INT_006b0274 == 0) {
         if (g_MMXSupported == 0) {
           if (g_BitsPerPixel == 0x20) {
             g_ScanlineRenderFunc =
@@ -81,7 +81,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
                   ((prim->surface_normal).A.i,(prim->surface_normal).B.i,(prim->surface_normal).C.i)
         ;
         g_ActiveRenderColor =
-             engine_3d_c_lookupLitColor_FUN_00404680(DAT_006b0260,g_CurrentLightingValue);
+             engine_3d_c_lookupLitColor_FUN_00404680(g_INT_006b0260,g_CurrentLightingValue);
       }
     }
     else {
@@ -102,17 +102,18 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAdaptiveFogTexturedOp52_F
       g_RenderStateFlags.dword = 0;
       g_VertexPreprocessMode = 0;
     }
-    piVar3 = &DAT_006b029c;
+    piVar3 = g_INT_ARRAY_006b029c;
     pSVar2 = prim + 1;
     for (iVar1 = 0; iVar1 < (prim->base).count * 3; iVar1 = iVar1 + 3) {
-      *piVar3 = (pSVar2->base).type + DAT_006b0264;
-      (&DAT_005c502c)[((pSVar2->base).type + DAT_006b0264) * 0xc] = (pSVar2->base).count;
+      *piVar3 = (pSVar2->base).type + g_UINT_006b0264;
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].u = (pSVar2->base).count
+      ;
       piVar3 = piVar3 + 1;
-      *(UIntegerFloat *)(&DAT_005c5030 + ((pSVar2->base).type + DAT_006b0264) * 0x30) =
-           (pSVar2->surface_normal).A;
+      g_SRenderVertex_ARRAY_005c5014[(pSVar2->base).type + g_UINT_006b0264].v =
+           (int)(pSVar2->surface_normal).A;
       pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
     }
-    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,&DAT_006b029c);
+    engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,g_INT_ARRAY_006b029c);
   }
   return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);
 }

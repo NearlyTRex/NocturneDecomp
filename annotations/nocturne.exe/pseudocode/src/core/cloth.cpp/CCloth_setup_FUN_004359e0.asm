@@ -74,7 +74,7 @@
 ;   core_vampboss.cpp_CVampireBoss_setup_FUN_0054c3e0 at 0054c43c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b360
+;   float g_FLOAT_0059b360 = 256
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_initializeConnections_FUN_004357b0
@@ -359,13 +359,13 @@ section .text
     ADD EBX,EDI                         ; 00435d6b
     ADD ECX,0x11c                       ; 00435d6d
     FLD float ptr [EAX]                 ; 00435d73
-    FMUL float ptr [0x0059b360]         ; 00435d75 | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 00435d75 | g_FLOAT_0059b360
     FISTP dword ptr [EBX]               ; 00435d7b
     FLD float ptr [EAX + 0x4]           ; 00435d7d
-    FMUL float ptr [0x0059b360]         ; 00435d80 | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 00435d80 | g_FLOAT_0059b360
     FISTP dword ptr [EBX + 0x4]         ; 00435d86
     FLD float ptr [EAX + 0x8]           ; 00435d89
-    FMUL float ptr [0x0059b360]         ; 00435d8c | DAT_0059b360
+    FMUL float ptr [0x0059b360]         ; 00435d8c | g_FLOAT_0059b360
     FISTP dword ptr [EBX + 0x8]         ; 00435d92
     MOV EAX,dword ptr [ESP + 0x100]     ; 00435d95
     INC EBP                             ; 00435d9c

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *this_ptr)
 
 {
@@ -31,10 +29,10 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
     }
     local_28 = 0;
     g_CDemonRaytraceInstance.rendering_mode = 0;
-    if (0 < _DAT_01fba2d8) {
+    if (0 < g_INT_01fba2d8) {
       local_30 = 0;
       do {
-        pCVar2 = *(CDemonLight **)(local_30 + 0x1fba2dc);
+        pCVar2 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fba2dc + local_30);
         if (pCVar2->light_enabled_flag != 0) {
           fVar3 = (pCVar2->base).fixed_point_scale;
           core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(pCVar2,0);
@@ -74,19 +72,19 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
         }
         local_30 = local_30 + 4;
         local_28 = local_28 + 1;
-      } while (local_28 < _DAT_01fba2d8);
+      } while (local_28 < g_INT_01fba2d8);
     }
     local_24 = 0;
-    if (0 < _DAT_01fb9b54) {
+    if (0 < g_INT_01fb9b54) {
       local_2c = 0;
       do {
-        pCVar2 = *(CDemonLight **)(&DAT_01fb9b58 + local_2c);
+        pCVar2 = *(CDemonLight **)((int)g_CDemonLight_PTR_ARRAY_01fb9b58 + local_2c);
         if (pCVar2->light_enabled_flag != 0) {
           core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(pCVar2,1);
           core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(this_ptr,0x22);
           iVar5 = 0;
           pCVar6 = this_ptr;
-          _DAT_014b9920 = pCVar2;
+          g_CDemonLight_PTR_014b9920 = pCVar2;
           if (0 < this_ptr->sorted_render_actor_count) {
             do {
               this_ptr_00 = pCVar6->sorted_render_actors[0];
@@ -107,12 +105,12 @@ void __cdecl core_set_cpp_CDemonSet_renderStaticLights_FUN_00509760(CDemonSet *t
           }
           core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGorePtr);
           core_fire_cpp_CFireEffect_render_FUN_0048a650(g_CFireEffect_PTR_005b80f0);
-          _DAT_014b9920 = (CDemonLight *)0x0;
+          g_CDemonLight_PTR_014b9920 = (CDemonLight *)0x0;
           core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(pCVar2,0);
         }
         local_2c = local_2c + 4;
         local_24 = local_24 + 1;
-      } while (local_24 < _DAT_01fb9b54);
+      } while (local_24 < g_INT_01fb9b54);
     }
     if (g_CGamePtr->profile_mode != 0) {
       iVar5 = wincore_winrun_cpp_getTime_FUN_00558a30();

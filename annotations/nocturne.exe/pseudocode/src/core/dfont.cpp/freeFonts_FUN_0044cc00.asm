@@ -14,12 +14,12 @@
 ;   CBitFont* g_CBitFont_PTR_014b9904
 ;   CBitFont* g_CBitFont_PTR_014b9908
 ;   CBitFont* g_CBitFont_PTR_014b990c
-;   undefined4 DAT_014b9910
-;   undefined4 DAT_014b9914
-;   undefined4 DAT_014b9918
-;   undefined4 DAT_014b991c
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01d16810
+;   CWinFont* g_CWinFont_PTR_014b9910
+;   CWinFont* g_CWinFont_PTR_014b9914
+;   CWinFont* g_CWinFont_PTR_014b9918
+;   CWinFont* g_CWinFont_PTR_014b991c
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01d16810
 ;
 ; Called Functions:
 ;   crt_memory.c_operator_delete_FUN_00564494
@@ -105,7 +105,7 @@ section .text
     XOR EDX,EDX                         ; 0044cca5
         ;   Label: LAB_0044cca5
     MOV EBX,dword ptr [0x014b990c]      ; 0044cca7 | g_CBitFont_PTR_014b990c
-    MOV dword ptr [0x01bcd070],EDX      ; 0044ccad | DAT_01bcd070
+    MOV dword ptr [0x01bcd070],EDX      ; 0044ccad | g_CBitFont_PTR_01bcd070
     MOV dword ptr [0x014b9908],EDX      ; 0044ccb3 | g_CBitFont_PTR_014b9908
     TEST EBX,EBX                        ; 0044ccb9
     JZ 0x0044ccd0                       ; 0044ccbb
@@ -121,19 +121,19 @@ section .text
     ADD ESP,0x4                         ; 0044cccd
     XOR EDI,EDI                         ; 0044ccd0
         ;   Label: LAB_0044ccd0
-    MOV EBP,dword ptr [0x01d16810]      ; 0044ccd2 | DAT_01d16810
+    MOV EBP,dword ptr [0x01d16810]      ; 0044ccd2 | g_INT_01d16810
     MOV dword ptr [0x014b990c],EDI      ; 0044ccd8 | g_CBitFont_PTR_014b990c
     TEST EBP,EBP                        ; 0044ccde
     JZ 0x0044cd4b                       ; 0044cce0
         ;   XREF to: 0044cd4b (CONDITIONAL_JUMP)  ; LAB_0044cd4b
-    MOV EAX,[0x014b9910]                ; 0044cce2 | DAT_014b9910
+    MOV EAX,[0x014b9910]                ; 0044cce2 | g_CWinFont_PTR_014b9910
     TEST EAX,EAX                        ; 0044cce7
     JNZ 0x0044cd69                      ; 0044cce9
         ;   XREF to: 0044cd69 (CONDITIONAL_JUMP)  ; LAB_0044cd69
     XOR EDX,EDX                         ; 0044ccef
         ;   Label: LAB_0044ccef
-    MOV ECX,dword ptr [0x014b9914]      ; 0044ccf1 | DAT_014b9914
-    MOV dword ptr [0x014b9910],EDX      ; 0044ccf7 | DAT_014b9910
+    MOV ECX,dword ptr [0x014b9914]      ; 0044ccf1 | g_CWinFont_PTR_014b9914
+    MOV dword ptr [0x014b9910],EDX      ; 0044ccf7 | g_CWinFont_PTR_014b9910
     TEST ECX,ECX                        ; 0044ccfd
     JZ 0x0044cd0b                       ; 0044ccff
         ;   XREF to: 0044cd0b (CONDITIONAL_JUMP)  ; LAB_0044cd0b
@@ -144,8 +144,8 @@ section .text
     ADD ESP,0x8                         ; 0044cd08
     XOR EBX,EBX                         ; 0044cd0b
         ;   Label: LAB_0044cd0b
-    MOV ESI,dword ptr [0x014b9918]      ; 0044cd0d | DAT_014b9918
-    MOV dword ptr [0x014b9914],EBX      ; 0044cd13 | DAT_014b9914
+    MOV ESI,dword ptr [0x014b9918]      ; 0044cd0d | g_CWinFont_PTR_014b9918
+    MOV dword ptr [0x014b9914],EBX      ; 0044cd13 | g_CWinFont_PTR_014b9914
     TEST ESI,ESI                        ; 0044cd19
     JZ 0x0044cd27                       ; 0044cd1b
         ;   XREF to: 0044cd27 (CONDITIONAL_JUMP)  ; LAB_0044cd27
@@ -156,8 +156,8 @@ section .text
     ADD ESP,0x8                         ; 0044cd24
     XOR EDI,EDI                         ; 0044cd27
         ;   Label: LAB_0044cd27
-    MOV EBP,dword ptr [0x014b991c]      ; 0044cd29 | DAT_014b991c
-    MOV dword ptr [0x014b9918],EDI      ; 0044cd2f | DAT_014b9918
+    MOV EBP,dword ptr [0x014b991c]      ; 0044cd29 | g_CWinFont_PTR_014b991c
+    MOV dword ptr [0x014b9918],EDI      ; 0044cd2f | g_CWinFont_PTR_014b9918
     TEST EBP,EBP                        ; 0044cd35
     JZ 0x0044cd44                       ; 0044cd37
         ;   XREF to: 0044cd44 (CONDITIONAL_JUMP)  ; LAB_0044cd44
@@ -168,7 +168,7 @@ section .text
     ADD ESP,0x8                         ; 0044cd41
     XOR EAX,EAX                         ; 0044cd44
         ;   Label: LAB_0044cd44
-    MOV [0x014b991c],EAX                ; 0044cd46 | DAT_014b991c
+    MOV [0x014b991c],EAX                ; 0044cd46 | g_CWinFont_PTR_014b991c
     POP EBP                             ; 0044cd4b
         ;   Label: LAB_0044cd4b
     POP EDI                             ; 0044cd4c

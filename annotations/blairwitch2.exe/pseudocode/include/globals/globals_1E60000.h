@@ -41,8 +41,8 @@ extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e613f0;
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e6164c[16];
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e61b60[16];
 
-// char[10]
-extern char g_CHAR_ARRAY_01e620f8[10];
+// char[10][1024]
+extern char g_CHAR_ARRAY_ARRAY_01e620f8[10][1024];
 
 // char[2048]
 extern char g_CHAR_ARRAY_01e648f8[2048];

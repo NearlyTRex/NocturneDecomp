@@ -24,9 +24,31 @@ CGround g_CGroundInstance = {};
 // CHero*[4]
 CHero* g_HeroActors[4] = {};
 
+// CIni
+CIni g_CIni_01cae378 = {};
+
+// char[10][256]
+char g_CHAR_ARRAY_ARRAY_01cae580[10][256] = {};
+char g_CHAR_ARRAY_ARRAY_01caef80[10][256] = {};
+char g_CHAR_ARRAY_ARRAY_01caf980[10][256] = {};
+
 // char[256]
+char g_CHAR_ARRAY_01cae380[256] = {};
 char g_CHAR_ARRAY_01cae480[256] = {};
 
 // int
+int g_INT_01cae0d4 = {};
 int g_LocalHeroIndex = {};
+int g_INT_01cae1a0 = {};
+int g_INT_01cae37c = {};
+
+// int[12]
+int g_INT_ARRAY_01cae1e0[12] = {};
+int g_INT_ARRAY_01cae30c[12] = {};
+
+// int[17]
+int g_INT_ARRAY_01cae018[17] = {};
+
+// int[18]
+int g_INT_ARRAY_01cae288[18] = {};
 

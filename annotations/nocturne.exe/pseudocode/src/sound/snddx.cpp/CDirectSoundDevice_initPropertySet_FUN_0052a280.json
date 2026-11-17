@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 173,
+    "complexity_score": 211,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 9,
+    "max_suspect_severity": "severe",
+    "pseudocode_lines": 56,
+    "suspect_count": 14,
     "suspect_types": [
-      "undefined_data",
+      "unknown_field",
       "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "warning_max_restarts"
     ],
-    "total_lines": 214
+    "total_lines": 202
   },
   "cross_references": [],
   "function": {
@@ -78,14 +78,14 @@
     },
     {
       "addr": "02dc9214",
-      "name": "DAT_02dc9214",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_02dc9214",
+      "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02dc9224",
-      "name": "DAT_02dc9224",
-      "type": "undefined4",
+      "name": "g_IKsPropertySet_PTR_02dc9224",
+      "type": "IKsPropertySet*",
       "value": null
     }
   ],
@@ -172,75 +172,115 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Decompiler iteration limit exceeded",
       "line": 2,
-      "match": "WARNING: Globals starting with",
+      "match": "WARNING: Exceeded maximum restarts with more pending",
+      "severity": "severe",
+      "text": "/* WARNING: Exceeded maximum restarts with more pending */",
+      "type": "warning_max_restarts"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 23,
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "text": "local_2c._0_4_ = (int *)0x10001;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 24,
+      "match": "._4_4_",
+      "severity": "mild",
+      "text": "local_2c._4_4_ = 0x5622;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 26,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "local_2c._8_4_ = (int *)0xac44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "if ((int *)local_2c._8_4_ != (int *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._8_4_",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc9224 + 8))();",
+      "text": "(**(code **)(*(int *)local_2c._8_4_ + 8))(local_2c._8_4_);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
+      "line": 42,
       "match": "code *",
       "severity": "moderate",
-      "text": "error_code = (**(code **)(*_DAT_02dc9214 + 0xc))();",
+      "text": "(**(code **)*puStack_20)(puStack_20,&g_IID_IKsPropertySet,&g_IKsPropertySet_PTR_02dc9224);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 44,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)DStack_40.lpwfxFormat + 8))(DStack_40.lpwfxFormat);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 47,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*puStack_28)(puStack_28,&g_IID_IDirectSound3DBuffer,&uStack_24);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piStack_34 + 8))(piStack_34);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*puStack_30)(puStack_30,&g_IID_IKsPropertySet,&DAT_02dc9224);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_02dc9224",
+      "match": "._0_4_",
       "severity": "mild",
-      "text": "(**(code **)*puStack_30)(puStack_30,&g_IID_IKsPropertySet,&DAT_02dc9224);",
-      "type": "undefined_data"
+      "text": "if ((int *)local_2c._0_4_ != (int *)0x0) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 48,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 56,
+      "line": 48,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*piStack_40 + 8))(piStack_40);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piStack_3c + 8))(piStack_3c);",
+      "text": "(**(code **)(*(int *)local_2c._0_4_ + 8))(local_2c._0_4_);",
       "type": "unresolved_funcptr"
     }
   ]

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 192,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 11,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
+      "unrolled_memcpy",
       "unrolled_strcpy"
     ],
     "total_lines": 232
@@ -156,25 +156,25 @@
     },
     {
       "addr": "005bea60",
-      "name": "DAT_005bea60",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005bea60",
+      "type": "int",
+      "value": "0x20"
     },
     {
       "addr": "005bea74",
-      "name": "DAT_005bea74",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005bea74",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "005beba0",
-      "name": "DAT_005beba0",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_005beba0",
+      "type": "char[256]",
       "value": null
     },
     {
       "addr": "005beba4",
-      "name": "DAT_005beba4",
+      "name": "g_CHAR_ARRAY_005beba0+4",
       "type": "undefined4",
       "value": null
     }
@@ -362,83 +362,35 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005beba0",
-      "severity": "mild",
-      "text": "puVar3 = &DAT_005beba0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "if ((-1 < DAT_005bea74) &&",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "(iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230(), DAT_005bea74 < iVar2)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 29,
-      "match": "DAT_005bea74",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(DAT_005bea74,&local_29c);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 35,
-      "match": "(char *)((int)pSVar4",
+      "match": "(char *)((int)pSVar3",
       "severity": "moderate",
-      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "text": "cVar1 = *(char *)((int)pSVar3 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(SSoundDeviceInfo *)((int)pSVar4",
+      "match": "(SSoundDeviceInfo *)((int)pSVar3",
       "severity": "moderate",
-      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "text": "pSVar3 = (SSoundDeviceInfo *)((int)pSVar3 + 2);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_005bea60",
-      "severity": "mild",
-      "text": "if (0 < DAT_005bea60) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_005bea60",
-      "severity": "mild",
-      "text": "} while (channel_index < DAT_005bea60);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
-      "match": "(int)pSVar4",
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "cVar1 = *(char *)((int)pSVar4 + 1);",
+      "text": "cVar1 = *(char *)((int)pSVar3 + 1);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `pSVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pSVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 36,
-      "match": "(int)pSVar4",
+      "match": "(int)pSVar3",
       "severity": "moderate",
-      "text": "pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);",
+      "text": "pSVar3 = (SSoundDeviceInfo *)((int)pSVar3 + 2);",
       "type": "pointer_truncation"
     },
     {
@@ -448,6 +400,14 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
+      "line": 22,
+      "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
     }
   ]
 }

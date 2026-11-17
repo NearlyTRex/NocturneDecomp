@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d8 = 005a7f44
-;   undefined4 DAT_00607bdc
+;   SIOControlBlock* g_SIOControlBlock_PTR_00607bdc = 00000000
 ;   int g_INT_00607be0 = 0x0
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     CMP EBX,dword ptr [0x00607be0]      ; 005abb73 | g_INT_00607be0
     JGE 0x005abb88                      ; 005abb79
         ;   XREF to: 005abb88 (CONDITIONAL_JUMP)  ; LAB_005abb88
-    MOV EDX,dword ptr [0x00607bdc]      ; 005abb7b | DAT_00607bdc
+    MOV EDX,dword ptr [0x00607bdc]      ; 005abb7b | g_SIOControlBlock_PTR_00607bdc
     MOV dword ptr [EDX + EBX*0x4],0x0   ; 005abb81
     CALL dword ptr [0x006079d8]         ; 005abb88 | PTR_crt_unknown.c_FUN_005a7f44_006079d8
         ;   Label: LAB_005abb88

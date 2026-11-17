@@ -20,7 +20,8 @@ ushort FUN_005b01c8(void)
   do {
     iVar1 = (*(code *)PTR_crt_unknown_c_FUN_005a7f3c_006079a0)();
     iVar3 = iVar2 + 8;
-    *(uint *)(iVar1 + iVar2 + 0x58) = *(uint *)(&DAT_00607e88 + iVar2);
+    *(uint *)(iVar1 + iVar2 + 0x58) =
+         *(uint *)((int)g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88 + iVar2);
     *(uint *)(iVar1 + iVar2 + 0x5c + (uint)bVar4 * -8) =
          *(uint *)(iVar2 + 0x607e8c + (uint)bVar4 * -8);
     iVar2 = iVar3;

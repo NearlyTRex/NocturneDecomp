@@ -10,6 +10,9 @@ CDemonLight* g_CDemonLight_PTR_01340584 = {};
 // CMatrix3x3i
 CMatrix3x3i g_CMatrix3x3i_01340588 = {};
 
+// SCameraEdge[10000]
+SCameraEdge g_SCameraEdge_ARRAY_013405b8[10000] = {};
+
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_BIT_INTEGER32_013405b0 = {};
 

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(CMorphModel *this_ptr,float morph_t)
 
 {
@@ -22,7 +20,7 @@ void __cdecl core_morph_cpp_CMorphModel_renderFaces_FUN_004dfea0(CMorphModel *th
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0
             (g_CDemonRenderer_PTR_005ae704,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00460fb0(g_CDemonRenderer_PTR_005ae704,1);
-  iVar3 = 0xffff - _DAT_01c038f4;
+  iVar3 = 0xffff - g_INT_01c038f4;
   dVar5 = round
                     ((double)(morph_t * (float)65535 * (2.0f - morph_t)));
   lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);

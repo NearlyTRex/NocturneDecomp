@@ -10,7 +10,7 @@
 ;   shape_edittool.cpp_CEdCheck_dtor_FUN_004771d0 at 004771d6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcde24
+;   void* g_PTR_01bcde24
 ;
 ; *****************************************************************************
 
@@ -18,7 +18,7 @@ section .text
 
     MOV EDX,dword ptr [ESP + 0x4]       ; 004772e0
         ;   Label: shape_edittool.cpp_CEdCheck_clearActiveButtonIfMatch_FUN_004772e0
-    CMP EDX,dword ptr [0x01bcde24]      ; 004772e4 | DAT_01bcde24
+    CMP EDX,dword ptr [0x01bcde24]      ; 004772e4 | g_PTR_01bcde24
     JZ 0x004764bd                       ; 004772ea
         ;   XREF to: 004764bd (CONDITIONAL_JUMP)  ; LAB_004764bd
     RET                                 ; 004772f0

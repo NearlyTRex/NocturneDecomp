@@ -17,8 +17,9 @@ byte __cdecl getTempDirectory(void)
   byte bVar6;
   
   bVar6 = 0;
-  if (DAT_005c1b24 == '\0') {
-    for (ppuVar4 = &PTR_s_TMP_005c1b10; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1) {
+  if (g_CHAR_ARRAY_005c1b24[0] == '\0') {
+    for (ppuVar4 = &PTR_g_CHAR_ARRAY_00598b2c_4_005c1b10; **ppuVar4 != '\0'; ppuVar4 = ppuVar4 + 1)
+    {
       pcVar2 = getenv(*ppuVar4);
       if (pcVar2 != (char *)0x0) {
         uVar3 = 0xffffffff;
@@ -30,14 +31,14 @@ byte __cdecl getTempDirectory(void)
           pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
         if (~uVar3 - 1 < 0x104) {
-          _fullpath(&DAT_005c1b24,pcVar2,0x103);
+          _fullpath(g_CHAR_ARRAY_005c1b24,pcVar2,0x103);
           break;
         }
       }
     }
-    if (DAT_005c1b24 == '\0') {
+    if (g_CHAR_ARRAY_005c1b24[0] == '\0') {
       pcVar2 = getcwd((char *)0x0,0);
-      pcVar5 = &DAT_005c1b24;
+      pcVar5 = g_CHAR_ARRAY_005c1b24;
       do {
         cVar1 = *pcVar2;
         *pcVar5 = cVar1;
@@ -49,7 +50,7 @@ byte __cdecl getTempDirectory(void)
       } while (cVar1 != '\0');
     }
     uVar3 = 0xffffffff;
-    pcVar2 = &DAT_005c1b24;
+    pcVar2 = g_CHAR_ARRAY_005c1b24;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
@@ -59,7 +60,7 @@ byte __cdecl getTempDirectory(void)
     uVar3 = ~uVar3;
     if ((*(char *)(uVar3 + 0x5c1b22) != '\\') && (*(char *)(uVar3 + 0x5c1b22) != '/')) {
       (&DAT_005c1b23)[uVar3] = 0x5c;
-      (&DAT_005c1b24)[uVar3] = 0;
+      g_CHAR_ARRAY_005c1b24[uVar3] = '\0';
     }
   }
   return 0x24;

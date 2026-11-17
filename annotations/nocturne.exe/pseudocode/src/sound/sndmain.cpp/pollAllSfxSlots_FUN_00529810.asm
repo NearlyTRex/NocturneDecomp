@@ -18,8 +18,8 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
-;   undefined4 DAT_02dc84bc
-;   undefined4 DAT_02dc84c0
+;   int g_INT_02dc84bc
+;   int g_INT_02dc84c0
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -40,18 +40,18 @@ section .text
     MOV EBP,ESP                         ; 00529813
     SUB ESP,0x8                         ; 00529815
     AND ESP,0xfffffff8                  ; 00529818
-    CMP dword ptr [0x02dc84bc],0x0      ; 0052981b | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 0052981b | g_INT_02dc84bc
     JLE 0x0052987b                      ; 00529822
         ;   XREF to: 0052987b (CONDITIONAL_JUMP)  ; LAB_0052987b
     CALL sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10 ; 00529824
         ;   XREF to: 00522d10 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_00522d10()
         ;   Label: LAB_00529824
-    MOV EBX,dword ptr [0x02dc84c0]      ; 00529829 | DAT_02dc84c0
+    MOV EBX,dword ptr [0x02dc84c0]      ; 00529829 | g_INT_02dc84c0
     XOR ESI,ESI                         ; 0052982f
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 00529831
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV dword ptr [ESP],ESI             ; 00529836
-    MOV [0x02dc84c0],EAX                ; 00529839 | DAT_02dc84c0
+    MOV [0x02dc84c0],EAX                ; 00529839 | g_INT_02dc84c0
     CALL sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0 ; 0052983e
         ;   XREF to: 005284f0 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_hasHardware3DSound_FUN_005284f0()
     TEST EAX,EAX                        ; 00529843
@@ -94,7 +94,7 @@ section .text
     ADD ESP,0x4                         ; 0052989b
     JMP 0x00529824                      ; 0052989e
         ;   XREF to: 00529824 (UNCONDITIONAL_JUMP)  ; LAB_00529824
-    MOV EAX,[0x02dc84c0]                ; 005298a0 | DAT_02dc84c0
+    MOV EAX,[0x02dc84c0]                ; 005298a0 | g_INT_02dc84c0
         ;   Label: LAB_005298a0
     SUB EAX,EBX                         ; 005298a5
     MOV dword ptr [ESP + 0x4],EAX       ; 005298a7

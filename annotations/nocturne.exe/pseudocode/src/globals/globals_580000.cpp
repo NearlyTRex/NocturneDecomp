@@ -323,14 +323,19 @@ byte BYTE_ARRAY_00582f76[65] = {
 
 // char
 char CHAR_1_0058153c = 0x01;
+char g_CHAR_00581999 = 0x08;
+char g_CHAR_0058199f = 0x0C;
+char g_CHAR_00581ae0 = '\0';
 char CHAR_00h_00583c06 = '\0';
 char CHAR_00h_00583dcc = '\0';
+char g_CHAR_00586e60 = '\0';
 char g_CHAR_00587ed1 = '\0';
 char CHAR_00h_0058869e = '\0';
 char CHAR_00h_005886ab = '\0';
 char CHAR_00h_0058c059 = '\0';
 char CHAR_00h_0058c922 = '\0';
 char CHAR_00h_0058c926 = '\0';
+char g_CHAR_0058d9a8 = '\0';
 char CHAR_00h_0058e552 = '\0';
 char CHAR_00h_0058e5db = '\0';
 char CHAR_00h_0058e5ea = '\0';

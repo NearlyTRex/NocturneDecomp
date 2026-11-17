@@ -13,9 +13,9 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 DAT_01cc9454
-;   undefined4 DAT_01fba480
+;   int g_INT_01fba480
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
@@ -29,7 +29,7 @@ section .text
     CMP dword ptr [EAX + 0x4],0x0       ; 0050aa25 | DAT_01cc9454
     JNZ 0x0050aa36                      ; 0050aa29
         ;   XREF to: 0050aa36 (CONDITIONAL_JUMP)  ; LAB_0050aa36
-    MOV ECX,dword ptr [0x01fba480]      ; 0050aa2b | DAT_01fba480
+    MOV ECX,dword ptr [0x01fba480]      ; 0050aa2b | g_INT_01fba480
     CMP ECX,0x64                        ; 0050aa31
     JL 0x0050aa37                       ; 0050aa34
         ;   XREF to: 0050aa37 (CONDITIONAL_JUMP)  ; LAB_0050aa37
@@ -40,15 +40,15 @@ section .text
     PUSH EBX                            ; 0050aa38
     MOV EBX,dword ptr [0x005ae704]      ; 0050aa39 | g_CDemonRenderer_PTR_005ae704
     MOV EDX,dword ptr [ESP + 0x10]      ; 0050aa3f
-    PUSH EBX                            ; 0050aa43 | DAT_01b4d738
+    PUSH EBX                            ; 0050aa43 | g_CDemonRenderer_01b4d738
     MOV dword ptr [ECX*0x4 + 0x1fba484],EDX ; 0050aa44
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 0050aa4b
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
-    MOV EDX,dword ptr [0x01fba480]      ; 0050aa50 | DAT_01fba480
+    MOV EDX,dword ptr [0x01fba480]      ; 0050aa50 | g_INT_01fba480
     ADD ESP,0x4                         ; 0050aa56
     LEA ESI,[EDX + 0x1]                 ; 0050aa59
     MOV dword ptr [EDX*0x4 + 0x1fba614],EAX ; 0050aa5c
-    MOV dword ptr [0x01fba480],ESI      ; 0050aa63 | DAT_01fba480
+    MOV dword ptr [0x01fba480],ESI      ; 0050aa63 | g_INT_01fba480
     POP EBX                             ; 0050aa69
     POP ESI                             ; 0050aa6a
     RET                                 ; 0050aa6b

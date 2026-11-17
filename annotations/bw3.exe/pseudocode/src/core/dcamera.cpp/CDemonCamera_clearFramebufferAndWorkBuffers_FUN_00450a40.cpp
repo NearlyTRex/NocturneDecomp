@@ -35,7 +35,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_00
     do {
       iVar2 = iVar3 + 1;
       g_CHAR_ARRAY_013716d0[iVar3] = '\0';
-      g_CHAR_ARRAY_0135ead0[iVar3] = '\0';
+      g_SFogImagePlane_0135ead0.pixels[0][iVar3] = '\0';
       iVar3 = iVar2;
     } while (iVar2 != iVar1);
     iVar4 = iVar4 + 1;

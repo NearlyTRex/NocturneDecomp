@@ -19,7 +19,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
@@ -91,7 +91,7 @@ section .text
     ADC EDX,ECX                         ; 00441a94
     SHRD EAX,EDX,0x10                   ; 00441a96
     MOV EDX,dword ptr [0x005ae704]      ; 00441a9a | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00441aa0 | DAT_01b4d738
+    PUSH EDX                            ; 00441aa0 | g_CDemonRenderer_01b4d738
     MOV dword ptr [ESP + 0xc],EAX       ; 00441aa1
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441aa5
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)

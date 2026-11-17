@@ -19,3 +19,9 @@ extern CDemonActorType g_CSimBoxActorType_02671914;
 // CVector3f[5000]
 extern CVector3f g_CVector3f_ARRAY_026757d0[5000];
 
+// int
+extern int g_INT_026714b0;
+
+// int[4000]
+extern int g_INT_ARRAY_02671950[4000];
+

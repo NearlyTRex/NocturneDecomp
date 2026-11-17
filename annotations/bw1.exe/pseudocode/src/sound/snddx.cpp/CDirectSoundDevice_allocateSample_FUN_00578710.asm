@@ -12,7 +12,7 @@
 ;   TerminatedCString s_Create_secondary_buffer_005f4df7
 ;   TerminatedCString s_DirectSoundDevice_alloca_005f4e0f
 ;   IDirectSound* g_IDirectSound_PTR_02c81d94
-;   undefined4 DAT_02c81da0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_02c81da0
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[6]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[12]
 ;   undefined4 g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4[14]
@@ -83,7 +83,7 @@ section .text
     JZ 0x005787b4                       ; 005787a7
         ;   XREF to: 005787b4 (CONDITIONAL_JUMP)  ; LAB_005787b4
     MOV dword ptr [ESP + 0x194],0xa8    ; 005787a9
-    CMP dword ptr [0x02c81da0],0x0      ; 005787b4 | DAT_02c81da0
+    CMP dword ptr [0x02c81da0],0x0      ; 005787b4 | g_IDirectSound3DListener_PTR_02c81da0
         ;   Label: LAB_005787b4
     JNZ 0x0057890a                      ; 005787bb
         ;   XREF to: 0057890a (CONDITIONAL_JUMP)  ; LAB_0057890a

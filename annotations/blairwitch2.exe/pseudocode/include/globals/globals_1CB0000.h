@@ -18,7 +18,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
 #include "types/structs/SHardwareEdge.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/unions/UVector3.h"
 
 // =============================================================================
@@ -74,9 +74,9 @@ extern CVector3i g_CVector3i_01cb82bc;
 // SHardwareEdge[16]
 extern SHardwareEdge g_SHardwareEdge_ARRAY_01cb025c[16];
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cb8288;
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cb82c8;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb8288;
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb82c8;
 
 // UVector3
 extern UVector3 g_UVector3_01cb0644;
@@ -90,8 +90,8 @@ extern byte g_BYTE_01cb80f8;
 // char
 extern char g_CHAR_01cb1120;
 
-// char[10]
-extern char g_CHAR_ARRAY_01cb0710[10];
+// char[10][256]
+extern char g_CHAR_ARRAY_ARRAY_01cb0710[10][256];
 
 // char[256]
 extern char g_CHAR_ARRAY_01cb7428[256];
@@ -156,10 +156,6 @@ extern int g_INT_01cb8110;
 extern int g_INT_01cb8114;
 extern int g_INT_01cb8118;
 extern int g_INT_01cb811c;
-extern int g_INT_01cb82a0;
-extern int g_INT_01cb82a4;
-extern int g_INT_01cb82a8;
-extern int g_INT_01cb82ac;
 extern int g_INT_01cb82f0;
 extern int g_INT_01cbcaf4;
 extern int g_INT_01cbcaf8;

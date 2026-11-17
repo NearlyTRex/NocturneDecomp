@@ -12,7 +12,7 @@ int __cdecl heapCheck(void *heap_state_ptr)
   int iVar1;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad8)();
-  iVar1 = heapWalk(heap_state_ptr,DAT_005c1680);
+  iVar1 = heapWalk(heap_state_ptr,g_Heap_PTR_005c1680);
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ae0)();
   return iVar1;
 }

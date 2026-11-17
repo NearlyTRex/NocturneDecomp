@@ -5,6 +5,8 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/dsound.h"
+#include "system/ksproxy.h"
+#include "system/mmsystem.h"
 #include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
@@ -22,6 +24,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/classes/CWavInDevice.h"
 #include "types/classes/CWavOutDevice.h"
+#include "types/structs/SDirectSoundDeviceInfo.h"
 #include "types/structs/SRecordingDeviceInfo.h"
 #include "types/structs/SReverbSettings.h"
 #include "types/structs/SSoundDeviceInfo.h"
@@ -90,6 +93,14 @@ extern CWavOutDevice g_CWavOutDevice_0264b27c;
 // HANDLE
 extern HANDLE g_HANDLE_02649018;
 
+// HGLOBAL[20]
+extern HGLOBAL g_HGLOBAL_ARRAY_0264b10c[20];
+extern HGLOBAL g_HGLOBAL_ARRAY_0264b1ac[20];
+
+// HGLOBAL[8]
+extern HGLOBAL g_HGLOBAL_ARRAY_0264b074[8];
+extern HGLOBAL g_HGLOBAL_ARRAY_0264b0b4[8];
+
 // HMODULE
 extern HMODULE g_HMODULE_0264bce0;
 
@@ -98,6 +109,9 @@ extern HWND g_HWND_0264bcf0;
 
 // IDirectSound*
 extern IDirectSound* g_IDirectSound_PTR_0264a5c4;
+
+// IDirectSound3DListener*
+extern IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0;
 
 // IDirectSoundBuffer*
 extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_0264a5c8;
@@ -108,6 +122,21 @@ extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[25];
 
 // IDirectSoundBuffer*[31]
 extern IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[31];
+
+// IKsPropertySet*
+extern IKsPropertySet* g_IKsPropertySet_PTR_0264a5d4;
+
+// LPVOID[8]
+extern LPVOID g_LPVOID_ARRAY_0264b0d4[8];
+
+// LPWAVEHDR[20]
+extern LPWAVEHDR g_LPWAVEHDR_ARRAY_0264b15c[20];
+
+// LPWAVEHDR[8]
+extern LPWAVEHDR g_LPWAVEHDR_ARRAY_0264b094[8];
+
+// SDirectSoundDeviceInfo[8]
+extern SDirectSoundDeviceInfo g_SDirectSoundDeviceInfo_ARRAY_02649874[8];
 
 // SRecordingDeviceInfo[8]
 extern SRecordingDeviceInfo g_SRecordingDeviceInfo_ARRAY_02649028[8];
@@ -128,8 +157,10 @@ extern byte g_BYTE_02649027;
 extern byte g_BYTE_0264be10;
 
 // char[40]
-extern char g_CHAR_ARRAY_0264b468[40];
 extern char g_CHAR_ARRAY_0264baa8[40];
+
+// char[40][40]
+extern char g_CHAR_ARRAY_ARRAY_0264b468[40][40];
 
 // double
 extern double g_DOUBLE_02648428;
@@ -258,9 +289,6 @@ extern int g_INT_ARRAY_02648540[32];
 
 // int[4]
 extern int g_INT_ARRAY_0264c0b0[4];
-
-// int[782]
-extern int g_INT_ARRAY_0264998c[782];
 
 // uint
 extern uint g_UINT_0264b294;

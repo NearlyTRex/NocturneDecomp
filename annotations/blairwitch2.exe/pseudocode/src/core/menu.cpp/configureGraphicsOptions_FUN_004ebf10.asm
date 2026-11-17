@@ -24,10 +24,10 @@
 ; Referenced Globals:
 ;   void* switchdataD_004ebee0 = 004ec3f9
 ;   TerminatedCString s_s_4_2f_005dcb35
-;   undefined1 DAT_005dcc8d
-;   undefined1 DAT_005dcc8e
-;   undefined1 DAT_005dcc8f
-;   TerminatedCString s_dx7_dll_005dcc90
+;   TerminatedCString s_tridx7_dll_005dcc8d
+;   undefined4 s_tridx7_dll_005dcc8d+1
+;   undefined4 s_tridx7_dll_005dcc8d+2
+;   undefined4 s_tridx7_dll_005dcc8d+3
 ;   TerminatedCString s_Resolution_320x240_005dcc98
 ;   TerminatedCString s_Resolution_400x300_005dccad
 ;   TerminatedCString s_Resolution_512x384_005dccc2
@@ -141,7 +141,7 @@ section .text
         ;   XREF to: 005024a0 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_update_FUN_005024a0(CMoon * this_ptr, float param_2)
     ADD ESP,0x8                         ; 004ec028
     PUSH 0x1d05620                      ; 004ec02b
-    MOV ESI,0x5dcc8d                    ; 004ec030 | DAT_005dcc8d
+    MOV ESI,0x5dcc8d                    ; 004ec030 | = "tridx7.dll"
     CALL core_moon.cpp_CMoon_render_FUN_00502510 ; 004ec035
         ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; void core_moon.cpp_CMoon_render_FUN_00502510(CMoon * this_ptr)
     MOV EAX,[0x0061b5a8]                ; 004ec03a | g_CDemonSetPtr
@@ -149,13 +149,13 @@ section .text
     MOV EDI,0x61e180                    ; 004ec042 | g_CHAR_ARRAY_0061e180
     MOV dword ptr [EAX + 0x15ae84],0x0  ; 004ec047 | g_CDemonSetInstance.rendering_mode
     PUSH EDI                            ; 004ec051 | g_CHAR_ARRAY_0061e180
-    MOV AL,byte ptr [ESI]               ; 004ec052 | DAT_005dcc8d | DAT_005dcc8f
+    MOV AL,byte ptr [ESI]               ; 004ec052 | = "tridx7.dll" | s_tridx7_dll_005dcc8d+2
         ;   Label: LAB_004ec052
     MOV byte ptr [EDI],AL               ; 004ec054 | g_CHAR_ARRAY_0061e180 | g_CHAR_ARRAY_0061e180+2
     CMP AL,0x0                          ; 004ec056
     JZ 0x004ec06a                       ; 004ec058
         ;   XREF to: 004ec06a (CONDITIONAL_JUMP)  ; LAB_004ec06a
-    MOV AL,byte ptr [ESI + 0x1]         ; 004ec05a | DAT_005dcc8e | = "dx7.dll"
+    MOV AL,byte ptr [ESI + 0x1]         ; 004ec05a | s_tridx7_dll_005dcc8d+1 | s_tridx7_dll_005dcc8d+3
     ADD ESI,0x2                         ; 004ec05d
     MOV byte ptr [EDI + 0x1],AL         ; 004ec060 | g_CHAR_ARRAY_0061e180+1 | g_CHAR_ARRAY_0061e180+3
     ADD EDI,0x2                         ; 004ec063

@@ -20,10 +20,10 @@
 ;   int g_INT_0061c788 = 0x0
 ;   double g_DOUBLE_0061c78c = 0.0
 ;   qword g_QWORD_0061c800 = 0x0
-;   int g_INT_0061c808 = 0x0
-;   int g_INT_0061c810 = 0x0
+;   _MMX_INTEGER g_MMX_INTEGER_0061c808
+;   _MMX_INTEGER g_MMX_INTEGER_0061c810
 ;   qword g_QWORD_0061c820 = 0x0
-;   int g_INT_0061c828 = 0x0
+;   _MMX_INTEGER g_MMX_INTEGER_0061c828
 ;   ... and 31 more
 ;
 ; *****************************************************************************
@@ -119,8 +119,8 @@ section .text
     IMUL dword ptr [ECX + 0x1c35e74]    ; 0055cb70
     AND EBX,0xffff                      ; 0055cb76
     AND EDX,0xffff                      ; 0055cb7c
-    MOV dword ptr [0x0061c808],EBX      ; 0055cb82 | g_INT_0061c808
-    MOV dword ptr [0x0061c828],EDX      ; 0055cb88 | g_INT_0061c828
+    MOV dword ptr [0x0061c808],EBX      ; 0055cb82 | g_MMX_INTEGER_0061c808
+    MOV dword ptr [0x0061c828],EDX      ; 0055cb88 | g_MMX_INTEGER_0061c828
     MOV EAX,dword ptr [EDI + 0x40]      ; 0055cb8e
     MOV EBX,dword ptr [ESI + 0x40]      ; 0055cb91
     SHR EAX,0x1                         ; 0055cb94
@@ -129,18 +129,18 @@ section .text
     IMUL dword ptr [ECX + 0x1c35e74]    ; 0055cb9a
     AND EBX,0xffff                      ; 0055cba0
     AND EDX,0xffff                      ; 0055cba6
-    MOV dword ptr [0x0061c810],EBX      ; 0055cbac | g_INT_0061c810
-    MOV dword ptr [0x0061c830],EDX      ; 0055cbb2 | g_INT_0061c830
+    MOV dword ptr [0x0061c810],EBX      ; 0055cbac | g_MMX_INTEGER_0061c810
+    MOV dword ptr [0x0061c830],EDX      ; 0055cbb2 | g_MMX_INTEGER_0061c830
     MOVQ MM5,qword ptr [0x0061c800]     ; 0055cbb8 | g_QWORD_0061c800
     MOVQ MM6,qword ptr [0x0061c820]     ; 0055cbbf | g_QWORD_0061c820
     PSLLQ MM5,0x10                      ; 0055cbc6
     PSLLQ MM6,0x10                      ; 0055cbca
-    POR MM5,qword ptr [0x0061c808]      ; 0055cbce | g_INT_0061c808
-    POR MM6,qword ptr [0x0061c828]      ; 0055cbd5 | g_INT_0061c828
+    POR MM5,qword ptr [0x0061c808]      ; 0055cbce | g_MMX_INTEGER_0061c808
+    POR MM6,qword ptr [0x0061c828]      ; 0055cbd5 | g_MMX_INTEGER_0061c828
     PSLLQ MM5,0x10                      ; 0055cbdc
     PSLLQ MM6,0x10                      ; 0055cbe0
-    POR MM5,qword ptr [0x0061c810]      ; 0055cbe4 | g_INT_0061c810
-    POR MM6,qword ptr [0x0061c830]      ; 0055cbeb | g_INT_0061c830
+    POR MM5,qword ptr [0x0061c810]      ; 0055cbe4 | g_MMX_INTEGER_0061c810
+    POR MM6,qword ptr [0x0061c830]      ; 0055cbeb | g_MMX_INTEGER_0061c830
     MOVQ qword ptr [0x0061c860],MM6     ; 0055cbf2 | g_QWORD_0061c860
     MOV ECX,dword ptr [0x0061c350]      ; 0055cbf9 | g_INT_0061c350
     MOV EDX,dword ptr [0x0061c354]      ; 0055cbff | g_INT_0061c354
@@ -205,14 +205,14 @@ section .text
     ADD EBX,dword ptr [0x0061c378]      ; 0055ccdb | g_INT_PTR_0061c378
     MOVZX EBX,word ptr [EBX]            ; 0055cce1
     MOVD MM4,EBX                        ; 0055cce4
-    PAND MM4,qword ptr [0x0061c8e0]     ; 0055cce7 | g_INT_0061c8e0
+    PAND MM4,qword ptr [0x0061c8e0]     ; 0055cce7 | g_MMX_INTEGER_0061c8e0
     PSLLQ MM4,qword ptr [0x0061c970]    ; 0055ccee | g_QWORD_0061c970
     MOVD MM2,EBX                        ; 0055ccf5
-    PAND MM2,qword ptr [0x0061c8d8]     ; 0055ccf8 | g_INT_0061c8d8
+    PAND MM2,qword ptr [0x0061c8d8]     ; 0055ccf8 | g_MMX_INTEGER_0061c8d8
     PSLLQ MM2,qword ptr [0x0061c950]    ; 0055ccff | g_QWORD_0061c950
     POR MM4,MM2                         ; 0055cd06
     MOVD MM2,EBX                        ; 0055cd09
-    PAND MM2,qword ptr [0x0061c8d0]     ; 0055cd0c | g_INT_0061c8d0
+    PAND MM2,qword ptr [0x0061c8d0]     ; 0055cd0c | g_MMX_INTEGER_0061c8d0
     PSLLQ MM2,qword ptr [0x0061c930]    ; 0055cd13 | g_QWORD_0061c930
     POR MM4,MM2                         ; 0055cd1a
     PUNPCKLBW MM4,MM7                   ; 0055cd1d

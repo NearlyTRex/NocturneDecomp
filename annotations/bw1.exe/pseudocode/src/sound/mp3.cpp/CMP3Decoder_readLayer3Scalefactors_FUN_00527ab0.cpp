@@ -45,7 +45,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3D
             do {
               puVar4 = puVar6 + 0xd;
               uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                                (this_ptr,*(uint *)((int)g_INT_ARRAY_00620718 +
+                                (this_ptr,*(uint *)((int)g_INT_ARRAY_ARRAY_00620718[0] +
                                                    side_info->channels[granule_index].granules
                                                    [channel].scalefac_compress * 4 + local_48));
               puVar6[0x17] = uVar1;
@@ -71,7 +71,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3D
     do {
       puVar4 = puVar6 + 1;
       uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                        (this_ptr,g_INT_ARRAY_00620718
+                        (this_ptr,g_INT_ARRAY_ARRAY_00620718[0]
                                   [side_info->channels[granule_index].granules[channel].
                                    scalefac_compress]);
       *puVar6 = uVar1;
@@ -84,7 +84,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3D
       do {
         piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                          (this_ptr,g_INT_ARRAY_00620718
+                          (this_ptr,g_INT_ARRAY_ARRAY_00620718[0]
                                     [side_info->channels[granule_index].granules[channel].
                                      scalefac_compress]);
         piVar2[0x17] = uVar1;
@@ -100,7 +100,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3D
       do {
         piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                          (this_ptr,g_INT_ARRAY_00620758
+                          (this_ptr,g_INT_ARRAY_ARRAY_00620718[1]
                                     [side_info->channels[granule_index].granules[channel].
                                      scalefac_compress]);
         piVar2[0x17] = uVar1;
@@ -127,9 +127,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00527ab0(CMP3D
       if (iVar3 < *(int *)((int)g_INT_ARRAY_006206f8 + local_38 + 4)) {
         do {
           uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00525f00
-                            (this_ptr,g_INT_ARRAY_00620718
-                                      [(uint)(1 < local_44) * 0x10 +
-                                       side_info->channels[granule_index].granules[channel].
+                            (this_ptr,g_INT_ARRAY_ARRAY_00620718[1 < local_44]
+                                      [side_info->channels[granule_index].granules[channel].
                                        scalefac_compress]);
           *puVar7 = uVar1;
           iVar3 = iVar3 + 1;

@@ -132,6 +132,6 @@ LAB_004e53d3:
 LAB_004e5423:
   g_SRenderVertex_ARRAY_00629014[3].b = 0;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLHeaderPrimitive_01cd0e40);
+            (g_CDemonRenderer_PTR_00612560,&g_SMRGLPrimitiveQuadIndex_01cd0e40.base);
   return;
 }

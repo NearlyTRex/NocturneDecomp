@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 90,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 35,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "flattened_array_index",
+      "pointer_cast"
     ],
     "total_lines": 92
   },
@@ -40,13 +39,13 @@
   "globals": [
     {
       "addr": "012cecb8",
-      "name": "DAT_012cecb8",
+      "name": "g_SFogImagePlane_012ceb78.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012e18b8",
-      "name": "DAT_012e18b8",
+      "name": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]",
       "type": "undefined4",
       "value": null
     }
@@ -160,28 +159,18 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "'g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 30,
+      "severity": "major",
+      "text": "g_SFogImagePlane_ARRAY_012e1778[0].pixels[0][iVar3] = '\\0';",
+      "type": "flattened_array_index"
+    },
+    {
+      "description": "'g_SFogImagePlane_012ceb78.pixels[0][iVar3]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar3 is multiplied by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
       "line": 31,
-      "match": "DAT_012ceb78",
-      "severity": "mild",
-      "text": "(&DAT_012ceb78)[iVar3] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&g_VOID_PTR_012e1778` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 30,
-      "match": "(int)&g_VOID_PTR_012e1778",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar3) = 0;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 30,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(byte *)((int)&g_VOID_PTR_012e1778 + iVar3) = 0;",
-      "type": "pointer_cast"
+      "severity": "major",
+      "text": "g_SFogImagePlane_012ceb78.pixels[0][iVar3] = '\\0';",
+      "type": "flattened_array_index"
     }
   ]
 }

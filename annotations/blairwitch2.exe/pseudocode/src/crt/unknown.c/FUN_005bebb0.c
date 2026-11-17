@@ -18,7 +18,8 @@ DWORD FUN_005bebb0(uint param_1,int param_2,DWORD param_3)
     if ((0 < param_2) && ((uVar1 & 0x80) == 0)) {
       FUN_005c0878(param_1,uVar1 | 0x8000);
     }
-    DVar2 = SetFilePointer(*(HANDLE *)(DAT_0061f4d8 + param_1 * 4),param_2,(PLONG)0x0,param_3);
+    DVar2 = SetFilePointer(g_SIOControlBlock_PTR_0061f4d8->standard_handles[param_1],param_2,
+                           (PLONG)0x0,param_3);
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);
     if (DVar2 == 0xffffffff) {
       FUN_005c036c();

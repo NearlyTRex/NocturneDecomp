@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(CDemonSet *this_ptr)
 
 {
@@ -18,26 +16,26 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_005113e0(CDemonSe
   int iVar5;
   SRaytraceState *pSVar6;
   
-  if (5 < _DAT_020842d0) {
+  if (5 < g_INT_020842d0) {
     g_CurrentFilename = "..\\core\\setcolid.cpp";
     g_CurrentLineNumber = 1030;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonSet::pushRaytraceState - stack full");
   }
-  iVar3 = _DAT_020842d0;
-  pSVar6 = g_SRaytraceState_ARRAY_020842d4 + _DAT_020842d0;
+  iVar3 = g_INT_020842d0;
+  pSVar6 = g_SRaytraceState_ARRAY_020842d4 + g_INT_020842d0;
   (pSVar6->ray_query).ray_type = (this_ptr->ray_query).ray_type;
-  g_SRaytraceState_ARRAY_020842d4[_DAT_020842d0].ray_query.laser_type =
+  g_SRaytraceState_ARRAY_020842d4[g_INT_020842d0].ray_query.laser_type =
        (this_ptr->ray_query).laser_type;
-  g_SRaytraceState_ARRAY_020842d4[_DAT_020842d0].ray_query.laser_color.r =
+  g_SRaytraceState_ARRAY_020842d4[g_INT_020842d0].ray_query.laser_color.r =
        (this_ptr->ray_query).laser_color.r;
-  g_SRaytraceState_ARRAY_020842d4[_DAT_020842d0].ray_query.laser_color.g =
+  g_SRaytraceState_ARRAY_020842d4[g_INT_020842d0].ray_query.laser_color.g =
        (this_ptr->ray_query).laser_color.g;
   iVar5 = 0;
-  g_SRaytraceState_ARRAY_020842d4[_DAT_020842d0].ray_query.laser_color.b =
+  g_SRaytraceState_ARRAY_020842d4[g_INT_020842d0].ray_query.laser_color.b =
        (this_ptr->ray_query).laser_color.b;
   iVar1 = this_ptr->ignore_list_count;
-  pSVar2 = g_SRaytraceState_ARRAY_020842d4 + _DAT_020842d0;
-  _DAT_020842d0 = _DAT_020842d0 + 1;
+  pSVar2 = g_SRaytraceState_ARRAY_020842d4 + g_INT_020842d0;
+  g_INT_020842d0 = g_INT_020842d0 + 1;
   pSVar2->ignore_list_count = iVar1;
   pCVar4 = this_ptr;
   if (0 < iVar1) {

@@ -26,7 +26,7 @@
 ;   CGame* g_CGamePtr = 01c775ec
 ;   void* PTR_s_noc00000_005bb198 = 0058a96e
 ;   undefined1* PTR_s_noc00001_005bb19c = 0058a977
-;   undefined4 DAT_005bb210
+;   int g_INT_005bb210 = 0x1
 ;   undefined4 g_CGameInstance.head_of_horror_cheat
 ;   CAlphaBitmap g_MoonCloudTexture
 ;   ... and 1 more
@@ -120,7 +120,7 @@ section .text
     JNZ 0x004de882                      ; 004de95a
         ;   XREF to: 004de882 (CONDITIONAL_JUMP)  ; LAB_004de882
     XOR EDX,EDX                         ; 004de960
-    MOV dword ptr [0x005bb210],EDX      ; 004de962 | DAT_005bb210
+    MOV dword ptr [0x005bb210],EDX      ; 004de962 | g_INT_005bb210
     ADD ESP,0x4                         ; 004de968
     POP EBP                             ; 004de96b
     POP EDI                             ; 004de96c

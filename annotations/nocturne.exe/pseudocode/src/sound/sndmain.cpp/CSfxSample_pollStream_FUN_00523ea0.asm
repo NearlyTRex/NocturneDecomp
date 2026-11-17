@@ -66,7 +66,7 @@ section .text
     PUSH EBP                            ; 00523ea3
     SUB ESP,0x24                        ; 00523ea4
     MOV EBX,dword ptr [ESP + 0x38]      ; 00523ea7
-    CMP dword ptr [0x02dc84bc],0x0      ; 00523eab | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 00523eab | g_INT_02dc84bc
     JLE 0x0052411a                      ; 00523eb2
         ;   XREF to: 0052411a (CONDITIONAL_JUMP)  ; LAB_0052411a
     MOV EDI,dword ptr [EBX + 0x134]     ; 00523eb8
@@ -93,7 +93,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00523f03
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00523f08
-    CMP dword ptr [0x02dc8318],0x0      ; 00523f0b | DAT_02dc8318
+    CMP dword ptr [0x02dc8318],0x0      ; 00523f0b | g_CSoundDevice_PTR_02dc8318
         ;   Label: LAB_00523f0b
     JZ 0x0052415d                       ; 00523f12
         ;   XREF to: 0052415d (CONDITIONAL_JUMP)  ; LAB_0052415d
@@ -408,10 +408,10 @@ section .text
     PUSH EDI                            ; 00524282
     MOV EAX,ECX                         ; 00524283
     SHR ECX,0x2                         ; 00524285
-    MOVSD.REP ES:EDI,ESI                ; 00524288 | DAT_02db1118 | DAT_02db111c
+    MOVSD.REP ES:EDI,ESI                ; 00524288 | g_CHAR_ARRAY_02db1118 | g_CHAR_ARRAY_02db1118+4
     MOV CL,AL                           ; 0052428a
     AND CL,0x3                          ; 0052428c
-    MOVSB.REP ES:EDI,ESI                ; 0052428f | DAT_02db111c | DAT_02db111d
+    MOVSB.REP ES:EDI,ESI                ; 0052428f | g_CHAR_ARRAY_02db1118+4 | g_CHAR_ARRAY_02db1118+5
     POP EDI                             ; 00524291
     PUSH EBX                            ; 00524292
         ;   Label: LAB_00524292

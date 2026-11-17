@@ -13,6 +13,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CE
   int iVar2;
   int iVar3;
   int iVar4;
+  int x2;
   int iVar5;
   
   if (g_INT_01c2559c < 1) {
@@ -20,55 +21,53 @@ void __cdecl shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_0047eff0(CE
     g_INT_01d046a4 = 0x93b;
     core_main_c_displayErrorAndQuit_FUN_004e4500("CEditorTools::paintWindow() called but no window was opened!");
   }
-  iVar3 = g_INT_01c35e60;
-  iVar2 = g_INT_01c35e4c;
-  iVar1 = (g_INT_01c2559c + -1) * 0x1f8;
-  g_INT_01c35e4c = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 4);
-  iVar4 = g_INT_006141bc / 0x60;
-  iVar5 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
-  iVar5 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0xc) -
-          ((line_position + 1) * iVar4 + line_position * iVar5);
-  iVar4 = g_INT_01c2638c;
+  iVar2 = g_INT_01c35e60;
+  iVar1 = g_INT_01c35e4c;
+  iVar5 = (g_INT_01c2559c + -1) * 0x1f8;
+  g_INT_01c35e4c = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 4);
+  iVar3 = g_INT_006141bc / 0x60;
+  iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_00485380((char *)0x0);
+  iVar4 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 0xc) -
+          ((line_position + 1) * iVar3 + line_position * iVar4);
+  iVar3 = g_INT_01c2638c;
   if (g_INT_01c25f84 != 0) {
-    iVar4 = (g_INT_01c2638c & 0xffU) * 3;
+    iVar3 = (g_INT_01c2638c & 0xffU) * 3;
     engine_mini3d_cpp_setColor_FUN_004f8e20
-              ((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2] |
-               (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
-               (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << 8);
-    iVar4 = g_INT_01c35e60;
+              ((uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2] |
+               (uint)g_UCHAR_ARRAY_01c35838[iVar3] << 0x10 |
+               (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << 8);
+    iVar3 = g_INT_01c35e60;
   }
-  g_INT_01c35e60 = iVar4;
-  iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1) + 1;
+  g_INT_01c35e60 = iVar3;
+  iVar3 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5) + 1;
+  x2 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 8) + -2;
   if (g_INT_01c25f84 == 0) {
-    engine_2d_c_drawHLine_FUN_00402f30(iVar4,iVar5,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2)
-    ;
+    engine_2d_c_drawHLine_FUN_00402f30(iVar3,iVar4,x2);
   }
   else {
-    engine_mini3d_cpp_drawHLine_FUN_004f9390
-              (iVar4,iVar5,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
+    engine_mini3d_cpp_drawHLine_FUN_004f9390(iVar3,iVar4,x2);
   }
   if (g_INT_01c26390 != g_INT_01c2638c) {
     if (g_INT_01c25f84 == 0) {
       g_INT_01c35e60 = g_INT_01c26390;
     }
     else {
-      iVar4 = (g_INT_01c26390 & 0xffU) * 3;
+      iVar3 = (g_INT_01c26390 & 0xffU) * 3;
       engine_mini3d_cpp_setColor_FUN_004f8e20
-                ((uint)g_UCHAR_ARRAY_01c35838[iVar4 + 1] << 8 |
-                 (uint)g_UCHAR_ARRAY_01c35838[iVar4] << 0x10 |
-                 (uint)g_UCHAR_ARRAY_01c35838[iVar4 + 2]);
+                ((uint)g_UCHAR_ARRAY_01c35838[iVar3 + 1] << 8 |
+                 (uint)g_UCHAR_ARRAY_01c35838[iVar3] << 0x10 |
+                 (uint)g_UCHAR_ARRAY_01c35838[iVar3 + 2]);
     }
-    iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1) + 1;
+    iVar3 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5) + 1;
+    iVar5 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar5 + 8) + -2;
     if (g_INT_01c25f84 == 0) {
-      engine_2d_c_drawHLine_FUN_00402f30
-                (iVar4,iVar5 + -1,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
+      engine_2d_c_drawHLine_FUN_00402f30(iVar3,iVar4 + -1,iVar5);
     }
     else {
-      engine_mini3d_cpp_drawHLine_FUN_004f9390
-                (iVar4,iVar5 + -1,*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) + -2);
+      engine_mini3d_cpp_drawHLine_FUN_004f9390(iVar3,iVar4 + -1,iVar5);
     }
   }
-  g_INT_01c35e60 = iVar3;
-  g_INT_01c35e4c = iVar2;
+  g_INT_01c35e60 = iVar2;
+  g_INT_01c35e4c = iVar1;
   return;
 }

@@ -29,9 +29,9 @@
 ;   int g_INT_005f1944 = 0x9
 ;   TerminatedCString s_a_b_d_Y_005f1948
 ;   TerminatedCString s_H_M_S_005f1958
-;   char[7] g_CHAR_ARRAY_0061eeb8
+;   char[7][4] g_CHAR_ARRAY_ARRAY_0061eeb8
 ;   char*[7] g_CHAR_PTR_ARRAY_0061eed4
-;   char[12] g_CHAR_ARRAY_0061eef0
+;   char[12][4] g_CHAR_ARRAY_ARRAY_0061eef0
 ;   char*[12] g_CHAR_PTR_ARRAY_0061ef20
 ;   void* PTR_s_EST_0061f630 = 0061f52c
 ;
@@ -230,7 +230,7 @@ section .text
         ;   XREF to: 005ba784 (UNCONDITIONAL_JUMP)  ; LAB_005ba784
     MOV EAX,dword ptr [EBX + 0x18]      ; 005ba551
         ;   Label: LAB_005ba551
-    MOV ESI,0x61eeb8                    ; 005ba554 | g_CHAR_ARRAY_0061eeb8
+    MOV ESI,0x61eeb8                    ; 005ba554 | g_CHAR_ARRAY_ARRAY_0061eeb8
     SHL EAX,0x2                         ; 005ba559
     ADD ESI,EAX                         ; 005ba55c
     JMP 0x005ba790                      ; 005ba55e
@@ -243,7 +243,7 @@ section .text
     MOV ESI,dword ptr [EBX + 0x10]      ; 005ba572
         ;   Label: LAB_005ba572
     SHL ESI,0x2                         ; 005ba575
-    ADD ESI,0x61eef0                    ; 005ba578 | g_CHAR_ARRAY_0061eef0
+    ADD ESI,0x61eef0                    ; 005ba578 | g_CHAR_ARRAY_ARRAY_0061eef0
     JMP 0x005ba790                      ; 005ba57e
         ;   XREF to: 005ba790 (UNCONDITIONAL_JUMP)  ; LAB_005ba790
     MOV ESI,dword ptr [EBX + 0x10]      ; 005ba583

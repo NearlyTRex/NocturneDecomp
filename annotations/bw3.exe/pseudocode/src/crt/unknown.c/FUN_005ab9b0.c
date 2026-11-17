@@ -19,7 +19,7 @@ uint FUN_005ab9b0(void)
     if (0 < g_INT_00607be0) {
       iVar2 = 0;
       do {
-        if (*(int *)(DAT_00607bdc + iVar2) == 0) {
+        if (*(int *)((int)g_SIOControlBlock_PTR_00607bdc->standard_handles + iVar2) == 0) {
           return 0;
         }
         iVar2 = iVar2 + 4;

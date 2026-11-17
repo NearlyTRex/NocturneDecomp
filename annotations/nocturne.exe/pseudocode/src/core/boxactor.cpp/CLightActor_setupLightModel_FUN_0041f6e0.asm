@@ -19,7 +19,7 @@
 ;   TerminatedCString s_lantern_d_raw_005799d1
 ;   float FLOAT_005799e1 = 0.5
 ;   double DOUBLE_005799e5 = 0.100000000000000
-;   undefined4 DAT_007647fc
+;   int g_INT_007647fc
 ;   CDemonFilter[8] g_CDemonFilter_ARRAY_0076483c
 ;
 ; Called Functions:
@@ -213,7 +213,7 @@ section .text
     MOV dword ptr [EDI + 0x231c],0x0    ; 0041f962
     MOV dword ptr [EAX + 0x138],0x42600000 ; 0041f96c
     MOV dword ptr [EDI + 0x768],0x42000000 ; 0041f976
-    MOV EDX,dword ptr [0x007647fc]      ; 0041f980 | DAT_007647fc
+    MOV EDX,dword ptr [0x007647fc]      ; 0041f980 | g_INT_007647fc
     MOV dword ptr [EDI + 0x30c],0x3     ; 0041f986
     TEST EDX,EDX                        ; 0041f990
     JNZ 0x0041f9cd                      ; 0041f992
@@ -239,7 +239,7 @@ section .text
     CMP EBX,0x8                         ; 0041f9be
     JL 0x0041f99b                       ; 0041f9c1
         ;   XREF to: 0041f99b (CONDITIONAL_JUMP)  ; LAB_0041f99b
-    MOV dword ptr [0x007647fc],0x1      ; 0041f9c3 | DAT_007647fc
+    MOV dword ptr [0x007647fc],0x1      ; 0041f9c3 | g_INT_007647fc
     PUSH 0x0                            ; 0041f9cd
         ;   Label: LAB_0041f9cd
     PUSH 0x0                            ; 0041f9cf

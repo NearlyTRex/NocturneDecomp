@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *this_ptr)
 
 {
@@ -56,10 +54,10 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
     core_dtrace_cpp_CDemonRaytrace_getBBoxMax_FUN_0046b9f0
               (&g_CDemonRaytraceInstance,(CVector3f *)local_8c);
     fVar1 = (float)0.5;
-    _DAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;
-    _DAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;
+    g_FLOAT_02dd1220 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;
+    g_FLOAT_02dd1228 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;
     local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;
-    _DAT_02dd1224 = 0.0;
+    g_FLOAT_02dd1224 = 0.0;
     local_20 = 0.0;
     if (0.0 < local_28) {
       local_20 = local_28;
@@ -75,7 +73,7 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
     }
     dVar8 = round((double)(local_20 / this_ptr->tile_size + 1.0));
     local_20 = (float)(int)ROUND(dVar8);
-    _DAT_02dd1234 = 0;
+    g_INT_02dd1234 = 0;
     iVar7 = -(int)local_20;
     local_1c = (int)local_20;
     if (SBORROW4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {
@@ -83,61 +81,64 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
         iVar5 = -local_1c;
         if (iVar5 < local_1c) {
           do {
-            local_54.x = (float)iVar7 * this_ptr->tile_size + _DAT_02dd1220;
-            local_54.y = this_ptr->water_level_y + _DAT_02dd1224;
-            local_54.z = (float)iVar5 * this_ptr->tile_size + _DAT_02dd1228;
+            local_54.x = (float)iVar7 * this_ptr->tile_size + g_FLOAT_02dd1220;
+            local_54.y = this_ptr->water_level_y + g_FLOAT_02dd1224;
+            local_54.z = (float)iVar5 * this_ptr->tile_size + g_FLOAT_02dd1228;
             local_18 = iVar5;
             engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
                       (g_CDemonRenderer_PTR_005ae704,&local_54);
-            local_78 = (int)ROUND(local_54.x * _DAT_005a3e8c);
-            local_74 = (int)ROUND(local_54.y * _DAT_005a3e8c);
-            local_70 = (int)ROUND(local_54.z * _DAT_005a3e8c);
+            local_78 = (int)ROUND(local_54.x * 256.0f);
+            local_74 = (int)ROUND(local_54.y * 256.0f);
+            local_70 = (int)ROUND(local_54.z * 256.0f);
             local_54.x = 0.0;
             local_54.y = 0.0;
             local_54.z = 0.0;
-            local_60.x = (int)ROUND(_DAT_005a3e8c * 0.0);
-            local_60.y = (int)ROUND(_DAT_005a3e8c * 0.0);
-            local_60.z = (int)ROUND(_DAT_005a3e8c * 0.0);
+            local_60.x = (int)ROUND(256.0f * 0.0);
+            local_60.y = (int)ROUND(256.0f * 0.0);
+            local_60.z = (int)ROUND(256.0f * 0.0);
             engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                       (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_60
                       );
             local_54.x = this_ptr->tile_size;
-            local_8c._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);
-            local_80 = (int)ROUND(local_54.y * _DAT_005a3e8c);
-            local_7c = (int)ROUND(local_54.z * _DAT_005a3e8c);
+            local_8c._8_4_ = (uint)ROUND(local_54.x * 256.0f);
+            local_80 = (int)ROUND(local_54.y * 256.0f);
+            local_7c = (int)ROUND(local_54.z * 256.0f);
             engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                       (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,
                        (CVector3i *)(local_8c + 8));
             local_54.z = this_ptr->tile_size;
-            local_44._8_4_ = (uint)ROUND(local_54.x * _DAT_005a3e8c);
-            local_38 = (int)ROUND(local_54.y * _DAT_005a3e8c);
-            local_34 = (int)ROUND(local_54.z * _DAT_005a3e8c);
+            local_44._8_4_ = (uint)ROUND(local_54.x * 256.0f);
+            local_38 = (int)ROUND(local_54.y * 256.0f);
+            local_34 = (int)ROUND(local_54.z * 256.0f);
             engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                       (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,
                        (CVector3i *)(local_44 + 8));
             local_54.x = 0.0;
-            local_6c.x = (int)ROUND(_DAT_005a3e8c * 0.0);
-            local_6c.y = (int)ROUND(local_54.y * _DAT_005a3e8c);
-            local_6c.z = (int)ROUND(local_54.z * _DAT_005a3e8c);
+            local_6c.x = (int)ROUND(256.0f * 0.0);
+            local_6c.y = (int)ROUND(local_54.y * 256.0f);
+            local_6c.z = (int)ROUND(local_54.z * 256.0f);
             engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                       (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
                        &local_6c);
             iVar6 = INT_005ae708;
-            uVar3 = DAT_005c5024 & DAT_005c5054 & DAT_005c5084 & DAT_005c50b4;
+            uVar3 = g_SRenderVertex_ARRAY_005c5014[0].projected_vertex.screen_x &
+                    g_SRenderVertex_ARRAY_005c5014[1].projected_vertex.screen_x &
+                    g_SRenderVertex_ARRAY_005c5014[2].projected_vertex.screen_x &
+                    g_SRenderVertex_ARRAY_005c5014[3].projected_vertex.screen_x;
             if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
               INT_005ae708 = 0x10;
               iVar4 = engine_drender_cpp_CDemonRenderer_renderDepthProfiledDirect_FUN_0045f190
                                 (g_CDemonRenderer_PTR_005ae704,
                                  (SMRGLHeaderPrimitive *)&stack0xffffff48);
               if (iVar4 != 0) {
-                if (0xfff < _DAT_02dd1234) {
+                if (0xfff < g_INT_02dd1234) {
                   g_CurrentFilename = "..\\core\\water.cpp";
                   g_CurrentLineNumber = 310;
                   core_main_c_displayErrorAndQuit_FUN_004c8440("Too many visible water tiles!");
                 }
-                *(int *)(&DAT_02dd1238 + _DAT_02dd1234 * 4) = iVar7;
-                *(int *)(&DAT_02dd5238 + _DAT_02dd1234 * 4) = iVar5;
-                _DAT_02dd1234 = _DAT_02dd1234 + 1;
+                g_INT_ARRAY_02dd1238[g_INT_02dd1234] = iVar7;
+                g_INT_ARRAY_02dd5238[g_INT_02dd1234] = iVar5;
+                g_INT_02dd1234 = g_INT_02dd1234 + 1;
               }
             }
             iVar5 = iVar5 + 1;
@@ -147,8 +148,8 @@ void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_00550800(CWater *th
         iVar7 = iVar7 + 1;
       } while (iVar7 < (int)local_20);
     }
-    iVar7 = _DAT_02dd1234;
-    fVar1 = (float)_DAT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
+    iVar7 = g_INT_02dd1234;
+    fVar1 = (float)g_INT_02dd1234 * this_ptr->tile_size * this_ptr->tile_size;
     this_ptr->visible_area_sqft = fVar1;
     engine_console_cpp_CConsole_printf_FUN_0043ac60
               (g_CConsolePtr,"Vis water tiles : %d, SqFt : %f",iVar7,(double)fVar1);

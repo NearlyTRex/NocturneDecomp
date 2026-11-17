@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 142,
+    "complexity_score": 101,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 20,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 263
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 101,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 262
   },
   "cross_references": [
     {
@@ -92,9 +89,9 @@
     },
     {
       "addr": "005b7648",
-      "name": "DAT_005b7648",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005b7648",
+      "type": "int",
+      "value": "0x10000"
     },
     {
       "addr": "01c00c58",
@@ -122,20 +119,20 @@
     },
     {
       "addr": "01c039d0",
-      "name": "DAT_01c039d0",
-      "type": "undefined4",
+      "name": "g_INT_01c039d0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039d4",
-      "name": "DAT_01c039d4",
-      "type": "undefined4",
+      "name": "g_INT_01c039d4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039d8",
-      "name": "DAT_01c039d8",
-      "type": "undefined4",
+      "name": "g_INT_01c039d8",
+      "type": "int",
       "value": null
     },
     {
@@ -373,30 +370,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 63,
-      "match": "DAT_005b7648",
-      "severity": "mild",
-      "text": "iVar16 = DAT_005b7648;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 85,
-      "match": "DAT_005b7648",
-      "severity": "mild",
-      "text": "iVar16 = DAT_005b7648;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

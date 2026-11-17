@@ -17,7 +17,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01c6750c
+;   int g_INT_01c6750c
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -34,7 +34,7 @@ section .text
     MOV EDX,dword ptr [ESP + 0x14]      ; 0048c4a5
     PUSH dword ptr [ESP + 0x1c]         ; 0048c4a9
     PUSH EDX                            ; 0048c4ad
-    MOV EDX,dword ptr [0x01c6750c]      ; 0048c4ae | DAT_01c6750c
+    MOV EDX,dword ptr [0x01c6750c]      ; 0048c4ae | g_INT_01c6750c
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048c4b4
     SUB EAX,EDX                         ; 0048c4bb
     SHL EAX,0x2                         ; 0048c4bd
@@ -46,10 +46,10 @@ section .text
     PUSH EAX                            ; 0048c4cf
     CALL core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50 ; 0048c4d0
         ;   XREF to: 00488b50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_activateDirectional_FUN_00488b50(CLightningBolt * this_ptr, CVector3f * start_position, CVector3f * end_position, float end_width, ...)
-    MOV EBX,dword ptr [0x01c6750c]      ; 0048c4d5 | DAT_01c6750c
+    MOV EBX,dword ptr [0x01c6750c]      ; 0048c4d5 | g_INT_01c6750c
     INC EBX                             ; 0048c4db
     ADD ESP,0x14                        ; 0048c4dc
-    MOV dword ptr [0x01c6750c],EBX      ; 0048c4df | DAT_01c6750c
+    MOV dword ptr [0x01c6750c],EBX      ; 0048c4df | g_INT_01c6750c
     CMP EBX,0xa                         ; 0048c4e5
     JGE 0x0048c4f3                      ; 0048c4e8
         ;   XREF to: 0048c4f3 (CONDITIONAL_JUMP)  ; LAB_0048c4f3
@@ -61,7 +61,7 @@ section .text
     PUSH EDI                            ; 0048c4f3
         ;   Label: LAB_0048c4f3
     XOR EDI,EDI                         ; 0048c4f4
-    MOV dword ptr [0x01c6750c],EDI      ; 0048c4f6 | DAT_01c6750c
+    MOV dword ptr [0x01c6750c],EDI      ; 0048c4f6 | g_INT_01c6750c
     POP EDI                             ; 0048c4fc
     CMP dword ptr [ESP + 0x14],0x0      ; 0048c4fd
     JNZ 0x0048c506                      ; 0048c502

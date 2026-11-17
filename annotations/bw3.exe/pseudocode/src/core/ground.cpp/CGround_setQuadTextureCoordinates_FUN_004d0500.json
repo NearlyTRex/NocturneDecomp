@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 15,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "raw_address_constant"
+    ],
     "total_lines": 79
   },
   "cross_references": [
@@ -160,5 +162,38 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 8,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[this_ptr->vertex_indices[1]].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 9,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[this_ptr->vertex_indices[1]].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 11,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[this_ptr->vertex_indices[0]].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 14,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_0060b014[this_ptr->vertex_indices[2]].u = 0xf80000;",
+      "type": "raw_address_constant"
+    }
+  ]
 }

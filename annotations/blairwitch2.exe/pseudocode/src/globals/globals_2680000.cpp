@@ -7,6 +7,10 @@
 // CVector3i
 CVector3i g_CVector3i_026810c0 = {};
 
+// FileListNode*
+FileListNode* g_FileListNode_PTR_02680160 = {};
+FileListNode* g_FileListNode_PTR_02680164 = {};
+
 // WCHAR*
 WCHAR* g_WCHAR_PTR_02680178 = {};
 
@@ -50,6 +54,10 @@ void* g_PTR_0268017c = {};
 void* g_PTR_02681078 = {};
 void* g_PTR_026810a0 = {};
 void* g_PTR_026810b0 = {};
+
+// wchar_t[260]
+wchar_t g_WCHAR_T_ARRAY_02680284[260] = {};
+wchar_t g_WCHAR_T_ARRAY_02680590[260] = {};
 
 // word
 word DAT_026820D6 = 0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 uint FUN_00571280(uint param_1,int param_2)
 
 {
@@ -27,8 +25,8 @@ uint FUN_00571280(uint param_1,int param_2)
       ptr[2] = param_2;
       ptr[1] = param_1;
       ptr[3] = (uint)*(byte *)(param_2 + 0x52);
-      *ptr = _DAT_02de5d70;
-      _DAT_02de5d70 = ptr;
+      *ptr = g_PTR_02de5d70;
+      g_PTR_02de5d70 = (byte *)ptr;
     }
     else {
       free(ptr);

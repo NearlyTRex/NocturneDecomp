@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 82,
+    "complexity_score": 44,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 4,
+    "pseudocode_lines": 29,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
       "unresolved_funcptr"
     ],
-    "total_lines": 101
+    "total_lines": 98
   },
   "cross_references": [],
   "function": {
@@ -140,32 +139,8 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 11,
-      "match": "*(int **)(sfx_handle * 4 + 0x2dc92a8",
-      "severity": "moderate",
-      "text": "piVar1 = *(int **)(sfx_handle * 4 + 0x2dc92a8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "error_code = (**(code **)(*piVar1 + 0x48))(piVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*piVar1 + 8))(piVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
+      "line": 23,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",

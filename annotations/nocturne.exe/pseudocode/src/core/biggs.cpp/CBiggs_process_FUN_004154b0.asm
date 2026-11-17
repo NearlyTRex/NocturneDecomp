@@ -24,7 +24,7 @@
 ;   double DOUBLE_00578e26 = 32
 ;   float FLOAT_0059a5a0 = 4
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
@@ -217,7 +217,7 @@ section .text
     ADD ESP,0x8                         ; 004156a0
     LEA EAX,[EBX + 0xcad4]              ; 004156a3
     PUSH EAX                            ; 004156a9
-    MOV ECX,dword ptr [0x005b7650]      ; 004156aa | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 004156aa | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 004156b0
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004156b1
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

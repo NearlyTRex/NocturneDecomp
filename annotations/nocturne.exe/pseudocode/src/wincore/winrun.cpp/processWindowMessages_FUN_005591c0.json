@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 77,
+    "complexity_score": 51,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 95
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -96,20 +95,20 @@
     },
     {
       "addr": "005c1660",
-      "name": "DAT_005c1660",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1660",
+      "type": "int",
+      "value": "-0x1"
     },
     {
       "addr": "005c1664",
-      "name": "DAT_005c1664",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1664",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "02de20a0",
-      "name": "DAT_02de20a0",
-      "type": "undefined4",
+      "name": "g_INT_02de20a0",
+      "type": "int",
       "value": null
     }
   ],
@@ -184,36 +183,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_INT_ARRAY_02de20b0",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_INT_ARRAY_02de20b0 + iVar3) == 1) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_01c02598",
-      "severity": "mild",
-      "text": "(&DAT_01c02598)[iVar1] = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005c1660",
-      "severity": "mild",
-      "text": "if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (DAT_005c1664 == 0)) break;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_005c1664",
-      "severity": "mild",
-      "text": "if (((DAT_005c1660 != 0) || (_DAT_02de20a0 != 0)) || (DAT_005c1664 == 0)) break;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)g_INT_ARRAY_02de20b0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_INT_ARRAY_02de20b0 + iVar3) = 0;",
+      "type": "pointer_cast"
     }
   ]
 }

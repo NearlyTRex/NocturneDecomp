@@ -6,33 +6,36 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools *this_ptr)
 
 {
-  int iVar1;
+  char *pcVar1;
+  int iVar2;
   
-  if (_DAT_01bcd07c < 1) {
+  if (g_INT_01bcd07c < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 1816;
     core_main_c_displayErrorAndQuit_FUN_004c8440("CEditorTools::popWindow() called but no window was opened!");
   }
-  _DAT_01bcd07c = _DAT_01bcd07c + -1;
-  iVar1 = _DAT_01bcd07c * 0x1d8;
-  if (*(void **)(iVar1 + 0x1bcd248) != (void *)0x0) {
-    free(*(void **)(iVar1 + 0x1bcd248));
-    *(uint *)(iVar1 + 0x1bcd248) = 0;
+  g_INT_01bcd07c = g_INT_01bcd07c + -1;
+  iVar2 = g_INT_01bcd07c * 0x1d8;
+  if (*(void **)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x1c8) != (void *)0x0) {
+    free(*(void **)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x1c8));
+    pcVar1 = g_CHAR_ARRAY_01bcd080 + iVar2 + 0x1c8;
+    pcVar1[0] = '\0';
+    pcVar1[1] = '\0';
+    pcVar1[2] = '\0';
+    pcVar1[3] = '\0';
   }
-  g_ClipLeft = *(int *)(iVar1 + 0x1bcd090);
-  g_ClipTop = *(int *)(iVar1 + 0x1bcd094);
-  g_ClipRight = *(int *)(iVar1 + 0x1bcd098);
-  g_ClipBottom = *(int *)(iVar1 + 0x1bcd09c);
-  g_Projection.half_width_fixed = *(int *)(iVar1 + 0x1bcd0a0);
-  g_Projection.neg_half_height_fixed = *(int *)(iVar1 + 0x1bcd0a4);
-  g_Projection.center_x_fixed = *(int *)(iVar1 + 0x1bcd0a8);
-  g_Projection.center_y_fixed = *(int *)(iVar1 + 0x1bcd0ac);
-  g_ViewportWidth = *(int *)(iVar1 + 0x1bcd0b0);
-  g_ViewportHeight = *(int *)(iVar1 + 0x1bcd0b4);
+  g_ClipLeft = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x10);
+  g_ClipTop = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x14);
+  g_ClipRight = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x18);
+  g_ClipBottom = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x1c);
+  g_Projection.half_width_fixed = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x20);
+  g_Projection.neg_half_height_fixed = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x24);
+  g_Projection.center_x_fixed = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x28);
+  g_Projection.center_y_fixed = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x2c);
+  g_ViewportWidth = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x30);
+  g_ViewportHeight = *(int *)(g_CHAR_ARRAY_01bcd080 + iVar2 + 0x34);
   return;
 }

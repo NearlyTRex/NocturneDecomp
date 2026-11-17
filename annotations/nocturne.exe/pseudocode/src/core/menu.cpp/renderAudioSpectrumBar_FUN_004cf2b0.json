@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 88,
+    "complexity_score": 125,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 6,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "raw_address_constant",
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 183
+    "total_lines": 180
   },
   "cross_references": [
     {
@@ -72,20 +72,20 @@
     },
     {
       "addr": "005bae58",
-      "name": "DAT_005bae58",
-      "type": "undefined4",
+      "name": "g_SMRGLTextureBasic_ARRAY_005bae58",
+      "type": "SMRGLTextureBasic[8]",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01cc5b64",
-      "name": "DAT_01cc5b64",
-      "type": "undefined4",
+      "name": "g_INT_01cc5b64",
+      "type": "int",
       "value": null
     }
   ],
@@ -282,20 +282,52 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 28,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005bae58",
-      "severity": "mild",
-      "text": "(&DAT_005bae58 +",
-      "type": "undefined_data"
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 29,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[1].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 30,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 31,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr->vertex_buffer_ptr[2].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 49,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(((int)((g_INT_01cc5b64 + (g_INT_01cc5b64 >> 0x1f) * -0x10000) -",
+      "type": "signed_shift_global_idiom"
+    },
+    {
+      "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
+      "line": 50,
+      "match": "g_Global >> 0x1f",
+      "severity": "moderate",
+      "text": "(uint)((g_INT_01cc5b64 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7));",
+      "type": "signed_shift_global_idiom"
     }
   ]
 }

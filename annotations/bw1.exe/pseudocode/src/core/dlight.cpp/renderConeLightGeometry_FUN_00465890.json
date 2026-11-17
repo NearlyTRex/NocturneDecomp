@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 174,
+    "complexity_score": 219,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 159,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "raw_address_constant",
       "unknown_type"
     ],
     "total_lines": 513
@@ -145,8 +146,8 @@
     },
     {
       "addr": "006122a8",
-      "name": "g_SMRGLTextureBasic_006122a8",
-      "type": "SMRGLTextureBasic",
+      "name": "g_SLightGlowTable_006122a8",
+      "type": "SLightGlowTable",
       "value": null
     },
     {
@@ -607,6 +608,38 @@
       "severity": "mild",
       "text": "unkbyte10 Var10;",
       "type": "unknown_type"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 126,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 127,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 133,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 144,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar3->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
     }
   ]
 }

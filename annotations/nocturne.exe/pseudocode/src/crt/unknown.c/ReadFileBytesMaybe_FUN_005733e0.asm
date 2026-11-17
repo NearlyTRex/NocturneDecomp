@@ -19,10 +19,10 @@
 ;   void* PTR_ReadFile_0057557c = 00175f40
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   undefined4 DAT_005c1d54
-;   undefined4 DAT_005c1d7c
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f90
+;   void* g_PTR_005c1d54 = 00000000
+;   void* g_PTR_005c1d7c = 00000000
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   uint g_UINT_005c1f90 = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
@@ -49,7 +49,7 @@ section .text
     TEST EDX,EDX                        ; 005733f3
     JL 0x005733ff                       ; 005733f5
         ;   XREF to: 005733ff (CONDITIONAL_JUMP)  ; LAB_005733ff
-    CMP EDX,dword ptr [0x005c1f90]      ; 005733f7 | DAT_005c1f90
+    CMP EDX,dword ptr [0x005c1f90]      ; 005733f7 | g_UINT_005c1f90
     JBE 0x00573413                      ; 005733fd
         ;   XREF to: 00573413 (CONDITIONAL_JUMP)  ; LAB_00573413
     PUSH 0x4                            ; 005733ff
@@ -60,7 +60,7 @@ section .text
     ADD ESP,0x4                         ; 0057340b
     JMP 0x005735e1                      ; 0057340e
         ;   XREF to: 005735e1 (UNCONDITIONAL_JUMP)  ; LAB_005735e1
-    MOV EAX,[0x005c1f54]                ; 00573413 | DAT_005c1f54
+    MOV EAX,[0x005c1f54]                ; 00573413 | g_SIOControlBlock_PTR_005c1f54
         ;   Label: LAB_00573413
     MOV EAX,dword ptr [EAX + EDX*0x4]   ; 00573418
     PUSH EDX                            ; 0057341b
@@ -110,11 +110,11 @@ section .text
         ;   Label: LAB_0057347d
     JZ 0x005734f7                       ; 00573480
         ;   XREF to: 005734f7 (CONDITIONAL_JUMP)  ; LAB_005734f7
-    CMP dword ptr [0x005c1d7c],0x0      ; 00573482 | DAT_005c1d7c
+    CMP dword ptr [0x005c1d7c],0x0      ; 00573482 | g_PTR_005c1d7c
     JZ 0x005734ac                       ; 00573489
         ;   XREF to: 005734ac (CONDITIONAL_JUMP)  ; LAB_005734ac
     PUSH ESI                            ; 0057348b
-    CALL dword ptr [0x005c1d54]         ; 0057348c | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 0057348c | g_PTR_005c1d54
     ADD ESP,0x4                         ; 00573492
     TEST EAX,EAX                        ; 00573495
     JZ 0x005734ac                       ; 00573497
@@ -122,7 +122,7 @@ section .text
     PUSH EDI                            ; 00573499
     PUSH EBP                            ; 0057349a
     PUSH EAX                            ; 0057349b
-    CALL dword ptr [0x005c1d7c]         ; 0057349c | DAT_005c1d7c
+    CALL dword ptr [0x005c1d7c]         ; 0057349c | g_PTR_005c1d7c
     ADD ESP,0xc                         ; 005734a2
     MOV ESI,EAX                         ; 005734a5
     JMP 0x005735d1                      ; 005734a7
@@ -160,13 +160,13 @@ section .text
     MOV dword ptr [ESP + 0x4],EDI       ; 005734f7
         ;   Label: LAB_005734f7
     XOR ESI,ESI                         ; 005734fb
-    CMP dword ptr [0x005c1d7c],0x0      ; 005734fd | DAT_005c1d7c
+    CMP dword ptr [0x005c1d7c],0x0      ; 005734fd | g_PTR_005c1d7c
         ;   Label: LAB_005734fd
     JZ 0x0057352d                       ; 00573504
         ;   XREF to: 0057352d (CONDITIONAL_JUMP)  ; LAB_0057352d
     MOV EAX,dword ptr [ESP + 0x24]      ; 00573506
     PUSH EAX                            ; 0057350a
-    CALL dword ptr [0x005c1d54]         ; 0057350b | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 0057350b | g_PTR_005c1d54
     ADD ESP,0x4                         ; 00573511
     TEST EAX,EAX                        ; 00573514
     JZ 0x0057352d                       ; 00573516
@@ -175,7 +175,7 @@ section .text
     PUSH EDI                            ; 0057351c
     PUSH EBP                            ; 0057351d
     PUSH EAX                            ; 0057351e
-    CALL dword ptr [0x005c1d7c]         ; 0057351f | DAT_005c1d7c
+    CALL dword ptr [0x005c1d7c]         ; 0057351f | g_PTR_005c1d7c
     ADD ESP,0xc                         ; 00573525
     MOV dword ptr [ESP],EAX             ; 00573528
     JMP 0x00573569                      ; 0057352b

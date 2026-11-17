@@ -21,8 +21,8 @@ int __cdecl heapWalk(HeapState *heap_state_ptr,Heap *heap_ptr)
     pHVar2 = (Heap *)&heap_ptr[3].next_heap_block;
   }
   else {
-    pHVar2 = DAT_005c1680->next_heap_block;
-    heap_ptr = DAT_005c1680;
+    pHVar2 = g_Heap_PTR_005c1680->next_heap_block;
+    heap_ptr = g_Heap_PTR_005c1680;
     while ((pHVar2 != (Heap *)0x0 &&
            ((pHVar1 < heap_ptr ||
             ((Heap *)((int)&heap_ptr->heap_size + heap_ptr->heap_size) <= pHVar1))))) {
@@ -35,12 +35,12 @@ int __cdecl heapWalk(HeapState *heap_state_ptr,Heap *heap_ptr)
     }
   }
   while( true ) {
-    if ((Heap *)pHVar2->heap_size != (Heap *)0xffffffff) {
+    if (pHVar2->heap_size != -1) {
       heap_state_ptr->allocation_status = 1;
       heap_state_ptr->segment_selector = in_DS;
       heap_state_ptr->current_block_ptr = pHVar2;
-      heap_state_ptr->block_size = (uint)pHVar2->heap_size & 0xfffffffe;
-      if (((uint)pHVar2->heap_size & 1) != 0) {
+      heap_state_ptr->block_size = pHVar2->heap_size & 0xfffffffe;
+      if ((pHVar2->heap_size & 1) != 0) {
         heap_state_ptr->allocation_status = 0;
       }
       return 0;

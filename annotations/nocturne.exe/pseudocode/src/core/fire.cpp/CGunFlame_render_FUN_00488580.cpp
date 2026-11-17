@@ -61,8 +61,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_00488580(CGunFlame *this_ptr)
   dVar14 = round((double)this_ptr->anim_frame);
   fStack_2c = (float)(int)ROUND(dVar14);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)((int)fStack_2c * 0x18 + 0x1c09c28))
-  ;
+            (g_CDemonRenderer_PTR_005ae704,g_SMRGLTextureBasic_ARRAY_01c09c28 + (int)fStack_2c);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0

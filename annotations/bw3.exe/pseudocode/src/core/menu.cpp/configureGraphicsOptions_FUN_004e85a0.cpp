@@ -55,7 +55,7 @@ void __cdecl core_menu_cpp_configureGraphicsOptions_FUN_004e85a0(void)
     this_ptr = g_CDemonSetPtr;
     g_CDemonSetPtr->rendering_mode = 1;
     core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
-    pcVar6 = &DAT_005c73f6;
+    pcVar6 = "tridx7.dll";
     g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     pcVar7 = g_CHAR_ARRAY_00606730;

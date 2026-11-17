@@ -29,12 +29,12 @@ void __cdecl core_spike_cpp_CSpike_process_FUN_00533210(CSpike *this_ptr,float d
   if ((this_ptr->spike_type == SPIKE_TYPE_PERIODIC) || (this_ptr->spike_type == SPIKE_TYPE_RANDOM))
   {
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->start_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->start_event);
     if (iVar5 != 0) {
       this_ptr->are_we_active = 1;
     }
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->stop_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->stop_event);
     if (iVar5 == 0) goto LAB_005333e2;
     this_ptr->are_we_active = 0;
 LAB_00533279:
@@ -47,12 +47,12 @@ LAB_00533279:
   }
   else {
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->extend_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->extend_event);
     if (iVar5 != 0) {
       this_ptr->are_we_active = 1;
     }
     iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->retract_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->retract_event);
     if (iVar5 == 0) {
 LAB_005333e2:
       if (this_ptr->are_we_active == 0) goto LAB_00533279;

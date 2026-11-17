@@ -73,7 +73,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
           aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
                *(int *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           puVar7 = (uint *)(local_30 + 0x95648c + (uint)bVar10 * -8);
-          *(int *)((int)&g_CVector3i_ARRAY_00956488[0].x + local_30) = local_54.x;
+          *(int *)((int)&g_CVector3i_ARRAY_ARRAY_00956488[0][0].x + local_30) = local_54.x;
           *puVar7 = *(uint *)((int)&local_54 + (uint)bVar10 * -8 + 4);
           puVar7[(uint)bVar10 * -2 + 1] =
                *(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
@@ -97,11 +97,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
           local_30 = local_30 + 0xc;
           local_28 = local_28 + 1;
           local_2c = local_2c + 4;
-          *(float *)((int)&g_CVector3f_ARRAY_00a38388[0].x + iVar4) =
+          *(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a38388[0][0].x + iVar4) =
                (float)(short)(char)(*local_24 >> 0x10) * fVar1;
-          *(float *)((int)&g_CVector3f_ARRAY_00a38388[0].y + iVar4) =
+          *(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a38388[0][0].y + iVar4) =
                (float)(short)(char)(uVar9 >> 8) * fVar1;
-          *(float *)((int)&g_CVector3f_ARRAY_00a38388[0].z + iVar4) =
+          *(float *)((int)&g_CVector3f_ARRAY_ARRAY_00a38388[0][0].z + iVar4) =
                (float)(short)(char)uVar3 * fVar1;
           iVar4 = iVar4 + 0xc;
         } while (local_28 < this_ptr->display_width);
@@ -115,7 +115,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
   this_ptr->max_distance = (float)local_88 * (float)0.00390625;
   core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_0044f750(this_ptr);
   g_INT_00b9e554 = 0;
-  g_INT_012a6558 = 0;
+  g_SCoronaLightCache_012a6558.count = 0;
   g_INT_013405b4 = 0;
   if (0x1df < this_ptr->framebuffer_height) {
     local_1c = this_ptr->scale_factor;
@@ -156,17 +156,16 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044b070(CDemon
                                 ((int)uVar9 >> (g_BIT_INTEGER32_013405b0.bytes[0] & 0x1f)) +
                                 *(int *)((int)g_INT_ARRAY_005f17f0 + iVar5)] ^ uVar3) - uVar3;
               if (iVar2 < iVar6) {
-                *(int *)(g_INT_013405b4 * 0xc + 0x13405b8) =
+                g_SCameraEdge_ARRAY_013405b8[g_INT_013405b4].v =
                      *(int *)((int)g_INT_ARRAY_005f17f0 + iVar5) +
                      *(int *)((int)g_INT_ARRAY_005f1810 + iVar5) * 0x140;
                 iVar6 = iVar2;
               }
               iVar5 = iVar5 + 4;
             } while (iVar5 != 0x20);
-            iVar4 = g_INT_013405b4 * 0xc;
-            if (*(int *)(iVar4 + 0x13405b8) != 0) {
-              *(uint *)(iVar4 + 0x13405bc) = uVar9;
-              *(uint *)(iVar4 + 0x13405c0) = local_1c;
+            if (g_SCameraEdge_ARRAY_013405b8[g_INT_013405b4].v != 0) {
+              g_SCameraEdge_ARRAY_013405b8[g_INT_013405b4].x = uVar9;
+              g_SCameraEdge_ARRAY_013405b8[g_INT_013405b4].y = local_1c;
               g_INT_013405b4 = g_INT_013405b4 + 1;
             }
           }

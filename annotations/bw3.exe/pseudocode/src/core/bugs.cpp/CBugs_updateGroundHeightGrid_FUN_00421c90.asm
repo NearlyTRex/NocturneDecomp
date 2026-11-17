@@ -51,8 +51,8 @@
 ;   float g_FLOAT_005b7841 = 11
 ;   double g_DOUBLE_005b7849 = 0.5
 ;   float g_FLOAT_005dcbc8 = 0.25
-;   float[12] g_FLOAT_ARRAY_007e1a54
-;   undefined4 g_FLOAT_ARRAY_007e1a54[1]
+;   float[12][12] g_FLOAT_ARRAY_ARRAY_007e1a54
+;   undefined4 g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -203,20 +203,20 @@ section .text
     MOV EAX,dword ptr [ESP + 0x88]      ; 00421e71
     MOV ECX,0x240                       ; 00421e78
     ADD EAX,0xb                         ; 00421e7d
-    MOV EDI,0x7e1a54                    ; 00421e80 | g_FLOAT_ARRAY_007e1a54
+    MOV EDI,0x7e1a54                    ; 00421e80 | g_FLOAT_ARRAY_ARRAY_007e1a54
     MOV dword ptr [ESP + 0x80],EAX      ; 00421e85
     MOV EAX,dword ptr [ESP + 0x84]      ; 00421e8c
     MOV ESI,dword ptr [ESP + 0xac]      ; 00421e93
     ADD EAX,0xb                         ; 00421e9a
     ADD ESI,0x135dc                     ; 00421e9d
     MOV dword ptr [ESP + 0x7c],EAX      ; 00421ea3
-    PUSH EDI                            ; 00421ea7 | g_FLOAT_ARRAY_007e1a54
+    PUSH EDI                            ; 00421ea7 | g_FLOAT_ARRAY_ARRAY_007e1a54
     MOV EAX,ECX                         ; 00421ea8
     SHR ECX,0x2                         ; 00421eaa
-    MOVSD.REP ES:EDI,ESI                ; 00421ead | g_FLOAT_ARRAY_007e1a54 | g_FLOAT_ARRAY_007e1a54[1]
+    MOVSD.REP ES:EDI,ESI                ; 00421ead | g_FLOAT_ARRAY_ARRAY_007e1a54 | g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]
     MOV CL,AL                           ; 00421eaf
     AND CL,0x3                          ; 00421eb1
-    MOVSB.REP ES:EDI,ESI                ; 00421eb4 | g_FLOAT_ARRAY_007e1a54[1]
+    MOVSB.REP ES:EDI,ESI                ; 00421eb4 | g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]
     POP EDI                             ; 00421eb6
     MOV ESI,dword ptr [ESP + 0xac]      ; 00421eb7
     LEA EDI,[ESP + 0x3c]                ; 00421ebe
@@ -283,7 +283,7 @@ section .text
     CMP EBX,dword ptr [ESP + 0x7c]      ; 00421fb5
     JG 0x00422030                       ; 00421fb9
         ;   XREF to: 00422030 (CONDITIONAL_JUMP)  ; LAB_00422030
-    MOV EAX,dword ptr [ESI + 0x7e1a54]  ; 00421fbb | g_FLOAT_ARRAY_007e1a54 | g_FLOAT_ARRAY_007e1a54[1]
+    MOV EAX,dword ptr [ESI + 0x7e1a54]  ; 00421fbb | g_FLOAT_ARRAY_ARRAY_007e1a54 | g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]
     MOV dword ptr [EDI + 0x135dc],EAX   ; 00421fc1
     ADD EDI,0x4                         ; 00421fc7
         ;   Label: LAB_00421fc7

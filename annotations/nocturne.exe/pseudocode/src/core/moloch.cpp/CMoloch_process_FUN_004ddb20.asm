@@ -39,7 +39,7 @@
 ;   double DOUBLE_0058a7fa = 1.57079632675000
 ;   double DOUBLE_0058a802 = 1.59386252192652E-314
 ;   double DOUBLE_0058a80a = 3.14159265350000
-;   undefined4 DAT_005a0ab8
+;   float g_FLOAT_005a0ab8 = 2
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   ... and 4 more
 ;
@@ -316,7 +316,7 @@ section .text
         ;   XREF to: 004de174 (CONDITIONAL_JUMP)  ; LAB_004de174
     LEA EAX,[EBX + 0x21cfc]             ; 004ddddd
     PUSH EAX                            ; 004ddde3
-    MOV EDI,dword ptr [0x005b7650]      ; 004ddde4 | DAT_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 004ddde4 | g_CEventList_PTR_005b7650
     PUSH EDI                            ; 004dddea
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004dddeb
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -540,7 +540,7 @@ section .text
     FLD float ptr [EBX + 0x21cf8]       ; 004de053
     FADD float ptr [EBP + 0x18]         ; 004de059
     FST float ptr [EBX + 0x21cf8]       ; 004de05c
-    FCOMP float ptr [0x005a0ab8]        ; 004de062 | DAT_005a0ab8
+    FCOMP float ptr [0x005a0ab8]        ; 004de062 | g_FLOAT_005a0ab8
     FNSTSW AX                           ; 004de068
     SAHF                                ; 004de06a
     JBE 0x004ddb3b                      ; 004de06b
@@ -629,7 +629,7 @@ section .text
     LEA EAX,[EBX + 0x21d60]             ; 004de174
         ;   Label: LAB_004de174
     PUSH EAX                            ; 004de17a
-    MOV ESI,dword ptr [0x005b7650]      ; 004de17b | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004de17b | g_CEventList_PTR_005b7650
     PUSH ESI                            ; 004de181
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004de182
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

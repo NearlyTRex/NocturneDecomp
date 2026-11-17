@@ -24,7 +24,7 @@
 ;   CBitFont* g_CBitFont_PTR_014b9900
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.act_completion_state
-;   undefined4 DAT_01cae0d4
+;   int g_INT_01cae0d4
 ;   int g_LocalHeroIndex
 ;   char* g_CurrentFilename
 ;   ... and 2 more
@@ -58,7 +58,7 @@ section .text
     PUSH EBP                            ; 004d9443
     MOV EBX,dword ptr [ESP + 0x14]      ; 004d9444
     MOV EBP,0x1                         ; 004d9448
-    CMP EBP,dword ptr [0x01cae0d4]      ; 004d944d | DAT_01cae0d4
+    CMP EBP,dword ptr [0x01cae0d4]      ; 004d944d | g_INT_01cae0d4
         ;   Label: LAB_004d944d
     JG 0x004d9525                       ; 004d9453
         ;   XREF to: 004d9525 (CONDITIONAL_JUMP)  ; LAB_004d9525
@@ -86,7 +86,7 @@ section .text
     ADD ESP,0x8                         ; 004d94a0
     XOR AH,AH                           ; 004d94a3
     PUSH EBX                            ; 004d94a5
-    MOV byte ptr [0x01ccbbf0],AH        ; 004d94a6 | DAT_01ccbbf0
+    MOV byte ptr [0x01ccbbf0],AH        ; 004d94a6 | g_CHAR_ARRAY_01ccbbf0
     CALL core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180 ; 004d94ac
         ;   XREF to: 004d9180 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004d94b1
@@ -114,7 +114,7 @@ section .text
     TEST EDI,EDI                        ; 004d94f5
     JZ 0x004d9502                       ; 004d94f7
         ;   XREF to: 004d9502 (CONDITIONAL_JUMP)  ; LAB_004d9502
-    CMP byte ptr [0x01ccbbf0],0x0       ; 004d94f9 | DAT_01ccbbf0
+    CMP byte ptr [0x01ccbbf0],0x0       ; 004d94f9 | g_CHAR_ARRAY_01ccbbf0
     JNZ 0x004d954d                      ; 004d9500
         ;   XREF to: 004d954d (CONDITIONAL_JUMP)  ; LAB_004d954d
     PUSH 0x1                            ; 004d9502
@@ -168,7 +168,7 @@ section .text
         ;   Label: LAB_004d957c
     ADD ESP,0x10                        ; 004d9581
     PUSH 0x0                            ; 004d9584
-    PUSH 0x1ccbbf0                      ; 004d9586 | DAT_01ccbbf0
+    PUSH 0x1ccbbf0                      ; 004d9586 | g_CHAR_ARRAY_01ccbbf0
     PUSH EBX                            ; 004d958b
     CALL core_mission.cpp_CDemonMission_load_FUN_004d7ee0 ; 004d958c
         ;   XREF to: 004d7ee0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_load_FUN_004d7ee0(CDemonMission * this_ptr, char * mission_filename, int load_flags)

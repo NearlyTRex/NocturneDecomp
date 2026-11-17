@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0055b700(CDirectSoundDevice *this_ptr)
 
 {
@@ -19,7 +17,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_0055b700(CDirec
   if (g_IDirectSound_PTR_02cf49c4 == (IDirectSound *)0x0) {
     iVar1 = 0;
   }
-  else if (_DAT_02cf49d0 == 0) {
+  else if (g_IDirectSound3DListener_PTR_02cf49d0 == (IDirectSound3DListener *)0x0) {
     memset(&DStack_64,0,0x60);
     DStack_64.dwSize = 0x60;
     error_code = (*g_IDirectSound_PTR_02cf49c4->vtable->GetCaps)

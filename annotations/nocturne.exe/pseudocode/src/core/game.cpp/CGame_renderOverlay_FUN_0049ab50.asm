@@ -46,9 +46,9 @@
 ;   CBitFont* g_CBitFont_PTR_014b98fc
 ;   CBitFont* g_CBitFont_PTR_014b9900
 ;   CBitFont* g_CBitFont_PTR_014b9904
-;   undefined4 DAT_01c789c0
-;   undefined4 DAT_01c78ac0
-;   undefined4 DAT_01c78ac4
+;   char[256] g_CHAR_ARRAY_01c789c0
+;   int g_INT_01c78ac0
+;   float g_FLOAT_01c78ac4
 ;   CScript g_CScriptInstance
 ;   ... and 1 more
 ;
@@ -89,7 +89,7 @@ section .text
     LEA EAX,[EAX]                       ; 0049ab91
     LEA EDX,[EDX]                       ; 0049ab97
     LEA EAX,[EAX]                       ; 0049ab9d
-    FLD float ptr [0x01c78ac4]          ; 0049aba0 | DAT_01c78ac4
+    FLD float ptr [0x01c78ac4]          ; 0049aba0 | g_FLOAT_01c78ac4
         ;   Label: LAB_0049aba0
     FLDZ                                ; 0049aba6
     FCOMPP                              ; 0049aba8
@@ -139,8 +139,8 @@ section .text
     CALL engine_3d.c_setRenderAlpha_FUN_00408370 ; 0049ac25
         ;   XREF to: 00408370 (UNCONDITIONAL_CALL)  ; int engine_3d.c_setRenderAlpha_FUN_00408370(int alpha_color_value)
     ADD ESP,0x4                         ; 0049ac2a
-    PUSH 0x1c789c0                      ; 0049ac2d | DAT_01c789c0
-    MOV ECX,dword ptr [0x01c78ac0]      ; 0049ac32 | DAT_01c78ac0
+    PUSH 0x1c789c0                      ; 0049ac2d | g_CHAR_ARRAY_01c789c0
+    MOV ECX,dword ptr [0x01c78ac0]      ; 0049ac32 | g_INT_01c78ac0
     PUSH ECX                            ; 0049ac38
     PUSH 0x5823da                       ; 0049ac39 | = "%d - %s"
     LEA EAX,[ESP + 0x18]                ; 0049ac3e

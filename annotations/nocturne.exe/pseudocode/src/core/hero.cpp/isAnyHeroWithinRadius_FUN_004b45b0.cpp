@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,float radius)
 
 {
@@ -17,7 +15,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,fl
   float fVar4;
   int iVar5;
   
-  if (0 < _DAT_01cae0d4) {
+  if (0 < g_INT_01cae0d4) {
     iVar5 = 0;
     do {
       iVar1 = *(int *)((int)g_HeroActors + iVar5);
@@ -30,7 +28,7 @@ int __cdecl core_hero_cpp_isAnyHeroWithinRadius_FUN_004b45b0(CVector3f *point,fl
         }
       }
       iVar5 = iVar5 + 4;
-    } while (iVar5 < _DAT_01cae0d4 * 4);
+    } while (iVar5 < g_INT_01cae0d4 * 4);
   }
   return 0;
 }

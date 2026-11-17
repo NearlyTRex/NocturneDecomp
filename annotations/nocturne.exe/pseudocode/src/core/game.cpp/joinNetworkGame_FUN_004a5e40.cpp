@@ -30,7 +30,7 @@ void __cdecl core_game_cpp_joinNetworkGame_FUN_004a5e40(void)
   server_ip = support_trisock_cpp_parseIPAddress_FUN_00548af0(&uStack_10,&stack0xffffff8c);
   iVar1 = core_netgame_cpp_CNetGame_initializeNetworkToJoin_FUN_004e9a90(g_CNetGamePtr,server_ip);
   if (iVar1 != 0) {
-    DAT_01c78598 = 0;
+    g_CHAR_ARRAY_01c78598[0] = '\0';
     while( true ) {
       iVar1 = core_netgame_cpp_CNetGame_runLobby_FUN_004eb520(g_CNetGamePtr);
       if (iVar1 == 0) break;

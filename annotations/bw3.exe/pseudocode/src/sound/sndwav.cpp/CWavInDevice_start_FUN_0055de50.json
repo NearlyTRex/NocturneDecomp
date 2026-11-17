@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 100,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "pseudocode_lines": 36,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
-      "raw_address_pointer_store",
       "signed_shift_global_idiom"
     ],
-    "total_lines": 127
+    "total_lines": 128
   },
   "cross_references": [],
   "function": {
@@ -190,32 +189,48 @@
   },
   "suspects": [
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 14,
-      "match": "*(void **)(iVar3 + 0x2cf5558",
+      "match": "(void **)((int)g_LPWAVEHDR_ARRAY_02cf5558",
       "severity": "moderate",
-      "text": "memset(*(void **)(iVar3 + 0x2cf5558),0,0x20);",
-      "type": "raw_address_pointer_store"
+      "text": "memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar3),0,0x20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 15,
-      "match": "(uint *)((int)g_INT_ARRAY_02cf55f8",
+      "match": "(uint **)((int)g_LPWAVEHDR_ARRAY_02cf5558",
       "severity": "moderate",
-      "text": "**(uint **)(iVar3 + 0x2cf5558) = *(uint *)((int)g_INT_ARRAY_02cf55f8 + iVar3);",
+      "text": "**(uint **)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 15,
-      "match": "*(uint **)(iVar3 + 0x2cf5558",
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)g_INT_ARRAY_02cf55f8",
       "severity": "moderate",
-      "text": "**(uint **)(iVar3 + 0x2cf5558) = *(uint *)((int)g_INT_ARRAY_02cf55f8 + iVar3);",
-      "type": "raw_address_pointer_store"
+      "text": "*(uint *)((int)g_INT_ARRAY_02cf55f8 + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5558",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar3) + 0xc) = buffer_index;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5558",
+      "severity": "moderate",
+      "text": "*(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5558 + iVar3) + 4) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 18,
+      "line": 19,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "((int)((g_INT_02cf5648 + (g_INT_02cf5648 >> 0x1f) * -8) -",
@@ -223,7 +238,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 19,
+      "line": 20,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_02cf5648 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02cf5658 * g_INT_02cf564c;",

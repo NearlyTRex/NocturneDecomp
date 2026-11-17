@@ -28,10 +28,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00460e80
   g_RenderStateFlags.dword = (RENDER_FOG_COLOR | RENDER_DEPTH_TEST | RENDER_DEPTH_WRITE);
   g_VertexPreprocessMode = 6;
   core_xform_cpp_transformAndClipGeometry_FUN_0055e040((prim->base).count,(int *)(prim + 1));
-  if (DAT_00766c70 < 3) {
+  if (g_INT_00766c70 < 3) {
     return;
   }
   engine_zraster_c_rasterizePolygonCustom_FUN_00562de0
-            ((SRenderVertex *)&DAT_00766c74,DAT_00766c70,scanline_renderer);
+            (g_SRenderVertex_ARRAY_00766c74,g_INT_00766c70,scanline_renderer);
   return;
 }

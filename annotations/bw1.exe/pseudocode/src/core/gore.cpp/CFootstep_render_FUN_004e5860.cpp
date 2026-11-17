@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int expire_flag)
 
 {
@@ -16,11 +14,11 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int
   SRenderVertex *output;
   CVector3i local_1c;
   
-  g_SMRGLHeaderPrimitive_01cd0e80.base.count = 4;
-  _DAT_01cd0e98 = 0;
-  _DAT_01cd0e9c = 1;
-  _DAT_01cd0ea0 = 2;
-  _DAT_01cd0ea4 = 3;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[1] = 1;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[3] = 3;
   g_SRenderVertex_ARRAY_00629014[0].u = 0x80000;
   g_SRenderVertex_ARRAY_00629014[0].v = 0x80000;
   g_SRenderVertex_ARRAY_00629014[1].u = 0xf80000;
@@ -32,10 +30,10 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int
   output = g_SRenderVertex_ARRAY_00629014;
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
             (g_CDemonRenderer_PTR_00612560,this_ptr->alpha);
-  g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.A.i = 0;
-  g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.B.i = 0;
-  g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.C.i = 0;
-  g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.D.i = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_0061ee2c);
   pCVar2 = this_ptr->corners;
@@ -130,7 +128,7 @@ LAB_004e59f0:
   g_SRenderVertex_ARRAY_00629014[3].b = 0;
 LAB_004e5a35:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
-            (g_CDemonRenderer_PTR_00612560,&g_SMRGLHeaderPrimitive_01cd0e80);
+            (g_CDemonRenderer_PTR_00612560,&g_SMRGLPrimitiveQuadIndex_01cd0e80.base);
   if (expire_flag != 0) {
     this_ptr->expired = 1;
     return;

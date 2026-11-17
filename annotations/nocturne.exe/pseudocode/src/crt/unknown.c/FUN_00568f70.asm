@@ -12,10 +12,10 @@
 ;   void* PTR_ReadFile_0057557c = 00175f40
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   undefined4 DAT_005c1d54
-;   undefined4 DAT_005c1d7c
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f90
+;   void* g_PTR_005c1d54 = 00000000
+;   void* g_PTR_005c1d7c = 00000000
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   uint g_UINT_005c1f90 = 0x14
 ;
 ; Called Functions:
 ;   crt_errno.c___set_errno_FUN_0056c73c
@@ -37,7 +37,7 @@ section .text
     TEST EBX,EBX                        ; 00568f7b
     JL 0x00568f87                       ; 00568f7d
         ;   XREF to: 00568f87 (CONDITIONAL_JUMP)  ; LAB_00568f87
-    CMP EBX,dword ptr [0x005c1f90]      ; 00568f7f | DAT_005c1f90
+    CMP EBX,dword ptr [0x005c1f90]      ; 00568f7f | g_UINT_005c1f90
     JBE 0x00568f9b                      ; 00568f85
         ;   XREF to: 00568f9b (CONDITIONAL_JUMP)  ; LAB_00568f9b
     PUSH 0x4                            ; 00568f87
@@ -51,13 +51,13 @@ section .text
     PUSH EBX                            ; 00568f9b
         ;   Label: LAB_00568f9b
     CALL dword ptr [0x005c1ac0]         ; 00568f9c | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
-    MOV ECX,dword ptr [0x005c1d7c]      ; 00568fa2 | DAT_005c1d7c
+    MOV ECX,dword ptr [0x005c1d7c]      ; 00568fa2 | g_PTR_005c1d7c
     ADD ESP,0x4                         ; 00568fa8
     TEST ECX,ECX                        ; 00568fab
     JZ 0x00568fe7                       ; 00568fad
         ;   XREF to: 00568fe7 (CONDITIONAL_JUMP)  ; LAB_00568fe7
     PUSH EBX                            ; 00568faf
-    CALL dword ptr [0x005c1d54]         ; 00568fb0 | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 00568fb0 | g_PTR_005c1d54
     ADD ESP,0x4                         ; 00568fb6
     TEST EAX,EAX                        ; 00568fb9
     JZ 0x00568fe7                       ; 00568fbb
@@ -67,7 +67,7 @@ section .text
     MOV ECX,dword ptr [ESP + 0x20]      ; 00568fc2
     PUSH ECX                            ; 00568fc6
     PUSH EAX                            ; 00568fc7
-    CALL dword ptr [0x005c1d7c]         ; 00568fc8 | DAT_005c1d7c
+    CALL dword ptr [0x005c1d7c]         ; 00568fc8 | g_PTR_005c1d7c
     ADD ESP,0xc                         ; 00568fce
     PUSH EBX                            ; 00568fd1
     MOV ESI,EAX                         ; 00568fd2
@@ -87,7 +87,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x28]      ; 00568fee
     PUSH EDI                            ; 00568ff2
     MOV EBP,dword ptr [ESP + 0x28]      ; 00568ff3
-    MOV ESI,dword ptr [0x005c1f54]      ; 00568ff7 | DAT_005c1f54
+    MOV ESI,dword ptr [0x005c1f54]      ; 00568ff7 | g_SIOControlBlock_PTR_005c1f54
     PUSH EBP                            ; 00568ffd
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 00568ffe
     PUSH ESI                            ; 00569001

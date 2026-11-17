@@ -220,7 +220,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190
                       (&g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr[3].projected_vertex,
                        &local_5c);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-                      (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_006122c0);
+                      (g_CDemonRenderer_PTR_00612560,&g_SLightGlowTable_006122a8.headlight);
             pCVar7 = g_CDemonRenderer_PTR_00612560;
             local_190.surface_normal.A.i = 4;
             local_178 = 0;

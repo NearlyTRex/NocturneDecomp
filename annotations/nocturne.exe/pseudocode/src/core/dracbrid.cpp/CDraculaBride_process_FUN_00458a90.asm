@@ -872,7 +872,7 @@ section .text
         ;   Label: caseD_7
     JNZ 0x00458d60                      ; 0045933a
         ;   XREF to: 00458d60 (CONDITIONAL_JUMP)  ; caseD_19
-    MOV ESI,dword ptr [0x01b4d27c]      ; 00459340 | DAT_01b4d27c
+    MOV ESI,dword ptr [0x01b4d27c]      ; 00459340 | g_INT_ARRAY_01b4d260[7]
     PUSH ESI                            ; 00459346
     LEA EAX,[EBP + -0x46]               ; 00459347
     PUSH EAX                            ; 0045934a
@@ -937,7 +937,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004593e4
     ADD ESP,0x8                         ; 004593e7
     LEA EAX,[EBP + 0xfffffdfe]          ; 004593ea
-    MOV ESI,dword ptr [0x01b4d260]      ; 004593f0 | DAT_01b4d260
+    MOV ESI,dword ptr [0x01b4d260]      ; 004593f0 | g_INT_ARRAY_01b4d260
     PUSH EAX                            ; 004593f6
     LEA EAX,[ESI*0x4 + 0x0]             ; 004593f7
     MOV dword ptr [EBP + 0xfffffe32],EBX ; 004593fe
@@ -985,7 +985,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 0045947d
     ADD ESP,0x8                         ; 00459480
     LEA EAX,[EBP + 0xfffffdc2]          ; 00459483
-    MOV ESI,dword ptr [0x01b4d260]      ; 00459489 | DAT_01b4d260
+    MOV ESI,dword ptr [0x01b4d260]      ; 00459489 | g_INT_ARRAY_01b4d260
     PUSH EAX                            ; 0045948f
     LEA EAX,[ESI*0x4 + 0x0]             ; 00459490
     MOV dword ptr [EBP + 0xfffffdf6],EBX ; 00459497
@@ -1032,7 +1032,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00459518
     ADD ESP,0x8                         ; 0045951b
     LEA EAX,[EBP + 0xfffffe76]          ; 0045951e
-    MOV ESI,dword ptr [0x01b4d260]      ; 00459524 | DAT_01b4d260
+    MOV ESI,dword ptr [0x01b4d260]      ; 00459524 | g_INT_ARRAY_01b4d260
     PUSH EAX                            ; 0045952a
     LEA EAX,[ESI*0x4 + 0x0]             ; 0045952b
     SUB EAX,ESI                         ; 00459532
@@ -1080,7 +1080,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004595b5
     ADD ESP,0x8                         ; 004595b8
     LEA EAX,[EBP + 0xfffffe3a]          ; 004595bb
-    MOV ESI,dword ptr [0x01b4d268]      ; 004595c1 | DAT_01b4d268
+    MOV ESI,dword ptr [0x01b4d268]      ; 004595c1 | g_INT_ARRAY_01b4d260[2]
     PUSH EAX                            ; 004595c7
     LEA EAX,[ESI*0x4 + 0x0]             ; 004595c8
     SUB EAX,ESI                         ; 004595cf
@@ -1161,7 +1161,7 @@ section .text
         ;   XREF to: 00458d60 (CONDITIONAL_JUMP)  ; caseD_19
     LEA EAX,[EBX + 0xbd48]              ; 004596b9
     PUSH EAX                            ; 004596bf
-    MOV ESI,dword ptr [0x005b7650]      ; 004596c0 | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 004596c0 | g_CEventList_PTR_005b7650
     PUSH ESI                            ; 004596c6
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004596c7
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -1190,7 +1190,7 @@ section .text
         ;   XREF to: 00458d60 (CONDITIONAL_JUMP)  ; caseD_19
     LEA EAX,[EBX + 0xbd48]              ; 00459713
     PUSH EAX                            ; 00459719
-    MOV ECX,dword ptr [0x005b7650]      ; 0045971a | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 0045971a | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 00459720
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00459721
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -1210,7 +1210,7 @@ section .text
     LEA EAX,[EBX + 0xbd48]              ; 00459749
         ;   Label: caseD_1a
     PUSH EAX                            ; 0045974f
-    MOV ECX,dword ptr [0x005b7650]      ; 00459750 | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 00459750 | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 00459756
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00459757
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -1230,7 +1230,7 @@ section .text
     LEA EAX,[EBX + 0xbd48]              ; 0045977f
         ;   Label: caseD_f
     PUSH EAX                            ; 00459785
-    MOV EDX,dword ptr [0x005b7650]      ; 00459786 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00459786 | g_CEventList_PTR_005b7650
     PUSH EDX                            ; 0045978c
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0045978d
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -1573,7 +1573,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00459b47
     ADD ESP,0x8                         ; 00459b4a
     LEA EAX,[EBP + 0xfffffd86]          ; 00459b4d
-    MOV ESI,dword ptr [0x01b4d260]      ; 00459b53 | DAT_01b4d260
+    MOV ESI,dword ptr [0x01b4d260]      ; 00459b53 | g_INT_ARRAY_01b4d260
     PUSH EAX                            ; 00459b59
     LEA EAX,[ESI*0x4 + 0x0]             ; 00459b5a
     MOV dword ptr [EBP + 0xfffffdba],EBX ; 00459b61

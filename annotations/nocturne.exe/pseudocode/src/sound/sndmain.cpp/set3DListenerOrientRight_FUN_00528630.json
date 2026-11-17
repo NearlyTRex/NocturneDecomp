@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 42,
+    "complexity_score": 11,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 12,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 34
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -51,25 +48,25 @@
   "globals": [
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02dc8318",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02dc8498",
-      "name": "DAT_02dc8498",
-      "type": "undefined4",
+      "name": "g_SReverbSettings_02dc8498",
+      "type": "SReverbSettings",
       "value": null
     },
     {
       "addr": "02dc849c",
-      "name": "DAT_02dc849c",
+      "name": "g_SReverbSettings_02dc8498.decay_time",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc84a0",
-      "name": "DAT_02dc84a0",
+      "name": "g_SReverbSettings_02dc8498.damping",
       "type": "undefined4",
       "value": null
     }
@@ -177,22 +174,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 13,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc8318 + 0x28))(_DAT_02dc8318,orient_right_x,orient_right_y,orient_right_z);",
-      "type": "unresolved_funcptr"
-    }
-  ]
+  "suspects": []
 }

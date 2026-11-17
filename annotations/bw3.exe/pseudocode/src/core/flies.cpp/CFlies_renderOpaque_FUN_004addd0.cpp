@@ -16,7 +16,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
   int iVar5;
   uint uVar6;
   uint *puVar7;
-  float *out_basis;
+  float (*out_basis) [8];
   SRenderVertex *pSVar8;
   SRenderVertex *vertices;
   uint *puVar9;
@@ -57,14 +57,14 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
   if (iStack_1c != 0) {
     this_ptr->is_visible = 1;
     if (iVar5 == 0) {
-      out_basis = g_FLOAT_ARRAY_01d1a124;
+      out_basis = g_FLOAT_ARRAY_ARRAY_01d1a124;
       iVar5 = 0;
       do {
         fVar2 = (float)iVar5;
         iVar5 = iVar5 + 1;
         core_spline_cpp_computeSplineBasis_FUN_00567630
-                  (out_basis,(fVar2 + (float)0.5) * (float)0.015625,0.0);
-        out_basis = out_basis + 8;
+                  (*out_basis,(fVar2 + (float)0.5) * (float)0.015625,0.0);
+        out_basis = out_basis + 1;
       } while (iVar5 < 0x40);
       g_INT_01d1a0dc = 1;
     }
@@ -121,7 +121,7 @@ int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr)
           pSStack_14 = (SFly *)0x3f;
         }
         core_spline_cpp_evaluateSplinePoint3D_FUN_00567860
-                  (g_FLOAT_ARRAY_01d1a124 + (int)pSStack_14 * 8,pSVar4->control_points,
+                  (g_FLOAT_ARRAY_ARRAY_01d1a124[(int)pSStack_14],pSVar4->control_points,
                    pSVar4->control_points + 1,pSVar4->control_points + 2,pSVar4->control_points + 3,
                    &CStack_2c);
         fStack_38 = CStack_2c.x;

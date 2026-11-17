@@ -21,7 +21,7 @@ DWORD FUN_005aac30(uint param_1,LPCVOID param_2,DWORD param_3)
     DStack_14 = 0xffffffff;
   }
   else {
-    hFile = *(HANDLE *)(DAT_00607bdc + param_1 * 4);
+    hFile = g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1];
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);
     uVar1 = FUN_005ab920(param_1);
     if ((uVar1 & 0x80) != 0) {

@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CPathMap.h"
+#include "types/classes/CPathQueueNode.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1E60000
@@ -13,6 +14,9 @@
 // CPathMap*[200]
 extern CPathMap* g_CPathMap_PTR_ARRAY_01e6be4c[200];
 
+// CPathQueueNode[5000]
+extern CPathQueueNode g_CPathQueueNode_ARRAY_01e6c17c[5000];
+
 // int
 extern int g_INT_01e6be44;
 extern int g_INT_01e6be48;
@@ -20,9 +24,6 @@ extern int g_INT_01e6c16c;
 extern int g_INT_01e6c170;
 extern int g_INT_01e6c174;
 extern int g_INT_01e6c178;
-
-// int[1]
-extern int g_INT_ARRAY_01e6c17c[1];
 
 // uchar
 extern uchar g_UCHAR_01e6be40;

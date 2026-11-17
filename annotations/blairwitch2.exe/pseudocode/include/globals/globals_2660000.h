@@ -6,6 +6,7 @@
 #include "system/basetypes.h"
 #include "system/ddraw.h"
 #include "system/unknwn.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CAlphaBitmap.h"
@@ -88,6 +89,12 @@ extern CVector3f g_CVector3f_ARRAY_02661fb8[200];
 
 // CWeather
 extern CWeather g_CWeather_02661f80;
+
+// DWORD
+extern DWORD g_DWORD_02662d60;
+
+// HMODULE
+extern HMODULE g_HMODULE_026656c0;
 
 // HWND
 extern HWND g_HWND_02664628;

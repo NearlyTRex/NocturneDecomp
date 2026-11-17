@@ -148,7 +148,7 @@ section .text
     TEST DL,DL                          ; 0055931c
     JZ 0x0055936a                       ; 0055931e
         ;   XREF to: 0055936a (CONDITIONAL_JUMP)  ; LAB_0055936a
-    MOV ECX,dword ptr [0x02de2d10]      ; 00559320 | DAT_02de2d10
+    MOV ECX,dword ptr [0x02de2d10]      ; 00559320 | g_INT_02de2d10
     SHL ECX,0x2                         ; 00559326
     MOV BL,byte ptr [EAX]               ; 00559329 | DAT_02de2c10 | DAT_02de2c11 | DAT_02de2c13
         ;   Label: LAB_00559329
@@ -159,13 +159,13 @@ section .text
     MOV EAX,EDX                         ; 00559333
     JMP 0x00559329                      ; 00559335
         ;   XREF to: 00559329 (UNCONDITIONAL_JUMP)  ; LAB_00559329
-    MOV EBX,dword ptr [0x02de2d10]      ; 00559337 | DAT_02de2d10
+    MOV EBX,dword ptr [0x02de2d10]      ; 00559337 | g_INT_02de2d10
         ;   Label: LAB_00559337
     ADD ECX,0x4                         ; 0055933d
     MOV byte ptr [EAX],0x0              ; 00559340 | DAT_02de2c11
     INC EBX                             ; 00559343
     MOV dword ptr [ECX + 0x2de2d10],EDI ; 00559344 | DAT_02de2c10
-    MOV dword ptr [0x02de2d10],EBX      ; 0055934a | DAT_02de2d10
+    MOV dword ptr [0x02de2d10],EBX      ; 0055934a | g_INT_02de2d10
     MOV BH,byte ptr [EDX]               ; 00559350 | DAT_02de2c12
     MOV EAX,EDX                         ; 00559352
     CMP BH,0x20                         ; 00559354
@@ -294,11 +294,11 @@ section .text
     CALL dword ptr CS:[0x575550]        ; 005594b9 | PTR_GlobalMemoryStatus_00575550
     MOV EAX,dword ptr [ESP + 0x30]      ; 005594c0
     PUSH 0x2de2d14                      ; 005594c4
-    MOV EBP,dword ptr [0x02de2d10]      ; 005594c9 | DAT_02de2d10
-    MOV [0x02de20a8],EAX                ; 005594cf | DAT_02de20a8
+    MOV EBP,dword ptr [0x02de2d10]      ; 005594c9 | g_INT_02de2d10
+    MOV [0x02de20a8],EAX                ; 005594cf | g_INT_02de20a8
     MOV EAX,dword ptr [ESP + 0x40]      ; 005594d4
     PUSH EBP                            ; 005594d8
-    MOV [0x02de20ac],EAX                ; 005594d9 | DAT_02de20ac
+    MOV [0x02de20ac],EAX                ; 005594d9 | g_INT_02de20ac
     CALL core_main.c_initializeGameSystems_FUN_004c85f0 ; 005594de
         ;   XREF to: 004c85f0 (UNCONDITIONAL_CALL)  ; void core_main.c_initializeGameSystems_FUN_004c85f0(int argc, char * * argv)
     ADD ESP,0x8                         ; 005594e3

@@ -6,202 +6,206 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_dcamera_cpp_CDemonCamera_sampleLightingAntialiased_FUN_004425f0(CDemonCamera *this_ptr,CVector3i *world_pos,CDemonLight *light_source,int intensity)
 
 {
-  longlong lVar1;
+  short *psVar1;
   longlong lVar2;
   longlong lVar3;
-  int iVar4;
-  int *piVar5;
+  longlong lVar4;
+  float fVar5;
   int iVar6;
-  int iVar7;
-  uint uVar8;
+  CVector3i *pCVar7;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
   int local_18;
   
   if (light_source->antialiasing_enabled == 0) {
-    iVar6 = world_pos->x - (light_source->base).camera_origin.x;
-    iVar7 = world_pos->y - (light_source->base).camera_origin.y;
-    iVar4 = world_pos->z - (light_source->base).camera_origin.z;
-    lVar1 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar6;
-    lVar2 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar7;
-    lVar3 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar4;
-    _DAT_02de5d88 =
-         ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+    iVar8 = world_pos->x - (light_source->base).camera_origin.x;
+    iVar9 = world_pos->y - (light_source->base).camera_origin.y;
+    iVar6 = world_pos->z - (light_source->base).camera_origin.z;
+    lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
+    lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
+    lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
+    g_INT_02de5d88 =
          ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-         ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-    if (((_DAT_02de5d88 < 1) ||
-        (lVar1 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar6,
-        lVar2 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar7,
-        lVar3 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar4,
-        _DAT_02de5d80 =
-             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+         ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+         ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+    if (((g_INT_02de5d88 < 1) ||
+        (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
+        lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
+        lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
+        g_INT_02de5d80 =
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10),
-        _DAT_02de5d88 <= _DAT_02de5d80)) ||
-       ((_DAT_02de5d80 <= -_DAT_02de5d88 ||
-        ((lVar1 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar6,
-         lVar2 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar7,
-         lVar3 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar4,
-         _DAT_02de5d84 =
-              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
+        g_INT_02de5d88 <= g_INT_02de5d80)) ||
+       ((g_INT_02de5d80 <= -g_INT_02de5d88 ||
+        ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
+         lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
+         lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
+         g_INT_02de5d84 =
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10),
-         _DAT_02de5d88 <= _DAT_02de5d84 || (_DAT_02de5d84 <= -_DAT_02de5d88)))))) {
-      piVar5 = (int *)&DAT_01410280;
+              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+              ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
+         g_INT_02de5d88 <= g_INT_02de5d84 || (g_INT_02de5d84 <= -g_INT_02de5d88)))))) {
+      pCVar7 = &g_CVector3i_01410280;
     }
     else {
-      _DAT_02de5d80 =
-           (int)(((longlong)_DAT_02de5d80 *
+      g_INT_02de5d80 =
+           (int)(((longlong)g_INT_02de5d80 *
                  (longlong)(light_source->base).cached_projection.half_width_fixed) /
-                (longlong)_DAT_02de5d88) + (light_source->base).cached_projection.center_x_fixed;
-      _DAT_02de5d84 =
-           (int)(((longlong)_DAT_02de5d84 *
+                (longlong)g_INT_02de5d88) + (light_source->base).cached_projection.center_x_fixed;
+      g_INT_02de5d84 =
+           (int)(((longlong)g_INT_02de5d84 *
                  (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
-                (longlong)_DAT_02de5d88) + (light_source->base).cached_projection.center_y_fixed;
-      piVar5 = (int *)&DAT_02de5d80;
+                (longlong)g_INT_02de5d88) + (light_source->base).cached_projection.center_y_fixed;
+      pCVar7 = (CVector3i *)&g_INT_02de5d80;
     }
-    if (((0 < piVar5[2]) &&
+    if (((0 < pCVar7->z) &&
         (light_source->shadow_depth_buffer
-         [(*piVar5 >> 0x10) + light_source->shadow_map_width * (piVar5[1] >> 0x10)] != 0)) &&
-       ((float)piVar5[2] * (float)0.00390625 < (light_source->base).fixed_point_scale)) {
+         [(pCVar7->x >> 0x10) + light_source->shadow_map_width * (pCVar7->y >> 0x10)] != 0)) &&
+       (fVar5 = (float)pCVar7->z * (float)0.00390625,
+       fVar5 < (light_source->base).fixed_point_scale)) {
       return (int)ROUND((float)intensity *
-                        (((light_source->base).fixed_point_scale -
-                         (float)piVar5[2] * (float)0.00390625) /
+                        (((light_source->base).fixed_point_scale - fVar5) /
                         (light_source->base).fixed_point_scale));
     }
     return 0;
   }
-  iVar6 = world_pos->x - (light_source->base).camera_origin.x;
-  iVar7 = world_pos->y - (light_source->base).camera_origin.y;
-  iVar4 = world_pos->z - (light_source->base).camera_origin.z;
-  lVar1 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar6;
-  lVar2 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar7;
-  lVar3 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar4;
-  _DAT_02de5d88 =
-       ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+  iVar8 = world_pos->x - (light_source->base).camera_origin.x;
+  iVar9 = world_pos->y - (light_source->base).camera_origin.y;
+  iVar6 = world_pos->z - (light_source->base).camera_origin.z;
+  lVar2 = (longlong)(light_source->base).source_matrix.m[0].z * (longlong)iVar8;
+  lVar3 = (longlong)(light_source->base).source_matrix.m[1].z * (longlong)iVar9;
+  lVar4 = (longlong)(light_source->base).source_matrix.m[2].z * (longlong)iVar6;
+  g_INT_02de5d88 =
        ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-       ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-  if ((((_DAT_02de5d88 < 1) ||
-       (lVar1 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar6,
-       lVar2 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar7,
-       lVar3 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar4,
-       _DAT_02de5d80 =
-            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+       ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+       ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10);
+  if ((((g_INT_02de5d88 < 1) ||
+       (lVar2 = (longlong)(light_source->base).source_matrix.m[0].x * (longlong)iVar8,
+       lVar3 = (longlong)(light_source->base).source_matrix.m[1].x * (longlong)iVar9,
+       lVar4 = (longlong)(light_source->base).source_matrix.m[2].x * (longlong)iVar6,
+       g_INT_02de5d80 =
             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10),
-       _DAT_02de5d88 <= _DAT_02de5d80)) || (_DAT_02de5d80 <= -_DAT_02de5d88)) ||
-     ((lVar1 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar6,
-      lVar2 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar7,
-      lVar3 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar4,
-      _DAT_02de5d84 =
-           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+            ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+            ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
+       g_INT_02de5d88 <= g_INT_02de5d80)) || (g_INT_02de5d80 <= -g_INT_02de5d88)) ||
+     ((lVar2 = (longlong)(light_source->base).source_matrix.m[0].y * (longlong)iVar8,
+      lVar3 = (longlong)(light_source->base).source_matrix.m[1].y * (longlong)iVar9,
+      lVar4 = (longlong)(light_source->base).source_matrix.m[2].y * (longlong)iVar6,
+      g_INT_02de5d84 =
            ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
-           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10),
-      _DAT_02de5d88 <= _DAT_02de5d84 || (_DAT_02de5d84 <= -_DAT_02de5d88)))) {
-    piVar5 = (int *)&DAT_01410280;
+           ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
+           ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10),
+      g_INT_02de5d88 <= g_INT_02de5d84 || (g_INT_02de5d84 <= -g_INT_02de5d88)))) {
+    pCVar7 = &g_CVector3i_01410280;
   }
   else {
-    _DAT_02de5d80 =
-         (int)(((longlong)_DAT_02de5d80 *
+    g_INT_02de5d80 =
+         (int)(((longlong)g_INT_02de5d80 *
                (longlong)(light_source->base).cached_projection.half_width_fixed) /
-              (longlong)_DAT_02de5d88) + (light_source->base).cached_projection.center_x_fixed;
-    _DAT_02de5d84 =
-         (int)(((longlong)_DAT_02de5d84 *
+              (longlong)g_INT_02de5d88) + (light_source->base).cached_projection.center_x_fixed;
+    g_INT_02de5d84 =
+         (int)(((longlong)g_INT_02de5d84 *
                (longlong)(light_source->base).cached_projection.neg_half_height_fixed) /
-              (longlong)_DAT_02de5d88) + (light_source->base).cached_projection.center_y_fixed;
-    piVar5 = (int *)&DAT_02de5d80;
+              (longlong)g_INT_02de5d88) + (light_source->base).cached_projection.center_y_fixed;
+    pCVar7 = (CVector3i *)&g_INT_02de5d80;
   }
-  if (piVar5[2] < 1) {
+  if (pCVar7->z < 1) {
     return 0;
   }
   local_18 = 1;
-  uVar8 = 0;
-  if (piVar5[2] <
+  uVar10 = 0;
+  if (pCVar7->z <
       (int)(light_source->shadow_depth_buffer
-            [(*piVar5 >> 0x10) + light_source->shadow_map_width * (piVar5[1] >> 0x10)] + 0x90)) {
-    lVar1 = (longlong)
+            [(pCVar7->x >> 0x10) + light_source->shadow_map_width * (pCVar7->y >> 0x10)] + 0x90)) {
+    lVar2 = (longlong)
             (int)((uint)light_source->precomputed_lighting_textures
-                        [((piVar5[1] >> ((byte)light_source->shadow_y_shift & 0x1f) &
+                        [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
                           light_source->texture_coord_mask) <<
                          ((byte)light_source->texture_row_shift & 0x1f)) +
                          (light_source->texture_coord_mask &
-                         *piVar5 >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
+                         pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
             (longlong)intensity;
-    uVar8 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    uVar10 = (uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10;
   }
-  *(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;
-  if (*piVar5 >> 0x10 < light_source->shadow_map_width) {
-    if (piVar5[2] <
+  psVar1 = (short *)((int)&pCVar7->x + 2);
+  *psVar1 = *psVar1 + 1;
+  iVar6 = pCVar7->x >> 0x10;
+  if (iVar6 < light_source->shadow_map_width) {
+    if (pCVar7->z <
         (int)(light_source->shadow_depth_buffer
-              [(*piVar5 >> 0x10) + (piVar5[1] >> 0x10) * light_source->shadow_map_width] + 0x90)) {
-      lVar1 = (longlong)
+              [iVar6 + (pCVar7->y >> 0x10) * light_source->shadow_map_width] + 0x90)) {
+      lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
                           [(light_source->texture_coord_mask &
-                           *piVar5 >> ((byte)light_source->shadow_x_shift & 0x1f)) +
-                           ((piVar5[1] >> ((byte)light_source->shadow_y_shift & 0x1f) &
+                           pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f)) +
+                           ((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
                             light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f))] << 10) *
               (longlong)intensity;
-      uVar8 = uVar8 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     local_18 = 2;
   }
-  iVar4 = *piVar5 + -0x20000 >> 0x10;
-  *piVar5 = *piVar5 + -0x20000;
-  if (0 < iVar4) {
-    if (piVar5[2] <
+  iVar8 = pCVar7->x + -0x20000;
+  iVar6 = iVar8 >> 0x10;
+  pCVar7->x = iVar8;
+  if (0 < iVar6) {
+    if (pCVar7->z <
         (int)(light_source->shadow_depth_buffer
-              [iVar4 + (piVar5[1] >> 0x10) * light_source->shadow_map_width] + 0x90)) {
-      lVar1 = (longlong)
+              [iVar6 + (pCVar7->y >> 0x10) * light_source->shadow_map_width] + 0x90)) {
+      lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
-                          [((piVar5[1] >> ((byte)light_source->shadow_y_shift & 0x1f) &
+                          [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
                             light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f)) +
                            (light_source->texture_coord_mask &
-                           *piVar5 >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
+                           pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
               (longlong)intensity;
-      uVar8 = uVar8 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     local_18 = local_18 + 1;
   }
-  *(short *)((int)piVar5 + 6) = *(short *)((int)piVar5 + 6) + 1;
-  *(short *)((int)piVar5 + 2) = *(short *)((int)piVar5 + 2) + 1;
-  if (piVar5[1] >> 0x10 < light_source->shadow_map_height) {
-    if (piVar5[2] <
+  *(short *)((int)&pCVar7->y + 2) = *(short *)((int)&pCVar7->y + 2) + 1;
+  *(short *)((int)&pCVar7->x + 2) = *(short *)((int)&pCVar7->x + 2) + 1;
+  iVar6 = pCVar7->y >> 0x10;
+  if (iVar6 < light_source->shadow_map_height) {
+    if (pCVar7->z <
         (int)(light_source->shadow_depth_buffer
-              [(*piVar5 >> 0x10) + light_source->shadow_map_width * (piVar5[1] >> 0x10)] + 0x90)) {
-      lVar1 = (longlong)
+              [(pCVar7->x >> 0x10) + light_source->shadow_map_width * iVar6] + 0x90)) {
+      lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
-                          [((piVar5[1] >> ((byte)light_source->shadow_y_shift & 0x1f) &
+                          [((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
                             light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f)) +
                            (light_source->texture_coord_mask &
-                           *piVar5 >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
+                           pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f))] << 10) *
               (longlong)intensity;
-      uVar8 = uVar8 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     local_18 = local_18 + 1;
   }
-  iVar4 = piVar5[1] + -0x20000;
-  piVar5[1] = iVar4;
-  if (0 < iVar4) {
-    if (piVar5[2] <
+  iVar6 = pCVar7->y + -0x20000;
+  pCVar7->y = iVar6;
+  if (0 < iVar6) {
+    if (pCVar7->z <
         (int)(light_source->shadow_depth_buffer
-              [(*piVar5 >> 0x10) + (iVar4 >> 0x10) * light_source->shadow_map_width] + 0x90)) {
-      lVar1 = (longlong)
+              [(pCVar7->x >> 0x10) + (iVar6 >> 0x10) * light_source->shadow_map_width] + 0x90)) {
+      lVar2 = (longlong)
               (int)((uint)light_source->precomputed_lighting_textures
                           [(light_source->texture_coord_mask &
-                           *piVar5 >> ((byte)light_source->shadow_x_shift & 0x1f)) +
-                           ((piVar5[1] >> ((byte)light_source->shadow_y_shift & 0x1f) &
+                           pCVar7->x >> ((byte)light_source->shadow_x_shift & 0x1f)) +
+                           ((pCVar7->y >> ((byte)light_source->shadow_y_shift & 0x1f) &
                             light_source->texture_coord_mask) <<
                            ((byte)light_source->texture_row_shift & 0x1f))] << 10) *
               (longlong)intensity;
-      uVar8 = uVar8 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+      uVar10 = uVar10 + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
     }
     local_18 = local_18 + 1;
   }
-  return (int)uVar8 / local_18;
+  return (int)uVar10 / local_18;
 }

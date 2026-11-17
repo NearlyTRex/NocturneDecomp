@@ -15,7 +15,7 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_CGameInstance.blood_flag
 ;   undefined4 g_BloodParticles[0].base.lifetime_remaining
 ;   undefined4 g_BloodParticles[0].base.vtable
@@ -50,7 +50,7 @@ section .text
     RET                                 ; 004afe18
     MOV ECX,dword ptr [0x005ae704]      ; 004afe19 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004afe19
-    PUSH ECX                            ; 004afe1f | DAT_01b4d738
+    PUSH ECX                            ; 004afe1f | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004afe20
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004afe25

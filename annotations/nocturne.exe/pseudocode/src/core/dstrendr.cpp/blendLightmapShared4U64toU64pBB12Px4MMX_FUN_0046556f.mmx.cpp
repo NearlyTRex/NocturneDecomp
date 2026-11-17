@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dstrendr_cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_0046556f(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count)
 {
 __asm {
@@ -37,14 +35,14 @@ __asm {
         pmullw MM1,MM2
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005b64f8]
+        pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM1,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [DAT_005b4788]
-        paddw MM1,qword ptr [DAT_005b4790]
+        paddw MM0,qword ptr [g_MMX_INTEGER_005b4788]
+        paddw MM1,qword ptr [g_MMX_INTEGER_005b4790]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1
@@ -67,14 +65,14 @@ __asm {
         pmullw MM1,MM2
         movq MM2,MM3
         movq MM4,MM5
-        pxor MM2,qword ptr [DAT_005b64f8]
+        pxor MM2,qword ptr [0x005b64f8]
         pmulhw MM0,MM2
         pmulhw MM1,MM2
         pmulhw MM4,MM3
         paddw MM0,MM4
         paddw MM1,MM4
-        paddw MM0,qword ptr [DAT_005b4788]
-        paddw MM1,qword ptr [DAT_005b4790]
+        paddw MM0,qword ptr [g_MMX_INTEGER_005b4788]
+        paddw MM1,qword ptr [g_MMX_INTEGER_005b4790]
         psrlw MM0,0x4
         psrlw MM1,0x4
         packuswb MM0,MM1

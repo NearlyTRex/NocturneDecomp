@@ -17,10 +17,10 @@
 ;   undefined4 s_yComputer_0058baba+1
 ;   undefined4 s_Computer_0058baba+2
 ;   undefined4 s_omputer_0058baba+3
-;   undefined4 DAT_01cea3f4
-;   undefined4 DAT_01cea3f8
-;   undefined4 DAT_01cea40c
-;   undefined4 DAT_01d06610
+;   int g_INT_01cea3f4
+;   uint g_UINT_01cea3f8
+;   int g_INT_01cea40c
+;   int g_INT_01d06610
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90
@@ -41,14 +41,14 @@ section .text
         ;   XREF to: 005657c0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_remove_FUN_005657c0(char * filename)
     MOV EDX,0x1                         ; 004e991c
     ADD ESP,0x4                         ; 004e9921
-    MOV dword ptr [0x01cea3f8],EDX      ; 004e9924 | DAT_01cea3f8
+    MOV dword ptr [0x01cea3f8],EDX      ; 004e9924 | g_UINT_01cea3f8
     CALL wincore_winrun.cpp_getTime_FUN_00558a30 ; 004e992a
         ;   XREF to: 00558a30 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getTime_FUN_00558a30()
     MOV EDX,EAX                         ; 004e992f
     MOV ESI,0x12                        ; 004e9931
     SAR EDX,0x1f                        ; 004e9936
     IDIV ESI                            ; 004e9939
-    MOV [0x01cea3f4],EAX                ; 004e993b | DAT_01cea3f4
+    MOV [0x01cea3f4],EAX                ; 004e993b | g_INT_01cea3f4
     CALL support_trisock.cpp_startupWinsock_FUN_00549280 ; 004e9940
         ;   XREF to: 00549280 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_startupWinsock_FUN_00549280()
     PUSH 0x58baa4                       ; 004e9945 | = "USERNAME"
@@ -87,8 +87,8 @@ section .text
     PUSH ECX                            ; 004e9984
     MOV ESI,dword ptr [ESP + 0x10]      ; 004e9985
     PUSH ESI                            ; 004e9989
-    MOV dword ptr [0x01cea40c],ECX      ; 004e998a | DAT_01cea40c
-    MOV dword ptr [0x01d06610],ECX      ; 004e9990 | DAT_01d06610
+    MOV dword ptr [0x01cea40c],ECX      ; 004e998a | g_INT_01cea40c
+    MOV dword ptr [0x01d06610],ECX      ; 004e9990 | g_INT_01d06610
     CALL core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90 ; 004e9996
         ;   XREF to: 004e9e90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_004e9e90(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004e999b

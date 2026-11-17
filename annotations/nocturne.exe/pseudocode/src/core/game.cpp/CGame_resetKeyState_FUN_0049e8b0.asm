@@ -17,11 +17,11 @@
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_01c038f8
-;   undefined4 DAT_01c038fc
-;   undefined4 DAT_01c03908
-;   undefined4 DAT_01c03909
-;   undefined4 DAT_01c0390c
+;   DWORD g_DWORD_01c038f8
+;   DWORD g_DWORD_01c038fc
+;   DWORD g_DWORD_01c03908
+;   undefined4 g_DWORD_01c03908+1
+;   int g_INT_01c0390c
 ;   CKeys g_CKeys_01cc30e4
 ;
 ; Called Functions:
@@ -40,13 +40,13 @@ section .text
     PUSH EBP                            ; 0049e8b3
     SUB ESP,0x4                         ; 0049e8b4
     MOV EBX,dword ptr [ESP + 0x18]      ; 0049e8b7
-    MOV EAX,[0x01c03908]                ; 0049e8bb | DAT_01c03908
+    MOV EAX,[0x01c03908]                ; 0049e8bb | g_DWORD_01c03908
     MOV EDX,0x2                         ; 0049e8c0
     MOV dword ptr [ESP],EAX             ; 0049e8c5
-    MOV dword ptr [0x01c0390c],EDX      ; 0049e8c8 | DAT_01c0390c
+    MOV dword ptr [0x01c0390c],EDX      ; 0049e8c8 | g_INT_01c0390c
     CALL wincore_winrun.cpp_getJoystickState_FUN_00559eb0 ; 0049e8ce
         ;   XREF to: 00559eb0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_getJoystickState_FUN_00559eb0()
-    TEST byte ptr [0x01c03908],0x1      ; 0049e8d3 | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x1      ; 0049e8d3 | g_DWORD_01c03908
     JZ 0x0049eb89                       ; 0049e8da
         ;   XREF to: 0049eb89 (CONDITIONAL_JUMP)  ; LAB_0049eb89
     TEST byte ptr [ESP],0x1             ; 0049e8e0
@@ -59,7 +59,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e8f7
         ;   Label: LAB_0049e8f7
-    TEST byte ptr [0x01c03908],0x2      ; 0049e8fa | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x2      ; 0049e8fa | g_DWORD_01c03908
         ;   Label: LAB_0049e8fa
     JZ 0x0049eb9f                       ; 0049e901
         ;   XREF to: 0049eb9f (CONDITIONAL_JUMP)  ; LAB_0049eb9f
@@ -73,7 +73,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e91e
         ;   Label: LAB_0049e91e
-    TEST byte ptr [0x01c03908],0x4      ; 0049e921 | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x4      ; 0049e921 | g_DWORD_01c03908
         ;   Label: LAB_0049e921
     JZ 0x0049ebb5                       ; 0049e928
         ;   XREF to: 0049ebb5 (CONDITIONAL_JUMP)  ; LAB_0049ebb5
@@ -87,7 +87,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e945
         ;   Label: LAB_0049e945
-    TEST byte ptr [0x01c03908],0x8      ; 0049e948 | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x8      ; 0049e948 | g_DWORD_01c03908
         ;   Label: LAB_0049e948
     JZ 0x0049ebca                       ; 0049e94f
         ;   XREF to: 0049ebca (CONDITIONAL_JUMP)  ; LAB_0049ebca
@@ -101,7 +101,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e96c
         ;   Label: LAB_0049e96c
-    TEST byte ptr [0x01c03908],0x10     ; 0049e96f | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x10     ; 0049e96f | g_DWORD_01c03908
         ;   Label: LAB_0049e96f
     JZ 0x0049ebe0                       ; 0049e976
         ;   XREF to: 0049ebe0 (CONDITIONAL_JUMP)  ; LAB_0049ebe0
@@ -115,7 +115,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e993
         ;   Label: LAB_0049e993
-    TEST byte ptr [0x01c03908],0x20     ; 0049e996 | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x20     ; 0049e996 | g_DWORD_01c03908
         ;   Label: LAB_0049e996
     JZ 0x0049ebf6                       ; 0049e99d
         ;   XREF to: 0049ebf6 (CONDITIONAL_JUMP)  ; LAB_0049ebf6
@@ -129,7 +129,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e9ba
         ;   Label: LAB_0049e9ba
-    TEST byte ptr [0x01c03908],0x40     ; 0049e9bd | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x40     ; 0049e9bd | g_DWORD_01c03908
         ;   Label: LAB_0049e9bd
     JZ 0x0049ec0b                       ; 0049e9c4
         ;   XREF to: 0049ec0b (CONDITIONAL_JUMP)  ; LAB_0049ec0b
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049e9e1
         ;   Label: LAB_0049e9e1
-    TEST byte ptr [0x01c03908],0x80     ; 0049e9e4 | DAT_01c03908
+    TEST byte ptr [0x01c03908],0x80     ; 0049e9e4 | g_DWORD_01c03908
         ;   Label: LAB_0049e9e4
     JZ 0x0049ec21                       ; 0049e9eb
         ;   XREF to: 0049ec21 (CONDITIONAL_JUMP)  ; LAB_0049ec21
@@ -157,7 +157,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049ea08
         ;   Label: LAB_0049ea08
-    TEST byte ptr [0x01c03909],0x1      ; 0049ea0b | DAT_01c03909
+    TEST byte ptr [0x01c03909],0x1      ; 0049ea0b | g_DWORD_01c03908+1
         ;   Label: LAB_0049ea0b
     JZ 0x0049ec37                       ; 0049ea12
         ;   XREF to: 0049ec37 (CONDITIONAL_JUMP)  ; LAB_0049ec37
@@ -171,7 +171,7 @@ section .text
         ;   XREF to: 004c41f0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_setKeyAsPressed_FUN_004c41f0(CKeys * this_ptr, EInputCodeType key_code)
     ADD ESP,0x8                         ; 0049ea30
         ;   Label: LAB_0049ea30
-    TEST byte ptr [0x01c03909],0x2      ; 0049ea33 | DAT_01c03909
+    TEST byte ptr [0x01c03909],0x2      ; 0049ea33 | g_DWORD_01c03908+1
         ;   Label: LAB_0049ea33
     JZ 0x0049ec4c                       ; 0049ea3a
         ;   XREF to: 0049ec4c (CONDITIONAL_JUMP)  ; LAB_0049ec4c
@@ -217,7 +217,7 @@ section .text
     SUB EAX,EDX                         ; 0049eaba
     SAR EAX,0x1                         ; 0049eabc
     MOV EDX,dword ptr [EBX + 0xa4]      ; 0049eabe
-    MOV ESI,dword ptr [0x01c038f8]      ; 0049eac4 | DAT_01c038f8
+    MOV ESI,dword ptr [0x01c038f8]      ; 0049eac4 | g_DWORD_01c038f8
     SUB EDX,EAX                         ; 0049eaca
     ADD ESP,0x8                         ; 0049eacc
     CMP EDX,ESI                         ; 0049eacf
@@ -237,7 +237,7 @@ section .text
     SAR EDX,0x1f                        ; 0049eaf7
     SUB EAX,EDX                         ; 0049eafa
     SAR EAX,0x1                         ; 0049eafc
-    MOV ECX,dword ptr [0x01c038f8]      ; 0049eafe | DAT_01c038f8
+    MOV ECX,dword ptr [0x01c038f8]      ; 0049eafe | g_DWORD_01c038f8
     ADD EAX,EBP                         ; 0049eb04
     CMP EAX,ECX                         ; 0049eb06
     JGE 0x0049eb1e                      ; 0049eb08
@@ -257,7 +257,7 @@ section .text
     SUB EAX,EDX                         ; 0049eb31
     SAR EAX,0x1                         ; 0049eb33
     MOV EDX,dword ptr [EBX + 0xa8]      ; 0049eb35
-    MOV EBP,dword ptr [0x01c038fc]      ; 0049eb3b | DAT_01c038fc
+    MOV EBP,dword ptr [0x01c038fc]      ; 0049eb3b | g_DWORD_01c038fc
     SUB EDX,EAX                         ; 0049eb41
     CMP EDX,EBP                         ; 0049eb43
     JLE 0x0049eb5a                      ; 0049eb45
@@ -276,7 +276,7 @@ section .text
     SAR EDX,0x1f                        ; 0049eb6a
     SUB EAX,EDX                         ; 0049eb6d
     SAR EAX,0x1                         ; 0049eb6f
-    MOV EDI,dword ptr [0x01c038fc]      ; 0049eb71 | DAT_01c038fc
+    MOV EDI,dword ptr [0x01c038fc]      ; 0049eb71 | g_DWORD_01c038fc
     ADD EAX,ECX                         ; 0049eb77
     CMP EAX,EDI                         ; 0049eb79
     JL 0x0049ec62                       ; 0049eb7b

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; _FILE ** crt_unknown_c_FUN_005a9890(void)
+; _FILE * crt_unknown_c_FUN_005a9890(void)
 ;
 ;
 ; XREF[1]:
@@ -15,8 +15,8 @@
 ;   undefined4 DAT_00607880
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b4 = 005a7f44
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079b8 = 005a7f44
-;   undefined4 DAT_02d252a0
-;   undefined4 DAT_02d252a4
+;   FileListNode* g_FileListNode_PTR_02d252a0
+;   FileListNode* g_FileListNode_PTR_02d252a4
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0
@@ -33,7 +33,7 @@ section .text
     PUSH ESI                            ; 005a9891
     PUSH EDI                            ; 005a9892
     CALL dword ptr [0x006079b4]         ; 005a9893 | PTR_crt_unknown.c_FUN_005a7f44_006079b4
-    MOV ESI,dword ptr [0x02d252a4]      ; 005a9899 | DAT_02d252a4
+    MOV ESI,dword ptr [0x02d252a4]      ; 005a9899 | g_FileListNode_PTR_02d252a4
     TEST ESI,ESI                        ; 005a989f
     JZ 0x005a98bc                       ; 005a98a1
         ;   XREF to: 005a98bc (CONDITIONAL_JUMP)  ; LAB_005a98bc
@@ -41,7 +41,7 @@ section .text
     MOV EDI,dword ptr [EBX + 0xc]       ; 005a98a6
     MOV EAX,dword ptr [ESI]             ; 005a98a9
     AND EDI,0x4003                      ; 005a98ab
-    MOV [0x02d252a4],EAX                ; 005a98b1 | DAT_02d252a4
+    MOV [0x02d252a4],EAX                ; 005a98b1 | g_FileListNode_PTR_02d252a4
     OR DI,0x3                           ; 005a98b6
     JMP 0x005a9909                      ; 005a98ba
         ;   XREF to: 005a9909 (UNCONDITIONAL_JUMP)  ; LAB_005a9909
@@ -88,11 +88,11 @@ section .text
     CALL crt_memory.c_memset_FUN_005a28f0 ; 005a990e
         ;   XREF to: 005a28f0 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005a28f0(void * dest, int value, ulong count)
     MOV dword ptr [EBX + 0xc],EDI       ; 005a9913
-    MOV EAX,[0x02d252a0]                ; 005a9916 | DAT_02d252a0
+    MOV EAX,[0x02d252a0]                ; 005a9916 | g_FileListNode_PTR_02d252a0
     MOV dword ptr [ESI + 0x4],EBX       ; 005a991b
     ADD ESP,0xc                         ; 005a991e
     MOV dword ptr [EBX + 0x8],ESI       ; 005a9921
-    MOV dword ptr [0x02d252a0],ESI      ; 005a9924 | DAT_02d252a0
+    MOV dword ptr [0x02d252a0],ESI      ; 005a9924 | g_FileListNode_PTR_02d252a0
     MOV dword ptr [ESI],EAX             ; 005a992a
     CALL dword ptr [0x006079b8]         ; 005a992c | PTR_crt_unknown.c_FUN_005a7f44_006079b8
     MOV EAX,EBX                         ; 005a9932

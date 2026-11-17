@@ -14,10 +14,10 @@
 ;   TerminatedCString s_Unknown_primitive_d_0057754b
 ;   TerminatedCString s_engine_3d_c_00577562
 ;   int INT_005b7644 = 0x1
-;   undefined4 DAT_005c5014
-;   undefined4 DAT_00761ec4
-;   undefined4 DAT_00761ec8
-;   undefined4 DAT_00761ecc
+;   SRenderVertex[20000] g_SRenderVertex_ARRAY_005c5014
+;   int g_INT_00761ec4
+;   SMRGLHeaderPrimitive*[2000] g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8
+;   undefined4 g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8[1]
 ;   int g_UseExternalRenderer
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -49,7 +49,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x114]     ; 00408fca
     XOR EDX,EDX                         ; 00408fd1
     MOV AH,byte ptr [EDI]               ; 00408fd3
-    MOV dword ptr [0x00761ec4],EDX      ; 00408fd5 | DAT_00761ec4
+    MOV dword ptr [0x00761ec4],EDX      ; 00408fd5 | g_INT_00761ec4
     TEST AH,AH                          ; 00408fdb
     JZ 0x00409020                       ; 00408fdd
         ;   XREF to: 00409020 (CONDITIONAL_JUMP)  ; LAB_00409020
@@ -82,7 +82,7 @@ section .text
     TEST DL,DL                          ; 0040901c
     JNZ 0x00408fdf                      ; 0040901e
         ;   XREF to: 00408fdf (CONDITIONAL_JUMP)  ; LAB_00408fdf
-    MOV ECX,dword ptr [0x00761ec4]      ; 00409020 | DAT_00761ec4
+    MOV ECX,dword ptr [0x00761ec4]      ; 00409020 | g_INT_00761ec4
         ;   Label: LAB_00409020
     TEST ECX,ECX                        ; 00409026
     JZ 0x00409058                       ; 00409028
@@ -93,14 +93,14 @@ section .text
         ;   XREF to: 004091df (CONDITIONAL_JUMP)  ; LAB_004091df
     PUSH 0xcd                           ; 00409038
     PUSH ECX                            ; 0040903d
-    PUSH 0x761ec8                       ; 0040903e | DAT_00761ec8
-    PUSH 0x5c5014                       ; 00409043 | DAT_005c5014
+    PUSH 0x761ec8                       ; 0040903e | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8
+    PUSH 0x5c5014                       ; 00409043 | g_SRenderVertex_ARRAY_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 00409048
         ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 0040904d
     XOR EDX,EDX                         ; 00409050
         ;   Label: LAB_00409050
-    MOV dword ptr [0x00761ec4],EDX      ; 00409052 | DAT_00761ec4
+    MOV dword ptr [0x00761ec4],EDX      ; 00409052 | g_INT_00761ec4
     MOV dword ptr [0x005b7644],0x1      ; 00409058 | INT_005b7644
         ;   Label: LAB_00409058
     ADD ESP,0x100                       ; 00409062
@@ -127,7 +127,7 @@ section .text
     ADD ESP,0x4                         ; 00409087
     JMP 0x0040900f                      ; 0040908a
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f
-    MOV EBX,dword ptr [0x00761ec4]      ; 0040908c | DAT_00761ec4
+    MOV EBX,dword ptr [0x00761ec4]      ; 0040908c | g_INT_00761ec4
         ;   Label: LAB_0040908c
     TEST EBX,EBX                        ; 00409092
     JZ 0x004090c1                       ; 00409094
@@ -139,14 +139,14 @@ section .text
         ;   XREF to: 004090cf (CONDITIONAL_JUMP)  ; LAB_004090cf
     PUSH 0xcd                           ; 004090a1
     PUSH EBX                            ; 004090a6
-    PUSH 0x761ec8                       ; 004090a7 | DAT_00761ec8
-    PUSH 0x5c5014                       ; 004090ac | DAT_005c5014
+    PUSH 0x761ec8                       ; 004090a7 | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8
+    PUSH 0x5c5014                       ; 004090ac | g_SRenderVertex_ARRAY_005c5014
     CALL engine_special.cpp_drawPolyList_FUN_00532680 ; 004090b1
         ;   XREF to: 00532680 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_drawPolyList_FUN_00532680(SRenderVertex * vertex_buffer, SMRGLPrimitiveQuad * * polygons, int polygon_count, int render_flags)
     ADD ESP,0x10                        ; 004090b6
     XOR EDX,EDX                         ; 004090b9
         ;   Label: LAB_004090b9
-    MOV dword ptr [0x00761ec4],EDX      ; 004090bb | DAT_00761ec4
+    MOV dword ptr [0x00761ec4],EDX      ; 004090bb | g_INT_00761ec4
     PUSH EDI                            ; 004090c1
         ;   Label: LAB_004090c1
     CALL engine_texture.cpp_ensureTextureLoaded_FUN_00545920 ; 004090c2
@@ -154,21 +154,21 @@ section .text
     ADD ESP,0x4                         ; 004090c7
     JMP 0x0040900f                      ; 004090ca
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f
-    MOV EAX,[0x00761ec4]                ; 004090cf | DAT_00761ec4
+    MOV EAX,[0x00761ec4]                ; 004090cf | g_INT_00761ec4
         ;   Label: LAB_004090cf
     XOR EBX,EBX                         ; 004090d4
     TEST EAX,EAX                        ; 004090d6
     JLE 0x004090b9                      ; 004090d8
         ;   XREF to: 004090b9 (CONDITIONAL_JUMP)  ; LAB_004090b9
     XOR ESI,ESI                         ; 004090da
-    MOV EBP,dword ptr [ESI + 0x761ec8]  ; 004090dc | DAT_00761ec8 | DAT_00761ecc
+    MOV EBP,dword ptr [ESI + 0x761ec8]  ; 004090dc | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8 | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8[1]
         ;   Label: LAB_004090dc
     PUSH EBP                            ; 004090e2
     ADD ESI,0x4                         ; 004090e3
     INC EBX                             ; 004090e6
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120 ; 004090e7
         ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive * prim)
-    MOV EAX,[0x00761ec4]                ; 004090ec | DAT_00761ec4
+    MOV EAX,[0x00761ec4]                ; 004090ec | g_INT_00761ec4
     ADD ESP,0x4                         ; 004090f1
     CMP EBX,EAX                         ; 004090f4
     JL 0x004090dc                       ; 004090f6
@@ -185,7 +185,7 @@ section .text
     TEST EAX,EAX                        ; 00409108
     JZ 0x0040900f                       ; 0040910a
         ;   XREF to: 0040900f (CONDITIONAL_JUMP)  ; LAB_0040900f
-    CMP dword ptr [0x00761ec4],0x7d0    ; 00409110 | DAT_00761ec4
+    CMP dword ptr [0x00761ec4],0x7d0    ; 00409110 | g_INT_00761ec4
     JL 0x0040913e                       ; 0040911a
         ;   XREF to: 0040913e (CONDITIONAL_JUMP)  ; LAB_0040913e
     MOV EAX,0x57751c                    ; 0040911c | = "..\\engine\\3d.c"
@@ -196,11 +196,11 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 00409136
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0040913b
-    MOV EAX,[0x00761ec4]                ; 0040913e | DAT_00761ec4
+    MOV EAX,[0x00761ec4]                ; 0040913e | g_INT_00761ec4
         ;   Label: LAB_0040913e
     LEA ECX,[EAX + 0x1]                 ; 00409143
-    MOV dword ptr [EAX*0x4 + 0x761ec8],EBX ; 00409146 | DAT_00761ec8
-    MOV dword ptr [0x00761ec4],ECX      ; 0040914d | DAT_00761ec4
+    MOV dword ptr [EAX*0x4 + 0x761ec8],EBX ; 00409146 | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8
+    MOV dword ptr [0x00761ec4],ECX      ; 0040914d | g_INT_00761ec4
     JMP 0x0040900f                      ; 00409153
         ;   XREF to: 0040900f (UNCONDITIONAL_JUMP)  ; LAB_0040900f
     PUSH EDI                            ; 00409158
@@ -268,14 +268,14 @@ section .text
     TEST ECX,ECX                        ; 004091e1
     JLE 0x00409050                      ; 004091e3
         ;   XREF to: 00409050 (CONDITIONAL_JUMP)  ; LAB_00409050
-    MOV EBP,dword ptr [EBX + 0x761ec8]  ; 004091e9 | DAT_00761ec8 | DAT_00761ecc
+    MOV EBP,dword ptr [EBX + 0x761ec8]  ; 004091e9 | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8 | g_SMRGLHeaderPrimitive_PTR_ARRAY_00761ec8[1]
         ;   Label: LAB_004091e9
     PUSH EBP                            ; 004091ef
     ADD EBX,0x4                         ; 004091f0
     INC EDI                             ; 004091f3
     CALL engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120 ; 004091f4
         ;   XREF to: 00407120 (UNCONDITIONAL_CALL)  ; SMRGLHeaderExtended * engine_3d.c_renderPolygonFogTexturedPlaneMaskedOp41_FUN_00407120(SMRGLHeaderPrimitive * prim)
-    MOV EAX,[0x00761ec4]                ; 004091f9 | DAT_00761ec4
+    MOV EAX,[0x00761ec4]                ; 004091f9 | g_INT_00761ec4
     ADD ESP,0x4                         ; 004091fe
     CMP EDI,EAX                         ; 00409201
     JL 0x004091e9                       ; 00409203

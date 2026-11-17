@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 185,
+    "complexity_score": 160,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -53,7 +52,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005cd0f0",
-    "signature": "undefined4 crt_unknown_c_FUN_005cd0f0(int param_1,undefined4 param_2)"
+    "signature": "SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005cd0f0(int param_1,SIGNAL_HANDLER_TYPE param_2)"
   },
   "function_calls": [
     {
@@ -71,8 +70,8 @@
     },
     {
       "addr": "00626ae4",
-      "name": "DAT_00626ae4",
-      "type": "undefined4",
+      "name": "g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4",
+      "type": "SIGNAL_HANDLER_TYPE[26]",
       "value": null
     }
   ],
@@ -208,7 +207,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint FUN_005cd0f0(int param_1,uint param_2)",
+      "text": "SIGNAL_HANDLER_TYPE FUN_005cd0f0(int param_1,SIGNAL_HANDLER_TYPE param_2)",
       "type": "unnamed_param"
     },
     {
@@ -216,7 +215,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint FUN_005cd0f0(int param_1,uint param_2)",
+      "text": "SIGNAL_HANDLER_TYPE FUN_005cd0f0(int param_1,SIGNAL_HANDLER_TYPE param_2)",
       "type": "unnamed_param"
     },
     {
@@ -248,7 +247,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(param_1 * 8 + 0x58 + iVar2);",
+      "text": "SVar1 = *(SIGNAL_HANDLER_TYPE *)(param_1 * 8 + 0x58 + iVar2);",
       "type": "unnamed_param"
     },
     {
@@ -264,7 +263,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + param_1 * 8 + 0x58) = param_2;",
+      "text": "*(SIGNAL_HANDLER_TYPE *)(iVar2 + param_1 * 8 + 0x58) = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -272,7 +271,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(iVar2 + param_1 * 8 + 0x58) = param_2;",
+      "text": "*(SIGNAL_HANDLER_TYPE *)(iVar2 + param_1 * 8 + 0x58) = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -280,23 +279,15 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_00626ae4 + param_1 * 8);",
+      "text": "SVar1 = g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4[param_1 * 2];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 15,
-      "match": "DAT_00626ae4",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)(&DAT_00626ae4 + param_1 * 8);",
-      "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00626ae4 + param_1 * 8) = param_2;",
+      "text": "g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4[param_1 * 2] = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -304,16 +295,8 @@
       "line": 16,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_00626ae4 + param_1 * 8) = param_2;",
+      "text": "g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4[param_1 * 2] = param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_00626ae4",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_00626ae4 + param_1 * 8) = param_2;",
-      "type": "undefined_data"
     },
     {
       "call_site_count": 5,

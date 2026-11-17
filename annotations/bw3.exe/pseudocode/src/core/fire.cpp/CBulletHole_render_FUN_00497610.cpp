@@ -148,7 +148,7 @@ LAB_0049766e:
     core_set_cpp_CDemonSet_computeLighting_FUN_00538400(g_CDemonSetPtr,&local_24,&local_3c,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01c73670);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01c73670.base);
   if (this_ptr->actor_ptr == (CDemonActor *)0x0) {
     engine_drender_cpp_pop_FUN_0046d080();
     return;

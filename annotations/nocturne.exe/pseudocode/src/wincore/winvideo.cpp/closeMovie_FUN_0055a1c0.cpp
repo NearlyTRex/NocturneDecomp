@@ -6,17 +6,15 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_0055a1c0(HWND window_handle)
 
 {
-  if (_DAT_02de3124 == 0) {
+  if (g_INT_02de3124 == 0) {
     return;
   }
   mciSendStringA("close mov",(LPSTR)0x0,0,0);
-  _DAT_02de3120 = 0;
-  _DAT_02de3124 = 0;
+  g_DWORD_02de3120 = 0;
+  g_INT_02de3124 = 0;
   InvalidateRect(window_handle,(RECT *)0x0,1);
   UpdateWindow(window_handle);
   return;

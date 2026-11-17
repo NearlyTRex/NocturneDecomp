@@ -77,8 +77,8 @@ char* g_CHAR_PTR_01d082d0 = {};
 // char*[4]
 char* g_CHAR_PTR_ARRAY_01d086e0[4] = {};
 
-// char[10]
-char g_CHAR_ARRAY_01d08d88[10] = {};
+// char[10][256]
+char g_CHAR_ARRAY_ARRAY_01d08d88[10][256] = {};
 
 // char[2304]
 char g_CHAR_ARRAY_01d06b80[2304] = {};
@@ -94,14 +94,14 @@ char g_CHAR_ARRAY_01d07fd0[256] = {};
 char g_CHAR_ARRAY_01d080d0[256] = {};
 char g_CHAR_ARRAY_01d081d0[256] = {};
 
-// char[30]
-char g_CHAR_ARRAY_01d08790[30] = {};
+// char[30][40]
+char g_CHAR_ARRAY_ARRAY_01d08790[30][40] = {};
 
 // char[4352]
 char g_CHAR_ARRAY_01d035a0[4352] = {};
 
-// char[4]
-char g_CHAR_ARRAY_01d082e0[4] = {};
+// char[4][256]
+char g_CHAR_ARRAY_ARRAY_01d082e0[4][256] = {};
 
 // float
 float g_FLOAT_01d09860 = {};

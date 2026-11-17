@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 300,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 150,
-    "suspect_count": 12,
+    "pseudocode_lines": 151,
+    "suspect_count": 8,
     "suspect_types": [
       "signed_shift_global_idiom",
       "stack_ref",
       "unknown_field",
       "unresolved_funcptr",
-      "warning_max_restarts",
-      "warning_overlapping_globals"
+      "warning_max_restarts"
     ],
-    "total_lines": 543
+    "total_lines": 544
   },
   "cross_references": [],
   "function": {
@@ -138,8 +137,8 @@
     },
     {
       "addr": "02c81da4",
-      "name": "DAT_02c81da4",
-      "type": "undefined4",
+      "name": "g_IKsPropertySet_PTR_02c81da4",
+      "type": "IKsPropertySet*",
       "value": null
     },
     {
@@ -303,44 +302,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Decompiler iteration limit exceeded",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Exceeded maximum restarts with more pending",
       "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 32,
       "match": "._4_2_",
       "severity": "mild",
       "text": "auStack_4c._4_2_ = 1;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 51,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 8))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -359,16 +334,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 97,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02c81da4 + 0x10))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 133,
+      "line": 134,
       "match": "&stack0xfffff92c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffff92c,\"DirectSux: Unable to %s.  (%s)\");",
@@ -376,7 +343,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 134,
+      "line": 135,
       "match": "&stack0xfffff92c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_logSoundError_FUN_005773f0(&stack0xfffff92c);",
@@ -384,7 +351,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 113,
+      "line": 114,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "((int)((g_INT_02c81da8 + (g_INT_02c81da8 >> 0x1f) * -8) -",
@@ -392,7 +359,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 114,
+      "line": 115,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_02c81da8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c81db0;",

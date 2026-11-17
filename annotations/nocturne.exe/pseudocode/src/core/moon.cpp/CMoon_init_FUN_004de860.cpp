@@ -60,6 +60,6 @@ void __cdecl core_moon_cpp_CMoon_init_FUN_004de860(CMoon *this_ptr)
     *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].random_offset.z + iVar5) = fVar4;
     iVar5 = iVar2;
   } while (iVar2 != 0x2d0);
-  DAT_005bb210 = 0;
+  g_INT_005bb210 = 0;
   return;
 }

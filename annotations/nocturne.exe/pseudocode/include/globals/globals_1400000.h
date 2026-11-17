@@ -13,3 +13,19 @@
 // SFogGrid
 extern SFogGrid g_SFogGrid_0140d784;
 
+// int
+extern int g_INT_0140d778;
+extern int g_INT_0140d77c;
+extern int g_INT_0140d780;
+extern int g_INT_0140e7a4;
+extern int g_INT_0140efa8;
+extern int g_INT_0140efac;
+extern int g_INT_0140efb0;
+
+// int[256]
+extern int g_INT_ARRAY_0140e7a8[256];
+extern int g_INT_ARRAY_0140eba8[256];
+
+// void*[1200]
+extern void* g_ARRAY_PTR_0140efb4[1200];
+

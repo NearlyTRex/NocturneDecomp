@@ -21,6 +21,6 @@ void __cdecl core_fire_cpp_CFireEffect_load_FUN_0048c7d0(CFireEffect *this_ptr,_
   do {
     core_fire_cpp_CCrater_load_FUN_00487d50(this_ptr_00,file_handle);
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CCrater *)&DAT_01c62eb8);
+  } while (this_ptr_00 != g_CraterPool + sizeof(g_CraterPool) / sizeof(g_CraterPool[0]));
   return;
 }

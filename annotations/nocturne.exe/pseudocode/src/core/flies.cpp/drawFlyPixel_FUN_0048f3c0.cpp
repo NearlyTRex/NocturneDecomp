@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,int z_depth)
 
 {
@@ -32,17 +30,16 @@ void __cdecl core_flies_cpp_drawFlyPixel_FUN_0048f3c0(int screen_x,int screen_y,
                                                    0x28),CONCAT14((char)((uint)uVar1 >> 0x10),uVar1)
                                            ) >> 0x20),uVar1) >> 0x18);
     uVar12 = (uint5)uVar2 & 0xffffffff00;
-    uVar5 = (ushort)(((uint7)(byte)((uint)_DAT_01c70754 >> 0x18) << 0x30) >> 0x28);
-    uVar7 = (ushort)(((uint7)(byte)((uint)_DAT_01c70758 >> 0x18) << 0x30) >> 0x28);
-    uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)_DAT_01c70758 & 0xff) +
-            ((ushort)uVar1 & 0xff) * (ushort)(byte)_DAT_01c70754;
-    uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) *
-            (ushort)(byte)((uint)_DAT_01c70758 >> 8) +
+    uVar5 = (ushort)(((uint7)(byte)(g_UINT_01c70754 >> 0x18) << 0x30) >> 0x28);
+    uVar7 = (ushort)(((uint7)(byte)(g_UINT_01c70758 >> 0x18) << 0x30) >> 0x28);
+    uVar4 = (ushort)(byte)g_ActiveRenderColor * ((ushort)g_UINT_01c70758 & 0xff) +
+            ((ushort)uVar1 & 0xff) * (ushort)(byte)g_UINT_01c70754;
+    uVar6 = (ushort)(byte)((uint)g_ActiveRenderColor >> 8) * (ushort)(byte)(g_UINT_01c70758 >> 8) +
             ((ushort)(CONCAT43(uVar2,CONCAT12((char)((uint)uVar1 >> 8),(ushort)uVar1)) >> 0x10) &
-            0xff) * (ushort)(byte)((uint)_DAT_01c70754 >> 8);
+            0xff) * (ushort)(byte)(g_UINT_01c70754 >> 8);
     uVar8 = (short)CONCAT21(uVar9,(char)((uint)g_ActiveRenderColor >> 0x10)) *
-            (short)CONCAT21(uVar7,(char)((uint)_DAT_01c70758 >> 0x10)) +
-            (short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)((uint)_DAT_01c70754 >> 0x10));
+            (short)CONCAT21(uVar7,(char)(g_UINT_01c70758 >> 0x10)) +
+            (short)(uVar12 >> 8) * (short)CONCAT21(uVar5,(char)(g_UINT_01c70754 >> 0x10));
     uVar10 = (uVar9 >> 8) * (uVar7 >> 8) + (short)(uVar12 >> 0x18) * (uVar5 >> 8);
     uVar5 = uVar4 >> 8;
     uVar7 = uVar6 >> 8;

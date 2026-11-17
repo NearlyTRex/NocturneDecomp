@@ -11,8 +11,8 @@
 ;   crt_time.c__localtime_FUN_005665e8 at 005665f7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1f14
-;   undefined4 DAT_005c1f1c
+;   int g_INT_005c1f14 = 0x4650
+;   int g_INT_005c1f1c = 0xe10
 ;
 ; Called Functions:
 ;   crt_time.c_determine_dst_status_FUN_0056d034
@@ -30,7 +30,7 @@ section .text
     CALL crt_time.c_tzset_FUN_0056d608  ; 00566596
         ;   XREF to: 0056d608 (UNCONDITIONAL_CALL)  ; void crt_time.c_tzset_FUN_0056d608()
     PUSH EBX                            ; 0056659b
-    MOV EDX,dword ptr [0x005c1f14]      ; 0056659c | DAT_005c1f14
+    MOV EDX,dword ptr [0x005c1f14]      ; 0056659c | g_INT_005c1f14
     MOV ESI,dword ptr [ESP + 0x10]      ; 005665a2
     PUSH EDX                            ; 005665a6
     MOV ESI,dword ptr [ESI]             ; 005665a7
@@ -46,8 +46,8 @@ section .text
     TEST EAX,EAX                        ; 005665c0
     JZ 0x005665e1                       ; 005665c2
         ;   XREF to: 005665e1 (CONDITIONAL_JUMP)  ; LAB_005665e1
-    MOV EAX,[0x005c1f14]                ; 005665c4 | DAT_005c1f14
-    MOV ECX,dword ptr [0x005c1f1c]      ; 005665c9 | DAT_005c1f1c
+    MOV EAX,[0x005c1f14]                ; 005665c4 | g_INT_005c1f14
+    MOV ECX,dword ptr [0x005c1f1c]      ; 005665c9 | g_INT_005c1f1c
     PUSH EBX                            ; 005665cf
     SUB EAX,ECX                         ; 005665d0
     PUSH EAX                            ; 005665d2

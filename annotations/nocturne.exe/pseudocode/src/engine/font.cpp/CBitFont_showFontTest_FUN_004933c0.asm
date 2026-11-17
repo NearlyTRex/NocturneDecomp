@@ -12,13 +12,13 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_one_00581995
-;   undefined4 DAT_00581999
+;   char g_CHAR_00581999 = \x08
 ;   TerminatedCString s_two_0058199b
-;   undefined4 DAT_0058199f
+;   char g_CHAR_0058199f = \x0c
 ;   TerminatedCString s_three_005819a1
-;   undefined4 DAT_005819a7
+;   TerminatedCString s_anon_005819a7
 ;   TerminatedCString s_four_005819a9
-;   undefined4 DAT_005819ae
+;   TerminatedCString s_anon_005819ae
 ;   TerminatedCString s_s_01234_5_6_7_8_9_0_8_8_005819b1
 ;   TerminatedCString s_s_023_0_23_a_t_5_0_2_1_005819cf
 ;   TerminatedCString s_s_0A_1B_1_O_I_I_O_x_005819ed
@@ -163,7 +163,7 @@ section .text
     PUSH EBX                            ; 004934f1
     LEA ESI,[EAX + 0xa]                 ; 004934f2
     PUSH ESI                            ; 004934f5
-    PUSH 0x581999                       ; 004934f6 | DAT_00581999
+    PUSH 0x581999                       ; 004934f6 | g_CHAR_00581999
     MOV EDI,dword ptr [EBP + 0x14]      ; 004934fb
     PUSH EDI                            ; 004934fe
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004934ff
@@ -184,7 +184,7 @@ section .text
     PUSH EBX                            ; 00493521
     ADD ESI,EAX                         ; 00493522
     PUSH ESI                            ; 00493524
-    PUSH 0x58199f                       ; 00493525 | DAT_0058199f
+    PUSH 0x58199f                       ; 00493525 | g_CHAR_0058199f
     PUSH EDI                            ; 0049352a
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 0049352b
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -204,7 +204,7 @@ section .text
     PUSH EBX                            ; 0049354d
     ADD ESI,EAX                         ; 0049354e
     PUSH ESI                            ; 00493550
-    PUSH 0x5819a7                       ; 00493551 | DAT_005819a7
+    PUSH 0x5819a7                       ; 00493551 | = "\t"
     PUSH EDI                            ; 00493556
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00493557
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
@@ -224,7 +224,7 @@ section .text
     PUSH EBX                            ; 00493579
     ADD ESI,EAX                         ; 0049357a
     PUSH ESI                            ; 0049357c
-    PUSH 0x5819ae                       ; 0049357d | DAT_005819ae
+    PUSH 0x5819ae                       ; 0049357d | = "  "
     PUSH EDI                            ; 00493582
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00493583
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

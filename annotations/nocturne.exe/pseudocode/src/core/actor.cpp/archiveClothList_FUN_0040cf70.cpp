@@ -13,31 +13,32 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(CClothList *cloth_list
   int iVar2;
   char (*pacVar3) [40];
   
-  if (DAT_00763e88 != 1) {
-    _fprintf(DAT_00763e84,"%s{ // %s\n",&DAT_005acc90,property_name);
+  if (g_INT_00763e88 != 1) {
+    _fprintf(g_FILE_PTR_00763e84,"%s{ // %s\n",g_CHAR_ARRAY_005acc90,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(1);
     iVar1 = 0;
-    _fprintf(DAT_00763e84,"%s%d // clothCount\n",&DAT_005acc90,cloth_list->count);
+    _fprintf(g_FILE_PTR_00763e84,"%s%d // clothCount\n",g_CHAR_ARRAY_005acc90,cloth_list->count
+              );
     if (0 < cloth_list->count) {
       pacVar3 = cloth_list->filenames;
       do {
         iVar1 = iVar1 + 1;
-        _fprintf(DAT_00763e84,"%s\"%s\"\n",&DAT_005acc90,pacVar3);
+        _fprintf(g_FILE_PTR_00763e84,"%s\"%s\"\n",g_CHAR_ARRAY_005acc90,pacVar3);
         pacVar3 = pacVar3 + 1;
       } while (iVar1 < cloth_list->count);
     }
     core_actor_cpp_adjustIndentationLevel_FUN_0040bff0(-1);
-    _fprintf(DAT_00763e84,"%s}\n",&DAT_005acc90);
+    _fprintf(g_FILE_PTR_00763e84,"%s}\n",g_CHAR_ARRAY_005acc90);
     return;
   }
   do {
-    iVar1 = _fgetc(DAT_00763e84);
+    iVar1 = _fgetc(g_FILE_PTR_00763e84);
     if (iVar1 < 0) {
       core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                 ("Cloth list opening brace",property_name);
     }
   } while (iVar1 != 10);
-  iVar1 = _fscanf(DAT_00763e84,"%d",cloth_list);
+  iVar1 = _fscanf(g_FILE_PTR_00763e84,"%d",cloth_list);
   if (iVar1 != 1) {
     core_actor_cpp_handleActorPropertyParseError_FUN_0040c320("cloth count",property_name);
   }
@@ -46,7 +47,7 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(CClothList *cloth_list
   if (0 < cloth_list->count) {
     pacVar3 = cloth_list->filenames;
     do {
-      iVar2 = _fscanf(DAT_00763e84," \"%[^\"]\"\n",pacVar3);
+      iVar2 = _fscanf(g_FILE_PTR_00763e84," \"%[^\"]\"\n",pacVar3);
       if (iVar2 != 1) {
         core_actor_cpp_handleActorPropertyParseError_FUN_0040c320
                   ("cloth filename entry",property_name);
@@ -56,7 +57,7 @@ void __cdecl core_actor_cpp_archiveClothList_FUN_0040cf70(CClothList *cloth_list
     } while (iVar1 < cloth_list->count);
   }
   do {
-    while (iVar1 = _fgetc(DAT_00763e84), -1 < iVar1) {
+    while (iVar1 = _fgetc(g_FILE_PTR_00763e84), -1 < iVar1) {
       if (iVar1 == 10) {
         return;
       }

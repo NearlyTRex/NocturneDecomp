@@ -79,7 +79,7 @@ char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_c
   if (pcVar3 == (char *)0x0) {
     pcVar3 = wincore_winrun_cpp_getKeyName_FUN_005b30e0(key_code);
   }
-  pcVar2 = g_CHAR_ARRAY_01d219e8 + g_INT_01d219e0 * 0x100;
+  pcVar2 = g_CHAR_ARRAY_ARRAY_01d219e8[g_INT_01d219e0];
   pcVar4 = pcVar2;
   g_INT_01d219e0 = (g_INT_01d219e0 + 1) % 10;
   do {

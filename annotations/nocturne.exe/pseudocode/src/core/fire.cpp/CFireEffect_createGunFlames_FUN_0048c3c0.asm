@@ -16,7 +16,7 @@
 ;   core_flamegun.cpp_CFlameThrower_fire_FUN_0048ea60 at 0048eab3
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c62eb8
+;   int g_INT_01c62eb8
 ;   CGunFlame[500] g_CGunFlame_ARRAY_01c62ebc
 ;
 ; Called Functions:
@@ -31,7 +31,7 @@ section .text
     PUSH ESI                            ; 0048c3c1
     PUSH EDI                            ; 0048c3c2
     PUSH EBP                            ; 0048c3c3
-    MOV ESI,dword ptr [0x01c62eb8]      ; 0048c3c4 | DAT_01c62eb8
+    MOV ESI,dword ptr [0x01c62eb8]      ; 0048c3c4 | g_INT_01c62eb8
     MOV EBP,dword ptr [ESP + 0x18]      ; 0048c3ca
     MOV EBX,dword ptr [ESP + 0x20]      ; 0048c3ce
     MOV EDI,dword ptr [ESP + 0x24]      ; 0048c3d2
@@ -46,10 +46,10 @@ section .text
     PUSH EBP                            ; 0048c3e3
     ADD EAX,0x1c62ebc                   ; 0048c3e4
     PUSH EAX                            ; 0048c3e9 | g_CGunFlame_ARRAY_01c62ebc
-    MOV dword ptr [0x01c62eb8],ESI      ; 0048c3ea | DAT_01c62eb8
+    MOV dword ptr [0x01c62eb8],ESI      ; 0048c3ea | g_INT_01c62eb8
     CALL core_fire.cpp_CGunFlame_activate_FUN_00488280 ; 0048c3f0
         ;   XREF to: 00488280 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CGunFlame_activate_FUN_00488280(CGunFlame * this_ptr, CVector3f * position, CVector3f * euler_angles, int flame_type)
-    MOV ESI,dword ptr [0x01c62eb8]      ; 0048c3f5 | DAT_01c62eb8
+    MOV ESI,dword ptr [0x01c62eb8]      ; 0048c3f5 | g_INT_01c62eb8
     INC ESI                             ; 0048c3fb
     ADD ESP,0x10                        ; 0048c3fc
     CMP ESI,0x1f4                       ; 0048c3ff
@@ -61,7 +61,7 @@ section .text
     TEST EBX,EBX                        ; 0048c40a
     JG 0x0048c3da                       ; 0048c40c
         ;   XREF to: 0048c3da (CONDITIONAL_JUMP)  ; LAB_0048c3da
-    MOV dword ptr [0x01c62eb8],ESI      ; 0048c40e | DAT_01c62eb8
+    MOV dword ptr [0x01c62eb8],ESI      ; 0048c40e | g_INT_01c62eb8
         ;   Label: LAB_0048c40e
     POP EBP                             ; 0048c414
     POP EDI                             ; 0048c415

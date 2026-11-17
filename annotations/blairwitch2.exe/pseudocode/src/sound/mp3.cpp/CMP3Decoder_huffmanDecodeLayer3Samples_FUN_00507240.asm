@@ -43,9 +43,9 @@
 ;   TerminatedCString s_huffman_decodertable_err_005e01ab
 ;   TerminatedCString s_sound_mp3_cpp_005e01dd
 ;   TerminatedCString s_decoder_table_read_error_005e01ee
-;   int[1] g_INT_ARRAY_0061933c
-;   undefined4 DAT_00619340
-;   undefined4 DAT_0061ade0
+;   undefined4 g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[1]
+;   undefined4 g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[2]
+;   SHuffmanTableSource[34] g_SHuffmanTableSource_ARRAY_0061ade0
 ;   ... and 10 more
 ;
 ; Called Functions:
@@ -272,16 +272,16 @@ section .text
         ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 005074c1
     MOV EAX,dword ptr [ESP + 0x30]      ; 005074c4
-    MOV EAX,dword ptr [EAX + 0x61ade0]  ; 005074c8 | DAT_0061ade0
+    MOV EAX,dword ptr [EAX + 0x61ade0]  ; 005074c8 | g_SHuffmanTableSource_ARRAY_0061ade0
     MOV dword ptr [EBX + 0x1d23e7c],EAX ; 005074ce | g_SHuffmanTable_ARRAY_01d23658[0].table_size
     MOV EAX,dword ptr [ESP + 0x30]      ; 005074d4
-    MOV EAX,dword ptr [EAX + 0x61ade4]  ; 005074d8 | DAT_0061ade4
+    MOV EAX,dword ptr [EAX + 0x61ade4]  ; 005074d8 | g_SHuffmanTableSource_ARRAY_0061ade0[0].xlen
     MOV dword ptr [EBX + 0x1d2365c],EAX ; 005074de
     MOV EAX,dword ptr [ESP + 0x30]      ; 005074e4
-    MOV EAX,dword ptr [EAX + 0x61ade8]  ; 005074e8 | DAT_0061ade8
+    MOV EAX,dword ptr [EAX + 0x61ade8]  ; 005074e8 | g_SHuffmanTableSource_ARRAY_0061ade0[0].ylen
     MOV dword ptr [EBX + 0x1d23660],EAX ; 005074ee
     MOV EAX,dword ptr [ESP + 0x30]      ; 005074f4
-    MOV EAX,dword ptr [EAX + 0x61adec]  ; 005074f8 | DAT_0061adec
+    MOV EAX,dword ptr [EAX + 0x61adec]  ; 005074f8 | g_SHuffmanTableSource_ARRAY_0061ade0[0].bits
     MOV dword ptr [EBX + 0x1d23664],EAX ; 005074fe
     MOV EAX,0x1                         ; 00507504
     MOV CL,byte ptr [EBX + 0x1d23664]   ; 00507509
@@ -310,7 +310,7 @@ section .text
     ADD ESP,0xc                         ; 00507557
     MOV EAX,dword ptr [ESP + 0x30]      ; 0050755a
         ;   Label: LAB_0050755a
-    MOV EAX,dword ptr [EAX + 0x61adf0]  ; 0050755e | DAT_0061adf0
+    MOV EAX,dword ptr [EAX + 0x61adf0]  ; 0050755e | g_SHuffmanTableSource_ARRAY_0061ade0[0].reference_index
     TEST EAX,EAX                        ; 00507564
     JL 0x0050765d                       ; 00507566
         ;   XREF to: 0050765d (CONDITIONAL_JUMP)  ; LAB_0050765d
@@ -407,7 +407,7 @@ section .text
     MOV ECX,EBX                         ; 005076a8
     MOV EDX,dword ptr [EBX + 0x1d23e7c] ; 005076aa | g_SHuffmanTable_ARRAY_01d23658[0].table_size
     XOR ESI,ESI                         ; 005076b0
-    MOV EAX,dword ptr [EAX + 0x61adf4]  ; 005076b2 | DAT_0061adf4
+    MOV EAX,dword ptr [EAX + 0x61adf4]  ; 005076b2 | g_SHuffmanTableSource_ARRAY_0061ade0[0].huffman_data_ptr
     TEST EDX,EDX                        ; 005076b8
     JBE 0x005075e7                      ; 005076ba
         ;   XREF to: 005075e7 (CONDITIONAL_JUMP)  ; LAB_005075e7
@@ -455,11 +455,11 @@ section .text
     ADD EAX,EDX                         ; 0050773c
     MOV EBX,dword ptr [ECX + 0x4c]      ; 0050773e
     SHL EAX,0x2                         ; 00507741
-    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x61933c] ; 00507744 | g_INT_ARRAY_0061933c
+    MOV EDX,dword ptr [EAX + EBX*0x4 + 0x61933c] ; 00507744 | g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[1]
     MOV dword ptr [ESP + 0x28],EDX      ; 0050774b
     MOV EDX,dword ptr [ECX + 0x50]      ; 0050774f
     ADD EDX,EBX                         ; 00507752
-    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x619340] ; 00507754 | DAT_00619340
+    MOV EBP,dword ptr [EAX + EDX*0x4 + 0x619340] ; 00507754 | g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[2]
     JMP 0x005072b9                      ; 0050775b
         ;   XREF to: 005072b9 (UNCONDITIONAL_JUMP)  ; LAB_005072b9
     CMP ESI,dword ptr [ESP + 0x28]      ; 00507760

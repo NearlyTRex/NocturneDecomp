@@ -39,7 +39,7 @@
 ;   double DOUBLE_005963b9 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_02dca058
+;   int[19] g_INT_ARRAY_02dca058
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -316,7 +316,7 @@ section .text
     JNZ 0x00542000                      ; 00541fb8
         ;   XREF to: 00542000 (CONDITIONAL_JUMP)  ; LAB_00542000
     PUSH 0x51b650                       ; 00541fba
-    MOV ESI,dword ptr [0x02dca058]      ; 00541fbf | DAT_02dca058
+    MOV ESI,dword ptr [0x02dca058]      ; 00541fbf | g_INT_ARRAY_02dca058
     PUSH ESI                            ; 00541fc5
     LEA EAX,[EBX + 0x950a8]             ; 00541fc6
     PUSH dword ptr [EBX + 0x950b4]      ; 00541fcc

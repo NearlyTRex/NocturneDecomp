@@ -33,3 +33,11 @@ extern CRock g_RockPool[64];
 // CToss[20]
 extern CToss g_TossPool[20];
 
+// int
+extern int g_INT_01c58c8c;
+extern int g_INT_01c58df8;
+extern int g_INT_01c5b4fc;
+extern int g_INT_01c5c700;
+extern int g_INT_01c5d704;
+extern int g_INT_01c5d820;
+

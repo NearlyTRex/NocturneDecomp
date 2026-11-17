@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CLZWDecompress.h"
+#include "types/structs/SFogImagePlane.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1350000
@@ -13,11 +14,11 @@
 // CLZWDecompress
 extern CLZWDecompress g_CLZWDecompressInstance;
 
+// SFogImagePlane
+extern SFogImagePlane g_SFogImagePlane_0135ead0;
+
 // char[4096]
 extern char g_CHAR_ARRAY_0135dab0[4096];
-
-// char[76797]
-extern char g_CHAR_ARRAY_0135ead0[76797];
 
 // int
 extern int g_INT_0135eab0;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(CPathMap *this_ptr,uint flags)
 
 {
@@ -16,21 +14,22 @@ CPathMap * __cdecl core_path_cpp_CPathMap_dtor_FUN_004efdd0(CPathMap *this_ptr,u
   int iVar3;
   
   iVar3 = 0;
-  if (0 < _DAT_01e312f8) {
+  if (0 < g_INT_01e312f8) {
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
-      if (this_ptr == *(CPathMap **)(iVar2 + 0x1e312fc)) {
-        _DAT_01e312f8 = _DAT_01e312f8 + -1;
+      if (this_ptr == *(CPathMap **)((int)g_CPathMap_PTR_ARRAY_01e312fc + iVar2)) {
+        g_INT_01e312f8 = g_INT_01e312f8 + -1;
         memmove
-                  ((void *)(iVar2 + 0x1e312fc),(void *)(iVar2 + 0x1e31300),
-                   (_DAT_01e312f8 - iVar3) * 4);
-        *(uint *)(_DAT_01e312f8 * 4 + 0x1e312fc) = 0;
+                  ((void *)((int)g_CPathMap_PTR_ARRAY_01e312fc + iVar2),
+                   (void *)((int)g_CPathMap_PTR_ARRAY_01e312fc + iVar2 + 4),
+                   (g_INT_01e312f8 - iVar3) * 4);
+        g_CPathMap_PTR_ARRAY_01e312fc[g_INT_01e312f8] = (CPathMap *)0x0;
         return this_ptr;
       }
       iVar3 = iVar3 + 1;
       iVar2 = iVar1;
-    } while (iVar1 < _DAT_01e312f8 * 4);
+    } while (iVar1 < g_INT_01e312f8 * 4);
   }
   return this_ptr;
 }

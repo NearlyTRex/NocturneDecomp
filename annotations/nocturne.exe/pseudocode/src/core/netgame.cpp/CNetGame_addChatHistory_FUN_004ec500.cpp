@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *this_ptr,SNetworkAddr *sender_addr,int message_id,char *sender_name,char *message)
 
 {
@@ -19,15 +17,15 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *thi
   byte bVar6;
   
   bVar6 = 0;
-  if (399 < _DAT_01cea40c) {
-    _DAT_01cea40c = _DAT_01cea40c + -1;
+  if (399 < g_INT_01cea40c) {
+    g_INT_01cea40c = g_INT_01cea40c + -1;
     memmove
-              (g_SChatHistory_ARRAY_01cea410,g_SChatHistory_ARRAY_01cea410 + 1,_DAT_01cea40c * 0x120
-              );
+              (g_SChatHistory_ARRAY_01cea410,g_SChatHistory_ARRAY_01cea410 + 1,
+               g_INT_01cea40c * 0x120);
   }
-  iVar2 = _DAT_01cea40c;
-  iVar3 = _DAT_01cea40c * 0x120;
-  g_SChatHistory_ARRAY_01cea410[_DAT_01cea40c].sender_addr.ip_address = sender_addr->ip_address;
+  iVar2 = g_INT_01cea40c;
+  iVar3 = g_INT_01cea40c * 0x120;
+  g_SChatHistory_ARRAY_01cea410[g_INT_01cea40c].sender_addr.ip_address = sender_addr->ip_address;
   *(uint *)(iVar3 + 0x1cea414 + (uint)bVar6 * -8) =
        *(uint *)&sender_addr[-(uint)bVar6].port;
   g_SChatHistory_ARRAY_01cea410[iVar2].message_id = message_id;
@@ -41,7 +39,7 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *thi
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar5 = g_SChatHistory_ARRAY_01cea410[_DAT_01cea40c].message;
+  pcVar5 = g_SChatHistory_ARRAY_01cea410[g_INT_01cea40c].message;
   pcVar4 = message;
   do {
     cVar1 = *pcVar4;
@@ -52,7 +50,7 @@ void __cdecl core_netgame_cpp_CNetGame_addChatHistory_FUN_004ec500(CNetGame *thi
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  _DAT_01cea40c = _DAT_01cea40c + 1;
+  g_INT_01cea40c = g_INT_01cea40c + 1;
   core_game_cpp_CGame_displayMessage_FUN_0049aa30(g_CGamePtr,message,5.0);
   return;
 }

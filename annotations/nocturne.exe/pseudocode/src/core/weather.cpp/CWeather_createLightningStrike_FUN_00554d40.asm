@@ -44,7 +44,7 @@
 ;   double DOUBLE_00597c89 = 0.5
 ;   double DOUBLE_00597c91 = 0.0000152590218966964
 ;   float FLOAT_00597c99 = 0.6500000
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   undefined4 g_CDemonCameraInstance.corona_blend_factor
@@ -219,7 +219,7 @@ section .text
     FILD dword ptr [ESP + 0x84]         ; 00554f1e
     FMUL double ptr [0x00597c91]        ; 00554f25 | DOUBLE_00597c91
     PUSH 0x597c6d                       ; 00554f2b | = "noLightningFlash"
-    MOV EDX,dword ptr [0x005b7650]      ; 00554f30 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00554f30 | g_CEventList_PTR_005b7650
     FSTP float ptr [ESP + 0x4]          ; 00554f36
     MOV EAX,dword ptr [ESP + 0x4]       ; 00554f3a
     PUSH EDX                            ; 00554f3e

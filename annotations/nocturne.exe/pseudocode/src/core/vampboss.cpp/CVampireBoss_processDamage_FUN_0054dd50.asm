@@ -15,7 +15,7 @@
 ;   TerminatedCString s_voicudeath_wav_2_5_005971ea
 ;   double DOUBLE_00597205 = 2
 ;   double DOUBLE_0059720d = 25
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
@@ -244,7 +244,7 @@ section .text
         ;   XREF to: 00428f40 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter * this_ptr, int hand_index, CDemonActor * object, float blend_time)
     ADD ESP,0x10                        ; 0054df34
     PUSH 0x5971d7                       ; 0054df37 | = "VampireBossBitesIt"
-    MOV EDI,dword ptr [0x005b7650]      ; 0054df3c | DAT_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 0054df3c | g_CEventList_PTR_005b7650
     PUSH EDI                            ; 0054df42
     CALL core_event.cpp_CEventList_executeCommands_FUN_0047ab70 ; 0054df43
         ;   XREF to: 0047ab70 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_executeCommands_FUN_0047ab70(CEventList * this_ptr, char * commands)

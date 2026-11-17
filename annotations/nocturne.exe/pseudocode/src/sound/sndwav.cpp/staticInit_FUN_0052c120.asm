@@ -5,13 +5,13 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc9440
+;   CWavOutDevice g_CWavOutDevice_02dc9440
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV dword ptr [0x02dc9440],0x5a2264 ; 0052c120 | DAT_02dc9440
+    MOV dword ptr [0x02dc9440],0x5a2264 ; 0052c120 | g_CWavOutDevice_02dc9440
         ;   Label: sound_sndwav.cpp_staticInit_FUN_0052c120
     RET                                 ; 0052c12a
 

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 363,
-    "complexity_score": 195,
+    "complexity_score": 179,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 130,
-    "suspect_count": 5,
+    "pseudocode_lines": 129,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 493
+    "total_lines": 492
   },
   "cross_references": [
     {
@@ -78,9 +77,9 @@
   "globals": [
     {
       "addr": "0059c064",
-      "name": "DAT_0059c064",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c064",
+      "type": "float",
+      "value": "0.00390625"
     }
   ],
   "param_estimates": {
@@ -497,16 +496,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 73,
+      "line": 71,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "local_5c.x = local_44.x;",
@@ -514,7 +505,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 85,
+      "line": 83,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "output_normal->x = local_98.x;",
@@ -522,7 +513,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 121,
+      "line": 119,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "output_normal->x = pCVar2->x;",
@@ -530,7 +521,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 52,
+      "line": 50,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "local_24 = (int)&(((SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list->vertices + -2))->base)",

@@ -21,7 +21,7 @@
 ;   int g_INT_01c38b04
 ;   int g_INT_01c38b14
 ;   void* g_PTR_026656bc
-;   undefined4 DAT_026656c0
+;   HMODULE g_HMODULE_026656c0
 ;
 ; Called Functions:
 ;   GetModuleHandleA
@@ -36,7 +36,7 @@ section .text
         ;   Label: wincore_winrun.cpp_initJoystick_FUN_0058ffd0
     PUSH 0x5eeadd                       ; 0058ffd6 | = "winmm.dll"
     CALL dword ptr CS:[0x5c85b0]        ; 0058ffdb | PTR_GetModuleHandleA_005c85b0
-    MOV [0x026656c0],EAX                ; 0058ffe2 | DAT_026656c0
+    MOV [0x026656c0],EAX                ; 0058ffe2 | g_HMODULE_026656c0
     TEST EAX,EAX                        ; 0058ffe7
     JZ 0x0058fffd                       ; 0058ffe9
         ;   XREF to: 0058fffd (CONDITIONAL_JUMP)  ; LAB_0058fffd

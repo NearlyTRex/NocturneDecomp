@@ -2,21 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 191,
+    "complexity_score": 177,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 86,
+    "pseudocode_lines": 87,
     "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
-      "pointer_stride_bytecount",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "warning_overlapping_globals"
+      "pointer_stride_bytecount"
     ],
-    "total_lines": 258
+    "total_lines": 259
   },
   "cross_references": [
     {
@@ -77,8 +74,8 @@
     },
     {
       "addr": "02ddd5d4",
-      "name": "DAT_02ddd5d4",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_02ddd5d4",
+      "type": "char[4]",
       "value": null
     }
   ],
@@ -264,67 +261,67 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 29,
       "match": "(int *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "text": "piVar1 = (int *)((int)g_CDemonSetPtr->waypoints + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_02ddd5d4",
-      "severity": "mild",
-      "text": "memmove(&DAT_02ddd5d4,(void *)0x2ddd5d8,n);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(int *)((int)acVar4",
+      "severity": "moderate",
+      "text": "if (0 < *(int *)((int)acVar4 + 0x368)) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_02ddd5d4",
-      "severity": "mild",
-      "text": "if (pCVar2 == *(CWayPoint **)(&DAT_02ddd5d4 + iVar5)) break;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)acVar4",
+      "severity": "moderate",
+      "text": "fVar3 = *(float *)((int)acVar4 + 0x54c) + *(float *)((int)acVar11 + 0x370);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 62,
-      "match": "DAT_02ddd5d4",
-      "severity": "mild",
-      "text": "*(CWayPoint **)(&DAT_02ddd5d4 + n) = pCVar2;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)acVar11",
+      "severity": "moderate",
+      "text": "fVar3 = *(float *)((int)acVar4 + 0x54c) + *(float *)((int)acVar11 + 0x370);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 46,
+      "match": "(int *)((int)acVar11",
+      "severity": "moderate",
+      "text": "iVar10 = *(int *)((int)acVar11 + 0x36c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(int *)((int)acVar4",
+      "severity": "moderate",
+      "text": "} while (local_c < *(int *)((int)acVar4 + 0x368));",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(CWayPoint **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "pCVar9 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar4);",
+      "text": "pCVar2 = *(CWayPoint **)((int)g_CDemonSetPtr->waypoints + iVar5);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar9` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar9->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 67,
-      "match": "pCVar9 = (T *)((pCVar9->FIELD).SUBFIELD...ARRAY + CONST)",
-      "severity": "moderate",
-      "text": "pCVar9 = (CWayPoint *)((pCVar9->base).base.actor_name + 8);",
-      "type": "shadow_pointer_walk"
     },
     {
       "description": "mem* byte count hardcodes an element stride (n = count * N) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
       "line": 40,
       "match": "memmove",
       "severity": "moderate",
-      "text": "memmove(&DAT_02ddd5d4,(void *)0x2ddd5d8,n);",
+      "text": "memmove(g_CHAR_ARRAY_02ddd5d4,(void *)0x2ddd5d8,n);",
       "type": "pointer_stride_bytecount"
     }
   ]

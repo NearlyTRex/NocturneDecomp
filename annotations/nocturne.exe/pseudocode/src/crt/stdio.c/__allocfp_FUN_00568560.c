@@ -6,27 +6,25 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 _FILE * __cdecl __allocfp(int unused_param)
 
 {
   streambuf *psVar1;
-  _FILE *dest;
+  _FILE **dest;
   uint uVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad0)();
-  if (_DAT_02de4e24 == (streambuf *)0x0) {
-    dest = (_FILE *)&DAT_005c1894;
+  if (g_FileListNode_PTR_02de4e24 == (FileListNode *)0x0) {
+    dest = &g_FILE_PTR_005c1894;
     do {
-      if ((dest->_flag & 3) == 0) {
+      if ((((_FILE *)dest)->_flag & 3) == 0) {
         psVar1 = (streambuf *)malloc(0x1d);
         if (psVar1 == (streambuf *)0x0) goto LAB_00568608;
         uVar2 = 3;
         goto LAB_005685d9;
       }
-      dest = dest + 1;
-    } while (dest < (_FILE *)&DAT_005c1a9c);
+      dest = (_FILE **)((int)dest + 0x1a);
+    } while (dest < g_CHAR_ARRAY_005c1a9c);
     uVar2 = 0x4003;
     psVar1 = (streambuf *)malloc(0x37);
     if (psVar1 == (streambuf *)0x0) {
@@ -35,21 +33,21 @@ LAB_00568608:
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
       return (_FILE *)0x0;
     }
-    dest = (_FILE *)((int)&psVar1->__put_end + 1);
+    dest = (_FILE **)((int)&psVar1->__put_end + 1);
   }
   else {
-    dest = (_FILE *)_DAT_02de4e24->__reserve_base;
-    uVar2 = (uint)((ushort)dest->_flag & 0x4003 | 3);
-    psVar1 = _DAT_02de4e24;
-    _DAT_02de4e24 = _DAT_02de4e24->__b_lock;
+    dest = (_FILE **)g_FileListNode_PTR_02de4e24->file_struct;
+    uVar2 = (uint)((ushort)((_FILE *)dest)->_flag & 0x4003 | 3);
+    psVar1 = (streambuf *)g_FileListNode_PTR_02de4e24;
+    g_FileListNode_PTR_02de4e24 = g_FileListNode_PTR_02de4e24->next;
   }
 LAB_005685d9:
   memset(dest,0,0x1a);
-  dest->_flag = uVar2;
+  ((_FILE *)dest)->_flag = uVar2;
   psVar1->__reserve_base = (char *)dest;
-  dest->_link = psVar1;
-  psVar1->__b_lock = _DAT_02de4e20;
-  _DAT_02de4e20 = psVar1;
+  ((_FILE *)dest)->_link = psVar1;
+  psVar1->__b_lock = g_FileListNode_PTR_02de4e20;
+  g_FileListNode_PTR_02de4e20 = (FileListNode *)psVar1;
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ad4)();
-  return dest;
+  return (_FILE *)dest;
 }

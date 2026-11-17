@@ -20,8 +20,8 @@
 ;   ... and 69 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_006b026c
-;   undefined4 DAT_006b0280
+;   int g_INT_006b026c
+;   int g_INT_006b0280
 ;   int g_RelativeX
 ;   int g_RelativeY
 ;   int g_RelativeZ
@@ -33,12 +33,12 @@ section .text
     PUSH EBX                            ; 00404610
         ;   Label: engine_3d.c_isVisiblePlane_FUN_00404610
     PUSH ESI                            ; 00404611
-    MOV EDX,dword ptr [0x006b026c]      ; 00404612 | DAT_006b026c
+    MOV EDX,dword ptr [0x006b026c]      ; 00404612 | g_INT_006b026c
     INC EDX                             ; 00404618
     MOV ESI,dword ptr [ESP + 0xc]       ; 00404619
-    MOV dword ptr [0x006b026c],EDX      ; 0040461d | DAT_006b026c
+    MOV dword ptr [0x006b026c],EDX      ; 0040461d | g_INT_006b026c
     MOV EAX,0x1                         ; 00404623
-    CMP dword ptr [0x006b0280],0x0      ; 00404628 | DAT_006b0280
+    CMP dword ptr [0x006b0280],0x0      ; 00404628 | g_INT_006b0280
     JNZ 0x00404678                      ; 0040462f
         ;   XREF to: 00404678 (CONDITIONAL_JUMP)  ; LAB_00404678
     MOV EBX,dword ptr [ESI]             ; 00404631

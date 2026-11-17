@@ -12,13 +12,13 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_00448918 = 004489da
 ;   undefined1* PTR_caseD_3_00448920 = 004489bf
-;   undefined4 DAT_014b8614
+;   int g_INT_014b8614
 ;   CVector3f[16] g_CVector3f_ARRAY_014b8618
 ;   undefined4 g_CVector3f_ARRAY_014b8618[0].y
 ;   undefined4 g_CVector3f_ARRAY_014b8618[0].z
 ;   undefined4 g_CVector3f_ARRAY_014b8618[1].x
 ;   undefined4 g_CVector3f_ARRAY_014b8618[2].x
-;   undefined4 DAT_014b86d8
+;   int g_INT_014b86d8
 ;   CVector3f[16] g_CVector3f_ARRAY_014b86dc
 ;   undefined4 g_CVector3f_ARRAY_014b86dc[0].y
 ;   undefined4 g_CVector3f_ARRAY_014b86dc[0].z
@@ -38,14 +38,14 @@ section .text
     MOV EBP,ESP                         ; 00448934
     SUB ESP,0x4                         ; 00448936
     AND ESP,0xfffffff8                  ; 00448939
-    MOV EBX,dword ptr [0x014b86d8]      ; 0044893c | DAT_014b86d8
-    MOV EDX,dword ptr [0x014b8614]      ; 00448942 | DAT_014b8614
+    MOV EBX,dword ptr [0x014b86d8]      ; 0044893c | g_INT_014b86d8
+    MOV EDX,dword ptr [0x014b8614]      ; 00448942 | g_INT_014b8614
     XOR ESI,ESI                         ; 00448948
     TEST EDX,EDX                        ; 0044894a
     JLE 0x004489cd                      ; 0044894c
         ;   XREF to: 004489cd (CONDITIONAL_JUMP)  ; LAB_004489cd
     MOV EDI,0x14b8618                   ; 00448952
-    MOV EAX,[0x014b8614]                ; 00448957 | DAT_014b8614
+    MOV EAX,[0x014b8614]                ; 00448957 | g_INT_014b8614
         ;   Label: LAB_00448957
     LEA ECX,[ESI + 0x1]                 ; 0044895c
     CMP ECX,EAX                         ; 0044895f
@@ -95,14 +95,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 004489bb | g_CVector3f_ARRAY_014b86dc[0].z
     INC EBX                             ; 004489be
         ;   Label: LAB_004489be
-    MOV ECX,dword ptr [0x014b8614]      ; 004489bf | DAT_014b8614
+    MOV ECX,dword ptr [0x014b8614]      ; 004489bf | g_INT_014b8614
         ;   Label: caseD_3
     INC ESI                             ; 004489c5
     ADD EDI,0xc                         ; 004489c6
     CMP ESI,ECX                         ; 004489c9
     JL 0x00448957                       ; 004489cb
         ;   XREF to: 00448957 (CONDITIONAL_JUMP)  ; LAB_00448957
-    MOV dword ptr [0x014b86d8],EBX      ; 004489cd | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],EBX      ; 004489cd | g_INT_014b86d8
         ;   Label: LAB_004489cd
     MOV ESP,EBP                         ; 004489d3
     POP EBP                             ; 004489d5
@@ -127,10 +127,10 @@ section .text
     PUSH EDX                            ; 004489fe | g_CVector3f_ARRAY_014b8618
     MOV EAX,dword ptr [ESP + 0x28]      ; 004489ff
     PUSH EAX                            ; 00448a03
-    MOV dword ptr [0x014b86d8],EBX      ; 00448a04 | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],EBX      ; 00448a04 | g_INT_014b86d8
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448a0a
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b86d8]      ; 00448a0f | DAT_014b86d8
+    MOV EBX,dword ptr [0x014b86d8]      ; 00448a0f | g_INT_014b86d8
     ADD ESP,0x2c                        ; 00448a15
     JMP 0x004489be                      ; 00448a18
         ;   XREF to: 004489be (UNCONDITIONAL_JUMP)  ; LAB_004489be
@@ -164,10 +164,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x24]      ; 00448a5c
     PUSH ECX                            ; 00448a60
     PUSH EDX                            ; 00448a61 | g_CVector3f_ARRAY_014b8618
-    MOV dword ptr [0x014b86d8],EBX      ; 00448a62 | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],EBX      ; 00448a62 | g_INT_014b86d8
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 00448a68
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b86d8]      ; 00448a6d | DAT_014b86d8
+    MOV EBX,dword ptr [0x014b86d8]      ; 00448a6d | g_INT_014b86d8
     ADD ESP,0x2c                        ; 00448a73
     JMP 0x004489be                      ; 00448a76
         ;   XREF to: 004489be (UNCONDITIONAL_JUMP)  ; LAB_004489be

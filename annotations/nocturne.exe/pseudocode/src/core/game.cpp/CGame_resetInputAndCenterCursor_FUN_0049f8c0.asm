@@ -19,8 +19,8 @@
 ;   int g_WindowHeight = 0xc8
 ;   CNetGame* g_CNetGamePtr = 01cea280
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01c78418
-;   undefined4 DAT_01c7841c
+;   int g_INT_01c78418
+;   int g_INT_01c7841c
 ;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
@@ -63,12 +63,12 @@ section .text
     SAR EAX,0x1                         ; 0049f90b
     XOR ECX,ECX                         ; 0049f90d
     PUSH EAX                            ; 0049f90f
-    MOV dword ptr [0x01c78418],ECX      ; 0049f910 | DAT_01c78418
+    MOV dword ptr [0x01c78418],ECX      ; 0049f910 | g_INT_01c78418
     CALL wincore_winrun.cpp_setCursorPosition_FUN_00558d60 ; 0049f916
         ;   XREF to: 00558d60 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_setCursorPosition_FUN_00558d60(int x, int y)
     MOV EAX,[0x005be368]                ; 0049f91b | g_CDemonSetPtr
     MOV EAX,dword ptr [EAX + 0x15aabc]  ; 0049f920 | g_CDemonSetInstance.selected_camera_index
     ADD ESP,0x8                         ; 0049f926
-    MOV [0x01c7841c],EAX                ; 0049f929 | DAT_01c7841c
+    MOV [0x01c7841c],EAX                ; 0049f929 | g_INT_01c7841c
     RET                                 ; 0049f92e
 

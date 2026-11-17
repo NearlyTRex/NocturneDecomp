@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,float delta_time)
 
@@ -147,7 +146,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
     switch(iVar6) {
     case 1:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,"Capture");
+                        (g_CEventList_PTR_005b7650,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -179,7 +178,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
       break;
     case 2:
       iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,"Capture");
+                        (g_CEventList_PTR_005b7650,"Capture");
       if (iVar6 == 0) {
         (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
         pCVar3 = (this_ptr->base).victim;
@@ -241,7 +240,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
         pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                             (&local_b8,&g_ZeroVector.f,
                              (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                             _DAT_02da8a7c);
+                             g_INT_02da8a7c);
         pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                             ((CDemonActor *)this_ptr,&local_dc,pCVar10);
         core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar10,fVar12,pSVar13);
@@ -276,7 +275,7 @@ void __cdecl core_smiley_cpp_CSmiley_process_FUN_005200c0(CSmiley *this_ptr,floa
           pCVar10 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                               (&local_88,&g_ZeroVector.f,
                                (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                               _DAT_02da8a7c);
+                               g_INT_02da8a7c);
           pCVar10 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                               ((CDemonActor *)this_ptr,&local_d0,pCVar10);
           core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0

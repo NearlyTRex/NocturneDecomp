@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005710a0 at 0057110e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c30
+;   int g_INT_02de5c30
 ;
 ; *****************************************************************************
 
@@ -23,7 +23,7 @@ section .text
     CMP BL,byte ptr [EDX]               ; 00572e0b
     JNZ 0x00572e4e                      ; 00572e0d
         ;   XREF to: 00572e4e (CONDITIONAL_JUMP)  ; LAB_00572e4e
-    CMP dword ptr [0x02de5c30],0x0      ; 00572e0f | DAT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 00572e0f | g_INT_02de5c30
     JZ 0x00572e37                       ; 00572e16
         ;   XREF to: 00572e37 (CONDITIONAL_JUMP)  ; LAB_00572e37
     XOR EBX,EBX                         ; 00572e18

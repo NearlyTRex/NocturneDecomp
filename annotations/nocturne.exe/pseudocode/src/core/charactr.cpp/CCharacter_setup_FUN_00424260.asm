@@ -19,7 +19,7 @@
 ;   TerminatedCString s_s_is_carrying_s_but_s_th_00579ddb
 ;   TerminatedCString s_bip01_head_00579e16
 ;   float FLOAT_0059b094 = 9999
-;   undefined4 DAT_007658e4
+;   CKeyFramedModelInstance g_CKeyFramedModelInstance_007658e4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -57,12 +57,12 @@ section .text
     PUSH 0x579dba                       ; 00424274 | = "stake_b.kfm"
     FLD float ptr [0x0059b094]          ; 00424279 | FLOAT_0059b094
     MOV dword ptr [EBP + 0x2dec],0x0    ; 0042427f
-    PUSH 0x7658e4                       ; 00424289 | DAT_007658e4
+    PUSH 0x7658e4                       ; 00424289 | g_CKeyFramedModelInstance_007658e4
     FSTP float ptr [EBP + 0x240c]       ; 0042428e
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580 ; 00424294
         ;   XREF to: 00454580 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00424299
-    PUSH 0x7658e4                       ; 0042429c | DAT_007658e4
+    PUSH 0x7658e4                       ; 0042429c | g_CKeyFramedModelInstance_007658e4
     MOV ESI,EBP                         ; 004242a1
     LEA EDI,[EBP + 0x88]                ; 004242a3
     CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00454510 ; 004242a9

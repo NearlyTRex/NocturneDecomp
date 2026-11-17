@@ -21,8 +21,8 @@
 ;   TerminatedCString s_CNetGame_addPlayer_too_m_0058c138
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cea3f8
-;   undefined4 DAT_01cea404
+;   uint g_UINT_01cea3f8
+;   int g_INT_01cea404
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -88,13 +88,13 @@ section .text
     MOV dword ptr [EBX + 0x14],EAX      ; 004eb4c6
     MOV EAX,dword ptr [ESP + 0x24]      ; 004eb4c9
     MOV dword ptr [EBX + 0x18],EAX      ; 004eb4cd
-    MOV EAX,[0x01cea3f8]                ; 004eb4d0 | DAT_01cea3f8
+    MOV EAX,[0x01cea3f8]                ; 004eb4d0 | g_UINT_01cea3f8
     MOV dword ptr [EBX + 0x24],EAX      ; 004eb4d5
     SUB EAX,0x1e0000                    ; 004eb4d8
     MOV dword ptr [EBX + 0x2c],EAX      ; 004eb4dd
     MOV EDX,EAX                         ; 004eb4e0
     MOV dword ptr [EBX + 0x30],EAX      ; 004eb4e2
-    MOV EAX,[0x01cea404]                ; 004eb4e5 | DAT_01cea404
+    MOV EAX,[0x01cea404]                ; 004eb4e5 | g_INT_01cea404
     MOV dword ptr [EBX + 0x38],EDX      ; 004eb4ea
     DEC EAX                             ; 004eb4ed
     MOV dword ptr [EBX + 0x34],EAX      ; 004eb4ee

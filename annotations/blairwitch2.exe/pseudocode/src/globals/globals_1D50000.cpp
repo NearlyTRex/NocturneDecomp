@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x1D50000
 // =============================================================================
 
+// SChatOutMessage[50]
+SChatOutMessage g_SChatOutMessage_ARRAY_01d51054[50] = {};
+
 // SSimFrame[512]
 SSimFrame g_SSimFrame_ARRAY_01d54644[512] = {};
 

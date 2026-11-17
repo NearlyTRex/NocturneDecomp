@@ -9,8 +9,8 @@
 ; Referenced Globals:
 ;   undefined1* PTR_caseD_1_004487b4 = 00448874
 ;   undefined1* PTR_caseD_3_004487bc = 00448859
-;   undefined4 DAT_014b8550
-;   undefined4 DAT_014b8614
+;   int g_INT_014b8550
+;   int g_INT_014b8614
 ;
 ; Called Functions:
 ;   core_dcube.cpp_clipEdgeToPlane_FUN_004484c0
@@ -27,16 +27,16 @@ section .text
     MOV EBP,ESP                         ; 004487c4
     SUB ESP,0x8                         ; 004487c6
     AND ESP,0xfffffff8                  ; 004487c9
-    MOV EBX,dword ptr [0x014b8614]      ; 004487cc | DAT_014b8614
+    MOV EBX,dword ptr [0x014b8614]      ; 004487cc | g_INT_014b8614
     MOV EDX,dword ptr [EBP + 0x14]      ; 004487d2
     MOV dword ptr [ESP],EDX             ; 004487d5
-    MOV EDX,dword ptr [0x014b8550]      ; 004487d8 | DAT_014b8550
+    MOV EDX,dword ptr [0x014b8550]      ; 004487d8 | g_INT_014b8550
     XOR EDI,EDI                         ; 004487de
     TEST EDX,EDX                        ; 004487e0
     JLE 0x00448867                      ; 004487e2
         ;   XREF to: 00448867 (CONDITIONAL_JUMP)  ; LAB_00448867
     MOV ESI,0x14b8554                   ; 004487e8
-    MOV EAX,[0x014b8550]                ; 004487ed | DAT_014b8550
+    MOV EAX,[0x014b8550]                ; 004487ed | g_INT_014b8550
         ;   Label: LAB_004487ed
     LEA ECX,[EDI + 0x1]                 ; 004487f2
     CMP ECX,EAX                         ; 004487f5
@@ -86,14 +86,14 @@ section .text
     MOV dword ptr [ECX + 0x8],EAX       ; 00448855
     INC EBX                             ; 00448858
         ;   Label: LAB_00448858
-    MOV ECX,dword ptr [0x014b8550]      ; 00448859 | DAT_014b8550
+    MOV ECX,dword ptr [0x014b8550]      ; 00448859 | g_INT_014b8550
         ;   Label: caseD_3
     INC EDI                             ; 0044885f
     ADD ESI,0xc                         ; 00448860
     CMP EDI,ECX                         ; 00448863
     JL 0x004487ed                       ; 00448865
         ;   XREF to: 004487ed (CONDITIONAL_JUMP)  ; LAB_004487ed
-    MOV dword ptr [0x014b8614],EBX      ; 00448867 | DAT_014b8614
+    MOV dword ptr [0x014b8614],EBX      ; 00448867 | g_INT_014b8614
         ;   Label: LAB_00448867
     MOV ESP,EBP                         ; 0044886d
     POP EBP                             ; 0044886f
@@ -117,10 +117,10 @@ section .text
     PUSH EDX                            ; 00448896
     MOV EAX,dword ptr [ESP + 0x2c]      ; 00448897
     PUSH EAX                            ; 0044889b
-    MOV dword ptr [0x014b8614],EBX      ; 0044889c | DAT_014b8614
+    MOV dword ptr [0x014b8614],EBX      ; 0044889c | g_INT_014b8614
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 004488a2
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8614]      ; 004488a7 | DAT_014b8614
+    MOV EBX,dword ptr [0x014b8614]      ; 004488a7 | g_INT_014b8614
     ADD ESP,0x2c                        ; 004488ad
     JMP 0x00448858                      ; 004488b0
         ;   XREF to: 00448858 (UNCONDITIONAL_JUMP)  ; LAB_00448858
@@ -153,10 +153,10 @@ section .text
     MOV ECX,dword ptr [ESP + 0x28]      ; 004488f2
     PUSH ECX                            ; 004488f6
     PUSH EDX                            ; 004488f7
-    MOV dword ptr [0x014b8614],EBX      ; 004488f8 | DAT_014b8614
+    MOV dword ptr [0x014b8614],EBX      ; 004488f8 | g_INT_014b8614
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 004488fe
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EBX,dword ptr [0x014b8614]      ; 00448903 | DAT_014b8614
+    MOV EBX,dword ptr [0x014b8614]      ; 00448903 | g_INT_014b8614
     ADD ESP,0x2c                        ; 00448909
     JMP 0x00448858                      ; 0044890c
         ;   XREF to: 00448858 (UNCONDITIONAL_JUMP)  ; LAB_00448858

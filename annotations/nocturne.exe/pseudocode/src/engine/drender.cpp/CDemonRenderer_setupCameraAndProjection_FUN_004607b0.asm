@@ -21,14 +21,14 @@
 ;   double DOUBLE_0057dc0d = 0.318309886192889
 ;   double DOUBLE_0057dc15 = 32768
 ;   double DOUBLE_0057dc1d = 65536
-;   undefined4 DAT_005b7648
+;   int g_INT_005b7648 = 0x10000
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   undefined4 DAT_01c039d0
-;   undefined4 DAT_01c039d4
-;   undefined4 DAT_01c039d8
+;   int g_INT_01c039d0
+;   int g_INT_01c039d4
+;   int g_INT_01c039d8
 ;   CMatrix3x3i g_TransformMatrix
 ;   undefined4 g_TransformMatrix.m[0].y
 ;   undefined4 g_TransformMatrix.m[0].z
@@ -111,7 +111,7 @@ section .text
     FLD float ptr [EBX + 0x20]          ; 0046088b
     FMUL double ptr [0x0057dc1d]        ; 0046088e | DOUBLE_0057dc1d
     MOV EDX,0x10000                     ; 00460894
-    MOV EBX,dword ptr [0x005b7648]      ; 00460899 | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 00460899 | g_INT_005b7648
     MOV EAX,EDX                         ; 0046089f
     FXCH ST4                            ; 004608a1
     CALL crt_math.c_round_FUN_00563a30  ; 004608a3
@@ -142,10 +142,10 @@ section .text
     CALL crt_math.c_round_FUN_00563a30  ; 004608eb
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FXCH                                ; 004608f0
-    FISTP dword ptr [0x01c039d0]        ; 004608f2 | DAT_01c039d0
+    FISTP dword ptr [0x01c039d0]        ; 004608f2 | g_INT_01c039d0
     FXCH                                ; 004608f8
-    FISTP dword ptr [0x01c039d4]        ; 004608fa | DAT_01c039d4
-    FISTP dword ptr [0x01c039d8]        ; 00460900 | DAT_01c039d8
+    FISTP dword ptr [0x01c039d4]        ; 004608fa | g_INT_01c039d4
+    FISTP dword ptr [0x01c039d8]        ; 00460900 | g_INT_01c039d8
     IMUL EDX                            ; 00460906
     IDIV EBX                            ; 00460908
     MOV EDX,dword ptr [0x01c00c60]      ; 0046090a | g_ClipRight
@@ -162,7 +162,7 @@ section .text
     SAR EDX,0x1f                        ; 00460930
     IDIV EBX                            ; 00460933
     MOV EDX,0x10000                     ; 00460935
-    MOV EBX,dword ptr [0x005b7648]      ; 0046093a | DAT_005b7648
+    MOV EBX,dword ptr [0x005b7648]      ; 0046093a | g_INT_005b7648
     MOV dword ptr [ESI + 0x28],EAX      ; 00460940
     IMUL EDX                            ; 00460943
     IDIV EBX                            ; 00460945

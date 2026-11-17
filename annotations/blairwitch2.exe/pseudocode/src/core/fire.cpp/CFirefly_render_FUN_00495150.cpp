@@ -139,7 +139,7 @@ switchD_004958f8_default:
   g_SRenderVertex_ARRAY_00622014[3].a = g_SRenderVertex_ARRAY_00622014[0].a;
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
   engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01c3ded0);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01c3ded0.base);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
   engine_drender_cpp_pop_FUN_0046b4a0();
   puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 4);
@@ -239,7 +239,7 @@ switchD_004958f8_default:
     g_SRenderVertex_ARRAY_00622014[3].a = g_SRenderVertex_ARRAY_00622014[0].a;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,1);
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046a930
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01c3ded0);
+              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01c3ded0.base);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(g_CDemonRenderer_PTR_0060b280,0);
     engine_drender_cpp_pop_FUN_0046b4a0();
     iStack_18 = iStack_18 + 1;

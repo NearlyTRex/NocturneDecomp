@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_0058d01c = 0.5
-;   undefined4 DAT_005a1228
+;   float g_FLOAT_005a1228 = 0.00390625
 ;   CGore* g_CGorePtr = 01c78c7c
 ;
 ; Called Functions:
@@ -232,13 +232,13 @@ section .text
         ;   Label: LAB_004f30dc
     MOV EAX,ESI                         ; 004f30e0
     FILD dword ptr [EAX]                ; 004f30e2
-    FMUL float ptr [0x005a1228]         ; 004f30e4 | DAT_005a1228
+    FMUL float ptr [0x005a1228]         ; 004f30e4 | g_FLOAT_005a1228
     FSTP float ptr [EBX]                ; 004f30ea
     FILD dword ptr [EAX + 0x4]          ; 004f30ec
-    FMUL float ptr [0x005a1228]         ; 004f30ef | DAT_005a1228
+    FMUL float ptr [0x005a1228]         ; 004f30ef | g_FLOAT_005a1228
     FSTP float ptr [EBX + 0x4]          ; 004f30f5
     FILD dword ptr [EAX + 0x8]          ; 004f30f8
-    FMUL float ptr [0x005a1228]         ; 004f30fb | DAT_005a1228
+    FMUL float ptr [0x005a1228]         ; 004f30fb | g_FLOAT_005a1228
     FSTP float ptr [EBX + 0x8]          ; 004f3101
     LEA EAX,[ESP + 0x70]                ; 004f3104
     PUSH EAX                            ; 004f3108

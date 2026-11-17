@@ -27,9 +27,9 @@
 ;   double g_DOUBLE_005e411d = 4
 ;   float g_FLOAT_005e4125 = -3
 ;   float g_FLOAT_005e4129 = 0.08333334
-;   float[2] g_FLOAT_ARRAY_0061ee0c
-;   undefined4 g_FLOAT_ARRAY_0061ee0c[1]
-;   undefined4 DAT_0061ee1c
+;   float[2][4] g_FLOAT_ARRAY_ARRAY_0061ee0c
+;   undefined4 g_FLOAT_ARRAY_ARRAY_0061ee0c[0][1]
+;   undefined4 g_FLOAT_ARRAY_ARRAY_0061ee0c[1][0]
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -65,15 +65,15 @@ section .text
     FXCH ST2                            ; 004e5711
     FMULP                               ; 004e5713
     FLD ST1                             ; 004e5715
-    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5717 | g_FLOAT_ARRAY_0061ee0c | g_FLOAT_ARRAY_0061ee0c[1]
+    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5717 | g_FLOAT_ARRAY_ARRAY_0061ee0c | g_FLOAT_ARRAY_ARRAY_0061ee0c[0][1]
     FLD ST1                             ; 004e571d
     FCHS                                ; 004e571f
-    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5721 | g_FLOAT_ARRAY_0061ee0c | g_FLOAT_ARRAY_0061ee0c[1]
+    FMUL float ptr [EBX + 0x61ee0c]     ; 004e5721 | g_FLOAT_ARRAY_ARRAY_0061ee0c | g_FLOAT_ARRAY_ARRAY_0061ee0c[0][1]
     FXCH ST2                            ; 004e5727
-    FMUL float ptr [EBX + 0x61ee1c]     ; 004e5729 | DAT_0061ee1c
+    FMUL float ptr [EBX + 0x61ee1c]     ; 004e5729 | g_FLOAT_ARRAY_ARRAY_0061ee0c[1][0]
     XOR EDX,EDX                         ; 004e572f
     FXCH ST3                            ; 004e5731
-    FMUL float ptr [EBX + 0x61ee1c]     ; 004e5733 | DAT_0061ee1c
+    FMUL float ptr [EBX + 0x61ee1c]     ; 004e5733 | g_FLOAT_ARRAY_ARRAY_0061ee0c[1][0]
     MOV dword ptr [ESP + 0x4],EDX       ; 004e5739
     FXCH ST3                            ; 004e573d
     FADDP                               ; 004e573f

@@ -13,13 +13,13 @@ void __watcallRegister crt_startup_cpp_InitializeWinAppRuntime_FUN_00567458(void
   ThreadData *pStackBound;
   uint in_stack_00000004;
   void *in_stack_00000008;
-  uint *pHeapBound;
+  uint **pHeapBound;
   
   unused = GetModuleHandleA((LPCSTR)0x0);
   initialize_runtime((HMODULE)0x0,in_stack_00000008,(int)unused);
-  pHeapBound = (uint *)&DAT_005c1cec;
+  pHeapBound = &g_UINT_PTR_005c1cec;
   pStackBound = (ThreadData *)(*(code *)PTR_crt_thread_c_GetTLS_FUN_005671dc_005c1abc)();
-  __GetStackLimits(pStackBound,pHeapBound);
+  __GetStackLimits(pStackBound,(uint *)pHeapBound);
   installExceptionHandler(in_stack_00000004);
   ProcessInitTermHandlers(0x21);
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_00567208_005c1afc)();

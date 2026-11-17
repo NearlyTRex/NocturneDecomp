@@ -139,7 +139,7 @@ section .text
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d880a
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
     ADD ESP,0x8                         ; 004d880f
-    MOV ESI,dword ptr [0x00763e94]      ; 004d8812 | DAT_00763e94
+    MOV ESI,dword ptr [0x00763e94]      ; 004d8812 | g_INT_00763e94
     PUSH ESI                            ; 004d8818
     PUSH 0x589ace                       ; 004d8819 | = "%d\n"
     MOV EDI,dword ptr [ESP + 0x24]      ; 004d881e
@@ -149,13 +149,13 @@ section .text
     ADD ESP,0xc                         ; 004d8828
     CALL core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0 ; 004d882b
         ;   XREF to: 0040d8c0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_syncActorTypeIDs_FUN_0040d8c0()
-    MOV EBP,dword ptr [0x00763e94]      ; 004d8830 | DAT_00763e94
+    MOV EBP,dword ptr [0x00763e94]      ; 004d8830 | g_INT_00763e94
     XOR ESI,ESI                         ; 004d8836
     TEST EBP,EBP                        ; 004d8838
     JLE 0x004d8870                      ; 004d883a
         ;   XREF to: 004d8870 (CONDITIONAL_JUMP)  ; LAB_004d8870
     XOR EDI,EDI                         ; 004d883c
-    MOV EAX,dword ptr [EDI + 0x763e98]  ; 004d883e | DAT_00763e98 | DAT_00763e9c
+    MOV EAX,dword ptr [EDI + 0x763e98]  ; 004d883e | g_CDemonActorType_PTR_ARRAY_00763e98 | g_CDemonActorType_PTR_ARRAY_00763e98[1]
         ;   Label: LAB_004d883e
     MOV EDX,dword ptr [EAX + 0x34]      ; 004d8844
     PUSH EDX                            ; 004d8847
@@ -167,7 +167,7 @@ section .text
     INC ESI                             ; 004d8856
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 004d8857
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
-    MOV EBP,dword ptr [0x00763e94]      ; 004d885c | DAT_00763e94
+    MOV EBP,dword ptr [0x00763e94]      ; 004d885c | g_INT_00763e94
     ADD ESP,0x10                        ; 004d8862
     CMP ESI,EBP                         ; 004d8865
     JL 0x004d883e                       ; 004d8867

@@ -4,10 +4,14 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SRenderBufferEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x730000
 // =============================================================================
+
+// SRenderBufferEntry[256]
+extern SRenderBufferEntry g_SRenderBufferEntry_ARRAY_00730480[256];
 
 // int
 extern int g_INT_007303b8;

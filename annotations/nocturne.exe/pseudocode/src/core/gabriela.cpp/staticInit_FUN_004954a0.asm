@@ -12,9 +12,9 @@
 ;   float FLOAT_0059dccc = 30
 ;   float FLOAT_0059dcd0 = 0.1052632
 ;   float FLOAT_0059dcd4 = 20
-;   undefined4 DAT_01c71358
-;   undefined4 DAT_01c7135c
-;   undefined4 DAT_01c71360
+;   float g_FLOAT_01c71358
+;   float g_FLOAT_01c7135c
+;   float g_FLOAT_01c71360
 ;   CVector3f CVector3f_01c71364
 ;   undefined4 CVector3f_01c71364.y
 ;   undefined4 CVector3f_01c71364.z
@@ -59,10 +59,10 @@ section .text
     MOV dword ptr [0x01c71380],EBP      ; 00495518 | CVector3f_01c7137c.y
     MOV dword ptr [0x01c71390],EBP      ; 0049551e | CVector3f_01c71388.z
     FXCH ST2                            ; 00495524
-    FSTP float ptr [0x01c71358]         ; 00495526 | DAT_01c71358
-    FSTP float ptr [0x01c7135c]         ; 0049552c | DAT_01c7135c
+    FSTP float ptr [0x01c71358]         ; 00495526 | g_FLOAT_01c71358
+    FSTP float ptr [0x01c7135c]         ; 0049552c | g_FLOAT_01c7135c
     PUSH 0x5b92a8                       ; 00495532
-    FSTP float ptr [0x01c71360]         ; 00495537 | DAT_01c71360
+    FSTP float ptr [0x01c71360]         ; 00495537 | g_FLOAT_01c71360
     PUSH 0x495670                       ; 0049553d
     MOV ECX,0x3eb33333                  ; 00495542
     MOV EBX,0x40133333                  ; 00495547

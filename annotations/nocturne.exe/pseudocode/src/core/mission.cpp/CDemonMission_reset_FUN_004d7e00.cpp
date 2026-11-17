@@ -23,6 +23,6 @@ void __cdecl core_mission_cpp_CDemonMission_reset_FUN_004d7e00(CDemonMission *th
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   this_ptr->actor_lookup_count = 0;
   this_ptr->mission_version_num = -1;
-  DAT_01ccbbf0 = 0;
+  g_CHAR_ARRAY_01ccbbf0[0] = '\0';
   return;
 }

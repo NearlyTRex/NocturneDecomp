@@ -16,7 +16,7 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_004ea4d0(void)
   int iVar4;
   CAlphaBitmap *this_ptr_00;
   int iVar5;
-  char *pcVar6;
+  char (*pacVar6) [256];
   char *pcVar7;
   int local_10;
   float local_c;
@@ -60,41 +60,41 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_004ea4d0(void)
     core_moon_cpp_CMoon_render_FUN_004f9670(&g_CMoonInstance);
     g_CDemonSetPtr->rendering_mode = 0;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("START");
-    pcVar6 = g_CHAR_ARRAY_01d75888;
+    pacVar6 = g_CHAR_ARRAY_ARRAY_01d75888;
     do {
       cVar1 = *pcVar3;
-      *pcVar6 = cVar1;
+      (*pacVar6)[0] = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      *(char *)((int)pacVar6 + 1) = cVar1;
+      pacVar6 = (char (*) [256])((int)pacVar6 + 2);
     } while (cVar1 != '\0');
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("OPTIONS");
-    pcVar6 = &DAT_01d75988;
+    pcVar7 = g_CHAR_ARRAY_ARRAY_01d75888[1];
     do {
       cVar1 = *pcVar3;
-      *pcVar6 = cVar1;
+      *pcVar7 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      pcVar7[1] = cVar1;
+      pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("LOAD");
-    pcVar6 = &DAT_01d75a88;
+    pcVar7 = g_CHAR_ARRAY_ARRAY_01d75888[2];
     do {
       cVar1 = *pcVar3;
-      *pcVar6 = cVar1;
+      *pcVar7 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar3[1];
       pcVar3 = pcVar3 + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      pcVar7[1] = cVar1;
+      pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar7 = &DAT_01d75b88;
+    pcVar7 = g_CHAR_ARRAY_ARRAY_01d75888[3];
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960("QUIT");
-    pcVar6 = g_CHAR_ARRAY_01d75888;
+    pacVar6 = g_CHAR_ARRAY_ARRAY_01d75888;
     do {
       cVar1 = *pcVar3;
       *pcVar7 = cVar1;
@@ -106,9 +106,9 @@ int __cdecl core_menu_cpp_showMainGameMenu_FUN_004ea4d0(void)
     } while (cVar1 != '\0');
     iVar4 = 0;
     do {
-      *(char **)((int)g_CHAR_PTR_ARRAY_01d75c88 + iVar4) = pcVar6;
+      *(char (**) [256])((int)g_CHAR_PTR_ARRAY_01d75c88 + iVar4) = pacVar6;
       iVar4 = iVar4 + 4;
-      pcVar6 = pcVar6 + 0x100;
+      pacVar6 = pacVar6 + 1;
     } while (iVar4 != 0x10);
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_004e7860
                       (g_CHAR_PTR_ARRAY_01d75c88,4,&local_10,200,(char *)0x0);

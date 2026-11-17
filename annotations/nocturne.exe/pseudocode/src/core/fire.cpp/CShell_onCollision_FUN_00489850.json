@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 48,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 48,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 176
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 177
   },
   "cross_references": [],
   "function": {
@@ -194,7 +196,16 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)g_UINT_ARRAY_01c0a130",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_UINT_ARRAY_01c0a130 + iVar4));",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

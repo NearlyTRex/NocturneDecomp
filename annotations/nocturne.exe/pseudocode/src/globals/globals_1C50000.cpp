@@ -22,3 +22,11 @@ CRock g_RockPool[64] = {};
 // CToss[20]
 CToss g_TossPool[20] = {};
 
+// int
+int g_INT_01c58c8c = {};
+int g_INT_01c58df8 = {};
+int g_INT_01c5b4fc = {};
+int g_INT_01c5c700 = {};
+int g_INT_01c5d704 = {};
+int g_INT_01c5d820 = {};
+

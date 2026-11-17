@@ -25,8 +25,8 @@
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;   CDemonActorType g_CCharacterActorType_00765a60
 ;   undefined4 g_CCharacterActorType_00765a60.name_hash
-;   undefined4 DAT_01e56418
-;   undefined4 DAT_01e56c2c
+;   int g_INT_01e56418
+;   int g_INT_01e56c2c
 ;
 ; Called Functions:
 ;   core_script.cpp_getActor_FUN_004fe180
@@ -75,7 +75,7 @@ section .text
     TEST EAX,EAX                        ; 005049f9
     JNZ 0x00504ac2                      ; 005049fb
         ;   XREF to: 00504ac2 (CONDITIONAL_JUMP)  ; LAB_00504ac2
-    CMP dword ptr [0x01e56c2c],0x0      ; 00504a01 | DAT_01e56c2c
+    CMP dword ptr [0x01e56c2c],0x0      ; 00504a01 | g_INT_01e56c2c
     JZ 0x00504aaf                       ; 00504a08
         ;   XREF to: 00504aaf (CONDITIONAL_JUMP)  ; LAB_00504aaf
     MOV dword ptr [ESP + 0xc],EAX       ; 00504a0e
@@ -114,7 +114,7 @@ section .text
     SAHF                                ; 00504a59
     JA 0x00504a76                       ; 00504a5a
         ;   XREF to: 00504a76 (CONDITIONAL_JUMP)  ; LAB_00504a76
-    CMP dword ptr [0x01e56418],0x0      ; 00504a5c | DAT_01e56418
+    CMP dword ptr [0x01e56418],0x0      ; 00504a5c | g_INT_01e56418
         ;   Label: LAB_00504a5c
     JNZ 0x005049de                      ; 00504a63
         ;   XREF to: 005049de (CONDITIONAL_JUMP)  ; LAB_005049de
@@ -158,7 +158,7 @@ section .text
     TEST EDX,EDX                        ; 00504ac8
     JZ 0x00504b4c                       ; 00504aca
         ;   XREF to: 00504b4c (CONDITIONAL_JUMP)  ; LAB_00504b4c
-    CMP dword ptr [0x01e56418],0x0      ; 00504ad0 | DAT_01e56418
+    CMP dword ptr [0x01e56418],0x0      ; 00504ad0 | g_INT_01e56418
         ;   Label: LAB_00504ad0
     JNZ 0x00504b3a                      ; 00504ad7
         ;   XREF to: 00504b3a (CONDITIONAL_JUMP)  ; LAB_00504b3a

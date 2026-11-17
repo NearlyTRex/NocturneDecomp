@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Out_of_memory_File_s_0058b578
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd8b28
+;   char[256] g_CHAR_ARRAY_01cd8b28
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -98,7 +98,7 @@ section .text
     MOV dword ptr [EBX],0x0             ; 004e2943
     JMP 0x004e28b4                      ; 004e2949
         ;   XREF to: 004e28b4 (UNCONDITIONAL_JUMP)  ; LAB_004e28b4
-    PUSH 0x1cd8b28                      ; 004e294e | DAT_01cd8b28
+    PUSH 0x1cd8b28                      ; 004e294e | g_CHAR_ARRAY_01cd8b28
         ;   Label: LAB_004e294e
     MOV ESI,0x58b567                    ; 004e2953 | = "..\\sound\\mp3.cpp"
     MOV EDI,0x1ff                       ; 004e2958

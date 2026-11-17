@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90(CDirectSoundDevice *this_ptr)
 
 {
@@ -22,18 +20,19 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90(CDirectSoundDe
     (*((this_ptr->base).vtable)->freeSample)(&this_ptr->base,buffer_id);
     buffer_id = iVar2;
   } while (iVar2 < 0x41);
-  if (_DAT_02c81da0 != (int *)0x0) {
-    (**(code **)(*_DAT_02c81da0 + 8))(_DAT_02c81da0);
-    _DAT_02c81da0 = (int *)0x0;
+  if (g_IDirectSound3DListener_PTR_02c81da0 != (IDirectSound3DListener *)0x0) {
+    (*g_IDirectSound3DListener_PTR_02c81da0->vtable->Release)
+              ((IUnknown *)g_IDirectSound3DListener_PTR_02c81da0);
+    g_IDirectSound3DListener_PTR_02c81da0 = (IDirectSound3DListener *)0x0;
   }
   if (g_IDirectSoundBuffer_PTR_02c81d9c != (IDirectSoundBuffer *)0x0) {
     (*g_IDirectSoundBuffer_PTR_02c81d9c->vtable->Release)
               ((IUnknown *)g_IDirectSoundBuffer_PTR_02c81d9c);
     g_IDirectSoundBuffer_PTR_02c81d9c = (IDirectSoundBuffer *)0x0;
   }
-  if (_DAT_02c81da4 != (int *)0x0) {
-    (**(code **)(*_DAT_02c81da4 + 8))(_DAT_02c81da4);
-    _DAT_02c81da4 = (int *)0x0;
+  if (g_IKsPropertySet_PTR_02c81da4 != (IKsPropertySet *)0x0) {
+    (*g_IKsPropertySet_PTR_02c81da4->vtable->Release)((IUnknown *)g_IKsPropertySet_PTR_02c81da4);
+    g_IKsPropertySet_PTR_02c81da4 = (IKsPropertySet *)0x0;
   }
   if (g_IDirectSoundBuffer_PTR_02c81d98 != (IDirectSoundBuffer *)0x0) {
     (*g_IDirectSoundBuffer_PTR_02c81d98->vtable->Release)

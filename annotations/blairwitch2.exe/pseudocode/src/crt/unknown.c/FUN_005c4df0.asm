@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 crt_unknown_c_FUN_005c4df0(int param_1,undefined4 param_2)
+; SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005c4df0(int param_1,SIGNAL_HANDLER_TYPE param_2)
 ;
 ;
 ; XREF[4]:
@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bcdfc_0061f2a4 = 005bcdfc
-;   undefined4 DAT_0061f764
+;   SIGNAL_HANDLER_TYPE[26] g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bcdfc
@@ -34,8 +34,8 @@ section .text
     LEA EAX,[EBX*0x8 + 0x0]             ; 005c4e00
         ;   Label: LAB_005c4e00
     MOV ESI,dword ptr [ESP + 0x10]      ; 005c4e07
-    MOV EBX,dword ptr [EAX + 0x61f764]  ; 005c4e0b | DAT_0061f764
-    MOV dword ptr [EAX + 0x61f764],ESI  ; 005c4e11 | DAT_0061f764
+    MOV EBX,dword ptr [EAX + 0x61f764]  ; 005c4e0b | g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764
+    MOV dword ptr [EAX + 0x61f764],ESI  ; 005c4e11 | g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764
     MOV EAX,EBX                         ; 005c4e17
     POP ESI                             ; 005c4e19
     POP EBX                             ; 005c4e1a

@@ -14,6 +14,7 @@
 #include "types/classes/CVector3f.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderBufferEntry.h"
 #include "types/structs/SRenderVertex.h"
 
 // =============================================================================
@@ -75,6 +76,9 @@ extern SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007ba074[2000];
 // SMRGLTextureBasic
 extern SMRGLTextureBasic g_SMRGLTextureBasic_007bda78;
 
+// SRenderBufferEntry*[2500]
+extern SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007b7960[2500];
+
 // SRenderVertex*[16]
 extern SRenderVertex* g_SRenderVertex_PTR_ARRAY_007bf434[16];
 
@@ -101,8 +105,8 @@ extern float g_FLOAT_007bc4dc;
 // float[100]
 extern float g_FLOAT_ARRAY_007bdc9c[100];
 
-// float[12]
-extern float g_FLOAT_ARRAY_007bcd08[12];
+// float[12][12]
+extern float g_FLOAT_ARRAY_ARRAY_007bcd08[12][12];
 
 // int
 extern int g_INT_007ba070;

@@ -18,10 +18,11 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_0057ad20(CWavInDevice *this_
   if (0 < g_INT_02c82a30) {
     iVar3 = 0;
     do {
-      memset(*(void **)(iVar3 + 0x2c8292c),0,0x20);
-      **(uint **)(iVar3 + 0x2c8292c) = *(uint *)((int)g_INT_ARRAY_02c829cc + iVar3);
-      *(int *)(*(int *)(iVar3 + 0x2c8292c) + 0xc) = buffer_index;
-      *(int *)(*(int *)(iVar3 + 0x2c8292c) + 4) =
+      memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3),0,0x20);
+      **(uint **)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) =
+           *(uint *)((int)g_INT_ARRAY_02c829cc + iVar3);
+      *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) + 0xc) = buffer_index;
+      *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar3) + 4) =
            ((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -
                  (uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) * g_INT_02c82a2c * g_INT_02c82a20;
       iVar1 = sound_sndwav_cpp_writeWavInBuffer_FUN_0057abc0(buffer_index);

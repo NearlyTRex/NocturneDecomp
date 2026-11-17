@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790(CMansionPuzzleCircle *this_ptr,int gem_index)
 
 {
@@ -58,27 +56,27 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_renderGem_FUN_004ca790(CMansio
     local_3c = -1.4;
     local_34 = -1.4;
     local_38 = 0.2;
-    local_54.x = (int)ROUND(_DAT_005a0020 * -1.4);
-    local_54.y = (int)ROUND(_DAT_005a0020 * 0.2);
-    local_54.z = (int)ROUND(_DAT_005a0020 * -1.4);
+    local_54.x = (int)ROUND(256.0f * -1.4);
+    local_54.y = (int)ROUND(256.0f * 0.2);
+    local_54.z = (int)ROUND(256.0f * -1.4);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_54);
     local_3c = -local_3c;
-    local_6c.x = (int)ROUND(local_3c * _DAT_005a0020);
-    local_6c.y = (int)ROUND(local_38 * _DAT_005a0020);
-    local_6c.z = (int)ROUND(local_34 * _DAT_005a0020);
+    local_6c.x = (int)ROUND(local_3c * 256.0f);
+    local_6c.y = (int)ROUND(local_38 * 256.0f);
+    local_6c.z = (int)ROUND(local_34 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_6c);
     local_34 = -local_34;
-    local_60.x = (int)ROUND(local_3c * _DAT_005a0020);
-    local_60.y = (int)ROUND(local_38 * _DAT_005a0020);
-    local_60.z = (int)ROUND(local_34 * _DAT_005a0020);
+    local_60.x = (int)ROUND(local_3c * 256.0f);
+    local_60.y = (int)ROUND(local_38 * 256.0f);
+    local_60.z = (int)ROUND(local_34 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_60);
     local_3c = -local_3c;
-    local_48.x = (int)ROUND(local_3c * _DAT_005a0020);
-    local_48.y = (int)ROUND(local_38 * _DAT_005a0020);
-    local_48.z = (int)ROUND(local_34 * _DAT_005a0020);
+    local_48.x = (int)ROUND(local_3c * 256.0f);
+    local_48.y = (int)ROUND(local_38 * 256.0f);
+    local_48.z = (int)ROUND(local_34 * 256.0f);
     engine_special_cpp_transformAndProjectPoint_FUN_0053075c
               (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_48);
     this_ptr_00 = g_CDemonRenderer_PTR_005ae704;

@@ -37,11 +37,11 @@ void __cdecl core_hero_cpp_initializeColorMasks_FUN_004ecda0(void)
     iVar7 = iVar8;
   } while (iVar8 != 0x200);
   uVar9 = 0xff >> (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f);
-  g_INT_00623f20 = uVar9 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
+  g_MMX_INTEGER_00623f20.u32[0] = uVar9 << (g_BIT_INTEGER32_01c4e9d4.bytes[0] & 0x1f);
   uVar6 = 0xff >> (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f);
-  g_INT_00623f28 = uVar6 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
+  g_MMX_INTEGER_00623f28.u32[0] = uVar6 << (g_BIT_INTEGER32_01c4e9e0.bytes[0] & 0x1f);
   uVar4 = 0xff >> (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
-  g_INT_00623f30 = uVar4 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
+  g_MMX_INTEGER_00623f30.u32[0] = uVar4 << (g_BIT_INTEGER32_01c4e9ec.bytes[0] & 0x1f);
   g_QWORD_00623f78._0_4_ = uVar4 << (g_BIT_INTEGER32_01c4e9f4.bytes[0] & 0x1f);
   g_QWORD_00623f38._0_4_ = (uVar9 << (g_BIT_INTEGER32_01c4e9dc.bytes[0] & 0x1f)) << 0x10;
   g_QWORD_00623f58._0_4_ = (uVar6 << (g_BIT_INTEGER32_01c4e9e8.bytes[0] & 0x1f)) << 8;

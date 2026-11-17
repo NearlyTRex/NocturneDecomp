@@ -63,7 +63,7 @@
 ;   double g_DOUBLE_005d9184 = 0.00390625
 ;   double g_DOUBLE_005d918c = 65536
 ;   float g_FLOAT_005febd0 = 256
-;   SMRGLTextureBasic g_SMRGLTextureBasic_006122c0
+;   undefined4 g_SLightGlowTable_006122a8.headlight.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
 ;   int g_INT_01c51cac
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [EBX + 0xb0],0xffff   ; 00463d01
     MOV EDX,dword ptr [EAX]             ; 00463d0b | g_CDemonRenderer_01bc120c
     MOV dword ptr [EDX + 0xb4],0xffff   ; 00463d0d
-    PUSH 0x6122c0                       ; 00463d17 | g_SMRGLTextureBasic_006122c0
+    PUSH 0x6122c0                       ; 00463d17 | g_SLightGlowTable_006122a8.headlight.base.type
     MOV EDX,dword ptr [EAX]             ; 00463d1c | g_CDemonRenderer_01bc120c
     PUSH EAX                            ; 00463d1e | g_CDemonRenderer_01bc120c
     MOV dword ptr [EDX + 0xb8],0xffff   ; 00463d1f

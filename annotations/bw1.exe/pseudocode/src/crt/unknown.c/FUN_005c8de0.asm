@@ -5,7 +5,7 @@
 ;
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00626838
+;   SIOControlBlock* g_SIOControlBlock_PTR_00626838 = 00000000
 ;
 ; Called Functions:
 ;   crt_unknown.c_debugFree_FUN_005c09f0
@@ -14,7 +14,7 @@
 
 section .text
 
-    MOV EDX,dword ptr [0x00626838]      ; 005c8de0 | DAT_00626838
+    MOV EDX,dword ptr [0x00626838]      ; 005c8de0 | g_SIOControlBlock_PTR_00626838
         ;   Label: crt_unknown.c_FUN_005c8de0
     TEST EDX,EDX                        ; 005c8de6
     JZ 0x005c8dfb                       ; 005c8de8
@@ -24,7 +24,7 @@ section .text
         ;   XREF to: 005c09f0 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_debugFree_FUN_005c09f0(void * ptr)
     XOR ECX,ECX                         ; 005c8df0
     ADD ESP,0x4                         ; 005c8df2
-    MOV dword ptr [0x00626838],ECX      ; 005c8df5 | DAT_00626838
+    MOV dword ptr [0x00626838],ECX      ; 005c8df5 | g_SIOControlBlock_PTR_00626838
     RET                                 ; 005c8dfb
         ;   Label: LAB_005c8dfb
 

@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 24,
+    "complexity_score": 60,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 24,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 88
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 89
   },
   "cross_references": [],
   "function": {
@@ -136,7 +138,32 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 13,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "severity": "moderate",
+      "text": "if ((*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) == 0) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(int *)((int)g_LPVOID_ARRAY_02cf54d0",
+      "severity": "moderate",
+      "text": "(*(int *)((int)g_LPVOID_ARRAY_02cf54d0 + iVar2) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490",
+      "severity": "moderate",
+      "text": "if (((*(byte *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) + 0x10) & 1) != 0) &&",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

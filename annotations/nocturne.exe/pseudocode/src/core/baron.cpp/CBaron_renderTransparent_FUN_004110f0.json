@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 115,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 16,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 75,
-    "suspect_count": 3,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 272
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 74,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -126,26 +123,26 @@
     },
     {
       "addr": "0076432c",
-      "name": "DAT_0076432c",
-      "type": "undefined4",
+      "name": "g_FLOAT_0076432c",
+      "type": "float",
       "value": null
     },
     {
       "addr": "0076436c",
-      "name": "DAT_0076436c",
-      "type": "undefined4",
+      "name": "g_CKeyFramedModelInstance_0076436c",
+      "type": "CKeyFramedModelInstance",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01cd4318",
-      "name": "DAT_01cd4318",
-      "type": "undefined4",
+      "name": "g_INT_01cd4318",
+      "type": "int",
       "value": null
     }
   ],
@@ -311,32 +308,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_0076432c",
-      "severity": "mild",
-      "text": "CStack_2c.y = DAT_0076432c;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_0076436c",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&DAT_0076436c,0.0,0x23);",
-      "type": "undefined_data"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -5,10 +5,12 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/fstream.h"
+#include "system/iostream.h"
 #include "system/strstream.h"
 #include "system/watcom.h"
 #include "types/classes/CCharacter_full_vtable.h"
 #include "types/classes/CConsole.h"
+#include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonPod_vtable.h"
@@ -22,11 +24,16 @@
 #include "types/classes/CMotionController_vtable.h"
 #include "types/classes/CParticle_vtable.h"
 #include "types/classes/CPod_vtable.h"
+#include "types/classes/CQuaternion4f.h"
 #include "types/classes/CSmiley_full_vtable.h"
 #include "types/classes/CSoundDeviceFull_vtable.h"
+#include "types/classes/CVector3i.h"
 #include "types/classes/CWeapon_full_vtable.h"
 #include "types/structs/SFontGlyph.h"
+#include "types/structs/SLightGlowTable.h"
+#include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SResolutionEntry.h"
 
 // =============================================================================
@@ -41,6 +48,9 @@ extern CCharacter_full_vtable g_CDrummerVTable;
 
 // CConsole*
 extern CConsole* g_CConsolePtr;
+
+// CDemonActor*
+extern CDemonActor* g_CDemonActor_PTR_005a16f0;
 
 // CDemonActor_vtable
 extern CDemonActor_vtable g_CMansionPuzzleCircleVTable;
@@ -112,12 +122,18 @@ extern CParticle_vtable g_CParticleVTable;
 // CPod_vtable
 extern CPod_vtable g_CPodVTable;
 
+// CQuaternion4f
+extern CQuaternion4f g_CQuaternion4f_005a4508;
+
 // CSmiley_full_vtable
 extern CSmiley_full_vtable g_CSmileyVTable;
 
 // CSoundDeviceFull_vtable
 extern CSoundDeviceFull_vtable g_CDirectSoundDeviceVTable;
 extern CSoundDeviceFull_vtable g_CWavOutDeviceVTable;
+
+// CVector3i[62]
+extern CVector3i g_CVector3i_ARRAY_005ad594[62];
 
 // CWeapon_full_vtable
 extern CWeapon_full_vtable g_CMeleeVTable;
@@ -130,8 +146,23 @@ extern CWeapon_full_vtable g_CWeaponVTable;
 // SFontGlyph[224]
 extern SFontGlyph g_FontTable[224];
 
+// SLightGlowTable
+extern SLightGlowTable g_SLightGlowTable_005ae458;
+
+// SMRGLLightPrimitive[84]
+extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_005ad87c[84];
+
 // SMRGLPrimitiveQuad*[2000]
 extern SMRGLPrimitiveQuad* g_VisibleFacePointers[2000];
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005acf40;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005ad1fc;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005ad49c;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005ad57c;
+
+// SMRGLTextureBasic[6]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_005ad140[6];
 
 // SResolutionEntry[7]
 extern SResolutionEntry g_ResolutionTable[7];
@@ -166,6 +197,10 @@ extern WatcomDestructorCall g_WatcomDestructorCall_005a22c0;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a3270;
 extern WatcomDestructorCall g_WatcomDestructorCall_005a3e80;
 
+// WatcomInheritanceLayout
+extern WatcomInheritanceLayout g_WatcomInheritanceLayout_005a4908;
+extern WatcomInheritanceLayout g_WatcomInheritanceLayout_005a49b8;
+
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ad08c;
 extern WatcomStaticDestructorNode g_ConsoleDestructorNode;
@@ -176,6 +211,9 @@ extern WatcomStaticDestructorNode g_CFilterCacheDestructorNode;
 extern WatcomStaticDestructorNode g_CFilterFXDestructorNode;
 extern WatcomStaticDestructorNode g_CKeyFramedModelPoolDestructorNode;
 extern WatcomStaticDestructorNode g_WatcomStaticDestructorNode_005ae6b8;
+
+// WatcomThunkedDestructor
+extern WatcomThunkedDestructor g_WatcomThunkedDestructor_005a46c0;
 
 // WatcomTypeInfo
 extern WatcomTypeInfo g_SPanelTypeInfo_005a0210;
@@ -265,6 +303,7 @@ extern WatcomTypeInfo g_CWeaponTypeInfo_005a4250;
 extern WatcomTypeInfo g_CDemonGlobeTypeInfo_005a4270;
 extern WatcomTypeInfo g_CWeatherTypeInfo_005a42b0;
 extern WatcomTypeInfo g_CWerewolfTypeInfo_005a4460;
+extern WatcomTypeInfo g_WatcomTypeInfo_005a44a0;
 extern WatcomTypeInfo g_CZombieTypeInfo_005a46a0;
 extern WatcomTypeInfo g_ostreamTypeInfo_005a4960;
 extern WatcomTypeInfo g_strstreambaseTypeInfo_005a4980;
@@ -275,8 +314,23 @@ extern WatcomTypeInfo g_strstreambufTypeInfo_005a4af0;
 extern WatcomTypeInfo g_filebufTypeInfo_005a4b60;
 
 // WatcomVirtualBaseDescriptor
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a46b8;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4730;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a47a4;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a47ac;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4810;
+extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4818;
 extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a48b0;
 extern WatcomVirtualBaseDescriptor g_WatcomVirtualBaseDescriptor_005a4a18;
+
+// char[104]
+extern char g_CHAR_ARRAY_005acc90[104];
+
+// char[300]
+extern char g_CHAR_ARRAY_005accf8[300];
+
+// char[4]
+extern char g_CHAR_ARRAY_005ad450[4];
 
 // filebuf_vtable
 extern filebuf_vtable g_FilebufVTable;
@@ -284,8 +338,12 @@ extern filebuf_vtable g_FilebufVTable;
 // float
 extern float FLOAT_005a2158;
 extern float FLOAT_005a2160;
+extern float g_FLOAT_005ae6f8;
 
 // int
+extern int g_INT_005a4738;
+extern int g_INT_005a47a0;
+extern int g_INT_005a4a7a;
 extern int INT_005acaa4;
 extern int INT_005acaa8;
 extern int INT_005acaac;
@@ -314,6 +372,7 @@ extern int g_INT_005ad0e0;
 extern int g_INT_005ad0f4;
 extern int g_INT_005ad1e8;
 extern int g_INT_005ad250;
+extern int g_INT_005ad280;
 extern int g_FarPlaneDistance;
 extern int g_INT_005ad32c;
 extern int g_INT_005ad380;
@@ -321,42 +380,40 @@ extern int g_INT_005ad3ac;
 extern int g_INT_005ad3c4;
 extern int g_INT_005ad3d8;
 extern int INT_005ad3f0;
+extern int g_INT_005ad444;
+extern int g_INT_005ad448;
+extern int g_INT_005ad44c;
+extern int g_INT_005ad454;
+extern int g_INT_005ad458;
+extern int g_INT_005ad4b4;
 extern int g_INT_005ad4bc;
 extern int g_INT_005ae678;
 extern int g_INT_005ae690;
 extern int g_INT_005ae6c8;
+extern int g_INT_005ae6f4;
 extern int INT_005ae708;
+
+// int[16]
+extern int g_INT_ARRAY_005acbc4[16];
+
+// int[8]
+extern int g_INT_ARRAY_005ad45c[8];
+extern int g_INT_ARRAY_005ad47c[8];
+
+// short
+extern short g_SHORT_005a4a78;
+extern short g_SHORT_005a4a90;
+extern short g_SHORT_005a4a92;
+
+// streambuf_vtable
+extern streambuf_vtable g_StreambufVTable;
 
 // strstreambuf_vtable
 extern strstreambuf_vtable g_StrstreambufVTable;
 
 // undefined1
 extern undefined1 DAT_005acc8f;
-extern undefined1 DAT_005acc90;
-extern undefined1 DAT_005acc91;
 
-// undefined1*
-extern undefined1* g_StreambufVTable;
-extern undefined1* g_MRGLBlockHandlerTable;
-
-// undefined4
-extern undefined4 DAT_005a4b78;
-extern undefined4 DAT_005accf8;
-extern undefined4 DAT_005accfc;
-extern undefined4 DAT_005ad280;
-extern undefined4 DAT_005ad444;
-extern undefined4 DAT_005ad448;
-extern undefined4 DAT_005ad44c;
-extern undefined4 DAT_005ad450;
-extern undefined4 DAT_005ad454;
-extern undefined4 DAT_005ad458;
-extern undefined4 DAT_005ad45c;
-extern undefined4 DAT_005ad594;
-extern undefined4 DAT_005ad59c;
-extern undefined4 DAT_005ad898;
-extern undefined4 DAT_005ad89c;
-extern undefined4 DAT_005ad8bc;
-extern undefined4 DAT_005ad8c0;
-extern undefined4 DAT_005ae6f4;
-extern undefined4 DAT_005ae6f8;
+// void*[67]
+extern void* g_MRGLBlockHandlerTable[67];
 

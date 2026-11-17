@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 209,
+    "complexity_score": 193,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
-    "suspect_count": 7,
+    "pseudocode_lines": 123,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 388
+    "total_lines": 387
   },
   "cross_references": [
     {
@@ -93,9 +92,9 @@
     },
     {
       "addr": "005a1eb0",
-      "name": "DAT_005a1eb0",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005a1eb0",
+      "type": "float",
+      "value": "0.00390625"
     },
     {
       "addr": "01cc4800",
@@ -373,16 +372,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 69,
+      "line": 67,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[0]->vertex_indices).vertex_index_0 + local_2c);",
@@ -390,7 +381,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 79,
+      "line": 77,
       "match": "pSVar2 = (T *)pSVar2->ARRAY",
       "severity": "moderate",
       "text": "pSVar2 = (SVert *)pSVar2->bone_weights;",
@@ -398,7 +389,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 81,
+      "line": 79,
       "match": "pSVar5 = (T *)pSVar5->ARRAY",
       "severity": "moderate",
       "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
@@ -406,7 +397,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 84,
+      "line": 82,
       "match": "pSVar2 = (T *)pSVar2->ARRAY",
       "severity": "moderate",
       "text": "pSVar2 = (SVert *)pSVar2->bone_weights;",
@@ -414,7 +405,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pSVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 86,
+      "line": 84,
       "match": "pSVar5 = (T *)pSVar5->ARRAY",
       "severity": "moderate",
       "text": "pSVar5 = (SVert *)pSVar5->bone_indices;",
@@ -422,7 +413,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via pointer arithmetic on its own `tri_count` field (which decays to a pointer), `+ CONST`; `offsetof(tri_count) + CONST*sizeof(elem)` equals the stride of a *different* array the loop reads through `local_3c`. Replace those `local_3c->other_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update. (String/buffer-copy cursors that only touch the advanced field are excluded here \u2014 those are unrolled_strcpy/unrolled_memcpy.)",
-      "line": 118,
+      "line": 116,
       "match": "local_3c = (T *)(local_3c->tri_count + CONST)",
       "severity": "moderate",
       "text": "local_3c = (CDeformableModel *)(local_3c->tri_count + 3);",

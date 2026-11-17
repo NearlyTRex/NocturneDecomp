@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemonSet *this_ptr,CVector3f *vertex_position,CVector3f *position_offset,int vertex_index)
 
 {
@@ -28,9 +26,9 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
   local_3c = 0.0;
   local_40 = 0.0;
   local_38 = 0.0;
-  if (0 < _DAT_01fba9a4) {
+  if (0 < g_INT_01fba9a4) {
     do {
-      iVar1 = *(int *)(&DAT_01fba9a8 + iVar6);
+      iVar1 = *(int *)((int)g_C3DSLight_PTR_ARRAY_01fba9a8 + iVar6);
       if ((*(uint *)(iVar1 + 0x11d4) & 0x7fffffff) != 0) {
         fVar5 = *(float *)(iVar1 + 0x104) - (vertex_position->x + position_offset->x);
         fVar2 = *(float *)(iVar1 + 0x108) - (vertex_position->y + position_offset->y);
@@ -45,9 +43,9 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
         }
       }
       iVar6 = iVar6 + 4;
-    } while (iVar6 < _DAT_01fba9a4 * 4);
+    } while (iVar6 < g_INT_01fba9a4 * 4);
   }
-  if (_DAT_01fba9a4 == 0) {
+  if (g_INT_01fba9a4 == 0) {
     local_40 = 128.0;
     local_38 = 128.0;
     local_3c = 128.0;
@@ -63,10 +61,10 @@ void __cdecl core_set_cpp_CDemonSet_computeVertexOmniLighting_FUN_0050be20(CDemo
   }
   dVar7 = round((double)local_3c);
   dVar8 = round((double)local_40);
-  (&DAT_005c5034)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].r = (int)ROUND(dVar7) << 8;
   dVar7 = round((double)local_38);
-  (&DAT_005c5038)[vertex_index * 0xc] = (int)ROUND(dVar8) << 8;
-  (&DAT_005c503c)[vertex_index * 0xc] = (int)ROUND(dVar7) << 8;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].g = (int)ROUND(dVar8) << 8;
+  g_SRenderVertex_ARRAY_005c5014[vertex_index].b = (int)ROUND(dVar7) << 8;
   g_FastSqrtMagic = iVar4;
   return;
 }

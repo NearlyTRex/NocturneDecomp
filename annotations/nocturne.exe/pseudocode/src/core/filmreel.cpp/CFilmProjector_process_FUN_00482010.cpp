@@ -51,7 +51,8 @@ void __cdecl core_filmreel_cpp_CFilmProjector_process_FUN_00482010(CFilmProjecto
       }
     }
     if (this_ptr->key_reel == (this_ptr->base).dest_actor) {
-      core_event_cpp_CEventList_executeCommands_FUN_0047ab70(0x01C03A10,this_ptr->key_event);
+      core_event_cpp_CEventList_executeCommands_FUN_0047ab70
+                (g_CEventList_PTR_005b7650,this_ptr->key_event);
     }
   }
   this_ptr->prev_dest_state = (this_ptr->base).triggered;

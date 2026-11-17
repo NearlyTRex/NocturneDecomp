@@ -9,8 +9,8 @@
 ;
 ; Referenced Globals:
 ;   int INT_005ae708 = 0x1
-;   undefined4 DAT_01b4d764
-;   undefined4 DAT_01b4d768
+;   int g_INT_01b4d764
+;   int g_INT_01b4d768
 ;   void*[1200] g_ScreenBufferArray
 ;   uint[1600] g_ReciprocalLookupTable
 ;
@@ -70,14 +70,14 @@ section .text
     POP EDI                             ; 00464051
     POP ESI                             ; 00464052
     RET                                 ; 00464053
-    MOV EAX,[0x01b4d764]                ; 00464054 | DAT_01b4d764
+    MOV EAX,[0x01b4d764]                ; 00464054 | g_INT_01b4d764
         ;   Label: LAB_00464054
     INC EAX                             ; 00464059
-    MOV [0x01b4d764],EAX                ; 0046405a | DAT_01b4d764
+    MOV [0x01b4d764],EAX                ; 0046405a | g_INT_01b4d764
     CMP EAX,dword ptr [0x005ae708]      ; 0046405f | INT_005ae708
     JC 0x00464045                       ; 00464065
         ;   XREF to: 00464045 (CONDITIONAL_JUMP)  ; LAB_00464045
-    MOV dword ptr [0x01b4d768],0x1      ; 00464067 | DAT_01b4d768
+    MOV dword ptr [0x01b4d768],0x1      ; 00464067 | g_INT_01b4d768
     POP EBP                             ; 00464071
     POP EDI                             ; 00464072
     POP ESI                             ; 00464073

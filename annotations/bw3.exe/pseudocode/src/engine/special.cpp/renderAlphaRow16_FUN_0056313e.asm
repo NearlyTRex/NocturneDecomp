@@ -15,9 +15,9 @@
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040d8a0 at 0040da49
 ;
 ; Referenced Globals:
-;   int g_INT_00604e60 = 0xf800
-;   int g_INT_00604e68 = 0x7e0
-;   int g_INT_00604e70 = 0x1f
+;   _MMX_INTEGER g_MMX_INTEGER_00604e60
+;   _MMX_INTEGER g_MMX_INTEGER_00604e68
+;   _MMX_INTEGER g_MMX_INTEGER_00604e70
 ;   qword g_QWORD_00604e78 = 0xf80000
 ;   qword g_QWORD_00604e98 = 0xfc00
 ;   qword g_QWORD_00604eb8 = 0xf8
@@ -66,14 +66,14 @@ section .text
     PXOR MM2,qword ptr [0x00605f08]     ; 00563198 | g_QWORD_ARRAY_00605710[255]
     MOVZX EAX,word ptr [EDI]            ; 0056319f
     MOVD MM3,EAX                        ; 005631a2
-    PAND MM3,qword ptr [0x00604e70]     ; 005631a5 | g_INT_00604e70
+    PAND MM3,qword ptr [0x00604e70]     ; 005631a5 | g_MMX_INTEGER_00604e70
     PSLLQ MM3,qword ptr [0x00604f00]    ; 005631ac | g_QWORD_00604f00
     MOVD MM4,EAX                        ; 005631b3
-    PAND MM4,qword ptr [0x00604e68]     ; 005631b6 | g_INT_00604e68
+    PAND MM4,qword ptr [0x00604e68]     ; 005631b6 | g_MMX_INTEGER_00604e68
     PSLLQ MM4,qword ptr [0x00604ee0]    ; 005631bd | g_QWORD_00604ee0
     POR MM3,MM4                         ; 005631c4
     MOVD MM5,EAX                        ; 005631c7
-    PAND MM5,qword ptr [0x00604e60]     ; 005631ca | g_INT_00604e60
+    PAND MM5,qword ptr [0x00604e60]     ; 005631ca | g_MMX_INTEGER_00604e60
     PSLLQ MM5,qword ptr [0x00604ec0]    ; 005631d1 | g_QWORD_00604ec0
     POR MM3,MM5                         ; 005631d8
     PUNPCKLBW MM3,MM7                   ; 005631db

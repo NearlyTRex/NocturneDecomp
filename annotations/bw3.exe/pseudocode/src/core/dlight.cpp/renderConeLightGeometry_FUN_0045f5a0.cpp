@@ -57,7 +57,7 @@ void __cdecl core_dlight_cpp_renderConeLightGeometry_FUN_0045f5a0(CVector3f *pos
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
             (g_CDemonRenderer_PTR_005f2afc,rotation,(CVector3f *)0x0);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-            (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLTextureBasic_005f2828);
+            (g_CDemonRenderer_PTR_005f2afc,&g_SLightGlowTable_005f2828.fuzz);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(g_CDemonRenderer_PTR_005f2afc,1);
   local_30 = 1.0 / falloff;
   iVar4 = 1;

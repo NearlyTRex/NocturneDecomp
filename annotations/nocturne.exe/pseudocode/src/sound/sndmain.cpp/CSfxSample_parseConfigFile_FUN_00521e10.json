@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 528,
-    "complexity_score": 280,
+    "complexity_score": 264,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 215,
-    "suspect_count": 5,
+    "pseudocode_lines": 214,
+    "suspect_count": 4,
     "suspect_types": [
       "sub84_truncation",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 743
+    "total_lines": 742
   },
   "cross_references": [
     {
@@ -348,9 +347,9 @@
     },
     {
       "addr": "005bea88",
-      "name": "DAT_005bea88",
-      "type": "undefined4",
-      "value": null
+      "name": "g_DOUBLE_005bea88",
+      "type": "double",
+      "value": "1"
     },
     {
       "addr": "005c168c",
@@ -705,16 +704,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 120,
+      "line": 118,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_488 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -722,7 +713,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 145,
+      "line": 143,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_480 = SUB84(__BITCAST_UINT64(dVar2),0);",
@@ -730,7 +721,7 @@
     },
     {
       "description": "SUB84 truncation (extracting 32-bit from 64-bit value)",
-      "line": 173,
+      "line": 171,
       "match": "SUB84(",
       "severity": "moderate",
       "text": "local_478 = SUB84(__BITCAST_UINT64((double)local_470),0);",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 98,
+      "line": 96,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

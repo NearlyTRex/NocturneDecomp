@@ -6,12 +6,12 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_thread.c_GetTLS_FUN_005671dc_005c1abc = 005671dc
-;   undefined4 DAT_005c1f6c
-;   undefined4 DAT_005c1f70
-;   undefined4 DAT_005c20e0
-;   undefined4 DAT_005c20e4
-;   undefined4 DAT_005c20e8
-;   undefined4 DAT_005c20ec
+;   void* g_PTR_005c1f6c = 00000000
+;   void* g_PTR_005c1f70 = 00000000
+;   undefined4 g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[2]
+;   undefined4 g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[3]
+;   undefined4 g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[4]
+;   undefined4 g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[5]
 ;
 ; Called Functions:
 ;   crt_thread.c_GetTLS_FUN_005671dc
@@ -32,17 +32,17 @@ section .text
     MOV AX,DS                           ; 0057186a
     MOV ES,AX                           ; 0057186c
     LEA EDI,[ESI + 0x58]                ; 0057186e
-    LEA ESI,[EBX + 0x5c20d8]            ; 00571871 | DAT_005c20e0
+    LEA ESI,[EBX + 0x5c20d8]            ; 00571871 | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[2]
     ADD EBX,0x8                         ; 00571877
-    MOVSD ES:EDI,ESI                    ; 0057187a | DAT_005c20e0 | DAT_005c20e8
-    MOVSD ES:EDI,ESI                    ; 0057187b | DAT_005c20e4 | DAT_005c20ec
+    MOVSD ES:EDI,ESI                    ; 0057187a | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[2] | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[4]
+    MOVSD ES:EDI,ESI                    ; 0057187b | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[3] | g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[5]
     CMP EBX,0x68                        ; 0057187c
     JNZ 0x00571861                      ; 0057187f
         ;   XREF to: 00571861 (CONDITIONAL_JUMP)  ; LAB_00571861
     MOV EDX,0x5715ac                    ; 00571881
     MOV EBX,0x5717d8                    ; 00571886
-    MOV dword ptr [0x005c1f6c],EDX      ; 0057188b | DAT_005c1f6c
-    MOV dword ptr [0x005c1f70],EBX      ; 00571891 | DAT_005c1f70
+    MOV dword ptr [0x005c1f6c],EDX      ; 0057188b | g_PTR_005c1f6c
+    MOV dword ptr [0x005c1f70],EBX      ; 00571891 | g_PTR_005c1f70
     POP ES                              ; 00571897
     POP EDI                             ; 00571898
     POP ESI                             ; 00571899

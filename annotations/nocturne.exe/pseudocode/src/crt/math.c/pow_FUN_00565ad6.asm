@@ -17,7 +17,7 @@
 ;   sound_mp3.cpp_requantizeLayer3Samples_FUN_004e58d0 at 004e5b5b
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1d98
+;   byte g_BYTE_005c1d98 = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_exp_FUN_0056bdd2
@@ -135,7 +135,7 @@ section .text
     CALL crt_unknown.c_integer_power_FUN_00565c12 ; 00565ba0
         ;   XREF to: 00565c12 (UNCONDITIONAL_CALL)  ; void crt_unknown.c_integer_power_FUN_00565c12()
     FLD1                                ; 00565ba5
-    TEST byte ptr [0x005c1d98],0x1      ; 00565ba7 | DAT_005c1d98
+    TEST byte ptr [0x005c1d98],0x1      ; 00565ba7 | g_BYTE_005c1d98
     JNZ 0x00565bb4                      ; 00565bae
         ;   XREF to: 00565bb4 (CONDITIONAL_JUMP)  ; LAB_00565bb4
     FDIVRP                              ; 00565bb0

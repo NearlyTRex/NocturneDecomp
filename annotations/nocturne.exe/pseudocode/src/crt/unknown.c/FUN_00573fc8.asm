@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_ExitThread_005754b8 = 00175b98
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_00567208_005c1b00 = 00567208
-;   undefined4 DAT_02de4e30
+;   int g_INT_02de4e30
 ;
 ; Called Functions:
 ;   crt_exception.c_RemoveExceptionHandler_FUN_0056ef24
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_00573fc8
     CALL crt_exception.c_RemoveExceptionHandler_FUN_0056ef24 ; 00573fce
         ;   XREF to: 0056ef24 (UNCONDITIONAL_CALL)  ; void crt_exception.c_RemoveExceptionHandler_FUN_0056ef24()
-    CMP dword ptr [0x02de4e30],0x0      ; 00573fd3 | DAT_02de4e30
+    CMP dword ptr [0x02de4e30],0x0      ; 00573fd3 | g_INT_02de4e30
     JNZ 0x00573fe6                      ; 00573fda
         ;   XREF to: 00573fe6 (CONDITIONAL_JUMP)  ; LAB_00573fe6
     PUSH 0x1                            ; 00573fdc

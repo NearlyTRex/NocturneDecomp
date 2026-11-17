@@ -4,11 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SFogImagePlane.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x12E0000
 // =============================================================================
 
-// void*
-extern void* g_VOID_PTR_012e1778;
+// SFogImagePlane[16]
+extern SFogImagePlane g_SFogImagePlane_ARRAY_012e1778[16];
 

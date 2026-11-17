@@ -30,7 +30,12 @@ extern CVector3f g_CVector3f_ARRAY_0077bdbc[100];
 // SCollisionInfo[100]
 extern SCollisionInfo g_SCollisionInfo_ARRAY_0077c26c[100];
 
-// undefined4
-extern undefined4 DAT_0077ac8c;
-extern undefined4 DAT_0077bdb8;
+// char[145328]
+extern char g_CHAR_ARRAY_0077d250[145328];
+
+// int
+extern int g_INT_0077bdb8;
+
+// int[17]
+extern int g_INT_ARRAY_0077ac8c[17];
 

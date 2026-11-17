@@ -39,7 +39,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
   fStack_1c = ABS((float)iStack_14);
   _sprintf(acStack_64c,"%f");
   _sprintf(acStack_44c,"%f");
-  pcVar4 = &DAT_005d4011;
+  pcVar4 = "AB_1.wav @ ";
   pcVar5 = acStack_24c;
   do {
     cVar1 = *pcVar4;
@@ -71,7 +71,7 @@ void __cdecl core_bmppuzzl_cpp_CAudioRecPuzzle_playClip_FUN_00417230(CAudioRecPu
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = &DAT_005d401d;
+  pcVar4 = "AT_1.wav @ ";
   pcVar5 = acStack_14c;
   do {
     cVar1 = *pcVar4;

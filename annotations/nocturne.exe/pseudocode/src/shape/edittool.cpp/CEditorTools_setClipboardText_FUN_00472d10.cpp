@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEditorTools *this_ptr,char *text_data)
 
 {
@@ -59,11 +57,11 @@ void __cdecl shape_edittool_cpp_CEditorTools_setClipboardText_FUN_00472d10(CEdit
     }
     CloseClipboard();
   }
-  _DAT_01bcd078 = realloc(_DAT_01bcd078,uVar4);
-  if (_DAT_01bcd078 == (char *)0x0) {
+  g_CHAR_PTR_01bcd078 = realloc(g_CHAR_PTR_01bcd078,uVar4);
+  if (g_CHAR_PTR_01bcd078 == (char *)0x0) {
     return;
   }
-  pcVar3 = _DAT_01bcd078;
+  pcVar3 = g_CHAR_PTR_01bcd078;
   for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
     *(uint *)pcVar3 = *(uint *)text_data;
     text_data = text_data + (uint)bVar7 * -8 + 4;

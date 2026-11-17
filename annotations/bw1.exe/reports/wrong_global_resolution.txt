@@ -12,8 +12,8 @@ SUMMARY
 ----------------------------------------------------------------------------------------------------
 
   Functions checked: 6010
-  Functions with suspicious globals: 1096
-  Total suspicious global references: 1946
+  Functions with suspicious globals: 1109
+  Total suspicious global references: 1959
 
   Most commonly misresolved globals:
     g_CHero_PTR_ARRAY_01d06aa4                         94 functions
@@ -33,11 +33,11 @@ SUMMARY
     g_UCHAR_ARRAY_01c4e9f8                             11 functions
     g_CHeroClassInfo                                   11 functions
     g_CVector3f_02c8af28                               10 functions
-    g_CHAR_ARRAY_01342220                              9 functions
     g_UINT_PTR_ARRAY_01c4480c                          9 functions
     g_CMoonInstance                                    9 functions
+    g_UINT_ARRAY_01c4dcd0                              9 functions
 
-  Raw .cpp files with issues: 1096
+  Raw .cpp files with issues: 1109
 
 ====================================================================================================
 DETAILED FINDINGS
@@ -1276,34 +1276,6 @@ core_boxactor.cpp_staticInit_FUN_00421c00  [.cpp]  (6 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0  [.cpp]  (6 suspicious globals)
-  File: core/dcamera.cpp
-
-  g_CHAR_ARRAY_00b10718
-    Used at lines: 82
-    NOT found in function reference list
-
-  g_CVector3f_ARRAY_00a1bad8
-    Used at lines: 80
-    NOT found in function reference list
-
-  g_CVector3i_ARRAY_00939bd8
-    Used at lines: 83
-    NOT found in function reference list
-
-  g_INT_ARRAY_014dea50
-    Used at lines: 61, 85, 86
-    NOT found in function reference list
-
-  g_INT_ARRAY_014dee10
-    Used at lines: 62, 87
-    NOT found in function reference list
-
-  g_INT_ARRAY_014df1d0
-    Used at lines: 81
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_filmreel.cpp_staticInit_FUN_004ab250  [.cpp]  (6 suspicious globals)
   File: core/filmreel.cpp
 
@@ -1392,27 +1364,27 @@ core_menu.cpp_checkAndCalibrateGamepad_FUN_0050b410  [.cpp]  (6 suspicious globa
   File: core/menu.cpp
 
   g_CBitFont_PTR_0152d23c
-    Used at lines: 40, 42, 44, 65, 67, ...
+    Used at lines: 38, 40, 42, 63, 65, ...
     NOT found in function reference list
 
   g_CDemonSetPtr
-    Used at lines: 57, 58, 60, 62
+    Used at lines: 55, 56, 58, 60
     NOT found in function reference list
 
   g_CKeys_PTR_0061f2a4
-    Used at lines: 49, 49, 51, 51, 74, ...
+    Used at lines: 47, 47, 49, 49, 72, ...
     NOT found in function reference list
 
   g_CMoonInstance
-    Used at lines: 37, 61
+    Used at lines: 35, 59
     NOT found in function reference list
 
   g_INT_01c51cb0
-    Used at lines: 53, 87, 88, 90, 91
+    Used at lines: 51, 85, 86, 88, 89
     NOT found in function reference list
 
   g_INT_01c51cb4
-    Used at lines: 54, 93, 94, 96, 97
+    Used at lines: 52, 91, 92, 94, 95
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1475,24 +1447,48 @@ core_skeleton.cpp_staticInit_FUN_00562b70  [.cpp]  (6 suspicious globals)
 core_dcamera.cpp_CDemonCamera_renderGlobeCoronas_FUN_00452550  [.cpp]  (5 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
-    Used at lines: 226
+  g_CHAR_ARRAY_ARRAY_00b10718
+    Used at lines: 228
     NOT found in function reference list
 
   g_INT_ARRAY_00b36198
-    Used at lines: 167
+    Used at lines: 169
     NOT found in function reference list
 
   g_INT_ARRAY_014dea50
-    Used at lines: 82, 126, 128, 203, 209, ...
+    Used at lines: 83, 128, 130, 205, 211, ...
     NOT found in function reference list
 
   g_INT_ARRAY_014dee10
-    Used at lines: 83, 129, 203, 210, 231
+    Used at lines: 84, 131, 205, 212, 233
     NOT found in function reference list
 
-  g_INT_ARRAY_014df1d0
-    Used at lines: 123, 225
+  g_INT_ARRAY_ARRAY_014df1d0
+    Used at lines: 125, 227
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004516c0  [.cpp]  (5 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CHAR_ARRAY_ARRAY_00b10718
+    Used at lines: 82
+    NOT found in function reference list
+
+  g_CVector3i_ARRAY_ARRAY_00939bd8
+    Used at lines: 83
+    NOT found in function reference list
+
+  g_INT_ARRAY_014dea50
+    Used at lines: 61, 85, 86
+    NOT found in function reference list
+
+  g_INT_ARRAY_014dee10
+    Used at lines: 62, 87
+    NOT found in function reference list
+
+  g_INT_ARRAY_ARRAY_014df1d0
+    Used at lines: 81
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1507,10 +1503,6 @@ core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450f20  [.cpp]  (5 suspicious g
     Used at lines: 42, 43
     NOT found in function reference list
 
-  g_INT_ARRAY_014df1d0
-    Used at lines: 49
-    NOT found in function reference list
-
   g_INT_ARRAY_0152a1d0
     Used at lines: 40
     NOT found in function reference list
@@ -1519,23 +1511,27 @@ core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450f20  [.cpp]  (5 suspicious g
     Used at lines: 44
     NOT found in function reference list
 
+  g_INT_ARRAY_ARRAY_014df1d0
+    Used at lines: 49
+    NOT found in function reference list
+
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderCoronaProjectedTextureScanline_FUN_004513a0  [.cpp]  (5 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
+  g_CHAR_ARRAY_ARRAY_00b10718
     Used at lines: 28
     NOT found in function reference list
 
-  g_CVector3f_ARRAY_00a1bad8
+  g_CVector3f_ARRAY_ARRAY_00a1bad8
     Used at lines: 32
     NOT found in function reference list
 
-  g_CVector3i_ARRAY_00939bd8
+  g_CVector3i_ARRAY_ARRAY_00939bd8
     Used at lines: 27
     NOT found in function reference list
 
-  g_INT_ARRAY_014df1d0
+  g_INT_ARRAY_ARRAY_014df1d0
     Used at lines: 29
     NOT found in function reference list
 
@@ -1828,15 +1824,35 @@ core_charactr.cpp_staticInit_FUN_0042bfe0  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0  [.cpp]  (4 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CHAR_ARRAY_ARRAY_00b23458
+    Used at lines: 59, 113
+    NOT found in function reference list
+
+  g_SCameraEdge_ARRAY_01323d08
+    Used at lines: 87, 89, 90, 141, 143, ...
+    NOT found in function reference list
+
+  g_SFogGrid_01480e2c
+    Used at lines: 33
+    NOT found in function reference list
+
+  g_SFogImagePlane_01342220
+    Used at lines: 58, 112
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0  [.cpp]  (4 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b23458
-    Used at lines: 449
+  g_CHAR_ARRAY_01354e20
+    Used at lines: 171, 201, 226, 229, 245, ...
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01354e20
-    Used at lines: 171, 201, 225, 228, 244, ...
+  g_CHAR_ARRAY_ARRAY_00b23458
+    Used at lines: 450
     NOT found in function reference list
 
   g_CLZWDecompressInstance
@@ -1844,27 +1860,7 @@ core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0  [.cpp]  (4 suspicious glob
     NOT found in function reference list
 
   g_UINT_ARRAY_00b8149c
-    Used at lines: 269, 283, 284, 285, 286, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30  [.cpp]  (4 suspicious globals)
-  File: core/dcamera.cpp
-
-  DAT_00857cd8
-    Used at lines: 87
-    NOT found in function reference list
-
-  DAT_00857cdc
-    Used at lines: 88, 89
-    NOT found in function reference list
-
-  g_CVector3f_ARRAY_00a1bad8
-    Used at lines: 99, 101, 103
-    NOT found in function reference list
-
-  g_CVector3i_ARRAY_00939bd8
-    Used at lines: 75
+    Used at lines: 270, 284, 285, 286, 287, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -1899,7 +1895,7 @@ core_dcamera.cpp_processCoronaScanline_FUN_00452110  [.cpp]  (4 suspicious globa
     Used at lines: 77
     NOT found in function reference list
 
-  g_INT_ARRAY_014df1d0
+  g_INT_ARRAY_ARRAY_014df1d0
     Used at lines: 29
     NOT found in function reference list
 
@@ -1919,7 +1915,7 @@ core_dcamera.cpp_staticInit_FUN_0044c580  [.cpp]  (4 suspicious globals)
     Used at lines: 13
     NOT found in function reference list
 
-  g_CVector3f_ARRAY_00a1bad8
+  g_CVector3f_ARRAY_ARRAY_00a1bad8
     Used at lines: 12
     NOT found in function reference list
 
@@ -2003,7 +1999,7 @@ core_fire.cpp_CFireball_render_FUN_004ae640  [.cpp]  (4 suspicious globals)
     Used at lines: 73
     NOT found in function reference list
 
-  g_SMRGLHeaderPrimitive_01c57090
+  g_SMRGLPrimitiveQuadIndex_01c57090
     Used at lines: 168, 273
     NOT found in function reference list
 
@@ -2088,26 +2084,6 @@ core_menu.cpp_configureCustomKeys_FUN_0050b470  [.cpp]  (4 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0  [.cpp]  (4 suspicious globals)
-  File: core/netgame.cpp
-
-  DAT_01d6dfbc
-    Used at lines: 26
-    NOT found in function reference list
-
-  DAT_01d6dfc0
-    Used at lines: 39, 66
-    NOT found in function reference list
-
-  DAT_01d6dfc4
-    Used at lines: 41
-    NOT found in function reference list
-
-  DAT_01d6dfd0
-    Used at lines: 60
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_netgame.cpp_staticInit_FUN_0052c0a0  [.cpp]  (4 suspicious globals)
   File: core/netgame.cpp
 
@@ -2125,26 +2101,6 @@ core_netgame.cpp_staticInit_FUN_0052c0a0  [.cpp]  (4 suspicious globals)
 
   g_SChatHistory_ARRAY_01d51db8
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_path.cpp_queuePush_FUN_00532ee0  [.cpp]  (4 suspicious globals)
-  File: core/path.cpp
-
-  DAT_01e6c180
-    Used at lines: 17
-    NOT found in function reference list
-
-  DAT_01e6c184
-    Used at lines: 19
-    NOT found in function reference list
-
-  g_CHAR_ARRAY_01e7abe8
-    Used at lines: 14
-    NOT found in function reference list
-
-  g_INT_ARRAY_01e6c17c
-    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2245,6 +2201,26 @@ engine_2d.c_plotPixelWithDepth_FUN_00401280  [.cpp]  (4 suspicious globals)
 
   g_USHORT_ARRAY_01c4dad0
     Used at lines: 27
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10  [.cpp]  (4 suspicious globals)
+  File: engine/3d.c
+
+  g_INT_ARRAY_00713a98
+    Used at lines: 70, 80
+    NOT found in function reference list
+
+  g_SRenderBufferEntry_ARRAY_00713b00
+    Used at lines: 25
+    NOT found in function reference list
+
+  g_SRenderBufferEntry_PTR_ARRAY_007be960
+    Used at lines: 29, 35, 55, 57, 58
+    NOT found in function reference list
+
+  g_SRenderVertex_ARRAY_00629014
+    Used at lines: 62, 68, 69
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2365,6 +2341,46 @@ sound_sndmain.cpp_setDualListenerEnabled_FUN_00573e50  [.cpp]  (4 suspicious glo
 
   g_INT_02c807ec
     Used at lines: 17, 22, 25, 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavOutDevice_close_FUN_0057a740  [.cpp]  (4 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_HGLOBAL_ARRAY_02c82844
+    Used at lines: 26, 27, 28
+    NOT found in function reference list
+
+  g_HGLOBAL_ARRAY_02c82884
+    Used at lines: 21, 22, 23
+    NOT found in function reference list
+
+  g_LPVOID_ARRAY_02c828a4
+    Used at lines: 25
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 31
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930  [.cpp]  (4 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_HGLOBAL_ARRAY_02c82844
+    Used at lines: 51, 54
+    NOT found in function reference list
+
+  g_HGLOBAL_ARRAY_02c82884
+    Used at lines: 45
+    NOT found in function reference list
+
+  g_LPVOID_ARRAY_02c828a4
+    Used at lines: 48
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 55
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -2832,34 +2848,34 @@ core_crossbow.cpp_staticInit_FUN_00449710  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453ed0  [.cpp]  (3 suspicious globals)
+core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044ef30  [.cpp]  (3 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b23458
-    Used at lines: 58, 108
+  DAT_00857cd8
+    Used at lines: 87
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01342220
-    Used at lines: 57, 107
+  DAT_00857cdc
+    Used at lines: 88, 89
     NOT found in function reference list
 
-  g_SFogGrid_01480e2c
-    Used at lines: 32
+  g_SCameraEdge_ARRAY_01323d08
+    Used at lines: 158, 165, 166, 167
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451d90  [.cpp]  (3 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
-    Used at lines: 19
-    NOT found in function reference list
-
-  g_CHAR_ARRAY_01342220
+  g_CHAR_ARRAY_01354e20
     Used at lines: 28
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01354e20
+  g_CHAR_ARRAY_ARRAY_00b10718
+    Used at lines: 19
+    NOT found in function reference list
+
+  g_SFogImagePlane_01342220
     Used at lines: 28
     NOT found in function reference list
 
@@ -2875,7 +2891,7 @@ core_dcamera.cpp_initializeCoronaBuffers_FUN_00450ee0  [.cpp]  (3 suspicious glo
     Used at lines: 19
     NOT found in function reference list
 
-  g_INT_ARRAY_014df1d0
+  g_INT_ARRAY_ARRAY_014df1d0
     Used at lines: 15
     NOT found in function reference list
 
@@ -2883,12 +2899,12 @@ core_dcamera.cpp_initializeCoronaBuffers_FUN_00450ee0  [.cpp]  (3 suspicious glo
 core_dcamera.cpp_renderFlatColorScanline_FUN_004511e0  [.cpp]  (3 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_01342220
-    Used at lines: 48
-    NOT found in function reference list
-
   g_CHAR_ARRAY_01354e20
     Used at lines: 65
+    NOT found in function reference list
+
+  g_SFogImagePlane_01342220
+    Used at lines: 48
     NOT found in function reference list
 
   g_UINT_PTR_ARRAY_01c4480c
@@ -2947,16 +2963,16 @@ core_dest.cpp_staticInit_FUN_0045d190  [.cpp]  (3 suspicious globals)
 core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60  [.cpp]  (3 suspicious globals)
   File: core/dglobe.cpp
 
-  DAT_00611698
-    Used at lines: 48
+  g_CVector3i_ARRAY_006113a0
+    Used at lines: 23, 25, 27
     NOT found in function reference list
 
-  g_CVector3i_ARRAY_006113a0
-    Used at lines: 24, 26, 28
+  g_SMRGLLightPrimitive_ARRAY_00611688
+    Used at lines: 51
     NOT found in function reference list
 
   g_SMRGLTextureBasic_00611388
-    Used at lines: 44
+    Used at lines: 43
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -3824,22 +3840,6 @@ core_moocow.cpp_staticInit_FUN_005212a0  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890  [.cpp]  (3 suspicious globals)
-  File: core/netgame.cpp
-
-  DAT_01d6dfc4
-    Used at lines: 41
-    NOT found in function reference list
-
-  DAT_01d6dfc5
-    Used at lines: 42
-    NOT found in function reference list
-
-  DAT_01d6dfcc
-    Used at lines: 43
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_npc.cpp_staticInit_FUN_00531610  [.cpp]  (3 suspicious globals)
   File: core/npc.cpp
 
@@ -3869,22 +3869,6 @@ core_passngr.cpp_staticInit_FUN_00532710  [.cpp]  (3 suspicious globals)
 
   g_CPassengerClassVersion
     Used at lines: 14
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_path.cpp_queuePop_FUN_00532f60  [.cpp]  (3 suspicious globals)
-  File: core/path.cpp
-
-  DAT_01e6c180
-    Used at lines: 20
-    NOT found in function reference list
-
-  DAT_01e6c184
-    Used at lines: 22
-    NOT found in function reference list
-
-  g_INT_ARRAY_01e6c17c
-    Used at lines: 19
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4464,54 +4448,6 @@ core_zombie.cpp_staticInit_FUN_005ba700  [.cpp]  (3 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-engine_2d.c_drawCharacterHighlighted_FUN_00401b80  [.cpp]  (3 suspicious globals)
-  File: engine/2d.c
-
-  DAT_00608570
-    Used at lines: 21
-    NOT found in function reference list
-
-  DAT_00608571
-    Used at lines: 28
-    NOT found in function reference list
-
-  g_ARRAY_PTR_01c4354c
-    Used at lines: 33, 50
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_2d.c_drawCharacterMasked_FUN_00401910  [.cpp]  (3 suspicious globals)
-  File: engine/2d.c
-
-  DAT_00608570
-    Used at lines: 22
-    NOT found in function reference list
-
-  DAT_00608571
-    Used at lines: 29
-    NOT found in function reference list
-
-  g_ARRAY_PTR_01c4354c
-    Used at lines: 34, 54
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10  [.cpp]  (3 suspicious globals)
-  File: engine/3d.c
-
-  DAT_00713b00
-    Used at lines: 26
-    NOT found in function reference list
-
-  g_INT_ARRAY_00713a98
-    Used at lines: 70, 79
-    NOT found in function reference list
-
-  g_SRenderVertex_ARRAY_00629014
-    Used at lines: 62, 68, 69
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 engine_matrix.c_popMatrixRelativeOffset_FUN_00509480  [.cpp]  (3 suspicious globals)
   File: engine/matrix.c
 
@@ -4576,38 +4512,6 @@ shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004987b0  [.cpp]  (3 sus
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0  [.cpp]  (3 suspicious globals)
-  File: sound/mp3.cpp
-
-  g_DOUBLE_ARRAY_01d3e9c8
-    Used at lines: 50, 188
-    NOT found in function reference list
-
-  g_DOUBLE_ARRAY_01d3ee48
-    Used at lines: 150, 216, 224, 225, 226, ...
-    NOT found in function reference list
-
-  g_DOUBLE_ARRAY_01d3f088
-    Used at lines: 168, 192, 201
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00529370  [.cpp]  (3 suspicious globals)
-  File: sound/mp3.cpp
-
-  DAT_006207f8
-    Used at lines: 184, 202, 266, 286
-    NOT found in function reference list
-
-  g_DOUBLE_ARRAY_01d3c388
-    Used at lines: 141, 218, 302, 383
-    NOT found in function reference list
-
-  g_FLOAT_01d3d748
-    Used at lines: 142, 163, 163, 219, 244, ...
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0  [.cpp]  (3 suspicious globals)
   File: sound/sndmain.cpp
 
@@ -4637,6 +4541,38 @@ sound_sndmain.cpp_flushSoundChanges_FUN_00575db0  [.cpp]  (3 suspicious globals)
 
   g_INT_02c78cec
     Used at lines: 49
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavInDevice_close_FUN_0057ac70  [.cpp]  (3 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_HGLOBAL_ARRAY_02c828dc
+    Used at lines: 26, 27, 28
+    NOT found in function reference list
+
+  g_HGLOBAL_ARRAY_02c8297c
+    Used at lines: 21, 22, 23
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 31
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavInDevice_setMode_FUN_0057ae70  [.cpp]  (3 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_HGLOBAL_ARRAY_02c828dc
+    Used at lines: 103, 106
+    NOT found in function reference list
+
+  g_HGLOBAL_ARRAY_02c8297c
+    Used at lines: 97
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 108
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4791,31 +4727,19 @@ core_dcamera.cpp_CDemonCamera_addDirectionalLightMap_FUN_00451bc0  [.cpp]  (2 su
     Used at lines: 23
     NOT found in function reference list
 
-  g_CHAR_ARRAY_00b10718
+  g_CHAR_ARRAY_ARRAY_00b10718
     Used at lines: 24
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453dc0  [.cpp]  (2 suspicious globals)
-  File: core/dcamera.cpp
-
-  g_CHAR_ARRAY_01342220
-    Used at lines: 33
-    NOT found in function reference list
-
-  g_CHAR_ARRAY_01354e20
-    Used at lines: 32, 34
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00454a10  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b23458
+  g_CHAR_ARRAY_ARRAY_00b23458
     Used at lines: 21
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01342220
+  g_SFogImagePlane_01342220
     Used at lines: 22
     NOT found in function reference list
 
@@ -4823,11 +4747,11 @@ core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00454a10  [.cpp]  (2 susp
 core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00454970  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b23458
+  g_CHAR_ARRAY_ARRAY_00b23458
     Used at lines: 21
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01342220
+  g_SFogImagePlane_01342220
     Used at lines: 22
     NOT found in function reference list
 
@@ -4835,24 +4759,12 @@ core_dcamera.cpp_CDemonCamera_blendLightmapPixel32_FUN_00454970  [.cpp]  (2 susp
 core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004515b0  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
+  g_CHAR_ARRAY_ARRAY_00b10718
     Used at lines: 18
     NOT found in function reference list
 
-  g_CHAR_ARRAY_00b23458
+  g_CHAR_ARRAY_ARRAY_00b23458
     Used at lines: 17, 32, 41, 42
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_004548f0  [.cpp]  (2 suspicious globals)
-  File: core/dcamera.cpp
-
-  g_CHAR_ARRAY_01342220
-    Used at lines: 38
-    NOT found in function reference list
-
-  g_CHAR_ARRAY_01354e20
-    Used at lines: 37
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4863,7 +4775,7 @@ core_dcamera.cpp_CDemonCamera_computeDirectionalLightMap_FUN_0044ee30  [.cpp]  (
     Used at lines: 21, 26
     NOT found in function reference list
 
-  g_CVector3f_ARRAY_00a1bad8
+  g_CVector3f_ARRAY_ARRAY_00a1bad8
     Used at lines: 27
     NOT found in function reference list
 
@@ -4880,27 +4792,15 @@ core_dcamera.cpp_CDemonCamera_convertPaletteToDisplayFormat_FUN_0044fea0  [.cpp]
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90  [.cpp]  (2 suspicious globals)
-  File: core/dcamera.cpp
-
-  g_CHAR_ARRAY_01342220
-    Used at lines: 26, 35, 44, 47
-    NOT found in function reference list
-
-  g_CHAR_ARRAY_01354e20
-    Used at lines: 26, 35, 44, 46
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044e8e0  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b81ca8
-    Used at lines: 61, 68, 75
+  g_CHAR_ARRAY_ARRAY_00b81ca8
+    Used at lines: 60, 67, 74
     NOT found in function reference list
 
-  g_CVector3f_ARRAY_00a1bad8
-    Used at lines: 129
+  g_CVector3f_ARRAY_ARRAY_00a1bad8
+    Used at lines: 128
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -4931,19 +4831,19 @@ core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0  [.cpp]  (2 suspicious
 core_dcamera.cpp_blendCoronaTextureSpan_FUN_00452450  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
-    Used at lines: 29
-    NOT found in function reference list
-
   g_CHAR_ARRAY_01341200
     Used at lines: 36, 73
+    NOT found in function reference list
+
+  g_CHAR_ARRAY_ARRAY_00b10718
+    Used at lines: 29
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_renderVolumetricLightScanline_FUN_00451040  [.cpp]  (2 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_01342220
+  g_SFogImagePlane_01342220
     Used at lines: 59
     NOT found in function reference list
 
@@ -5147,7 +5047,7 @@ core_fire.cpp_CGlassParticle_ctor_FUN_004b7690  [.cpp]  (2 suspicious globals)
 core_flies.cpp_CFlies_renderOpaque_FUN_004c0080  [.cpp]  (2 suspicious globals)
   File: core/flies.cpp
 
-  g_FLOAT_ARRAY_01cc80cc
+  g_FLOAT_ARRAY_ARRAY_01cc80cc
     Used at lines: 60, 124
     NOT found in function reference list
 
@@ -5363,7 +5263,7 @@ core_marquee.cpp_initializeTrigTables_FUN_005072c0  [.cpp]  (2 suspicious global
 core_menu.cpp_addCustomKeyBinding_FUN_0050d1a0  [.cpp]  (2 suspicious globals)
   File: core/menu.cpp
 
-  g_CHAR_ARRAY_01d214e0
+  g_CHAR_ARRAY_ARRAY_01d214e0
     Used at lines: 23
     NOT found in function reference list
 
@@ -5423,12 +5323,24 @@ core_netgame.cpp_CNetGame_runLobby_FUN_0052e120  [.cpp]  (2 suspicious globals)
 core_path.cpp_CPathMap_searchGrid_FUN_00535490  [.cpp]  (2 suspicious globals)
   File: core/path.cpp
 
-  g_CHAR_ARRAY_01e7abe8
-    Used at lines: 25, 30, 34, 62, 64, ...
+  g_CHAR_ARRAY_ARRAY_01e7abe8
+    Used at lines: 23, 28, 32, 61, 64, ...
     NOT found in function reference list
 
   g_UCHAR_01e7abe7
-    Used at lines: 102, 104
+    Used at lines: 104, 107
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_path.cpp_queuePush_FUN_00532ee0  [.cpp]  (2 suspicious globals)
+  File: core/path.cpp
+
+  g_CHAR_ARRAY_ARRAY_01e7abe8
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_CPathQueueNode_ARRAY_01e6c17c
+    Used at lines: 16, 17, 19
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5708,6 +5620,18 @@ core_werewolf.cpp_CWerewolf_renderTransparent_FUN_005b11c0  [.cpp]  (2 suspiciou
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+crt_unknown.c_FUN_005c50fc  [.cpp]  (2 suspicious globals)
+  File: crt/unknown.c
+
+  g_WCHAR_T_ARRAY_02c9f174
+    Used at lines: 44, 45
+    NOT found in function reference list
+
+  g_WCHAR_T_ARRAY_02c9f480
+    Used at lines: 100, 101
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 crt_unknown.c_FUN_005ccb50  [.cpp]  (2 suspicious globals)
   File: crt/unknown.c
 
@@ -5732,15 +5656,39 @@ crt_unknown.c_FUN_005ce300  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+engine_2d.c_drawCharacterHighlighted_FUN_00401b80  [.cpp]  (2 suspicious globals)
+  File: engine/2d.c
+
+  g_ARRAY_PTR_01c4354c
+    Used at lines: 32, 49
+    NOT found in function reference list
+
+  g_SFontGlyph_ARRAY_00608570
+    Used at lines: 20, 27
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 engine_2d.c_drawCharacterMaskedColor_FUN_00401a20  [.cpp]  (2 suspicious globals)
   File: engine/2d.c
 
   g_UINT_ARRAY_01c4dcd0
-    Used at lines: 72
+    Used at lines: 71
     NOT found in function reference list
 
   g_USHORT_ARRAY_01c4dad0
-    Used at lines: 55
+    Used at lines: 54
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+engine_2d.c_drawCharacterMasked_FUN_00401910  [.cpp]  (2 suspicious globals)
+  File: engine/2d.c
+
+  g_ARRAY_PTR_01c4354c
+    Used at lines: 33, 53
+    NOT found in function reference list
+
+  g_SFontGlyph_ARRAY_00608570
+    Used at lines: 21, 28
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -5979,8 +5927,8 @@ shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920  [.cpp]  (2 suspi
     Used at lines: 62
     NOT found in function reference list
 
-  g_CHAR_ARRAY_01c3eb60
-    Used at lines: 57, 60, 76, 96, 106, ...
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 57, 60, 76, 96, 102, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6020,27 +5968,51 @@ sound_mp3.cpp_antiAliasingButterfly_FUN_0052a0e0  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_applyPolyphaseWindow_FUN_0052a2c0  [.cpp]  (2 suspicious globals)
+  File: sound/mp3.cpp
+
+  g_DOUBLE_ARRAY_ARRAY_01d3ee48
+    Used at lines: 150, 216, 225, 227, 228, ...
+    NOT found in function reference list
+
+  g_DOUBLE_ARRAY_ARRAY_01d3f088
+    Used at lines: 168, 192, 201
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_mp3.cpp_mpegLayer3StereoProcess_FUN_00529370  [.cpp]  (2 suspicious globals)
+  File: sound/mp3.cpp
+
+  g_DOUBLE_ARRAY_01d3c388
+    Used at lines: 137, 214, 301, 383
+    NOT found in function reference list
+
+  g_FLOAT_01d3d748
+    Used at lines: 138, 159, 159, 215, 242, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_requantizeLayer3Samples_FUN_00528ae0  [.cpp]  (2 suspicious globals)
   File: sound/mp3.cpp
 
   g_DOUBLE_ARRAY_01d3bd48
-    Used at lines: 59, 157
+    Used at lines: 58, 156
     NOT found in function reference list
 
   g_DOUBLE_ARRAY_01d3c388
-    Used at lines: 72, 144
+    Used at lines: 71, 143
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 sound_mp3.cpp_validateLayer2AllocationTable_FUN_00525690  [.cpp]  (2 suspicious globals)
   File: sound/mp3.cpp
 
-  DAT_00620328
-    Used at lines: 21
+  g_DOUBLE_ARRAY_ARRAY_006202e8
+    Used at lines: 25
     NOT found in function reference list
 
-  g_DOUBLE_ARRAY_006202e8
-    Used at lines: 26
+  g_INT_ARRAY_ARRAY_ARRAY_00620328
+    Used at lines: 21
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6048,11 +6020,11 @@ sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340  [.cpp]  (2 suspicious globals
   File: sound/snddx.cpp
 
   g_CDirectSoundDevice_02c8283c
-    Used at lines: 23, 63, 76
+    Used at lines: 23, 64, 77
     NOT found in function reference list
 
-  g_INT_ARRAY_02c8115c
-    Used at lines: 58
+  g_SDirectSoundDeviceInfo_ARRAY_02c81044
+    Used at lines: 28, 29, 59
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6092,6 +6064,42 @@ sound_sndmain.cpp_setSoundMuted_FUN_00573600  [.cpp]  (2 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavInDevice_start_FUN_0057ad20  [.cpp]  (2 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_INT_ARRAY_02c829cc
+    Used at lines: 23
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 21, 22, 24, 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavOutDevice_poll_FUN_0057ab10  [.cpp]  (2 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_LPVOID_ARRAY_02c828a4
+    Used at lines: 21
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 20, 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavOutDevice_start_FUN_0057a7f0  [.cpp]  (2 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_LPVOID_ARRAY_02c828a4
+    Used at lines: 23
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 21, 22, 24, 25
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 sound_sndwav.cpp_staticInit_FUN_0057a570  [.cpp]  (2 suspicious globals)
   File: sound/sndwav.cpp
 
@@ -6101,6 +6109,30 @@ sound_sndwav.cpp_staticInit_FUN_0057a570  [.cpp]  (2 suspicious globals)
 
   g_CWavOutDeviceVTable
     Used at lines: 13
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_writeWavInBuffer_FUN_0057abc0  [.cpp]  (2 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_INT_ARRAY_02c829cc
+    Used at lines: 14
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 15, 18, 22, 28
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_writeWavOutBuffer_FUN_0057a5c0  [.cpp]  (2 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_LPVOID_ARRAY_02c828a4
+    Used at lines: 22, 37
+    NOT found in function reference list
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 23, 27, 50, 55, 61
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6631,7 +6663,7 @@ core_crossbow.cpp_CCrossbow_ctor_FUN_00449770  [.cpp]  (1 suspicious globals)
 core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00451a30  [.cpp]  (1 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b10718
+  g_CHAR_ARRAY_ARRAY_00b10718
     Used at lines: 31
     NOT found in function reference list
 
@@ -6639,7 +6671,7 @@ core_dcamera.cpp_CDemonCamera_addLightmapToCorona_FUN_00451a30  [.cpp]  (1 suspi
 core_dcamera.cpp_CDemonCamera_allocLight_FUN_0044e8b0  [.cpp]  (1 suspicious globals)
   File: core/dcamera.cpp
 
-  g_CHAR_ARRAY_00b81ca8
+  g_CHAR_ARRAY_ARRAY_00b81ca8
     Used at lines: 14
     NOT found in function reference list
 
@@ -6652,11 +6684,35 @@ core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700  [.cpp]  (1 susp
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_blendFogPlanes_FUN_00453dc0  [.cpp]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CHAR_ARRAY_01354e20
+    Used at lines: 32, 34
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_clearFramebufferAndWorkBuffers_FUN_004548f0  [.cpp]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CHAR_ARRAY_01354e20
+    Used at lines: 37
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454cc0  [.cpp]  (1 suspicious globals)
   File: core/dcamera.cpp
 
   g_INT_ARRAY_02c8afe0
     Used at lines: 61
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90  [.cpp]  (1 suspicious globals)
+  File: core/dcamera.cpp
+
+  g_CHAR_ARRAY_01354e20
+    Used at lines: 26, 35, 44, 46
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -6791,7 +6847,7 @@ core_djien.cpp_CDjien_getActorType_FUN_0045fe00  [.cpp]  (1 suspicious globals)
 core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00464990  [.cpp]  (1 suspicious globals)
   File: core/dlight.cpp
 
-  g_SMRGLTextureBasic_006122a8
+  g_SLightGlowTable_006122a8
     Used at lines: 83
     NOT found in function reference list
 
@@ -7028,6 +7084,14 @@ core_dstrendr.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_00488b99  [.cpp]  
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_0048e7f0  [.cpp]  (1 suspicious globals)
+  File: core/dtrace.cpp
+
+  g_CVector3f_ARRAY_ARRAY_00a1bad8
+    Used at lines: 77
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_0048d4f0  [.cpp]  (1 suspicious globals)
   File: core/dtrace.cpp
 
@@ -7247,7 +7311,7 @@ core_filmreel.cpp_CFilmReel_getActorType_FUN_004ab2c0  [.cpp]  (1 suspicious glo
 core_fire.cpp_CBulletHole_render_FUN_004ac770  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
-  g_SMRGLHeaderPrimitive_01c57090
+  g_SMRGLPrimitiveQuadIndex_01c57090
     Used at lines: 114
     NOT found in function reference list
 
@@ -7471,7 +7535,7 @@ core_fire.cpp_CFirefly_ctor_FUN_004b7780  [.cpp]  (1 suspicious globals)
 core_fire.cpp_CFirefly_render_FUN_004adaf0  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
-  g_SMRGLHeaderPrimitive_01c57090
+  g_SMRGLPrimitiveQuadIndex_01c57090
     Used at lines: 142, 242
     NOT found in function reference list
 
@@ -7591,7 +7655,7 @@ core_fire.cpp_CShell_onCollision_FUN_004b4230  [.cpp]  (1 suspicious globals)
 core_fire.cpp_CSmokeParticle_render_FUN_004ac0b0  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
-  g_SMRGLHeaderPrimitive_01c57090
+  g_SMRGLPrimitiveQuadIndex_01c57090
     Used at lines: 102
     NOT found in function reference list
 
@@ -7615,7 +7679,7 @@ core_fire.cpp_CSpark_ctor_FUN_004b77b0  [.cpp]  (1 suspicious globals)
 core_fire.cpp_CSpark_render_FUN_004ad140  [.cpp]  (1 suspicious globals)
   File: core/fire.cpp
 
-  g_SMRGLHeaderPrimitive_01c57090
+  g_SMRGLPrimitiveQuadIndex_01c57090
     Used at lines: 141, 241
     NOT found in function reference list
 
@@ -7999,8 +8063,8 @@ core_game.cpp_CGame_processKeyboardControls_FUN_004d0ee0  [.cpp]  (1 suspicious 
 core_game.cpp_CGame_renderOverlay_FUN_004cc2b0  [.cpp]  (1 suspicious globals)
   File: core/game.cpp
 
-  g_CHAR_ARRAY_01cc91a0
-    Used at lines: 59, 72
+  g_CHAR_ARRAY_ARRAY_01cc91a0
+    Used at lines: 60, 73
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -8159,7 +8223,7 @@ core_gore.cpp_CBloodParticle_ctor_FUN_004e6880  [.cpp]  (1 suspicious globals)
 core_gore.cpp_CBloodParticle_render_FUN_004e3f40  [.cpp]  (1 suspicious globals)
   File: core/gore.cpp
 
-  g_SMRGLHeaderPrimitive_01cd0e40
+  g_SMRGLPrimitiveQuadIndex_01cd0e40
     Used at lines: 151, 255
     NOT found in function reference list
 
@@ -8167,7 +8231,7 @@ core_gore.cpp_CBloodParticle_render_FUN_004e3f40  [.cpp]  (1 suspicious globals)
 core_gore.cpp_CBloodPool_render_FUN_004e5180  [.cpp]  (1 suspicious globals)
   File: core/gore.cpp
 
-  g_SMRGLHeaderPrimitive_01cd0e40
+  g_SMRGLPrimitiveQuadIndex_01cd0e40
     Used at lines: 135
     NOT found in function reference list
 
@@ -8808,22 +8872,14 @@ core_menu.cpp_calibrateGamepad_FUN_0050a2b0  [.cpp]  (1 suspicious globals)
   File: core/menu.cpp
 
   g_CMoonInstance
-    Used at lines: 34, 58
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-core_menu.cpp_configureCustomKeyBindings_FUN_0050d640  [.cpp]  (1 suspicious globals)
-  File: core/menu.cpp
-
-  g_CHAR_ARRAY_01d214e0
-    Used at lines: 73, 92, 111, 130, 149, ...
+    Used at lines: 32, 56
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 core_menu.cpp_getKeyDisplayName_FUN_0050d220  [.cpp]  (1 suspicious globals)
   File: core/menu.cpp
 
-  g_CHAR_ARRAY_01d219e8
+  g_CHAR_ARRAY_ARRAY_01d219e8
     Used at lines: 82
     NOT found in function reference list
 
@@ -9124,11 +9180,19 @@ core_netgame.cpp_CNetGame_getMyControls_FUN_00530660  [.cpp]  (1 suspicious glob
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_netgame.cpp_CNetGame_processPacket_FUN_0052d450  [.cpp]  (1 suspicious globals)
+core_netgame.cpp_CNetGame_processChatOut_FUN_0052ebd0  [.cpp]  (1 suspicious globals)
   File: core/netgame.cpp
 
-  DAT_01d6dfc4
-    Used at lines: 232
+  g_SChatOutMessage_ARRAY_01d6dfbc
+    Used at lines: 28, 41, 43, 62, 68
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890  [.cpp]  (1 suspicious globals)
+  File: core/netgame.cpp
+
+  g_SChatOutMessage_ARRAY_01d6dfbc
+    Used at lines: 41, 43, 44, 45
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -9167,7 +9231,7 @@ core_netgame.cpp_purgeOldSimFrames_FUN_0052c3f0  [.cpp]  (1 suspicious globals)
 core_netgame.cpp_removeChatOut_FUN_0052c240  [.cpp]  (1 suspicious globals)
   File: core/netgame.cpp
 
-  DAT_01d6dfbc
+  g_SChatOutMessage_ARRAY_01d6dfbc
     Used at lines: 19, 19
     NOT found in function reference list
 
@@ -9252,14 +9316,6 @@ core_path.cpp_CPathMap_dtor_FUN_00533060  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0  [.cpp]  (1 suspicious globals)
-  File: core/path.cpp
-
-  g_CHAR_ARRAY_01e7abe8
-    Used at lines: 296
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
 core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0  [.cpp]  (1 suspicious globals)
   File: core/path.cpp
 
@@ -9273,6 +9329,14 @@ core_path.cpp_getOrCreatePathMap_FUN_00535080  [.cpp]  (1 suspicious globals)
 
   g_PathMapCache
     Used at lines: 30, 54, 56, 59, 83, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+core_path.cpp_queuePop_FUN_00532f60  [.cpp]  (1 suspicious globals)
+  File: core/path.cpp
+
+  g_CPathQueueNode_ARRAY_01e6c17c
+    Used at lines: 19, 20, 22
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -9407,7 +9471,7 @@ core_script.cpp_CScript_initRuntime_FUN_00544190  [.cpp]  (1 suspicious globals)
 core_script.cpp_CScript_renderSubtitles_FUN_005439b0  [.cpp]  (1 suspicious globals)
   File: core/script.cpp
 
-  g_CHAR_ARRAY_01e7e0a8
+  g_CHAR_ARRAY_ARRAY_01e7e0a8
     Used at lines: 57, 71
     NOT found in function reference list
 
@@ -9935,7 +9999,7 @@ core_smiley.cpp_CSmiley_getActorType_FUN_0056be40  [.cpp]  (1 suspicious globals
 core_sound.cpp_CSound_findRandomSoundFile_FUN_0057be00  [.cpp]  (1 suspicious globals)
   File: core/sound.cpp
 
-  g_CHAR_ARRAY_02c82c38
+  g_CHAR_ARRAY_ARRAY_02c82c38
     Used at lines: 26, 44
     NOT found in function reference list
 
@@ -9975,7 +10039,7 @@ core_sound.cpp_CSound_shutdown_FUN_0057cdb0  [.cpp]  (1 suspicious globals)
 core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0  [.cpp]  (1 suspicious globals)
   File: core/sound.cpp
 
-  g_CHAR_ARRAY_02c82c38
+  g_CHAR_ARRAY_ARRAY_02c82c38
     Used at lines: 30
     NOT found in function reference list
 
@@ -10652,11 +10716,19 @@ crt_unknown.c_FUN_005c9fa0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+crt_unknown.c_FUN_005ca040  [.cpp]  (1 suspicious globals)
+  File: crt/unknown.c
+
+  g_FileListNode_PTR_02c9f054
+    Used at lines: 15, 16, 17, 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 crt_unknown.c_FUN_005ca05c  [.cpp]  (1 suspicious globals)
   File: crt/unknown.c
 
   g_FILE_PTR_006262d4
-    Used at lines: 34
+    Used at lines: 31
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -10716,11 +10788,19 @@ crt_unknown.c_FUN_005ccfb0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
+crt_unknown.c_FUN_005cd168  [.cpp]  (1 suspicious globals)
+  File: crt/unknown.c
+
+  g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4
+    Used at lines: 18
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
 crt_unknown.c_FUN_005cd438  [.cpp]  (1 suspicious globals)
   File: crt/unknown.c
 
-  DAT_00626ae4
-    Used at lines: 23
+  g_SIGNAL_HANDLER_TYPE_ARRAY_00626ae4
+    Used at lines: 24
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11367,7 +11447,7 @@ engine_zraster.c_addRasterizerEdge_FUN_005bee80  [.cpp]  (1 suspicious globals)
 shape_edittool.cpp_CEditorTools_ctor_FUN_00493ba0  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
-  g_CHAR_ARRAY_01c3eb60
+  g_SWindow_ARRAY_01c3eb60
     Used at lines: 13
     NOT found in function reference list
 
@@ -11375,24 +11455,40 @@ shape_edittool.cpp_CEditorTools_ctor_FUN_00493ba0  [.cpp]  (1 suspicious globals
 shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_00497660  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
-  g_CHAR_ARRAY_01c3eb60
-    Used at lines: 26, 29, 41, 43, 48, ...
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 27, 30, 42, 43, 61, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_00496ee0  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
-  g_CHAR_ARRAY_01c3eb60
-    Used at lines: 51, 54, 55, 56, 57, ...
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 51, 53, 55, 56, 58, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 shape_edittool.cpp_CEditorTools_popWindowState_FUN_00496df0  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
-  g_CHAR_ARRAY_01c3eb60
-    Used at lines: 22, 23, 24, 31, 32, ...
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 22, 25, 28, 29, 30, ...
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0  [.cpp]  (1 suspicious globals)
+  File: shape/edittool.cpp
+
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 36, 37
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004962b0  [.cpp]  (1 suspicious globals)
+  File: shape/edittool.cpp
+
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 52, 53, 135, 159, 160
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11447,8 +11543,8 @@ shape_edittool.cpp_editorSetColor_FUN_00492bd0  [.cpp]  (1 suspicious globals)
 shape_edittool.cpp_paintWindowBackground_FUN_004941e0  [.cpp]  (1 suspicious globals)
   File: shape/edittool.cpp
 
-  g_CHAR_ARRAY_01c3eb60
-    Used at lines: 29, 31, 32, 35, 37, ...
+  g_SWindow_ARRAY_01c3eb60
+    Used at lines: 30, 32, 36, 38, 40, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11472,7 +11568,7 @@ sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_00578cc0  [.cpp]  (1 suspicio
   File: sound/snddx.cpp
 
   g_IDirectSoundBuffer_PTR_ARRAY_02c81dc4
-    Used at lines: 24, 25, 49, 51, 60, ...
+    Used at lines: 22, 23, 47, 49, 58, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11543,16 +11639,16 @@ sound_snddx.cpp_CDirectSoundDevice_unlockSample_FUN_00578be0  [.cpp]  (1 suspici
 sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f70  [.cpp]  (1 suspicious globals)
   File: sound/snddx.cpp
 
-  g_INT_ARRAY_02c8115c
-    Used at lines: 73, 77, 80
+  g_SDirectSoundDeviceInfo_ARRAY_02c81044
+    Used at lines: 58, 67, 74, 76, 78, ...
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
 sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290  [.cpp]  (1 suspicious globals)
   File: sound/snddx.cpp
 
-  g_INT_ARRAY_02c8115c
-    Used at lines: 22
+  g_SDirectSoundDeviceInfo_ARRAY_02c81044
+    Used at lines: 22, 25, 27
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11964,11 +12060,27 @@ sound_sndmain.cpp_unlockSample_FUN_005742c0  [.cpp]  (1 suspicious globals)
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
-sound_sndwav.cpp_CWavInDevice_start_FUN_0057ad20  [.cpp]  (1 suspicious globals)
+sound_sndwav.cpp_CWavInDevice_poll_FUN_0057b1e0  [.cpp]  (1 suspicious globals)
   File: sound/sndwav.cpp
 
-  g_INT_ARRAY_02c829cc
-    Used at lines: 22
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 48, 51
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavInDevice_reset_FUN_0057ae10  [.cpp]  (1 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_LPWAVEHDR_ARRAY_02c8292c
+    Used at lines: 26, 28
+    NOT found in function reference list
+
+----------------------------------------------------------------------------------------------------
+sound_sndwav.cpp_CWavOutDevice_reset_FUN_0057a8c0  [.cpp]  (1 suspicious globals)
+  File: sound/sndwav.cpp
+
+  g_LPWAVEHDR_ARRAY_02c82864
+    Used at lines: 26, 28
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------
@@ -11985,14 +12097,6 @@ sound_sndwav.cpp_getWavOutDevice_FUN_0057b410  [.cpp]  (1 suspicious globals)
 
   g_CWavOutDevice_02c82a4c
     Used at lines: 16, 25
-    NOT found in function reference list
-
-----------------------------------------------------------------------------------------------------
-sound_sndwav.cpp_writeWavInBuffer_FUN_0057abc0  [.cpp]  (1 suspicious globals)
-  File: sound/sndwav.cpp
-
-  g_INT_ARRAY_02c829cc
-    Used at lines: 16
     NOT found in function reference list
 
 ----------------------------------------------------------------------------------------------------

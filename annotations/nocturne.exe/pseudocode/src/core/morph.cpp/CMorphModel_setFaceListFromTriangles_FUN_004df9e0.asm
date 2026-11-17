@@ -29,7 +29,7 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_0058aca8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd4314
+;   int g_INT_01cd4314
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -120,7 +120,7 @@ section .text
     MOV ESI,EDI                         ; 004dfabf
     MOV dword ptr [EAX + 0x4],0x3       ; 004dfac1
     MOV EAX,dword ptr [ESP + 0x4]       ; 004dfac8
-    CMP dword ptr [0x01cd4314],0x0      ; 004dfacc | DAT_01cd4314
+    CMP dword ptr [0x01cd4314],0x0      ; 004dfacc | g_INT_01cd4314
         ;   Label: LAB_004dfacc
     JZ 0x004dfb98                       ; 004dfad3
         ;   XREF to: 004dfb98 (CONDITIONAL_JUMP)  ; LAB_004dfb98

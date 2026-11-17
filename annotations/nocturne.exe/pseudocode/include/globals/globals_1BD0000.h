@@ -5,10 +5,20 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "defines.h"
+#include "system/winnt.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1BD0000
 // =============================================================================
+
+// _BIT_INTEGER32
+extern _BIT_INTEGER32 g_BIT_INTEGER32_01bd1d94;
+
+// int
+extern int g_INT_01bd1d80;
+extern int g_INT_01bd1d84;
+extern int g_INT_01bd1d8c;
+extern int g_INT_01bd1d90;
 
 // uchar[18][256]
 extern uchar g_FogTable[18][256];

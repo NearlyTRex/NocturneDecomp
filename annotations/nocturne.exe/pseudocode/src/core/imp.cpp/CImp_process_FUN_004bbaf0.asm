@@ -315,7 +315,7 @@ section .text
     ADD ESP,0xc                         ; 004bbceb
     JMP 0x004bbb59                      ; 004bbcee
         ;   XREF to: 004bbb59 (UNCONDITIONAL_JUMP)  ; LAB_004bbb59
-    MOV EDX,dword ptr [0x01cae30c]      ; 004bbcf3 | DAT_01cae30c
+    MOV EDX,dword ptr [0x01cae30c]      ; 004bbcf3 | g_INT_ARRAY_01cae30c
         ;   Label: LAB_004bbcf3
     PUSH EDX                            ; 004bbcf9
     LEA EAX,[EBP + -0x7a]               ; 004bbcfa
@@ -678,7 +678,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 004bc112
     ADD ESP,0x8                         ; 004bc115
     LEA EAX,[EBP + 0xfffffeea]          ; 004bc118
-    MOV EDX,dword ptr [0x01cae314]      ; 004bc11e | DAT_01cae314
+    MOV EDX,dword ptr [0x01cae314]      ; 004bc11e | g_INT_ARRAY_01cae30c[2]
     PUSH EAX                            ; 004bc124
     LEA EAX,[EDX*0x4 + 0x0]             ; 004bc125
     SUB EAX,EDX                         ; 004bc12c

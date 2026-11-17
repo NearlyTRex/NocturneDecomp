@@ -19,8 +19,8 @@ CDemonActorType g_CMolochClassInfo = {};
 CVector3f g_CVector3f_ARRAY_01d17fc4[32] = {};
 CVector3f g_CVector3f_ARRAY_01d18148[32] = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d182c8 = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d182c8 = {};
 
 // SSoftwareEdge
 SSoftwareEdge g_SSoftwareEdge_01d17ab8 = {};
@@ -63,8 +63,8 @@ float g_FLOAT_01d1cdc4 = {};
 // float*
 float* g_FLOAT_PTR_01d12114 = {};
 
-// float[64]
-float g_FLOAT_ARRAY_01d1cdd0[64] = {};
+// float[64][32]
+float g_FLOAT_ARRAY_ARRAY_01d1cdd0[64][32] = {};
 
 // int
 int g_INT_01d12124 = {};

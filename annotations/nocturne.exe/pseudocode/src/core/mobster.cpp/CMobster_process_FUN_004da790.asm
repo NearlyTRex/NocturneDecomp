@@ -82,7 +82,7 @@
 ;   float FLOAT_005a091c = 30
 ;   float FLOAT_005a0928 = 20
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   ... and 7 more
@@ -323,7 +323,7 @@ section .text
     LEA EAX,[EBX + 0xbd54]              ; 004da9fa
         ;   Label: LAB_004da9fa
     PUSH EAX                            ; 004daa00
-    MOV EDX,dword ptr [0x005b7650]      ; 004daa01 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 004daa01 | g_CEventList_PTR_005b7650
     PUSH EDX                            ; 004daa07
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 004daa08
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -608,7 +608,7 @@ section .text
     JZ 0x004dada4                       ; 004dad4d
         ;   XREF to: 004dada4 (CONDITIONAL_JUMP)  ; LAB_004dada4
     LEA EAX,[EBP + 0xffffff2a]          ; 004dad4f
-    MOV EDX,dword ptr [0x01ccdbac]      ; 004dad55 | DAT_01ccdbac
+    MOV EDX,dword ptr [0x01ccdbac]      ; 004dad55 | g_INT_ARRAY_01ccdba8[1]
     PUSH EAX                            ; 004dad5b
     LEA EAX,[EDX*0x4 + 0x0]             ; 004dad5c
     SUB EAX,EDX                         ; 004dad63
@@ -651,7 +651,7 @@ section .text
     JZ 0x004daae7                       ; 004dadd1
         ;   XREF to: 004daae7 (CONDITIONAL_JUMP)  ; caseD_7
     LEA EAX,[EBP + 0xffffff2a]          ; 004dadd7
-    MOV EDX,dword ptr [0x01ccdbb0]      ; 004daddd | DAT_01ccdbb0
+    MOV EDX,dword ptr [0x01ccdbb0]      ; 004daddd | g_INT_ARRAY_01ccdba8[2]
     PUSH EAX                            ; 004dade3
     LEA EAX,[EDX*0x4 + 0x0]             ; 004dade4
     SUB EAX,EDX                         ; 004dadeb

@@ -10,10 +10,10 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 at 00527da9
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bea80
-;   undefined4 DAT_005bea84
-;   undefined4 DAT_005bea88
-;   undefined4 DAT_02dc8318
+;   double g_DOUBLE_005bea80 = 1
+;   undefined4 g_DOUBLE_005bea80+4
+;   double g_DOUBLE_005bea88 = 1
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; *****************************************************************************
 
@@ -23,11 +23,11 @@ section .text
         ;   Label: sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_00527830
     FDIV double ptr [ESP + 0x4]         ; 00527832
     MOV EAX,dword ptr [ESP + 0x4]       ; 00527836
-    MOV [0x005bea80],EAX                ; 0052783a | DAT_005bea80
+    MOV [0x005bea80],EAX                ; 0052783a | g_DOUBLE_005bea80
     MOV EAX,dword ptr [ESP + 0x8]       ; 0052783f
-    MOV EDX,dword ptr [0x02dc8318]      ; 00527843 | DAT_02dc8318
-    MOV [0x005bea84],EAX                ; 00527849 | DAT_005bea84
-    FSTP double ptr [0x005bea88]        ; 0052784e | DAT_005bea88
+    MOV EDX,dword ptr [0x02dc8318]      ; 00527843 | g_CSoundDevice_PTR_02dc8318
+    MOV [0x005bea84],EAX                ; 00527849 | g_DOUBLE_005bea80+4
+    FSTP double ptr [0x005bea88]        ; 0052784e | g_DOUBLE_005bea88
     TEST EDX,EDX                        ; 00527854
     JNZ 0x00527859                      ; 00527856
         ;   XREF to: 00527859 (CONDITIONAL_JUMP)  ; LAB_00527859

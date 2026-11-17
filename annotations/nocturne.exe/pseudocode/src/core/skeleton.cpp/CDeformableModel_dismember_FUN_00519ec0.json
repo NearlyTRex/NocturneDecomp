@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 426,
+    "complexity_score": 462,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 201,
-    "suspect_count": 21,
+    "pseudocode_lines": 197,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_stride_bytecount",
       "pointer_truncation"
     ],
-    "total_lines": 674
+    "total_lines": 670
   },
   "cross_references": [
     {
@@ -374,7 +374,39 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 86,
+      "match": "(int *)((int)g_INT_ARRAY_02671950",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_INT_ARRAY_02671950 + iVar9) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 100,
+      "match": "(int *)((int)g_INT_ARRAY_02671950",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_INT_ARRAY_02671950 + iVar4) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(uint *)((int)g_INT_ARRAY_02671950",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_INT_ARRAY_02671950 + iVar4) = 0xffffffff;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)g_INT_ARRAY_02671950",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_02671950 + iVar4) = iVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
       "match": "(int *)((int)skinned_vertices",
       "severity": "moderate",
       "text": "piVar11 = (int *)((int)skinned_vertices + (uint)bVar14 * -8 + 4);",
@@ -382,7 +414,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 149,
       "match": "(int *)(local_2c + (int)this_ptr",
       "severity": "moderate",
       "text": "[*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index])].",
@@ -390,7 +422,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 153,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;",
@@ -398,7 +430,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 179,
       "match": "(int *)(local_30 + (int)this_ptr",
       "severity": "moderate",
       "text": "piVar11 = (int *)(local_30 + (int)this_ptr->index_data_ptr[lod_index]);",
@@ -406,7 +438,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 185,
       "match": "(int *)((int)body_part_ptr",
       "severity": "moderate",
       "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar8) = iVar3;",
@@ -414,7 +446,7 @@
     },
     {
       "description": "Pointer value `&body_part_ptr->vertices->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
+      "line": 105,
       "match": "(int)&body_part_ptr->vertices->x",
       "severity": "moderate",
       "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
@@ -422,10 +454,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)",
+      "text": "g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 61,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1",
       "type": "pointer_cast"
     },
     {
@@ -433,12 +473,28 @@
       "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)",
+      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 72,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 74,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 76,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
@@ -446,31 +502,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 75,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 78,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 80,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 109,
+      "line": 105,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
@@ -478,7 +510,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 137,
+      "line": 133,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -486,7 +518,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 171,
+      "line": 167,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((int)&(this_ptr->tri_data_ptr[lod_index]->vertex_indices).vertex_index_0 +",
@@ -494,7 +526,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 134,
+      "line": 130,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "iVar6 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
@@ -502,7 +534,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic, wrapped across lines \u2014 same Watcom byte-offset trampolining as single-line pointer_cast, just split by Ghidra. Replace with struct field or array index access in a .keep.",
-      "line": 168,
+      "line": 164,
       "match": "(int)&NAME byte-offset arithmetic split across lines",
       "severity": "moderate",
       "text": "iVar3 = (int)&(((SMRGLPrimitiveTriangle *)(body_part_ptr->faces->vertices + -2))->base).base",
@@ -537,7 +569,7 @@
       "line": 54,
       "match": "memset",
       "severity": "moderate",
-      "text": "memset((void *)0x2671950,0,this_ptr->vertex_count[lod_index] << 2);",
+      "text": "memset(g_INT_ARRAY_02671950,0,this_ptr->vertex_count[lod_index] << 2);",
       "type": "pointer_stride_bytecount"
     }
   ]

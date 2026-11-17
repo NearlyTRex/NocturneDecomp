@@ -25,7 +25,7 @@
 ;   double DOUBLE_00581567 = 1.59978588928241E-314
 ;   double DOUBLE_0058156f = -0.5
 ;   double DOUBLE_00581577 = 0.25
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
@@ -70,7 +70,7 @@ section .text
         ;   XREF to: 0048d164 (CONDITIONAL_JUMP)  ; LAB_0048d164
     LEA EAX,[ESI + 0x1b0]               ; 0048d0ec
     PUSH EAX                            ; 0048d0f2
-    MOV ECX,dword ptr [0x005b7650]      ; 0048d0f3 | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 0048d0f3 | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 0048d0f9
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0048d0fa
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -118,7 +118,7 @@ section .text
         ;   XREF to: 0048d1d1 (CONDITIONAL_JUMP)  ; LAB_0048d1d1
     LEA EAX,[ESI + 0x214]               ; 0048d176
     PUSH EAX                            ; 0048d17c
-    MOV ECX,dword ptr [0x005b7650]      ; 0048d17d | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 0048d17d | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 0048d183
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0048d184
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

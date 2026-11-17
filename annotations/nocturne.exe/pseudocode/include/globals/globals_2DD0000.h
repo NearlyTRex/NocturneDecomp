@@ -7,10 +7,15 @@
 #include "system/ddraw.h"
 #include "system/unknwn.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CTerrain.h"
+#include "types/classes/CTextureCache.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SMRGLTextureModel.h"
 #include "types/unions/UVector3.h"
 
 // =============================================================================
@@ -31,11 +36,23 @@ extern CDemonActorType g_CWaterActorActorType_02ddd598;
 extern CDemonActorType g_CWayPointActorType_02ddf514;
 extern CDemonActorType g_CWeaponActorType_02ddf970;
 
+// CDemonGlobe
+extern CDemonGlobe g_CDemonGlobe_02ddf9ac;
+
+// CTerrain
+extern CTerrain g_CTerrain_02dd10c8;
+
+// CTextureCache*
+extern CTextureCache* g_CTextureCache_PTR_02dd0f84;
+
 // CVector3f[100]
 extern CVector3f g_CVector3f_ARRAY_02dd9268[100];
 
 // CVector3f[200]
 extern CVector3f g_CVector3f_ARRAY_02ddfa28[200];
+
+// CVector3i
+extern CVector3i g_CVector3i_02dda6b8;
 
 // CWater
 extern CWater g_CWaterInstance;
@@ -53,11 +70,44 @@ extern IDirectDrawSurface* g_SoftwareRenderSurface;
 // IUnknown*
 extern IUnknown* g_DirectDrawUnknown;
 
+// PALETTEENTRY[256]
+extern PALETTEENTRY g_PALETTEENTRY_ARRAY_02ddf570[256];
+
 // SCollisionInfo[100]
 extern SCollisionInfo g_SCollisionInfo_ARRAY_02dd9718[100];
 
+// SMRGLTextureModel
+extern SMRGLTextureModel g_SMRGLTextureModel_02dd0f88;
+
 // UVector3
 extern UVector3 g_ZeroVector;
+
+// char[4]
+extern char g_CHAR_ARRAY_02ddd5d4[4];
+
+// float
+extern float g_FLOAT_02dd1220;
+extern float g_FLOAT_02dd1224;
+extern float g_FLOAT_02dd1228;
+extern float g_FLOAT_02dd9260;
+
+// int
+extern int g_INT_02dd0f80;
+extern int g_INT_02dd122c;
+extern int g_INT_02dd1230;
+extern int g_INT_02dd1234;
+extern int g_INT_02dd925c;
+extern int g_INT_02ddf564;
+extern int g_INT_02ddf568;
+extern int g_INT_02ddf56c;
+
+// int[4096]
+extern int g_INT_ARRAY_02dd1238[4096];
+extern int g_INT_ARRAY_02dd5238[4096];
+
+// uchar[4]
+extern uchar g_UCHAR_ARRAY_02dd10c0[4];
+extern uchar g_UCHAR_ARRAY_02dd10c4[4];
 
 // void*
 extern void* g_SoftwareFrameBuffer;

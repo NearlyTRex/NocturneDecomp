@@ -52,13 +52,13 @@ section .text
     MOV ESI,0xf80000                    ; 00498a25
     MOV EDI,0x1c73658                   ; 00498a2a
     XOR ECX,ECX                         ; 00498a2f
-    MOV dword ptr [0x01c73674],EDX      ; 00498a31 | g_SMRGLHeaderPrimitive_01c73670.base.count
-    MOV dword ptr [0x01c73678],ECX      ; 00498a37 | g_SMRGLHeaderPrimitive_01c73670.surface_normal.A
-    MOV dword ptr [0x01c7367c],ECX      ; 00498a3d | g_SMRGLHeaderPrimitive_01c73670.surface_normal.B
-    MOV dword ptr [0x01c73680],ECX      ; 00498a43 | g_SMRGLHeaderPrimitive_01c73670.surface_normal.C
-    MOV dword ptr [0x01c73684],ECX      ; 00498a49 | g_SMRGLHeaderPrimitive_01c73670.surface_normal.D
-    MOV dword ptr [0x01c73688],ECX      ; 00498a4f | g_INT_01c73688
-    MOV [0x01c7368c],EAX                ; 00498a55 | g_INT_01c7368c
+    MOV dword ptr [0x01c73674],EDX      ; 00498a31 | g_SMRGLPrimitiveQuadIndex_01c73670.base.base.count
+    MOV dword ptr [0x01c73678],ECX      ; 00498a37 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.A
+    MOV dword ptr [0x01c7367c],ECX      ; 00498a3d | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.B
+    MOV dword ptr [0x01c73680],ECX      ; 00498a43 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.C
+    MOV dword ptr [0x01c73684],ECX      ; 00498a49 | g_SMRGLPrimitiveQuadIndex_01c73670.base.surface_normal.D
+    MOV dword ptr [0x01c73688],ECX      ; 00498a4f | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[0]
+    MOV [0x01c7368c],EAX                ; 00498a55 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[1]
     MOV dword ptr [0x0060b02c],EBX      ; 00498a5a | g_SRenderVertex_ARRAY_0060b014[0].u
     MOV dword ptr [0x0060b030],ESI      ; 00498a60 | g_SRenderVertex_ARRAY_0060b014[0].v
     MOV dword ptr [0x0060b05c],ESI      ; 00498a66 | g_SRenderVertex_ARRAY_0060b014[1].u
@@ -70,10 +70,10 @@ section .text
     MOV EDX,0x2                         ; 00498a8a
     MOV ECX,0x3                         ; 00498a8f
     MOV ESI,dword ptr [0x005f2afc]      ; 00498a94 | g_CDemonRenderer_PTR_005f2afc
-    MOV dword ptr [0x01c73690],EDX      ; 00498a9a | g_INT_01c73690
+    MOV dword ptr [0x01c73690],EDX      ; 00498a9a | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[2]
     PUSH ESI                            ; 00498aa0 | g_CDemonRenderer_01bdd7e4
     LEA ESI,[ESP + 0x54]                ; 00498aa1
-    MOV dword ptr [0x01c73694],ECX      ; 00498aa5 | g_INT_01c73694
+    MOV dword ptr [0x01c73694],ECX      ; 00498aa5 | g_SMRGLPrimitiveQuadIndex_01c73670.vertices[3]
     CALL engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230 ; 00498aab
         ;   XREF to: 0046d230 (UNCONDITIONAL_CALL)  ; CVector3i * engine_drender.cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046d230(CDemonRenderer * this_ptr, CVector3i * output)
     LEA ESI,[ESP + 0x54]                ; 00498ab0

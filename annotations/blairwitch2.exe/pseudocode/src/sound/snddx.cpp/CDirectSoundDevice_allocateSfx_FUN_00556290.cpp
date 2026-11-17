@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_00556290(CDirectSoundDevice *this_ptr,int sample_buffer_id)
 
 {
@@ -84,7 +82,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_allocateSfx_FUN_00556290(CDirectS
   g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[(int)sfx_handle * 9 + 3] = (IDirectSoundBuffer *)0x0;
   g_IDirectSoundBuffer_PTR_ARRAY_0264ac10[(int)sfx_handle * 9 + 4] = pIVar1;
   g_IDirectSoundBuffer_PTR_ARRAY_0264a5f4[sample_buffer_id * 6 + 1] = sfx_handle;
-  if (_DAT_0264a5d0 != 0) {
+  if (g_IDirectSound3DListener_PTR_0264a5d0 != (IDirectSound3DListener *)0x0) {
     uVar3 = (*(*ppDSBufferDuplicate)->vtable->QueryInterface)
                       ((IUnknown *)*ppDSBufferDuplicate,&g_IID_IDirectSound3DBuffer,
                        g_IDirectSoundBuffer_PTR_ARRAY_0264ac10 + (int)sfx_handle * 9 + 1);

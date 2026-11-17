@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *this_ptr)
 
@@ -67,10 +66,10 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
   if (g_CGamePtr->geometry_debug_enabled == 0) {
     core_dlight_cpp_CDemonLight_beginScene_FUN_0044e470(local_14,0);
     core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_0044efb0(this_ptr_01);
-    DAT_005be378 = 0;
+    g_INT_005be378 = 0;
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_00507c80
               (this_ptr,(this_ptr_01->base).fixed_point_scale,0);
-    DAT_005be378 = 1;
+    g_INT_005be378 = 1;
     core_set_cpp_CDemonSet_buildDisplayList_FUN_0050d2d0(this_ptr,0xffffffff);
     core_set_cpp_CDemonSet_renderBackgroundActors_FUN_00508750(this_ptr,1);
     iVar3 = 0;
@@ -89,9 +88,9 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
     core_gore_cpp_CGore_renderParticles_FUN_004afe00(g_CGorePtr);
     core_fire_cpp_CFireEffect_render_FUN_0048a650(g_CFireEffect_PTR_005b80f0);
     core_dlight_cpp_CDemonLight_endScene_FUN_0044e720(local_14,1);
-    local_5c.x = (int)ROUND(local_2c.x * _DAT_005a18f0);
-    local_5c.y = (int)ROUND(local_2c.y * _DAT_005a18f0);
-    local_5c.z = (int)ROUND(local_2c.z * _DAT_005a18f0);
+    local_5c.x = (int)ROUND(local_2c.x * 256.0f);
+    local_5c.y = (int)ROUND(local_2c.y * 256.0f);
+    local_5c.z = (int)ROUND(local_2c.z * 256.0f);
     core_set_cpp_CDemonSet_setLightingParameters_FUN_0050adc0
               (this_ptr,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,(CVector3f *)0x0
                ,(CMatrix3x3f *)0x0);
@@ -113,7 +112,7 @@ void __cdecl core_set_cpp_CDemonSet_renderGogglesView_FUN_0050a260(CDemonSet *th
     core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_00452110
               (local_14,(g_WindowWidth + iVar1) / 2,(g_WindowHeight + iVar2) / 2,
                ((int)((iVar3 + (iVar3 >> 0x1f) * -0x80) - (uint)((iVar3 >> 0x1f) << 6 < 0)) >> 7) +
-               iVar4 * 0x80 + *(int *)(0x02DDF9F0 + 0x24) * 0x8000);
+               iVar4 * 0x80 + g_CWeather_PTR_005c15b8->lightning_active * 0x8000);
     return;
   }
   g_UseExternalRenderer = 0;

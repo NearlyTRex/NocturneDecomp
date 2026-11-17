@@ -16,7 +16,7 @@
 ;   void* g_PTR_0061f418 = 00000000
 ;   void* g_PTR_0061f420 = 00000000
 ;   uint g_UINT_0061f480 = 0x14
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x4                         ; 005bec63
     JMP 0x005becdc                      ; 005bec66
         ;   XREF to: 005becdc (UNCONDITIONAL_JUMP)  ; LAB_005becdc
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005bec6b | DAT_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005bec6b | g_SIOControlBlock_PTR_0061f4d8
         ;   Label: LAB_005bec6b
     MOV ECX,dword ptr [0x0061f420]      ; 005bec71 | g_PTR_0061f420
     XOR EBP,EBP                         ; 005bec77

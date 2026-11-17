@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   draw_border_flag
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcd070
+;   CBitFont* g_CBitFont_PTR_01bcd070
 ;
 ; Called Functions:
 ;   engine_font.cpp_CBitFont_drawText_FUN_00490980
@@ -41,13 +41,13 @@ section .text
     ADD ESP,0x14                        ; 00476f61
     LEA ESI,[EBX + 0x18]                ; 00476f64
     PUSH ESI                            ; 00476f67
-    MOV EAX,[0x01bcd070]                ; 00476f68 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00476f68 | g_CBitFont_PTR_01bcd070
     PUSH EAX                            ; 00476f6d
     CALL engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0 ; 00476f6e
         ;   XREF to: 00492da0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_00492da0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00476f73
     PUSH ESI                            ; 00476f76
-    MOV EDX,dword ptr [0x01bcd070]      ; 00476f77 | DAT_01bcd070
+    MOV EDX,dword ptr [0x01bcd070]      ; 00476f77 | g_CBitFont_PTR_01bcd070
     PUSH EDX                            ; 00476f7d
     MOV EDI,EAX                         ; 00476f7e
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00476f80
@@ -73,7 +73,7 @@ section .text
     SAR EAX,0x1                         ; 00476faf
     PUSH EAX                            ; 00476fb1
     PUSH ESI                            ; 00476fb2
-    MOV EAX,[0x01bcd070]                ; 00476fb3 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00476fb3 | g_CBitFont_PTR_01bcd070
     PUSH EAX                            ; 00476fb8
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 00476fb9
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)

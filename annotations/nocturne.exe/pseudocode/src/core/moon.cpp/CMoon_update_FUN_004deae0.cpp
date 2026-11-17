@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta_time)
 
 {
@@ -20,15 +18,15 @@ void __cdecl core_moon_cpp_CMoon_update_FUN_004deae0(CMoon *this_ptr,float delta
   this_ptr->rotation_phase = fVar2;
   if ((float)0.57999999999999996 < fVar2) {
     this_ptr->rotation_phase = 0.58;
-    DAT_005bb210 = 1;
+    g_INT_005bb210 = 1;
   }
-  _DAT_01ccdec4 = delta_time * (float)12 + _DAT_01ccdec4;
-  if ((float)60 <= _DAT_01ccdec4) {
-    _DAT_01ccdec4 = _DAT_01ccdec4 + 1.6117013929914458e-314._0_4_;
+  g_FLOAT_01ccdec4 = delta_time * (float)12 + g_FLOAT_01ccdec4;
+  if ((float)60 <= g_FLOAT_01ccdec4) {
+    g_FLOAT_01ccdec4 = g_FLOAT_01ccdec4 + 1.6117013929914458e-314._0_4_;
   }
-  _DAT_01ccdebc = _DAT_01ccdebc + _DAT_01bd1d80 * 0x20;
-  _DAT_01ccdec0 = _DAT_01ccdec0 + _DAT_01bd1d80 * 0x10;
-  if (DAT_005bb210 != 0) {
+  g_INT_01ccdebc = g_INT_01ccdebc + g_INT_01bd1d80 * 0x20;
+  g_INT_01ccdec0 = g_INT_01ccdec0 + g_INT_01bd1d80 * 0x10;
+  if (g_INT_005bb210 != 0) {
     iVar4 = 0;
     do {
       *(float *)((int)&g_SBat_ARRAY_01ccdeec[0].course_position + iVar4) =

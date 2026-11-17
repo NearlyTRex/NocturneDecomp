@@ -9,6 +9,8 @@ char CHAR_00h_00579c6e = '\0';
 char CHAR_00h_0057e72c = '\0';
 char CHAR_00h_0057ea91 = '\0';
 char CHAR_00h_0057ea92 = '\0';
+char g_CHAR_0057ed1b = '\0';
+char g_CHAR_0057f0fa = '\0';
 char CHAR_00h_0057f586 = '\0';
 
 // dword
@@ -31,7 +33,6 @@ dword DAT_00575090 = 0;
 dword DAT_00575094 = 0;
 
 // undefined1
-undefined1 DAT_0057ed1b = 0x00;
 undefined1 DAT_0057f0fb = 0x00;
 
 // undefined1*

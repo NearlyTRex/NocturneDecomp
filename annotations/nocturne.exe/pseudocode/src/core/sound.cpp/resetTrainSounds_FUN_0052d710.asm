@@ -13,10 +13,10 @@
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.x
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.y
 ;   undefined4 g_CDemonSetInstance.active_fog.scroll.z
-;   undefined4 DAT_02dc9d44
-;   undefined4 DAT_02dc9d48
-;   undefined4 DAT_02dc9d4c
-;   undefined4 DAT_02dc9d54
+;   CVector3f g_CVector3f_02dc9d44
+;   undefined4 g_CVector3f_02dc9d44.y
+;   undefined4 g_CVector3f_02dc9d44.z
+;   int g_INT_02dc9d54
 ;
 ; *****************************************************************************
 
@@ -38,17 +38,17 @@ section .text
     CMP EAX,0x2dc9d44                   ; 0052d73d
     JNZ 0x0052d752                      ; 0052d742
         ;   XREF to: 0052d752 (CONDITIONAL_JUMP)  ; LAB_0052d752
-    MOV dword ptr [0x02dc9d54],0xffffffff ; 0052d744 | DAT_02dc9d54
+    MOV dword ptr [0x02dc9d54],0xffffffff ; 0052d744 | g_INT_02dc9d54
     ADD ESP,0xc                         ; 0052d74e
     RET                                 ; 0052d751
     MOV EAX,dword ptr [ESP]             ; 0052d752
         ;   Label: LAB_0052d752
-    MOV [0x02dc9d44],EAX                ; 0052d755 | DAT_02dc9d44
+    MOV [0x02dc9d44],EAX                ; 0052d755 | g_CVector3f_02dc9d44
     MOV EAX,dword ptr [ESP + 0x4]       ; 0052d75a
-    MOV [0x02dc9d48],EAX                ; 0052d75e | DAT_02dc9d48
+    MOV [0x02dc9d48],EAX                ; 0052d75e | g_CVector3f_02dc9d44.y
     MOV EAX,dword ptr [ESP + 0x8]       ; 0052d763
-    MOV [0x02dc9d4c],EAX                ; 0052d767 | DAT_02dc9d4c
-    MOV dword ptr [0x02dc9d54],0xffffffff ; 0052d76c | DAT_02dc9d54
+    MOV [0x02dc9d4c],EAX                ; 0052d767 | g_CVector3f_02dc9d44.z
+    MOV dword ptr [0x02dc9d54],0xffffffff ; 0052d76c | g_INT_02dc9d54
     ADD ESP,0xc                         ; 0052d776
     RET                                 ; 0052d779
 

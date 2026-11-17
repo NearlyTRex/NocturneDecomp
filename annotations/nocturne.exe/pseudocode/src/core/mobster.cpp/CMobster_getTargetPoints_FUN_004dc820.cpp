@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(CMobster *this_ptr,CVector3f *out_points_array)
 
@@ -21,7 +20,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(CMobster *thi
   
   iVar2 = 1;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_1c,_DAT_01ccdba8);
+                     (&(this_ptr->base).base.model,&local_1c,g_INT_ARRAY_01ccdba8[0]);
   if (out_points_array != pCVar1) {
     out_points_array->x = pCVar1->x;
     out_points_array->y = pCVar1->y;
@@ -29,7 +28,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(CMobster *thi
   }
   if ((this_ptr->base).base.model.part_data.visibility_flags[this_ptr->part_indices[8]] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                       (&(this_ptr->base).base.model,&local_28,_DAT_01ccdbcc);
+                       (&(this_ptr->base).base.model,&local_28,g_INT_ARRAY_01ccdba8[9]);
     if (out_points_array + 1 != pCVar1) {
       out_points_array[1].x = pCVar1->x;
       out_points_array[1].y = pCVar1->y;
@@ -41,7 +40,7 @@ int __cdecl core_mobster_cpp_CMobster_getTargetPoints_FUN_004dc820(CMobster *thi
     return iVar2;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
-                     (&(this_ptr->base).base.model,&local_34,_DAT_01ccdbd4);
+                     (&(this_ptr->base).base.model,&local_34,g_INT_ARRAY_01ccdba8[0xb]);
   pCVar3 = out_points_array + iVar2;
   if (pCVar3 != pCVar1) {
     pCVar3->x = pCVar1->x;

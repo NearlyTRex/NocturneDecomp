@@ -4,6 +4,6 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0xA30000
 // =============================================================================
 
-// CVector3f[241]
-CVector3f g_CVector3f_ARRAY_00a38388[241] = {};
+// CVector3f[241][320]
+CVector3f g_CVector3f_ARRAY_ARRAY_00a38388[241][320] = {};
 

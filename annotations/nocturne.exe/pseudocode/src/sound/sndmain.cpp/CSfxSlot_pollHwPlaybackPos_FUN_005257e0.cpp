@@ -6,16 +6,17 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_CSfxSlot_pollHwPlaybackPos_FUN_005257e0(CSfxSlot *this_ptr)
 
 {
   double hardware_playback_pos;
   
-  if (((this_ptr->hardware_buffer_handle != 0) && (_DAT_02dc8318 != (int *)0x0)) &&
+  if (((this_ptr->hardware_buffer_handle != 0) &&
+      (g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0)) &&
      (this_ptr->sample != (CSfxSample *)0x0)) {
-    hardware_playback_pos = (double)(**(code **)(*_DAT_02dc8318 + 0x44))(_DAT_02dc8318,this_ptr);
+    hardware_playback_pos =
+         (*g_CSoundDevice_PTR_02dc8318->vtable->getSfxPlaybackPos)
+                   (g_CSoundDevice_PTR_02dc8318,this_ptr);
     if (hardware_playback_pos < 0.0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980
                 ("Error polling hw playback pos %s\n",this_ptr->sample);

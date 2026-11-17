@@ -29,7 +29,7 @@
 ;   float FLOAT_00587698 = -2.5
 ;   float FLOAT_0058769c = 2
 ;   float FLOAT_005876a0 = -1.5
-;   undefined4 DAT_01bd1d84
+;   int g_INT_01bd1d84
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -81,7 +81,7 @@ section .text
     POP EDX                             ; 004c3cd5
     SHRD EAX,EDX,0x10                   ; 004c3cd6
     XOR EAX,ECX                         ; 004c3cda
-    MOV EDX,dword ptr [0x01bd1d84]      ; 004c3cdc | DAT_01bd1d84
+    MOV EDX,dword ptr [0x01bd1d84]      ; 004c3cdc | g_INT_01bd1d84
     MOV ECX,EAX                         ; 004c3ce2
     MOV EAX,EDX                         ; 004c3ce4
     SAR EDX,0x1f                        ; 004c3ce6

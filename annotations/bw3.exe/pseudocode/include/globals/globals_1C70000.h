@@ -11,7 +11,7 @@
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CSmokeParticle.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1C70000
@@ -48,18 +48,14 @@ extern CSmokeParticle g_CSmokeParticle_ARRAY_01c74ea0[2048];
 extern CVector3i g_CVector3i_01c73658;
 extern CVector3i g_CVector3i_01c73664;
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c73670;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c73670;
 
 // char[256]
 extern char g_CHAR_ARRAY_01c734b0[256];
 
 // int
 extern int g_INT_01c734ac;
-extern int g_INT_01c73688;
-extern int g_INT_01c7368c;
-extern int g_INT_01c73690;
-extern int g_INT_01c73694;
 extern int g_INT_01c743f4;
 extern int g_INT_01c743f8;
 extern int g_INT_01c74b68;

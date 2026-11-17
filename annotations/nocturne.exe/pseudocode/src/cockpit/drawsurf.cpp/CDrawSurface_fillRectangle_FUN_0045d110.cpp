@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
@@ -37,7 +35,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawS
       iVar3 = this_ptr->clip_bottom;
     }
     if (iVar4 <= iVar3) {
-      if (_DAT_01b4d71c == 0) {
+      if (g_INT_01b4d71c == 0) {
         iVar3 = iVar3 * 4;
         iVar4 = iVar4 * 4;
         if ((uint)g_BitsPerPixel < 0x10) {
@@ -46,7 +44,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_0045d110(CDrawS
               piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);
               iVar4 = iVar4 + 4;
               memset
-                        ((void *)(*piVar1 + start_x),_DAT_01b4d710,(end_x - start_x) + 1);
+                        ((void *)(*piVar1 + start_x),g_INT_01b4d710,(end_x - start_x) + 1);
             } while (iVar4 <= iVar3);
             return;
           }
@@ -63,7 +61,7 @@ LAB_0045d27e:
               puVar2 = (ushort *)(start_x * 2 + *(int *)((int)g_ScreenBufferArray + iVar4));
               do {
                 iVar5 = iVar5 + 1;
-                *puVar2 = _DAT_01b4d710;
+                *puVar2 = (ushort)g_INT_01b4d710;
                 puVar2 = puVar2 + 1;
               } while (iVar5 <= end_x);
             }
@@ -78,7 +76,7 @@ LAB_0045d27e:
               iVar5 = start_x;
               do {
                 iVar5 = iVar5 + 1;
-                *piVar1 = _DAT_01b4d710;
+                *piVar1 = g_INT_01b4d710;
                 piVar1 = piVar1 + 1;
               } while (iVar5 <= end_x);
             }

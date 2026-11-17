@@ -93,8 +93,8 @@ extern char g_CHAR_01cc4228;
 extern char g_CHAR_01cc7f38;
 extern char g_CHAR_01cc88d0;
 
-// char[10]
-extern char g_CHAR_ARRAY_01cc91a0[10];
+// char[10][256]
+extern char g_CHAR_ARRAY_ARRAY_01cc91a0[10][256];
 
 // char[256]
 extern char g_CHAR_ARRAY_01ccfe98[256];
@@ -139,8 +139,8 @@ extern float g_FLOAT_01ccc3cc;
 extern float g_FLOAT_01ccc3d0;
 extern float g_FLOAT_01ccc3d4;
 
-// float[64]
-extern float g_FLOAT_ARRAY_01cc80cc[64];
+// float[64][8]
+extern float g_FLOAT_ARRAY_ARRAY_01cc80cc[64][8];
 
 // int
 extern int g_INT_01cc010c;

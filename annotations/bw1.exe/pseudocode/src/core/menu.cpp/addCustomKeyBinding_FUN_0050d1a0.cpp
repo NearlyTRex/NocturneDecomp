@@ -20,7 +20,7 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_0050d1a0(int *key_code_ptr,ch
   }
   iVar2 = g_INT_01d21458;
   g_INT_PTR_ARRAY_01d2145c[g_INT_01d21458] = key_code_ptr;
-  pcVar3 = g_CHAR_ARRAY_01d214e0 + iVar2 * 0x28;
+  pcVar3 = g_CHAR_ARRAY_ARRAY_01d214e0[iVar2];
   do {
     cVar1 = *key_name;
     *pcVar3 = cVar1;

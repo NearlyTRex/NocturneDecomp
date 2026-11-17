@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 36,
+    "complexity_score": 198,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 15,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 36,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 107
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 104
   },
   "cross_references": [
     {
@@ -251,5 +253,134 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(void **)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "ptr = *(void **)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 18,
+      "match": "(uint *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "(*(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x20),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x24),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x28),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(float *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "*(float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x2c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e48 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e4c = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 27,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e50 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x18);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e54 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e38 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e3c = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e40 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e44 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e58 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x40);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(int *)((int)g_SWindow_ARRAY_01c255a0",
+      "severity": "moderate",
+      "text": "g_INT_01c35e5c = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x44);",
+      "type": "pointer_cast"
+    }
+  ]
 }

@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005786e0(CDirectSoundDevice *this_ptr,float distance_in_feet)
 
 {
-  if (_DAT_02c81da0 == (int *)0x0) {
+  if (g_IDirectSound3DListener_PTR_02c81da0 == (IDirectSound3DListener *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02c81da0 + 0x2c))(_DAT_02c81da0,distance_in_feet * 0.3048f,0);
+  (*g_IDirectSound3DListener_PTR_02c81da0->vtable->SetDistanceFactor)
+            (g_IDirectSound3DListener_PTR_02c81da0,distance_in_feet * 0.3048f,0);
   return;
 }

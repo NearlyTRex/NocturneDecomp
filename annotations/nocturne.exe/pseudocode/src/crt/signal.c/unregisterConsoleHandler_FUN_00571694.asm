@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_SetConsoleCtrlHandler_00575584 = 00175f5c
-;   undefined1 DAT_005c2140
+;   byte g_BYTE_005c2140 = 0x0
 ;
 ; Called Functions:
 ;   SetConsoleCtrlHandler
@@ -20,7 +20,7 @@
 
 section .text
 
-    CMP byte ptr [0x005c2140],0x0       ; 00571694 | DAT_005c2140
+    CMP byte ptr [0x005c2140],0x0       ; 00571694 | g_BYTE_005c2140
         ;   Label: crt_signal.c_unregisterConsoleHandler_FUN_00571694
     JZ 0x005716b7                       ; 0057169b
         ;   XREF to: 005716b7 (CONDITIONAL_JUMP)  ; LAB_005716b7
@@ -31,10 +31,10 @@ section .text
     JZ 0x005716b7                       ; 005716ad
         ;   XREF to: 005716b7 (CONDITIONAL_JUMP)  ; LAB_005716b7
     XOR DL,DL                           ; 005716af
-    MOV byte ptr [0x005c2140],DL        ; 005716b1 | DAT_005c2140
+    MOV byte ptr [0x005c2140],DL        ; 005716b1 | g_BYTE_005c2140
     XOR EAX,EAX                         ; 005716b7
         ;   Label: LAB_005716b7
-    MOV AL,[0x005c2140]                 ; 005716b9 | DAT_005c2140
+    MOV AL,[0x005c2140]                 ; 005716b9 | g_BYTE_005c2140
     TEST EAX,EAX                        ; 005716be
     SETZ AL                             ; 005716c0
     AND EAX,0xff                        ; 005716c3

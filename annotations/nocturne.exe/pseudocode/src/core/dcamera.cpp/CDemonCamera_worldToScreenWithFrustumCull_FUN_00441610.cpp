@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3i * __stack2_esi core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610(CDemonCamera *this_ptr,CVector3i *input_ptr,CVector3i *output_ptr)
 
 {
@@ -106,11 +104,11 @@ LAB_00441872:
       }
     }
   }
-  iStack_30 = _DAT_01410280;
+  iStack_30 = g_CVector3i_01410280.x;
   *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8) =
-       *(uint *)(&DAT_01410284 + (uint)bVar6 * -8);
+       *(uint *)((int)&g_CVector3i_01410280 + (uint)bVar6 * -8 + 4);
   *(uint *)(&stack0xffffffd8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       *(uint *)(&DAT_01410288 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+       *(uint *)((uint)bVar6 * -8 + 0x1410288 + (uint)bVar6 * -8);
   puVar5 = (uint *)((int)output_ptr + (uint)bVar6 * -8 + 4);
   output_ptr->x = iStack_30;
   *puVar5 = *(uint *)(&stack0xffffffd4 + (uint)bVar6 * -8);

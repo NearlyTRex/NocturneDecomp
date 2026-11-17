@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 570,
+    "complexity_score": 504,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 27,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 115,
-    "suspect_count": 42,
+    "pseudocode_lines": 124,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "signed_shift_global_idiom",
       "stack_param",
-      "undefined_data",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 399
+    "total_lines": 408
   },
   "cross_references": [],
   "function": {
@@ -105,49 +104,49 @@
     },
     {
       "addr": "006235dc",
-      "name": "DAT_006235dc",
-      "type": "undefined4",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc",
+      "type": "SAudioFormatDescriptor[12]",
       "value": null
     },
     {
       "addr": "006235e0",
-      "name": "DAT_006235e0",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235e4",
-      "name": "DAT_006235e4",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235e8",
-      "name": "DAT_006235e8",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235ec",
-      "name": "DAT_006235ec",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[1].format_flags",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235f0",
-      "name": "DAT_006235f0",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[1].bits_per_sample",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235f4",
-      "name": "DAT_006235f4",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[1].channels",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006235f8",
-      "name": "DAT_006235f8",
+      "name": "g_SAudioFormatDescriptor_ARRAY_006235dc[1].sample_rate",
       "type": "undefined4",
       "value": null
     },
@@ -364,103 +363,55 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 36,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {",
+      "text": "auStack_24._16_4_) != 0) {",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_006235dc",
-      "severity": "mild",
-      "text": "if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 36,
-      "match": "DAT_006235e0",
-      "severity": "mild",
-      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_006235e0 + iVar8));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 37,
-      "match": "DAT_006235e0",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_006235e0 + iVar8) < channels) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_006235e8",
-      "severity": "mild",
-      "text": "if (g_INT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar8)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_006235e8",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_006235e8 + iVar8) < g_INT_02c82a3c) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 46,
-      "match": "DAT_006235e4",
-      "severity": "mild",
-      "text": "if (sample_rate < *(int *)((int)&DAT_006235e4 + iVar8)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_006235e4",
-      "severity": "mild",
-      "text": "if (*(int *)((int)&DAT_006235e4 + iVar8) < sample_rate) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 66,
-      "match": "DAT_006235e0",
-      "severity": "mild",
-      "text": "g_INT_02c82a1c = (&DAT_006235e0)[iVar2 * 4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_006235e4",
-      "severity": "mild",
-      "text": "g_INT_02c82a20 = (&DAT_006235e4)[iVar2 * 4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 68,
-      "match": "DAT_006235e8",
-      "severity": "mild",
-      "text": "g_INT_02c82a24 = (&DAT_006235e8)[iVar2 * 4];",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c8297c",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c8297c + iVar8) = pvVar5;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 93,
       "match": "(LPVOID *)((int)g_INT_ARRAY_02c829cc",
       "severity": "moderate",
       "text": "*(LPVOID *)((int)g_INT_ARRAY_02c829cc + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc + iVar8) = pvVar5;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 99,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc",
+      "severity": "moderate",
+      "text": "pvVar6 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc + iVar8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 101,
+      "match": "(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c8292c",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar8) = pvVar6;",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 106,
       "match": "._0_2_",
       "severity": "mild",
       "text": "auStack_24._0_2_ = 1;",
@@ -468,7 +419,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
+      "line": 107,
       "match": "._14_2_",
       "severity": "mild",
       "text": "auStack_24._14_2_ = (WORD)g_INT_02c82a1c;",
@@ -476,7 +427,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 100,
+      "line": 108,
       "match": "._2_2_",
       "severity": "mild",
       "text": "auStack_24._2_2_ = (WORD)g_INT_02c82a20;",
@@ -484,7 +435,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 101,
+      "line": 109,
       "match": "._12_2_",
       "severity": "mild",
       "text": "auStack_24._12_2_ = (short)((int)(g_INT_02c82a1c & 0xffffU) >> 3) * (WORD)g_INT_02c82a20;",
@@ -492,7 +443,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 102,
+      "line": 110,
       "match": "._4_4_",
       "severity": "mild",
       "text": "auStack_24._4_4_ = g_INT_02c82a24;",
@@ -500,7 +451,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 111,
       "match": "._8_4_",
       "severity": "mild",
       "text": "auStack_24._8_4_ = g_INT_02c82a24 * (uint)(ushort)auStack_24._12_2_;",
@@ -508,7 +459,7 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 103,
+      "line": 111,
       "match": "._12_2_",
       "severity": "mild",
       "text": "auStack_24._8_4_ = g_INT_02c82a24 * (uint)(ushort)auStack_24._12_2_;",
@@ -516,7 +467,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 110,
+      "line": 118,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);",
@@ -524,87 +475,79 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 122,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_006235dc)[iVar2 * 4];",
+      "text": "auStack_24._16_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 123,
       "match": "._16_4_",
       "severity": "mild",
-      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_006235dc)[iVar2 * 4];",
+      "text": "auStack_24._16_4_ & ~g_SAudioFormatDescriptor_ARRAY_006235dc[iVar2].format_flags;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 114,
-      "match": "DAT_006235dc",
-      "severity": "mild",
-      "text": "auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_006235dc)[iVar2 * 4];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `&DAT_006235dc` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].format_flags` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 35,
-      "match": "(int)&DAT_006235dc",
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].format_flags",
       "severity": "moderate",
-      "text": "if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {",
+      "text": "if ((*(uint *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].format_flags + iVar8) &",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_006235e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 36,
-      "match": "(int)&DAT_006235e0",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 38,
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample",
       "severity": "moderate",
-      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_006235e0 + iVar8));",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample +",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_006235e0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 37,
-      "match": "(int)&DAT_006235e0",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e0 + iVar8) < channels) {",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&DAT_006235e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 40,
-      "match": "(int)&DAT_006235e8",
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample",
       "severity": "moderate",
-      "text": "if (g_INT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar8)) {",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample + iVar8) <",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_006235e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 43,
-      "match": "(int)&DAT_006235e8",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e8 + iVar8) < g_INT_02c82a3c) {",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8)) {",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_006235e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 46,
-      "match": "(int)&DAT_006235e4",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 48,
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate",
       "severity": "moderate",
-      "text": "if (sample_rate < *(int *)((int)&DAT_006235e4 + iVar8)) {",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8) <",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&DAT_006235e4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 49,
-      "match": "(int)&DAT_006235e4",
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e4 + iVar8) < sample_rate) {",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8)) {",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8) <",
       "type": "pointer_truncation"
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 79,
+      "line": 87,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "pvVar5 = GlobalAlloc(0x2002,((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -",
@@ -612,7 +555,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 80,
+      "line": 88,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) *",
@@ -623,23 +566,15 @@
       "line": 35,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {",
+      "text": "if ((*(uint *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].format_flags + iVar8) &",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 36,
+      "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "uVar4 = (uint)(channels < *(int *)((int)&DAT_006235e0 + iVar8));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 37,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e0 + iVar8) < channels) {",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample +",
       "type": "pointer_cast"
     },
     {
@@ -647,31 +582,39 @@
       "line": 40,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (g_INT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar8)) {",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample + iVar8) <",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 43,
+      "line": 45,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e8 + iVar8) < g_INT_02c82a3c) {",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 46,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (sample_rate < *(int *)((int)&DAT_006235e4 + iVar8)) {",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8) <",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 49,
+      "line": 53,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "if (*(int *)((int)&DAT_006235e4 + iVar8) < sample_rate) {",
+      "text": "*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 56,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8) <",
       "type": "pointer_cast"
     }
   ],

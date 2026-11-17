@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
 
 {
@@ -27,14 +25,14 @@ int __watcallStack mbtowc(wchar_t *wide_char,char *mb_string,SIZE_T max_bytes)
         }
         return 0;
       }
-      if (((_DAT_02de5c30 == 0) || ((*(byte *)((byte)*mb_string + 0x2de5c41) & 1) == 0)) ||
+      if (((g_INT_02de5c30 == 0) || ((g_CHAR_ARRAY_02de5c41[(byte)*mb_string] & 1U) == 0)) ||
          (mb_string[1] != '\0')) {
         uVar2 = mblen(mb_string);
         cbMultiByte = uVar2;
         if (max_bytes < uVar2) {
           cbMultiByte = max_bytes;
         }
-        iVar1 = MultiByteToWideChar(DAT_005c2144,8,mb_string,cbMultiByte,local_14,1);
+        iVar1 = MultiByteToWideChar(g_UINT_005c2144,8,mb_string,cbMultiByte,local_14,1);
         if (iVar1 != 0) {
           if (wide_char != (wchar_t *)0x0) {
             *wide_char = local_14[0];

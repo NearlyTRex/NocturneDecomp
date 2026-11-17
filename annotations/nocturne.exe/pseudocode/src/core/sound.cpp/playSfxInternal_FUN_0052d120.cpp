@@ -15,10 +15,9 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
   char cVar4;
   char *pcVar5;
   char *pcVar6;
-  uint *puVar7;
-  int iVar8;
-  char *pcVar9;
-  byte bVar10;
+  int iVar7;
+  char *pcVar8;
+  byte bVar9;
   float local_178;
   float local_174;
   char local_170 [100];
@@ -36,7 +35,7 @@ uint __cdecl core_sound_cpp_playSfxInternal_FUN_0052d120(void *user_data,char *s
   int local_18;
   char *local_14;
   
-  bVar10 = 0;
+  bVar9 = 0;
   iVar1 = sound_sndmain_cpp_isSoundMuted_FUN_00526ca0();
   if (iVar1 != 0) {
     return 0;
@@ -89,30 +88,30 @@ LAB_0052d1a2:
       iVar1 = -1;
       pcVar6 = local_170;
       do {
-        pcVar9 = pcVar6;
+        pcVar8 = pcVar6;
         if (iVar1 == 0) break;
         iVar1 = iVar1 + -1;
-        pcVar9 = pcVar6 + (uint)bVar10 * -2 + 1;
+        pcVar8 = pcVar6 + (uint)bVar9 * -2 + 1;
         cVar4 = *pcVar6;
-        pcVar6 = pcVar9;
+        pcVar6 = pcVar8;
       } while (cVar4 != '\0');
-      pcVar9 = pcVar9 + -1;
+      pcVar8 = pcVar8 + -1;
       do {
         cVar4 = *pcVar5;
-        *pcVar9 = cVar4;
+        *pcVar8 = cVar4;
         if (cVar4 == '\0') break;
         cVar4 = pcVar5[1];
         pcVar5 = pcVar5 + 2;
-        pcVar9[1] = cVar4;
-        pcVar9 = pcVar9 + 2;
+        pcVar8[1] = cVar4;
+        pcVar8 = pcVar8 + 2;
       } while (cVar4 != '\0');
     }
-    puVar7 = &DAT_005bef20;
-    pcVar6 = local_a8;
+    pcVar6 = g_CHAR_ARRAY_005bef20;
+    pcVar5 = local_a8;
     for (iVar1 = 0x19; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *(uint *)pcVar6 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      pcVar6 = pcVar6 + ((uint)bVar10 * -2 + 1) * 4;
+      *(uint *)pcVar5 = *(uint *)pcVar6;
+      pcVar6 = pcVar6 + ((uint)bVar9 * -2 + 1) * 4;
+      pcVar5 = pcVar5 + ((uint)bVar9 * -2 + 1) * 4;
     }
     pcVar6 = local_170;
     do {
@@ -144,11 +143,11 @@ LAB_0052d202:
       local_18 = local_28 + 5;
       do {
         iVar1 = local_1c;
-        iVar8 = 0;
+        iVar7 = 0;
         local_38 = local_28;
         do {
           iVar3 = local_38;
-          if (iVar8 == 0) {
+          if (iVar7 == 0) {
             iVar3 = iVar1;
           }
           if ((-1 < iVar3) && (iVar3 < 6)) {
@@ -162,17 +161,17 @@ LAB_0052d202:
               }
               *pcVar5 = cVar4;
               pcVar5 = pcVar5 + 1;
-              pcVar9 = pcVar6 + 1;
+              pcVar8 = pcVar6 + 1;
               pcVar6 = pcVar6 + 1;
-              cVar4 = *pcVar9;
+              cVar4 = *pcVar8;
             }
             *pcVar5 = '\0';
             core_sound_cpp_CSound_findRandomSoundFile_FUN_0052d030
                       (g_CSound_PTR_005bed68,local_a8,local_10c);
             if (local_a8[0] != '\0') break;
           }
-          iVar8 = iVar8 + 1;
-        } while (iVar8 < 2);
+          iVar7 = iVar7 + 1;
+        } while (iVar7 < 2);
         if (local_a8[0] != '\0') break;
         local_1c = local_1c + 1;
         local_28 = local_28 + -1;

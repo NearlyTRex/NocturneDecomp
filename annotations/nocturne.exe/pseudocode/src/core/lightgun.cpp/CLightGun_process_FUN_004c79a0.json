@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 219,
-    "complexity_score": 86,
+    "complexity_score": 71,
     "cross_reference_count": 0,
     "function_call_count": 19,
     "global_count": 20,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 71,
-    "suspect_count": 1,
-    "suspect_types": [
-      "raw_address_constant"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 290
   },
   "cross_references": [],
@@ -217,9 +215,9 @@
     },
     {
       "addr": "005c15b8",
-      "name": "DAT_005c15b8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CWeather_PTR_005c15b8",
+      "type": "CWeather*",
+      "value": "02ddf9f0"
     },
     {
       "addr": "01c74640",
@@ -361,16 +359,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Raw hex literal 0x2ddf9f0 matches address of g_CWeather_02ddf9f0 (type CWeather). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
-      "line": 61,
-      "match": "0x2ddf9f0",
-      "severity": "moderate",
-      "text": "core_weather_cpp_CWeather_createLightningStrike_FUN_00554d40(0x02DDF9F0,0.1,0);",
-      "type": "raw_address_constant"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

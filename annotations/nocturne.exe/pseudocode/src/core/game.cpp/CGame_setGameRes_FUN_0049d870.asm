@@ -15,10 +15,10 @@
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
 ;   CBitFont* g_CBitFont_PTR_014b9904
-;   undefined4 DAT_01bcd070
+;   CBitFont* g_CBitFont_PTR_01bcd070
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cc64a4
+;   int g_INT_01cc64a4
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_00440010
@@ -37,7 +37,7 @@ section .text
     PUSH EDI                            ; 0049d872
     PUSH EBP                            ; 0049d873
     MOV EBX,dword ptr [ESP + 0x14]      ; 0049d874
-    MOV EDX,dword ptr [0x01cc64a4]      ; 0049d878 | DAT_01cc64a4
+    MOV EDX,dword ptr [0x01cc64a4]      ; 0049d878 | g_INT_01cc64a4
     TEST EDX,EDX                        ; 0049d87e
     JNZ 0x0049d928                      ; 0049d880
         ;   XREF to: 0049d928 (CONDITIONAL_JUMP)  ; LAB_0049d928
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 0049d8fc (UNCONDITIONAL_JUMP)  ; LAB_0049d8fc
     MOV EAX,[0x014b9904]                ; 0049d947 | g_CBitFont_PTR_014b9904
         ;   Label: LAB_0049d947
-    MOV [0x01bcd070],EAX                ; 0049d94c | DAT_01bcd070
+    MOV [0x01bcd070],EAX                ; 0049d94c | g_CBitFont_PTR_01bcd070
     POP EBP                             ; 0049d951
     POP EDI                             ; 0049d952
     POP ESI                             ; 0049d953

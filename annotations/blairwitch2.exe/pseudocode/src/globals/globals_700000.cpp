@@ -4,6 +4,9 @@
 // GLOBAL VARIABLE DEFINITIONS - Range 0x700000
 // =============================================================================
 
+// SRenderBufferEntry[256]
+SRenderBufferEntry g_SRenderBufferEntry_ARRAY_0070cb00[256] = {};
+
 // int
 int g_INT_0070ca38 = {};
 int g_INT_0070ca3c = {};

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 86,
+    "complexity_score": 70,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 3,
+    "pseudocode_lines": 40,
+    "suspect_count": 2,
     "suspect_types": [
       "stack_ref",
-      "vector_type_pun",
-      "warning_overlapping_globals"
+      "vector_type_pun"
     ],
-    "total_lines": 138
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -96,13 +95,13 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "02dd10cc",
-      "name": "DAT_02dd10cc",
+      "name": "g_CTerrain_02dd10c8.initialized",
       "type": "undefined4",
       "value": null
     }
@@ -285,16 +284,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 41,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3f *)&stack0xffffffc4);",
@@ -302,7 +293,7 @@
     },
     {
       "description": "Vector type-pun \u2014 `local_30` is declared `CVector3f` but its address is cast to `(CVector3i *)` and read as the other element kind, so integer bits are reinterpreted as floats (or vice-versa). Stack-slot reuse Ghidra mistyped (\u00a713): retype the local to the element kind the .asm stores/reads (FSTP/FLD = float, MOV = int), drop the `(int)`/`(float)` truncation on its components, and drop the cast.",
-      "line": 40,
+      "line": 38,
       "match": "(CVector3i *)&local_30",
       "severity": "moderate",
       "text": "(g_CDemonRenderer_PTR_005ae704,(CVector3i *)&local_30);",

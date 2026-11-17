@@ -66,15 +66,15 @@ int __stdcall wincore_winrun_cpp_winMain_FUN_00559260(HINSTANCE hInstance,HINSTA
   pcVar11 = &DAT_02de2c10;
   if (DAT_02de2c10 != '\0') {
     pbVar1 = (byte *)pcVar11;
-    iVar8 = _DAT_02de2d10 << 2;
+    iVar8 = g_INT_02de2d10 << 2;
     do {
       do {
         pbVar7 = pbVar1;
         pbVar1 = pbVar7 + 1;
       } while (0x20 < *pbVar7);
       *pbVar7 = 0;
-      _DAT_02de2d10 = _DAT_02de2d10 + 1;
-      *(char **)(iVar8 + 0x2de2d14) = pcVar11;
+      g_INT_02de2d10 = g_INT_02de2d10 + 1;
+      *(char **)((int)&g_CHAR_PTR_02de2d14 + iVar8) = pcVar11;
       bVar3 = *pbVar1;
       pcVar11 = (char *)pbVar1;
       while (bVar3 == 0x20) {
@@ -128,9 +128,9 @@ LAB_005593b7:
   memset(&local_30,0,0x20);
   local_30.dwLength = 0x20;
   GlobalMemoryStatus(&local_30);
-  _DAT_02de20a8 = local_30.dwTotalPhys;
-  _DAT_02de20ac = local_30.dwAvailPageFile;
-  core_main_c_initializeGameSystems_FUN_004c85f0(_DAT_02de2d10,(char **)0x2de2d14);
+  g_INT_02de20a8 = local_30.dwTotalPhys;
+  g_INT_02de20ac = local_30.dwAvailPageFile;
+  core_main_c_initializeGameSystems_FUN_004c85f0(g_INT_02de2d10,&g_CHAR_PTR_02de2d14);
   core_main_c_enterMainGameMenu_FUN_004c85e0();
   core_main_c_finalizeGameSystems_FUN_004c90e0();
   return 0;

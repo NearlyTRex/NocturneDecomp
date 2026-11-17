@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 97,
+    "complexity_score": 72,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 61
   },
@@ -69,14 +68,14 @@
   "globals": [
     {
       "addr": "005ecaa4",
-      "name": "DAT_005ecaa4",
-      "type": "undefined4",
+      "name": "s_core_path_cpp_005ecaa4",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005ecab5",
-      "name": "DAT_005ecab5",
-      "type": "undefined4",
+      "name": "s_Global_pathmap_list_corr_005ecab5",
+      "type": "TerminatedCString",
       "value": null
     },
     {
@@ -221,22 +220,6 @@
       "severity": "moderate",
       "text": "if (*(int *)((int)g_CPathMap_PTR_ARRAY_01e6be4c + iVar2) == 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_005ecaa4",
-      "severity": "mild",
-      "text": "g_CHAR_PTR_01d1d400 = &DAT_005ecaa4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 16,
-      "match": "DAT_005ecab5",
-      "severity": "mild",
-      "text": "core_main_c_displayErrorAndQuit_FUN_005030e0(&DAT_005ecab5);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

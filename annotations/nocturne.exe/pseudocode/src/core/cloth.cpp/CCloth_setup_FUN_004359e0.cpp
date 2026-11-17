@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr)
 
 {
@@ -196,9 +194,9 @@ void __cdecl core_cloth_cpp_CCloth_setup_FUN_004359e0(CCloth *this_ptr,CVector3f
         }
         piVar14 = (int *)((int)&((this_ptr->model).vertex_list)->x + iVar13);
         pCVar12 = (CVector3f *)((int)(pCVar12 + 0x17) + 8);
-        *piVar14 = (int)ROUND((pSVar18->position).x * _DAT_0059b360);
-        piVar14[1] = (int)ROUND((pSVar18->position).y * _DAT_0059b360);
-        piVar14[2] = (int)ROUND((pSVar18->position).z * _DAT_0059b360);
+        *piVar14 = (int)ROUND((pSVar18->position).x * 256.0f);
+        piVar14[1] = (int)ROUND((pSVar18->position).y * 256.0f);
+        piVar14[2] = (int)ROUND((pSVar18->position).z * 256.0f);
         iVar8 = iVar8 + 1;
         pSVar18 = pSVar18 + 1;
         iVar13 = iVar13 + 0xc;

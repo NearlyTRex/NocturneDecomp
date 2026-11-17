@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 481,
-    "complexity_score": 248,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 218,
-    "suspect_count": 2,
+    "pseudocode_lines": 217,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
-    "total_lines": 699
+    "total_lines": 698
   },
   "cross_references": [],
   "function": {
@@ -66,20 +65,20 @@
     },
     {
       "addr": "01c039dc",
-      "name": "DAT_01c039dc",
-      "type": "undefined4",
+      "name": "g_INT_01c039dc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e0",
-      "name": "DAT_01c039e0",
-      "type": "undefined4",
+      "name": "g_INT_01c039e0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e4",
-      "name": "DAT_01c039e4",
-      "type": "undefined4",
+      "name": "g_INT_01c039e4",
+      "type": "int",
       "value": null
     },
     {
@@ -385,16 +384,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 205,
+      "line": 203,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((SMRGLHeaderExtended *)((int)&(primitive->base).type + (primitive->base).count));",

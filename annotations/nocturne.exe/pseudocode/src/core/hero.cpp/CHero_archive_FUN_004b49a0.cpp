@@ -70,11 +70,11 @@ void __cdecl core_hero_cpp_CHero_archive_FUN_004b49a0(CHero *this_ptr)
                 ((int *)&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (5 < g_INT_005ba940) {
-      if (DAT_00763e88 != 1) {
-        core_inv_cpp_CInventory_save_FUN_004c0fa0(&this_ptr->inventory,DAT_00763e84);
+      if (g_INT_00763e88 != 1) {
+        core_inv_cpp_CInventory_save_FUN_004c0fa0(&this_ptr->inventory,g_FILE_PTR_00763e84);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004c1190(&this_ptr->inventory,DAT_00763e84);
+      core_inv_cpp_CInventory_load_FUN_004c1190(&this_ptr->inventory,g_FILE_PTR_00763e84);
       return;
     }
   }

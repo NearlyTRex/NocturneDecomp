@@ -13,7 +13,7 @@
 ;   void* g_PTR_0061f414 = 00000000
 ;   void* g_PTR_0061f440 = 00000000
 ;   uint g_UINT_0061f480 = 0x14
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -48,7 +48,7 @@ section .text
     MOV EAX,0xffffffff                  ; 005c047b
     JMP 0x005c05c6                      ; 005c0480
         ;   XREF to: 005c05c6 (UNCONDITIONAL_JUMP)  ; LAB_005c05c6
-    MOV EDX,dword ptr [0x0061f4d8]      ; 005c0485 | DAT_0061f4d8
+    MOV EDX,dword ptr [0x0061f4d8]      ; 005c0485 | g_SIOControlBlock_PTR_0061f4d8
         ;   Label: LAB_005c0485
     MOV EAX,dword ptr [EDX + EDI*0x4]   ; 005c048b
     PUSH EDI                            ; 005c048e

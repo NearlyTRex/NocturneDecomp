@@ -18,7 +18,7 @@
 ;   core_tbplayer.cpp_CDrummer_dtor_FUN_00543620 at 00543639
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e312f8
+;   int g_INT_01e312f8
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_00566170
@@ -32,7 +32,7 @@ section .text
     PUSH ESI                            ; 004efdd1
     PUSH EDI                            ; 004efdd2
     PUSH EBP                            ; 004efdd3
-    MOV EDI,dword ptr [0x01e312f8]      ; 004efdd4 | DAT_01e312f8
+    MOV EDI,dword ptr [0x01e312f8]      ; 004efdd4 | g_INT_01e312f8
     MOV ESI,dword ptr [ESP + 0x14]      ; 004efdda
     XOR ECX,ECX                         ; 004efdde
     TEST EDI,EDI                        ; 004efde0
@@ -53,7 +53,7 @@ section .text
         ;   XREF to: 004efded (CONDITIONAL_JUMP)  ; LAB_004efded
     MOV EAX,ESI                         ; 004efe01
         ;   Label: LAB_004efe01
-    MOV dword ptr [0x01e312f8],EDI      ; 004efe03 | DAT_01e312f8
+    MOV dword ptr [0x01e312f8],EDI      ; 004efe03 | g_INT_01e312f8
     POP EBP                             ; 004efe09
     POP EDI                             ; 004efe0a
     POP ESI                             ; 004efe0b
@@ -69,15 +69,15 @@ section .text
     PUSH EDX                            ; 004efe21
     ADD EAX,0x1e312fc                   ; 004efe22
     PUSH EAX                            ; 004efe27
-    MOV dword ptr [0x01e312f8],EDI      ; 004efe28 | DAT_01e312f8
+    MOV dword ptr [0x01e312f8],EDI      ; 004efe28 | g_INT_01e312f8
     CALL crt_string.c_memmove_FUN_00566170 ; 004efe2e
         ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
-    MOV EDI,dword ptr [0x01e312f8]      ; 004efe33 | DAT_01e312f8
+    MOV EDI,dword ptr [0x01e312f8]      ; 004efe33 | g_INT_01e312f8
     XOR EAX,EAX                         ; 004efe39
     ADD ESP,0xc                         ; 004efe3b
     MOV dword ptr [EDI*0x4 + 0x1e312fc],EAX ; 004efe3e
     MOV EAX,ESI                         ; 004efe45
-    MOV dword ptr [0x01e312f8],EDI      ; 004efe47 | DAT_01e312f8
+    MOV dword ptr [0x01e312f8],EDI      ; 004efe47 | g_INT_01e312f8
     POP EBP                             ; 004efe4d
     POP EDI                             ; 004efe4e
     POP ESI                             ; 004efe4f

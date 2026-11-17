@@ -19,11 +19,11 @@
 ;   double DOUBLE_0057bafb = 0.0000152587890625
 ;   double DOUBLE_0057bb03 = 0.00392156862745098
 ;   double DOUBLE_0057bb0b = 255
-;   undefined4 DAT_005ad450
-;   undefined4 DAT_005ad454
-;   undefined4 DAT_005ad458
-;   undefined4 DAT_00b0e1fc
-;   undefined4 DAT_00b0e2fc
+;   char[4] g_CHAR_ARRAY_005ad450
+;   int g_INT_005ad454 = 0x40
+;   int g_INT_005ad458 = 0x40
+;   uint[256] g_UINT_ARRAY_00b0e1fc
+;   undefined4 g_UINT_ARRAY_00b0e1fc[64]
 ;
 ; Called Functions:
 ;   crt_math.c_pow_FUN_00565ad6
@@ -72,20 +72,20 @@ section .text
     ADD ECX,0x4                         ; 00447acd
     OR EAX,EBX                          ; 00447ad0
     INC EDX                             ; 00447ad2
-    MOV dword ptr [ECX + 0xb0e1f8],EAX  ; 00447ad3 | DAT_00b0e1fc
+    MOV dword ptr [ECX + 0xb0e1f8],EAX  ; 00447ad3 | g_UINT_ARRAY_00b0e1fc
     CMP EDX,0x100                       ; 00447ad9
     JL 0x00447a9c                       ; 00447adf
         ;   XREF to: 00447a9c (CONDITIONAL_JUMP)  ; LAB_00447a9c
-    MOV EAX,[0x005ad458]                ; 00447ae1 | DAT_005ad458
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447ae6 | DAT_00b0e2fc
+    MOV EAX,[0x005ad458]                ; 00447ae1 | g_INT_005ad458
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447ae6 | g_UINT_ARRAY_00b0e1fc[64]
     AND EAX,0xff                        ; 00447aed
     PUSH EAX                            ; 00447af2
-    MOV EAX,[0x005ad454]                ; 00447af3 | DAT_005ad454
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447af8 | DAT_00b0e2fc
+    MOV EAX,[0x005ad454]                ; 00447af3 | g_INT_005ad454
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447af8 | g_UINT_ARRAY_00b0e1fc[64]
     AND EAX,0xff                        ; 00447aff
     PUSH EAX                            ; 00447b04
-    MOV EAX,[0x005ad450]                ; 00447b05 | DAT_005ad450
-    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447b0a | DAT_00b0e2fc
+    MOV EAX,[0x005ad450]                ; 00447b05 | g_CHAR_ARRAY_005ad450
+    MOV EAX,dword ptr [EAX*0x4 + 0xb0e1fc] ; 00447b0a | g_UINT_ARRAY_00b0e1fc[64]
     FSTP ST0                            ; 00447b11
     AND EAX,0xff                        ; 00447b13
     FSTP ST0                            ; 00447b18

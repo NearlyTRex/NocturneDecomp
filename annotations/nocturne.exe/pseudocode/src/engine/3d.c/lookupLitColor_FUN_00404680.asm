@@ -15,7 +15,7 @@
 ;   engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_004047e0 at 0040484f
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005acbc4
+;   int[16] g_INT_ARRAY_005acbc4
 ;   uchar[768] g_SourcePaletteData
 ;
 ; *****************************************************************************
@@ -28,7 +28,7 @@ section .text
     JL 0x004046f8                       ; 00404686
         ;   XREF to: 004046f8 (CONDITIONAL_JUMP)  ; LAB_004046f8
     PUSH EBX                            ; 00404688
-    MOV EDX,dword ptr [EAX*0x4 + 0x5acbc4] ; 00404689 | DAT_005acbc4
+    MOV EDX,dword ptr [EAX*0x4 + 0x5acbc4] ; 00404689 | g_INT_ARRAY_005acbc4
     LEA EAX,[EDX*0x4 + 0x0]             ; 00404690
     XOR ECX,ECX                         ; 00404697
     SUB EAX,EDX                         ; 00404699

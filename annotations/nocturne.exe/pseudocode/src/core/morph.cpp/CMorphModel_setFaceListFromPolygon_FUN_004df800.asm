@@ -30,7 +30,7 @@
 ;   TerminatedCString s_CMorphModel_setFaceList_0058ac26
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd4314
+;   int g_INT_01cd4314
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -119,7 +119,7 @@ section .text
     IMUL EAX,ESI,0x3c                   ; 004df8da
     MOV ESI,dword ptr [EBX + 0x60]      ; 004df8dd
         ;   Label: LAB_004df8dd
-    MOV EDI,dword ptr [0x01cd4314]      ; 004df8e0 | DAT_01cd4314
+    MOV EDI,dword ptr [0x01cd4314]      ; 004df8e0 | g_INT_01cd4314
     MOV dword ptr [ESI + EAX*0x1 + 0x4],0x3 ; 004df8e6
     TEST EDI,EDI                        ; 004df8ee
     JZ 0x004df9af                       ; 004df8f0

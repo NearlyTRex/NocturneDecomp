@@ -48,7 +48,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playDeathSound_FUN_0045cf70(CDemnfolk *
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  pcVar5 = &DAT_005d830e;
+  pcVar5 = "_die.wav @ 2";
   iVar3 = -1;
   pcVar4 = &DAT_0152c320;
   do {

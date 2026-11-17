@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 183,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 58,
-    "suspect_count": 11,
+    "pseudocode_lines": 60,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data"
+      "shadow_pointer_walk"
     ],
-    "total_lines": 204
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -217,92 +217,44 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_01d6dfbc",
-      "severity": "mild",
-      "text": "puVar6 = (uint *)(&DAT_01d6dfbc + iVar1);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_01d6dfc0",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d6dfc0 + iVar1) = g_INT_01d715a4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 34,
-      "match": "DAT_01d6dfc4",
-      "severity": "mild",
-      "text": "memset(&DAT_01d6dfc4 + iVar1,1,2);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(uint *)((int)puVar5",
+      "line": 52,
+      "match": "(byte *)((int)pSVar7",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "text": "*(byte *)((int)pSVar7->player_timestamps + target_player + -4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(byte *)((int)puVar6",
+      "line": 56,
+      "match": "(byte *)((int)pSVar7",
       "severity": "moderate",
-      "text": "*(byte *)((int)puVar6 + target_player + 8) = 0;",
+      "text": "*(byte *)((int)pSVar7->player_timestamps + this_ptr->local_player_index + -4) = 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01d6dfd0",
-      "severity": "mild",
-      "text": "dest = &DAT_01d6dfd0 + iVar1;",
-      "type": "undefined_data"
+      "description": "Pointer value `&pSVar6->timestamp` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 47,
+      "match": "(int)&pSVar6->timestamp",
+      "severity": "moderate",
+      "text": "pSVar6 = (SChatOutMessage *)((int)&pSVar6->timestamp + 1);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(byte *)(this_ptr->local_player_index + 8 + (int)puVar6",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 47,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(byte *)(this_ptr->local_player_index + 8 + (int)puVar6) = 1;",
+      "text": "pSVar6 = (SChatOutMessage *)((int)&pSVar6->timestamp + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_01d6dfc0",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01d6dfc0 + iVar1),this_ptr->player_name,dest);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 45,
-      "match": "(int)puVar5",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar5->owner`). Replace `pSVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 46,
+      "match": "pSVar5 = (T *)&pSVar5->FIELD",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
-      "match": "(int)puVar6",
-      "severity": "moderate",
-      "text": "*(byte *)((int)puVar6 + target_player + 8) = 0;",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `puVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 54,
-      "match": "(int)puVar6",
-      "severity": "moderate",
-      "text": "*(byte *)(this_ptr->local_player_index + 8 + (int)puVar6) = 1;",
-      "type": "pointer_truncation"
+      "text": "pSVar5 = (SChatOutMessage *)&pSVar5->sequence_number;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

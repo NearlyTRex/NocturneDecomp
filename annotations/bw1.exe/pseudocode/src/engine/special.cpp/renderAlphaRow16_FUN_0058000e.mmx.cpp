@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_special_cpp_renderAlphaRow16_FUN_0058000e(ushort *destPixels,uchar *srcIndices,uchar *srcAlpha,int globalAlpha,int pixelCount)
 {
 __asm {
@@ -38,14 +36,14 @@ __asm {
         pxor MM2,qword ptr [0x00624fc8]
         movzx EAX,word ptr [EDI]
         movd MM3,EAX
-        pand MM3,qword ptr [g_INT_00623f30]
+        pand MM3,qword ptr [g_MMX_INTEGER_00623f30]
         psllq MM3,qword ptr [g_QWORD_00623fc0]
         movd MM4,EAX
-        pand MM4,qword ptr [g_INT_00623f28]
+        pand MM4,qword ptr [g_MMX_INTEGER_00623f28]
         psllq MM4,qword ptr [g_QWORD_00623fa0]
         por MM3,MM4
         movd MM5,EAX
-        pand MM5,qword ptr [g_INT_00623f20]
+        pand MM5,qword ptr [g_MMX_INTEGER_00623f20]
         psllq MM5,qword ptr [g_QWORD_00623f80]
         por MM3,MM5
         punpcklbw MM3,MM7

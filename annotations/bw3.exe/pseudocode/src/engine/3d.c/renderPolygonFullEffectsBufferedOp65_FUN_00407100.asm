@@ -21,10 +21,10 @@
 ;   undefined4 g_INT_ARRAY_00730418[1]
 ;   int g_INT_00730478
 ;   int g_INT_0073047c
-;   undefined4 DAT_00730480
-;   undefined4 DAT_00730484
-;   undefined4 DAT_00730488
-;   undefined4 DAT_0073048c
+;   SRenderBufferEntry[256] g_SRenderBufferEntry_ARRAY_00730480
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_x
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_z
 ;   ... and 11 more
 ;
 ; Called Functions:
@@ -133,13 +133,13 @@ section .text
     SHL EAX,0x2                         ; 0040723c
     MOV dword ptr [ESP + 0x4],ESI       ; 0040723f
     SUB EAX,EDX                         ; 00407243
-    MOV EDX,0x730480                    ; 00407245 | DAT_00730480
+    MOV EDX,0x730480                    ; 00407245 | g_SRenderBufferEntry_ARRAY_00730480
     SHL EAX,0x3                         ; 0040724a
     INC EDI                             ; 0040724d
     ADD EDX,EAX                         ; 0040724e
     MOV dword ptr [0x0073047c],EDI      ; 00407250 | g_INT_0073047c
     MOV dword ptr [ESP],EDX             ; 00407256
-    MOV dword ptr [EDX],ECX             ; 00407259 | DAT_00730480
+    MOV dword ptr [EDX],ECX             ; 00407259 | g_SRenderBufferEntry_ARRAY_00730480
     TEST ECX,ECX                        ; 0040725b
     JLE 0x00407297                      ; 0040725d
         ;   XREF to: 00407297 (CONDITIONAL_JUMP)  ; LAB_00407297
@@ -150,9 +150,9 @@ section .text
     LEA EDI,[EAX + 0x4]                 ; 0040726a
     MOV ECX,0xc                         ; 0040726d
     LEA ESI,[ESI + 0x60b014]            ; 00407272 | g_SRenderVertex_ARRAY_0060b014
-    MOVSD.REP ES:EDI,ESI                ; 00407278 | g_SRenderVertex_ARRAY_0060b014 | DAT_00730484 | g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_y
+    MOVSD.REP ES:EDI,ESI                ; 00407278 | g_SRenderVertex_ARRAY_0060b014 | g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_y
     MOV ESI,dword ptr [ESP + 0x4]       ; 0040727a
-    MOV ECX,dword ptr [EAX + 0xc]       ; 0040727e | DAT_0073048c
+    MOV ECX,dword ptr [EAX + 0xc]       ; 0040727e | g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_z
     CMP ECX,ESI                         ; 00407281
     JGE 0x00407289                      ; 00407283
         ;   XREF to: 00407289 (CONDITIONAL_JUMP)  ; LAB_00407289
@@ -174,12 +174,12 @@ section .text
     LEA EDI,[EDI + 0xc4]                ; 004072a6
     MOV EDX,dword ptr [ESP]             ; 004072ac
     MOV EAX,[0x005fba38]                ; 004072af | g_INT_005fba38
-    MOVSD.REP ES:EDI,ESI                ; 004072b4 | DAT_00730544 | DAT_00730548
-    MOV dword ptr [EDX + 0x10c],EAX     ; 004072b6 | DAT_0073058c
+    MOVSD.REP ES:EDI,ESI                ; 004072b4 | g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.type | g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.count
+    MOV dword ptr [EDX + 0x10c],EAX     ; 004072b6 | g_SRenderBufferEntry_ARRAY_00730480[0].alpha_value
     MOV EAX,[0x01c6e2ac]                ; 004072bc | g_INT_01c6e2ac
-    MOV dword ptr [EDX + 0x110],EAX     ; 004072c1 | DAT_00730590
+    MOV dword ptr [EDX + 0x110],EAX     ; 004072c1 | g_SRenderBufferEntry_ARRAY_00730480[0].blend_mode
     MOV EAX,dword ptr [ESP + 0x4]       ; 004072c7
-    MOV dword ptr [EDX + 0x114],EAX     ; 004072cb | DAT_00730594
+    MOV dword ptr [EDX + 0x114],EAX     ; 004072cb | g_SRenderBufferEntry_ARRAY_00730480[0].min_z_value
     MOV EDX,dword ptr [EBP + 0x4]       ; 004072d1
         ;   Label: LAB_004072d1
     LEA EAX,[EDX*0x4 + 0x0]             ; 004072d4

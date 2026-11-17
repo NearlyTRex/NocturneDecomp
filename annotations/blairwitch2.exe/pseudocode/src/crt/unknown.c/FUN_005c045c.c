@@ -24,7 +24,7 @@ DWORD FUN_005c045c(uint param_1,LPCVOID param_2,DWORD param_3)
     param_3 = 0xffffffff;
   }
   else {
-    pvStack_18 = *(HANDLE *)(DAT_0061f4d8 + param_1 * 4);
+    pvStack_18 = g_SIOControlBlock_PTR_0061f4d8->standard_handles[param_1];
     uVar1 = FUN_005c0820(param_1);
     uStack_14 = uVar1;
     if (uVar1 == 0) {

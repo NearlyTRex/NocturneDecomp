@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_FUN_0053a760(CStranger *this_ptr,CDemonActor *carried_actor,int hand_index,CMatrix3x4f *output_matrix)
 
@@ -382,11 +381,11 @@ CMatrix3x4f * __stack3_esi core_stranger_cpp_CStranger_computeWeaponAttachXForm_
     pCVar3 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&local_d8,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                        _DAT_02dc9f88);
+                        g_INT_ARRAY_02dc9f50[0xe]);
     pCVar4 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                        (&local_90,&g_ZeroVector.f,
                         (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                        _DAT_02dc9f84);
+                        g_INT_ARRAY_02dc9f50[0xd]);
     local_198 = pCVar4->x + pCVar3->x;
     local_194 = pCVar4->y + pCVar3->y;
     local_108 = local_198 * 0.5f;

@@ -30,9 +30,9 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01abb4c4
-;   undefined4 DAT_01abb4c8
-;   undefined4 DAT_01abb4cc
+;   int g_INT_01abb4c4
+;   int[100] g_INT_ARRAY_01abb4c8
+;   undefined4 g_INT_ARRAY_01abb4c8[1]
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
 ;   _BIT_INTEGER32 g_RedBitPosition
@@ -59,7 +59,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x54]      ; 00452117
     XOR ESI,ESI                         ; 0045211b
     XOR EBX,EBX                         ; 0045211d
-    MOV dword ptr [0x01abb4c4],ESI      ; 0045211f | DAT_01abb4c4
+    MOV dword ptr [0x01abb4c4],ESI      ; 0045211f | g_INT_01abb4c4
     CALL crt_stdlib.c_rand_FUN_0056488c ; 00452125
         ;   XREF to: 0056488c (UNCONDITIONAL_CALL)  ; int crt_stdlib.c_rand_FUN_0056488c()
         ;   Label: LAB_00452125
@@ -102,7 +102,7 @@ section .text
     MOV ECX,ECX                         ; 0045218e
     MOV ECX,dword ptr [0x005b7624]      ; 00452190 | g_BitsPerPixel
         ;   Label: LAB_00452190
-    MOV ESI,dword ptr [0x01abb4c4]      ; 00452196 | DAT_01abb4c4
+    MOV ESI,dword ptr [0x01abb4c4]      ; 00452196 | g_INT_01abb4c4
     CMP ECX,0x20                        ; 0045219c
     JNZ 0x00452343                      ; 0045219f
         ;   XREF to: 00452343 (CONDITIONAL_JUMP)  ; LAB_00452343
@@ -139,7 +139,7 @@ section .text
     CMP EBX,EDI                         ; 004521fa
     JL 0x004521c3                       ; 004521fc
         ;   XREF to: 004521c3 (CONDITIONAL_JUMP)  ; LAB_004521c3
-    MOV dword ptr [0x01abb4c4],ESI      ; 004521fe | DAT_01abb4c4
+    MOV dword ptr [0x01abb4c4],ESI      ; 004521fe | g_INT_01abb4c4
         ;   Label: LAB_004521fe
     ADD ESP,0x34                        ; 00452204
     POP EBP                             ; 00452207
@@ -181,7 +181,7 @@ section .text
     JZ 0x004522f4                       ; 0045226a
         ;   XREF to: 004522f4 (CONDITIONAL_JUMP)  ; LAB_004522f4
     SHR EBX,0x6                         ; 00452270
-    MOV EAX,dword ptr [ESI*0x4 + 0x1abb4c8] ; 00452273 | DAT_01abb4c8 | DAT_01abb4cc
+    MOV EAX,dword ptr [ESI*0x4 + 0x1abb4c8] ; 00452273 | g_INT_ARRAY_01abb4c8 | g_INT_ARRAY_01abb4c8[1]
     INC ESI                             ; 0045227a
     ADD EBX,EAX                         ; 0045227b
     CMP ESI,0x64                        ; 0045227d
@@ -333,7 +333,7 @@ section .text
     JZ 0x004524be                       ; 004523ff
         ;   XREF to: 004524be (CONDITIONAL_JUMP)  ; LAB_004524be
     SHR EBX,0x6                         ; 00452405
-    MOV EAX,dword ptr [ESI*0x4 + 0x1abb4c8] ; 00452408 | DAT_01abb4c8 | DAT_01abb4cc
+    MOV EAX,dword ptr [ESI*0x4 + 0x1abb4c8] ; 00452408 | g_INT_ARRAY_01abb4c8 | g_INT_ARRAY_01abb4c8[1]
     INC ESI                             ; 0045240f
     ADD EBX,EAX                         ; 00452410
     CMP ESI,0x64                        ; 00452412

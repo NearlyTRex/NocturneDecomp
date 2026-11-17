@@ -13,7 +13,7 @@
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2ac = 005bce04
 ;   uint g_UINT_0061f480 = 0x14
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -44,7 +44,7 @@ section .text
     POP ESI                             ; 005bf271
     POP EBX                             ; 005bf272
     RET                                 ; 005bf273
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005bf274 | DAT_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005bf274 | g_SIOControlBlock_PTR_0061f4d8
         ;   Label: LAB_005bf274
     PUSH EBX                            ; 005bf27a
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005bf27b

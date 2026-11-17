@@ -50,7 +50,7 @@ section .text
     MOV EBP,ESP                         ; 0044a154
     SUB ESP,0x1c                        ; 0044a156
     AND ESP,0xfffffff8                  ; 0044a159
-    MOV dword ptr [0x014b848c],0x3      ; 0044a15c | DAT_014b848c
+    MOV dword ptr [0x014b848c],0x3      ; 0044a15c | g_INT_014b848c
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044a166
     MOV EDX,dword ptr [EDX]             ; 0044a169
     CMP EDX,0x14b8490                   ; 0044a16b
@@ -82,7 +82,7 @@ section .text
     FSTP float ptr [0x014b84a8]         ; 0044a1bf | g_CVector3f_ARRAY_014b8490[2].x
     MOV EDI,0xffffffff                  ; 0044a1c5
         ;   Label: LAB_0044a1c5
-    MOV ESI,dword ptr [0x014b848c]      ; 0044a1ca | DAT_014b848c
+    MOV ESI,dword ptr [0x014b848c]      ; 0044a1ca | g_INT_014b848c
     XOR ECX,ECX                         ; 0044a1d0
     XOR EBX,EBX                         ; 0044a1d2
     MOV dword ptr [ESP + 0x10],ECX      ; 0044a1d4
@@ -152,7 +152,7 @@ section .text
     INC EBX                             ; 0044a254
     AND EDI,EDX                         ; 0044a255
     OR EAX,EDX                          ; 0044a257
-    MOV EDX,dword ptr [0x014b848c]      ; 0044a259 | DAT_014b848c
+    MOV EDX,dword ptr [0x014b848c]      ; 0044a259 | g_INT_014b848c
     MOV dword ptr [ESP + 0x10],EAX      ; 0044a25f
     CMP EBX,EDX                         ; 0044a263
     JL 0x0044a1e5                       ; 0044a265
@@ -164,7 +164,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0044a276
     MOV ESI,0x3                         ; 0044a279
     MOV EDX,dword ptr [EDX]             ; 0044a27e
-    MOV dword ptr [0x014b8924],ESI      ; 0044a280 | DAT_014b8924
+    MOV dword ptr [0x014b8924],ESI      ; 0044a280 | g_INT_014b8924
     CMP EDX,0x14b8928                   ; 0044a286
     JZ 0x0044a2a7                       ; 0044a28c
         ;   XREF to: 0044a2a7 (CONDITIONAL_JUMP)  ; LAB_0044a2a7
@@ -221,13 +221,13 @@ section .text
     JNZ 0x0044a72b                      ; 0044a323
         ;   XREF to: 0044a72b (CONDITIONAL_JUMP)  ; LAB_0044a72b
     MOV EDX,dword ptr [EBP + 0x1c]      ; 0044a329
-    MOV EBX,dword ptr [0x014b848c]      ; 0044a32c | DAT_014b848c
-    MOV dword ptr [0x014b8614],EDI      ; 0044a332 | DAT_014b8614
-    MOV dword ptr [0x014b86d8],EDI      ; 0044a338 | DAT_014b86d8
-    MOV dword ptr [0x014b879c],EDI      ; 0044a33e | DAT_014b879c
-    MOV dword ptr [0x014b8860],EDI      ; 0044a344 | DAT_014b8860
-    MOV dword ptr [0x014b8924],EDI      ; 0044a34a | DAT_014b8924
-    MOV dword ptr [0x014b8550],EDI      ; 0044a350 | DAT_014b8550
+    MOV EBX,dword ptr [0x014b848c]      ; 0044a32c | g_INT_014b848c
+    MOV dword ptr [0x014b8614],EDI      ; 0044a332 | g_INT_014b8614
+    MOV dword ptr [0x014b86d8],EDI      ; 0044a338 | g_INT_014b86d8
+    MOV dword ptr [0x014b879c],EDI      ; 0044a33e | g_INT_014b879c
+    MOV dword ptr [0x014b8860],EDI      ; 0044a344 | g_INT_014b8860
+    MOV dword ptr [0x014b8924],EDI      ; 0044a34a | g_INT_014b8924
+    MOV dword ptr [0x014b8550],EDI      ; 0044a350 | g_INT_014b8550
     MOV EDX,dword ptr [EDX + 0x4]       ; 0044a356
     XOR ESI,ESI                         ; 0044a359
     MOV dword ptr [ESP + 0x14],EDX      ; 0044a35b
@@ -235,7 +235,7 @@ section .text
     JLE 0x0044a3ea                      ; 0044a361
         ;   XREF to: 0044a3ea (CONDITIONAL_JUMP)  ; LAB_0044a3ea
     MOV EBX,0x14b8490                   ; 0044a367
-    MOV EDI,dword ptr [0x014b848c]      ; 0044a36c | DAT_014b848c
+    MOV EDI,dword ptr [0x014b848c]      ; 0044a36c | g_INT_014b848c
         ;   Label: LAB_0044a36c
     LEA ECX,[ESI + 0x1]                 ; 0044a372
     CMP ECX,EDI                         ; 0044a375
@@ -269,7 +269,7 @@ section .text
         ;   XREF to: 0044a3dc (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a0e8]  ; 0044a3ae | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a3b5 | DAT_014b8550
+    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a3b5 | g_INT_014b8550
         ;   Label: caseD_0
     ADD ECX,0x14b8554                   ; 0044a3bc
     CMP ECX,EDX                         ; 0044a3c2
@@ -281,16 +281,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a3cd | g_CVector3f_ARRAY_014b8554[0].y | g_CVector3f_ARRAY_014b87a0[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a3d0 | g_CVector3f_ARRAY_014b8490[0].z | g_CVector3f_ARRAY_014b8490[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a3d3 | g_CVector3f_ARRAY_014b8554[0].z | g_CVector3f_ARRAY_014b87a0[14].z
-    INC dword ptr [0x014b8550]          ; 0044a3d6 | DAT_014b8550
+    INC dword ptr [0x014b8550]          ; 0044a3d6 | g_INT_014b8550
         ;   Label: LAB_0044a3d6
-    MOV EDI,dword ptr [0x014b848c]      ; 0044a3dc | DAT_014b848c
+    MOV EDI,dword ptr [0x014b848c]      ; 0044a3dc | g_INT_014b848c
         ;   Label: caseD_3
     INC ESI                             ; 0044a3e2
     ADD EBX,0xc                         ; 0044a3e3
     CMP ESI,EDI                         ; 0044a3e6
     JL 0x0044a36c                       ; 0044a3e8
         ;   XREF to: 0044a36c (CONDITIONAL_JUMP)  ; LAB_0044a36c
-    MOV EAX,[0x014b8550]                ; 0044a3ea | DAT_014b8550
+    MOV EAX,[0x014b8550]                ; 0044a3ea | g_INT_014b8550
         ;   Label: LAB_0044a3ea
     CMP EAX,0x3                         ; 0044a3ef
     JL 0x0044a72b                       ; 0044a3f2
@@ -303,7 +303,7 @@ section .text
     JLE 0x0044a48c                      ; 0044a405
         ;   XREF to: 0044a48c (CONDITIONAL_JUMP)  ; LAB_0044a48c
     MOV EBX,0x14b8554                   ; 0044a40b
-    MOV EDI,dword ptr [0x014b8550]      ; 0044a410 | DAT_014b8550
+    MOV EDI,dword ptr [0x014b8550]      ; 0044a410 | g_INT_014b8550
         ;   Label: LAB_0044a410
     LEA ECX,[ESI + 0x1]                 ; 0044a416
     CMP ECX,EDI                         ; 0044a419
@@ -337,7 +337,7 @@ section .text
         ;   XREF to: 0044a47e (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a0f8]  ; 0044a450 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a457 | DAT_014b8614
+    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a457 | g_INT_014b8614
         ;   Label: caseD_0
     ADD ECX,0x14b8618                   ; 0044a45e
     CMP ECX,EDX                         ; 0044a464
@@ -349,16 +349,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a46f | g_CVector3f_ARRAY_014b8618[0].y | g_CVector3f_ARRAY_014b8864[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a472 | g_CVector3f_ARRAY_014b8554[0].z | g_CVector3f_ARRAY_014b8554[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a475 | g_CVector3f_ARRAY_014b8618[0].z | g_CVector3f_ARRAY_014b8864[14].z
-    INC dword ptr [0x014b8614]          ; 0044a478 | DAT_014b8614
+    INC dword ptr [0x014b8614]          ; 0044a478 | g_INT_014b8614
         ;   Label: LAB_0044a478
-    MOV EDX,dword ptr [0x014b8550]      ; 0044a47e | DAT_014b8550
+    MOV EDX,dword ptr [0x014b8550]      ; 0044a47e | g_INT_014b8550
         ;   Label: caseD_3
     INC ESI                             ; 0044a484
     ADD EBX,0xc                         ; 0044a485
     CMP ESI,EDX                         ; 0044a488
     JL 0x0044a410                       ; 0044a48a
         ;   XREF to: 0044a410 (CONDITIONAL_JUMP)  ; LAB_0044a410
-    MOV ECX,dword ptr [0x014b8614]      ; 0044a48c | DAT_014b8614
+    MOV ECX,dword ptr [0x014b8614]      ; 0044a48c | g_INT_014b8614
         ;   Label: LAB_0044a48c
     CMP ECX,0x3                         ; 0044a492
     JL 0x0044a72b                       ; 0044a495
@@ -371,7 +371,7 @@ section .text
     JLE 0x0044a52f                      ; 0044a4a8
         ;   XREF to: 0044a52f (CONDITIONAL_JUMP)  ; LAB_0044a52f
     MOV ESI,0x14b8618                   ; 0044a4ae
-    MOV EDI,dword ptr [0x014b8614]      ; 0044a4b3 | DAT_014b8614
+    MOV EDI,dword ptr [0x014b8614]      ; 0044a4b3 | g_INT_014b8614
         ;   Label: LAB_0044a4b3
     LEA ECX,[EBX + 0x1]                 ; 0044a4b9
     CMP ECX,EDI                         ; 0044a4bc
@@ -405,7 +405,7 @@ section .text
         ;   XREF to: 0044a521 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a108]  ; 0044a4f3 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a4fa | DAT_014b86d8
+    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a4fa | g_INT_014b86d8
         ;   Label: caseD_0
     ADD ECX,0x14b86dc                   ; 0044a501
     CMP ECX,EDX                         ; 0044a507
@@ -417,16 +417,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a512 | g_CVector3f_ARRAY_014b86dc[0].y | g_CVector3f_ARRAY_014b8928[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a515 | g_CVector3f_ARRAY_014b8618[0].z | g_CVector3f_ARRAY_014b8618[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a518 | g_CVector3f_ARRAY_014b86dc[0].z | g_CVector3f_ARRAY_014b8928[14].z
-    INC dword ptr [0x014b86d8]          ; 0044a51b | DAT_014b86d8
+    INC dword ptr [0x014b86d8]          ; 0044a51b | g_INT_014b86d8
         ;   Label: LAB_0044a51b
-    MOV EDX,dword ptr [0x014b8614]      ; 0044a521 | DAT_014b8614
+    MOV EDX,dword ptr [0x014b8614]      ; 0044a521 | g_INT_014b8614
         ;   Label: caseD_3
     INC EBX                             ; 0044a527
     ADD ESI,0xc                         ; 0044a528
     CMP EBX,EDX                         ; 0044a52b
     JL 0x0044a4b3                       ; 0044a52d
         ;   XREF to: 0044a4b3 (CONDITIONAL_JUMP)  ; LAB_0044a4b3
-    MOV ECX,dword ptr [0x014b86d8]      ; 0044a52f | DAT_014b86d8
+    MOV ECX,dword ptr [0x014b86d8]      ; 0044a52f | g_INT_014b86d8
         ;   Label: LAB_0044a52f
     CMP ECX,0x3                         ; 0044a535
     JL 0x0044a72b                       ; 0044a538
@@ -439,7 +439,7 @@ section .text
     JLE 0x0044a5d2                      ; 0044a54b
         ;   XREF to: 0044a5d2 (CONDITIONAL_JUMP)  ; LAB_0044a5d2
     MOV ESI,0x14b86dc                   ; 0044a551
-    MOV EDI,dword ptr [0x014b86d8]      ; 0044a556 | DAT_014b86d8
+    MOV EDI,dword ptr [0x014b86d8]      ; 0044a556 | g_INT_014b86d8
         ;   Label: LAB_0044a556
     LEA ECX,[EBX + 0x1]                 ; 0044a55c
     CMP ECX,EDI                         ; 0044a55f
@@ -473,7 +473,7 @@ section .text
         ;   XREF to: 0044a5c4 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a118]  ; 0044a596 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a59d | DAT_014b879c
+    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a59d | g_INT_014b879c
         ;   Label: caseD_0
     ADD ECX,0x14b87a0                   ; 0044a5a4
     CMP ECX,EDX                         ; 0044a5aa
@@ -485,16 +485,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a5b5 | g_CVector3f_ARRAY_014b87a0[0].y | g_CDemonFilter_ARRAY_014b8a58[0].name[56]
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a5b8 | g_CVector3f_ARRAY_014b86dc[0].z | g_CVector3f_ARRAY_014b86dc[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a5bb | g_CVector3f_ARRAY_014b87a0[0].z | g_CDemonFilter_ARRAY_014b8a58[0].name[60]
-    INC dword ptr [0x014b879c]          ; 0044a5be | DAT_014b879c
+    INC dword ptr [0x014b879c]          ; 0044a5be | g_INT_014b879c
         ;   Label: LAB_0044a5be
-    MOV EDX,dword ptr [0x014b86d8]      ; 0044a5c4 | DAT_014b86d8
+    MOV EDX,dword ptr [0x014b86d8]      ; 0044a5c4 | g_INT_014b86d8
         ;   Label: caseD_3
     INC EBX                             ; 0044a5ca
     ADD ESI,0xc                         ; 0044a5cb
     CMP EBX,EDX                         ; 0044a5ce
     JL 0x0044a556                       ; 0044a5d0
         ;   XREF to: 0044a556 (CONDITIONAL_JUMP)  ; LAB_0044a556
-    MOV ECX,dword ptr [0x014b879c]      ; 0044a5d2 | DAT_014b879c
+    MOV ECX,dword ptr [0x014b879c]      ; 0044a5d2 | g_INT_014b879c
         ;   Label: LAB_0044a5d2
     CMP ECX,0x3                         ; 0044a5d8
     JL 0x0044a72b                       ; 0044a5db
@@ -507,7 +507,7 @@ section .text
     JLE 0x0044a678                      ; 0044a5ef
         ;   XREF to: 0044a678 (CONDITIONAL_JUMP)  ; LAB_0044a678
     MOV ESI,0x14b87a0                   ; 0044a5f5
-    MOV EDI,dword ptr [0x014b879c]      ; 0044a5fa | DAT_014b879c
+    MOV EDI,dword ptr [0x014b879c]      ; 0044a5fa | g_INT_014b879c
         ;   Label: LAB_0044a5fa
     LEA ECX,[EBX + 0x1]                 ; 0044a600
     CMP ECX,EDI                         ; 0044a603
@@ -541,7 +541,7 @@ section .text
         ;   XREF to: 0044a66a (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a128]  ; 0044a63c | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044a643 | DAT_014b8860
+    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044a643 | g_INT_014b8860
         ;   Label: caseD_0
     ADD ECX,0x14b8864                   ; 0044a64a
     CMP ECX,EDX                         ; 0044a650
@@ -553,16 +553,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a65b | g_CVector3f_ARRAY_014b8864[0].y | g_CDemonFilter_ARRAY_014b8a58[3].name[24]
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a65e | g_CVector3f_ARRAY_014b87a0[0].z | g_CVector3f_ARRAY_014b87a0[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a661 | g_CVector3f_ARRAY_014b8864[0].z | g_CDemonFilter_ARRAY_014b8a58[3].name[28]
-    INC dword ptr [0x014b8860]          ; 0044a664 | DAT_014b8860
+    INC dword ptr [0x014b8860]          ; 0044a664 | g_INT_014b8860
         ;   Label: LAB_0044a664
-    MOV EDX,dword ptr [0x014b879c]      ; 0044a66a | DAT_014b879c
+    MOV EDX,dword ptr [0x014b879c]      ; 0044a66a | g_INT_014b879c
         ;   Label: caseD_3
     INC EBX                             ; 0044a670
     ADD ESI,0xc                         ; 0044a671
     CMP EBX,EDX                         ; 0044a674
     JL 0x0044a5fa                       ; 0044a676
         ;   XREF to: 0044a5fa (CONDITIONAL_JUMP)  ; LAB_0044a5fa
-    MOV ECX,dword ptr [0x014b8860]      ; 0044a678 | DAT_014b8860
+    MOV ECX,dword ptr [0x014b8860]      ; 0044a678 | g_INT_014b8860
         ;   Label: LAB_0044a678
     CMP ECX,0x3                         ; 0044a67e
     JL 0x0044a72b                       ; 0044a681
@@ -575,7 +575,7 @@ section .text
     JLE 0x0044a71e                      ; 0044a695
         ;   XREF to: 0044a71e (CONDITIONAL_JUMP)  ; LAB_0044a71e
     MOV EBX,0x14b8864                   ; 0044a69b
-    MOV EDI,dword ptr [0x014b8860]      ; 0044a6a0 | DAT_014b8860
+    MOV EDI,dword ptr [0x014b8860]      ; 0044a6a0 | g_INT_014b8860
         ;   Label: LAB_0044a6a0
     LEA ECX,[ESI + 0x1]                 ; 0044a6a6
     CMP ECX,EDI                         ; 0044a6a9
@@ -609,7 +609,7 @@ section .text
         ;   XREF to: 0044a710 (CONDITIONAL_JUMP)  ; caseD_3
     JMP dword ptr [ECX*0x4 + 0x44a138]  ; 0044a6e2 | caseD_0 | caseD_1 | caseD_2
         ;   Label: switchD
-    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044a6e9 | DAT_014b8924
+    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044a6e9 | g_INT_014b8924
         ;   Label: caseD_0
     ADD ECX,0x14b8928                   ; 0044a6f0
     CMP ECX,EDX                         ; 0044a6f6
@@ -621,16 +621,16 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a701 | g_CDemonFilter_ARRAY_014b8a58[6].size
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a704 | g_CVector3f_ARRAY_014b8864[0].z | g_CVector3f_ARRAY_014b8864[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a707 | g_CDemonFilter_ARRAY_014b8a58[6].count
-    INC dword ptr [0x014b8924]          ; 0044a70a | DAT_014b8924
+    INC dword ptr [0x014b8924]          ; 0044a70a | g_INT_014b8924
         ;   Label: LAB_0044a70a
-    MOV EDX,dword ptr [0x014b8860]      ; 0044a710 | DAT_014b8860
+    MOV EDX,dword ptr [0x014b8860]      ; 0044a710 | g_INT_014b8860
         ;   Label: caseD_3
     INC ESI                             ; 0044a716
     ADD EBX,0xc                         ; 0044a717
     CMP ESI,EDX                         ; 0044a71a
     JL 0x0044a6a0                       ; 0044a71c
         ;   XREF to: 0044a6a0 (CONDITIONAL_JUMP)  ; LAB_0044a6a0
-    CMP dword ptr [0x014b8924],0x3      ; 0044a71e | DAT_014b8924
+    CMP dword ptr [0x014b8924],0x3      ; 0044a71e | g_INT_014b8924
         ;   Label: LAB_0044a71e
     JGE 0x0044a2f5                      ; 0044a725
         ;   XREF to: 0044a2f5 (CONDITIONAL_JUMP)  ; LAB_0044a2f5
@@ -643,7 +643,7 @@ section .text
     POP ESI                             ; 0044a733
     POP EBX                             ; 0044a734
     RET                                 ; 0044a735
-    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a736 | DAT_014b8550
+    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a736 | g_INT_014b8550
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x14]          ; 0044a73d
     SUB ESP,0x8                         ; 0044a741
@@ -661,13 +661,13 @@ section .text
     PUSH EDI                            ; 0044a760 | g_CVector3f_ARRAY_014b8490[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a761
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8550]      ; 0044a766 | DAT_014b8550
+    MOV EDX,dword ptr [0x014b8550]      ; 0044a766 | g_INT_014b8550
     INC EDX                             ; 0044a76c
     ADD ESP,0x2c                        ; 0044a76d
-    MOV dword ptr [0x014b8550],EDX      ; 0044a770 | DAT_014b8550
+    MOV dword ptr [0x014b8550],EDX      ; 0044a770 | g_INT_014b8550
     JMP 0x0044a3dc                      ; 0044a776
         ;   XREF to: 0044a3dc (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a77b | DAT_014b8550
+    IMUL ECX,dword ptr [0x014b8550],0xc ; 0044a77b | g_INT_014b8550
         ;   Label: caseD_2
     ADD ECX,0x14b8554                   ; 0044a782
     CMP ECX,EDX                         ; 0044a788
@@ -679,10 +679,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a793 | g_CVector3f_ARRAY_014b8554[0].y | g_CVector3f_ARRAY_014b87a0[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a796 | g_CVector3f_ARRAY_014b8490[1].z | g_CVector3f_ARRAY_014b8490[0].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a799 | g_CVector3f_ARRAY_014b8554[0].z | g_CVector3f_ARRAY_014b87a0[14].z
-    MOV ECX,dword ptr [0x014b8550]      ; 0044a79c | DAT_014b8550
+    MOV ECX,dword ptr [0x014b8550]      ; 0044a79c | g_INT_014b8550
         ;   Label: LAB_0044a79c
     INC ECX                             ; 0044a7a2
-    MOV dword ptr [0x014b8550],ECX      ; 0044a7a3 | DAT_014b8550
+    MOV dword ptr [0x014b8550],ECX      ; 0044a7a3 | g_INT_014b8550
     IMUL ECX,ECX,0xc                    ; 0044a7a9
     FLD float ptr [ESP + 0x14]          ; 0044a7ac
     SUB ESP,0x8                         ; 0044a7b0
@@ -700,13 +700,13 @@ section .text
     PUSH EDX                            ; 0044a7cf | g_CVector3f_ARRAY_014b8490[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a7d0
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8550]      ; 0044a7d5 | DAT_014b8550
+    MOV EDX,dword ptr [0x014b8550]      ; 0044a7d5 | g_INT_014b8550
     INC EDX                             ; 0044a7db
     ADD ESP,0x2c                        ; 0044a7dc
-    MOV dword ptr [0x014b8550],EDX      ; 0044a7df | DAT_014b8550
+    MOV dword ptr [0x014b8550],EDX      ; 0044a7df | g_INT_014b8550
     JMP 0x0044a3dc                      ; 0044a7e5
         ;   XREF to: 0044a3dc (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a7ea | DAT_014b8614
+    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a7ea | g_INT_014b8614
         ;   Label: caseD_1
     FLD float ptr [ESP]                 ; 0044a7f1
     SUB ESP,0x8                         ; 0044a7f4
@@ -723,13 +723,13 @@ section .text
     PUSH EDI                            ; 0044a811 | g_CVector3f_ARRAY_014b8864[1].z
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a812
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8614]      ; 0044a817 | DAT_014b8614
+    MOV EDX,dword ptr [0x014b8614]      ; 0044a817 | g_INT_014b8614
     INC EDX                             ; 0044a81d
     ADD ESP,0x2c                        ; 0044a81e
-    MOV dword ptr [0x014b8614],EDX      ; 0044a821 | DAT_014b8614
+    MOV dword ptr [0x014b8614],EDX      ; 0044a821 | g_INT_014b8614
     JMP 0x0044a47e                      ; 0044a827
         ;   XREF to: 0044a47e (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a82c | DAT_014b8614
+    IMUL ECX,dword ptr [0x014b8614],0xc ; 0044a82c | g_INT_014b8614
         ;   Label: caseD_2
     ADD ECX,0x14b8618                   ; 0044a833
     CMP ECX,EDX                         ; 0044a839
@@ -741,10 +741,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a844 | g_CVector3f_ARRAY_014b8618[0].y | g_CVector3f_ARRAY_014b8864[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a847 | g_CVector3f_ARRAY_014b8554[0].z | g_CVector3f_ARRAY_014b8554[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a84a | g_CVector3f_ARRAY_014b8618[0].z | g_CVector3f_ARRAY_014b8864[14].z
-    MOV ECX,dword ptr [0x014b8614]      ; 0044a84d | DAT_014b8614
+    MOV ECX,dword ptr [0x014b8614]      ; 0044a84d | g_INT_014b8614
         ;   Label: LAB_0044a84d
     INC ECX                             ; 0044a853
-    MOV dword ptr [0x014b8614],ECX      ; 0044a854 | DAT_014b8614
+    MOV dword ptr [0x014b8614],ECX      ; 0044a854 | g_INT_014b8614
     IMUL ECX,ECX,0xc                    ; 0044a85a
     FLD float ptr [ESP]                 ; 0044a85d
     SUB ESP,0x8                         ; 0044a860
@@ -761,13 +761,13 @@ section .text
     PUSH EDX                            ; 0044a87d | g_CVector3f_ARRAY_014b8554 | g_CVector3f_ARRAY_014b8554[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a87e
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8614]      ; 0044a883 | DAT_014b8614
+    MOV EDX,dword ptr [0x014b8614]      ; 0044a883 | g_INT_014b8614
     INC EDX                             ; 0044a889
     ADD ESP,0x2c                        ; 0044a88a
-    MOV dword ptr [0x014b8614],EDX      ; 0044a88d | DAT_014b8614
+    MOV dword ptr [0x014b8614],EDX      ; 0044a88d | g_INT_014b8614
     JMP 0x0044a47e                      ; 0044a893
         ;   XREF to: 0044a47e (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a898 | DAT_014b86d8
+    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a898 | g_INT_014b86d8
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x18]          ; 0044a89f
     SUB ESP,0x8                         ; 0044a8a3
@@ -785,13 +785,13 @@ section .text
     PUSH EDI                            ; 0044a8c2 | g_CVector3f_ARRAY_014b8928[1].z
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a8c3
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b86d8]      ; 0044a8c8 | DAT_014b86d8
+    MOV EDX,dword ptr [0x014b86d8]      ; 0044a8c8 | g_INT_014b86d8
     INC EDX                             ; 0044a8ce
     ADD ESP,0x2c                        ; 0044a8cf
-    MOV dword ptr [0x014b86d8],EDX      ; 0044a8d2 | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],EDX      ; 0044a8d2 | g_INT_014b86d8
     JMP 0x0044a521                      ; 0044a8d8
         ;   XREF to: 0044a521 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a8dd | DAT_014b86d8
+    IMUL ECX,dword ptr [0x014b86d8],0xc ; 0044a8dd | g_INT_014b86d8
         ;   Label: caseD_2
     ADD ECX,0x14b86dc                   ; 0044a8e4
     CMP ECX,EDX                         ; 0044a8ea
@@ -803,10 +803,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a8f5 | g_CVector3f_ARRAY_014b86dc[0].y | g_CVector3f_ARRAY_014b8928[14].y
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a8f8 | g_CVector3f_ARRAY_014b8618[0].z | g_CVector3f_ARRAY_014b8618[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a8fb | g_CVector3f_ARRAY_014b86dc[0].z | g_CVector3f_ARRAY_014b8928[14].z
-    MOV ECX,dword ptr [0x014b86d8]      ; 0044a8fe | DAT_014b86d8
+    MOV ECX,dword ptr [0x014b86d8]      ; 0044a8fe | g_INT_014b86d8
         ;   Label: LAB_0044a8fe
     INC ECX                             ; 0044a904
-    MOV dword ptr [0x014b86d8],ECX      ; 0044a905 | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],ECX      ; 0044a905 | g_INT_014b86d8
     IMUL ECX,ECX,0xc                    ; 0044a90b
     FLD float ptr [ESP + 0x18]          ; 0044a90e
     SUB ESP,0x8                         ; 0044a912
@@ -824,13 +824,13 @@ section .text
     PUSH EDX                            ; 0044a931 | g_CVector3f_ARRAY_014b8618 | g_CVector3f_ARRAY_014b8618[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a932
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b86d8]      ; 0044a937 | DAT_014b86d8
+    MOV EDX,dword ptr [0x014b86d8]      ; 0044a937 | g_INT_014b86d8
     INC EDX                             ; 0044a93d
     ADD ESP,0x2c                        ; 0044a93e
-    MOV dword ptr [0x014b86d8],EDX      ; 0044a941 | DAT_014b86d8
+    MOV dword ptr [0x014b86d8],EDX      ; 0044a941 | g_INT_014b86d8
     JMP 0x0044a521                      ; 0044a947
         ;   XREF to: 0044a521 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a94c | DAT_014b879c
+    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a94c | g_INT_014b879c
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x4]           ; 0044a953
     SUB ESP,0x8                         ; 0044a957
@@ -844,16 +844,16 @@ section .text
     ADD ECX,0x14b87a0                   ; 0044a96c
     PUSH ECX                            ; 0044a972 | g_CDemonFilter_ARRAY_014b8a58[0].name[52]
     PUSH EDX                            ; 0044a973 | g_CVector3f_ARRAY_014b86dc | g_CVector3f_ARRAY_014b86dc[1].x
-    PUSH EDI                            ; 0044a974 | DAT_014b8a00
+    PUSH EDI                            ; 0044a974 | g_FLOAT_014b8a00
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a975
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b879c]      ; 0044a97a | DAT_014b879c
+    MOV EDX,dword ptr [0x014b879c]      ; 0044a97a | g_INT_014b879c
     INC EDX                             ; 0044a980
     ADD ESP,0x2c                        ; 0044a981
-    MOV dword ptr [0x014b879c],EDX      ; 0044a984 | DAT_014b879c
+    MOV dword ptr [0x014b879c],EDX      ; 0044a984 | g_INT_014b879c
     JMP 0x0044a5c4                      ; 0044a98a
         ;   XREF to: 0044a5c4 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a98f | DAT_014b879c
+    IMUL ECX,dword ptr [0x014b879c],0xc ; 0044a98f | g_INT_014b879c
         ;   Label: caseD_2
     ADD ECX,0x14b87a0                   ; 0044a996
     CMP ECX,EDX                         ; 0044a99c
@@ -865,10 +865,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044a9a7 | g_CVector3f_ARRAY_014b87a0[0].y | g_CDemonFilter_ARRAY_014b8a58[0].name[56]
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044a9aa | g_CVector3f_ARRAY_014b86dc[0].z | g_CVector3f_ARRAY_014b86dc[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044a9ad | g_CVector3f_ARRAY_014b87a0[0].z | g_CDemonFilter_ARRAY_014b8a58[0].name[60]
-    MOV ECX,dword ptr [0x014b879c]      ; 0044a9b0 | DAT_014b879c
+    MOV ECX,dword ptr [0x014b879c]      ; 0044a9b0 | g_INT_014b879c
         ;   Label: LAB_0044a9b0
     INC ECX                             ; 0044a9b6
-    MOV dword ptr [0x014b879c],ECX      ; 0044a9b7 | DAT_014b879c
+    MOV dword ptr [0x014b879c],ECX      ; 0044a9b7 | g_INT_014b879c
     IMUL ECX,ECX,0xc                    ; 0044a9bd
     FLD float ptr [ESP + 0x4]           ; 0044a9c0
     SUB ESP,0x8                         ; 0044a9c4
@@ -881,17 +881,17 @@ section .text
     PUSH 0x0                            ; 0044a9d7
     ADD ECX,0x14b87a0                   ; 0044a9d9
     PUSH ECX                            ; 0044a9df
-    PUSH EDI                            ; 0044a9e0 | DAT_014b8a00
+    PUSH EDI                            ; 0044a9e0 | g_FLOAT_014b8a00
     PUSH EDX                            ; 0044a9e1 | g_CVector3f_ARRAY_014b86dc | g_CVector3f_ARRAY_014b86dc[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044a9e2
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b879c]      ; 0044a9e7 | DAT_014b879c
+    MOV EDX,dword ptr [0x014b879c]      ; 0044a9e7 | g_INT_014b879c
     INC EDX                             ; 0044a9ed
     ADD ESP,0x2c                        ; 0044a9ee
-    MOV dword ptr [0x014b879c],EDX      ; 0044a9f1 | DAT_014b879c
+    MOV dword ptr [0x014b879c],EDX      ; 0044a9f1 | g_INT_014b879c
     JMP 0x0044a5c4                      ; 0044a9f7
         ;   XREF to: 0044a5c4 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044a9fc | DAT_014b8860
+    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044a9fc | g_INT_014b8860
         ;   Label: caseD_1
     FLD float ptr [ESP + 0x8]           ; 0044aa03
     SUB ESP,0x8                         ; 0044aa07
@@ -908,13 +908,13 @@ section .text
     PUSH EDI                            ; 0044aa24
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044aa25
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8860]      ; 0044aa2a | DAT_014b8860
+    MOV EDX,dword ptr [0x014b8860]      ; 0044aa2a | g_INT_014b8860
     INC EDX                             ; 0044aa30
     ADD ESP,0x2c                        ; 0044aa31
-    MOV dword ptr [0x014b8860],EDX      ; 0044aa34 | DAT_014b8860
+    MOV dword ptr [0x014b8860],EDX      ; 0044aa34 | g_INT_014b8860
     JMP 0x0044a66a                      ; 0044aa3a
         ;   XREF to: 0044a66a (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044aa3f | DAT_014b8860
+    IMUL ECX,dword ptr [0x014b8860],0xc ; 0044aa3f | g_INT_014b8860
         ;   Label: caseD_2
     ADD ECX,0x14b8864                   ; 0044aa46
     CMP ECX,EDX                         ; 0044aa4c
@@ -926,10 +926,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044aa57 | g_CVector3f_ARRAY_014b8864[0].y | g_CDemonFilter_ARRAY_014b8a58[3].name[24]
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044aa5a | g_CVector3f_ARRAY_014b87a0[0].z | g_CVector3f_ARRAY_014b87a0[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044aa5d | g_CVector3f_ARRAY_014b8864[0].z | g_CDemonFilter_ARRAY_014b8a58[3].name[28]
-    MOV ECX,dword ptr [0x014b8860]      ; 0044aa60 | DAT_014b8860
+    MOV ECX,dword ptr [0x014b8860]      ; 0044aa60 | g_INT_014b8860
         ;   Label: LAB_0044aa60
     INC ECX                             ; 0044aa66
-    MOV dword ptr [0x014b8860],ECX      ; 0044aa67 | DAT_014b8860
+    MOV dword ptr [0x014b8860],ECX      ; 0044aa67 | g_INT_014b8860
     IMUL ECX,ECX,0xc                    ; 0044aa6d
     FLD float ptr [ESP + 0x8]           ; 0044aa70
     SUB ESP,0x8                         ; 0044aa74
@@ -946,13 +946,13 @@ section .text
     PUSH EDX                            ; 0044aa91 | g_CVector3f_ARRAY_014b87a0 | g_CVector3f_ARRAY_014b87a0[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044aa92
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8860]      ; 0044aa97 | DAT_014b8860
+    MOV EDX,dword ptr [0x014b8860]      ; 0044aa97 | g_INT_014b8860
     INC EDX                             ; 0044aa9d
     ADD ESP,0x2c                        ; 0044aa9e
-    MOV dword ptr [0x014b8860],EDX      ; 0044aaa1 | DAT_014b8860
+    MOV dword ptr [0x014b8860],EDX      ; 0044aaa1 | g_INT_014b8860
     JMP 0x0044a66a                      ; 0044aaa7
         ;   XREF to: 0044a66a (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044aaac | DAT_014b8924
+    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044aaac | g_INT_014b8924
         ;   Label: caseD_1
     FLD float ptr [ESP + 0xc]           ; 0044aab3
     SUB ESP,0x8                         ; 0044aab7
@@ -969,13 +969,13 @@ section .text
     PUSH EDI                            ; 0044aad4
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044aad5
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8924]      ; 0044aada | DAT_014b8924
+    MOV EDX,dword ptr [0x014b8924]      ; 0044aada | g_INT_014b8924
     INC EDX                             ; 0044aae0
     ADD ESP,0x2c                        ; 0044aae1
-    MOV dword ptr [0x014b8924],EDX      ; 0044aae4 | DAT_014b8924
+    MOV dword ptr [0x014b8924],EDX      ; 0044aae4 | g_INT_014b8924
     JMP 0x0044a710                      ; 0044aaea
         ;   XREF to: 0044a710 (UNCONDITIONAL_JUMP)  ; caseD_3
-    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044aaef | DAT_014b8924
+    IMUL ECX,dword ptr [0x014b8924],0xc ; 0044aaef | g_INT_014b8924
         ;   Label: caseD_2
     ADD ECX,0x14b8928                   ; 0044aaf6
     CMP ECX,EDX                         ; 0044aafc
@@ -987,10 +987,10 @@ section .text
     MOV dword ptr [ECX + 0x4],EAX       ; 0044ab07 | g_CDemonFilter_ARRAY_014b8a58[6].size
     MOV EAX,dword ptr [EDX + 0x8]       ; 0044ab0a | g_CVector3f_ARRAY_014b8864[0].z | g_CVector3f_ARRAY_014b8864[1].z
     MOV dword ptr [ECX + 0x8],EAX       ; 0044ab0d | g_CDemonFilter_ARRAY_014b8a58[6].count
-    MOV ECX,dword ptr [0x014b8924]      ; 0044ab10 | DAT_014b8924
+    MOV ECX,dword ptr [0x014b8924]      ; 0044ab10 | g_INT_014b8924
         ;   Label: LAB_0044ab10
     INC ECX                             ; 0044ab16
-    MOV dword ptr [0x014b8924],ECX      ; 0044ab17 | DAT_014b8924
+    MOV dword ptr [0x014b8924],ECX      ; 0044ab17 | g_INT_014b8924
     IMUL ECX,ECX,0xc                    ; 0044ab1d
     FLD float ptr [ESP + 0xc]           ; 0044ab20
     SUB ESP,0x8                         ; 0044ab24
@@ -1007,10 +1007,10 @@ section .text
     PUSH EDX                            ; 0044ab41 | g_CVector3f_ARRAY_014b8864 | g_CVector3f_ARRAY_014b8864[1].x
     CALL core_dcube.cpp_clipEdgeToPlane_FUN_004484c0 ; 0044ab42
         ;   XREF to: 004484c0 (UNCONDITIONAL_CALL)  ; void core_dcube.cpp_clipEdgeToPlane_FUN_004484c0(CVector3f * vertex1, CVector3f * vertex2, CVector3f * output_vertex, double plane_nx, ...)
-    MOV EDX,dword ptr [0x014b8924]      ; 0044ab47 | DAT_014b8924
+    MOV EDX,dword ptr [0x014b8924]      ; 0044ab47 | g_INT_014b8924
     INC EDX                             ; 0044ab4d
     ADD ESP,0x2c                        ; 0044ab4e
-    MOV dword ptr [0x014b8924],EDX      ; 0044ab51 | DAT_014b8924
+    MOV dword ptr [0x014b8924],EDX      ; 0044ab51 | g_INT_014b8924
     JMP 0x0044a710                      ; 0044ab57
         ;   XREF to: 0044a710 (UNCONDITIONAL_JUMP)  ; caseD_3
 

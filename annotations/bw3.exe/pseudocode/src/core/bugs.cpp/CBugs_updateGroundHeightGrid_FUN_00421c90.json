@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 270,
-    "complexity_score": 460,
+    "complexity_score": 441,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 28,
+    "pseudocode_lines": 146,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -18,7 +18,7 @@
       "unrolled_memcpy",
       "warning_type_propagation"
     ],
-    "total_lines": 415
+    "total_lines": 416
   },
   "cross_references": [
     {
@@ -90,13 +90,13 @@
     },
     {
       "addr": "007e1a54",
-      "name": "g_FLOAT_ARRAY_007e1a54",
-      "type": "float[12]",
+      "name": "g_FLOAT_ARRAY_ARRAY_007e1a54",
+      "type": "float[12][12]",
       "value": null
     },
     {
       "addr": "007e1a58",
-      "name": "g_FLOAT_ARRAY_007e1a54[1]",
+      "name": "g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]",
       "type": "undefined4",
       "value": null
     },
@@ -581,14 +581,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(float *)((int)pfVar9",
-      "severity": "moderate",
-      "text": "pfVar9 = (float *)((int)pfVar9 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 105,
       "match": "unaff_EBX",
@@ -638,15 +630,15 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(uint *)((int)g_FLOAT_ARRAY_007e1a54",
+      "line": 135,
+      "match": "(uint *)((int)g_FLOAT_ARRAY_ARRAY_007e1a54",
       "severity": "moderate",
-      "text": "*(uint *)(iVar10 + 0x135dc) = *(uint *)((int)g_FLOAT_ARRAY_007e1a54 + iVar8);",
+      "text": "*(uint *)((int)g_FLOAT_ARRAY_ARRAY_007e1a54[0] + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 145,
+      "line": 146,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(int *)(unaff_EBX + 0x1be80) = local_40;",
@@ -654,7 +646,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 146,
+      "line": 147,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(int *)(unaff_EBX + 0x1be84) = iStack_44;",
@@ -666,14 +658,6 @@
       "match": "(int)pfVar7",
       "severity": "moderate",
       "text": "pfVar7 = (float *)((int)pfVar7 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `pfVar9` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 103,
-      "match": "(int)pfVar9",
-      "severity": "moderate",
-      "text": "pfVar9 = (float *)((int)pfVar9 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_truncation"
     },
     {
@@ -729,7 +713,7 @@
       "line": 150,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00421ead: MOVSD.REP ES:EDI,ESI  ; g_FLOAT_ARRAY_007e1a54 | g_FLOAT_ARRAY_007e1a54[1]",
+      "text": "// 00421ead: MOVSD.REP ES:EDI,ESI  ; g_FLOAT_ARRAY_ARRAY_007e1a54 | g_FLOAT_ARRAY_ARRAY_007e1a54[0][1]",
       "type": "unrolled_memcpy"
     }
   ]

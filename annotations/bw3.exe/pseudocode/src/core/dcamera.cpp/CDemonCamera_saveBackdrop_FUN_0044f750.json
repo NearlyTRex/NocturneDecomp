@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 523,
+    "complexity_score": 538,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 218,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "concat_reconstruction",
       "extra_output",
+      "flattened_array_index",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
@@ -254,25 +255,25 @@
     },
     {
       "addr": "0135ead0",
-      "name": "g_CHAR_ARRAY_0135ead0",
-      "type": "char[76797]",
+      "name": "g_SFogImagePlane_0135ead0",
+      "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "0135ead1",
-      "name": "g_CHAR_ARRAY_0135ead0+1",
+      "name": "g_SFogImagePlane_0135ead0.pixels[0][1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ec10",
-      "name": "g_CHAR_ARRAY_0135ead0+0x140",
+      "name": "g_SFogImagePlane_0135ead0.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0135ed50",
-      "name": "g_CHAR_ARRAY_0135ead0+0x280",
+      "name": "g_SFogImagePlane_0135ead0.pixels[2][0]",
       "type": "undefined4",
       "value": null
     },
@@ -824,6 +825,13 @@
       "severity": "moderate",
       "text": "local_5c.file = (_FILE *)((int)&local_5c.file[0xb89]._bufsize + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "'g_SFogImagePlane_0135ead0.pixels[0][iVar8]' indexes row 0 of a multi-dimensional array with a flattened offset (iVar8 is copied from local_38, which is stepped by 0x140): out of bounds past the first row. Split it back into real indices, and take the base from the .asm - the named [0] element is Ghidra's guess and may be an adjacent global (\u00a735).",
+      "line": 168,
+      "severity": "major",
+      "text": "g_SFogImagePlane_0135ead0.pixels[0][iVar8] = (char)iVar3;",
+      "type": "flattened_array_index"
     }
   ]
 }

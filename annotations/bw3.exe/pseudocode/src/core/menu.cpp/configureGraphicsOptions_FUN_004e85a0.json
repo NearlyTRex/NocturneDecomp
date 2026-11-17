@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 815,
-    "complexity_score": 884,
+    "complexity_score": 874,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 74,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 444,
-    "suspect_count": 39,
+    "suspect_count": 38,
     "suspect_types": [
       "dropped_loop_counter",
       "pointer_cast",
@@ -124,26 +124,26 @@
     },
     {
       "addr": "005c73f6",
-      "name": "DAT_005c73f6",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005c73f6",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005c73f7",
-      "name": "DAT_005c73f7",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005c73f6+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c73f8",
-      "name": "DAT_005c73f8",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005c73f6+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c73f9",
-      "name": "s_dx7_dll_005c73f9",
-      "type": "TerminatedCString",
+      "name": "s_tridx7_dll_005c73f6+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -749,14 +749,6 @@
       "severity": "mild",
       "text": "/* WARNING: Removing unreachable block (ram,0x004e8843) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_005c73f6",
-      "severity": "mild",
-      "text": "pcVar6 = &DAT_005c73f6;",
-      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",

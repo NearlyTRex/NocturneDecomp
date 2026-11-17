@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemonCamera *this_ptr,int restore_zbuffer)
 
 {
@@ -15,28 +13,28 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_00440c50(CDemo
   uint uVar2;
   int iVar3;
   int iVar4;
-  uint *puVar5;
+  byte **ppuVar5;
   void **ppvVar6;
   
-  _DAT_0140efa8 = _DAT_0140efa8 + -1;
-  if (_DAT_0140efa8 == 0) {
-    g_BitsPerPixel = _DAT_0140efac;
-    g_UseExternalRenderer = _DAT_0140efb0;
-    puVar5 = (uint *)&DAT_0140efb4;
+  g_INT_0140efa8 = g_INT_0140efa8 + -1;
+  if (g_INT_0140efa8 == 0) {
+    g_BitsPerPixel = g_INT_0140efac;
+    g_UseExternalRenderer = g_INT_0140efb0;
+    ppuVar5 = g_ARRAY_PTR_0140efb4;
     ppvVar6 = g_ScreenBufferArray;
     for (uVar2 = g_WindowHeight & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *ppvVar6 = (void *)*puVar5;
-      puVar5 = puVar5 + 1;
+      *ppvVar6 = *ppuVar5;
+      ppuVar5 = ppuVar5 + 1;
       ppvVar6 = ppvVar6 + 1;
     }
     for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(byte *)ppvVar6 = *(byte *)puVar5;
-      puVar5 = (uint *)((int)puVar5 + 1);
+      *(byte *)ppvVar6 = *(byte *)ppuVar5;
+      ppuVar5 = (byte **)((int)ppuVar5 + 1);
       ppvVar6 = (void **)((int)ppvVar6 + 1);
     }
-    g_RedBitPosition = _DAT_01410274;
-    g_GreenBitPosition = _DAT_01410278;
-    g_BlueBitPosition = _DAT_0141027c;
+    g_RedBitPosition.dword = g_INT_01410274;
+    g_GreenBitPosition.dword = g_INT_01410278;
+    g_BlueBitPosition.dword = g_INT_0141027c;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
       if (0 < (int)this_ptr->max_distance) {

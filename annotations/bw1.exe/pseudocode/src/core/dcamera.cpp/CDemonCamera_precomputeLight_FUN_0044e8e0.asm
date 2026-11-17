@@ -44,7 +44,7 @@
 ;   TerminatedCString s_CDemonCamera_precomputeL_005d76bf
 ;   undefined4 DAT_00857cd8
 ;   int g_INT_00b81ca4
-;   int g_INT_01289ca8
+;   SCoronaLightCache g_SCoronaLightCache_01289ca8
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -86,7 +86,7 @@ section .text
     TEST EAX,EAX                        ; 0044e91d
     JNZ 0x0044e92b                      ; 0044e91f
         ;   XREF to: 0044e92b (CONDITIONAL_JUMP)  ; LAB_0044e92b
-    MOV [0x01289ca8],EAX                ; 0044e921 | g_INT_01289ca8
+    MOV [0x01289ca8],EAX                ; 0044e921 | g_SCoronaLightCache_01289ca8
     MOV [0x00b81ca4],EAX                ; 0044e926 | g_INT_00b81ca4
     MOV ESI,dword ptr [0x00b81ca4]      ; 0044e92b | g_INT_00b81ca4
         ;   Label: LAB_0044e92b

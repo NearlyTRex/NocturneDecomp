@@ -45,10 +45,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004c8010(CBloodSplat *this_ptr
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
             (g_CDemonRenderer_PTR_0060b280,&this_ptr->position);
   if (this_ptr->is_wall_splat == 1) {
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.A.i = 0;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.C.i = 0xffff;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.B.i = 0;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.D.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.A.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.C.i = 0xffff;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.B.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.D.i = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (g_CDemonRenderer_PTR_0060b280,
                g_SMRGLTextureBasic_ARRAY_00616868 + this_ptr->texture_variant * 0x10 + local_18);
@@ -90,10 +90,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004c8010(CBloodSplat *this_ptr
     if (expire_flag != 0) {
       this_ptr->expired = 1;
     }
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.B.i = 0xffff;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.A.i = 0;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.C.i = 0;
-    g_SMRGLHeaderPrimitive_01cb8288.surface_normal.D.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.B.i = 0xffff;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.A.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.C.i = 0;
+    g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.D.i = 0;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
               (g_CDemonRenderer_PTR_0060b280,
                g_SMRGLTextureBasic_ARRAY_00616808 + this_ptr->texture_variant);
@@ -213,7 +213,7 @@ LAB_004c830d:
   g_SRenderVertex_ARRAY_00622014[3].b = 0;
 LAB_004c836f:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01cb8288);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
   if (this_ptr->is_wall_splat == 1) {
     engine_drender_cpp_pop_FUN_0046b4a0();
     return;

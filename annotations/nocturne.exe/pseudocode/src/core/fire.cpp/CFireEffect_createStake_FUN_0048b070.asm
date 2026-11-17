@@ -26,8 +26,8 @@
 ;   undefined1* switchdataD_0048b038 = 0048b091
 ;   TerminatedCString s_a_wood_wav_005814bc
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01c23d48
-;   undefined4 DAT_01c23d4c
+;   int g_INT_01c23d48
+;   int g_INT_01c23d4c
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0044d7a0
@@ -94,7 +94,7 @@ section .text
     PUSH ECX                            ; 0048b0f2
     PUSH EDI                            ; 0048b0f3
     LEA EAX,[ESP + 0x48]                ; 0048b0f4
-    MOV EDX,dword ptr [0x01c23d4c]      ; 0048b0f8 | DAT_01c23d4c
+    MOV EDX,dword ptr [0x01c23d4c]      ; 0048b0f8 | g_INT_01c23d4c
     PUSH EAX                            ; 0048b0fe
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048b0ff
     ADD EAX,EDX                         ; 0048b106
@@ -106,16 +106,16 @@ section .text
     CALL core_fire.cpp_CStake_spawn_FUN_00483320 ; 0048b116
         ;   XREF to: 00483320 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_spawn_FUN_00483320(CStake * this_ptr, CVector3f * spawn_position, CVector3f * orientation_angles, CVector3f * surface_normal)
     ADD ESP,0x10                        ; 0048b11b
-    MOV EBX,dword ptr [0x01c23d4c]      ; 0048b11e | DAT_01c23d4c
+    MOV EBX,dword ptr [0x01c23d4c]      ; 0048b11e | g_INT_01c23d4c
         ;   Label: LAB_0048b11e
     INC EBX                             ; 0048b124
-    MOV dword ptr [0x01c23d4c],EBX      ; 0048b125 | DAT_01c23d4c
+    MOV dword ptr [0x01c23d4c],EBX      ; 0048b125 | g_INT_01c23d4c
     CMP EBX,0x100                       ; 0048b12b
     JL 0x0048b13b                       ; 0048b131
         ;   XREF to: 0048b13b (CONDITIONAL_JUMP)  ; LAB_0048b13b
     XOR EDI,EDI                         ; 0048b133
-    MOV dword ptr [0x01c23d4c],EDI      ; 0048b135 | DAT_01c23d4c
-    MOV EBP,dword ptr [0x01c23d48]      ; 0048b13b | DAT_01c23d48
+    MOV dword ptr [0x01c23d4c],EDI      ; 0048b135 | g_INT_01c23d4c
+    MOV EBP,dword ptr [0x01c23d48]      ; 0048b13b | g_INT_01c23d48
         ;   Label: LAB_0048b13b
     CMP EBP,0x100                       ; 0048b141
     JL 0x0048b1ab                       ; 0048b147
@@ -145,7 +145,7 @@ section .text
     ADD ESP,0x14                        ; 0048b178
     PUSH EDI                            ; 0048b17b
     LEA EAX,[ESP + 0x44]                ; 0048b17c
-    MOV EDX,dword ptr [0x01c23d4c]      ; 0048b180 | DAT_01c23d4c
+    MOV EDX,dword ptr [0x01c23d4c]      ; 0048b180 | g_INT_01c23d4c
     PUSH EAX                            ; 0048b186
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048b187
     ADD EAX,EDX                         ; 0048b18e
@@ -161,7 +161,7 @@ section .text
         ;   XREF to: 0048b11e (UNCONDITIONAL_JUMP)  ; LAB_0048b11e
     LEA EAX,[EBP + 0x1]                 ; 0048b1ab
         ;   Label: LAB_0048b1ab
-    MOV [0x01c23d48],EAX                ; 0048b1ae | DAT_01c23d48
+    MOV [0x01c23d48],EAX                ; 0048b1ae | g_INT_01c23d48
     ADD ESP,0x4c                        ; 0048b1b3
     POP EBP                             ; 0048b1b6
     POP EDI                             ; 0048b1b7

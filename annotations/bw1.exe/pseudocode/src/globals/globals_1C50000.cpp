@@ -38,18 +38,18 @@ CSmokeParticle g_CSmokeParticle_ARRAY_01c58aa0[2048] = {};
 CVector3i g_CVector3i_01c57078 = {};
 CVector3i g_CVector3i_01c57084 = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01c57090 = {};
+// DWORD
+DWORD g_DWORD_01c51cb8 = {};
+DWORD g_DWORD_01c51cc0 = {};
+
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c57090 = {};
 
 // SMRGLTextureBasic[20]
 SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c58588[20] = {};
 
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_BIT_INTEGER32_01c51d14 = {};
-
-// byte
-byte g_BYTE_01c51cc0 = {};
-byte g_BYTE_01c51cc1 = {};
 
 // char[256]
 char g_CHAR_ARRAY_01c56ed0[256] = {};
@@ -102,10 +102,6 @@ int g_INT_01c51d74 = {};
 int g_INT_01c51d78 = {};
 int g_INT_01c51d7c = {};
 int g_INT_01c56ecc = {};
-int g_INT_01c570a8 = {};
-int g_INT_01c570ac = {};
-int g_INT_01c570b0 = {};
-int g_INT_01c570b4 = {};
 int g_INT_01c57e14 = {};
 int g_INT_01c57e18 = {};
 int g_INT_01c58768 = {};

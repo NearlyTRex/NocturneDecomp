@@ -16,7 +16,7 @@ void __cdecl core_lever_cpp_CLever_archive_FUN_004c66f0(CLever *this_ptr)
   
   core_actor_cpp_CDemonActor_archive_FUN_0040d2d0(&this_ptr->base);
   pcVar3 = local_d4;
-  if (DAT_00763e88 == 1) {
+  if (g_INT_00763e88 == 1) {
     core_actor_cpp_archiveString_FUN_0040c6d0(local_d4,"modelName");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00454580(&this_ptr->model,local_d4);
   }

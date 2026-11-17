@@ -2,34 +2,34 @@
 GLOBALS GAP ANALYSIS REPORT
 ================================================================================
 
-Total globals analyzed:      13117
-  Named globals:             12488
-  DAT_ globals:              629
-Gaps found:                  1951
-  With exact size bounds:    1878
-  With estimated bounds:     73
-Total gap bytes:             43,809,054
-  Exact gap bytes:           43,793,258
-Overlaps (size <= 0):        7242
+Total globals analyzed:      13005
+  Named globals:             12662
+  DAT_ globals:              343
+Gaps found:                  1916
+  With exact size bounds:    1840
+  With estimated bounds:     76
+Total gap bytes:             42,922,738
+  Exact gap bytes:           42,906,037
+Overlaps (size <= 0):        7232
 
 --------------------------------------------------------------------------------
 GAP SIZE DISTRIBUTION
 --------------------------------------------------------------------------------
-  1-4 bytes (likely padding/alignment)          442
-  5-16 bytes (small vars)                       320
-  17-64 bytes (structs/small arrays)            485
-  65-256 bytes (medium data)                    201
-  257-1024 bytes (large structs/arrays)         225
-  1-4 KB                                        101
-  4-64 KB                                       141
-  64+ KB                                        36
+  1-4 bytes (likely padding/alignment)          436
+  5-16 bytes (small vars)                       321
+  17-64 bytes (structs/small arrays)            476
+  65-256 bytes (medium data)                    192
+  257-1024 bytes (large structs/arrays)         219
+  1-4 KB                                        100
+  4-64 KB                                       138
+  64+ KB                                        34
 
 --------------------------------------------------------------------------------
 LARGEST GAPS (top 50)
 --------------------------------------------------------------------------------
    7,372,800 bytes  at 0x00b81ca8
     after: g_INT_00b81ca4                           int                  at 0x00b81ca4  size=4
-    before: g_INT_01289ca8                           int                  at 0x01289ca8
+    before: g_SCoronaLightCache_01289ca8             SCoronaLightCache    at 0x01289ca8
    6,291,656 bytes  at 0x0152d2a8
     after: g_CDemonLight_PTR_0152d2a4               CDemonLight*         at 0x0152d2a4  size=4
     before: g_UINT_01b2d370                          uint                 at 0x01b2d370
@@ -46,32 +46,29 @@ LARGEST GAPS (top 50)
     after: g_CHAR_ARRAY_01354e20+0x140              undefined4           at 0x01354f60  size=4
     before: g_INT_01480e20                           int                  at 0x01480e20
    1,154,216 bytes  at 0x00a1c9f0
-    after: DAT_00a1c9ec                             undefined4           at 0x00a1c9ec  size=4
+    after: g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].z undefined4           at 0x00a1c9ec  size=4
     before: g_INT_ARRAY_00b36198[320]                undefined4           at 0x00b36698
      961,176 bytes  at 0x01d813a8
     after: g_CNPCClassInfo.name_hash                undefined4           at 0x01d813a4  size=4
     before: g_UCHAR_01e6be40                         uchar                at 0x01e6be40
      925,428 bytes  at 0x0093aaf0
-    after: DAT_0093aaec                             undefined4           at 0x0093aaec  size=4
-    before: DAT_00a1c9e4                             undefined4           at 0x00a1c9e4
+    after: g_CVector3i_ARRAY_ARRAY_00939bd8[1][1].z undefined4           at 0x0093aaec  size=4
+    before: g_CVector3f_ARRAY_ARRAY_00a1bad8[1][1].x undefined4           at 0x00a1c9e4
      921,596 bytes  at 0x00859ae8
     after: DAT_00859ae4                             undefined4           at 0x00859ae4  size=4
-    before: DAT_0093aae4                             undefined4           at 0x0093aae4
+    before: g_CVector3i_ARRAY_ARRAY_00939bd8[1][1].x undefined4           at 0x0093aae4
      870,988 bytes  at 0x026bb870
     after: g_DeformableModelPool[0].model_filename[ undefined4           at 0x026bb86c  size=4
     before: g_CHAR_ARRAY_027902bc                    char[256]            at 0x027902bc
      778,040 bytes  at 0x0062902b
     after: g_SRenderVertex_ARRAY_00629014[0].projec undefined4           at 0x00629027  size=4
     before: g_SRenderVertex_ARRAY_00629014[16209].v+ undefined4           at 0x006e6f63
-     629,792 bytes  at 0x01289cac
-    after: g_INT_01289ca8                           int                  at 0x01289ca8  size=4
-    before: g_INT_013238cc                           int                  at 0x013238cc
-     443,368 bytes  at 0x00713c18
-    after: DAT_00713c14                             undefined4           at 0x00713c14  size=4
-    before: DAT_00780000                             undefined4           at 0x00780000
      376,567 bytes  at 0x014cea59
     after: g_UINT_ARRAY_014cea50[1]+1               undefined4           at 0x014cea55  size=4
     before: g_INT_0152a950                           int                  at 0x0152a950
+     371,968 bytes  at 0x00725300
+    after: g_SRenderBufferEntry_ARRAY_00713b00      SRenderBufferEntry[2 at 0x00713b00  size=71,680
+    before: DAT_00780000                             undefined4           at 0x00780000
      360,020 bytes  at 0x01b68930
     after: g_INT_01b6892c                           int                  at 0x01b6892c  size=4
     before: g_INT_01bc0784                           int                  at 0x01bc0784
@@ -123,9 +120,6 @@ LARGEST GAPS (top 50)
       77,016 bytes  at 0x01d08dcc
     after: g_INT_01d08dc8                           int                  at 0x01d08dc8  size=4
     before: CAlphaBitmap_01d1ba98.width              undefined4           at 0x01d1baa4
-      76,475 bytes  at 0x013424a5
-    after: g_CHAR_ARRAY_01342220+0x281              undefined4           at 0x013424a1  size=4
-    before: g_CHAR_ARRAY_01354e20+0x140              undefined4           at 0x01354f60
       74,156 bytes  at 0x0054bc48
     after: switchdataD_0054bc44                     undefined1*          at 0x0054bc44  size=4
     before: switchdataD_0055ddf4                     undefined1*          at 0x0055ddf4
@@ -141,9 +135,6 @@ LARGEST GAPS (top 50)
       64,212 bytes  at 0x01cf6f04
     after: g_INT_01cf6f00                           int                  at 0x01cf6f00  size=4
     before: g_INT_ARRAY_01d069d8                     int[17]              at 0x01d069d8
-      59,940 bytes  at 0x01e6c1b8
-    after: DAT_01e6c1b4                             undefined4           at 0x01e6c1b4  size=4
-    before: g_INT_01e7abdc                           int                  at 0x01e7abdc
       56,612 bytes  at 0x00400080
     after: IMAGE_DOS_HEADER_00400000                IMAGE_DOS_HEADER     at 0x00400000  size=128
     before: switchdataD_0040dda4                     void*                at 0x0040dda4
@@ -177,25 +168,33 @@ LARGEST GAPS (top 50)
       36,260 bytes  at 0x0041bb24
     after: switchdataD_0041bb20                     undefined1*          at 0x0041bb20  size=4
     before: switchdataD_004248c8                     undefined1*          at 0x004248c8
+      35,772 bytes  at 0x0057ce00
+    after: switchdataD_0057cdfc                     void*                at 0x0057cdfc  size=4
+    before: switchdataD_005859bc                     undefined1*          at 0x005859bc
+      34,628 bytes  at 0x0044ceb0
+    after: PTR_caseD_3_0044ceac                     void*                at 0x0044ceac  size=4
+    before: PTR_caseD_1_004555f4                     undefined1*          at 0x004555f4
+      34,572 bytes  at 0x004693ac
+    after: switchdataD_004693a8                     undefined1*          at 0x004693a8  size=4
+    before: switchdataD_00471ab8                     undefined1*          at 0x00471ab8
 
 --------------------------------------------------------------------------------
-ALL EXACT GAPS (1878) - size bounds are known precisely
+ALL EXACT GAPS (1840) - size bounds are known precisely
 --------------------------------------------------------------------------------
-   7,372,800 bytes  at 0x00b81ca8  between g_INT_00b81ca4                 and g_INT_01289ca8
+   7,372,800 bytes  at 0x00b81ca8  between g_INT_00b81ca4                 and g_SCoronaLightCache_01289ca8
    6,291,656 bytes  at 0x0152d2a8  between g_CDemonLight_PTR_0152d2a4     and g_UINT_01b2d370
    6,143,752 bytes  at 0x020b29f8  between g_CHAR_ARRAY_020b28f4+0x100    and g_FLOAT_ARRAY_0268e900
    5,044,320 bytes  at 0x027903bc  between g_CHAR_ARRAY_027902bc          and g_CHAR_ARRAY_02c5fc1c
    4,161,788 bytes  at 0x00007f04  between DAT_00007f00                   and IMAGE_DOS_HEADER_00400000
    1,228,476 bytes  at 0x01354f64  between g_CHAR_ARRAY_01354e20+0x140    and g_INT_01480e20
-   1,154,216 bytes  at 0x00a1c9f0  between DAT_00a1c9ec                   and g_INT_ARRAY_00b36198[320]
+   1,154,216 bytes  at 0x00a1c9f0  between g_CVector3f_ARRAY_ARRAY_00a1ba and g_INT_ARRAY_00b36198[320]
      961,176 bytes  at 0x01d813a8  between g_CNPCClassInfo.name_hash      and g_UCHAR_01e6be40
-     925,428 bytes  at 0x0093aaf0  between DAT_0093aaec                   and DAT_00a1c9e4
-     921,596 bytes  at 0x00859ae8  between DAT_00859ae4                   and DAT_0093aae4
+     925,428 bytes  at 0x0093aaf0  between g_CVector3i_ARRAY_ARRAY_00939b and g_CVector3f_ARRAY_ARRAY_00a1ba
+     921,596 bytes  at 0x00859ae8  between DAT_00859ae4                   and g_CVector3i_ARRAY_ARRAY_00939b
      870,988 bytes  at 0x026bb870  between g_DeformableModelPool[0].model and g_CHAR_ARRAY_027902bc
      778,040 bytes  at 0x0062902b  between g_SRenderVertex_ARRAY_00629014 and g_SRenderVertex_ARRAY_00629014
-     629,792 bytes  at 0x01289cac  between g_INT_01289ca8                 and g_INT_013238cc
-     443,368 bytes  at 0x00713c18  between DAT_00713c14                   and DAT_00780000
      376,567 bytes  at 0x014cea59  between g_UINT_ARRAY_014cea50[1]+1     and g_INT_0152a950
+     371,968 bytes  at 0x00725300  between g_SRenderBufferEntry_ARRAY_007 and DAT_00780000
      360,020 bytes  at 0x01b68930  between g_INT_01b6892c                 and g_INT_01bc0784
      359,632 bytes  at 0x00800004  between g_CHAR_ARRAY_007ddbb4+0x2244c  and g_CDemonCamera_PTR_00857cd4
      307,195 bytes  at 0x01483a55  between g_CHAR_ARRAY_01483a50+1        and g_UINT_ARRAY_014cea50
@@ -213,13 +212,11 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
       80,248 bytes  at 0x005a5528  between switchdataD_005a5524           and switchdataD_005b8ea0
       79,992 bytes  at 0x01bef228  between g_CDemonCube_PTR_ARRAY_01bef22 and g_CVector3f_ARRAY_01c02aa0
       77,016 bytes  at 0x01d08dcc  between g_INT_01d08dc8                 and CAlphaBitmap_01d1ba98.width
-      76,475 bytes  at 0x013424a5  between g_CHAR_ARRAY_01342220+0x281    and g_CHAR_ARRAY_01354e20+0x140
       74,156 bytes  at 0x0054bc48  between switchdataD_0054bc44           and switchdataD_0055ddf4
       69,168 bytes  at 0x01d40df0  between g_SHuffmanTable_ARRAY_01d405c8 and g_CNetGameInstance
       65,540 bytes  at 0x0056cdf8  between switchdataD_0056cdf4           and switchdataD_0057cdfc
       65,416 bytes  at 0x0042ba2c  between switchdataD_0042ba28           and switchdataD_0043b9b4
       64,212 bytes  at 0x01cf6f04  between g_INT_01cf6f00                 and g_INT_ARRAY_01d069d8
-      59,940 bytes  at 0x01e6c1b8  between DAT_01e6c1b4                   and g_INT_01e7abdc
       56,612 bytes  at 0x00400080  between IMAGE_DOS_HEADER_00400000      and switchdataD_0040dda4
       55,180 bytes  at 0x01d71624  between g_SSimFrame_ARRAY_01d715ac[1]. and g_UNetPacket_01d7edb0
       51,664 bytes  at 0x0045c9d8  between switchdataD_0045c9d4           and switchdataD_004693a8
@@ -239,7 +236,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
       33,856 bytes  at 0x02c6c090  between g_CMP3DecoderInstanceOther.num and g_CMP3DecoderInstanceOther.syn
       33,104 bytes  at 0x004b5b8c  between switchdataD_004b5b88           and switchdataD_004bdcdc
       33,040 bytes  at 0x00593120  between switchdataD_0059311c           and switchdataD_0059b230
-      32,549 bytes  at 0x00608577  between DAT_00608573                   and g_INT_0061049c
       32,512 bytes  at 0x00413c20  between switchdataD_00413c1c           and switchdataD_0041bb20
       32,407 bytes  at 0x00000069  between DAT_00000065                   and DAT_00007f00
       31,584 bytes  at 0x004adae4  between switchdataD_004adae0           and switchdataD_004b5644
@@ -273,20 +269,20 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
       17,257 bytes  at 0x02c93017  between g_INT_02c93010+3               and g_CWaterActorClassInfo.name_ha
       17,224 bytes  at 0x00448b64  between switchdataD_00448b60           and PTR_caseD_3_0044ceac
       16,676 bytes  at 0x00498e24  between switchdataD_00498e20           and switchdataD_0049cf48
-      16,476 bytes  at 0x0061454c  between g_UINT_PTR_00614548            and g_INT_006185a8
+      16,476 bytes  at 0x0061454c  between g_UINT_PTR_00614548            and g_MMX_INTEGER_006185a8
       16,312 bytes  at 0x01cc0190  between g_RainDropPool[1].base.vtable  and g_CFlameClassInfo.name_hash
       16,300 bytes  at 0x0269cbf0  between g_CDemonGlobe_0269cbb0.intensi and g_CVector3f_ARRAY_026a0b9c
       16,256 bytes  at 0x01cbc18c  between g_PopcornPool[1].base.vtable   and g_INT_01cc010c
       16,000 bytes  at 0x02026370  between g_INT_0202636c                 and g_INT_0202a1f0
       15,607 bytes  at 0x02c68391  between g_CHAR_ARRAY_02c68388+5        and g_CMP3DecoderInstanceOther.sam
       14,040 bytes  at 0x004253a8  between switchdataD_004253a4           and switchdataD_00428a80
+      13,787 bytes  at 0x01d6dfc9  between g_SChatOutMessage_ARRAY_01d6df and g_INT_01d715a4
       13,744 bytes  at 0x026b82bc  between g_INT_026b82b8                 and g_DeformableModelPool[0].model
-      13,673 bytes  at 0x01d6dfd7  between DAT_01d6dfd3                   and DAT_01d71540
       13,460 bytes  at 0x0059f62c  between switchdataD_0059f628           and switchdataD_005a2ac0
       13,384 bytes  at 0x0045903c  between switchdataD_00459038           and switchdataD_0045c484
       12,380 bytes  at 0x005cd38c  between switchdataD_005cd388           and PTR_RegCloseKey_005d03e8
       12,279 bytes  at 0x020af8f5  between DAT_020af8f1                   and g_INT_020b28ec
-      11,824 bytes  at 0x01d3bd48  between g_INT_01d3bd44                 and DAT_01d3eb78
+      11,824 bytes  at 0x01d3bd48  between g_INT_01d3bd44                 and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
       11,748 bytes  at 0x00521460  between switchdataD_0052145c           and switchdataD_00524244
       10,976 bytes  at 0x00428a84  between switchdataD_00428a80           and switchdataD_0042b564
       10,832 bytes  at 0x005a2ac4  between switchdataD_005a2ac0           and switchdataD_005a5514
@@ -312,7 +308,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
        8,136 bytes  at 0x005cb3c0  between switchdataD_005cb3bc           and switchdataD_005cd388
        8,064 bytes  at 0x007c1074  between g_INT_007c1070                 and g_CDemonActor_PTR_007c2ff4
        8,052 bytes  at 0x02c97388  between g_CHAR_ARRAY_02c97384          and g_CWayPointClassInfo.name_hash
-       7,936 bytes  at 0x01d39e40  between g_FLOAT_ARRAY_01d39d40         and g_INT_01d3bd40
        7,764 bytes  at 0x01d06f74  between g_FLOAT_01d06f70               and g_INT_01d08dc8
        7,760 bytes  at 0x0051ce14  between switchdataD_0051ce10           and switchdataD_0051ec64
        7,536 bytes  at 0x004c65e0  between switchdataD_004c65dc           and switchdataD_004c8350
@@ -322,20 +317,20 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
        6,860 bytes  at 0x00524b88  between switchdataD_00524b84           and switchdataD_00526654
        6,600 bytes  at 0x01d7f99c  between g_CHAR_PTR_ARRAY_01d7f994[1]   and g_INT_01d81364
        6,516 bytes  at 0x005d0690  between PTR_WriteFile_005d068c         and s_vga_act_005d2004
-       5,932 bytes  at 0x00620b14  between DAT_00620b10                   and DAT_00622240
-       5,924 bytes  at 0x01d3eda4  between DAT_01d3eda0                   and g_CHAR_ARRAY_01d404c8
+       5,924 bytes  at 0x01d3eda4  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_CHAR_ARRAY_01d404c8
        5,904 bytes  at 0x0040dda8  between switchdataD_0040dda4           and switchdataD_0040f4b8
        5,816 bytes  at 0x0053f700  between switchdataD_0053f6fc           and switchdataD_00540db8
        5,772 bytes  at 0x0051fdd0  between switchdataD_0051fdcc           and switchdataD_0052145c
        5,732 bytes  at 0x01c9db54  between CFirefly_ARRAY_01c9dab8[1].bas and g_INT_01c9f1b8
        5,680 bytes  at 0x007c3984  between g_INT_007c3980                 and g_CBodyPartClassInfo
        5,659 bytes  at 0x00444649  between caseD_4+4                      and switchdataD_00445c64
-       5,432 bytes  at 0x00618628  between DAT_00618620                   and g_USHORT_ARRAY_00619b60
+       5,648 bytes  at 0x00620c30  between g_INT_ARRAY_ARRAY_ARRAY_00620b and g_SHuffmanTableSource_ARRAY_00
+       5,432 bytes  at 0x00618628  between g_MMX_INTEGER_00618620         and g_USHORT_ARRAY_00619b60
        5,356 bytes  at 0x004f0e3c  between switchdataD_004f0e38           and switchdataD_004f2328
        5,228 bytes  at 0x01cadbfc  between CLeaf_ARRAY_01cadb68[1].base.v and g_INT_01caf068
        5,200 bytes  at 0x007dc71c  between g_INT_007dc718                 and g_CCurtainClassInfo
-       5,054 bytes  at 0x01e7abe4  between g_INT_01e7abe0                 and DAT_01e7bfa2
-       5,046 bytes  at 0x01e7bfa6  between DAT_01e7bfa2                   and g_INT_01e7d35c
+       5,054 bytes  at 0x01e7abe4  between g_INT_01e7abe0                 and g_CHAR_ARRAY_ARRAY_01e7abe8[50
+       5,046 bytes  at 0x01e7bfa6  between g_CHAR_ARRAY_ARRAY_01e7abe8[50 and g_INT_01e7d35c
        4,976 bytes  at 0x01cac7f4  between g_RockPool[1].base.vtable      and g_INT_01cadb64
        4,820 bytes  at 0x01cce0b8  between g_CDemonLightInstance.antialia and g_CDemonLightInstance.volumetr
        4,800 bytes  at 0x0152a958  between g_CHAR_PTR_0152a954            and g_CDemonGlobe_PTR_0152bc18
@@ -355,7 +350,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
        4,252 bytes  at 0x01fe3938  between g_CDemonCameraInstance.framebu and g_CDemonCameraInstance.corona_
        4,228 bytes  at 0x0040f4bc  between switchdataD_0040f4b8           and switchdataD_00410540
        4,160 bytes  at 0x00410544  between switchdataD_00410540           and switchdataD_00411584
-       4,153 bytes  at 0x01d2000f  between DAT_01d2000b                   and g_CHAR_ARRAY_01d21048
+       4,153 bytes  at 0x01d2000f  between DAT_01d2000b                   and g_CHAR_ARRAY_ARRAY_01d21048
        4,108 bytes  at 0x01480e2c  between g_INT_01480e28                 and g_SFogGrid_01480e2c.scroll_vec
        4,096 bytes  at 0x007c6550  between g_CChainClassInfo              and g_INT_007c7550
        4,096 bytes  at 0x01caf06c  between g_INT_01caf068                 and g_INT_01cb006c
@@ -371,7 +366,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
        3,600 bytes  at 0x01cba034  between g_INT_01cba030                 and g_INT_01cbae44
        3,540 bytes  at 0x00540dbc  between switchdataD_00540db8           and switchdataD_00541b90
        3,504 bytes  at 0x00477a9c  between switchdataD_00477a98           and switchdataD_0047884c
-       3,420 bytes  at 0x01c570b8  between g_INT_01c570b4                 and g_INT_01c57e14
+       3,420 bytes  at 0x01c570b8  between g_SMRGLPrimitiveQuadIndex_01c5 and g_INT_01c57e14
        3,408 bytes  at 0x02c81044  between g_INT_02c81040                 and g_IDirectSound_PTR_02c81d94
        3,364 bytes  at 0x01cc48a8  between SNotesSection_ARRAY_01cc4474[1 and g_INT_01cc55cc
        3,280 bytes  at 0x004e9228  between switchdataD_004e9224           and switchdataD_004e9ef8
@@ -386,7 +381,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
        3,024 bytes  at 0x00411588  between switchdataD_00411584           and switchdataD_00412158
        2,992 bytes  at 0x004dc7c8  between switchdataD_004dc7c4           and switchdataD_004dd378
        2,988 bytes  at 0x01d1e2e0  between g_CMeleeClassInfo.name_hash    and g_INT_01d1ee8c
-       2,956 bytes  at 0x006116cc  between DAT_006116c8                   and g_SMRGLTextureBasic_00612258
        2,952 bytes  at 0x004743dc  between switchdataD_004743d8           and switchdataD_00474f64
        2,776 bytes  at 0x004248cc  between switchdataD_004248c8           and switchdataD_004253a4
        2,624 bytes  at 0x01d219e4  between g_INT_01d219e0                 and g_INT_ARRAY_01d22424
@@ -467,10 +461,8 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          988 bytes  at 0x0269c7bc  between DAT_0269c7b8                   and DAT_0269cb98
          960 bytes  at 0x01e818c0  between g_INT_01e818bc                 and g_CScriptInstance
          936 bytes  at 0x00524258  between switchdataD_00524254           and switchdataD_00524600
-         896 bytes  at 0x02c9cf14  between DAT_02c9cf10                   and g_INT_02c9d294
          892 bytes  at 0x00600004  between DAT_00600000                   and g_FLOAT_00600380
          884 bytes  at 0x00591100  between switchdataD_005910fc           and switchdataD_00591474
-         808 bytes  at 0x00622258  between DAT_00622254                   and g_CNetGamePtr
          800 bytes  at 0x01e6be4c  between g_INT_01e6be48                 and g_INT_01e6c16c
          800 bytes  at 0x01fe5768  between g_INT_01fe5764                 and g_INT_01fe5a88
          800 bytes  at 0x020af5cc  between g_INT_020af5c8                 and DAT_020af8ec
@@ -490,7 +482,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          760 bytes  at 0x01d33c6c  between g_CMobsterClassInfo.name_hash  and g_INT_01d33f64
          732 bytes  at 0x0043d3c0  between PTR_caseD_3_0043d3bc           and switchdataD_0043d69c
          732 bytes  at 0x00478850  between switchdataD_0047884c           and switchdataD_00478b2c
-         732 bytes  at 0x00620834  between DAT_00620830                   and DAT_00620b10
          732 bytes  at 0x01fe49d8  between g_CDemonCameraInstance.corona_ and g_INT_01fe4cb4
          728 bytes  at 0x0047561c  between switchdataD_00475618           and switchdataD_004758f4
          724 bytes  at 0x01cc45c4  between SNotesSection_ARRAY_01cc4474[0 and SNotesSection_ARRAY_01cc4474[1
@@ -518,7 +509,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          544 bytes  at 0x00603450  between g_FLOAT_0060344c               and g_CMirrorHackTypeInfo
          540 bytes  at 0x005fce14  between g_FLOAT_005fce10               and g_CLightActorTypeInfo
          532 bytes  at 0x005ffcbc  between g_CDemonActor_PTR_005ffcb8     and g_CFilmReelTypeInfo
-         528 bytes  at 0x007c53e4  between g_FLOAT_ARRAY_007c53b4         and g_INT_ARRAY_007c55f4
          528 bytes  at 0x02c9f480  between g_CHAR_ARRAY_02c9f37c          and g_CHAR_ARRAY_02c9f690
          520 bytes  at 0x005d98a4  between g_DOUBLE_005d989c              and s_Bip01_head_005d9aac
          520 bytes  at 0x01cc7d14  between g_STextViewInstance.pages      and g_INT_01cc7f1c
@@ -552,7 +542,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          384 bytes  at 0x00605b14  between g_FLOAT_00605b10               and g_FLOAT_00605c94
          380 bytes  at 0x005ff1a4  between g_FLOAT_005ff1a0               and g_CDraculaBrideTypeInfo
          380 bytes  at 0x00600d94  between g_FLOAT_00600d90               and g_CGabriellaTypeInfo
-         380 bytes  at 0x0061230c  between DAT_00612308                   and DAT_00612488
          380 bytes  at 0x0061b2f0  between g_CHAR_ARRAY_0061b2e8+4        and g_CEmitterClassVersion
          376 bytes  at 0x005fc738  between g_CBiggsTypeInfo               and g_CBirdTypeInfo
          376 bytes  at 0x006018a8  between g_CGraveTypeInfo               and g_CGunTypeInfo
@@ -615,11 +604,10 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          332 bytes  at 0x00623040  between DAT_0062303c                   and g_SMRGLTextureBasic_0062318c
          328 bytes  at 0x02c5fd08  between g_INT_ARRAY_02c5fcd8           and g_CMP3DecoderInstance.sample_r
          325 bytes  at 0x005d891b  between g_DOUBLE_005d8913              and g_DOUBLE_005d8a60
+         320 bytes  at 0x01354e20  between g_SFogImagePlane_01342220      and g_CHAR_ARRAY_01354e20+0x140
          320 bytes  at 0x01cc4474  between g_INT_01cc4470                 and SNotesSection_ARRAY_01cc4474[0
          316 bytes  at 0x0043d274  between PTR_caseD_3_0043d270           and switchdataD_0043d3b0
          316 bytes  at 0x005fe494  between g_FLOAT_005fe490               and g_CCurtainTypeInfo
-         314 bytes  at 0x01342226  between g_CHAR_ARRAY_01342220+2        and g_CHAR_ARRAY_01342220+0x140
-         314 bytes  at 0x01342366  between g_CHAR_ARRAY_01342220+0x142    and g_CHAR_ARRAY_01342220+0x280
          312 bytes  at 0x00605dd8  between g_CSpikeTypeInfo               and g_CStairsTypeInfo
          312 bytes  at 0x00607928  between g_CVampireBossTypeInfo         and g_CVehicleTypeInfo
          300 bytes  at 0x01fe3804  between g_CDemonCameraInstance.base.ro and g_CDemonCameraInstance.framebu
@@ -646,12 +634,11 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          277 bytes  at 0x01d1f4bf  between DAT_01d1f4bb                   and g_CHAR_PTR_ARRAY_01d1f5b8[7]
          276 bytes  at 0x02c78ff4  between g_INT_02c78ff0                 and g_SfxSamples[0].sample_info.re
          272 bytes  at 0x01483930  between g_INT_0148392c                 and g_CVector3i_01483a40
-         272 bytes  at 0x01d3ec78  between DAT_01d3ec74                   and DAT_01d3ed88
+         272 bytes  at 0x01d3ec78  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
          269 bytes  at 0x00444538  between switchdataD_00444534           and caseD_4+4
          268 bytes  at 0x005e8b77  between g_FLOAT_005e8b73               and g_DOUBLE_005e8c83
          268 bytes  at 0x006005c4  between g_FLOAT_006005c0               and g_CFlameThrowerTypeInfo
          268 bytes  at 0x006074d4  between g_FLOAT_006074d0               and g_CTurretTypeInfo
-         265 bytes  at 0x01d2134f  between DAT_01d2134b                   and g_INT_01d21458
          264 bytes  at 0x005fb568  between g_CAmmoTypeInfo                and g_CAmmoBoxTypeInfo
          264 bytes  at 0x005fb688  between g_CAmmoBoxTypeInfo             and g_CAnvilTypeInfo
          264 bytes  at 0x005fb978  between g_CFlameTypeInfo               and g_CBackgroundActorTypeInfo
@@ -696,9 +683,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          249 bytes  at 0x01cd05c7  between g_CHAR_ARRAY_01cd05c0+3        and g_INT_01cd06c0
          249 bytes  at 0x01cd09ef  between g_CHAR_ARRAY_01cd09e8+3        and g_INT_01cd0ae8
          249 bytes  at 0x01d1f1bf  between g_CHAR_ARRAY_01d1f1b8+3        and DAT_01d1f2b8
-         249 bytes  at 0x01d2104f  between g_CHAR_ARRAY_01d21048+3        and DAT_01d21148
-         249 bytes  at 0x01d2114f  between DAT_01d2114b                   and DAT_01d21248
-         249 bytes  at 0x01d2124f  between DAT_01d2124b                   and DAT_01d21348
          248 bytes  at 0x0061d428  between DAT_0061d424                   and s_parse_error_0061d520
          248 bytes  at 0x0061d528  between s_parse_error_0061d520+4       and s_corrupt_save_game_file_0061d
          248 bytes  at 0x00623338  between g_CHAR_ARRAY_00623330+4        and g_CHAR_ARRAY_00623430
@@ -711,7 +695,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          243 bytes  at 0x005b9da0  between PTR_caseD_3_005b9d9c           and caseD_2
          240 bytes  at 0x02c828dc  between g_INT_02c828d8                 and g_INT_ARRAY_02c829cc
          236 bytes  at 0x00600c24  between g_FLOAT_00600c20               and g_CFrankenstienMachineTypeInfo
-         236 bytes  at 0x006203a4  between DAT_006203a0                   and g_DOUBLE_ARRAY_00620490
          232 bytes  at 0x006109e4  between g_CBirdClassVersion            and g_CBodyPartClassVersion
          232 bytes  at 0x02c7fc90  between g_INT_02c7fc8c                 and g_INT_ARRAY_02c7fd10[26]
          228 bytes  at 0x01cb00a4  between g_CExplosion_ARRAY_01cb0070[1] and g_INT_01cb0188
@@ -731,7 +714,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          192 bytes  at 0x0152c124  between g_UINT_0152c120                and g_UINT_0152c1e4
          192 bytes  at 0x01cc7bd0  between CAlphaBitmap_ARRAY_01cc7ba8[1] and CAlphaBitmap_01cc7c84.width
          188 bytes  at 0x00625934  between g_CStrangerClassVersion        and g_CTentacleClassVersion
-         180 bytes  at 0x006235fc  between DAT_006235f8                   and PTR_s_int_006236b0
          178 bytes  at 0x005eb7a8  between g_DOUBLE_005eb7a0              and s_Disconnecting_from_serve_005
          177 bytes  at 0x005e7545  between g_FLOAT_005e7541               and s_pGemPos_005e75f6
          176 bytes  at 0x02c74658  between g_CSfxSlot_ARRAY_02c745ec[0].s and g_CSfxSlot_ARRAY_02c745ec[1].o
@@ -744,7 +726,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          152 bytes  at 0x005e6adb  between g_FLOAT_005e6ad7               and g_DOUBLE_005e6b73
          148 bytes  at 0x005e8e97  between g_FLOAT_005e8e93               and g_FLOAT_005e8f2b
          148 bytes  at 0x0062322c  between g_INT_00623228                 and g_CMP3DecoderDestructorNode1
-         145 bytes  at 0x005ecab9  between DAT_005ecab5                   and s_engine_pcx_c_005ecb4a
          144 bytes  at 0x005e8da7  between g_FLOAT_005e8da3               and s_engine_mini3d_cpp_005e8e37
          144 bytes  at 0x0061db70  between g_INT_ARRAY_0061db5c           and g_CGargoyleClassVersion
          144 bytes  at 0x0061f3ac  between g_CMansionPuzzleCircleClassVer and g_CMeleeClassVersion
@@ -753,7 +734,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          144 bytes  at 0x006259f4  between g_CTentacleClassVersion        and g_CTriggerClassVersion
          141 bytes  at 0x00626b7c  between g_PTR_00626b78                 and g_CHAR_ARRAY_00626c09
          140 bytes  at 0x005fff08  between g_CFilmProjectorTypeInfo       and g_FLOAT_005fff94
-         140 bytes  at 0x00713b38  between DAT_00713b34                   and DAT_00713bc4
          136 bytes  at 0x005d85b1  between g_DOUBLE_005d85a9              and s_movscrn_raw_005d8639
          136 bytes  at 0x005fe948  between g_CActorDestinationTypeInfo    and g_FLOAT_005fe9d0
          136 bytes  at 0x01c9f930  between g_GlassParticlePool[0].base.vt and g_GlassParticlePool[1].base.li
@@ -761,14 +741,13 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          132 bytes  at 0x006238e0  between DAT_006238dc                   and g_INT_00623964
          130 bytes  at 0x00626502  between DAT_00626500                   and g_ARRAY_PTR_00626584
          128 bytes  at 0x0061ef90  between g_CHostageClassVersion         and s_system_nocturne_ini_0061f010
-         128 bytes  at 0x01d3ebe8  between DAT_01d3ebe4                   and DAT_01d3ec68
+         128 bytes  at 0x01d3ebe8  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
          128 bytes  at 0x02c82844  between g_INT_02c82840                 and g_INT_02c828c4
          124 bytes  at 0x00610ba4  between g_CBrideClassVersion           and g_SMRGLTextureBasic_ARRAY_0061
          120 bytes  at 0x01d06bfc  between g_INT_ARRAY_01d06bcc           and g_INT_ARRAY_01d06c74
          120 bytes  at 0x02c83558  between g_FLOAT_02c83554               and g_CVector3f_02c835d0
          120 bytes  at 0x02c8ae70  between g_CTerrain_02c8ae68.initialize and g_CTVBatClassInfo.name_hash
          116 bytes  at 0x00606c48  between g_CTentacleTypeInfo            and g_FLOAT_00606cbc
-         116 bytes  at 0x0062032c  between DAT_00620328                   and DAT_006203a0
          116 bytes  at 0x01cc4188  between g_CFlameCanClassInfo.name_hash and g_CFlashlightClassInfo.name_ha
          116 bytes  at 0x01cd0ccc  between g_INT_ARRAY_01cd0c9c           and g_CGasMaskClassInfo.name_hash
          116 bytes  at 0x01d06a1c  between g_INT_ARRAY_01d069d8           and g_CHealthItemClassInfo.name_ha
@@ -777,7 +756,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          116 bytes  at 0x02c8add0  between g_CTrapClassInfo.name_hash     and g_CTriggerClassInfo.name_hash
          114 bytes  at 0x005f82a4  between g_DOUBLE_005f829c              and s_d_d_d_d_005f8316
          113 bytes  at 0x0152c327  between DAT_0152c323                   and g_CActorDestinationClassInfo.n
-         113 bytes  at 0x01d2196f  between DAT_01d2196b                   and g_INT_01d219e0
+         113 bytes  at 0x01d2196f  between g_CHAR_ARRAY_ARRAY_01d214e0[29 and g_INT_01d219e0
          113 bytes  at 0x01d33b8f  between DAT_01d33b8b                   and g_INT_ARRAY_01d33c00
          112 bytes  at 0x005f4aa7  between DAT_005f4aa3                   and s_DSERR_PRIOLEVELNEEDED_Th_005
          112 bytes  at 0x006058d8  between g_SVertTypeInfo                and g_FLOAT_00605948
@@ -794,7 +773,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
          104 bytes  at 0x006231a8  between g_CShadowClassVersion          and g_CSimBoxClassVersion
          100 bytes  at 0x005eaef3  between g_FLOAT_005eaeef               and g_FLOAT_005eaf57
          100 bytes  at 0x0061ee44  between g_SMRGLTextureBasic_0061ee2c   and g_CGraveClassVersion
-         100 bytes  at 0x00626ae8  between DAT_00626ae4                   and g_BYTE_00626b4c
           99 bytes  at 0x006106c5  between g_CHAR_ARRAY_006106c0+1        and g_CHAR_ARRAY_00610728
           97 bytes  at 0x01d33b27  between DAT_01d33b23                   and g_CHAR_01d33b88
           96 bytes  at 0x0061ca34  between g_SMRGLTextureBasic_ARRAY_0061 and g_SMRGLTextureBasic_0061ca94
@@ -821,7 +799,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           88 bytes  at 0x00604a68  between g_CPodTypeInfo                 and g_CDemonPodTypeInfo
           88 bytes  at 0x0061089c  between g_CAmmoBoxClassVersion         and g_CBackgroundActorClassVersion
           88 bytes  at 0x01d06ab8  between g_INT_01d06ab4                 and g_CHeroClassInfo.name_hash
-          88 bytes  at 0x01d7154c  between DAT_01d71548                   and g_INT_01d715a4
           87 bytes  at 0x005de45a  between s_mask_value_must_be_a_pow_005 and s_isBroken_005de4b1
           84 bytes  at 0x005fdd68  between g_CColonelTypeInfo             and g_FLOAT_005fddbc
           84 bytes  at 0x005fec48  between g_FLOAT_005fec44               and g_FLOAT_005fec9c
@@ -835,6 +812,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           77 bytes  at 0x005f4895  between DAT_005f4891                   and s_DSERR_INVALIDCALL_This_f_005
           76 bytes  at 0x005da160  between DAT_005da15c                   and s_actionPending_d_doc_cpp_005d
           76 bytes  at 0x0060397c  between g_FLOAT_00603978               and g_FLOAT_006039c8
+          76 bytes  at 0x00610450  between g_SFontGlyph_ARRAY_00608570    and g_INT_0061049c
           76 bytes  at 0x00610994  between g_CBatmanClassVersion          and g_CBirdClassVersion
           76 bytes  at 0x01bc078c  between DAT_01bc0788                   and DAT_01bc07d8
           76 bytes  at 0x01cd0af0  between g_FLOAT_01cd0aec               and g_INT_01cd0b3c
@@ -863,7 +841,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           68 bytes  at 0x00610b18  between g_CBoneGuyClassVersion         and g_CBoxActorClassVersion
           68 bytes  at 0x00620258  between g_INT_ARRAY_00620244[4]        and g_INT_0062029c
           68 bytes  at 0x01cbae88  between g_ShellPool[0].base.vtable     and g_ShellPool[1].base.lifetime_r
-          68 bytes  at 0x01d3eb94  between DAT_01d3eb90                   and DAT_01d3ebd8
+          68 bytes  at 0x01d3eb94  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
           68 bytes  at 0x01e7e05c  between g_INT_ARRAY_01e7e014           and g_INT_01e7e0a0
           66 bytes  at 0x005db744  between g_DOUBLE_005db73c              and s_core_dtrace_cpp_005db786
           66 bytes  at 0x005e0a5e  between g_DOUBLE_005e0a56              and DAT_005e0aa0
@@ -874,9 +852,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           64 bytes  at 0x00611360  between g_CFilterFXPtr                 and g_CVector3i_ARRAY_006113a0
           64 bytes  at 0x0061248c  between DAT_00612488                   and g_CDocClassVersion
           64 bytes  at 0x006144d8  between g_FLOAT_006144d4               and g_UINT_00614518
-          64 bytes  at 0x0061fa80  between g_FLOAT_ARRAY_0061fa40         and g_FLOAT_ARRAY_0061fac0
           64 bytes  at 0x00625bc4  between g_CTerrain_PTR_00625bc0        and g_CTurretClassVersion
-          64 bytes  at 0x00713bcc  between DAT_00713bc8                   and DAT_00713c0c
           64 bytes  at 0x01bc0c90  between g_INT_01bc0c8c                 and g_INT_01bc0cd0
           64 bytes  at 0x01c57038  between g_CFilmReelClassInfo.name_hash and g_CVector3i_01c57078
           64 bytes  at 0x01c9daf8  between CFirefly_ARRAY_01c9dab8[0].bas and CFirefly_ARRAY_01c9dab8[1].bas
@@ -885,7 +861,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           64 bytes  at 0x02c8a638  between g_SMRGLTextureBasic_02c8a630.b and DAT_02c8a678
           60 bytes  at 0x005e2b37  between g_CHAR_005e2b36                and s_puzzleModeHard_005e2b73
           60 bytes  at 0x005fe9e0  between g_FLOAT_005fe9dc               and DAT_005fea1c
-          60 bytes  at 0x006185ac  between g_INT_006185a8                 and g_QWORD_006185e8
           60 bytes  at 0x0061bea4  between switchdataD_0061bea0           and DAT_0061bee0
           60 bytes  at 0x0061bee8  between switchdataD_0061bee4           and g_INT_0061bf24
           60 bytes  at 0x0061f614  between g_FLOAT_0061f610               and g_CDemonMission_PTR_0061f650
@@ -914,9 +889,9 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           56 bytes  at 0x00604778  between g_CPassengerTypeInfo           and g_CPathMapTypeInfo
           56 bytes  at 0x00604dc8  between g_CScatTypeInfo                and g_CDemonActor_PTR_00604e00
           56 bytes  at 0x00604fc8  between g_CSentinelTypeInfo            and g_FLOAT_00605000
+          56 bytes  at 0x006185b0  between g_MMX_INTEGER_006185a8         and g_QWORD_006185e8
           56 bytes  at 0x0061eed0  between g_CGroundPtr                   and g_CHealthItemClassVersion
           56 bytes  at 0x0061f8b8  between g_INT_0061f8b4                 and s_CMotionController_0061f8e5+0
-          56 bytes  at 0x00620720  between g_INT_ARRAY_00620718           and g_INT_ARRAY_00620758
           56 bytes  at 0x00623968  between g_INT_00623964                 and g_INT_006239a0
           56 bytes  at 0x01b688f0  between g_UINT_01b688ec                and g_CDoorClassInfo.name_hash
           56 bytes  at 0x01bc0cf8  between DAT_01bc0cf4                   and g_CDraculaBrideClassInfo.name_
@@ -979,7 +954,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           48 bytes  at 0x00600bd8  between g_CFliesTypeInfo               and g_FLOAT_00600c08
           48 bytes  at 0x00605858  between g_CSimBoxTypeInfo              and g_FLOAT_00605888
           48 bytes  at 0x0061f320  between g_INT_0061f31c                 and g_CLightConeClassVersion
-          48 bytes  at 0x006202f8  between g_DOUBLE_ARRAY_006202e8        and DAT_00620328
           48 bytes  at 0x007c389c  between g_CBeastClassInfo              and g_CBiggsClassInfo
           48 bytes  at 0x02c997b4  between g_CDemonGlobe_02c99774.intensi and g_CWeather_02c997c0.lightning_
           45 bytes  at 0x005e7274  between s_If_you_think_you_have_at_005 and s_anon_005e72a1
@@ -1059,8 +1033,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           36 bytes  at 0x00623e04  between g_INT_00623e00                 and g_INT_00623e28
           36 bytes  at 0x00625c6c  between g_CCryptVesselClassVersion     and g_CWaterPtr
           36 bytes  at 0x006260b4  between g_SMRGLTextureBasic_0062609c   and g_INT_006260d8
-          36 bytes  at 0x0062627c  between g_CHAR_ARRAY_00626270          and g_CHAR_PTR_ARRAY_006262a0
-          36 bytes  at 0x00713b10  between DAT_00713b0c                   and DAT_00713b34
           36 bytes  at 0x01c51cdc  between g_INT_01c51cd8                 and g_INT_01c51d00
           36 bytes  at 0x01c986b4  between g_INT_01c986b0                 and g_SparkPool[0].base.lifetime_r
           36 bytes  at 0x01c9dab8  between g_INT_01c9dab4                 and CFirefly_ARRAY_01c9dab8[0].bas
@@ -1081,7 +1053,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           35 bytes  at 0x005de50d  between s_Error_parsing_isCurrentC_005 and s_isCurrentSet_005de530
           35 bytes  at 0x005de723  between s_isFacing_angle_must_be_i_005 and s_Error_parsing_isFacing_p_005
           35 bytes  at 0x005eeaa7  between g_CHAR_ARRAY_005ee9c0+0xe3     and g_CHAR_ARRAY_005ee9c0+0x10a
-          35 bytes  at 0x01d2169d  between DAT_01d21699                   and DAT_01d216c0
+          35 bytes  at 0x01d2169d  between g_CHAR_ARRAY_ARRAY_01d214e0[11 and g_CHAR_ARRAY_ARRAY_01d214e0[12
           34 bytes  at 0x005eeb2f  between g_CHAR_ARRAY_005ee9c0+0x16b    and g_CHAR_ARRAY_005ee9c0+0x191
           34 bytes  at 0x005eeb68  between g_CHAR_ARRAY_005ee9c0+0x1a4    and g_CHAR_ARRAY_005ee9c0+0x1ca
           34 bytes  at 0x005eecb3  between g_CHAR_ARRAY_005ee9c0+0x2ef    and g_CHAR_ARRAY_005ee9c0+0x315
@@ -1090,33 +1062,33 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           34 bytes  at 0x005fb29a  between g_CHAR_005fb299                and s_bgnthd_005fb2bc
           33 bytes  at 0x005de8d2  between s_Error_parsing_isWeaponDr_005 and s_isWearingGasMask_005de8f3
           33 bytes  at 0x005dea2b  between s_Error_parsing_testActorB_005 and s_s_is_not_a_valid_boolean_005
-          33 bytes  at 0x01d2150f  between DAT_01d2150b                   and DAT_01d21530
-          33 bytes  at 0x01d21537  between DAT_01d21533                   and DAT_01d21558
-          33 bytes  at 0x01d2155f  between DAT_01d2155b                   and DAT_01d21580
-          33 bytes  at 0x01d21587  between DAT_01d21583                   and DAT_01d215a8
-          33 bytes  at 0x01d215af  between DAT_01d215ab                   and DAT_01d215d0
-          33 bytes  at 0x01d215d7  between DAT_01d215d3                   and DAT_01d215f8
-          33 bytes  at 0x01d215ff  between DAT_01d215fb                   and DAT_01d21620
-          33 bytes  at 0x01d21627  between DAT_01d21623                   and DAT_01d21648
-          33 bytes  at 0x01d2164f  between DAT_01d2164b                   and DAT_01d21670
-          33 bytes  at 0x01d21677  between DAT_01d21673                   and DAT_01d21698
-          33 bytes  at 0x01d216c7  between DAT_01d216c3                   and DAT_01d216e8
-          33 bytes  at 0x01d216ef  between DAT_01d216eb                   and DAT_01d21710
-          33 bytes  at 0x01d21717  between DAT_01d21713                   and DAT_01d21738
-          33 bytes  at 0x01d2173f  between DAT_01d2173b                   and DAT_01d21760
-          33 bytes  at 0x01d21767  between DAT_01d21763                   and DAT_01d21788
-          33 bytes  at 0x01d2178f  between DAT_01d2178b                   and DAT_01d217b0
-          33 bytes  at 0x01d217b7  between DAT_01d217b3                   and DAT_01d217d8
-          33 bytes  at 0x01d217df  between DAT_01d217db                   and DAT_01d21800
-          33 bytes  at 0x01d21807  between DAT_01d21803                   and DAT_01d21828
-          33 bytes  at 0x01d2182f  between DAT_01d2182b                   and DAT_01d21850
-          33 bytes  at 0x01d21857  between DAT_01d21853                   and DAT_01d21878
-          33 bytes  at 0x01d2187f  between DAT_01d2187b                   and DAT_01d218a0
-          33 bytes  at 0x01d218a7  between DAT_01d218a3                   and DAT_01d218c8
-          33 bytes  at 0x01d218cf  between DAT_01d218cb                   and DAT_01d218f0
-          33 bytes  at 0x01d218f7  between DAT_01d218f3                   and DAT_01d21918
-          33 bytes  at 0x01d2191f  between DAT_01d2191b                   and DAT_01d21940
-          33 bytes  at 0x01d21947  between DAT_01d21943                   and DAT_01d21968
+          33 bytes  at 0x01d2150f  between g_CHAR_ARRAY_ARRAY_01d214e0[1] and g_CHAR_ARRAY_ARRAY_01d214e0[2]
+          33 bytes  at 0x01d21537  between g_CHAR_ARRAY_ARRAY_01d214e0[2] and g_CHAR_ARRAY_ARRAY_01d214e0[3]
+          33 bytes  at 0x01d2155f  between g_CHAR_ARRAY_ARRAY_01d214e0[3] and g_CHAR_ARRAY_ARRAY_01d214e0[4]
+          33 bytes  at 0x01d21587  between g_CHAR_ARRAY_ARRAY_01d214e0[4] and g_CHAR_ARRAY_ARRAY_01d214e0[5]
+          33 bytes  at 0x01d215af  between g_CHAR_ARRAY_ARRAY_01d214e0[5] and g_CHAR_ARRAY_ARRAY_01d214e0[6]
+          33 bytes  at 0x01d215d7  between g_CHAR_ARRAY_ARRAY_01d214e0[6] and g_CHAR_ARRAY_ARRAY_01d214e0[7]
+          33 bytes  at 0x01d215ff  between g_CHAR_ARRAY_ARRAY_01d214e0[7] and g_CHAR_ARRAY_ARRAY_01d214e0[8]
+          33 bytes  at 0x01d21627  between g_CHAR_ARRAY_ARRAY_01d214e0[8] and g_CHAR_ARRAY_ARRAY_01d214e0[9]
+          33 bytes  at 0x01d2164f  between g_CHAR_ARRAY_ARRAY_01d214e0[9] and g_CHAR_ARRAY_ARRAY_01d214e0[10
+          33 bytes  at 0x01d21677  between g_CHAR_ARRAY_ARRAY_01d214e0[10 and g_CHAR_ARRAY_ARRAY_01d214e0[11
+          33 bytes  at 0x01d216c7  between g_CHAR_ARRAY_ARRAY_01d214e0[12 and g_CHAR_ARRAY_ARRAY_01d214e0[13
+          33 bytes  at 0x01d216ef  between g_CHAR_ARRAY_ARRAY_01d214e0[13 and g_CHAR_ARRAY_ARRAY_01d214e0[14
+          33 bytes  at 0x01d21717  between g_CHAR_ARRAY_ARRAY_01d214e0[14 and g_CHAR_ARRAY_ARRAY_01d214e0[15
+          33 bytes  at 0x01d2173f  between g_CHAR_ARRAY_ARRAY_01d214e0[15 and g_CHAR_ARRAY_ARRAY_01d214e0[16
+          33 bytes  at 0x01d21767  between g_CHAR_ARRAY_ARRAY_01d214e0[16 and g_CHAR_ARRAY_ARRAY_01d214e0[17
+          33 bytes  at 0x01d2178f  between g_CHAR_ARRAY_ARRAY_01d214e0[17 and g_CHAR_ARRAY_ARRAY_01d214e0[18
+          33 bytes  at 0x01d217b7  between g_CHAR_ARRAY_ARRAY_01d214e0[18 and g_CHAR_ARRAY_ARRAY_01d214e0[19
+          33 bytes  at 0x01d217df  between g_CHAR_ARRAY_ARRAY_01d214e0[19 and g_CHAR_ARRAY_ARRAY_01d214e0[20
+          33 bytes  at 0x01d21807  between g_CHAR_ARRAY_ARRAY_01d214e0[20 and g_CHAR_ARRAY_ARRAY_01d214e0[21
+          33 bytes  at 0x01d2182f  between g_CHAR_ARRAY_ARRAY_01d214e0[21 and g_CHAR_ARRAY_ARRAY_01d214e0[22
+          33 bytes  at 0x01d21857  between g_CHAR_ARRAY_ARRAY_01d214e0[22 and g_CHAR_ARRAY_ARRAY_01d214e0[23
+          33 bytes  at 0x01d2187f  between g_CHAR_ARRAY_ARRAY_01d214e0[23 and g_CHAR_ARRAY_ARRAY_01d214e0[24
+          33 bytes  at 0x01d218a7  between g_CHAR_ARRAY_ARRAY_01d214e0[24 and g_CHAR_ARRAY_ARRAY_01d214e0[25
+          33 bytes  at 0x01d218cf  between g_CHAR_ARRAY_ARRAY_01d214e0[25 and g_CHAR_ARRAY_ARRAY_01d214e0[26
+          33 bytes  at 0x01d218f7  between g_CHAR_ARRAY_ARRAY_01d214e0[26 and g_CHAR_ARRAY_ARRAY_01d214e0[27
+          33 bytes  at 0x01d2191f  between g_CHAR_ARRAY_ARRAY_01d214e0[27 and g_CHAR_ARRAY_ARRAY_01d214e0[28
+          33 bytes  at 0x01d21947  between g_CHAR_ARRAY_ARRAY_01d214e0[28 and g_CHAR_ARRAY_ARRAY_01d214e0[29
           33 bytes  at 0x02c8327f  between g_CHAR_ARRAY_02c83278+3        and g_INT_02c832a0
           32 bytes  at 0x0047433c  between switchdataD_00474338           and switchdataD_0047435c
           32 bytes  at 0x00474360  between switchdataD_0047435c           and switchdataD_00474380
@@ -1249,9 +1221,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           24 bytes  at 0x00608548  between g_SHORT_00608546               and g_DOUBLE_00608560
           24 bytes  at 0x006108f8  between g_CBackgroundActorClassVersion and g_CBaronClassVersion
           24 bytes  at 0x00611330  between DAT_0061132c                   and g_PlayerFilters
-          24 bytes  at 0x006122f0  between g_SMRGLTextureBasic_006122d8   and DAT_00612308
           24 bytes  at 0x0061250c  between PTR_engine_dosio.cpp_getRelati and g_CDraculaBrideClassVersion
-          24 bytes  at 0x006207d0  between DAT_006207cc                   and DAT_006207e8
           24 bytes  at 0x006239b0  between g_INT_006239ac                 and g_INT_PTR_006239c8
           24 bytes  at 0x006258e4  between g_PTR_006258e0                 and g_FLOAT_006258fc
           24 bytes  at 0x00625a88  between g_CTriggerClassVersion         and DAT_00625aa0
@@ -1274,7 +1244,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           21 bytes  at 0x005e72a8  between s_then_ignore_this_message_005 and s_anon_005e72bd
           21 bytes  at 0x005ee471  between s_no_error_message_provide_005 and g_CHAR_005ee486
           21 bytes  at 0x005f7f4c  between g_FLOAT_005f7f48               and s_bipHand_005f7f61
-          21 bytes  at 0x0062623f  between g_CHAR_ARRAY_00626238          and g_CHAR_PTR_ARRAY_00626254
           20 bytes  at 0x00474f68  between switchdataD_00474f64           and switchdataD_00474f7c
           20 bytes  at 0x004ed854  between switchdataD_004ed850           and switchdataD_004ed868
           20 bytes  at 0x005f1a0b  between g_FLOAT_005f1a07               and s_Warning_called_fire_for_005f
@@ -1298,8 +1267,8 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           20 bytes  at 0x0061ef0c  between g_CHealthItemClassVersion      and g_CHeroClassVersion
           20 bytes  at 0x0061f290  between g_CKeyActorClassVersion        and g_CKeys_PTR_0061f2a4
           20 bytes  at 0x0061f5ec  between DAT_0061f5e8                   and g_FLOAT_0061f600
-          20 bytes  at 0x0062080c  between DAT_00620808                   and DAT_00620820
           20 bytes  at 0x00622a70  between g_CDemonPodPtr                 and g_INT_00622a84
+          20 bytes  at 0x0062369c  between g_SAudioFormatDescriptor_ARRAY and PTR_s_int_006236b0
           20 bytes  at 0x00625c30  between g_CVampireBossClassVersion     and g_CVehicleClassVersion
           20 bytes  at 0x00626024  between g_CWayPointClassVersion        and g_CWeaponClassVersion
           20 bytes  at 0x006264e4  between g_INT_006264e0                 and DAT_006264f8
@@ -1363,6 +1332,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           16 bytes  at 0x0061f2ac  between g_CLadderClassVersion          and g_CLarvaClassVersion
           16 bytes  at 0x0061f300  between g_CLeverClassVersion           and g_INT_0061f310
           16 bytes  at 0x00620244  between g_INT_00620240                 and g_INT_ARRAY_00620244[4]
+          16 bytes  at 0x00622570  between g_SHuffmanTableSource_ARRAY_00 and g_CNetGamePtr
           16 bytes  at 0x00622704  between g_CMousePtr                    and g_CNPCClassVersion
           16 bytes  at 0x00623214  between g_CSimBoxClassVersion          and g_INT_00623224
           16 bytes  at 0x00625c08  between g_CTurretClassVersion          and g_CTVBatClassVersion
@@ -1373,6 +1343,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           16 bytes  at 0x01cd56b4  between g_INT_01cd56b0                 and g_CBloodSplat_ARRAY_01cd56b4[0
           16 bytes  at 0x01d06aa4  between g_INT_01d06aa0                 and g_INT_01d06ab4
           16 bytes  at 0x01d1bc4c  between g_INT_01d1bc48                 and g_INT_01d1bc5c
+          16 bytes  at 0x01d21448  between g_CHAR_ARRAY_ARRAY_01d21048    and g_INT_01d21458
           16 bytes  at 0x01fe55c0  between g_INT_01fe55bc                 and g_INT_01fe55d0
           16 bytes  at 0x0202635c  between g_INT_02026358                 and g_INT_0202636c
           16 bytes  at 0x02c74758  between g_CSfxSlot_ARRAY_02c745ec[1].o and g_CSfxSlot_ARRAY_02c745ec[1].h
@@ -1390,7 +1361,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           14 bytes  at 0x0061f5da  between g_USHORT_0061f5d8              and DAT_0061f5e8
           13 bytes  at 0x005d599a  between s_headlite_raw_005d5993+3      and g_DOUBLE_005d59a7
           13 bytes  at 0x005dc26b  between DAT_005dc26a                   and g_DOUBLE_005dc278
-          13 bytes  at 0x005ecaa8  between DAT_005ecaa4                   and DAT_005ecab5
           13 bytes  at 0x005eeb1e  between g_CHAR_ARRAY_005ee9c0+0x15a    and g_CHAR_ARRAY_005ee9c0+0x16b
           13 bytes  at 0x005eec44  between g_CHAR_ARRAY_005ee9c0+0x280    and g_CHAR_ARRAY_005ee9c0+0x291
           13 bytes  at 0x005eece9  between g_CHAR_ARRAY_005ee9c0+0x325    and g_CHAR_ARRAY_005ee9c0+0x336
@@ -1436,11 +1406,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           12 bytes  at 0x006124d0  between g_CDocClassVersion             and g_CZombieDogClassVersion
           12 bytes  at 0x00614528  between g_UINT_00614524                and g_INT_00614534
           12 bytes  at 0x0061dca8  between g_CGorePtr                     and g_SMRGLTextureBasic_0061dcb4
-          12 bytes  at 0x0061ee20  between DAT_0061ee1c                   and g_SMRGLTextureBasic_0061ee2c
-          12 bytes  at 0x006207bc  between DAT_006207b8                   and DAT_006207c8
           12 bytes  at 0x00623e44  between g_INT_00623e40                 and g_QWORD_00623e50
-          12 bytes  at 0x00623e64  between g_INT_00623e60                 and g_QWORD_00623e70
-          12 bytes  at 0x00623e84  between g_INT_00623e80                 and g_INT_00623e90
           12 bytes  at 0x01c3d424  between g_INT_01c3d420                 and g_CVector3f_01c3d430
           12 bytes  at 0x01c43524  between g_FLOAT_ARRAY_01c415e4         and g_INT_01c43530
           12 bytes  at 0x01cb0070  between g_INT_01cb006c                 and g_CExplosion_ARRAY_01cb0070[0]
@@ -1451,11 +1417,11 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           12 bytes  at 0x01d06a94  between g_CHealthItemClassInfo.name_ha and g_INT_01d06aa0
           12 bytes  at 0x01d22558  between g_FLOAT_01d22554               and g_FLOAT_01d22564
           12 bytes  at 0x02c9c7ec  between g_INT_02c9c7e8                 and DAT_02c9c7f8
-          12 bytes  at 0x02c9f044  between g_INT_02c9f040                 and DAT_02c9f050
+          12 bytes  at 0x02c9f044  between g_INT_02c9f040                 and g_FileListNode_PTR_02c9f050
           12 bytes  at 0x02c9ff94  between g_PTR_02c9ff90                 and g_PTR_02c9ffa0
           12 bytes  at 0x02c9ffa4  between g_PTR_02c9ffa0                 and g_CVector3i_02c9ffb0
           11 bytes  at 0x005d53a9  between s_ghoul_dig_wav_005d53a4+1     and s_fall_wav_005d53b4
-          11 bytes  at 0x005d82d8  between s_chase_wav_2_005d82d3+1       and DAT_005d82e3
+          11 bytes  at 0x005d82d8  between s_chase_wav_2_005d82d3+1       and s_taunt_wav_2_005d82e3
           11 bytes  at 0x005dfc72  between g_DOUBLE_005dfc6a              and s_core_fldnotes_cpp_005dfc7d
           11 bytes  at 0x005e61bb  between s_compass_arrow_raw_005e61b4+3 and s_rt_005e61c6
           11 bytes  at 0x005eea8a  between g_CHAR_ARRAY_005ee9c0+0xc6     and g_CHAR_ARRAY_005ee9c0+0xd5
@@ -1472,6 +1438,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
           10 bytes  at 0x005eea99  between g_CHAR_ARRAY_005ee9c0+0xd5     and g_CHAR_ARRAY_005ee9c0+0xe3
           10 bytes  at 0x005eeffd  between g_CHAR_ARRAY_005ee9c0+0x639    and g_CHAR_ARRAY_005ee9c0+0x647
            9 bytes  at 0x005d539b  between s_ghoul_eat_wav_005d5394+3     and s_ghoul_dig_wav_005d53a4
+           9 bytes  at 0x005d82ea  between s_taunt_wav_2_005d82e3+3       and s_demn_005d82f3
            9 bytes  at 0x005e0b8b  between s_frankxflap1_pth_005e0b84+3   and s_frankxflap2_kfm_005e0b94
            9 bytes  at 0x005e0bab  between s_frankxflap2_pth_005e0ba4+3   and s_frankxramp_kfm_005e0bb4
            9 bytes  at 0x005e3fec  between g_DOUBLE_005e3fe4              and s_doc_goggles_kfm_005e3ff5
@@ -1496,6 +1463,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            8 bytes  at 0x005d056c  between PTR_FreeLibrary_005d0568       and PTR_GetCommandLineA_005d0574
            8 bytes  at 0x005d2e8d  between g_FLOAT_005d2e89               and g_FLOAT_005d2e95
            8 bytes  at 0x005d7412  between g_DOUBLE_005d740a              and g_DOUBLE_005d741a
+           8 bytes  at 0x005d8300  between s_hurt_wav_2_005d82f9+3        and s_demn_005d8308
            8 bytes  at 0x005db3ac  between g_DOUBLE_005db3a4              and g_DOUBLE_005db3b4
            8 bytes  at 0x005dc2be  between s_Heap_is_empty_005dc2b7+3     and s_Memory_corruption_detect_005
            8 bytes  at 0x005e0bca  between s_frankxramp_pth_005e0bc3+3    and s_whichPart_005e0bd2
@@ -1572,14 +1540,13 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            8 bytes  at 0x00607488  between g_COutStreamDebugVTable        and g_COutStreamDebugTypeInfo
            8 bytes  at 0x00607f88  between g_CWeaponTypeInfo              and g_FLOAT_00607f90
            8 bytes  at 0x00608178  between g_CFont_vtable_00608164        and g_CWinFontTypeInfo
-           8 bytes  at 0x00608568  between g_DOUBLE_00608560+4            and DAT_00608570
+           8 bytes  at 0x00608568  between g_DOUBLE_00608560+4            and g_SFontGlyph_ARRAY_00608570
            8 bytes  at 0x00611350  between DAT_0061134c                   and g_CFilterCachePtr
            8 bytes  at 0x0061b4c8  between g_INT_0061b4c4                 and g_CEventList_PTR_0061b4d0
-           8 bytes  at 0x0061ee14  between g_FLOAT_ARRAY_0061ee0c         and DAT_0061ee1c
-           8 bytes  at 0x006207b0  between DAT_006207ac                   and DAT_006207b8
-           8 bytes  at 0x006207f0  between DAT_006207ec                   and DAT_006207f8
            8 bytes  at 0x00622f2c  between g_INT_ARRAY_00622dac           and g_SMRGLTextureBasic_00622f34
            8 bytes  at 0x00623dec  between g_DOUBLE_00623de4              and g_INT_00623df4
+           8 bytes  at 0x00623e68  between g_MMX_INTEGER_00623e60         and g_QWORD_00623e70
+           8 bytes  at 0x00623e88  between g_MMX_INTEGER_00623e80         and g_INT_00623e90
            8 bytes  at 0x006262d8  between g_FILE_PTR_006262d4            and DAT_006262e0
            8 bytes  at 0x006265b4  between g_WCHAR_PTR_006265b0           and g_UINT_PTR_006265bc
            8 bytes  at 0x006265cc  between g_INT_006265c8                 and DAT_006265d4
@@ -1589,12 +1556,12 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            8 bytes  at 0x00859adc  between DAT_00859ad8                   and DAT_00859ae4
            8 bytes  at 0x01c50938  between g_UCHAR_PTR_01c50934           and g_INT_01c50940
            8 bytes  at 0x01cce0ac  between g_CDemonLightInstance.shadow_m and g_CDemonLightInstance.antialia
-           8 bytes  at 0x01cd0e3c  between g_CGogglesClassInfo.name_hash  and g_SMRGLHeaderPrimitive_01cd0e4
+           8 bytes  at 0x01cd0e3c  between g_CGogglesClassInfo.name_hash  and g_SMRGLPrimitiveQuadIndex_01cd
            8 bytes  at 0x01cf69fc  between g_INT_01cf69f8                 and g_CBloodPool_ARRAY_01cf69fc[0]
            8 bytes  at 0x01d1baac  between CAlphaBitmap_01d1ba98.height   and g_SMRGLTextureBasic_01d1baac.t
-           8 bytes  at 0x01d39d38  between g_INT_01d39d34                 and g_FLOAT_ARRAY_01d39d40
-           8 bytes  at 0x02c9a598  between g_CWerewolfClassInfo.name_hash and DAT_02c9a5a0
-           8 bytes  at 0x02c9f058  between DAT_02c9f054                   and g_INT_02c9f060
+           8 bytes  at 0x01d39d38  between g_INT_01d39d34                 and g_FLOAT_ARRAY_ARRAY_01d39d40
+           8 bytes  at 0x02c9a598  between g_CWerewolfClassInfo.name_hash and g_DWORD_02c9a5a0
+           8 bytes  at 0x02c9f058  between g_FileListNode_PTR_02c9f054    and g_INT_02c9f060
            8 bytes  at 0x02c9ff6c  between g_PTR_02c9ff68                 and g_BYTE_02c9ff74
            7 bytes  at 0x005e0b14  between s_frankxbed_pth_005e0b0d+3     and s_frankxbody_kfm_005e0b1b
            7 bytes  at 0x005e2022  between g_CHAR_ARRAY_005e1fec          and s_You_have_the_crossbow_005e20
@@ -1607,6 +1574,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            7 bytes  at 0x02c68381  between g_BYTE_02c68380                and g_CHAR_ARRAY_02c68388
            6 bytes  at 0x005d4d68  between g_DOUBLE_005d4d60              and s_lightType_005d4d6e
            6 bytes  at 0x005d733f  between g_DOUBLE_005d7337              and s_modelName_005d7345
+           6 bytes  at 0x005d8315  between s_die_wav_2_005d830e+3         and s_ghoul_eat_wav_005d831b
            6 bytes  at 0x005de199  between s_tax_error_005de192+3         and s_Game_Flag_s_005de19f
            6 bytes  at 0x005de21b  between s_tax_error_005de214+3         and s_cmp_005de221
            6 bytes  at 0x005df0bf  between g_DOUBLE_005df0b7              and s_modelName_005df0c5
@@ -1629,6 +1597,8 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            6 bytes  at 0x005f916d  between s_MENUCLD2_RAW_005f9166+3      and s_BWATER_d_RAW_005f9173
            6 bytes  at 0x01483a4a  between g_CVector3i_01483a40.y+2       and g_CHAR_ARRAY_01483a50
            5 bytes  at 0x005d2a9c  between s_LOCALIZE_005d2a95+3          and s_f_005d2aa1
+           5 bytes  at 0x005d4018  between s_AB_1_wav_005d4011+3          and s_AT_1_wav_005d401d
+           5 bytes  at 0x005d4024  between s_AT_1_wav_005d401d+3          and s_f_005d4029
            5 bytes  at 0x005e2249  between g_CHAR_ARRAY_005e2214          and s_You_have_the_charged_rad_005
            5 bytes  at 0x005e2908  between g_CHAR_ARRAY_005e28d3          and s_You_ve_got_a_gasmask_005e290
            5 bytes  at 0x005e482c  between s_r_weapon_005e4825+3          and g_FLOAT_005e4831
@@ -1916,8 +1886,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            4 bytes  at 0x0061d974  between g_INT_0061d970                 and s_save_SAVE_TMP_0061d978
            4 bytes  at 0x0061ef28  between g_INT_0061ef24                 and g_CHAR_PTR_ARRAY_0061ef2c
            4 bytes  at 0x0061f654  between g_CDemonMission_PTR_0061f650   and s_corrupt_0061f658
-           4 bytes  at 0x006202e4  between g_INT_006202e0                 and g_DOUBLE_ARRAY_006202e8
-           4 bytes  at 0x006207a8  between DAT_006207a4                   and DAT_006207ac
+           4 bytes  at 0x006202e4  between g_INT_006202e0                 and g_DOUBLE_ARRAY_ARRAY_006202e8
            4 bytes  at 0x00622ad4  between g_CScriptPtr                   and s_none_00622ad8
            4 bytes  at 0x00622fe0  between DAT_00622fdc                   and DAT_00622fe4
            4 bytes  at 0x00623028  between DAT_00623024                   and DAT_0062302c
@@ -1926,15 +1895,10 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            4 bytes  at 0x006236bc  between g_CSound_PTR_006236b8          and g_ReverbPresetTable[0].reverb.
            4 bytes  at 0x006239a8  between g_INT_006239a4                 and g_INT_006239ac
            4 bytes  at 0x00623e34  between g_INT_00623e30                 and g_INT_00623e38
-           4 bytes  at 0x00623e5c  between g_INT_00623e58                 and g_INT_00623e60
-           4 bytes  at 0x00623e7c  between g_INT_00623e78                 and g_INT_00623e80
            4 bytes  at 0x00623e94  between g_INT_00623e90                 and g_INT_00623e98
            4 bytes  at 0x00623e9c  between g_INT_00623e98                 and g_INT_00623ea0
            4 bytes  at 0x00623ea4  between g_INT_00623ea0                 and g_INT_00623ea8
            4 bytes  at 0x00623eac  between g_INT_00623ea8                 and g_QWORD_00623eb0
-           4 bytes  at 0x00623f24  between g_INT_00623f20                 and g_INT_00623f28
-           4 bytes  at 0x00623f2c  between g_INT_00623f28                 and g_INT_00623f30
-           4 bytes  at 0x00623f34  between g_INT_00623f30                 and g_QWORD_00623f38
            4 bytes  at 0x00626594  between g_ARRAY_PTR_00626584           and g_INT_00626598
            4 bytes  at 0x0062664c  between DAT_00626648                   and PTR_g_CHAR_ARRAY_005fab8c+4_00
            4 bytes  at 0x006267a4  between g_PTR_006267a0                 and g_PTR_006267a8
@@ -1948,7 +1912,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            4 bytes  at 0x01c43548  between g_BIT_INTEGER32_01c43544       and g_ARRAY_PTR_01c4354c
            4 bytes  at 0x01c5094c  between g_INT_01c50948                 and g_CHAR_ARRAY_01c50950
            4 bytes  at 0x01c51cd0  between g_INT_01c51ccc                 and g_INT_01c51cd4
-           4 bytes  at 0x01c57090  between g_CVector3i_01c57084           and g_SMRGLHeaderPrimitive_01c5709
+           4 bytes  at 0x01c57090  between g_CVector3i_01c57084           and g_SMRGLPrimitiveQuadIndex_01c5
            4 bytes  at 0x01cc4204  between g_INT_01cc4200                 and DAT_01cc4208
            4 bytes  at 0x01cc426c  between g_INT_01cc4268                 and g_CHAR_ARRAY_01cc4270
            4 bytes  at 0x01cc7f34  between g_INT_01cc7f30                 and g_CHAR_01cc7f38
@@ -1956,17 +1920,17 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            4 bytes  at 0x01cce09c  between g_CDemonLightInstance.light_en and g_CDemonLightInstance.volumetr
            4 bytes  at 0x01cd05bc  between g_CPickList                    and g_CHAR_ARRAY_01cd05c0
            4 bytes  at 0x01cd0c98  between g_INT_01cd0c94                 and g_INT_ARRAY_01cd0c9c
-           4 bytes  at 0x01cd0e80  between g_CVector3i_01cd0e74           and g_SMRGLHeaderPrimitive_01cd0e8
+           4 bytes  at 0x01cd0e80  between g_CVector3i_01cd0e74           and g_SMRGLPrimitiveQuadIndex_01cd
            4 bytes  at 0x01d06d64  between g_CImpClassInfo.name_hash      and g_INT_01d06d68
            4 bytes  at 0x01d1dd3c  between g_INT_01d1dd38                 and g_CMatrix3x3i_01d1dd40
            4 bytes  at 0x01d1ee94  between g_INT_01d1ee90                 and g_INT_01d1ee98
            4 bytes  at 0x01d22840  between DAT_01d2283c                   and DAT_01d22844
            4 bytes  at 0x01d2480c  between DAT_01d24808                   and DAT_01d24810
            4 bytes  at 0x01d2c11c  between DAT_01d2c118                   and DAT_01d2c120
-           4 bytes  at 0x01d2c8d8  between g_CVector3f_ARRAY_01d2c758     and g_SMRGLHeaderPrimitive_01d2c8d
+           4 bytes  at 0x01d2c8d8  between g_CVector3f_ARRAY_01d2c758     and g_SMRGLPrimitiveQuadIndex_01d2
            4 bytes  at 0x01d2d90c  between DAT_01d2d908                   and DAT_01d2d910
-           4 bytes  at 0x01d3eb8c  between DAT_01d3eb88                   and DAT_01d3eb90
-           4 bytes  at 0x01d3ed9c  between DAT_01d3ed98                   and DAT_01d3eda0
+           4 bytes  at 0x01d3eb8c  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
+           4 bytes  at 0x01d3ed9c  between g_DOUBLE_ARRAY_ARRAY_01d3e9c8[ and g_DOUBLE_ARRAY_ARRAY_01d3e9c8[
            4 bytes  at 0x01d7f1c4  between g_INT_01d7f1c0                 and g_CHAR_PTR_ARRAY_01d7f1c4[1]
            4 bytes  at 0x01e7d360  between g_INT_01e7d35c                 and g_SMRGLPrimitiveQuad_01e7d360.
            4 bytes  at 0x01e7dac4  between g_INT_01e7dac0                 and g_INT_01e7dac8
@@ -2011,7 +1975,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            3 bytes  at 0x007c61c1  between g_BYTE_007c61c0                and g_CKeyFramedModelInstance_007c
            3 bytes  at 0x01b687f5  between g_BYTE_01b687f4                and g_CVector3f_01b687f8
            3 bytes  at 0x01c3d43d  between g_BYTE_01c3d43c                and g_INT_01c3d440
-           3 bytes  at 0x01d6dfc9  between DAT_01d6dfc5                   and DAT_01d6dfcc
            3 bytes  at 0x02c745b9  between g_BYTE_02c745b8                and g_INT_02c745bc
            3 bytes  at 0x02c835e1  between g_BYTE_02c835e0                and g_CVector3f_02c835e4
            3 bytes  at 0x02c9a625  between g_BYTE_02c9a624                and g_INT_02c9a628
@@ -2027,7 +1990,6 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            2 bytes  at 0x006265dd  between g_CHAR_PTR_006265d9            and g_BYTE_006265df
            2 bytes  at 0x0062676a  between g_SHORT_00626768               and g_WatcomStaticDestructorNode_P
            2 bytes  at 0x006e6f67  between g_SRenderVertex_ARRAY_00629014 and g_SRenderVertex_ARRAY_00629014
-           2 bytes  at 0x01c51cc2  between g_BYTE_01c51cc1                and g_INT_01c51cc4
            2 bytes  at 0x02c807f5  between g_BYTE_02c807f4                and g_BYTE_02c807f7
            1 bytes  at 0x005d4039  between s_wav_005d4032+3               and g_FLOAT_005d403a
            1 bytes  at 0x005d7e44  between DAT_005d7e43                   and s_d_deputy_dfm_005d7e45
@@ -2061,7 +2023,7 @@ ALL EXACT GAPS (1878) - size bounds are known precisely
            1 bytes  at 0x00626d09  between g_CHAR_ARRAY_00626c09          and g_InitHandlers
 
 --------------------------------------------------------------------------------
-OVERLAPS (7242) - next global starts inside previous
+OVERLAPS (7232) - next global starts inside previous
 --------------------------------------------------------------------------------
   248 bytes overlap ~
     s_vga_act_005d2004                       TerminatedCString    at 0x005d2004  size=256
@@ -3310,13 +3272,25 @@ OVERLAPS (7242) - next global starts inside previous
     s_f_005d400e                             TerminatedCString    at 0x005d400e
   253 bytes overlap ~
     s_f_005d400e                             TerminatedCString    at 0x005d400e  size=256
-    DAT_005d4011                             undefined1           at 0x005d4011
-  247 bytes overlap ~
-    s_s_1_wav_005d4014                       TerminatedCString    at 0x005d4014  size=256
-    DAT_005d401d                             undefined1           at 0x005d401d
-  247 bytes overlap ~
-    s_s_1_wav_005d4020                       TerminatedCString    at 0x005d4020  size=256
-    s_f_005d4029                             TerminatedCString    at 0x005d4029
+    s_AB_1_wav_005d4011                      TerminatedCString    at 0x005d4011
+  255 bytes overlap ~
+    s_AB_1_wav_005d4011                      TerminatedCString    at 0x005d4011  size=256
+    s_AB_1_wav_005d4011+1                    undefined4           at 0x005d4012
+  3 bytes overlap
+    s_AB_1_wav_005d4011+1                    undefined4           at 0x005d4012  size=4
+    s_AB_1_wav_005d4011+2                    undefined4           at 0x005d4013
+  3 bytes overlap
+    s_AB_1_wav_005d4011+2                    undefined4           at 0x005d4013  size=4
+    s_AB_1_wav_005d4011+3                    undefined4           at 0x005d4014
+  255 bytes overlap ~
+    s_AT_1_wav_005d401d                      TerminatedCString    at 0x005d401d  size=256
+    s_AT_1_wav_005d401d+1                    undefined4           at 0x005d401e
+  3 bytes overlap
+    s_AT_1_wav_005d401d+1                    undefined4           at 0x005d401e  size=4
+    s_AT_1_wav_005d401d+2                    undefined4           at 0x005d401f
+  3 bytes overlap
+    s_AT_1_wav_005d401d+2                    undefined4           at 0x005d401f  size=4
+    s_AT_1_wav_005d401d+3                    undefined4           at 0x005d4020
   253 bytes overlap ~
     s_f_005d4029                             TerminatedCString    at 0x005d4029  size=256
     s_AR_d_005d402c                          TerminatedCString    at 0x005d402c
@@ -5426,9 +5400,15 @@ OVERLAPS (7242) - next global starts inside previous
   255 bytes overlap ~
     s_chase_wav_2_005d82d3                   TerminatedCString    at 0x005d82d3  size=256
     s_chase_wav_2_005d82d3+1                 undefined4           at 0x005d82d4
-  243 bytes overlap ~
-    s_unt_wav_2_005d82e6                     TerminatedCString    at 0x005d82e6  size=256
-    s_demn_005d82f3                          TerminatedCString    at 0x005d82f3
+  255 bytes overlap ~
+    s_taunt_wav_2_005d82e3                   TerminatedCString    at 0x005d82e3  size=256
+    s_taunt_wav_2_005d82e3+1                 undefined4           at 0x005d82e4
+  3 bytes overlap
+    s_taunt_wav_2_005d82e3+1                 undefined4           at 0x005d82e4  size=4
+    s_taunt_wav_2_005d82e3+2                 undefined4           at 0x005d82e5
+  3 bytes overlap
+    s_taunt_wav_2_005d82e3+2                 undefined4           at 0x005d82e5  size=4
+    s_taunt_wav_2_005d82e3+3                 undefined4           at 0x005d82e6
   255 bytes overlap ~
     s_demn_005d82f3                          TerminatedCString    at 0x005d82f3  size=256
     s_demn_005d82f3+1                        undefined4           at 0x005d82f4
@@ -5440,10 +5420,16 @@ OVERLAPS (7242) - next global starts inside previous
     s_demn_005d82f3+3                        undefined4           at 0x005d82f6
   1 bytes overlap
     s_demn_005d82f3+3                        undefined4           at 0x005d82f6  size=4
-    DAT_005d82f9                             undefined1           at 0x005d82f9
-  244 bytes overlap ~
-    s_rt_wav_2_005d82fc                      TerminatedCString    at 0x005d82fc  size=256
-    s_demn_005d8308                          TerminatedCString    at 0x005d8308
+    s_hurt_wav_2_005d82f9                    TerminatedCString    at 0x005d82f9
+  255 bytes overlap ~
+    s_hurt_wav_2_005d82f9                    TerminatedCString    at 0x005d82f9  size=256
+    s_hurt_wav_2_005d82f9+1                  undefined4           at 0x005d82fa
+  3 bytes overlap
+    s_hurt_wav_2_005d82f9+1                  undefined4           at 0x005d82fa  size=4
+    s_hurt_wav_2_005d82f9+2                  undefined4           at 0x005d82fb
+  3 bytes overlap
+    s_hurt_wav_2_005d82f9+2                  undefined4           at 0x005d82fb  size=4
+    s_hurt_wav_2_005d82f9+3                  undefined4           at 0x005d82fc
   255 bytes overlap ~
     s_demn_005d8308                          TerminatedCString    at 0x005d8308  size=256
     s_demn_005d8308+1                        undefined4           at 0x005d8309
@@ -5455,10 +5441,16 @@ OVERLAPS (7242) - next global starts inside previous
     s_demn_005d8308+3                        undefined4           at 0x005d830b
   1 bytes overlap
     s_demn_005d8308+3                        undefined4           at 0x005d830b  size=4
-    DAT_005d830e                             undefined1           at 0x005d830e
-  246 bytes overlap ~
-    s_e_wav_2_005d8311                       TerminatedCString    at 0x005d8311  size=256
-    s_ghoul_eat_wav_005d831b                 TerminatedCString    at 0x005d831b
+    s_die_wav_2_005d830e                     TerminatedCString    at 0x005d830e
+  255 bytes overlap ~
+    s_die_wav_2_005d830e                     TerminatedCString    at 0x005d830e  size=256
+    s_die_wav_2_005d830e+1                   undefined4           at 0x005d830f
+  3 bytes overlap
+    s_die_wav_2_005d830e+1                   undefined4           at 0x005d830f  size=4
+    s_die_wav_2_005d830e+2                   undefined4           at 0x005d8310
+  3 bytes overlap
+    s_die_wav_2_005d830e+2                   undefined4           at 0x005d8310  size=4
+    s_die_wav_2_005d830e+3                   undefined4           at 0x005d8311
   240 bytes overlap ~
     s_ghoul_eat_wav_005d831b                 TerminatedCString    at 0x005d831b  size=256
     s_ghoul_dig_wav_005d832b                 TerminatedCString    at 0x005d832b
@@ -16244,6 +16236,12 @@ OVERLAPS (7242) - next global starts inside previous
   236 bytes overlap ~
     s_Out_of_bounds4_005eca70                TerminatedCString    at 0x005eca70  size=256
     g_FLOAT_005eca84                         float                at 0x005eca84
+  239 bytes overlap ~
+    s_core_path_cpp_005ecaa4                 TerminatedCString    at 0x005ecaa4  size=256
+    s_Global_pathmap_list_corr_005ecab5      TerminatedCString    at 0x005ecab5
+  107 bytes overlap ~
+    s_Global_pathmap_list_corr_005ecab5      TerminatedCString    at 0x005ecab5  size=256
+    s_engine_pcx_c_005ecb4a                  TerminatedCString    at 0x005ecb4a
   240 bytes overlap ~
     s_engine_pcx_c_005ecb4a                  TerminatedCString    at 0x005ecb4a  size=256
     s_saveScreenRaw16_No_ext_f_005ecb5a      TerminatedCString    at 0x005ecb5a
@@ -22970,15 +22968,6 @@ OVERLAPS (7242) - next global starts inside previous
   4 bytes overlap
     g_DOUBLE_00608560                        double               at 0x00608560  size=8
     g_DOUBLE_00608560+4                      undefined4           at 0x00608564
-  3 bytes overlap
-    DAT_00608570                             undefined4           at 0x00608570  size=4
-    DAT_00608571                             undefined4           at 0x00608571
-  3 bytes overlap
-    DAT_00608571                             undefined4           at 0x00608571  size=4
-    DAT_00608572                             undefined4           at 0x00608572
-  3 bytes overlap
-    DAT_00608572                             undefined4           at 0x00608572  size=4
-    DAT_00608573                             undefined4           at 0x00608573
   240 bytes overlap ~
     s_s_3D_vector_00610640                   TerminatedCString    at 0x00610640  size=256
     s_Euler_PBH_orientation_00610650         TerminatedCString    at 0x00610650
@@ -23023,7 +23012,7 @@ OVERLAPS (7242) - next global starts inside previous
     g_CDemnfolkClassVersion                  int                  at 0x006112b0
   24 bytes overlap ~
     g_UCHAR_ARRAY_006122a0                   uchar[8]             at 0x006122a0  size=32
-    g_SMRGLTextureBasic_006122a8             SMRGLTextureBasic    at 0x006122a8
+    g_SLightGlowTable_006122a8               SLightGlowTable      at 0x006122a8
   252 bytes overlap ~
     s_A_A_00612558                           TerminatedCString    at 0x00612558  size=256
     g_CDemonRenderer_PTR_0061255c            CDemonRenderer*      at 0x0061255c
@@ -23180,21 +23169,6 @@ OVERLAPS (7242) - next global starts inside previous
   359636 bytes overlap
     g_CHAR_ARRAY_007ddbb4                    char[500000]         at 0x007ddbb4  size=500,000
     g_CHAR_ARRAY_007ddbb4+0x2244c            undefined4           at 0x00800000
-  76796 bytes overlap
-    g_CHAR_ARRAY_01342220                    char[76797]          at 0x01342220  size=76,797
-    g_CHAR_ARRAY_01342220+1                  undefined4           at 0x01342221
-  3 bytes overlap
-    g_CHAR_ARRAY_01342220+1                  undefined4           at 0x01342221  size=4
-    g_CHAR_ARRAY_01342220+2                  undefined4           at 0x01342222
-  3 bytes overlap
-    g_CHAR_ARRAY_01342220+0x140              undefined4           at 0x01342360  size=4
-    g_CHAR_ARRAY_01342220+0x141              undefined4           at 0x01342361
-  3 bytes overlap
-    g_CHAR_ARRAY_01342220+0x141              undefined4           at 0x01342361  size=4
-    g_CHAR_ARRAY_01342220+0x142              undefined4           at 0x01342362
-  3 bytes overlap
-    g_CHAR_ARRAY_01342220+0x280              undefined4           at 0x013424a0  size=4
-    g_CHAR_ARRAY_01342220+0x281              undefined4           at 0x013424a1
   10 bytes overlap
     g_CVector3i_01483a40                     CVector3i            at 0x01483a40  size=12
     g_CVector3i_01483a40.x+2                 undefined4           at 0x01483a42
@@ -23240,6 +23214,9 @@ OVERLAPS (7242) - next global starts inside previous
   3 bytes overlap
     g_CHAR_ARRAY_01c50950+0x200              undefined4           at 0x01c50b50  size=4
     g_CHAR_ARRAY_01c50950+0x201              undefined4           at 0x01c50b51
+  1 bytes overlap
+    g_DWORD_01c51cc0+1                       undefined4           at 0x01c51cc1  size=4
+    g_INT_01c51cc4                           int                  at 0x01c51cc4
   3 bytes overlap
     g_BIT_INTEGER32_01c51d14                 _BIT_INTEGER32       at 0x01c51d14  size=4
     g_BIT_INTEGER32_01c51d14+1               undefined4           at 0x01c51d15
@@ -23385,296 +23362,260 @@ OVERLAPS (7242) - next global starts inside previous
     DAT_01d2000a                             undefined4           at 0x01d2000a  size=4
     DAT_01d2000b                             undefined4           at 0x01d2000b
   3 bytes overlap
-    g_CHAR_ARRAY_01d21048                    char[4]              at 0x01d21048  size=4
-    g_CHAR_ARRAY_01d21048+1                  undefined4           at 0x01d21049
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][0]        undefined4           at 0x01d21508  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][1]        undefined4           at 0x01d21509
   3 bytes overlap
-    g_CHAR_ARRAY_01d21048+1                  undefined4           at 0x01d21049  size=4
-    g_CHAR_ARRAY_01d21048+2                  undefined4           at 0x01d2104a
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][1]        undefined4           at 0x01d21509  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][2]        undefined4           at 0x01d2150a
   3 bytes overlap
-    g_CHAR_ARRAY_01d21048+2                  undefined4           at 0x01d2104a  size=4
-    g_CHAR_ARRAY_01d21048+3                  undefined4           at 0x01d2104b
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][2]        undefined4           at 0x01d2150a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[1][3]        undefined4           at 0x01d2150b
   3 bytes overlap
-    DAT_01d21148                             undefined4           at 0x01d21148  size=4
-    DAT_01d21149                             undefined4           at 0x01d21149
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][0]        undefined4           at 0x01d21530  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][1]        undefined4           at 0x01d21531
   3 bytes overlap
-    DAT_01d21149                             undefined4           at 0x01d21149  size=4
-    DAT_01d2114a                             undefined4           at 0x01d2114a
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][1]        undefined4           at 0x01d21531  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][2]        undefined4           at 0x01d21532
   3 bytes overlap
-    DAT_01d2114a                             undefined4           at 0x01d2114a  size=4
-    DAT_01d2114b                             undefined4           at 0x01d2114b
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][2]        undefined4           at 0x01d21532  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[2][3]        undefined4           at 0x01d21533
   3 bytes overlap
-    DAT_01d21248                             undefined4           at 0x01d21248  size=4
-    DAT_01d21249                             undefined4           at 0x01d21249
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][0]        undefined4           at 0x01d21558  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][1]        undefined4           at 0x01d21559
   3 bytes overlap
-    DAT_01d21249                             undefined4           at 0x01d21249  size=4
-    DAT_01d2124a                             undefined4           at 0x01d2124a
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][1]        undefined4           at 0x01d21559  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][2]        undefined4           at 0x01d2155a
   3 bytes overlap
-    DAT_01d2124a                             undefined4           at 0x01d2124a  size=4
-    DAT_01d2124b                             undefined4           at 0x01d2124b
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][2]        undefined4           at 0x01d2155a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[3][3]        undefined4           at 0x01d2155b
   3 bytes overlap
-    DAT_01d21348                             undefined4           at 0x01d21348  size=4
-    DAT_01d21349                             undefined4           at 0x01d21349
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][0]        undefined4           at 0x01d21580  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][1]        undefined4           at 0x01d21581
   3 bytes overlap
-    DAT_01d21349                             undefined4           at 0x01d21349  size=4
-    DAT_01d2134a                             undefined4           at 0x01d2134a
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][1]        undefined4           at 0x01d21581  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][2]        undefined4           at 0x01d21582
   3 bytes overlap
-    DAT_01d2134a                             undefined4           at 0x01d2134a  size=4
-    DAT_01d2134b                             undefined4           at 0x01d2134b
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][2]        undefined4           at 0x01d21582  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[4][3]        undefined4           at 0x01d21583
   3 bytes overlap
-    DAT_01d21508                             undefined4           at 0x01d21508  size=4
-    DAT_01d21509                             undefined4           at 0x01d21509
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][0]        undefined4           at 0x01d215a8  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][1]        undefined4           at 0x01d215a9
   3 bytes overlap
-    DAT_01d21509                             undefined4           at 0x01d21509  size=4
-    DAT_01d2150a                             undefined4           at 0x01d2150a
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][1]        undefined4           at 0x01d215a9  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][2]        undefined4           at 0x01d215aa
   3 bytes overlap
-    DAT_01d2150a                             undefined4           at 0x01d2150a  size=4
-    DAT_01d2150b                             undefined4           at 0x01d2150b
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][2]        undefined4           at 0x01d215aa  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[5][3]        undefined4           at 0x01d215ab
   3 bytes overlap
-    DAT_01d21530                             undefined4           at 0x01d21530  size=4
-    DAT_01d21531                             undefined4           at 0x01d21531
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][0]        undefined4           at 0x01d215d0  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][1]        undefined4           at 0x01d215d1
   3 bytes overlap
-    DAT_01d21531                             undefined4           at 0x01d21531  size=4
-    DAT_01d21532                             undefined4           at 0x01d21532
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][1]        undefined4           at 0x01d215d1  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][2]        undefined4           at 0x01d215d2
   3 bytes overlap
-    DAT_01d21532                             undefined4           at 0x01d21532  size=4
-    DAT_01d21533                             undefined4           at 0x01d21533
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][2]        undefined4           at 0x01d215d2  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[6][3]        undefined4           at 0x01d215d3
   3 bytes overlap
-    DAT_01d21558                             undefined4           at 0x01d21558  size=4
-    DAT_01d21559                             undefined4           at 0x01d21559
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][0]        undefined4           at 0x01d215f8  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][1]        undefined4           at 0x01d215f9
   3 bytes overlap
-    DAT_01d21559                             undefined4           at 0x01d21559  size=4
-    DAT_01d2155a                             undefined4           at 0x01d2155a
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][1]        undefined4           at 0x01d215f9  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][2]        undefined4           at 0x01d215fa
   3 bytes overlap
-    DAT_01d2155a                             undefined4           at 0x01d2155a  size=4
-    DAT_01d2155b                             undefined4           at 0x01d2155b
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][2]        undefined4           at 0x01d215fa  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[7][3]        undefined4           at 0x01d215fb
   3 bytes overlap
-    DAT_01d21580                             undefined4           at 0x01d21580  size=4
-    DAT_01d21581                             undefined4           at 0x01d21581
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][0]        undefined4           at 0x01d21620  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][1]        undefined4           at 0x01d21621
   3 bytes overlap
-    DAT_01d21581                             undefined4           at 0x01d21581  size=4
-    DAT_01d21582                             undefined4           at 0x01d21582
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][1]        undefined4           at 0x01d21621  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][2]        undefined4           at 0x01d21622
   3 bytes overlap
-    DAT_01d21582                             undefined4           at 0x01d21582  size=4
-    DAT_01d21583                             undefined4           at 0x01d21583
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][2]        undefined4           at 0x01d21622  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[8][3]        undefined4           at 0x01d21623
   3 bytes overlap
-    DAT_01d215a8                             undefined4           at 0x01d215a8  size=4
-    DAT_01d215a9                             undefined4           at 0x01d215a9
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][0]        undefined4           at 0x01d21648  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][1]        undefined4           at 0x01d21649
   3 bytes overlap
-    DAT_01d215a9                             undefined4           at 0x01d215a9  size=4
-    DAT_01d215aa                             undefined4           at 0x01d215aa
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][1]        undefined4           at 0x01d21649  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][2]        undefined4           at 0x01d2164a
   3 bytes overlap
-    DAT_01d215aa                             undefined4           at 0x01d215aa  size=4
-    DAT_01d215ab                             undefined4           at 0x01d215ab
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][2]        undefined4           at 0x01d2164a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[9][3]        undefined4           at 0x01d2164b
   3 bytes overlap
-    DAT_01d215d0                             undefined4           at 0x01d215d0  size=4
-    DAT_01d215d1                             undefined4           at 0x01d215d1
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][0]       undefined4           at 0x01d21670  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][1]       undefined4           at 0x01d21671
   3 bytes overlap
-    DAT_01d215d1                             undefined4           at 0x01d215d1  size=4
-    DAT_01d215d2                             undefined4           at 0x01d215d2
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][1]       undefined4           at 0x01d21671  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][2]       undefined4           at 0x01d21672
   3 bytes overlap
-    DAT_01d215d2                             undefined4           at 0x01d215d2  size=4
-    DAT_01d215d3                             undefined4           at 0x01d215d3
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][2]       undefined4           at 0x01d21672  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[10][3]       undefined4           at 0x01d21673
   3 bytes overlap
-    DAT_01d215f8                             undefined4           at 0x01d215f8  size=4
-    DAT_01d215f9                             undefined4           at 0x01d215f9
+    g_CHAR_ARRAY_ARRAY_01d214e0[11][0]       undefined4           at 0x01d21698  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[11][1]       undefined4           at 0x01d21699
   3 bytes overlap
-    DAT_01d215f9                             undefined4           at 0x01d215f9  size=4
-    DAT_01d215fa                             undefined4           at 0x01d215fa
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][0]       undefined4           at 0x01d216c0  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][1]       undefined4           at 0x01d216c1
   3 bytes overlap
-    DAT_01d215fa                             undefined4           at 0x01d215fa  size=4
-    DAT_01d215fb                             undefined4           at 0x01d215fb
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][1]       undefined4           at 0x01d216c1  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][2]       undefined4           at 0x01d216c2
   3 bytes overlap
-    DAT_01d21620                             undefined4           at 0x01d21620  size=4
-    DAT_01d21621                             undefined4           at 0x01d21621
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][2]       undefined4           at 0x01d216c2  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[12][3]       undefined4           at 0x01d216c3
   3 bytes overlap
-    DAT_01d21621                             undefined4           at 0x01d21621  size=4
-    DAT_01d21622                             undefined4           at 0x01d21622
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][0]       undefined4           at 0x01d216e8  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][1]       undefined4           at 0x01d216e9
   3 bytes overlap
-    DAT_01d21622                             undefined4           at 0x01d21622  size=4
-    DAT_01d21623                             undefined4           at 0x01d21623
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][1]       undefined4           at 0x01d216e9  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][2]       undefined4           at 0x01d216ea
   3 bytes overlap
-    DAT_01d21648                             undefined4           at 0x01d21648  size=4
-    DAT_01d21649                             undefined4           at 0x01d21649
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][2]       undefined4           at 0x01d216ea  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[13][3]       undefined4           at 0x01d216eb
   3 bytes overlap
-    DAT_01d21649                             undefined4           at 0x01d21649  size=4
-    DAT_01d2164a                             undefined4           at 0x01d2164a
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][0]       undefined4           at 0x01d21710  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][1]       undefined4           at 0x01d21711
   3 bytes overlap
-    DAT_01d2164a                             undefined4           at 0x01d2164a  size=4
-    DAT_01d2164b                             undefined4           at 0x01d2164b
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][1]       undefined4           at 0x01d21711  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][2]       undefined4           at 0x01d21712
   3 bytes overlap
-    DAT_01d21670                             undefined4           at 0x01d21670  size=4
-    DAT_01d21671                             undefined4           at 0x01d21671
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][2]       undefined4           at 0x01d21712  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[14][3]       undefined4           at 0x01d21713
   3 bytes overlap
-    DAT_01d21671                             undefined4           at 0x01d21671  size=4
-    DAT_01d21672                             undefined4           at 0x01d21672
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][0]       undefined4           at 0x01d21738  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][1]       undefined4           at 0x01d21739
   3 bytes overlap
-    DAT_01d21672                             undefined4           at 0x01d21672  size=4
-    DAT_01d21673                             undefined4           at 0x01d21673
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][1]       undefined4           at 0x01d21739  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][2]       undefined4           at 0x01d2173a
   3 bytes overlap
-    DAT_01d21698                             undefined4           at 0x01d21698  size=4
-    DAT_01d21699                             undefined4           at 0x01d21699
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][2]       undefined4           at 0x01d2173a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[15][3]       undefined4           at 0x01d2173b
   3 bytes overlap
-    DAT_01d216c0                             undefined4           at 0x01d216c0  size=4
-    DAT_01d216c1                             undefined4           at 0x01d216c1
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][0]       undefined4           at 0x01d21760  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][1]       undefined4           at 0x01d21761
   3 bytes overlap
-    DAT_01d216c1                             undefined4           at 0x01d216c1  size=4
-    DAT_01d216c2                             undefined4           at 0x01d216c2
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][1]       undefined4           at 0x01d21761  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][2]       undefined4           at 0x01d21762
   3 bytes overlap
-    DAT_01d216c2                             undefined4           at 0x01d216c2  size=4
-    DAT_01d216c3                             undefined4           at 0x01d216c3
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][2]       undefined4           at 0x01d21762  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[16][3]       undefined4           at 0x01d21763
   3 bytes overlap
-    DAT_01d216e8                             undefined4           at 0x01d216e8  size=4
-    DAT_01d216e9                             undefined4           at 0x01d216e9
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][0]       undefined4           at 0x01d21788  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][1]       undefined4           at 0x01d21789
   3 bytes overlap
-    DAT_01d216e9                             undefined4           at 0x01d216e9  size=4
-    DAT_01d216ea                             undefined4           at 0x01d216ea
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][1]       undefined4           at 0x01d21789  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][2]       undefined4           at 0x01d2178a
   3 bytes overlap
-    DAT_01d216ea                             undefined4           at 0x01d216ea  size=4
-    DAT_01d216eb                             undefined4           at 0x01d216eb
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][2]       undefined4           at 0x01d2178a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[17][3]       undefined4           at 0x01d2178b
   3 bytes overlap
-    DAT_01d21710                             undefined4           at 0x01d21710  size=4
-    DAT_01d21711                             undefined4           at 0x01d21711
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][0]       undefined4           at 0x01d217b0  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][1]       undefined4           at 0x01d217b1
   3 bytes overlap
-    DAT_01d21711                             undefined4           at 0x01d21711  size=4
-    DAT_01d21712                             undefined4           at 0x01d21712
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][1]       undefined4           at 0x01d217b1  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][2]       undefined4           at 0x01d217b2
   3 bytes overlap
-    DAT_01d21712                             undefined4           at 0x01d21712  size=4
-    DAT_01d21713                             undefined4           at 0x01d21713
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][2]       undefined4           at 0x01d217b2  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[18][3]       undefined4           at 0x01d217b3
   3 bytes overlap
-    DAT_01d21738                             undefined4           at 0x01d21738  size=4
-    DAT_01d21739                             undefined4           at 0x01d21739
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][0]       undefined4           at 0x01d217d8  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][1]       undefined4           at 0x01d217d9
   3 bytes overlap
-    DAT_01d21739                             undefined4           at 0x01d21739  size=4
-    DAT_01d2173a                             undefined4           at 0x01d2173a
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][1]       undefined4           at 0x01d217d9  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][2]       undefined4           at 0x01d217da
   3 bytes overlap
-    DAT_01d2173a                             undefined4           at 0x01d2173a  size=4
-    DAT_01d2173b                             undefined4           at 0x01d2173b
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][2]       undefined4           at 0x01d217da  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[19][3]       undefined4           at 0x01d217db
   3 bytes overlap
-    DAT_01d21760                             undefined4           at 0x01d21760  size=4
-    DAT_01d21761                             undefined4           at 0x01d21761
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][0]       undefined4           at 0x01d21800  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][1]       undefined4           at 0x01d21801
   3 bytes overlap
-    DAT_01d21761                             undefined4           at 0x01d21761  size=4
-    DAT_01d21762                             undefined4           at 0x01d21762
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][1]       undefined4           at 0x01d21801  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][2]       undefined4           at 0x01d21802
   3 bytes overlap
-    DAT_01d21762                             undefined4           at 0x01d21762  size=4
-    DAT_01d21763                             undefined4           at 0x01d21763
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][2]       undefined4           at 0x01d21802  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[20][3]       undefined4           at 0x01d21803
   3 bytes overlap
-    DAT_01d21788                             undefined4           at 0x01d21788  size=4
-    DAT_01d21789                             undefined4           at 0x01d21789
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][0]       undefined4           at 0x01d21828  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][1]       undefined4           at 0x01d21829
   3 bytes overlap
-    DAT_01d21789                             undefined4           at 0x01d21789  size=4
-    DAT_01d2178a                             undefined4           at 0x01d2178a
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][1]       undefined4           at 0x01d21829  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][2]       undefined4           at 0x01d2182a
   3 bytes overlap
-    DAT_01d2178a                             undefined4           at 0x01d2178a  size=4
-    DAT_01d2178b                             undefined4           at 0x01d2178b
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][2]       undefined4           at 0x01d2182a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[21][3]       undefined4           at 0x01d2182b
   3 bytes overlap
-    DAT_01d217b0                             undefined4           at 0x01d217b0  size=4
-    DAT_01d217b1                             undefined4           at 0x01d217b1
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][0]       undefined4           at 0x01d21850  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][1]       undefined4           at 0x01d21851
   3 bytes overlap
-    DAT_01d217b1                             undefined4           at 0x01d217b1  size=4
-    DAT_01d217b2                             undefined4           at 0x01d217b2
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][1]       undefined4           at 0x01d21851  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][2]       undefined4           at 0x01d21852
   3 bytes overlap
-    DAT_01d217b2                             undefined4           at 0x01d217b2  size=4
-    DAT_01d217b3                             undefined4           at 0x01d217b3
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][2]       undefined4           at 0x01d21852  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[22][3]       undefined4           at 0x01d21853
   3 bytes overlap
-    DAT_01d217d8                             undefined4           at 0x01d217d8  size=4
-    DAT_01d217d9                             undefined4           at 0x01d217d9
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][0]       undefined4           at 0x01d21878  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][1]       undefined4           at 0x01d21879
   3 bytes overlap
-    DAT_01d217d9                             undefined4           at 0x01d217d9  size=4
-    DAT_01d217da                             undefined4           at 0x01d217da
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][1]       undefined4           at 0x01d21879  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][2]       undefined4           at 0x01d2187a
   3 bytes overlap
-    DAT_01d217da                             undefined4           at 0x01d217da  size=4
-    DAT_01d217db                             undefined4           at 0x01d217db
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][2]       undefined4           at 0x01d2187a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[23][3]       undefined4           at 0x01d2187b
   3 bytes overlap
-    DAT_01d21800                             undefined4           at 0x01d21800  size=4
-    DAT_01d21801                             undefined4           at 0x01d21801
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][0]       undefined4           at 0x01d218a0  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][1]       undefined4           at 0x01d218a1
   3 bytes overlap
-    DAT_01d21801                             undefined4           at 0x01d21801  size=4
-    DAT_01d21802                             undefined4           at 0x01d21802
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][1]       undefined4           at 0x01d218a1  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][2]       undefined4           at 0x01d218a2
   3 bytes overlap
-    DAT_01d21802                             undefined4           at 0x01d21802  size=4
-    DAT_01d21803                             undefined4           at 0x01d21803
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][2]       undefined4           at 0x01d218a2  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[24][3]       undefined4           at 0x01d218a3
   3 bytes overlap
-    DAT_01d21828                             undefined4           at 0x01d21828  size=4
-    DAT_01d21829                             undefined4           at 0x01d21829
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][0]       undefined4           at 0x01d218c8  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][1]       undefined4           at 0x01d218c9
   3 bytes overlap
-    DAT_01d21829                             undefined4           at 0x01d21829  size=4
-    DAT_01d2182a                             undefined4           at 0x01d2182a
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][1]       undefined4           at 0x01d218c9  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][2]       undefined4           at 0x01d218ca
   3 bytes overlap
-    DAT_01d2182a                             undefined4           at 0x01d2182a  size=4
-    DAT_01d2182b                             undefined4           at 0x01d2182b
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][2]       undefined4           at 0x01d218ca  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[25][3]       undefined4           at 0x01d218cb
   3 bytes overlap
-    DAT_01d21850                             undefined4           at 0x01d21850  size=4
-    DAT_01d21851                             undefined4           at 0x01d21851
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][0]       undefined4           at 0x01d218f0  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][1]       undefined4           at 0x01d218f1
   3 bytes overlap
-    DAT_01d21851                             undefined4           at 0x01d21851  size=4
-    DAT_01d21852                             undefined4           at 0x01d21852
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][1]       undefined4           at 0x01d218f1  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][2]       undefined4           at 0x01d218f2
   3 bytes overlap
-    DAT_01d21852                             undefined4           at 0x01d21852  size=4
-    DAT_01d21853                             undefined4           at 0x01d21853
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][2]       undefined4           at 0x01d218f2  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[26][3]       undefined4           at 0x01d218f3
   3 bytes overlap
-    DAT_01d21878                             undefined4           at 0x01d21878  size=4
-    DAT_01d21879                             undefined4           at 0x01d21879
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][0]       undefined4           at 0x01d21918  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][1]       undefined4           at 0x01d21919
   3 bytes overlap
-    DAT_01d21879                             undefined4           at 0x01d21879  size=4
-    DAT_01d2187a                             undefined4           at 0x01d2187a
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][1]       undefined4           at 0x01d21919  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][2]       undefined4           at 0x01d2191a
   3 bytes overlap
-    DAT_01d2187a                             undefined4           at 0x01d2187a  size=4
-    DAT_01d2187b                             undefined4           at 0x01d2187b
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][2]       undefined4           at 0x01d2191a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[27][3]       undefined4           at 0x01d2191b
   3 bytes overlap
-    DAT_01d218a0                             undefined4           at 0x01d218a0  size=4
-    DAT_01d218a1                             undefined4           at 0x01d218a1
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][0]       undefined4           at 0x01d21940  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][1]       undefined4           at 0x01d21941
   3 bytes overlap
-    DAT_01d218a1                             undefined4           at 0x01d218a1  size=4
-    DAT_01d218a2                             undefined4           at 0x01d218a2
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][1]       undefined4           at 0x01d21941  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][2]       undefined4           at 0x01d21942
   3 bytes overlap
-    DAT_01d218a2                             undefined4           at 0x01d218a2  size=4
-    DAT_01d218a3                             undefined4           at 0x01d218a3
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][2]       undefined4           at 0x01d21942  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[28][3]       undefined4           at 0x01d21943
   3 bytes overlap
-    DAT_01d218c8                             undefined4           at 0x01d218c8  size=4
-    DAT_01d218c9                             undefined4           at 0x01d218c9
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][0]       undefined4           at 0x01d21968  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][1]       undefined4           at 0x01d21969
   3 bytes overlap
-    DAT_01d218c9                             undefined4           at 0x01d218c9  size=4
-    DAT_01d218ca                             undefined4           at 0x01d218ca
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][1]       undefined4           at 0x01d21969  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][2]       undefined4           at 0x01d2196a
   3 bytes overlap
-    DAT_01d218ca                             undefined4           at 0x01d218ca  size=4
-    DAT_01d218cb                             undefined4           at 0x01d218cb
-  3 bytes overlap
-    DAT_01d218f0                             undefined4           at 0x01d218f0  size=4
-    DAT_01d218f1                             undefined4           at 0x01d218f1
-  3 bytes overlap
-    DAT_01d218f1                             undefined4           at 0x01d218f1  size=4
-    DAT_01d218f2                             undefined4           at 0x01d218f2
-  3 bytes overlap
-    DAT_01d218f2                             undefined4           at 0x01d218f2  size=4
-    DAT_01d218f3                             undefined4           at 0x01d218f3
-  3 bytes overlap
-    DAT_01d21918                             undefined4           at 0x01d21918  size=4
-    DAT_01d21919                             undefined4           at 0x01d21919
-  3 bytes overlap
-    DAT_01d21919                             undefined4           at 0x01d21919  size=4
-    DAT_01d2191a                             undefined4           at 0x01d2191a
-  3 bytes overlap
-    DAT_01d2191a                             undefined4           at 0x01d2191a  size=4
-    DAT_01d2191b                             undefined4           at 0x01d2191b
-  3 bytes overlap
-    DAT_01d21940                             undefined4           at 0x01d21940  size=4
-    DAT_01d21941                             undefined4           at 0x01d21941
-  3 bytes overlap
-    DAT_01d21941                             undefined4           at 0x01d21941  size=4
-    DAT_01d21942                             undefined4           at 0x01d21942
-  3 bytes overlap
-    DAT_01d21942                             undefined4           at 0x01d21942  size=4
-    DAT_01d21943                             undefined4           at 0x01d21943
-  3 bytes overlap
-    DAT_01d21968                             undefined4           at 0x01d21968  size=4
-    DAT_01d21969                             undefined4           at 0x01d21969
-  3 bytes overlap
-    DAT_01d21969                             undefined4           at 0x01d21969  size=4
-    DAT_01d2196a                             undefined4           at 0x01d2196a
-  3 bytes overlap
-    DAT_01d2196a                             undefined4           at 0x01d2196a  size=4
-    DAT_01d2196b                             undefined4           at 0x01d2196b
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][2]       undefined4           at 0x01d2196a  size=4
+    g_CHAR_ARRAY_ARRAY_01d214e0[29][3]       undefined4           at 0x01d2196b
   3 bytes overlap
     DAT_01d33b21                             undefined4           at 0x01d33b21  size=4
     DAT_01d33b22                             undefined4           at 0x01d33b22
@@ -23696,18 +23637,9 @@ OVERLAPS (7242) - next global starts inside previous
   3 bytes overlap
     g_CHAR_ARRAY_01d404c8+2                  undefined4           at 0x01d404ca  size=4
     g_CHAR_ARRAY_01d404c8+3                  undefined4           at 0x01d404cb
-  3 bytes overlap
-    DAT_01d6dfc4                             undefined4           at 0x01d6dfc4  size=4
-    DAT_01d6dfc5                             undefined4           at 0x01d6dfc5
-  3 bytes overlap
-    DAT_01d6dfd0                             undefined4           at 0x01d6dfd0  size=4
-    DAT_01d6dfd1                             undefined4           at 0x01d6dfd1
-  3 bytes overlap
-    DAT_01d6dfd1                             undefined4           at 0x01d6dfd1  size=4
-    DAT_01d6dfd2                             undefined4           at 0x01d6dfd2
-  3 bytes overlap
-    DAT_01d6dfd2                             undefined4           at 0x01d6dfd2  size=4
-    DAT_01d6dfd3                             undefined4           at 0x01d6dfd3
+  13791 bytes overlap
+    g_SChatOutMessage_ARRAY_01d6dfbc         SChatOutMessage[50]  at 0x01d6dfbc  size=13,800
+    g_SChatOutMessage_ARRAY_01d6dfbc[0].ack_ undefined4           at 0x01d6dfc5
   1028 bytes overlap
     g_UNetPacket_01d7edb0                    UNetPacket           at 0x01d7edb0  size=1,032
     g_UNetPacket_01d7edb0+4                  undefined4           at 0x01d7edb4

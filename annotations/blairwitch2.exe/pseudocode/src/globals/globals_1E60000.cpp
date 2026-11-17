@@ -29,8 +29,8 @@ SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e613f0 = {};
 SSoftwareEdge g_SSoftwareEdge_ARRAY_01e6164c[16] = {};
 SSoftwareEdge g_SSoftwareEdge_ARRAY_01e61b60[16] = {};
 
-// char[10]
-char g_CHAR_ARRAY_01e620f8[10] = {};
+// char[10][1024]
+char g_CHAR_ARRAY_ARRAY_01e620f8[10][1024] = {};
 
 // char[2048]
 char g_CHAR_ARRAY_01e648f8[2048] = {};

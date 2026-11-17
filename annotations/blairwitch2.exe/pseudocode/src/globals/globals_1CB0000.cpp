@@ -53,9 +53,9 @@ CVector3i g_CVector3i_01cb82bc = {};
 // SHardwareEdge[16]
 SHardwareEdge g_SHardwareEdge_ARRAY_01cb025c[16] = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cb8288 = {};
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cb82c8 = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb8288 = {};
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cb82c8 = {};
 
 // UVector3
 UVector3 g_UVector3_01cb0644 = {};
@@ -69,8 +69,8 @@ byte g_BYTE_01cb80f8 = {};
 // char
 char g_CHAR_01cb1120 = {};
 
-// char[10]
-char g_CHAR_ARRAY_01cb0710[10] = {};
+// char[10][256]
+char g_CHAR_ARRAY_ARRAY_01cb0710[10][256] = {};
 
 // char[256]
 char g_CHAR_ARRAY_01cb7428[256] = {};
@@ -135,10 +135,6 @@ int g_INT_01cb8110 = {};
 int g_INT_01cb8114 = {};
 int g_INT_01cb8118 = {};
 int g_INT_01cb811c = {};
-int g_INT_01cb82a0 = {};
-int g_INT_01cb82a4 = {};
-int g_INT_01cb82a8 = {};
-int g_INT_01cb82ac = {};
 int g_INT_01cb82f0 = {};
 int g_INT_01cbcaf4 = {};
 int g_INT_01cbcaf8 = {};

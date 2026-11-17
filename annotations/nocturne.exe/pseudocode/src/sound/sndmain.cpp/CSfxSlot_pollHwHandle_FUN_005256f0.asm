@@ -16,7 +16,7 @@
 ;   TerminatedCString s_Error_setting_hw_sfx_d_o_005930e9
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -35,7 +35,7 @@ section .text
     CMP dword ptr [EBX + 0x6c],0x0      ; 005256f7
     JZ 0x00525750                       ; 005256fb
         ;   XREF to: 00525750 (CONDITIONAL_JUMP)  ; LAB_00525750
-    CMP dword ptr [0x02dc8318],0x0      ; 005256fd | DAT_02dc8318
+    CMP dword ptr [0x02dc8318],0x0      ; 005256fd | g_CSoundDevice_PTR_02dc8318
     JZ 0x00525754                       ; 00525704
         ;   XREF to: 00525754 (CONDITIONAL_JUMP)  ; LAB_00525754
     CMP dword ptr [EBX + 0x74],0x0      ; 00525706
@@ -51,7 +51,7 @@ section .text
     ADD ESP,0x4                         ; 0052572c
     PUSH EBX                            ; 0052572f
         ;   Label: LAB_0052572f
-    MOV EAX,[0x02dc8318]                ; 00525730 | DAT_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00525730 | g_CSoundDevice_PTR_02dc8318
     PUSH EAX                            ; 00525735
     MOV EDX,dword ptr [EAX]             ; 00525736
     CALL dword ptr [EDX + 0x50]         ; 00525738
@@ -120,7 +120,7 @@ section .text
     RET                                 ; 005257a2
     PUSH EAX                            ; 005257a3
         ;   Label: LAB_005257a3
-    MOV EDX,dword ptr [0x02dc8318]      ; 005257a4 | DAT_02dc8318
+    MOV EDX,dword ptr [0x02dc8318]      ; 005257a4 | g_CSoundDevice_PTR_02dc8318
     PUSH EBX                            ; 005257aa
     MOV ECX,dword ptr [EDX]             ; 005257ab
     PUSH EDX                            ; 005257ad

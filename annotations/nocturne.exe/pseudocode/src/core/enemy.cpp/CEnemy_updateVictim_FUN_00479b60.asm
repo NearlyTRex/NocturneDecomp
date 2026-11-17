@@ -25,14 +25,14 @@
 ;   float FLOAT_0057f38b = 3
 ;   undefined4 DAT_0059cda8
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
-;   undefined4 DAT_01bcdef8
-;   undefined4 DAT_01bcdefc
-;   undefined4 DAT_01bcfe34
+;   int[2000] g_INT_ARRAY_01bcdef8
+;   undefined4 g_INT_ARRAY_01bcdef8[1]
+;   undefined4 g_INT_ARRAY_01bcdef8[1999]
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.freeze_enemies_enabled
 ;   ... and 3 more
@@ -101,7 +101,7 @@ section .text
     RET                                 ; 00479bf2
     PUSH 0x57f36f                       ; 00479bf3 | = "Capture"
         ;   Label: LAB_00479bf3
-    MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | DAT_005b7650
+    MOV ESI,dword ptr [0x005b7650]      ; 00479bf8 | g_CEventList_PTR_005b7650
     PUSH ESI                            ; 00479bfe
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 00479bff
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -204,7 +204,7 @@ section .text
         ;   Label: LAB_00479d39
     JL 0x00479ba8                       ; 00479d3b
         ;   XREF to: 00479ba8 (CONDITIONAL_JUMP)  ; LAB_00479ba8
-    MOV EAX,dword ptr [EBX*0x4 + 0x1bcdef8] ; 00479d41 | g_CEnemyActorType_01bcdebc.name_hash | DAT_01bcdef8 | DAT_01bcdefc
+    MOV EAX,dword ptr [EBX*0x4 + 0x1bcdef8] ; 00479d41 | g_CEnemyActorType_01bcdebc.name_hash | g_INT_ARRAY_01bcdef8 | g_INT_ARRAY_01bcdef8[1]
     PUSH EAX                            ; 00479d48
     PUSH EDI                            ; 00479d49
     MOV dword ptr [ESP + 0x44],EAX      ; 00479d4a
@@ -243,7 +243,7 @@ section .text
     MOV EAX,0x7149f2ca                  ; 00479da7
         ;   Label: LAB_00479da7
     MOV EDX,dword ptr [ESP + 0x24]      ; 00479dac
-    MOV dword ptr [EBX*0x4 + 0x1bcfe38],EAX ; 00479db0 | DAT_01bcfe34
+    MOV dword ptr [EBX*0x4 + 0x1bcfe38],EAX ; 00479db0 | g_INT_ARRAY_01bcdef8[1999]
     CMP EDX,dword ptr [ESP + 0x3c]      ; 00479db7
     JNZ 0x00479d00                      ; 00479dbb
         ;   XREF to: 00479d00 (CONDITIONAL_JUMP)  ; LAB_00479d00
@@ -333,7 +333,7 @@ section .text
         ;   XREF to: 00479edb (CONDITIONAL_JUMP)  ; LAB_00479edb
     MOV EAX,dword ptr [ESP + 0x38]      ; 00479ebb
     MOV EDX,dword ptr [ESP + 0x38]      ; 00479ebf
-    MOV dword ptr [EAX + 0x1bcdef8],EBX ; 00479ec3 | DAT_01bcdef8
+    MOV dword ptr [EAX + 0x1bcdef8],EBX ; 00479ec3 | g_INT_ARRAY_01bcdef8
     MOV EAX,dword ptr [ESP + 0x28]      ; 00479ec9
     MOV dword ptr [EDX + 0x1bcfe38],EAX ; 00479ecd
     LEA EAX,[EDX + 0x4]                 ; 00479ed3

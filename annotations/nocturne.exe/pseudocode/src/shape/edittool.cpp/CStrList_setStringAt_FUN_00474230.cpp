@@ -21,7 +21,7 @@ void __cdecl shape_edittool_cpp_CStrList_setStringAt_FUN_00474230(CStrList *this
     core_main_c_displayErrorAndQuit_FUN_004c8440("CStrList::set - invalid index");
   }
   if (new_string == (char *)0x0) {
-    new_string = &DAT_0057ed1b;
+    new_string = &g_CHAR_0057ed1b;
   }
   uVar3 = 0xffffffff;
   pcVar2 = new_string;

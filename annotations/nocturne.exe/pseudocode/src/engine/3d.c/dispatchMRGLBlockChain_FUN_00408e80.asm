@@ -14,7 +14,7 @@
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004c3c90 at 004c4011
 ;
 ; Referenced Globals:
-;   undefined1* g_MRGLBlockHandlerTable = 004044a0
+;   void*[67] g_MRGLBlockHandlerTable
 ;   int INT_005b7644 = 0x1
 ;
 ; *****************************************************************************

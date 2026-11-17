@@ -22,8 +22,8 @@
 ;   TerminatedCString s_CPodFile_computeOneFileC_0058db70
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01e428d0
-;   undefined4 DAT_01e428d1
+;   char[65536] g_CHAR_ARRAY_01e428d0
+;   undefined4 g_CHAR_ARRAY_01e428d0+1
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -107,7 +107,7 @@ section .text
     PUSH EBX                            ; 004f8762
     PUSH 0x1                            ; 004f8763
     PUSH 0x10000                        ; 004f8765
-    PUSH 0x1e428d0                      ; 004f876a | DAT_01e428d0
+    PUSH 0x1e428d0                      ; 004f876a | g_CHAR_ARRAY_01e428d0
     MOV ESI,0x1e428d0                   ; 004f876f
     XOR EBX,EBX                         ; 004f8774
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f8776
@@ -116,7 +116,7 @@ section .text
     MOV EAX,EBP                         ; 004f877e
     XOR EDX,EDX                         ; 004f8780
         ;   Label: LAB_004f8780
-    MOV DL,byte ptr [ESI]               ; 004f8782 | DAT_01e428d0 | DAT_01e428d1
+    MOV DL,byte ptr [ESI]               ; 004f8782 | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
     PUSH EDX                            ; 004f8784
     PUSH EAX                            ; 004f8785
     INC ESI                             ; 004f8786
@@ -137,7 +137,7 @@ section .text
     PUSH ESI                            ; 004f87ac
     PUSH 0x1                            ; 004f87ad
     PUSH EDI                            ; 004f87af
-    PUSH 0x1e428d0                      ; 004f87b0 | DAT_01e428d0
+    PUSH 0x1e428d0                      ; 004f87b0 | g_CHAR_ARRAY_01e428d0
     MOV EBX,0x1e428d0                   ; 004f87b5
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004f87ba
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
@@ -150,7 +150,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x4]       ; 004f87cc
     XOR EAX,EAX                         ; 004f87d0
         ;   Label: LAB_004f87d0
-    MOV AL,byte ptr [EBX]               ; 004f87d2 | DAT_01e428d0 | DAT_01e428d1
+    MOV AL,byte ptr [EBX]               ; 004f87d2 | g_CHAR_ARRAY_01e428d0 | g_CHAR_ARRAY_01e428d0+1
     PUSH EAX                            ; 004f87d4
     PUSH EBP                            ; 004f87d5
     INC EBX                             ; 004f87d6

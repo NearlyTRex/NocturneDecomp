@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 89,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 2,
+    "suspect_count": 7,
     "suspect_types": [
+      "pointer_cast",
       "signed_shift_global_idiom"
     ],
     "total_lines": 217
@@ -249,6 +250,46 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82884",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82884 + iVar6) = pvVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(LPVOID *)((int)g_LPVOID_ARRAY_02c828a4",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_LPVOID_ARRAY_02c828a4 + iVar6) = pvVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844",
+      "severity": "moderate",
+      "text": "*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844 + iVar6) = pvVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844",
+      "severity": "moderate",
+      "text": "pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c82844 + iVar6));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c82864",
+      "severity": "moderate",
+      "text": "*(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c82864 + iVar6) = pvVar4;",
+      "type": "pointer_cast"
+    },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
       "line": 35,

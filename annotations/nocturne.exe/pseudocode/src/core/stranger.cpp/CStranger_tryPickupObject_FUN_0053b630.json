@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 692,
-    "complexity_score": 349,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 274,
-    "suspect_count": 6,
+    "pseudocode_lines": 273,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 966
+    "total_lines": 965
   },
   "cross_references": [
     {
@@ -230,13 +229,13 @@
     },
     {
       "addr": "02dc9f60",
-      "name": "DAT_02dc9f60",
+      "name": "g_INT_ARRAY_02dc9f50[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02dc9f88",
-      "name": "DAT_02dc9f88",
+      "name": "g_INT_ARRAY_02dc9f50[14]",
       "type": "undefined4",
       "value": null
     }
@@ -415,16 +414,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 70,
       "match": "(CDemonActor **)((int)g_CDemonSetPtr",
       "severity": "moderate",
       "text": "pCVar8 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_18);",
@@ -432,7 +423,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 170,
+      "line": 168,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->carry_object_bbox).min.x = (pCVar6->min).x;",
@@ -440,7 +431,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 176,
+      "line": 174,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "pCVar7->x = (pCVar6->max).x;",
@@ -448,7 +439,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 191,
+      "line": 189,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",
@@ -456,7 +447,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 253,
+      "line": 251,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "(this_ptr->carry_object_world_center).x = pCVar7->x;",

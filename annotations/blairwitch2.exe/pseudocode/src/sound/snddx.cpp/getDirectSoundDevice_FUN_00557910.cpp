@@ -25,8 +25,8 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(U
     iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_00557860(device_id,&local_138);
     if (iVar1 != 0) {
       lp_guid = (LPGUID)0x0;
-      if (*(int *)(device_id * 0x11c + 0x2649874) == 0) {
-        lp_guid = (LPGUID)(device_id * 0x11c + 0x2649878);
+      if (g_SDirectSoundDeviceInfo_ARRAY_02649874[device_id].is_primary_device == 0) {
+        lp_guid = &g_SDirectSoundDeviceInfo_ARRAY_02649874[device_id].device_guid;
       }
       uVar2 = DirectSoundCreate(lp_guid,&g_IDirectSound_PTR_0264a5c4,(LPUNKNOWN)0x0);
       if (uVar2 == 0) {
@@ -55,10 +55,11 @@ CDirectSoundDevice * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_00557910(U
             }
           }
           iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00552b40();
-          if ((1 < iVar1) && (1 < g_INT_ARRAY_0264998c[device_id * 0x47])) {
+          if ((1 < iVar1) &&
+             (1 < (int)g_SDirectSoundDeviceInfo_ARRAY_02649874[device_id].has_hardware_mixing)) {
             (*g_IDirectSoundBuffer_PTR_0264a5c8->vtable->QueryInterface)
                       ((IUnknown *)g_IDirectSoundBuffer_PTR_0264a5c8,&g_IID_IDirectSound3DListener,
-                       (void **)&DAT_0264a5d0);
+                       &g_IDirectSound3DListener_PTR_0264a5d0);
           }
           return &g_CDirectSoundDevice_0264b06c;
         }

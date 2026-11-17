@@ -103,9 +103,8 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_004ff790(CMP3D
   while ((int)local_16 >> 0x10 < 4) {
     for (sVar5 = 0;
         (uint)(int)sVar5 <
-        *(uint *)(&DAT_006019e0 +
-                 ((int)local_16 >> 0x10) * 4 + sStack_1c * 0x10 + ((int)local_1a >> 0x10) * 0x30);
-        sVar5 = sVar5 + 1) {
+        (uint)g_INT_ARRAY_ARRAY_ARRAY_006019e0[(int)local_1a >> 0x10][sStack_1c]
+              [(int)local_16 >> 0x10]; sVar5 = sVar5 + 1) {
       if (local_34[(int)local_16 >> 0x10] == 0) {
         this_ptr->layer3_scalefactors[sVar4] = 0;
       }

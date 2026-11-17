@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_Not_enough_memory_to_all_00598bec
 ;   undefined1 DAT_005c18a0
-;   undefined4 DAT_005c18d5
-;   undefined4 DAT_02de4e20
-;   undefined4 DAT_02de4e24
+;   undefined4 g_FILE_005c18c8._flag+1
+;   FileListNode* g_FileListNode_PTR_02de4e20
+;   FileListNode* g_FileListNode_PTR_02de4e24
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_005635b0
@@ -32,12 +32,12 @@ section .text
     PUSH EBX                            ; 0056ddf0
         ;   Label: crt_unknown.c_build_cmdline_FUN_0056ddf0
     PUSH ESI                            ; 0056ddf1
-    MOV AH,byte ptr [0x005c18d5]        ; 0056ddf2 | DAT_005c18d5
+    MOV AH,byte ptr [0x005c18d5]        ; 0056ddf2 | g_FILE_005c18c8._flag+1
     AND AH,0xf8                         ; 0056ddf8
     MOV DL,AH                           ; 0056ddfb
-    MOV byte ptr [0x005c18d5],AH        ; 0056ddfd | DAT_005c18d5
+    MOV byte ptr [0x005c18d5],AH        ; 0056ddfd | g_FILE_005c18c8._flag+1
     OR DL,0x4                           ; 0056de03
-    MOV byte ptr [0x005c18d5],DL        ; 0056de06 | DAT_005c18d5
+    MOV byte ptr [0x005c18d5],DL        ; 0056de06 | g_FILE_005c18c8._flag+1
     MOV EDX,dword ptr [0x005c18a0]      ; 0056de0c | DAT_005c18a0
     MOV EBX,0x5c1894                    ; 0056de12
     TEST EDX,EDX                        ; 0056de17
@@ -68,7 +68,7 @@ section .text
         ;   XREF to: 0056de4c (UNCONDITIONAL_JUMP)  ; LAB_0056de4c
     MOV ESI,EAX                         ; 0056de4a
         ;   Label: LAB_0056de4a
-    MOV EAX,[0x02de4e20]                ; 0056de4c | DAT_02de4e20
+    MOV EAX,[0x02de4e20]                ; 0056de4c | g_FileListNode_PTR_02de4e20
         ;   Label: LAB_0056de4c
     MOV dword ptr [ESI + 0x4],EBX       ; 0056de51
     MOV dword ptr [ESI],EAX             ; 0056de54
@@ -78,7 +78,7 @@ section .text
     MOV byte ptr [EAX + 0x14],0x0       ; 0056de63
     MOV EAX,dword ptr [EBX + 0x8]       ; 0056de67
     MOV dword ptr [EAX + 0xc],0x0       ; 0056de6a
-    MOV dword ptr [0x02de4e20],ESI      ; 0056de71 | DAT_02de4e20
+    MOV dword ptr [0x02de4e20],ESI      ; 0056de71 | g_FileListNode_PTR_02de4e20
     MOV ECX,dword ptr [EBX + 0x26]      ; 0056de77
     ADD EBX,0x1a                        ; 0056de7a
     TEST ECX,ECX                        ; 0056de7d
@@ -86,7 +86,7 @@ section .text
         ;   XREF to: 0056de1b (CONDITIONAL_JUMP)  ; LAB_0056de1b
     XOR ESI,ESI                         ; 0056de81
         ;   Label: LAB_0056de81
-    MOV dword ptr [0x02de4e24],ESI      ; 0056de83 | DAT_02de4e24
+    MOV dword ptr [0x02de4e24],ESI      ; 0056de83 | g_FileListNode_PTR_02de4e24
     POP ESI                             ; 0056de89
     POP EBX                             ; 0056de8a
     RET                                 ; 0056de8b

@@ -41,8 +41,8 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
     g_UINT_00607993 = g_UINT_0060798b << 8 | g_UINT_0060798f;
     GetModuleFileNameA((HMODULE)0x0,g_CHAR_ARRAY_02d252c0,0x104);
     g_CHAR_PTR_00607944 = g_CHAR_ARRAY_02d252c0;
-    FUN_005addd0(0,0x2d253c4,0x208);
-    g_WCHAR_PTR_00607950 = (WCHAR *)0x2d253c4;
+    FUN_005addd0(0,g_WCHAR_T_ARRAY_02d253c4,0x208);
+    g_WCHAR_PTR_00607950 = g_WCHAR_T_ARRAY_02d253c4;
     pCVar4 = GetCommandLineA();
     g_CHAR_PTR_02d252b4 = (char *)FUN_005ade80(pCVar4);
     g_INT_00607940 = (int)g_CHAR_PTR_02d252b4;
@@ -97,8 +97,8 @@ uint FUN_005a7f6c(int param_1,uint param_2,HMODULE param_3)
     if (param_1 != 0) {
       GetModuleFileNameA(param_3,g_CHAR_ARRAY_02d255cc,0x104);
       g_CHAR_PTR_00607948 = g_CHAR_ARRAY_02d255cc;
-      FUN_005addd0(param_3,0x2d256d0,0x208);
-      g_WCHAR_PTR_00607954 = (WCHAR *)0x2d256d0;
+      FUN_005addd0(param_3,g_WCHAR_T_ARRAY_02d256d0,0x208);
+      g_WCHAR_PTR_00607954 = g_WCHAR_T_ARRAY_02d256d0;
     }
     uVar8 = 1;
   }

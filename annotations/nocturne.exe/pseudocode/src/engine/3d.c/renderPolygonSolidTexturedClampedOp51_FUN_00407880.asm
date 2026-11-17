@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentTextureDimension = 0x100
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_006b029c
-;   undefined4 DAT_006b02a0
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   int[24] g_INT_ARRAY_006b029c
+;   undefined4 g_INT_ARRAY_006b029c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -71,7 +71,7 @@ section .text
     JGE 0x004079e4                      ; 004078fe
         ;   XREF to: 004079e4 (CONDITIONAL_JUMP)  ; LAB_004079e4
     MOV EAX,dword ptr [ECX]             ; 00407904
-    MOV dword ptr [EBX + 0x6b029c],EAX  ; 00407906 | DAT_006b029c | DAT_006b02a0
+    MOV dword ptr [EBX + 0x6b029c],EAX  ; 00407906 | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
     MOV EBP,dword ptr [0x005b762c]      ; 0040790c | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00407912
     MOV EDX,dword ptr [ECX + 0x8]       ; 00407915
@@ -98,13 +98,13 @@ section .text
         ;   XREF to: 004079a2 (CONDITIONAL_JUMP)  ; LAB_004079a2
     IMUL EBP,dword ptr [ECX],0x30       ; 0040794e
         ;   Label: LAB_0040794e
-    MOV dword ptr [EBP + 0x5c502c],EAX  ; 00407951 | DAT_005c502c
+    MOV dword ptr [EBP + 0x5c502c],EAX  ; 00407951 | g_SRenderVertex_ARRAY_005c5014[0].u
     IMUL EAX,dword ptr [ECX],0x30       ; 00407957
     ADD EBX,0x4                         ; 0040795a
     INC EDI                             ; 0040795d
     ADD ESI,0x3                         ; 0040795e
     ADD ECX,0xc                         ; 00407961
-    MOV dword ptr [EAX + 0x5c5030],EDX  ; 00407964 | DAT_005c5030
+    MOV dword ptr [EAX + 0x5c5030],EDX  ; 00407964 | g_SRenderVertex_ARRAY_005c5014[0].v
     JMP 0x004078f2                      ; 0040796a
         ;   XREF to: 004078f2 (UNCONDITIONAL_JUMP)  ; LAB_004078f2
     MOV dword ptr [0x01c00c7c],0x530322 ; 0040796c | g_ScanlineRenderFunc
@@ -148,7 +148,7 @@ section .text
     MOV EDX,0xfeffff                    ; 004079da
     JMP 0x0040794e                      ; 004079df
         ;   XREF to: 0040794e (UNCONDITIONAL_JUMP)  ; LAB_0040794e
-    PUSH 0x6b029c                       ; 004079e4 | DAT_006b029c
+    PUSH 0x6b029c                       ; 004079e4 | g_INT_ARRAY_006b029c
         ;   Label: LAB_004079e4
     PUSH EDI                            ; 004079e9
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 004079ea

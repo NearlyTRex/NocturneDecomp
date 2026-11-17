@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sample,int channels,int sample_rate)
 
 {
@@ -20,12 +18,12 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_005280c0(int bits_per_sampl
     g_CurrentLineNumber = 4456;
     core_main_c_displayErrorAndQuit_FUN_004c8440("setSoundOutputMode - can't do this while sound active!");
   }
-  DAT_005bea64 = bits_per_sample;
-  DAT_005bea68 = channels;
-  DAT_005bea6c = sample_rate;
-  if (_DAT_02dc8318 != (int *)0x0) {
-    iVar1 = (**(code **)(*_DAT_02dc8318 + 0xc))
-                      (_DAT_02dc8318,bits_per_sample,channels,sample_rate,&iStack_10);
+  g_INT_005bea64 = bits_per_sample;
+  g_INT_005bea68 = channels;
+  g_INT_005bea6c = sample_rate;
+  if (g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0) {
+    iVar1 = (*g_CSoundDevice_PTR_02dc8318->vtable->setMode)
+                      (g_CSoundDevice_PTR_02dc8318,bits_per_sample,channels,sample_rate,&iStack_10);
     if (iVar1 == 0) {
       return 0;
     }

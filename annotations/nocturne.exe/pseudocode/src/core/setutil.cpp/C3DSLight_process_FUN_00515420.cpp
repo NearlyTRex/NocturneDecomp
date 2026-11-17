@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr,CDemonLight *light,int apply_filter_flag)
 
 {
@@ -36,8 +34,8 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00515420(C3DSLight *this_ptr
         }
       }
     }
-    iVar2 = _DAT_01bd1d80;
-    lVar1 = (longlong)_DAT_01bd1d80 * (longlong)(this_ptr->filter_vel).x;
+    iVar2 = g_INT_01bd1d80;
+    lVar1 = (longlong)g_INT_01bd1d80 * (longlong)(this_ptr->filter_vel).x;
     iVar3 = (this_ptr->filter_vel).y;
     (this_ptr->filter_pos).x =
          (this_ptr->filter_pos).x + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);

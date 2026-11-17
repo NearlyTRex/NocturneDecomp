@@ -22,7 +22,7 @@
 ;
 ; Referenced Globals:
 ;   undefined4 g_CSfxSlot_ARRAY_02dbd374[0].playback_state
-;   undefined4 DAT_02dc8318
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00525570
@@ -86,7 +86,7 @@ section .text
     CMP dword ptr [EBX + 0x6c],0x0      ; 0052350b
     JZ 0x005234f1                       ; 0052350f
         ;   XREF to: 005234f1 (CONDITIONAL_JUMP)  ; LAB_005234f1
-    MOV EDX,dword ptr [0x02dc8318]      ; 00523511 | DAT_02dc8318
+    MOV EDX,dword ptr [0x02dc8318]      ; 00523511 | g_CSoundDevice_PTR_02dc8318
     TEST EDX,EDX                        ; 00523517
     JZ 0x00523538                       ; 00523519
         ;   XREF to: 00523538 (CONDITIONAL_JUMP)  ; LAB_00523538

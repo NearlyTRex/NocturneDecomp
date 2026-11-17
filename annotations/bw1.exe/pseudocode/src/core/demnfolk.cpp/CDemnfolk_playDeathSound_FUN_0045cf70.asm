@@ -11,10 +11,10 @@
 ;   undefined4 s_demn_005d8308+1
 ;   undefined4 s_demn_005d8308+2
 ;   undefined4 s_demn_005d8308+3
-;   undefined1 DAT_005d830e
-;   undefined1 DAT_005d830f
-;   undefined1 DAT_005d8310
-;   TerminatedCString s_e_wav_2_005d8311
+;   TerminatedCString s_die_wav_2_005d830e
+;   undefined4 s_die_wav_2_005d830e+1
+;   undefined4 s_die_wav_2_005d830e+2
+;   undefined4 s_die_wav_2_005d830e+3
 ;   undefined4 DAT_0152c320
 ;   undefined4 DAT_0152c321
 ;   undefined4 DAT_0152c322
@@ -72,20 +72,20 @@ section .text
         ;   XREF to: 0045cfaa (CONDITIONAL_JUMP)  ; LAB_0045cfaa
     POP EDI                             ; 0045cfc2
         ;   Label: LAB_0045cfc2
-    MOV ESI,0x5d830e                    ; 0045cfc3 | DAT_005d830e
+    MOV ESI,0x5d830e                    ; 0045cfc3 | = "_die.wav @ 2"
     PUSH EDI                            ; 0045cfc8 | DAT_0152c320
     SUB ECX,ECX                         ; 0045cfc9
     DEC ECX                             ; 0045cfcb
     MOV AL,0x0                          ; 0045cfcc
     SCASB.REPNE ES:EDI                  ; 0045cfce | DAT_0152c320 | DAT_0152c321
     DEC EDI                             ; 0045cfd0
-    MOV AL,byte ptr [ESI]               ; 0045cfd1 | DAT_005d830e | DAT_005d8310
+    MOV AL,byte ptr [ESI]               ; 0045cfd1 | = "_die.wav @ 2" | s_die_wav_2_005d830e+2
         ;   Label: LAB_0045cfd1
     MOV byte ptr [EDI],AL               ; 0045cfd3 | DAT_0152c320 | DAT_0152c322 | DAT_0152c321
     CMP AL,0x0                          ; 0045cfd5
     JZ 0x0045cfe9                       ; 0045cfd7
         ;   XREF to: 0045cfe9 (CONDITIONAL_JUMP)  ; LAB_0045cfe9
-    MOV AL,byte ptr [ESI + 0x1]         ; 0045cfd9 | DAT_005d830f | = "e.wav @ 2"
+    MOV AL,byte ptr [ESI + 0x1]         ; 0045cfd9 | s_die_wav_2_005d830e+1 | s_die_wav_2_005d830e+3
     ADD ESI,0x2                         ; 0045cfdc
     MOV byte ptr [EDI + 0x1],AL         ; 0045cfdf | DAT_0152c321 | DAT_0152c323 | DAT_0152c322
     ADD EDI,0x2                         ; 0045cfe2

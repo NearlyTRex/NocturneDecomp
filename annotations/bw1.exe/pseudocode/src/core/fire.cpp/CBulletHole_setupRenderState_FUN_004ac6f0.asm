@@ -14,15 +14,15 @@
 ;   CDemonRenderer* g_CDemonRenderer_PTR_00612560 = 01bc120c
 ;   SMRGLTextureBasic g_SMRGLTextureBasic_0061c3d4
 ;   CDemonRenderer g_CDemonRenderer_01bc120c
-;   undefined4 g_SMRGLHeaderPrimitive_01c57090.base.count
-;   undefined4 g_SMRGLHeaderPrimitive_01c57090.surface_normal.A
-;   undefined4 g_SMRGLHeaderPrimitive_01c57090.surface_normal.B
-;   undefined4 g_SMRGLHeaderPrimitive_01c57090.surface_normal.C
-;   undefined4 g_SMRGLHeaderPrimitive_01c57090.surface_normal.D
-;   int g_INT_01c570a8
-;   int g_INT_01c570ac
-;   int g_INT_01c570b0
-;   int g_INT_01c570b4
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.base.base.count
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.A
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.B
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.C
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.D
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.vertices[0]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.vertices[1]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.vertices[2]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c57090.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -42,18 +42,18 @@ section .text
     MOV EDI,0x3                         ; 004ac702
     PUSH 0x61c3d4                       ; 004ac707 | g_SMRGLTextureBasic_0061c3d4
     XOR ECX,ECX                         ; 004ac70c
-    MOV dword ptr [0x01c57094],EDX      ; 004ac70e | g_SMRGLHeaderPrimitive_01c57090.base.count
-    MOV dword ptr [0x01c570a8],ECX      ; 004ac714 | g_INT_01c570a8
-    MOV dword ptr [0x01c570ac],EBX      ; 004ac71a | g_INT_01c570ac
-    MOV dword ptr [0x01c570b0],ESI      ; 004ac720 | g_INT_01c570b0
-    MOV dword ptr [0x01c570b4],EDI      ; 004ac726 | g_INT_01c570b4
-    MOV dword ptr [0x01c57098],ECX      ; 004ac72c | g_SMRGLHeaderPrimitive_01c57090.surface_normal.A
-    MOV dword ptr [0x01c5709c],ECX      ; 004ac732 | g_SMRGLHeaderPrimitive_01c57090.surface_normal.B
+    MOV dword ptr [0x01c57094],EDX      ; 004ac70e | g_SMRGLPrimitiveQuadIndex_01c57090.base.base.count
+    MOV dword ptr [0x01c570a8],ECX      ; 004ac714 | g_SMRGLPrimitiveQuadIndex_01c57090.vertices[0]
+    MOV dword ptr [0x01c570ac],EBX      ; 004ac71a | g_SMRGLPrimitiveQuadIndex_01c57090.vertices[1]
+    MOV dword ptr [0x01c570b0],ESI      ; 004ac720 | g_SMRGLPrimitiveQuadIndex_01c57090.vertices[2]
+    MOV dword ptr [0x01c570b4],EDI      ; 004ac726 | g_SMRGLPrimitiveQuadIndex_01c57090.vertices[3]
+    MOV dword ptr [0x01c57098],ECX      ; 004ac72c | g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.A
+    MOV dword ptr [0x01c5709c],ECX      ; 004ac732 | g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.B
     MOV EBX,dword ptr [0x00612560]      ; 004ac738 | g_CDemonRenderer_PTR_00612560
     MOV EDX,0xffff                      ; 004ac73e
     PUSH EBX                            ; 004ac743 | g_CDemonRenderer_01bc120c
-    MOV dword ptr [0x01c570a4],ECX      ; 004ac744 | g_SMRGLHeaderPrimitive_01c57090.surface_normal.D
-    MOV dword ptr [0x01c570a0],EDX      ; 004ac74a | g_SMRGLHeaderPrimitive_01c57090.surface_normal.C
+    MOV dword ptr [0x01c570a4],ECX      ; 004ac744 | g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.D
+    MOV dword ptr [0x01c570a0],EDX      ; 004ac74a | g_SMRGLPrimitiveQuadIndex_01c57090.base.surface_normal.C
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 ; 004ac750
         ;   XREF to: 00484f00 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004ac755

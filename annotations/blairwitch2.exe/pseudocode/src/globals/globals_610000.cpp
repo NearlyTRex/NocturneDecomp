@@ -1115,6 +1115,369 @@ RuntimeHandlerEntry g_InitHandlers[203] = {
     }
 };
 
+// SAudioFormatDescriptor[12]
+SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0061bf8c[12] = {
+    {
+        .format_flags = 0x00000001,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000001,
+        .sample_rate = 0x00002B11
+    },
+    {
+        .format_flags = 0x00000004,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000001,
+        .sample_rate = 0x00002B11
+    },
+    {
+        .format_flags = 0x00000002,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000002,
+        .sample_rate = 0x00002B11
+    },
+    {
+        .format_flags = 0x00000008,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000002,
+        .sample_rate = 0x00002B11
+    },
+    {
+        .format_flags = 0x00000010,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000001,
+        .sample_rate = 0x00005622
+    },
+    {
+        .format_flags = 0x00000040,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000001,
+        .sample_rate = 0x00005622
+    },
+    {
+        .format_flags = 0x00000020,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000002,
+        .sample_rate = 0x00005622
+    },
+    {
+        .format_flags = 0x00000080,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000002,
+        .sample_rate = 0x00005622
+    },
+    {
+        .format_flags = 0x00000100,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000001,
+        .sample_rate = 0x0000AC44
+    },
+    {
+        .format_flags = 0x00000400,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000001,
+        .sample_rate = 0x0000AC44
+    },
+    {
+        .format_flags = 0x00000200,
+        .bits_per_sample = 0x00000008,
+        .channels = 0x00000002,
+        .sample_rate = 0x0000AC44
+    },
+    {
+        .format_flags = 0x00000800,
+        .bits_per_sample = 0x00000010,
+        .channels = 0x00000002,
+        .sample_rate = 0x0000AC44
+    }
+};
+
+// SHuffmanTableSource[34]
+SHuffmanTableSource g_SHuffmanTableSource_ARRAY_0061ade0[34] = {
+    {
+        .table_size = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000007,
+        .xlen = 0x00000002,
+        .ylen = 0x00000002,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x006197D0
+    },
+    {
+        .table_size = 0x00000011,
+        .xlen = 0x00000003,
+        .ylen = 0x00000003,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x006197E0
+    },
+    {
+        .table_size = 0x00000011,
+        .xlen = 0x00000003,
+        .ylen = 0x00000003,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619808
+    },
+    {
+        .table_size = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x0000001F,
+        .xlen = 0x00000004,
+        .ylen = 0x00000004,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619830
+    },
+    {
+        .table_size = 0x0000001F,
+        .xlen = 0x00000004,
+        .ylen = 0x00000004,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619870
+    },
+    {
+        .table_size = 0x00000047,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x006198B0
+    },
+    {
+        .table_size = 0x00000047,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619940
+    },
+    {
+        .table_size = 0x00000047,
+        .xlen = 0x00000006,
+        .ylen = 0x00000006,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x006199D0
+    },
+    {
+        .table_size = 0x0000007F,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619A60
+    },
+    {
+        .table_size = 0x0000007F,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619B60
+    },
+    {
+        .table_size = 0x0000007F,
+        .xlen = 0x00000008,
+        .ylen = 0x00000008,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619C60
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x00619D60
+    },
+    {
+        .table_size = 0x00000000,
+        .xlen = 0x00000000,
+        .ylen = 0x00000000,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x0061A160
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000001,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x0061A560
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000002,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000003,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000004,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000006,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000008,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x0000000A,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x000001FF,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x0000000D,
+        .reference_index = 0x00000010,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000004,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x0061A960
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000005,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000006,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000007,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000008,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x00000009,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x0000000B,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x00000200,
+        .xlen = 0x00000010,
+        .ylen = 0x00000010,
+        .bits = 0x0000000D,
+        .reference_index = 0x00000018,
+        .huffman_data_ptr = nullptr
+    },
+    {
+        .table_size = 0x0000001F,
+        .xlen = 0x00000001,
+        .ylen = 0x00000010,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x0061AD60
+    },
+    {
+        .table_size = 0x0000001F,
+        .xlen = 0x00000001,
+        .ylen = 0x00000010,
+        .bits = 0x00000000,
+        .reference_index = -1,
+        .huffman_data_ptr = (char *)0x0061ADA0
+    }
+};
+
+// SIGNAL_HANDLER_TYPE[26]
+SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_0061f764[26] = {
+    0x00000001, -1, 0x00000002, -1, 0x00000001, -1, 0x00000002, -1073741795,
+    0x00000002, -1073741510, 0x00000002, -1073741819, 0x00000002, -1073741510, 0x00000002, -1073741510,
+    0x00000001, -1, 0x00000001, -1, 0x00000001, -1, 0x00000002, -1073741676,
+    0x00000001, -1073741675
+};
+
+// SIOControlBlock*
+SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = nullptr;
+
 // SMRGLPrimitiveQuad
 SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_0061e6ac = {
     .base = {
@@ -2821,6 +3184,34 @@ SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006157cc[6] = {
     }
 };
 
+// SMpegLayer3BandIndex[6]
+SMpegLayer3BandIndex g_SMpegLayer3BandIndex_ARRAY_00619338[6] = {
+    {
+        .l = {0x00000000, 0x00000006, 0x0000000C, 0x00000012, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000036, 0x00000042, 0x00000050, 0x00000060, 0x00000074, 0x0000008C, 0x000000A8, 0x000000C8, 0x000000EE, 0x0000011C, 0x00000150, 0x0000018C, 0x000001D0, 0x0000020A, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000012, 0x00000018, 0x00000020, 0x0000002A, 0x00000038, 0x0000004A, 0x00000064, 0x00000084, 0x000000AE, 0x000000C0}
+    },
+    {
+        .l = {0x00000000, 0x00000006, 0x0000000C, 0x00000012, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000036, 0x00000042, 0x00000050, 0x00000060, 0x00000072, 0x00000088, 0x000000A2, 0x000000C2, 0x000000E8, 0x00000116, 0x0000014A, 0x0000018A, 0x000001D0, 0x0000021C, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000012, 0x0000001A, 0x00000024, 0x00000030, 0x0000003E, 0x00000050, 0x00000068, 0x00000088, 0x000000B4, 0x000000C0}
+    },
+    {
+        .l = {0x00000000, 0x00000006, 0x0000000C, 0x00000012, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000036, 0x00000042, 0x00000050, 0x00000060, 0x00000074, 0x0000008C, 0x000000A8, 0x000000C8, 0x000000EE, 0x0000011C, 0x00000150, 0x0000018C, 0x000001D0, 0x0000020A, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000012, 0x0000001A, 0x00000024, 0x00000030, 0x0000003E, 0x00000050, 0x00000068, 0x00000086, 0x000000AE, 0x000000C0}
+    },
+    {
+        .l = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000014, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000034, 0x0000003E, 0x0000004A, 0x0000005A, 0x0000006E, 0x00000086, 0x000000A2, 0x000000C4, 0x000000EE, 0x00000120, 0x00000156, 0x000001A2, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000016, 0x0000001E, 0x00000028, 0x00000034, 0x00000042, 0x00000054, 0x0000006A, 0x00000088, 0x000000C0}
+    },
+    {
+        .l = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000014, 0x00000018, 0x0000001E, 0x00000024, 0x0000002A, 0x00000032, 0x0000003C, 0x00000048, 0x00000058, 0x0000006A, 0x00000080, 0x0000009C, 0x000000BE, 0x000000E6, 0x00000114, 0x0000014A, 0x00000180, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000016, 0x0000001C, 0x00000026, 0x00000032, 0x00000040, 0x00000050, 0x00000064, 0x0000007E, 0x000000C0}
+    },
+    {
+        .l = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000014, 0x00000018, 0x0000001E, 0x00000024, 0x0000002C, 0x00000036, 0x00000042, 0x00000052, 0x00000066, 0x0000007E, 0x0000009C, 0x000000C2, 0x000000F0, 0x00000128, 0x0000016C, 0x000001C0, 0x00000226, 0x00000240},
+        .s = {0x00000000, 0x00000004, 0x00000008, 0x0000000C, 0x00000010, 0x00000016, 0x0000001E, 0x0000002A, 0x0000003A, 0x0000004E, 0x00000068, 0x0000008A, 0x000000B4, 0x000000C0}
+    }
+};
+
 // SReverbPreset[27]
 SReverbPreset g_ReverbPresetTable[27] = {
     {
@@ -3612,6 +4003,20 @@ _FILE g_FILE_0061ef88 = {
 // _FILE*
 _FILE* g_FILE_PTR_0061ef54 = nullptr;
 
+// _MMX_INTEGER
+_MMX_INTEGER g_MMX_INTEGER_006112c8 = {};
+_MMX_INTEGER g_MMX_INTEGER_00611328 = {};
+_MMX_INTEGER g_MMX_INTEGER_00611330 = {0x0040004000400040ULL};
+_MMX_INTEGER g_MMX_INTEGER_00611338 = {0x0020002000200020ULL};
+_MMX_INTEGER g_MMX_INTEGER_00611340 = {0x0060006000600060ULL};
+_MMX_INTEGER g_MMX_INTEGER_0061c808 = {};
+_MMX_INTEGER g_MMX_INTEGER_0061c810 = {};
+_MMX_INTEGER g_MMX_INTEGER_0061c828 = {};
+_MMX_INTEGER g_MMX_INTEGER_0061c830 = {};
+_MMX_INTEGER g_MMX_INTEGER_0061c8d0 = {0x000000000000F800ULL};
+_MMX_INTEGER g_MMX_INTEGER_0061c8d8 = {0x00000000000007E0ULL};
+_MMX_INTEGER g_MMX_INTEGER_0061c8e0 = {0x000000000000001FULL};
+
 // byte
 byte g_BYTE_006182db = 0;
 byte g_BYTE_0061ee9c = 0;
@@ -3703,7 +4108,6 @@ float g_FLOAT_0061bcc4 = 0.5f;
 float g_FLOAT_0061e524 = 0.25f;
 
 // int
-int g_INT_006112c8 = 0;
 int g_INT_00613880 = 0x4;
 int g_CDynamiteClassVersion = 0x1;
 int g_INT_006138e4 = 0x9;
@@ -3837,17 +4241,10 @@ int g_INT_0061c7e0 = 0;
 int g_INT_0061c7e8 = 0;
 int g_INT_0061c7ec = 0;
 int g_INT_0061c7f0 = 0;
-int g_INT_0061c808 = 0;
-int g_INT_0061c810 = 0;
-int g_INT_0061c828 = 0;
-int g_INT_0061c830 = 0;
 int g_INT_0061c840 = 0;
 int g_INT_0061c848 = 0;
 int g_INT_0061c850 = 0;
 int g_INT_0061c858 = 0;
-int g_INT_0061c8d0 = 0xF800;
-int g_INT_0061c8d8 = 0x7E0;
-int g_INT_0061c8e0 = 0x1F;
 int g_INT_0061c978 = 0xFFFFFF;
 int g_INT_0061e280 = 0x1;
 int g_INT_0061e28c = 0x3C000;
@@ -3942,15 +4339,6 @@ int g_INT_ARRAY_0061b2f8[12] = {
     0x00000000, 0x00000000, 0x00000000, 0x00000000
 };
 
-// int[16]
-int g_INT_ARRAY_006192f8[16] = {
-    0x00000000, 0x00000001, 0x00000002, 0x00000003, 0x00000000, 0x00000001, 0x00000002, 0x00000003,
-    0x00000001, 0x00000002, 0x00000003, 0x00000001, 0x00000002, 0x00000003, 0x00000002, 0x00000003
-};
-
-// int[1]
-int g_INT_ARRAY_0061933c[1] = {0x00000006};
-
 // int[22]
 int g_INT_ARRAY_00618de4[22] = {
     0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
@@ -3958,14 +4346,33 @@ int g_INT_ARRAY_00618de4[22] = {
     0x00000002, 0x00000003, 0x00000003, 0x00000003, 0x00000002, 0x00000000
 };
 
-// int[2]
-int g_INT_ARRAY_006192b8[2] = {};
+// int[2][16]
+int g_INT_ARRAY_ARRAY_006192b8[2][16] = {
+    {0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000003, 0x00000001, 0x00000001, 0x00000001, 0x00000002, 0x00000002, 0x00000002, 0x00000003, 0x00000003, 0x00000003, 0x00000004, 0x00000004},
+    {0x00000000, 0x00000001, 0x00000002, 0x00000003, 0x00000000, 0x00000001, 0x00000002, 0x00000003, 0x00000001, 0x00000002, 0x00000003, 0x00000001, 0x00000002, 0x00000003, 0x00000002, 0x00000003}
+};
+
+// int[2][3][15]
+int g_INT_ARRAY_ARRAY_ARRAY_00618ec8[2][3][15] = {
+    {{0x00000000, 0x00000020, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0, 0x000000B0, 0x000000C0, 0x000000E0, 0x00000100}, {0x00000000, 0x00000008, 0x00000010, 0x00000018, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0}, {0x00000000, 0x00000008, 0x00000010, 0x00000018, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x00000090, 0x000000A0}},
+    {{0x00000000, 0x00000020, 0x00000040, 0x00000060, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000120, 0x00000140, 0x00000160, 0x00000180, 0x000001A0, 0x000001C0}, {0x00000000, 0x00000020, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000140, 0x00000180}, {0x00000000, 0x00000020, 0x00000028, 0x00000030, 0x00000038, 0x00000040, 0x00000050, 0x00000060, 0x00000070, 0x00000080, 0x000000A0, 0x000000C0, 0x000000E0, 0x00000100, 0x00000140}}
+};
 
 // int[3]
 int g_INT_ARRAY_006192ac[3] = {0x00000000, 0x00000006, 0x0000000C};
 
 // int[5]
 int g_INT_ARRAY_00619298[5] = {0x00000000, 0x00000006, 0x0000000B, 0x00000010, 0x00000015};
+
+// int[6][3][4]
+int g_INT_ARRAY_ARRAY_ARRAY_006196b0[6][3][4] = {
+    {{0x00000006, 0x00000005, 0x00000005, 0x00000005}, {0x00000009, 0x00000009, 0x00000009, 0x00000009}, {0x00000006, 0x00000009, 0x00000009, 0x00000009}},
+    {{0x00000006, 0x00000005, 0x00000007, 0x00000003}, {0x00000009, 0x00000009, 0x0000000C, 0x00000006}, {0x00000006, 0x00000009, 0x0000000C, 0x00000006}},
+    {{0x0000000B, 0x0000000A, 0x00000000, 0x00000000}, {0x00000012, 0x00000012, 0x00000000, 0x00000000}, {0x0000000F, 0x00000012, 0x00000000, 0x00000000}},
+    {{0x00000007, 0x00000007, 0x00000007, 0x00000000}, {0x0000000C, 0x0000000C, 0x0000000C, 0x00000000}, {0x00000006, 0x0000000F, 0x0000000C, 0x00000000}},
+    {{0x00000006, 0x00000006, 0x00000006, 0x00000003}, {0x0000000C, 0x00000009, 0x00000009, 0x00000006}, {0x00000006, 0x0000000C, 0x00000009, 0x00000006}},
+    {{0x00000008, 0x00000008, 0x00000005, 0x00000000}, {0x0000000F, 0x0000000C, 0x00000009, 0x00000000}, {0x00000006, 0x00000012, 0x00000009, 0x00000000}}
+};
 
 // int[96]
 int g_INT_ARRAY_0061b5bc[96] = {
@@ -4179,14 +4586,10 @@ undefined4 DAT_0061423c = 0x00000000;
 undefined4 DAT_00616048 = 0x00000000;
 undefined4 DAT_0061604c = 0x00000000;
 undefined4 DAT_0061f1a0 = 0x00000000;
-undefined4 DAT_0061f4d8 = 0x00000000;
 undefined4 DAT_0061f504 = 0x00000000;
 undefined4 DAT_0061f520 = 0x00000000;
 undefined4 DAT_0061f524 = 0x00000000;
 undefined4 DAT_0061f528 = 0x00000000;
-
-// undefined8
-undefined8 DAT_00611328 = 0x0000000000000000;
 
 // ushort
 ushort g_USHORT_006180f0 = 0;

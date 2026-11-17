@@ -18,9 +18,9 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01bcd074
 ;   int g_WindowWidth = 0x140
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bd1d8c
-;   undefined4 DAT_01bd1d90
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bd1d8c
+;   int g_INT_01bd1d90
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -85,7 +85,7 @@ section .text
     MOV ESI,dword ptr [ESI]             ; 004cfc2b
     CALL engine_2d.c_clearInputAndWait_FUN_00403f50 ; 004cfc2d
         ;   XREF to: 00403f50 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403f50()
-    MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | DAT_01bd1d90
+    MOV ECX,dword ptr [0x01bd1d90]      ; 004cfc32 | g_INT_01bd1d90
     MOV EAX,[0x005b761c]                ; 004cfc38 | g_WindowWidth
     PUSH ECX                            ; 004cfc3d
     LEA EDX,[ESI + 0xffffc000]          ; 004cfc3e
@@ -104,7 +104,7 @@ section .text
     CALL shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0 ; 004cfc5f
         ;   XREF to: 004722b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004722b0(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004cfc64
-    MOV EDX,dword ptr [0x01bd1d8c]      ; 004cfc67 | DAT_01bd1d8c
+    MOV EDX,dword ptr [0x01bd1d8c]      ; 004cfc67 | g_INT_01bd1d8c
     CMP EDX,dword ptr [ESP + 0x8]       ; 004cfc6d
     JZ 0x004cfc94                       ; 004cfc71
         ;   XREF to: 004cfc94 (CONDITIONAL_JUMP)  ; LAB_004cfc94
@@ -115,7 +115,7 @@ section .text
     IMUL EDX                            ; 004cfc81
     IDIV EBX                            ; 004cfc83
     LEA ESI,[EAX + 0x4000]              ; 004cfc85
-    MOV EAX,[0x01bd1d8c]                ; 004cfc8b | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 004cfc8b | g_INT_01bd1d8c
     MOV dword ptr [ESP + 0x8],EAX       ; 004cfc90
     PUSH 0x4b                           ; 004cfc94
         ;   Label: LAB_004cfc94
@@ -192,7 +192,7 @@ section .text
     PUSH 0xff                           ; 004cfd58
     MOV EDX,dword ptr [0x01c00c5c]      ; 004cfd5d | g_ClipTop
     PUSH 0x41                           ; 004cfd63
-    MOV EDI,dword ptr [0x01bcd070]      ; 004cfd65 | DAT_01bcd070
+    MOV EDI,dword ptr [0x01bcd070]      ; 004cfd65 | g_CBitFont_PTR_01bcd070
     MOV EBX,dword ptr [0x01c00c64]      ; 004cfd6b | g_ClipBottom
     PUSH EDI                            ; 004cfd71
     ADD EBX,EDX                         ; 004cfd72
@@ -210,7 +210,7 @@ section .text
     PUSH EAX                            ; 004cfd8f
     MOV EDX,dword ptr [0x01c00c58]      ; 004cfd90 | g_ClipLeft
     PUSH EDX                            ; 004cfd96
-    MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | DAT_01bcd070
+    MOV ECX,dword ptr [0x01bcd070]      ; 004cfd97 | g_CBitFont_PTR_01bcd070
     PUSH ECX                            ; 004cfd9d
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30 ; 004cfd9e
         ;   XREF to: 00490e30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_00490e30(CBitFont * this_ptr, int left_x, int right_x, int y, ...)

@@ -58,35 +58,31 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
       g_CurrentLineNumber = 1618;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDeformableModel::dismember - too many vertices!");
     }
-    memset((void *)0x2671950,0,this_ptr->vertex_count[lod_index] << 2);
+    memset(g_INT_ARRAY_02671950,0,this_ptr->vertex_count[lod_index] << 2);
     if (local_2c < iVar8) {
       iVar3 = local_2c * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)
-             = 1;
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)
-             = 1;
+        g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1
+        ;
+        g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1
+        ;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        *(uint *)((uint)*puVar5 * 4 + 0x2671950) = 1;
+        g_INT_ARRAY_02671950[*puVar5] = 1;
       } while (iVar3 < iVar8 * 0x12);
     }
     if (local_30 < iVar7) {
       iVar3 = local_30 * 0x12;
       do {
         pSVar2 = this_ptr->tri_data_ptr[lod_index];
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3) * 4 + 0x2671950)
-             = 1;
-        *(uint *)
-         ((uint)*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3) * 4 + 0x2671950)
-             = 1;
+        g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_0 + iVar3)] = 1
+        ;
+        g_INT_ARRAY_02671950[*(ushort *)((int)&(pSVar2->vertex_indices).vertex_index_1 + iVar3)] = 1
+        ;
         puVar5 = (ushort *)((int)&(pSVar2->vertex_indices).vertex_index_2 + iVar3);
         iVar3 = iVar3 + 0x12;
-        *(uint *)((uint)*puVar5 * 4 + 0x2671950) = 1;
+        g_INT_ARRAY_02671950[*puVar5] = 1;
       } while (iVar3 < iVar7 * 0x12);
     }
     local_14 = body_part_ptr->tri_count;
@@ -94,7 +90,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
     iVar9 = 0;
     iVar6 = iVar3;
     for (iVar4 = 0; iVar4 < this_ptr->vertex_count[lod_index]; iVar4 = iVar4 + 1) {
-      if (*(int *)(iVar9 + 0x2671950) != 0) {
+      if (*(int *)((int)g_INT_ARRAY_02671950 + iVar9) != 0) {
         iVar6 = iVar6 + 1;
       }
       iVar9 = iVar9 + 4;
@@ -108,11 +104,11 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
     iVar6 = iVar3 * 0xc;
     if (0 < this_ptr->vertex_count[lod_index]) {
       do {
-        if (*(int *)(iVar4 + 0x2671950) == 0) {
-          *(uint *)(iVar4 + 0x2671950) = 0xffffffff;
+        if (*(int *)((int)g_INT_ARRAY_02671950 + iVar4) == 0) {
+          *(uint *)((int)g_INT_ARRAY_02671950 + iVar4) = 0xffffffff;
         }
         else {
-          *(int *)(iVar4 + 0x2671950) = iVar3;
+          *(int *)((int)g_INT_ARRAY_02671950 + iVar4) = iVar3;
           piVar12 = (int *)((int)&body_part_ptr->vertices->x + iVar6);
           iVar3 = iVar3 + 1;
           iVar6 = iVar6 + 0xc;
@@ -146,7 +142,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
         *(uint *)(iVar6 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(uint *)(iVar6 + 0x18) = *(uint *)((uint)*puVar5 * 4 + 0x2671950);
+          *(int *)(iVar6 + 0x18) = g_INT_ARRAY_02671950[*puVar5];
           *(uint *)(iVar6 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;
@@ -180,7 +176,7 @@ void __cdecl core_skeleton_cpp_CDeformableModel_dismember_FUN_00519ec0(CDeformab
         *(uint *)(iVar3 + 4) = 3;
         puVar10 = puVar5 + 3;
         do {
-          *(uint *)(iVar3 + 0x18) = *(uint *)((uint)*puVar5 * 4 + 0x2671950);
+          *(int *)(iVar3 + 0x18) = g_INT_ARRAY_02671950[*puVar5];
           *(uint *)(iVar3 + 0x1c) = (uint)puVar5[3] << 8;
           puVar1 = puVar5 + 6;
           puVar5 = puVar5 + 1;

@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 117,
+    "complexity_score": 105,
     "cross_reference_count": 8,
     "function_call_count": 15,
     "global_count": 9,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 102,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 409
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 105,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 412
   },
   "cross_references": [
     {
@@ -168,20 +166,20 @@
     },
     {
       "addr": "01b4d710",
-      "name": "DAT_01b4d710",
-      "type": "undefined4",
+      "name": "g_INT_01b4d710",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d714",
-      "name": "DAT_01b4d714",
-      "type": "undefined4",
+      "name": "g_INT_01b4d714",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01b4d718",
-      "name": "DAT_01b4d718",
-      "type": "undefined4",
+      "name": "g_CBitFont_PTR_01b4d718",
+      "type": "CBitFont*",
       "value": null
     },
     {
@@ -480,14 +478,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

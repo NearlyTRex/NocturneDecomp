@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 004cd979 (CONDITIONAL_JUMP)  ; LAB_004cd979
     MOV EAX,0xffff                      ; 004cd719
     MOV EDX,dword ptr [ESI + 0x2c]      ; 004cd71e
-    MOV [0x01d22e58],EAX                ; 004cd721 | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C
+    MOV [0x01d22e58],EAX                ; 004cd721 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cd726
     SUB EAX,EDX                         ; 004cd72d
     MOV EBX,0x5fedac                    ; 004cd72f | g_SMRGLTextureBasic_ARRAY_005fedac
@@ -135,10 +135,10 @@ section .text
     XOR EDI,EDI                         ; 004cd74b
     PUSH EAX                            ; 004cd74d
     MOV ECX,dword ptr [0x005f2afc]      ; 004cd74e | g_CDemonRenderer_PTR_005f2afc
-    MOV dword ptr [0x01d22e50],EDI      ; 004cd754 | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A
+    MOV dword ptr [0x01d22e50],EDI      ; 004cd754 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A
     PUSH ECX                            ; 004cd75a | g_CDemonRenderer_01bdd7e4
-    MOV dword ptr [0x01d22e54],EDI      ; 004cd75b | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B
-    MOV dword ptr [0x01d22e5c],EDI      ; 004cd761 | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D
+    MOV dword ptr [0x01d22e54],EDI      ; 004cd75b | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.B
+    MOV dword ptr [0x01d22e5c],EDI      ; 004cd761 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004cd767
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     ADD ESP,0x8                         ; 004cd76c
@@ -312,7 +312,7 @@ section .text
     MOV EAX,0xffff                      ; 004cd983
         ;   Label: LAB_004cd983
     MOV EDX,dword ptr [ESI + 0x2c]      ; 004cd988
-    MOV [0x01d22e54],EAX                ; 004cd98b | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B
+    MOV [0x01d22e54],EAX                ; 004cd98b | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.B
     LEA EAX,[EDX*0x4 + 0x0]             ; 004cd990
     SUB EAX,EDX                         ; 004cd997
     SHL EAX,0x3                         ; 004cd999
@@ -321,10 +321,10 @@ section .text
     XOR EBP,EBP                         ; 004cd9a6
     PUSH EAX                            ; 004cd9a8
     MOV EBX,dword ptr [0x005f2afc]      ; 004cd9a9 | g_CDemonRenderer_PTR_005f2afc
-    MOV dword ptr [0x01d22e50],EBP      ; 004cd9af | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A
+    MOV dword ptr [0x01d22e50],EBP      ; 004cd9af | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A
     PUSH EBX                            ; 004cd9b5 | g_CDemonRenderer_01bdd7e4
-    MOV dword ptr [0x01d22e58],EBP      ; 004cd9b6 | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C
-    MOV dword ptr [0x01d22e5c],EBP      ; 004cd9bc | g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D
+    MOV dword ptr [0x01d22e58],EBP      ; 004cd9b6 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C
+    MOV dword ptr [0x01d22e5c],EBP      ; 004cd9bc | g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 004cd9c2
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA EBX,[ESP + 0x44]                ; 004cd9c7

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004d2880(int *key_code_ptr,char *key_name)
 
 {
@@ -15,14 +13,14 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004d2880(int *key_code_ptr,ch
   int iVar2;
   char *pcVar3;
   
-  if (0x1d < _DAT_01cc8120) {
+  if (0x1d < g_INT_01cc8120) {
     g_CurrentFilename = "..\\core\\menu.cpp";
     g_CurrentLineNumber = 2087;
     core_main_c_displayErrorAndQuit_FUN_004c8440("Too many custom keys!");
   }
-  iVar2 = _DAT_01cc8120;
-  *(int **)(&DAT_01cc8124 + _DAT_01cc8120 * 4) = key_code_ptr;
-  pcVar3 = (char *)(iVar2 * 0x28 + 0x1cc81a0);
+  iVar2 = g_INT_01cc8120;
+  g_INT_PTR_ARRAY_01cc8124[g_INT_01cc8120] = key_code_ptr;
+  pcVar3 = g_CHAR_ARRAY_ARRAY_01cc81a0[iVar2];
   do {
     cVar1 = *key_name;
     *pcVar3 = cVar1;
@@ -32,6 +30,6 @@ void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004d2880(int *key_code_ptr,ch
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  _DAT_01cc8120 = _DAT_01cc8120 + 1;
+  g_INT_01cc8120 = g_INT_01cc8120 + 1;
   return;
 }

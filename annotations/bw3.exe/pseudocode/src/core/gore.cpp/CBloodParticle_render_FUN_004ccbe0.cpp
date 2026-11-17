@@ -136,7 +136,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
               (g_CDemonRenderer_PTR_005f2afc,0xffff - g_INT_01c6e24c);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01d22e48.base);
     engine_drender_cpp_pop_FUN_0046d080();
     fStack_110 = 1.0;
     puVar4 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 4);
@@ -240,7 +240,7 @@ void __cdecl core_gore_cpp_CBloodParticle_render_FUN_004ccbe0(CBloodParticle *th
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
                 (g_CDemonRenderer_PTR_005f2afc,0xffff - g_INT_01c6e24c);
       engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-                (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
+                (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01d22e48.base);
       engine_drender_cpp_pop_FUN_0046d080();
       iStack_18 = iStack_18 + 1;
     } while (iStack_18 < 3);

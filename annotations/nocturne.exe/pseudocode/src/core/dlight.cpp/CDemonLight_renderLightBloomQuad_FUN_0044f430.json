@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 377,
-    "complexity_score": 298,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 173,
-    "suspect_count": 9,
+    "pseudocode_lines": 172,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "self_copy_guard",
       "stack_alignment_array",
-      "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "unknown_field"
     ],
-    "total_lines": 550
+    "total_lines": 549
   },
   "cross_references": [
     {
@@ -113,13 +112,13 @@
     },
     {
       "addr": "0059c030",
-      "name": "DAT_0059c030",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_0059c030",
+      "type": "float",
+      "value": "256"
     },
     {
       "addr": "005ae470",
-      "name": "DAT_005ae470",
+      "name": "g_SLightGlowTable_005ae458.headlight.base.type",
       "type": "undefined4",
       "value": null
     },
@@ -131,14 +130,14 @@
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "01c038f4",
-      "name": "DAT_01c038f4",
-      "type": "undefined4",
+      "name": "g_INT_01c038f4",
+      "type": "int",
       "value": null
     }
   ],
@@ -606,16 +605,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 13,
       "match": "aiStackY_1064",
       "severity": "moderate",
       "text": "int aiStackY_1064 [992];",
@@ -623,23 +614,15 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 111,
+      "line": 109,
       "match": "._8_4_",
       "severity": "mild",
-      "text": "local_34._8_4_ = (uint)ROUND(_DAT_0059c030 * -0.5);",
+      "text": "local_34._8_4_ = (uint)ROUND(256.0f * -0.5);",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 159,
-      "match": "DAT_005ae470",
-      "severity": "mild",
-      "text": "(this_ptr_00,(SMRGLTextureBasic *)&DAT_005ae470);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `&local_7c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 59,
       "match": "(int)&local_7c",
       "severity": "moderate",
       "text": "local_60[(uint)bVar5 * -2] = *(int *)((int)&local_7c + (uint)bVar5 * -8 + 4);",
@@ -647,15 +630,47 @@
     },
     {
       "description": "Pointer value `&local_7c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&local_7c",
       "severity": "moderate",
       "text": "*(int *)((int)&local_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 132,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 133,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 136,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b0e608 (+4659704 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 141,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
       "description": "Watcom dead self-copy guard: `if (&local_58 != &local_a0)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 72,
+      "line": 70,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_58 != &local_a0) {",
@@ -663,7 +678,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 61,
+      "line": 59,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_60[(uint)bVar5 * -2] = *(int *)((int)&local_7c + (uint)bVar5 * -8 + 4);",
@@ -671,7 +686,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 63,
+      "line": 61,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(int *)((int)&local_7c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);",

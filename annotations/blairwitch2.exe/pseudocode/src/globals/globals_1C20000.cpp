@@ -36,6 +36,9 @@ CVector3f g_CVector3f_ARRAY_01c2225c[16] = {};
 // CVector3i
 CVector3i g_CVector3i_01c21e68 = {};
 
+// SWindow[5]
+SWindow g_SWindow_ARRAY_01c255a0[5] = {};
+
 // _BIT_INTEGER32
 _BIT_INTEGER32 g_BIT_INTEGER32_01c2a384 = {};
 
@@ -59,9 +62,6 @@ char g_CHAR_ARRAY_01c235f0[2048] = {};
 
 // char[4000]
 char g_CHAR_ARRAY_01c245f0[4000] = {};
-
-// char[492]
-char g_CHAR_ARRAY_01c255a0[492] = {};
 
 // float
 float g_FLOAT_01c21e88 = {};

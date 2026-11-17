@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEditorTools *this_ptr,float scale_factor,int text_color)
 
 {
@@ -20,21 +18,21 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   SRenderVertex vertex2_00;
   SRenderVertex vertex2_01;
   int iVar3;
-  uint *puVar4;
+  int iVar4;
   int unaff_EBP;
-  uint *puVar5;
-  uint *puVar6;
+  SRenderVertex *pSVar5;
+  int *piVar6;
   byte bVar7;
   double dVar8;
-  uint in_stack_ffffff78;
+  int in_stack_ffffff78;
   uint in_stack_ffffff7c;
-  uint in_stack_ffffff80;
+  int in_stack_ffffff80;
   uint in_stack_ffffff84;
   byte auVar9 [24];
   byte in_stack_ffffff88 [32];
   ulonglong in_stack_ffffffa8;
   ulonglong in_stack_ffffffb0;
-  uint in_stack_ffffffb8;
+  int in_stack_ffffffb8;
   uint uVar10;
   uint uVar11;
   CVector3i *pCVar12;
@@ -52,13 +50,14 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   int local_18 [2];
   
   bVar7 = 0;
-  if (_DAT_01bcd070 == (CBitFont *)0x0) {
+  if (g_CBitFont_PTR_01bcd070 == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 139;
     core_main_c_displayErrorAndQuit_FUN_004c8440("gEdFont must be set by the application.");
   }
-  _DAT_01bcd9b8 = _DAT_01bcd070->max_char_width;
-  _DAT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(_DAT_01bcd070,0x6a);
+  g_INT_01bcd9b8 = g_CBitFont_PTR_01bcd070->max_char_width;
+  g_INT_01bcd9bc = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(g_CBitFont_PTR_01bcd070,0x6a)
+  ;
   uVar19 = 0;
   g_ActiveRenderColor = text_color;
   local_18[0] = 0;
@@ -74,19 +73,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   local_18[1] = 0;
   uVar13 = 0x472e69;
   engine_matrix_c_transformToCache_FUN_004cd210(1,pCVar12);
-  puVar5 = &DAT_005c5044;
-  puVar6 = (uint *)&stack0xffffffa8;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014 + 1;
+  piVar6 = (int *)&stack0xffffffa8;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
-  puVar5 = &DAT_005c5014;
-  puVar6 = (uint *)&stack0xffffff78;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014;
+  piVar6 = (int *)&stack0xffffff78;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
   vertex1.projected_vertex.transformed_y = in_stack_ffffff7c;
   vertex1.projected_vertex.transformed_x = in_stack_ffffff78;
@@ -118,19 +117,19 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   local_18[1] = 0;
   uVar15 = 0x472eb4;
   engine_matrix_c_transformToCache_FUN_004cd210(2,pCVar12);
-  puVar5 = &DAT_005c5074;
-  puVar6 = (uint *)&stack0xffffffb0;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014 + 2;
+  piVar6 = (int *)&stack0xffffffb0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
-  puVar5 = &DAT_005c5014;
-  puVar6 = (uint *)&stack0xffffff80;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014;
+  piVar6 = (int *)&stack0xffffff80;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
   vertex1_00.projected_vertex.transformed_y = in_stack_ffffff84;
   vertex1_00.projected_vertex.transformed_x = in_stack_ffffff80;
@@ -161,20 +160,20 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   uVar18 = 3;
   uVar17 = 0x472f01;
   engine_matrix_c_transformToCache_FUN_004cd210(3,pCVar12);
-  puVar5 = &DAT_005c50a4;
-  puVar6 = (uint *)&stack0xffffffb8;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014 + 3;
+  piVar6 = (int *)&stack0xffffffb8;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
-  puVar4 = &DAT_005c5044;
-  puVar5 = &DAT_005c5014;
-  puVar6 = (uint *)&stack0xffffff88;
+  iVar4 = 0x5c5044;
+  pSVar5 = g_SRenderVertex_ARRAY_005c5014;
+  piVar6 = (int *)&stack0xffffff88;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *piVar6 = (pSVar5->projected_vertex).transformed_x;
+    pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);
+    piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
   }
   vertex1_01.r = (int)in_stack_ffffffa8;
   vertex1_01.g = (int)((ulonglong)in_stack_ffffffa8 >> 0x20);
@@ -204,16 +203,17 @@ void __cdecl shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_00472de0(CEdit
   engine_3d_c_clipAndDrawLine2D_FUN_00409290(vertex1_01,vertex2_01);
   iVar3 = 0;
   do {
-    if ((*(byte *)((int)puVar4 + 0x13) & 0x80) == 0) {
-      iVar1 = puVar4[4];
-      iVar2 = puVar4[5];
+    if ((*(byte *)(iVar4 + 0x13) & 0x80) == 0) {
+      iVar1 = *(int *)(iVar4 + 0x10);
+      iVar2 = *(int *)(iVar4 + 0x14);
       _sprintf((char *)local_18,"%c");
       engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
       engine_font_cpp_CBitFont_drawText_FUN_00490980
-                (_DAT_01bcd070,(char *)local_18,iVar1 >> 0x10,iVar2 >> 0x10,_DAT_01bcde04,-1);
+                (g_CBitFont_PTR_01bcd070,(char *)local_18,iVar1 >> 0x10,iVar2 >> 0x10,g_INT_01bcde04
+                 ,-1);
     }
     iVar3 = iVar3 + 1;
-    puVar4 = puVar4 + 0xc;
+    iVar4 = iVar4 + 0x30;
   } while (iVar3 < 3);
   return;
 }

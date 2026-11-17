@@ -6,12 +6,14 @@
 
 #include "nocturne.h"
 
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
 uint FUN_0056d4e8(void)
 
 {
   uint uVar1;
   
-  uVar1 = DAT_005c1f20 & 1;
-  DAT_005c1f20 = DAT_005c1f20 & 0xfffffffd | 1;
+  uVar1 = _g_BYTE_005c1f20 & 1;
+  _g_BYTE_005c1f20 = _g_BYTE_005c1f20 & 0xfffffffd | 1;
   return uVar1;
 }

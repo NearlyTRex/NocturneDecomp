@@ -42,7 +42,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *t
     vertex->has_collision = 1;
   }
   local_18 = 0;
-  if (0 < DAT_0077bdb8) {
+  if (0 < g_INT_0077bdb8) {
     pCVar1 = &vertex->world_position;
     pCVar2 = &vertex->velocity;
     pfVar10 = &(vertex->world_position).z;
@@ -147,7 +147,7 @@ void __cdecl core_curtain_cpp_CCurtain_solveConstraints_FUN_0043e290(CCurtain *t
       local_1c = local_1c + 10;
       local_18 = local_18 + 1;
       iVar11 = iVar11 + 0xc;
-    } while (local_18 < DAT_0077bdb8);
+    } while (local_18 < g_INT_0077bdb8);
   }
   local_34 = 0;
   if (0 < vertex->neighbor_count) {

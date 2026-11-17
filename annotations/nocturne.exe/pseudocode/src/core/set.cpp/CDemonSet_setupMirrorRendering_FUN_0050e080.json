@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 96,
+    "complexity_score": 61,
     "cross_reference_count": 5,
     "function_call_count": 7,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 125
   },
@@ -105,56 +104,56 @@
     },
     {
       "addr": "007f7370",
-      "name": "DAT_007f7370",
-      "type": "undefined4",
+      "name": "g_CDemonCamera_PTR_007f7370",
+      "type": "CDemonCamera*",
       "value": null
     },
     {
       "addr": "01b4d738",
-      "name": "DAT_01b4d738",
-      "type": "undefined4",
+      "name": "g_CDemonRenderer_01b4d738",
+      "type": "CDemonRenderer",
       "value": null
     },
     {
       "addr": "020842b4",
-      "name": "DAT_020842b4",
-      "type": "undefined4",
+      "name": "g_CVector3f_020842b4",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "020842b8",
-      "name": "DAT_020842b8",
+      "name": "g_CVector3f_020842b4.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842bc",
-      "name": "DAT_020842bc",
+      "name": "g_CVector3f_020842b4.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842c0",
-      "name": "DAT_020842c0",
-      "type": "undefined4",
+      "name": "g_CVector3f_020842c0",
+      "type": "CVector3f",
       "value": null
     },
     {
       "addr": "020842c4",
-      "name": "DAT_020842c4",
+      "name": "g_CVector3f_020842c0.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842c8",
-      "name": "DAT_020842c8",
+      "name": "g_CVector3f_020842c0.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020842cc",
-      "name": "DAT_020842cc",
-      "type": "undefined4",
+      "name": "g_FLOAT_020842cc",
+      "type": "float",
       "value": null
     }
   ],
@@ -375,44 +374,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 13,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_020842b4.x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_020842b4",
-      "severity": "mild",
-      "text": "if (pCVar1 != (CVector3f *)&DAT_020842b4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_020842c0",
-      "severity": "mild",
-      "text": "if (pCVar1 != (CVector3f *)&DAT_020842c0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_020842b4",
-      "severity": "mild",
-      "text": "(CVector3f *)&DAT_020842b4,(CVector3f *)&DAT_020842c0,_DAT_020842cc);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 32,
-      "match": "DAT_020842c0",
-      "severity": "mild",
-      "text": "(CVector3f *)&DAT_020842b4,(CVector3f *)&DAT_020842c0,_DAT_020842cc);",
-      "type": "undefined_data"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 20,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "g_CVector3f_020842c0.x = pCVar1->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

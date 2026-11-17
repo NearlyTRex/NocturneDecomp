@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 143,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 128,
-    "suspect_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 127,
+    "suspect_count": 4,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "raw_address_constant"
     ],
-    "total_lines": 387
+    "total_lines": 386
   },
   "cross_references": [
     {
@@ -215,55 +215,55 @@
     },
     {
       "addr": "01cd0e84",
-      "name": "g_SMRGLHeaderPrimitive_01cd0e80.base.count",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.base.base.count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e88",
-      "name": "g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.A",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.A",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e8c",
-      "name": "g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.B",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.B",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e90",
-      "name": "g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.C",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.C",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e94",
-      "name": "g_SMRGLHeaderPrimitive_01cd0e80.surface_normal.D",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.base.surface_normal.D",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e98",
-      "name": "DAT_01cd0e98",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0e9c",
-      "name": "DAT_01cd0e9c",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0ea0",
-      "name": "DAT_01cd0ea0",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cd0ea4",
-      "name": "DAT_01cd0ea4",
+      "name": "g_SMRGLPrimitiveQuadIndex_01cd0e80.vertices[3]",
       "type": "undefined4",
       "value": null
     }
@@ -403,12 +403,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 17,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_00629014[1].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 18,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_00629014[2].u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 19,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_00629014[2].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 20,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_SRenderVertex_ARRAY_00629014[3].v = 0xf80000;",
+      "type": "raw_address_constant"
     }
   ]
 }

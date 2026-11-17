@@ -4,11 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/structs/SCoronaLightCache.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1280000
 // =============================================================================
 
-// int
-extern int g_INT_01289ca8;
+// SCoronaLightCache
+extern SCoronaLightCache g_SCoronaLightCache_01289ca8;
 

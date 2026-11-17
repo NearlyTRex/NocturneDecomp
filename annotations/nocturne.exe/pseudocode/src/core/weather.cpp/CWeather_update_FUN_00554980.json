@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 341,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 141,
+    "pseudocode_lines": 140,
     "suspect_count": 17,
     "suspect_types": [
       "dropped_fyl2x",
       "inline_exp_idiom",
       "pointer_cast",
-      "pointer_truncation",
-      "raw_address_constant",
-      "warning_overlapping_globals"
+      "pointer_truncation"
     ],
-    "total_lines": 484
+    "total_lines": 483
   },
   "cross_references": [
     {
@@ -143,9 +141,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b80f0",
@@ -179,8 +177,8 @@
     },
     {
       "addr": "02de0770",
-      "name": "DAT_02de0770",
-      "type": "undefined4",
+      "name": "g_UINT_02de0770",
+      "type": "uint",
       "value": null
     }
   ],
@@ -377,16 +375,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(float *)((int)g_FLOAT_ARRAY_02de0388",
+      "severity": "moderate",
+      "text": "if ((fVar2 < *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar6)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(float *)((int)g_FLOAT_ARRAY_02de0388",
+      "severity": "moderate",
+      "text": "local_28.y = *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar6);",
+      "type": "pointer_cast"
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
       "severity": "moderate",
       "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) -",
@@ -394,7 +400,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) = fVar2;",
@@ -402,7 +408,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
       "severity": "moderate",
       "text": "(*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) =",
@@ -410,7 +416,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].y` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 65,
+      "line": 63,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].y",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) + 100.0f,",
@@ -418,7 +424,7 @@
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].x",
       "severity": "moderate",
       "text": "local_28.x = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].x + iVar4);",
@@ -426,23 +432,15 @@
     },
     {
       "description": "Pointer value `&g_CVector3f_ARRAY_02ddfa28[0].z` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "(int)&g_CVector3f_ARRAY_02ddfa28[0].z",
       "severity": "moderate",
       "text": "local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x1c03a10 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 101,
-      "match": "0x1c03a10",
-      "severity": "moderate",
-      "text": "this_ptr_00 = 0x01C03A10;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "fVar2 = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) -",
@@ -450,7 +448,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) = fVar2;",
@@ -458,7 +456,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 64,
+      "line": 62,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "(*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) =",
@@ -466,7 +464,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 65,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].y + iVar4) + 100.0f,",
@@ -474,7 +472,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_28.x = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].x + iVar4);",
@@ -482,7 +480,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 68,
+      "line": 66,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "local_28.z = *(float *)((int)&g_CVector3f_ARRAY_02ddfa28[0].z + iVar4);",
@@ -490,7 +488,7 @@
     },
     {
       "description": "Inline x87 exp() with the FPREM reduction dropped: `fVar7 - (fVar7 / fVar9) * fVar9` is identically zero, so this compiles to `fscale(1.0, x)` == `2^trunc(x)` -- a staircase in powers of two, not an exponential. It is silently correct whenever the exponent is 0. Read the FMUL feeding FLDL2E in the .asm for the sign and operands, then write the real call in a .keep, e.g. `exp(-decay * decay_timer)`.",
-      "line": 132,
+      "line": 130,
       "match": "fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);",
       "severity": "major",
       "text": "fVar8 = (float10)f2xm1(fVar7 - (fVar7 / fVar9) * fVar9);",
@@ -498,7 +496,7 @@
     },
     {
       "description": "Raw x87 `f2xm1`/`fscale` intrinsic. These are compile escape hatches for Ghidra's rendering of an inline exp()/pow() and should not remain in a finished reconstruction; note `fscale` is `ldexp`, which truncates its exponent to `int`. Confirm the sequence against the .asm (FLDL2E / FPREM / F2XM1 / FSCALE) and name the operation in a .keep.",
-      "line": 133,
+      "line": 131,
       "match": "fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);",
       "severity": "moderate",
       "text": "fVar9 = (float10)fscale(fVar8 + fVar9,fVar7);",
@@ -506,7 +504,7 @@
     },
     {
       "description": "x87 log constant multiplied by `this_ptr->max_flash_interval` in a function whose asm has 1 FYL2X. FYL2X computes st(1)*log2(st(0)); Ghidra drops it and leaves only the loaded constant, so ln(x) decompiles as 0.693*x. Read the asm and restore the logarithm in a .keep (e.g. `log(x) * 868.589` for a dB conversion). Note log2(e)*ln(2) == 1, so in a pow()-shaped site the constants cancel and the arithmetic looks innocent.",
-      "line": 131,
+      "line": 129,
       "match": "(float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);",
       "severity": "major",
       "text": "(float10)0.6931471805599453 * (float10)this_ptr->max_flash_interval);",

@@ -43,12 +43,12 @@
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   undefined4 g_CDemonSetInstance.skip_exact_collisions
-;   undefined4 DAT_0268ced8
-;   undefined4 DAT_0268cedc
-;   undefined4 DAT_0268cee0
-;   undefined4 DAT_0268cee4
-;   undefined4 DAT_0268cee8
-;   undefined4 DAT_0268ceec
+;   int g_INT_0268ced8
+;   CVector3f g_CVector3f_0268cedc
+;   undefined4 g_CVector3f_0268cedc.y
+;   undefined4 g_CVector3f_0268cedc.z
+;   int g_INT_0268cee8
+;   int g_INT_0268ceec
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_0040a540
@@ -381,12 +381,12 @@ section .text
     SAHF                                ; 0040aa8e
     JC 0x0040a75f                       ; 0040aa8f
         ;   XREF to: 0040a75f (CONDITIONAL_JUMP)  ; LAB_0040a75f
-    MOV EAX,[0x0268ced8]                ; 0040aa95 | DAT_0268ced8
+    MOV EAX,[0x0268ced8]                ; 0040aa95 | g_INT_0268ced8
     MOV dword ptr [EBX + 0xc],EAX       ; 0040aa9a
-    MOV EAX,[0x0268cee8]                ; 0040aa9d | DAT_0268cee8
+    MOV EAX,[0x0268cee8]                ; 0040aa9d | g_INT_0268cee8
     MOV dword ptr [EBX + 0x10],EAX      ; 0040aaa2
-    MOV EAX,[0x0268ceec]                ; 0040aaa5 | DAT_0268ceec
-    MOV EDX,dword ptr [0x0268cee8]      ; 0040aaaa | DAT_0268cee8
+    MOV EAX,[0x0268ceec]                ; 0040aaa5 | g_INT_0268ceec
+    MOV EDX,dword ptr [0x0268cee8]      ; 0040aaaa | g_INT_0268cee8
     PUSH EAX                            ; 0040aab0
     MOV dword ptr [EBX + 0x14],EAX      ; 0040aab1
     MOV EAX,dword ptr [EBP + 0x24]      ; 0040aab4
@@ -405,11 +405,11 @@ section .text
     CMP EAX,0x268cedc                   ; 0040aad7
     JZ 0x0040a8f0                       ; 0040aadc
         ;   XREF to: 0040a8f0 (CONDITIONAL_JUMP)  ; LAB_0040a8f0
-    MOV EAX,[0x0268cedc]                ; 0040aae2 | DAT_0268cedc
+    MOV EAX,[0x0268cedc]                ; 0040aae2 | g_CVector3f_0268cedc
     MOV dword ptr [ESP + 0x88],EAX      ; 0040aae7
-    MOV EAX,[0x0268cee0]                ; 0040aaee | DAT_0268cee0
+    MOV EAX,[0x0268cee0]                ; 0040aaee | g_CVector3f_0268cedc.y
     MOV dword ptr [ESP + 0x8c],EAX      ; 0040aaf3
-    MOV EAX,[0x0268cee4]                ; 0040aafa | DAT_0268cee4
+    MOV EAX,[0x0268cee4]                ; 0040aafa | g_CVector3f_0268cedc.z
     MOV dword ptr [ESP + 0x90],EAX      ; 0040aaff
     JMP 0x0040a8f0                      ; 0040ab06
         ;   XREF to: 0040a8f0 (UNCONDITIONAL_JUMP)  ; LAB_0040a8f0

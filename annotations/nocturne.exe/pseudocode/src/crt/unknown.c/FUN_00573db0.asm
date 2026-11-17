@@ -11,8 +11,8 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CharUpperBuffA_00575414 = 001758f2
-;   undefined4 DAT_005c2144
-;   undefined4 DAT_02de5c30
+;   uint g_UINT_005c2144 = 0x1
+;   int g_INT_02de5c30
 ;
 ; Called Functions:
 ;   CharUpperBuffA
@@ -42,12 +42,12 @@ section .text
         ;   XREF to: 0056da50 (UNCONDITIONAL_CALL)  ; int crt_locale.c_mblen_FUN_0056da50(char * mb_string)
     ADD ESP,0x4                         ; 00573dcd
     XOR DL,DL                           ; 00573dd0
-    MOV EBX,dword ptr [0x005c2144]      ; 00573dd2 | DAT_005c2144
+    MOV EBX,dword ptr [0x005c2144]      ; 00573dd2 | g_UINT_005c2144
     MOV byte ptr [ESP + EAX*0x1],DL     ; 00573dd8
     CMP EBX,0x3a4                       ; 00573ddb
     JNZ 0x00573e0c                      ; 00573de1
         ;   XREF to: 00573e0c (CONDITIONAL_JUMP)  ; LAB_00573e0c
-    CMP dword ptr [0x02de5c30],0x0      ; 00573de3 | DAT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 00573de3 | g_INT_02de5c30
     JZ 0x00573e0c                       ; 00573dea
         ;   XREF to: 00573e0c (CONDITIONAL_JUMP)  ; LAB_00573e0c
     XOR EAX,EAX                         ; 00573dec

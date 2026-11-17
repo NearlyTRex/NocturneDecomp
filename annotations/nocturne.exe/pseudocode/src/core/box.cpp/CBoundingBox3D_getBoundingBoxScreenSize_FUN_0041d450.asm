@@ -25,10 +25,10 @@
 ; Referenced Globals:
 ;   float FLOAT_005797c9 = 0.5
 ;   double DOUBLE_005797cd = 0.00390625
-;   undefined4 DAT_0059aa80
+;   float g_FLOAT_0059aa80 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005b7648
-;   undefined4 DAT_01b4d738
+;   int g_INT_005b7648 = 0x10000
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;
 ; Called Functions:
@@ -74,23 +74,23 @@ section .text
     LEA EAX,[ESP + 0x18]                ; 0041d4a8
     FSTP float ptr [ESP + 0x20]         ; 0041d4ac
     FLD float ptr [EAX]                 ; 0041d4b0
-    FMUL float ptr [0x0059aa80]         ; 0041d4b2 | DAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4b2 | g_FLOAT_0059aa80
     FISTP dword ptr [EBX]               ; 0041d4b8
     FLD float ptr [EAX + 0x4]           ; 0041d4ba
-    FMUL float ptr [0x0059aa80]         ; 0041d4bd | DAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4bd | g_FLOAT_0059aa80
     FISTP dword ptr [EBX + 0x4]         ; 0041d4c3
     FLD float ptr [EAX + 0x8]           ; 0041d4c6
-    FMUL float ptr [0x0059aa80]         ; 0041d4c9 | DAT_0059aa80
+    FMUL float ptr [0x0059aa80]         ; 0041d4c9 | g_FLOAT_0059aa80
     FISTP dword ptr [EBX + 0x8]         ; 0041d4cf
     LEA EAX,[ESP + 0xc]                 ; 0041d4d2
     PUSH EAX                            ; 0041d4d6
-    MOV EAX,dword ptr [EDX]             ; 0041d4d7 | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0041d4d7 | g_CDemonRenderer_01b4d738
     ADD EAX,0xea5d0                     ; 0041d4d9
     PUSH EAX                            ; 0041d4de
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0041d4df
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
     MOV EAX,[0x005ae704]                ; 0041d4e4 | g_CDemonRenderer_PTR_005ae704
-    MOV EAX,dword ptr [EAX]             ; 0041d4e9 | DAT_01b4d738
+    MOV EAX,dword ptr [EAX]             ; 0041d4e9 | g_CDemonRenderer_01b4d738
     MOV EAX,dword ptr [EAX + 0xea5d8]   ; 0041d4eb
     ADD ESP,0x8                         ; 0041d4f1
     TEST EAX,EAX                        ; 0041d4f4
@@ -104,7 +104,7 @@ section .text
     FDIVP                               ; 0041d50c
     FILD dword ptr [0x01c00c4c]         ; 0041d50e | g_Projection.neg_half_height_fixed
     FMULP                               ; 0041d514
-    FILD dword ptr [0x005b7648]         ; 0041d516 | DAT_005b7648
+    FILD dword ptr [0x005b7648]         ; 0041d516 | g_INT_005b7648
     FDIVP                               ; 0041d51c
     FABS                                ; 0041d51e
     FSTP float ptr [ESP + 0x24]         ; 0041d520

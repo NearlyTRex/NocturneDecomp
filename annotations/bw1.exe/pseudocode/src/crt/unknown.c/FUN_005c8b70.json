@@ -6,11 +6,11 @@
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
-      "undefined_data"
+      "pointer_cast"
     ],
     "total_lines": 58
   },
@@ -44,9 +44,9 @@
     },
     {
       "addr": "00626838",
-      "name": "DAT_00626838",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SIOControlBlock_PTR_00626838",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "0062683c",
@@ -138,12 +138,12 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "DAT_00626838",
-      "severity": "mild",
-      "text": "if (*(int *)(DAT_00626838 + iVar2) == 0) {",
-      "type": "undefined_data"
+      "match": "(int *)((int)g_SIOControlBlock_PTR_00626838",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_SIOControlBlock_PTR_00626838->standard_handles + iVar2) == 0) {",
+      "type": "pointer_cast"
     }
   ]
 }

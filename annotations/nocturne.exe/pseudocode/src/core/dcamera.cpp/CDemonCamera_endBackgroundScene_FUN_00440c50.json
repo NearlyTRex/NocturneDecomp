@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 154,
+    "complexity_score": 133,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 17,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 49,
-    "suspect_count": 8,
+    "pseudocode_lines": 48,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 136
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -71,50 +69,50 @@
     },
     {
       "addr": "0140efa8",
-      "name": "DAT_0140efa8",
-      "type": "undefined4",
+      "name": "g_INT_0140efa8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0140efac",
-      "name": "DAT_0140efac",
-      "type": "undefined4",
+      "name": "g_INT_0140efac",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0140efb0",
-      "name": "DAT_0140efb0",
-      "type": "undefined4",
+      "name": "g_INT_0140efb0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0140efb4",
-      "name": "DAT_0140efb4",
-      "type": "undefined4",
+      "name": "g_ARRAY_PTR_0140efb4",
+      "type": "void*[1200]",
       "value": null
     },
     {
       "addr": "0140efb8",
-      "name": "DAT_0140efb8",
+      "name": "g_ARRAY_PTR_0140efb4[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01410274",
-      "name": "DAT_01410274",
-      "type": "undefined4",
+      "name": "g_INT_01410274",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01410278",
-      "name": "DAT_01410278",
-      "type": "undefined4",
+      "name": "g_INT_01410278",
+      "type": "int",
       "value": null
     },
     {
       "addr": "0141027c",
-      "name": "DAT_0141027c",
-      "type": "undefined4",
+      "name": "g_INT_0141027c",
+      "type": "int",
       "value": null
     },
     {
@@ -289,32 +287,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 18,
-      "match": "DAT_0140efb4",
-      "severity": "mild",
-      "text": "puVar5 = (uint *)&DAT_0140efb4;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)puVar5",
+      "line": 25,
+      "match": "(byte **)((int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 26,
       "match": "(void **)((int)ppvVar6",
       "severity": "moderate",
       "text": "ppvVar6 = (void **)((int)ppvVar6 + 1);",
@@ -322,34 +304,42 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 39,
       "match": "(void *)(iVar4 * 4 + (int)this_ptr",
       "severity": "moderate",
       "text": "((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),",
       "type": "pointer_cast"
     },
     {
-      "description": "Pointer value `puVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 27,
-      "match": "(int)puVar5",
+      "description": "Pointer value `ppuVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)ppuVar5",
       "severity": "moderate",
-      "text": "puVar5 = (uint *)((int)puVar5 + 1);",
+      "text": "ppuVar5 = (byte **)((int)ppuVar5 + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `ppvVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 28,
+      "line": 26,
       "match": "(int)ppvVar6",
       "severity": "moderate",
       "text": "ppvVar6 = (void **)((int)ppvVar6 + 1);",
       "type": "pointer_truncation"
     },
     {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (uVar2 = g_WindowHeight & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
       "description": "Watcom inline memcpy (REP MOVSD at 00440c99, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
       "line": 30,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00440c99: MOVSD.REP ES:EDI,ESI  ; DAT_0140efb4 | g_ScreenBufferArray | DAT_0140efb8",
+      "text": "// 00440c99: MOVSD.REP ES:EDI,ESI  ; g_ARRAY_PTR_0140efb4 | g_ScreenBufferArray | g_ARRAY_PTR_0140efb4[1]",
       "type": "unrolled_memcpy"
     }
   ]

@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentAlphaValue = 0xff
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_006b029c
-;   undefined4 DAT_006b02a0
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   int[24] g_INT_ARRAY_006b029c
+;   undefined4 g_INT_ARRAY_006b029c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -75,17 +75,17 @@ section .text
     JGE 0x00408103                      ; 00408096
         ;   XREF to: 00408103 (CONDITIONAL_JUMP)  ; LAB_00408103
     MOV EDX,dword ptr [EAX]             ; 00408098
-    MOV dword ptr [EBX + 0x6b029c],EDX  ; 0040809a | DAT_006b029c | DAT_006b02a0
+    MOV dword ptr [EBX + 0x6b029c],EDX  ; 0040809a | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
     IMUL ESI,EDX,0x30                   ; 004080a0
     MOV EDX,dword ptr [EAX + 0x4]       ; 004080a3
-    MOV dword ptr [ESI + 0x5c502c],EDX  ; 004080a6 | DAT_005c502c
+    MOV dword ptr [ESI + 0x5c502c],EDX  ; 004080a6 | g_SRenderVertex_ARRAY_005c5014[0].u
     IMUL ESI,dword ptr [EAX],0x30       ; 004080ac
     ADD EAX,0xc                         ; 004080af
     ADD EBX,0x4                         ; 004080b2
     INC EDI                             ; 004080b5
     MOV EDX,dword ptr [EAX + -0x4]      ; 004080b6
     ADD ECX,0x3                         ; 004080b9
-    MOV dword ptr [ESI + 0x5c5030],EDX  ; 004080bc | DAT_005c5030
+    MOV dword ptr [ESI + 0x5c5030],EDX  ; 004080bc | g_SRenderVertex_ARRAY_005c5014[0].v
     JMP 0x00408088                      ; 004080c2
         ;   XREF to: 00408088 (UNCONDITIONAL_JUMP)  ; LAB_00408088
     MOV dword ptr [0x01c00c7c],0x530322 ; 004080c4 | g_ScanlineRenderFunc
@@ -107,7 +107,7 @@ section .text
         ;   Label: LAB_004080f7
     JMP 0x00408079                      ; 004080fe
         ;   XREF to: 00408079 (UNCONDITIONAL_JUMP)  ; LAB_00408079
-    PUSH 0x6b029c                       ; 00408103 | DAT_006b029c
+    PUSH 0x6b029c                       ; 00408103 | g_INT_ARRAY_006b029c
         ;   Label: LAB_00408103
     PUSH EDI                            ; 00408108
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00408109

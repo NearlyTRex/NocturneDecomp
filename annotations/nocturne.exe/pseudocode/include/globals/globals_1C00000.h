@@ -5,13 +5,20 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "defines.h"
+#include "system/windef.h"
 #include "system/winnt.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CEventList.h"
 #include "types/classes/CFireEffect.h"
+#include "types/classes/CFlameCan.h"
 #include "types/classes/CKeyFramedModelInstance.h"
 #include "types/classes/CMatrix3x3i.h"
 #include "types/classes/CSmokeParticle.h"
+#include "types/classes/CVector3i.h"
 #include "types/funcdefs/MainScanlineFunc.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
+#include "types/structs/SMRGLTextureBasic.h"
 #include "types/structs/SProjectionParams.h"
 #include "types/structs/SRGBColorPalette.h"
 
@@ -19,12 +26,21 @@
 // GLOBAL VARIABLES - Range 0x1C00000
 // =============================================================================
 
+// CCharacter*[50]
+extern CCharacter* g_CCharacter_PTR_ARRAY_01c09e0c[50];
+
 // CDemonActorType
 extern CDemonActorType g_CFilmReelActorType_01c08c8c;
 extern CDemonActorType g_CFilmProjectorActorType_01c08cc8;
 
+// CEventList
+extern CEventList g_CEventList_01c03a10;
+
 // CFireEffect
 extern CFireEffect g_CFireEffect_01c08d04;
+
+// CFlameCan*[150]
+extern CFlameCan* g_CFlameCan_PTR_ARRAY_01c09ed8[150];
 
 // CKeyFramedModelInstance
 extern CKeyFramedModelInstance g_CKeyFramedModelInstance_01c08d48;
@@ -42,8 +58,25 @@ extern CMatrix3x3i g_TransformMatrix;
 // CSmokeParticle[2048]
 extern CSmokeParticle g_CSmokeParticle_ARRAY_01c0a140[2048];
 
+// CVector3i
+extern CVector3i g_CVector3i_01c08d08;
+extern CVector3i g_CVector3i_01c08d14;
+
+// DWORD
+extern DWORD g_DWORD_01c038f8;
+extern DWORD g_DWORD_01c038fc;
+extern DWORD g_DWORD_01c03900;
+extern DWORD g_DWORD_01c03904;
+extern DWORD g_DWORD_01c03908;
+
 // MainScanlineFunc*
 extern MainScanlineFunc* g_ScanlineRenderFunc;
+
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01c08d20;
+
+// SMRGLTextureBasic[20]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_01c09c28[20];
 
 // SProjectionParams
 extern SProjectionParams g_Projection;
@@ -60,6 +93,22 @@ extern _BIT_INTEGER32 g_BlueBitPosition;
 extern _BIT_INTEGER32 g_BlueDitherShift;
 extern _BIT_INTEGER32 g_RenderStateFlags;
 
+// _MMX_INTEGER
+extern _MMX_INTEGER g_MMX_INTEGER_01c03958;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03960;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03968;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03970;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03978;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03980;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03988;
+extern _MMX_INTEGER g_MMX_INTEGER_01c03990;
+
+// char[256]
+extern char g_CHAR_ARRAY_01c08b60[256];
+
+// char[4952]
+extern char g_CHAR_ARRAY_01c02598[4952];
+
 // int
 extern int g_RedScaleFactor;
 extern int g_GreenScaleFactor;
@@ -75,7 +124,15 @@ extern int g_CurrentLightingValue;
 extern int g_AdvancedClippingEnabled;
 extern int g_TextureBits;
 extern int g_UseExternalRenderer;
+extern int g_INT_01c038f4;
+extern int g_INT_01c0390c;
+extern int g_INT_01c03910;
+extern int g_INT_01c03914;
+extern int g_INT_01c0391c;
+extern int g_INT_01c03920;
 extern int g_MMXSupported;
+extern int g_INT_01c0394c;
+extern int g_INT_01c03950;
 extern int g_BlendMode;
 extern int g_ProcessorType;
 extern int g_VertexPreprocessMode;
@@ -88,6 +145,18 @@ extern int g_RelativeZ;
 extern int g_CameraOriginX;
 extern int g_CameraOriginY;
 extern int g_CameraOriginZ;
+extern int g_INT_01c039d0;
+extern int g_INT_01c039d4;
+extern int g_INT_01c039d8;
+extern int g_INT_01c039dc;
+extern int g_INT_01c039e0;
+extern int g_INT_01c039e4;
+extern int g_INT_01c08b5c;
+extern int g_INT_01c094b4;
+extern int g_INT_01c094b8;
+extern int g_INT_01c09e08;
+extern int g_INT_01c09ed4;
+extern int g_INT_01c0a13c;
 
 // uchar*
 extern uchar* g_CurrentTextureData;
@@ -99,6 +168,9 @@ extern uchar g_DefaultPalette[768];
 
 // uint[256]
 extern uint g_Hardware32BitPalette[256];
+
+// uint[3]
+extern uint g_UINT_ARRAY_01c0a130[3];
 
 // uint[GAME_RECIPROCAL_TABLE_SIZE]
 extern uint g_ReciprocalLookupTable[GAME_RECIPROCAL_TABLE_SIZE];

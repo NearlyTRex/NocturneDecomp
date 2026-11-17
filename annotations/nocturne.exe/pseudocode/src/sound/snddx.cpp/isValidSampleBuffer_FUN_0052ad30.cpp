@@ -9,7 +9,8 @@
 int __cdecl sound_snddx_cpp_isValidSampleBuffer_FUN_0052ad30(int buffer_id)
 
 {
-  if (((0 < buffer_id) && (buffer_id < 0x19)) && (*(int *)(&DAT_02dc9244 + buffer_id * 4) != 0)) {
+  if (((0 < buffer_id) && (buffer_id < 0x19)) &&
+     (g_IDirectSoundBuffer_PTR_ARRAY_02dc9244[buffer_id] != (IDirectSoundBuffer *)0x0)) {
     return 1;
   }
   return 0;

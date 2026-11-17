@@ -15,7 +15,7 @@ BOOL FUN_00574570(LPCWSTR param_1,LPCWSTR param_2)
   char *dest_00;
   ulong size;
   
-  if (DAT_005c1d11 < 0x8000) {
+  if (g_WORD_005c1d11 < 0x8000) {
     BVar1 = SetEnvironmentVariableW(param_1,param_2);
     return BVar1;
   }

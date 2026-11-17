@@ -96,6 +96,7 @@
 #include "globals/globals_610000.h"
 #include "globals/globals_620000.h"
 #include "globals/globals_710000.h"
+#include "globals/globals_7B0000.h"
 #include "globals/globals_7C0000.h"
 #include "globals/globals_7D0000.h"
 #include "globals/globals_850000.h"

@@ -27,7 +27,7 @@
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_004f0c20 at 004f0fae
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01e312f4
+;   int g_INT_01e312f4
 ;
 ; Called Functions:
 ;   core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_004f04a0
@@ -91,7 +91,7 @@ section .text
     CDQ                                 ; 004f05bf
     XOR EAX,EDX                         ; 004f05c0
     SUB EAX,EDX                         ; 004f05c2
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f05c4 | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f05c4 | g_INT_01e312f4
     JLE 0x004f0607                      ; 004f05ca
         ;   XREF to: 004f0607 (CONDITIONAL_JUMP)  ; LAB_004f0607
     XOR EAX,EAX                         ; 004f05cc
@@ -136,7 +136,7 @@ section .text
     CDQ                                 ; 004f061c
     XOR EAX,EDX                         ; 004f061d
     SUB EAX,EDX                         ; 004f061f
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f0621 | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f0621 | g_INT_01e312f4
     JG 0x004f05cc                       ; 004f0627
         ;   XREF to: 004f05cc (CONDITIONAL_JUMP)  ; LAB_004f05cc
     PUSH EBX                            ; 004f0629
@@ -152,7 +152,7 @@ section .text
     CDQ                                 ; 004f063c
     XOR EAX,EDX                         ; 004f063d
     SUB EAX,EDX                         ; 004f063f
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f0641 | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f0641 | g_INT_01e312f4
     JG 0x004f05cc                       ; 004f0647
         ;   XREF to: 004f05cc (CONDITIONAL_JUMP)  ; LAB_004f05cc
     MOV EAX,dword ptr [ESP + 0x24]      ; 004f0649
@@ -211,7 +211,7 @@ section .text
     CDQ                                 ; 004f06cc
     XOR EAX,EDX                         ; 004f06cd
     SUB EAX,EDX                         ; 004f06cf
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f06d1 | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f06d1 | g_INT_01e312f4
     JLE 0x004f06e3                      ; 004f06d7
         ;   XREF to: 004f06e3 (CONDITIONAL_JUMP)  ; LAB_004f06e3
     XOR EAX,EAX                         ; 004f06d9
@@ -234,7 +234,7 @@ section .text
     CDQ                                 ; 004f06f4
     XOR EAX,EDX                         ; 004f06f5
     SUB EAX,EDX                         ; 004f06f7
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f06f9 | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f06f9 | g_INT_01e312f4
     JG 0x004f05cc                       ; 004f06ff
         ;   XREF to: 004f05cc (CONDITIONAL_JUMP)  ; LAB_004f05cc
     PUSH EBX                            ; 004f0705
@@ -250,7 +250,7 @@ section .text
     CDQ                                 ; 004f0718
     XOR EAX,EDX                         ; 004f0719
     SUB EAX,EDX                         ; 004f071b
-    CMP EAX,dword ptr [0x01e312f4]      ; 004f071d | DAT_01e312f4
+    CMP EAX,dword ptr [0x01e312f4]      ; 004f071d | g_INT_01e312f4
     JG 0x004f05cc                       ; 004f0723
         ;   XREF to: 004f05cc (CONDITIONAL_JUMP)  ; LAB_004f05cc
     MOV EAX,dword ptr [ESP + 0x20]      ; 004f0729

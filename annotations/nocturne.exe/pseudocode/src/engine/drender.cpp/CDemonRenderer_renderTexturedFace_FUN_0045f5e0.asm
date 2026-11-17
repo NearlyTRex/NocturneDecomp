@@ -14,9 +14,9 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
-;   undefined4 DAT_01b4d774
+;   int[16] g_INT_ARRAY_01b4d76c
+;   undefined4 g_INT_ARRAY_01b4d76c[1]
+;   undefined4 g_INT_ARRAY_01b4d76c[2]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -47,14 +47,14 @@ section .text
     XOR EAX,EAX                         ; 0045f5fd
         ;   Label: LAB_0045f5fd
     MOV AX,word ptr [EBP]               ; 0045f5ff
-    MOV [0x01b4d76c],EAX                ; 0045f603 | DAT_01b4d76c
+    MOV [0x01b4d76c],EAX                ; 0045f603 | g_INT_ARRAY_01b4d76c
     XOR EAX,EAX                         ; 0045f608
     MOV AX,word ptr [EBP + 0x2]         ; 0045f60a
-    MOV [0x01b4d770],EAX                ; 0045f60e | DAT_01b4d770
+    MOV [0x01b4d770],EAX                ; 0045f60e | g_INT_ARRAY_01b4d76c[1]
     XOR EAX,EAX                         ; 0045f613
     MOV AX,word ptr [EBP + 0x4]         ; 0045f615
     MOV EBX,dword ptr [ECX + 0x4]       ; 0045f619
-    MOV [0x01b4d774],EAX                ; 0045f61c | DAT_01b4d774
+    MOV [0x01b4d774],EAX                ; 0045f61c | g_INT_ARRAY_01b4d76c[2]
     TEST EBX,EBX                        ; 0045f621
     JZ 0x0045f6b1                       ; 0045f623
         ;   XREF to: 0045f6b1 (CONDITIONAL_JUMP)  ; LAB_0045f6b1
@@ -63,7 +63,7 @@ section .text
     MOV dword ptr [0x01c039a0],EBX      ; 0045f630 | g_RenderStateFlags
     MOV dword ptr [0x01c039a4],EBX      ; 0045f636 | g_VertexPreprocessMode
     MOV dword ptr [0x01c00c7c],EDX      ; 0045f63c | g_ScanlineRenderFunc
-    PUSH 0x1b4d76c                      ; 0045f642 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f642 | g_INT_ARRAY_01b4d76c
     PUSH 0x3                            ; 0045f647
     PUSH ECX                            ; 0045f649
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f64a
@@ -125,7 +125,7 @@ section .text
         ;   Label: LAB_0045f6c4
     MOV [0x01c039a0],EAX                ; 0045f6c8 | g_RenderStateFlags
     MOV dword ptr [0x01c039a4],0x6      ; 0045f6cd | g_VertexPreprocessMode
-    PUSH 0x1b4d76c                      ; 0045f6d7 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f6d7 | g_INT_ARRAY_01b4d76c
     PUSH 0x3                            ; 0045f6dc
     PUSH ECX                            ; 0045f6de
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f6df

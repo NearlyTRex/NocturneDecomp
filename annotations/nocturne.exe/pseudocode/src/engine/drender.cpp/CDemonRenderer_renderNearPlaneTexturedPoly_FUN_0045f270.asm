@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
+;   int[16] g_INT_ARRAY_01b4d76c
+;   undefined4 g_INT_ARRAY_01b4d76c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -46,7 +46,7 @@ section .text
     XOR EDX,EDX                         ; 0045f29a
     MOV ESI,dword ptr [EAX + 0x18]      ; 0045f29c
         ;   Label: LAB_0045f29c
-    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045f29f | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [EDX + 0x1b4d76c],ESI ; 0045f29f | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
     IMUL ESI,ESI,0x30                   ; 0045f2a5
     MOV EDI,dword ptr [EBX]             ; 0045f2a8
     MOV ESI,dword ptr [EDI + ESI*0x1 + 0x10] ; 0045f2aa
@@ -88,7 +88,7 @@ section .text
     MOV dword ptr [0x01c00c7c],ESI      ; 0045f30d | g_ScanlineRenderFunc
     MOV EAX,dword ptr [ESP + 0x1c]      ; 0045f313
         ;   Label: LAB_0045f313
-    PUSH 0x1b4d76c                      ; 0045f317 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f317 | g_INT_ARRAY_01b4d76c
     MOV EDX,dword ptr [EAX + 0x4]       ; 0045f31c
     PUSH EDX                            ; 0045f31f
     PUSH EBX                            ; 0045f320
@@ -125,7 +125,7 @@ section .text
     TEST ESI,ESI                        ; 0045f35a
     JLE 0x0045f2f0                      ; 0045f35c
         ;   XREF to: 0045f2f0 (CONDITIONAL_JUMP)  ; LAB_0045f2f0
-    MOV ESI,dword ptr [EDX + 0x1b4d76c] ; 0045f35e | DAT_01b4d76c | DAT_01b4d770
+    MOV ESI,dword ptr [EDX + 0x1b4d76c] ; 0045f35e | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
         ;   Label: LAB_0045f35e
     IMUL ESI,ESI,0x30                   ; 0045f364
     MOV EDI,dword ptr [EBX]             ; 0045f367

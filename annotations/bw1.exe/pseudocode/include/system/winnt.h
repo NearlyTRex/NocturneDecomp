@@ -179,6 +179,15 @@ typedef struct _MEMORY_BASIC_INFORMATION {
     DWORD Type;
 } _MEMORY_BASIC_INFORMATION;
 
+// Union: _MMX_INTEGER
+#pragma pack(push, 1)
+typedef union _MMX_INTEGER {
+    ulonglong mm;
+    uint u32[2];
+    _BIT_INTEGER32 b32[2];
+} _MMX_INTEGER;
+#pragma pack(pop)
+
 // Structure: _RTL_CRITICAL_SECTION_DEBUG
 typedef struct _RTL_CRITICAL_SECTION_DEBUG {
     WORD Type;

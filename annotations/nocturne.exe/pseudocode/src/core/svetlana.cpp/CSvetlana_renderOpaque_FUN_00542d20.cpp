@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *this_ptr)
 
@@ -34,7 +33,7 @@ int __cdecl core_svetlana_cpp_CSvetlana_renderOpaque_FUN_00542d20(CSvetlana *thi
   iVar4 = core_charactr_cpp_CCharacter_renderOpaque_FUN_00426440((CCharacter *)this_ptr);
   iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
-  if ((iVar3 == 0) && (_DAT_01c038f4 < 0x4000)) {
+  if ((iVar3 == 0) && (g_INT_01c038f4 < 0x4000)) {
     pCVar5 = this_ptr;
     do {
       pCVar6 = (CSvetlana *)((pCVar5->base).base.base.actor_name + 4);

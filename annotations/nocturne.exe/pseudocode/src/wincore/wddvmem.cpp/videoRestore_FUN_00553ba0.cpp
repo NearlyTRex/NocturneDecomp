@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_00553ba0(void)
 
 {
   int iVar1;
   HRESULT HVar2;
   
-  if ((g_UseDirect3D == 0) || (_DAT_02ddf568 == 0)) {
+  if ((g_UseDirect3D == 0) || (g_INT_02ddf568 == 0)) {
     if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
       (*g_DirectDrawSurface->vtable->Restore)(g_DirectDrawSurface);
       (*g_SoftwareRenderSurface->vtable->Restore)(g_SoftwareRenderSurface);

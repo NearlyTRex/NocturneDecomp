@@ -22,10 +22,10 @@
 ;   TerminatedCString s_sound_sndmain_cpp_00592d82
 ;   TerminatedCString s_SfxSlot_kill_must_be_loc_00592d97
 ;   double DOUBLE_00592dbe = 0.0500000000000000
-;   undefined4 DAT_005bea68
+;   int g_INT_005bea68 = 0x2
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc84bc
+;   int g_INT_02dc84bc
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -43,9 +43,9 @@ section .text
     MOV EBP,ESP                         ; 00524634
     SUB ESP,0x20                        ; 00524636
     AND ESP,0xfffffff8                  ; 00524639
-    MOV ESI,dword ptr [0x005bea68]      ; 0052463c | DAT_005bea68
+    MOV ESI,dword ptr [0x005bea68]      ; 0052463c | g_INT_005bea68
     MOV EBX,dword ptr [EBP + 0x14]      ; 00524642
-    CMP dword ptr [0x02dc84bc],0x0      ; 00524645 | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 00524645 | g_INT_02dc84bc
     JLE 0x005246cd                      ; 0052464c
         ;   XREF to: 005246cd (CONDITIONAL_JUMP)  ; LAB_005246cd
     MOV ECX,dword ptr [EBX + 0x74]      ; 00524652
@@ -71,7 +71,7 @@ section .text
     TEST AH,0x1                         ; 00524690
     JZ 0x005246f5                       ; 00524693
         ;   XREF to: 005246f5 (CONDITIONAL_JUMP)  ; LAB_005246f5
-    MOV ESI,dword ptr [0x005bea68]      ; 00524695 | DAT_005bea68
+    MOV ESI,dword ptr [0x005bea68]      ; 00524695 | g_INT_005bea68
     XOR EDX,EDX                         ; 0052469b
     TEST ESI,ESI                        ; 0052469d
     JLE 0x005246c0                      ; 0052469f
@@ -87,7 +87,7 @@ section .text
     LEA EAX,[EAX]                       ; 005246b3
     LEA EDX,[EDX]                       ; 005246b9
     NOP                                 ; 005246bf
-    MOV dword ptr [0x005bea68],ESI      ; 005246c0 | DAT_005bea68
+    MOV dword ptr [0x005bea68],ESI      ; 005246c0 | g_INT_005bea68
         ;   Label: LAB_005246c0
     MOV ESP,EBP                         ; 005246c6
     POP EBP                             ; 005246c8
@@ -106,7 +106,7 @@ section .text
     ADD ESP,0x4                         ; 005246ed
     JMP 0x00524652                      ; 005246f0
         ;   XREF to: 00524652 (UNCONDITIONAL_JUMP)  ; LAB_00524652
-    MOV ESI,dword ptr [0x005bea68]      ; 005246f5 | DAT_005bea68
+    MOV ESI,dword ptr [0x005bea68]      ; 005246f5 | g_INT_005bea68
         ;   Label: LAB_005246f5
     XOR ECX,ECX                         ; 005246fb
     TEST ESI,ESI                        ; 005246fd

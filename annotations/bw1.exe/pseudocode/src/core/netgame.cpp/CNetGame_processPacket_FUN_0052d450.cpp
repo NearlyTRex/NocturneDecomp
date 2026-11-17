@@ -228,8 +228,10 @@ LAB_0052d72f:
       iVar4 = 0;
       iVar3 = g_INT_01d6dfb8 * 0x114;
       do {
-        while (*(uint *)(&DAT_01d6dfc0 + iVar4) == (packet->player_announce).addr.ip_address) {
-          (&DAT_01d6dfc4)[iVar4 + uVar2] = 1;
+        while (*(uint *)((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + iVar4 + -8) ==
+               (packet->player_announce).addr.ip_address) {
+          *(byte *)
+           ((int)g_SChatOutMessage_ARRAY_01d6dfbc[0].player_timestamps + iVar4 + uVar2 + -4) = 1;
           iVar4 = iVar4 + 0x114;
           if (iVar3 <= iVar4) {
             return;

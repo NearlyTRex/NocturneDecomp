@@ -6,74 +6,72 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_CGame_resetKeyState_FUN_004b93e0(CGame *this_ptr)
 
 {
-  uint uVar1;
+  DWORD DVar1;
   
-  uVar1 = _g_BYTE_01c6e260;
+  DVar1 = g_DWORD_01c6e260;
   g_INT_01c6e264 = 2;
   wincore_winrun_cpp_getJoystickState_FUN_00581d10();
-  if ((_g_BYTE_01c6e260 & 1) == 0) {
+  if ((g_DWORD_01c6e260 & 1) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON1);
   }
-  else if ((uVar1 & 1) == 0) {
+  else if ((DVar1 & 1) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON1);
   }
-  if ((_g_BYTE_01c6e260 & 2) == 0) {
+  if ((g_DWORD_01c6e260 & 2) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON2);
   }
-  else if ((uVar1 & 2) == 0) {
+  else if ((DVar1 & 2) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON2);
   }
-  if ((_g_BYTE_01c6e260 & 4) == 0) {
+  if ((g_DWORD_01c6e260 & 4) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON3);
   }
-  else if ((uVar1 & 4) == 0) {
+  else if ((DVar1 & 4) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON3);
   }
-  if ((_g_BYTE_01c6e260 & 8) == 0) {
+  if ((g_DWORD_01c6e260 & 8) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON4);
   }
-  else if ((uVar1 & 8) == 0) {
+  else if ((DVar1 & 8) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON4);
   }
-  if ((_g_BYTE_01c6e260 & 0x10) == 0) {
+  if ((g_DWORD_01c6e260 & 0x10) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON5);
   }
-  else if ((uVar1 & 0x10) == 0) {
+  else if ((DVar1 & 0x10) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON5);
   }
-  if ((_g_BYTE_01c6e260 & 0x20) == 0) {
+  if ((g_DWORD_01c6e260 & 0x20) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON6);
   }
-  else if ((uVar1 & 0x20) == 0) {
+  else if ((DVar1 & 0x20) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON6);
   }
-  if ((_g_BYTE_01c6e260 & 0x40) == 0) {
+  if ((g_DWORD_01c6e260 & 0x40) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON7);
   }
-  else if ((uVar1 & 0x40) == 0) {
+  else if ((DVar1 & 0x40) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON7);
   }
-  if ((_g_BYTE_01c6e260 & 0x80) == 0) {
+  if ((g_DWORD_01c6e260 & 0x80) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON8);
   }
-  else if ((uVar1 & 0x80) == 0) {
+  else if ((DVar1 & 0x80) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON8);
   }
-  if ((_g_BYTE_01c6e260 & 0x100) == 0) {
+  if ((g_DWORD_01c6e260 & 0x100) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON9);
   }
-  else if ((uVar1 & 0x100) == 0) {
+  else if ((DVar1 & 0x100) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON9);
   }
-  if ((_g_BYTE_01c6e260 & 0x200) == 0) {
+  if ((g_DWORD_01c6e260 & 0x200) == 0) {
     engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_BUTTON10);
   }
-  else if ((uVar1 & 0x200) == 0) {
+  else if ((DVar1 & 0x200) == 0) {
     engine_keys_cpp_CKeys_setKeyAsPressed_FUN_004df5b0(g_CKeys_PTR_00600284,DIJ_BUTTON10);
   }
   engine_keys_cpp_CKeys_clearKeyPressState_FUN_004df5c0(g_CKeys_PTR_00600284,DIJ_LEFT);

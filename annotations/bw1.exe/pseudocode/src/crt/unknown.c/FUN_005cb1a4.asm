@@ -258,7 +258,7 @@ section .text
     PUSH ECX                            ; 005cb393
     LEA EAX,[ESP + 0xc]                 ; 005cb394
     PUSH EAX                            ; 005cb398
-    MOV EAX,[0x00626838]                ; 005cb399 | DAT_00626838
+    MOV EAX,[0x00626838]                ; 005cb399 | g_SIOControlBlock_PTR_00626838
     MOV EDX,dword ptr [EAX + 0x8]       ; 005cb39e
     PUSH EDX                            ; 005cb3a1
     CALL dword ptr CS:[0x5d068c]        ; 005cb3a2 | PTR_WriteFile_005d068c

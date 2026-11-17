@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_00593850
 ;   TerminatedCString s_selectSoundDevice_device_00593865
-;   undefined4 DAT_005bea74
+;   int g_INT_005bea74 = -0x1
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -40,7 +40,7 @@ section .text
         ;   Label: LAB_0052841e
     JGE 0x00528428                      ; 00528420
         ;   XREF to: 00528428 (CONDITIONAL_JUMP)  ; LAB_00528428
-    MOV EBX,dword ptr [0x005bea74]      ; 00528422 | DAT_005bea74
+    MOV EBX,dword ptr [0x005bea74]      ; 00528422 | g_INT_005bea74
     CALL sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230 ; 00528428
         ;   XREF to: 00528230 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSoundDeviceCount_FUN_00528230()
         ;   Label: LAB_00528428
@@ -51,7 +51,7 @@ section .text
         ;   XREF to: 00528320 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_00528320()
         ;   Label: LAB_00528431
     MOV EBX,EAX                         ; 00528436
-    MOV dword ptr [0x005bea74],EBX      ; 00528438 | DAT_005bea74
+    MOV dword ptr [0x005bea74],EBX      ; 00528438 | g_INT_005bea74
     POP EBX                             ; 0052843e
     RET                                 ; 0052843f
     MOV EDX,0x593850                    ; 00528440 | = "..\\sound\\sndmain.cpp"
@@ -69,7 +69,7 @@ section .text
         ;   Label: LAB_00528465
     JL 0x00528431                       ; 00528467
         ;   XREF to: 00528431 (CONDITIONAL_JUMP)  ; LAB_00528431
-    MOV dword ptr [0x005bea74],EBX      ; 00528469 | DAT_005bea74
+    MOV dword ptr [0x005bea74],EBX      ; 00528469 | g_INT_005bea74
     POP EBX                             ; 0052846f
     RET                                 ; 00528470
 

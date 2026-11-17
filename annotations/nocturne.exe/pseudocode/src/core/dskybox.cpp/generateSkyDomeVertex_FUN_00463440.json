@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 101,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 41,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unknown_field"
     ],
     "total_lines": 150
@@ -99,25 +98,25 @@
     },
     {
       "addr": "005c5034",
-      "name": "DAT_005c5034",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].r",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5038",
-      "name": "DAT_005c5038",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].g",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c503c",
-      "name": "DAT_005c503c",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].b",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "005c5040",
-      "name": "DAT_005c5040",
+      "name": "g_SRenderVertex_ARRAY_005c5014[0].a",
       "type": "undefined4",
       "value": null
     }
@@ -324,38 +323,6 @@
       "severity": "mild",
       "text": "local_48 = (float)v_coord * 5.1806537865363094e-315._0_4_ * (float)3.1415926535000001 *",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_005c5034",
-      "severity": "mild",
-      "text": "(&DAT_005c5034)[vertex_index * 0xc] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_005c5038",
-      "severity": "mild",
-      "text": "(&DAT_005c5038)[vertex_index * 0xc] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 41,
-      "match": "DAT_005c503c",
-      "severity": "mild",
-      "text": "(&DAT_005c503c)[vertex_index * 0xc] = iVar1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_005c5040",
-      "severity": "mild",
-      "text": "(&DAT_005c5040)[vertex_index * 0xc] = 0;",
-      "type": "undefined_data"
     }
   ]
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dfont_cpp_initFonts_FUN_0044c560(void)
 
 {
@@ -103,7 +101,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0044c560(void)
   g_CBitFont_PTR_014b9904->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
+  g_CBitFont_PTR_01bcd070 = g_CBitFont_PTR_014b9904;
   pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
@@ -124,7 +122,7 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0044c560(void)
   g_CBitFont_PTR_014b9908->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  _DAT_01bcd070 = g_CBitFont_PTR_014b9904;
+  g_CBitFont_PTR_01bcd070 = g_CBitFont_PTR_014b9904;
   pCVar1 = operator_new(0x3198);
   pCVar2 = (CBitFont *)0x0;
   if (pCVar1 != (CBitFont *)0x0) {
@@ -146,66 +144,66 @@ void __cdecl core_dfont_cpp_initFonts_FUN_0044c560(void)
   g_CBitFont_PTR_014b990c->shadow_offset_x = 1;
   pCVar2->shadow_offset_y = 1;
   engine_font_cpp_CBitFont_setFontReady_FUN_004931a0(pCVar2,1);
-  if (_DAT_01d16810 == 0) {
+  if (g_INT_01d16810 == 0) {
     return;
   }
   pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xe,2,2);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,g_CHAR_ARRAY_005bdf50,0xe,2,2);
   }
-  _DAT_014b9910 = pCVar4;
+  g_CWinFont_PTR_014b9910 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\core\\dfont.cpp";
     g_CurrentLineNumber = 166;
     core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gMediumOSFont");
   }
-  pCVar4 = _DAT_014b9910;
+  pCVar4 = g_CWinFont_PTR_014b9910;
   pCVar2 = g_CBitFont_PTR_014b98f8;
   g_CBitFont_PTR_014b98f8->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
   pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0x12,0,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,g_CHAR_ARRAY_005bdf50,0x12,0,0);
   }
-  _DAT_014b9918 = pCVar4;
+  g_CWinFont_PTR_014b9918 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\core\\dfont.cpp";
     g_CurrentLineNumber = 172;
     core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gThemeOSFont");
   }
-  pCVar4 = _DAT_014b9918;
+  pCVar4 = g_CWinFont_PTR_014b9918;
   pCVar2 = g_CBitFont_PTR_014b9900;
   g_CBitFont_PTR_014b9900->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
   pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,0xc,0,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,g_CHAR_ARRAY_005bdf50,0xc,0,0);
   }
-  _DAT_014b9914 = pCVar4;
+  g_CWinFont_PTR_014b9914 = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\core\\dfont.cpp";
     g_CurrentLineNumber = 178;
     core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gTinyOSFont");
   }
-  pCVar4 = _DAT_014b9914;
+  pCVar4 = g_CWinFont_PTR_014b9914;
   pCVar2 = g_CBitFont_PTR_014b98fc;
   g_CBitFont_PTR_014b98fc->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;
   pCVar3 = operator_new(0x13c);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,&DAT_005bdf50,10,0,0);
+    pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_00557f50(pCVar3,g_CHAR_ARRAY_005bdf50,10,0,0);
   }
-  _DAT_014b991c = pCVar4;
+  g_CWinFont_PTR_014b991c = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\core\\dfont.cpp";
     g_CurrentLineNumber = 184;
     core_main_c_displayErrorAndQuit_FUN_004c8440("initFonts - Can't allocate gDebugOSFont");
   }
-  pCVar4 = _DAT_014b991c;
+  pCVar4 = g_CWinFont_PTR_014b991c;
   pCVar2 = g_CBitFont_PTR_014b9904;
   g_CBitFont_PTR_014b9904->win_font_enabled = 1;
   pCVar2->win_font_helper = pCVar4;

@@ -24,11 +24,11 @@
 ;   double DOUBLE_00584e95 = 0.5
 ;   double DOUBLE_00584e9d = 0.700000000000000
 ;   double DOUBLE_00584ea5 = 0.300000000000000
-;   undefined4 DAT_01c78c14
-;   undefined4 DAT_01c78c28
-;   undefined4 DAT_01c78c2c
-;   undefined4 DAT_01c78c38
-;   undefined4 DAT_01c78c3c
+;   int g_INT_01c78c14
+;   int g_INT_01c78c28
+;   int g_INT_01c78c2c
+;   int g_INT_01c78c38
+;   int g_INT_01c78c3c
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
@@ -46,7 +46,7 @@ section .text
     SUB ESP,0x4c                        ; 004ab836
     AND ESP,0xfffffff8                  ; 004ab839
     MOV ESI,dword ptr [EBP + 0x14]      ; 004ab83c
-    MOV EDX,dword ptr [0x01c78c38]      ; 004ab83f | DAT_01c78c38
+    MOV EDX,dword ptr [0x01c78c38]      ; 004ab83f | g_INT_01c78c38
     PUSH EDX                            ; 004ab845
     LEA EAX,[ESP + 0x34]                ; 004ab846
     PUSH EAX                            ; 004ab84a
@@ -82,7 +82,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2290],0x0 ; 004ab8a3
     JZ 0x004ab93f                       ; 004ab8ab
         ;   XREF to: 004ab93f (CONDITIONAL_JUMP)  ; default
-    MOV ECX,dword ptr [0x01c78c28]      ; 004ab8b1 | DAT_01c78c28
+    MOV ECX,dword ptr [0x01c78c28]      ; 004ab8b1 | g_INT_01c78c28
     PUSH ECX                            ; 004ab8b7
     LEA EAX,[ESP + 0x40]                ; 004ab8b8
     PUSH EAX                            ; 004ab8bc
@@ -161,7 +161,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2290],0x0 ; 004ab979
     JZ 0x004ab93f                       ; 004ab981
         ;   XREF to: 004ab93f (CONDITIONAL_JUMP)  ; default
-    MOV ECX,dword ptr [0x01c78c2c]      ; 004ab983 | DAT_01c78c2c
+    MOV ECX,dword ptr [0x01c78c2c]      ; 004ab983 | g_INT_01c78c2c
     PUSH ECX                            ; 004ab989
     LEA EAX,[ESP + 0x10]                ; 004ab98a
     JMP 0x004ab8bc                      ; 004ab98e
@@ -171,7 +171,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2290],0x0 ; 004ab999
     JZ 0x004ab93f                       ; 004ab9a1
         ;   XREF to: 004ab93f (CONDITIONAL_JUMP)  ; default
-    MOV ECX,dword ptr [0x01c78c14]      ; 004ab9a3 | DAT_01c78c14
+    MOV ECX,dword ptr [0x01c78c14]      ; 004ab9a3 | g_INT_01c78c14
     PUSH ECX                            ; 004ab9a9
     LEA EAX,[ESP + 0x28]                ; 004ab9aa
     PUSH EAX                            ; 004ab9ae
@@ -197,7 +197,7 @@ section .text
     CMP dword ptr [ESI + EAX*0x4 + 0x2290],0x0 ; 004ab9e1
     JZ 0x004ab93f                       ; 004ab9e9
         ;   XREF to: 004ab93f (CONDITIONAL_JUMP)  ; default
-    MOV ECX,dword ptr [0x01c78c3c]      ; 004ab9ef | DAT_01c78c3c
+    MOV ECX,dword ptr [0x01c78c3c]      ; 004ab9ef | g_INT_01c78c3c
     PUSH ECX                            ; 004ab9f5
     LEA EAX,[ESP + 0x4]                 ; 004ab9f6
     PUSH EAX                            ; 004ab9fa

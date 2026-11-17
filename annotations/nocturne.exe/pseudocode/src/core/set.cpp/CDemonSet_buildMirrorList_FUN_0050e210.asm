@@ -15,7 +15,7 @@
 ;   TerminatedCString s_core_set_cpp_00590832
 ;   TerminatedCString s_CDemonSet_buildMirrorLis_00590842
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_CGlassActorType_01c78c40.name_hash
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
@@ -96,7 +96,7 @@ section .text
     ADD ESP,0x4                         ; 0050e2cc
     MOV EDX,dword ptr [0x005ae704]      ; 0050e2cf | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_0050e2cf
-    PUSH EDX                            ; 0050e2d5 | DAT_01b4d738
+    PUSH EDX                            ; 0050e2d5 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 0050e2d6
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0050e2db

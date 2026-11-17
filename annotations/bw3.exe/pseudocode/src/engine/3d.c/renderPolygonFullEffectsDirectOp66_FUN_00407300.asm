@@ -13,15 +13,15 @@
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_y
 ;   int g_INT_00730478
 ;   int g_INT_0073047c
-;   undefined4 DAT_00730480
-;   undefined4 DAT_00730484
-;   undefined4 DAT_00730488
-;   undefined4 DAT_0073048c
-;   undefined4 DAT_007304b4
-;   undefined4 DAT_00730544
-;   undefined4 DAT_00730548
-;   undefined4 DAT_0073058c
-;   undefined4 DAT_00730590
+;   SRenderBufferEntry[256] g_SRenderBufferEntry_ARRAY_00730480
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_x
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_y
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_z
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].vertices[1].projected_vertex.transformed_x
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.type
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.count
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].alpha_value
+;   undefined4 g_SRenderBufferEntry_ARRAY_00730480[0].blend_mode
 ;   ... and 6 more
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     ADD EAX,EBP                         ; 00407395
     SHL EAX,0x2                         ; 00407397
     SUB EAX,EBP                         ; 0040739a
-    MOV EDX,0x730480                    ; 0040739c | DAT_00730480
+    MOV EDX,0x730480                    ; 0040739c | g_SRenderBufferEntry_ARRAY_00730480
     SHL EAX,0x3                         ; 004073a1
     MOV ESI,dword ptr [0x0073047c]      ; 004073a4 | g_INT_0073047c
     ADD EDX,EAX                         ; 004073aa
@@ -86,7 +86,7 @@ section .text
     INC ESI                             ; 004073b0
     MOV EAX,dword ptr [EAX + 0x4]       ; 004073b1
     MOV dword ptr [0x0073047c],ESI      ; 004073b4 | g_INT_0073047c
-    MOV dword ptr [EDX],EAX             ; 004073ba | DAT_00730480
+    MOV dword ptr [EDX],EAX             ; 004073ba | g_SRenderBufferEntry_ARRAY_00730480
     MOV EAX,dword ptr [ESP + 0x18]      ; 004073bc
     MOV EBP,0x7fffffff                  ; 004073c0
     MOV dword ptr [ESP],EDX             ; 004073c5
@@ -101,8 +101,8 @@ section .text
     MOV ECX,0xc                         ; 004073d7
     LEA EDI,[EAX + 0x4]                 ; 004073dc
     LEA ESI,[ESI + 0x60b014]            ; 004073df | g_SRenderVertex_ARRAY_0060b014
-    MOVSD.REP ES:EDI,ESI                ; 004073e5 | g_SRenderVertex_ARRAY_0060b014 | DAT_00730484 | g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_y
-    MOV ECX,dword ptr [EAX + 0xc]       ; 004073e7 | DAT_0073048c
+    MOVSD.REP ES:EDI,ESI                ; 004073e5 | g_SRenderVertex_ARRAY_0060b014 | g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_x | g_SRenderVertex_ARRAY_0060b014[0].projected_vertex.transformed_y
+    MOV ECX,dword ptr [EAX + 0xc]       ; 004073e7 | g_SRenderBufferEntry_ARRAY_00730480[0].vertices[0].projected_vertex.transformed_z
     CMP EBP,ECX                         ; 004073ea
     JLE 0x004073f0                      ; 004073ec
         ;   XREF to: 004073f0 (CONDITIONAL_JUMP)  ; LAB_004073f0
@@ -125,11 +125,11 @@ section .text
     LEA EDI,[EDI + 0xc4]                ; 00407411
     MOV EDX,dword ptr [ESP]             ; 00407417
     MOV EAX,[0x005fba38]                ; 0040741a | g_INT_005fba38
-    MOVSD.REP ES:EDI,ESI                ; 0040741f | DAT_00730544 | DAT_00730548
-    MOV dword ptr [EDX + 0x10c],EAX     ; 00407421 | DAT_0073058c
-    MOV dword ptr [EDX + 0x114],EBP     ; 00407427 | DAT_00730594
+    MOVSD.REP ES:EDI,ESI                ; 0040741f | g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.type | g_SRenderBufferEntry_ARRAY_00730480[0].texture_data.base.count
+    MOV dword ptr [EDX + 0x10c],EAX     ; 00407421 | g_SRenderBufferEntry_ARRAY_00730480[0].alpha_value
+    MOV dword ptr [EDX + 0x114],EBP     ; 00407427 | g_SRenderBufferEntry_ARRAY_00730480[0].min_z_value
     MOV EAX,[0x01c6e2ac]                ; 0040742d | g_INT_01c6e2ac
-    MOV dword ptr [EDX + 0x110],EAX     ; 00407432 | DAT_00730590
+    MOV dword ptr [EDX + 0x110],EAX     ; 00407432 | g_SRenderBufferEntry_ARRAY_00730480[0].blend_mode
     MOV EDX,dword ptr [ESP + 0x18]      ; 00407438
         ;   Label: LAB_00407438
     MOV EDX,dword ptr [EDX + 0x4]       ; 0040743c

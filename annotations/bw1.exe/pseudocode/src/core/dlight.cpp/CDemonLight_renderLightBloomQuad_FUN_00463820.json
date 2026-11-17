@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 388,
+    "complexity_score": 433,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 173,
-    "suspect_count": 19,
+    "suspect_count": 23,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "self_copy_guard",
       "stack_alignment_array",
       "stack_ref"
@@ -121,8 +122,8 @@
     },
     {
       "addr": "006122c0",
-      "name": "g_SMRGLTextureBasic_006122c0",
-      "type": "SMRGLTextureBasic",
+      "name": "g_SLightGlowTable_006122a8.headlight.base.type",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -715,6 +716,38 @@
       "severity": "moderate",
       "text": "*(float *)((int)&local_38 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 141,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "g_CDemonRenderer_PTR_00612560->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 142,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 145,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b81ca8 (+4186968 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 150,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_a0 != &local_40)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

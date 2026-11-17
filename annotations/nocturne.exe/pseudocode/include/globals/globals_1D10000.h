@@ -4,11 +4,24 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/unions/UNetPacket.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1D10000
 // =============================================================================
 
+// UNetPacket
+extern UNetPacket g_UNetPacket_01d16408;
+
+// char*[500]
+extern char* g_CHAR_PTR_ARRAY_01d1681c[500];
+extern char* g_CHAR_PTR_ARRAY_01d16fec[500];
+
+// char[500][128]
+extern char g_CHAR_ARRAY_ARRAY_01d177c0[500][128];
+
 // int
-extern int g_INT_01d16408;
+extern int g_INT_01d16810;
+extern int g_INT_01d16814;
+extern int g_INT_01d16818;
 

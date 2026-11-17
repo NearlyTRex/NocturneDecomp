@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_hero_cpp_0058569a
 ;   TerminatedCString s_closestHeroToPoint_no_he_005856ab
-;   undefined4 DAT_01cae0d4
+;   int g_INT_01cae0d4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -35,7 +35,7 @@ section .text
     SUB ESP,0x14                        ; 004b4504
     MOV EBX,dword ptr [ESP + 0x28]      ; 004b4507
     MOV EDX,0x7149f2ca                  ; 004b450b
-    MOV ECX,dword ptr [0x01cae0d4]      ; 004b4510 | DAT_01cae0d4
+    MOV ECX,dword ptr [0x01cae0d4]      ; 004b4510 | g_INT_01cae0d4
     XOR ESI,ESI                         ; 004b4516
     MOV dword ptr [ESP + 0x8],EDX       ; 004b4518
     TEST ECX,ECX                        ; 004b451c

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 128,
+    "complexity_score": 82,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 68,
-    "suspect_count": 5,
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_constant",
-      "undefined_data"
+      "raw_address_constant"
     ],
-    "total_lines": 244
+    "total_lines": 243
   },
   "cross_references": [],
   "function": {
@@ -73,14 +72,14 @@
     },
     {
       "addr": "005bbc48",
-      "name": "DAT_005bbc48",
-      "type": "undefined4",
+      "name": "g_DOUBLE_ARRAY_ARRAY_005bbc48",
+      "type": "double[2][4]",
       "value": null
     },
     {
       "addr": "005bbc88",
-      "name": "DAT_005bbc88",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_ARRAY_ARRAY_005bbc88",
+      "type": "int[2][3][15]",
       "value": null
     },
     {
@@ -97,8 +96,8 @@
     },
     {
       "addr": "01cd8b28",
-      "name": "DAT_01cd8b28",
-      "type": "undefined4",
+      "name": "g_CHAR_ARRAY_01cd8b28",
+      "type": "char[256]",
       "value": null
     }
   ],
@@ -224,40 +223,8 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 20,
-      "match": "DAT_005bbc88",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_005bbc88 +",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 25,
-      "match": "DAT_005bbc48",
-      "severity": "mild",
-      "text": "(*(double *)(&DAT_005bbc48 + pSVar3->sampling_rate_index * 8 + iVar2 * 0x20));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"MPEG Layer 2 - pick_table - can't load tables!  File: %s\",&DAT_01cd8b28,uVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01cd8b28",
-      "severity": "mild",
-      "text": "(\"js_bound bad layer/modext (%d/%d)  File: %s\",iVar5,iVar2,&DAT_01cd8b28);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Raw hex address 0x4e272f assigned to bare local `uVar7`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uVar7` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
+      "line": 22,
       "match": "0x4e272f",
       "severity": "moderate",
       "text": "uVar7 = 0x4e272f;",

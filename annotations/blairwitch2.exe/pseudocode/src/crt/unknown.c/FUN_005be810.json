@@ -2,20 +2,18 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 99,
+    "complexity_score": 68,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 6,
+    "pseudocode_lines": 18,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
-      "unnamed_param",
-      "warning_overlapping_globals"
+      "unnamed_param"
     ],
-    "total_lines": 47
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -41,20 +39,20 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005be810",
-    "signature": "void crt_unknown_c_FUN_005be810(int param_1)"
+    "signature": "void crt_unknown_c_FUN_005be810(_FILE *param_1)"
   },
   "function_calls": [],
   "globals": [
     {
       "addr": "02680160",
-      "name": "DAT_02680160",
-      "type": "undefined4",
+      "name": "g_FileListNode_PTR_02680160",
+      "type": "FileListNode*",
       "value": null
     },
     {
       "addr": "02680164",
-      "name": "DAT_02680164",
-      "type": "undefined4",
+      "name": "g_FileListNode_PTR_02680164",
+      "type": "FileListNode*",
       "value": null
     }
   ],
@@ -151,43 +149,27 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Unnamed function parameter",
       "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void FUN_005be810(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 10,
-      "match": "DAT_02680160",
-      "severity": "mild",
-      "text": "puVar1 = (uint *)&DAT_02680160;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (param_1 != puVar1[1]);",
+      "text": "void FUN_005be810(_FILE *param_1)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0xc) = *(byte *)(puVar1[1] + 0xc) | 3;",
+      "text": "} while (param_1 != pFVar1->file_struct);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(byte *)&param_1->_flag = (byte)pFVar1->file_struct->_flag | 3;",
       "type": "unnamed_param"
     },
     {

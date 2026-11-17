@@ -16,14 +16,14 @@ extern SHuffmanTable g_SHuffmanTable_ARRAY_01d23658[34];
 // char[256]
 extern char g_CHAR_ARRAY_01d23558[256];
 
-// double[12]
-extern double g_DOUBLE_ARRAY_01d21ed8[12];
+// double[12][6]
+extern double g_DOUBLE_ARRAY_ARRAY_01d21ed8[12][6];
 
-// double[36]
-extern double g_DOUBLE_ARRAY_01d22118[36];
+// double[36][18]
+extern double g_DOUBLE_ARRAY_ARRAY_01d22118[36][18];
 
-// double[4]
-extern double g_DOUBLE_ARRAY_01d21a58[4];
+// double[4][36]
+extern double g_DOUBLE_ARRAY_ARRAY_01d21a58[4][36];
 
 // double[8]
 extern double g_DOUBLE_ARRAY_01d219d8[8];

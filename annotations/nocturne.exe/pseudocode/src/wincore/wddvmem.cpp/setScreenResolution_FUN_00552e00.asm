@@ -97,7 +97,7 @@ section .text
     XOR EDX,EDX                         ; 00552e72
     MOV [0x005b761c],EAX                ; 00552e74 | g_WindowWidth
     MOV EAX,dword ptr [ESP + 0x8c]      ; 00552e79
-    MOV dword ptr [0x02ddf56c],EDX      ; 00552e80 | DAT_02ddf56c
+    MOV dword ptr [0x02ddf56c],EDX      ; 00552e80 | g_INT_02ddf56c
     MOV [0x005b7620],EAX                ; 00552e86 | g_WindowHeight
     TEST ECX,ECX                        ; 00552e8b
     JZ 0x00552ea0                       ; 00552e8d
@@ -216,7 +216,7 @@ section .text
     TEST EAX,EAX                        ; 00552fc2
     JNZ 0x00552f8d                      ; 00552fc4
         ;   XREF to: 00552f8d (CONDITIONAL_JUMP)  ; LAB_00552f8d
-    MOV dword ptr [0x02ddf56c],0x1      ; 00552fc6 | DAT_02ddf56c
+    MOV dword ptr [0x02ddf56c],0x1      ; 00552fc6 | g_INT_02ddf56c
     PUSH 0x6c                           ; 00552fd0
         ;   Label: LAB_00552fd0
     PUSH 0x0                            ; 00552fd2

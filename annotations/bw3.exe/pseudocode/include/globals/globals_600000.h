@@ -4,10 +4,12 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
 #include "system/time.h"
 #include "system/watcom.h"
+#include "system/wincon.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CDemonPod.h"
@@ -24,8 +26,11 @@
 #include "types/classes/CVector3i.h"
 #include "types/classes/CWater.h"
 #include "types/classes/CWeather.h"
+#include "types/structs/SAudioFormatDescriptor.h"
+#include "types/structs/SHuffmanTableSource.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SMpegLayer3BandIndex.h"
 #include "types/structs/SRenderVertex.h"
 #include "types/structs/SReverbPreset.h"
 
@@ -95,6 +100,18 @@ extern RuntimeHandlerEntry g_RuntimeHandlerEntry_006084b6;
 // RuntimeHandlerEntry[172]
 extern RuntimeHandlerEntry g_InitHandlers[172];
 
+// SAudioFormatDescriptor[12]
+extern SAudioFormatDescriptor g_SAudioFormatDescriptor_ARRAY_0060451c[12];
+
+// SHuffmanTableSource[34]
+extern SHuffmanTableSource g_SHuffmanTableSource_ARRAY_00603110[34];
+
+// SIGNAL_HANDLER_TYPE[26]
+extern SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_00607e88[26];
+
+// SIOControlBlock*
+extern SIOControlBlock* g_SIOControlBlock_PTR_00607bdc;
+
 // SMRGLPrimitiveQuad
 extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_00606e2c;
 
@@ -115,6 +132,9 @@ extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00606cac[16];
 
 // SMRGLTextureBasic[8]
 extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_006003b8[8];
+
+// SMpegLayer3BandIndex[6]
+extern SMpegLayer3BandIndex g_SMpegLayer3BandIndex_ARRAY_00601668[6];
 
 // SRenderVertex[20000]
 extern SRenderVertex g_SRenderVertex_ARRAY_0060b014[20000];
@@ -182,6 +202,15 @@ extern _FILE g_FILE_006076ac;
 
 // _FILE*
 extern _FILE* g_FILE_PTR_00607678;
+
+// _MMX_INTEGER
+extern _MMX_INTEGER g_MMX_INTEGER_00604d98;
+extern _MMX_INTEGER g_MMX_INTEGER_00604da0;
+extern _MMX_INTEGER g_MMX_INTEGER_00604db8;
+extern _MMX_INTEGER g_MMX_INTEGER_00604dc0;
+extern _MMX_INTEGER g_MMX_INTEGER_00604e60;
+extern _MMX_INTEGER g_MMX_INTEGER_00604e68;
+extern _MMX_INTEGER g_MMX_INTEGER_00604e70;
 
 // byte
 extern byte g_BYTE_0060069b;
@@ -322,17 +351,10 @@ extern int g_INT_00604d70;
 extern int g_INT_00604d78;
 extern int g_INT_00604d7c;
 extern int g_INT_00604d80;
-extern int g_INT_00604d98;
-extern int g_INT_00604da0;
-extern int g_INT_00604db8;
-extern int g_INT_00604dc0;
 extern int g_INT_00604dd0;
 extern int g_INT_00604dd8;
 extern int g_INT_00604de0;
 extern int g_INT_00604de8;
-extern int g_INT_00604e60;
-extern int g_INT_00604e68;
-extern int g_INT_00604e70;
 extern int g_INT_00604f08;
 extern int g_CSpawnerClassVersion;
 extern int g_INT_00606830;
@@ -415,23 +437,23 @@ extern int* g_INT_PTR_0060490c;
 // int[12]
 extern int g_INT_ARRAY_00603634[12];
 
-// int[16]
-extern int g_INT_ARRAY_00601628[16];
-
-// int[1]
-extern int g_INT_ARRAY_0060166c[1];
-
 // int[22]
 extern int g_INT_ARRAY_00601114[22];
 
-// int[2]
-extern int g_INT_ARRAY_006015e8[2];
+// int[2][16]
+extern int g_INT_ARRAY_ARRAY_006015e8[2][16];
+
+// int[2][3][15]
+extern int g_INT_ARRAY_ARRAY_ARRAY_006011f8[2][3][15];
 
 // int[3]
 extern int g_INT_ARRAY_006015dc[3];
 
 // int[5]
 extern int g_INT_ARRAY_006015c8[5];
+
+// int[6][3][4]
+extern int g_INT_ARRAY_ARRAY_ARRAY_006019e0[6][3][4];
 
 // int[96]
 extern int g_INT_ARRAY_00603b3c[96];
@@ -509,7 +531,6 @@ extern undefined4 DAT_0060481c;
 extern undefined4 DAT_00606980;
 extern undefined4 DAT_00606984;
 extern undefined4 DAT_0060789c;
-extern undefined4 DAT_00607bdc;
 extern undefined4 DAT_00607c08;
 extern undefined4 DAT_00607c24;
 extern undefined4 DAT_00607c28;

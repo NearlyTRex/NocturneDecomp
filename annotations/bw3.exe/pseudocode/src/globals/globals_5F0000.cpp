@@ -356,6 +356,953 @@ CVector3i g_CVector3i_ARRAY_005f1954[62] = {
     }
 };
 
+// SLightGlowTable
+SLightGlowTable g_SLightGlowTable_005f2828 = {
+    .fuzz = {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "LITEFUZZ.RAW"
+    },
+    .headlight = {
+        .base = {.type = 0x0000000D, .count = 0x00000000},
+        .texture_name = "SUNMARK.RAW"
+    },
+    .sprites = {{
+        .texture = {
+            .base = {.type = 0x0000000D, .count = 0x00000000},
+            .texture_name = "glow1.RAW"
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x304E5553, 0x41522E36, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = 0x3E4CCCCD, .count = 0x3D40478C},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x304E5553, 0x41522E37, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1098203005, .count = 0x3C44C048},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x304E5553, 0x41522E39, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1093337612, .count = 0x3DB2DD58},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x434E5553, 0x2E4D4152, 0x00574152, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1092297425, .count = 0x3E1FDC3A},
+            .texture_name = {-126, 0x00, 0x00, 0x00, -126, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x314E5553, 0x41522E31, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1091357901, .count = 0x3D375614},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x314E5553, 0x41522E32, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1088119898, .count = 0x3D886260},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x314E5553, 0x41522E33, 0x00000057, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1087599804, .count = 0x3D862602},
+            .texture_name = {0x08, 0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00, -8, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x434E5553, 0x2E4D4152, 0x00574152, 0x00000000}
+        }
+    }, {
+        .texture = {
+            .base = {.type = -1082130432, .count = 0x3E6E1D11},
+            .texture_name = {-126, 0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, -2, 0x00, 0x00, 0x00, 0x7E, 0x00, 0x00, 0x00}
+        },
+        .params = {
+            .flare_axis_pos = 1.821688e-44f,
+            .size = 0.0f,
+            .uv = {0x434E5553, 0x2E4D4152, 0x00574152, 0x00000000}
+        }
+    }}
+};
+
+// SMRGLLightPrimitive[84]
+SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_005f1c3c[84] = {
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0xFFFF0952,
+            .C = 0x000011B5,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000002, 0x00000001, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0xFFFF0952,
+            .C = 0x00003063,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000001, 0x00000003, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0xFFFF0952,
+            .C = 0x00004219,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000003, 0x00000004, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0x00004219,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000004, 0x00000005, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0x00003063,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000005, 0x00000006, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0x000011B5,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000006, 0x00000007, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000007, 0x00000008, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000008, 0x00000009, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x00000009, 0x0000000A, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x0000000A, 0x0000000B, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x0000000B, 0x0000000C, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0xFF0951BE
+        },
+        .vertices = {0x0000000C, 0x00000002, 0x00000000, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0x0000F6AE,
+            .C = 0x000011B5,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000008, 0x00000007, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0x0000F6AE,
+            .C = 0x00003063,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000009, 0x00000008, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0x0000F6AE,
+            .C = 0x00004219,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x0000000A, 0x00000009, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0x0000F6AE,
+            .C = 0x00004219,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x0000000B, 0x0000000A, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0x0000F6AE,
+            .C = 0x00003063,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x0000000C, 0x0000000B, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0x0000F6AE,
+            .C = 0x000011B5,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000002, 0x0000000C, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFEE4B,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000001, 0x00000002, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFCF9D,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000003, 0x00000001, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFBDE7,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000004, 0x00000003, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFBDE7,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000005, 0x00000004, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFCF9D,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000006, 0x00000005, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0x0000F6AE,
+            .C = 0xFFFFEE4B,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000000, 0x00000007, 0x00000006, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000B1DA,
+            .B = 0x0000B1DA,
+            .C = 0x00002FA7,
+            .D = 0x00F2F36D
+        },
+        .vertices = {0x00000007, 0x00000008, 0x0000000E, 0x0000000D}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00008232,
+            .B = 0x0000B1DA,
+            .C = 0x00008232,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x00000008, 0x00000009, 0x0000000F, 0x0000000E}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00002FA7,
+            .B = 0x0000B1DA,
+            .C = 0x0000B1DA,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000009, 0x0000000A, 0x00000010, 0x0000000F}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFD059,
+            .B = 0x0000B1DA,
+            .C = 0x0000B1DA,
+            .D = 0x00F2F36D
+        },
+        .vertices = {0x0000000A, 0x0000000B, 0x00000011, 0x00000010}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF7DCE,
+            .B = 0x0000B1DA,
+            .C = 0x00008232,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x0000000B, 0x0000000C, 0x00000012, 0x00000011}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF4E26,
+            .B = 0x0000B1DA,
+            .C = 0x00002FA7,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x0000000C, 0x00000002, 0x00000013, 0x00000012}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF4E26,
+            .B = 0x0000B1DA,
+            .C = 0xFFFFD059,
+            .D = 0x00F2F36D
+        },
+        .vertices = {0x00000002, 0x00000001, 0x00000014, 0x00000013}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF7DCE,
+            .B = 0x0000B1DA,
+            .C = 0xFFFF7DCE,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x00000001, 0x00000003, 0x00000015, 0x00000014}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFD059,
+            .B = 0x0000B1DA,
+            .C = 0xFFFF4E26,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000003, 0x00000004, 0x00000016, 0x00000015}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00002FA7,
+            .B = 0x0000B1DA,
+            .C = 0xFFFF4E26,
+            .D = 0x00F2F36D
+        },
+        .vertices = {0x00000004, 0x00000005, 0x00000017, 0x00000016}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00008232,
+            .B = 0x0000B1DA,
+            .C = 0xFFFF7DCE,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x00000005, 0x00000006, 0x00000018, 0x00000017}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000B1DA,
+            .B = 0x0000B1DA,
+            .C = 0xFFFFD059,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000006, 0x00000007, 0x0000000D, 0x00000018}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000EF62,
+            .B = 0x00004024,
+            .C = 0x00004024,
+            .D = 0x00EF629C
+        },
+        .vertices = {0x0000000D, 0x0000000E, 0x0000001A, 0x00000019}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000AF3E,
+            .B = 0x00004024,
+            .C = 0x0000AF3E,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x0000000E, 0x0000000F, 0x0000001B, 0x0000001A}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00004024,
+            .B = 0x00004024,
+            .C = 0x0000EF62,
+            .D = 0x00EF62A4
+        },
+        .vertices = {0x0000000F, 0x00000010, 0x0000001C, 0x0000001B}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFBFDC,
+            .B = 0x00004024,
+            .C = 0x0000EF62,
+            .D = 0x00EF629C
+        },
+        .vertices = {0x00000010, 0x00000011, 0x0000001D, 0x0000001C}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF50C2,
+            .B = 0x00004024,
+            .C = 0x0000AF3E,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x00000011, 0x00000012, 0x0000001E, 0x0000001D}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF109E,
+            .B = 0x00004024,
+            .C = 0x00004024,
+            .D = 0x00EF62A4
+        },
+        .vertices = {0x00000012, 0x00000013, 0x0000001F, 0x0000001E}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF109E,
+            .B = 0x00004024,
+            .C = 0xFFFFBFDC,
+            .D = 0x00EF629C
+        },
+        .vertices = {0x00000013, 0x00000014, 0x00000020, 0x0000001F}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF50C2,
+            .B = 0x00004024,
+            .C = 0xFFFF50C2,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x00000014, 0x00000015, 0x00000021, 0x00000020}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFBFDC,
+            .B = 0x00004024,
+            .C = 0xFFFF109E,
+            .D = 0x00EF62A4
+        },
+        .vertices = {0x00000015, 0x00000016, 0x00000022, 0x00000021}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00004024,
+            .B = 0x00004024,
+            .C = 0xFFFF109E,
+            .D = 0x00EF629C
+        },
+        .vertices = {0x00000016, 0x00000017, 0x00000023, 0x00000022}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000AF3E,
+            .B = 0x00004024,
+            .C = 0xFFFF50C2,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x00000017, 0x00000018, 0x00000024, 0x00000023}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000EF62,
+            .B = 0x00004024,
+            .C = 0xFFFFBFDC,
+            .D = 0x00EF62A4
+        },
+        .vertices = {0x00000018, 0x0000000D, 0x00000019, 0x00000024}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000EF62,
+            .B = 0xFFFFBFDC,
+            .C = 0x00004024,
+            .D = 0x00EF62A3
+        },
+        .vertices = {0x00000019, 0x0000001A, 0x00000026, 0x00000025}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000AF3E,
+            .B = 0xFFFFBFDC,
+            .C = 0x0000AF3E,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x0000001A, 0x0000001B, 0x00000027, 0x00000026}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00004024,
+            .B = 0xFFFFBFDC,
+            .C = 0x0000EF62,
+            .D = 0x00EF629D
+        },
+        .vertices = {0x0000001B, 0x0000001C, 0x00000028, 0x00000027}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFBFDC,
+            .B = 0xFFFFBFDC,
+            .C = 0x0000EF62,
+            .D = 0x00EF62A3
+        },
+        .vertices = {0x0000001C, 0x0000001D, 0x00000029, 0x00000028}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF50C2,
+            .B = 0xFFFFBFDC,
+            .C = 0x0000AF3E,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x0000001D, 0x0000001E, 0x0000002A, 0x00000029}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF109E,
+            .B = 0xFFFFBFDC,
+            .C = 0x00004024,
+            .D = 0x00EF629D
+        },
+        .vertices = {0x0000001E, 0x0000001F, 0x0000002B, 0x0000002A}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF109E,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFFBFDC,
+            .D = 0x00EF62A3
+        },
+        .vertices = {0x0000001F, 0x00000020, 0x0000002C, 0x0000002B}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF50C2,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF50C2,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x00000020, 0x00000021, 0x0000002D, 0x0000002C}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFBFDC,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF109E,
+            .D = 0x00EF629D
+        },
+        .vertices = {0x00000021, 0x00000022, 0x0000002E, 0x0000002D}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00004024,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF109E,
+            .D = 0x00EF62A3
+        },
+        .vertices = {0x00000022, 0x00000023, 0x0000002F, 0x0000002E}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000AF3E,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFF50C2,
+            .D = 0x00EF62A2
+        },
+        .vertices = {0x00000023, 0x00000024, 0x00000030, 0x0000002F}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000EF62,
+            .B = 0xFFFFBFDC,
+            .C = 0xFFFFBFDC,
+            .D = 0x00EF629D
+        },
+        .vertices = {0x00000024, 0x00000019, 0x00000025, 0x00000030}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000B1DA,
+            .B = 0xFFFF4E26,
+            .C = 0x00002FA7,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000025, 0x00000026, 0x00000032, 0x00000031}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00008232,
+            .B = 0xFFFF4E26,
+            .C = 0x00008232,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x00000026, 0x00000027, 0x00000033, 0x00000032}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00002FA7,
+            .B = 0xFFFF4E26,
+            .C = 0x0000B1DA,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000027, 0x00000028, 0x00000034, 0x00000033}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFD059,
+            .B = 0xFFFF4E26,
+            .C = 0x0000B1DA,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000028, 0x00000029, 0x00000035, 0x00000034}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF7DCE,
+            .B = 0xFFFF4E26,
+            .C = 0x00008232,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x00000029, 0x0000002A, 0x00000036, 0x00000035}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF4E26,
+            .B = 0xFFFF4E26,
+            .C = 0x00002FA7,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x0000002A, 0x0000002B, 0x00000037, 0x00000036}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF4E26,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFFD059,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x0000002B, 0x0000002C, 0x00000038, 0x00000037}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFF7DCE,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF7DCE,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x0000002C, 0x0000002D, 0x00000039, 0x00000038}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0xFFFFD059,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF4E26,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x0000002D, 0x0000002E, 0x0000003A, 0x00000039}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00002FA7,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF4E26,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x0000002E, 0x0000002F, 0x0000003B, 0x0000003A}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x00008232,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFF7DCE,
+            .D = 0x00F2F36F
+        },
+        .vertices = {0x0000002F, 0x00000030, 0x0000003C, 0x0000003B}
+    },
+    {
+        .base = {.count = 0x00000004},
+        .normal = {
+            .A = 0x0000B1DA,
+            .B = 0xFFFF4E26,
+            .C = 0xFFFFD059,
+            .D = 0x00F2F36C
+        },
+        .vertices = {0x00000030, 0x00000025, 0x00000031, 0x0000003C}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0xFFFF0952,
+            .C = 0x000011B5,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000031, 0x00000032, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0xFFFF0952,
+            .C = 0x00003063,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000032, 0x00000033, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0xFFFF0952,
+            .C = 0x00004219,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000033, 0x00000034, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0x00004219,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000034, 0x00000035, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0x00003063,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000035, 0x00000036, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0x000011B5,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000036, 0x00000037, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFBDE7,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000037, 0x00000038, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFCF9D,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000038, 0x00000039, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0xFFFFEE4B,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x00000039, 0x0000003A, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x000011B5,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFBDE7,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x0000003A, 0x0000003B, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00003063,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFCF9D,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x0000003B, 0x0000003C, 0x0000003D, 0x00000000}
+    },
+    {
+        .base = {.count = 0x00000003},
+        .normal = {
+            .A = 0x00004219,
+            .B = 0xFFFF0952,
+            .C = 0xFFFFEE4B,
+            .D = 0x00F6AE42
+        },
+        .vertices = {0x0000003C, 0x00000031, 0x0000003D, 0x00000000}
+    }
+};
+
 // SMRGLPrimitiveQuad*[2000]
 SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04[2000] = {};
 
@@ -378,22 +1325,6 @@ SMRGLTextureBasic g_SMRGLTextureBasic_005f1830 = {
 SMRGLTextureBasic g_SMRGLTextureBasic_005f193c = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
     .texture_name = "headlite.raw"
-};
-SMRGLTextureBasic g_SMRGLTextureBasic_005f2828 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "LITEFUZZ.RAW"
-};
-SMRGLTextureBasic g_SMRGLTextureBasic_005f2840 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "SUNMARK.RAW"
-};
-SMRGLTextureBasic g_SMRGLTextureBasic_005f2858 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "glow1.RAW"
-};
-SMRGLTextureBasic g_SMRGLTextureBasic_005f2870 = {
-    .base = {.type = 0x0000000D, .count = 0x00000000},
-    .texture_name = "SUN06.RAW"
 };
 SMRGLTextureBasic g_SMRGLTextureBasic_005fc964 = {
     .base = {.type = 0x0000000D, .count = 0x00000000},
@@ -1700,6 +2631,13 @@ WatcomStaticDestructorNode g_CGroundDestructorNode = {
     .object_instance = (void *)&g_CGroundInstance
 };
 
+// _MMX_INTEGER
+_MMX_INTEGER g_MMX_INTEGER_005f8b28 = {};
+_MMX_INTEGER g_MMX_INTEGER_005f8b88 = {};
+_MMX_INTEGER g_MMX_INTEGER_005f8b90 = {0x0040004000400040ULL};
+_MMX_INTEGER g_MMX_INTEGER_005f8b98 = {0x0020002000200020ULL};
+_MMX_INTEGER g_MMX_INTEGER_005f8ba0 = {0x0060006000600060ULL};
+
 // char[100]
 char g_CHAR_ARRAY_005fe970[100] = "";
 char g_CHAR_ARRAY_005febf0[100] = "10.0.0.105";
@@ -1785,7 +2723,6 @@ int g_INT_005f4ab4 = 0;
 int g_INT_005f4ab8 = 0;
 int g_INT_005f4abc = 0;
 int g_INT_005f4ac4 = 0;
-int g_INT_005f8b28 = 0;
 int g_INT_005fb0e0 = 0x4;
 int g_CDynamiteClassVersion = 0x1;
 int g_INT_005fb144 = 0x9;
@@ -1906,9 +2843,6 @@ ulonglong g_ULONGLONG_ARRAY_005fbc30[256] = {
 undefined1 DAT_005f098f = 0x00;
 
 // undefined4
-undefined4 DAT_005f1c58 = 0x00000000;
-undefined4 DAT_005f1c5c = 0x00000000;
-undefined4 DAT_005f1c7c = 0x00000000;
 undefined4 DAT_005fba64 = 0x00000000;
 undefined4 DAT_005fbaa4 = 0x00000000;
 undefined4 DAT_005fbaa8 = 0x00000000;
@@ -1919,9 +2853,6 @@ undefined4 DAT_005fbbc0 = 0x00000000;
 undefined4 DAT_005fbbc4 = 0x00000000;
 undefined4 DAT_005fe4b8 = 0x00000000;
 undefined4 DAT_005fe4bc = 0x00000000;
-
-// undefined8
-undefined8 DAT_005f8b88 = 0x0000000000000000;
 
 // ushort[2048]
 ushort g_USHORT_ARRAY_005fa0e0[2048] = {

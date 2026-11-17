@@ -273,7 +273,7 @@ LAB_0041290b:
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_ac,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                          DAT_007645a4);
+                          g_INT_007645a4);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_40,pCVar8);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar8,fVar10,damage_info)

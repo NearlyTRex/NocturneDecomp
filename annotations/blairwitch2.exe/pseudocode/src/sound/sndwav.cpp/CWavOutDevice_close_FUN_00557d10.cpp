@@ -18,17 +18,17 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_close_FUN_00557d10(CWavOutDevice *thi
   uVar4 = (uint)(iVar1 != 0);
   iVar1 = 0;
   do {
-    if (*(HGLOBAL *)(iVar1 + 0x264b0b4) != (HGLOBAL)0x0) {
-      GlobalFree(*(HGLOBAL *)(iVar1 + 0x264b0b4));
-      *(uint *)(iVar1 + 0x264b0b4) = 0;
+    if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1) != (HGLOBAL)0x0) {
+      GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1));
+      *(uint *)((int)g_HGLOBAL_ARRAY_0264b0b4 + iVar1) = 0;
     }
-    *(uint *)(iVar1 + 0x264b0d4) = 0;
-    if (*(HGLOBAL *)(iVar1 + 0x264b074) != (HGLOBAL)0x0) {
-      GlobalFree(*(HGLOBAL *)(iVar1 + 0x264b074));
-      *(uint *)(iVar1 + 0x264b074) = 0;
+    *(uint *)((int)g_LPVOID_ARRAY_0264b0d4 + iVar1) = 0;
+    if (*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1) != (HGLOBAL)0x0) {
+      GlobalFree(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1));
+      *(uint *)((int)g_HGLOBAL_ARRAY_0264b074 + iVar1) = 0;
     }
     iVar3 = iVar1 + 4;
-    *(uint *)(iVar1 + 0x264b094) = 0;
+    *(uint *)((int)g_LPWAVEHDR_ARRAY_0264b094 + iVar1) = 0;
     iVar1 = iVar3;
   } while (iVar3 != 0x20);
   if (g_INT_0264b070 == 0) {

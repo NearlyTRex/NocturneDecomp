@@ -23,10 +23,10 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01410280
-;   undefined4 DAT_01410284
-;   undefined4 DAT_01410288
-;   undefined4 DAT_01b4d738
+;   CVector3i g_CVector3i_01410280
+;   undefined4 g_CVector3i_01410280.y
+;   undefined4 g_CVector3i_01410280.z
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0
@@ -44,7 +44,7 @@ section .text
     MOV EBP,ESI                         ; 0044161a
     MOV ESI,dword ptr [ESP + 0x34]      ; 0044161c
     MOV EDX,dword ptr [0x005ae704]      ; 00441620 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00441626 | DAT_01b4d738
+    PUSH EDX                            ; 00441626 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0 ; 00441627
         ;   XREF to: 004613b0 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_004613b0(CDemonRenderer * this_ptr)
     MOV ECX,EAX                         ; 0044162c
@@ -85,9 +85,9 @@ section .text
     MOV EDI,ESP                         ; 004416a1
         ;   Label: LAB_004416a1
     MOV ESI,0x1410280                   ; 004416a3
-    MOVSD ES:EDI,ESI                    ; 004416a8 | DAT_01410280
-    MOVSD ES:EDI,ESI                    ; 004416a9 | DAT_01410284
-    MOVSD ES:EDI,ESI                    ; 004416aa | DAT_01410288
+    MOVSD ES:EDI,ESI                    ; 004416a8 | g_CVector3i_01410280
+    MOVSD ES:EDI,ESI                    ; 004416a9 | g_CVector3i_01410280.y
+    MOVSD ES:EDI,ESI                    ; 004416aa | g_CVector3i_01410280.z
     MOV ESI,ESP                         ; 004416ab
     MOV EDI,EBP                         ; 004416ad
     MOVSD ES:EDI,ESI                    ; 004416af

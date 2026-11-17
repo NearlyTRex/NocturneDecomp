@@ -13,7 +13,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e9a5
 ;   TerminatedCString s_CEditorTools_popWindow_c_0057e9bb
-;   undefined4 DAT_01bcd07c
+;   int g_INT_01bcd07c
 ;   SProjectionParams g_Projection
 ;   undefined4 g_Projection.neg_half_height_fixed
 ;   undefined4 g_Projection.center_x_fixed
@@ -39,10 +39,10 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0
     PUSH ESI                            ; 004721e1
     PUSH EDI                            ; 004721e2
-    CMP dword ptr [0x01bcd07c],0x1      ; 004721e3 | DAT_01bcd07c
+    CMP dword ptr [0x01bcd07c],0x1      ; 004721e3 | g_INT_01bcd07c
     JL 0x00472270                       ; 004721ea
         ;   XREF to: 00472270 (CONDITIONAL_JUMP)  ; LAB_00472270
-    MOV ESI,dword ptr [0x01bcd07c]      ; 004721f0 | DAT_01bcd07c
+    MOV ESI,dword ptr [0x01bcd07c]      ; 004721f0 | g_INT_01bcd07c
         ;   Label: LAB_004721f0
     DEC ESI                             ; 004721f6
     MOV EBX,ESI                         ; 004721f7
@@ -53,7 +53,7 @@ section .text
     SHL EBX,0x3                         ; 00472203
     ADD EBX,0x1bcd080                   ; 00472206
     MOV EDI,dword ptr [EBX + 0x1c8]     ; 0047220c
-    MOV dword ptr [0x01bcd07c],ESI      ; 00472212 | DAT_01bcd07c
+    MOV dword ptr [0x01bcd07c],ESI      ; 00472212 | g_INT_01bcd07c
     TEST EDI,EDI                        ; 00472218
     JNZ 0x00472298                      ; 0047221a
         ;   XREF to: 00472298 (CONDITIONAL_JUMP)  ; LAB_00472298

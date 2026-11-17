@@ -13,7 +13,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_DirectSound_s_00594849
-;   undefined4 DAT_005bed40
+;   int g_INT_005bed40 = -0x1
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
@@ -28,14 +28,14 @@ section .text
     PUSH ESI                            ; 0052be41
     MOV ESI,dword ptr [ESP + 0xc]       ; 0052be42
     MOV EBX,dword ptr [ESP + 0x10]      ; 0052be46
-    CMP dword ptr [0x005bed40],0x0      ; 0052be4a | DAT_005bed40
+    CMP dword ptr [0x005bed40],0x0      ; 0052be4a | g_INT_005bed40
     JL 0x0052be64                       ; 0052be51
         ;   XREF to: 0052be64 (CONDITIONAL_JUMP)  ; LAB_0052be64
     TEST ESI,ESI                        ; 0052be53
         ;   Label: LAB_0052be53
     JL 0x0052be5f                       ; 0052be55
         ;   XREF to: 0052be5f (CONDITIONAL_JUMP)  ; LAB_0052be5f
-    CMP ESI,dword ptr [0x005bed40]      ; 0052be57 | DAT_005bed40
+    CMP ESI,dword ptr [0x005bed40]      ; 0052be57 | g_INT_005bed40
     JL 0x0052be79                       ; 0052be5d
         ;   XREF to: 0052be79 (CONDITIONAL_JUMP)  ; LAB_0052be79
     XOR EAX,EAX                         ; 0052be5f
@@ -47,7 +47,7 @@ section .text
         ;   Label: LAB_0052be64
     PUSH ECX                            ; 0052be66
     PUSH 0x52bbd0                       ; 0052be67
-    MOV dword ptr [0x005bed40],ECX      ; 0052be6c | DAT_005bed40
+    MOV dword ptr [0x005bed40],ECX      ; 0052be6c | g_INT_005bed40
     CALL crt_dsound.c_DirectSoundEnumerateA ; 0052be72
         ;   XREF to: 00574c0e (UNCONDITIONAL_CALL)  ; HRESULT crt_dsound.c_DirectSoundEnumerateA(LPDSENUMCALLBACKA lp_ds_enum_callback, LPVOID lp_context)
     JMP 0x0052be53                      ; 0052be77

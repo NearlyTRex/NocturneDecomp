@@ -6,34 +6,36 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_3d_c_computeSortedPolygonKey_FUN_004059c0(SMRGLHeaderExtended *primitive)
 
 {
-  SMRGLHeaderExtended *pSVar1;
-  uint uVar2;
-  int iVar3;
+  int iVar1;
+  SMRGLHeaderExtended *pSVar2;
+  uint uVar3;
   int iVar4;
+  int iVar5;
   
-  iVar3 = 1;
-  iVar4 = (&DAT_005c501c)[(primitive[2].base.type + DAT_006b0264) * 0xc];
-  pSVar1 = primitive;
+  uVar3 = g_UINT_006b0268;
+  iVar4 = 1;
+  iVar5 = g_SRenderVertex_ARRAY_005c5014[primitive[2].base.type + g_UINT_006b0264].projected_vertex.
+          transformed_z;
+  pSVar2 = primitive;
   if (1 < (primitive->base).count) {
     do {
-      if ((int)(&DAT_005c501c)[(pSVar1[3].base.type + DAT_006b0264) * 0xc] < iVar4) {
-        iVar4 = (&DAT_005c501c)[(pSVar1[3].base.type + DAT_006b0264) * 0xc];
+      iVar1 = g_SRenderVertex_ARRAY_005c5014[pSVar2[3].base.type + g_UINT_006b0264].projected_vertex
+              .transformed_z;
+      if (iVar1 < iVar5) {
+        iVar5 = iVar1;
       }
-      iVar3 = iVar3 + 1;
-      pSVar1 = pSVar1 + 1;
-    } while (iVar3 < (primitive->base).count);
+      iVar4 = iVar4 + 1;
+      pSVar2 = pSVar2 + 1;
+    } while (iVar4 < (primitive->base).count);
   }
-  iVar3 = DAT_006b0268 * 0x20;
-  *(int *)(&DAT_006b02e8 + iVar3) = iVar4;
-  uVar2 = _DAT_01c039dc;
-  *(int *)(&DAT_006b02ec + iVar3) = DAT_006b0264;
-  *(uint *)(&DAT_006b02f0 + iVar3) = uVar2;
-  *(uint *)(&DAT_006b02f4 + iVar3) = _DAT_01c039e0;
-  *(uint *)(&DAT_006b02f8 + iVar3) = _DAT_01c039e4;
+  g_INT_ARRAY_006b029c[g_UINT_006b0268 * 8 + 0x13] = iVar5;
+  iVar5 = g_INT_01c039dc;
+  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x14] = g_UINT_006b0264;
+  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x15] = iVar5;
+  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x16] = g_INT_01c039e0;
+  g_INT_ARRAY_006b029c[uVar3 * 8 + 0x17] = g_INT_01c039e4;
   return;
 }

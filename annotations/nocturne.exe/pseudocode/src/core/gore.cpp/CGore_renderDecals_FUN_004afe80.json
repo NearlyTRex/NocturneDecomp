@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 186,
-    "complexity_score": 308,
+    "complexity_score": 292,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 93,
-    "suspect_count": 19,
+    "pseudocode_lines": 92,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_many",
       "pointer_cast",
       "pointer_truncation",
-      "unaffected_reg",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 279
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -86,20 +85,20 @@
     },
     {
       "addr": "01c7ccf0",
-      "name": "DAT_01c7ccf0",
-      "type": "undefined4",
+      "name": "g_INT_01c7ccf0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c9e038",
-      "name": "DAT_01c9e038",
-      "type": "undefined4",
+      "name": "g_INT_01c9e038",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c9e540",
-      "name": "DAT_01c9e540",
-      "type": "undefined4",
+      "name": "g_INT_01c9e540",
+      "type": "int",
       "value": null
     }
   ],
@@ -221,16 +220,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 8,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "int unaff_EBP;",
@@ -238,7 +229,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 24,
+      "line": 22,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP);",
@@ -246,7 +237,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 34,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "core_gore_cpp_CBloodSplat_render_FUN_004aeb70(this_ptr_00,unaff_EBP);",
@@ -254,7 +245,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 49,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "unaff_EBP);",
@@ -262,7 +253,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 63,
+      "line": 61,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "core_gore_cpp_CBloodPool_render_FUN_004af340(this_ptr_01,unaff_EBP);",
@@ -270,7 +261,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(int *)((int)g_Footsteps",
       "severity": "moderate",
       "text": "if (*(int *)((int)g_Footsteps[0].corners + iVar1 + -8) == 0) {",
@@ -278,7 +269,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 76,
+      "line": 74,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),unaff_EBP);",
@@ -286,7 +277,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(CFootstep *)((int)g_Footsteps",
       "severity": "moderate",
       "text": "((CFootstep *)((int)g_Footsteps[0].corners + iVar1 + -8),unaff_EBP);",
@@ -294,7 +285,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 88,
+      "line": 86,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "core_gore_cpp_CFootstep_render_FUN_004afa20(this_ptr_02,unaff_EBP);",
@@ -302,7 +293,7 @@
     },
     {
       "description": "Pointer value `&g_CBloodSplat_ARRAY_01c7ccf4[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1) == 0) {",
@@ -310,7 +301,7 @@
     },
     {
       "description": "Pointer value `&g_CBloodSplat_ARRAY_01c7ccf4[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "(int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired",
       "severity": "moderate",
       "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1),",
@@ -318,7 +309,7 @@
     },
     {
       "description": "Pointer value `&g_CBloodPool_ARRAY_01c9e03c[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 48,
+      "line": 46,
       "match": "(int)&g_CBloodPool_ARRAY_01c9e03c[0].expired",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1) == 0) {",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Pointer value `&g_CBloodPool_ARRAY_01c9e03c[0].expired` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&g_CBloodPool_ARRAY_01c9e03c[0].expired",
       "severity": "moderate",
       "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1),",
@@ -334,7 +325,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1) == 0) {",
@@ -342,7 +333,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 23,
+      "line": 21,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((CBloodSplat *)((int)&g_CBloodSplat_ARRAY_01c7ccf4[0].expired + iVar1),",
@@ -350,7 +341,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
+      "line": 46,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "if (*(int *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1) == 0) {",
@@ -358,7 +349,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 50,
+      "line": 48,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "((CBloodPool *)((int)&g_CBloodPool_ARRAY_01c9e03c[0].expired + iVar1),",

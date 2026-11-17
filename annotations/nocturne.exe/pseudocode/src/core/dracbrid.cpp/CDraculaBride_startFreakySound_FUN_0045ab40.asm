@@ -40,7 +40,7 @@
 ;
 ; Referenced Globals:
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01b4d260
+;   int[8] g_INT_ARRAY_01b4d260
 ;   SFreaky[6] g_SFreaky_ARRAY_01b4d280
 ;   undefined4 g_SFreaky_ARRAY_01b4d280[0].position.x
 ;   undefined4 g_SFreaky_ARRAY_01b4d280[0].position.y
@@ -121,7 +121,7 @@ section .text
     POP ESI                             ; 0045aba9
     POP EBX                             ; 0045abaa
     RET                                 ; 0045abab
-    MOV ECX,dword ptr [0x01b4d260]      ; 0045abac | DAT_01b4d260
+    MOV ECX,dword ptr [0x01b4d260]      ; 0045abac | g_INT_ARRAY_01b4d260
         ;   Label: LAB_0045abac
     PUSH ECX                            ; 0045abb2
     MOV dword ptr [EBX + 0x1c],EAX      ; 0045abb3 | g_SFreaky_ARRAY_01b4d280[0].t

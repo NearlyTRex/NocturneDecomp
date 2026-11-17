@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_swarming_on_s_at_LOD_d_00579d8d
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_00764d98
-;   undefined4 DAT_00764d9c
-;   undefined4 DAT_00764da0
+;   int[700] g_INT_ARRAY_00764d98
+;   undefined4 g_INT_ARRAY_00764d98[1]
+;   undefined4 g_INT_ARRAY_00764d98[2]
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CEnemyActorType_01bcdebc.name_hash
 ;   undefined4 g_CHeroActorType_01cae0ec.name_hash
@@ -144,7 +144,7 @@ section .text
         ;   XREF to: 00423900 (CONDITIONAL_JUMP)  ; LAB_00423900
     MOV ECX,dword ptr [ESP + 0x1c]      ; 004238e5
     XOR EDX,EDX                         ; 004238e9
-    MOV dword ptr [EDX + 0x764d98],EAX  ; 004238eb | DAT_00764d98 | DAT_00764d9c
+    MOV dword ptr [EDX + 0x764d98],EAX  ; 004238eb | g_INT_ARRAY_00764d98 | g_INT_ARRAY_00764d98[1]
         ;   Label: LAB_004238eb
     INC EAX                             ; 004238f1
     MOV EBP,dword ptr [ECX + 0x1299c]   ; 004238f2
@@ -168,20 +168,20 @@ section .text
         ;   XREF to: 00423959 (CONDITIONAL_JUMP)  ; LAB_00423959
     SHL EBP,0x2                         ; 0042391d
     XOR EAX,EAX                         ; 00423920
-    IMUL EDX,dword ptr [EAX + 0x764d98],0xc ; 00423922 | DAT_00764d98 | DAT_00764d9c
+    IMUL EDX,dword ptr [EAX + 0x764d98],0xc ; 00423922 | g_INT_ARRAY_00764d98 | g_INT_ARRAY_00764d98[1]
         ;   Label: LAB_00423922
-    IMUL ECX,dword ptr [EAX + 0x764d9c],0xc ; 00423929 | DAT_00764d9c | DAT_00764da0
+    IMUL ECX,dword ptr [EAX + 0x764d9c],0xc ; 00423929 | g_INT_ARRAY_00764d98[1] | g_INT_ARRAY_00764d98[2]
     MOV EDX,dword ptr [EDX + EBX*0x1 + 0x4] ; 00423930
     CMP EDX,dword ptr [ECX + EBX*0x1 + 0x4] ; 00423934
     JLE 0x00423952                      ; 00423938
         ;   XREF to: 00423952 (CONDITIONAL_JUMP)  ; LAB_00423952
     LEA ECX,[EAX + 0x4]                 ; 0042393a
-    ADD ECX,0x764d98                    ; 0042393d | DAT_00764d98
-    MOV EDX,0x764d98                    ; 00423943 | DAT_00764d98
-    MOV ESI,dword ptr [ECX]             ; 00423948 | DAT_00764d9c
-    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 0042394a | DAT_00764d98
-    MOV dword ptr [EDX + EAX*0x1],ESI   ; 0042394d | DAT_00764d98
-    MOV dword ptr [ECX],EDI             ; 00423950 | DAT_00764d9c
+    ADD ECX,0x764d98                    ; 0042393d | g_INT_ARRAY_00764d98
+    MOV EDX,0x764d98                    ; 00423943 | g_INT_ARRAY_00764d98
+    MOV ESI,dword ptr [ECX]             ; 00423948 | g_INT_ARRAY_00764d98[1]
+    MOV EDI,dword ptr [EDX + EAX*0x1]   ; 0042394a | g_INT_ARRAY_00764d98
+    MOV dword ptr [EDX + EAX*0x1],ESI   ; 0042394d | g_INT_ARRAY_00764d98
+    MOV dword ptr [ECX],EDI             ; 00423950 | g_INT_ARRAY_00764d98[1]
     ADD EAX,0x4                         ; 00423952
         ;   Label: LAB_00423952
     CMP EAX,EBP                         ; 00423955
@@ -194,7 +194,7 @@ section .text
     TEST EDX,EDX                        ; 00423962
     JGE 0x00423915                      ; 00423964
         ;   XREF to: 00423915 (CONDITIONAL_JUMP)  ; LAB_00423915
-    MOV EDX,dword ptr [0x00764d98]      ; 00423966 | DAT_00764d98
+    MOV EDX,dword ptr [0x00764d98]      ; 00423966 | g_INT_ARRAY_00764d98
         ;   Label: LAB_00423966
     LEA EAX,[EDX*0x4 + 0x0]             ; 0042396c
     SUB EAX,EDX                         ; 00423973
@@ -211,7 +211,7 @@ section .text
     MOV EDI,EAX                         ; 00423991
     MOV dword ptr [EDI + 0xbd58],0xffffffff ; 00423993
         ;   Label: LAB_00423993
-    MOV EAX,dword ptr [ESI*0x4 + 0x764d98] ; 0042399d | DAT_00764d98
+    MOV EAX,dword ptr [ESI*0x4 + 0x764d98] ; 0042399d | g_INT_ARRAY_00764d98
     MOV EDX,dword ptr [ESP + 0x1c]      ; 004239a4
     MOV dword ptr [EDI + 0xbd5c],EAX    ; 004239a8
     MOV ECX,0xf                         ; 004239ae
@@ -265,7 +265,7 @@ section .text
     MOV dword ptr [EDX + 0x12964],0x0   ; 00423a2e
     JMP 0x004239fa                      ; 00423a38
         ;   XREF to: 004239fa (UNCONDITIONAL_JUMP)  ; LAB_004239fa
-    IMUL EAX,dword ptr [ESI*0x4 + 0x764d98],0xc ; 00423a3a | DAT_00764d9c
+    IMUL EAX,dword ptr [ESI*0x4 + 0x764d98],0xc ; 00423a3a | g_INT_ARRAY_00764d98[1]
         ;   Label: LAB_00423a3a
     MOV ECX,dword ptr [ESP]             ; 00423a42
     CMP ECX,dword ptr [EBX + EAX*0x1 + 0x4] ; 00423a45

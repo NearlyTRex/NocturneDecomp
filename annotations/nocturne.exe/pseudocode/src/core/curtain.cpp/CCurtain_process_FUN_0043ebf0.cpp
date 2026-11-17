@@ -63,7 +63,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,f
   if (((this_ptr->is_visible != 0) || (this_ptr->falling != 0)) &&
      (this_ptr->is_visible = 0, this_ptr->simulate_me != 0)) {
     iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->let_go_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->let_go_event);
     if (iVar6 != 0) {
       this_ptr->falling = 1;
     }
@@ -108,13 +108,13 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,f
         } while (iVar6 < this_ptr->vertex_count);
       }
       iStack_28 = 0;
-      DAT_0077bdb8 = 0;
-      for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < g_CDemonSetPtr->character_count;
+      g_INT_0077bdb8 = 0;
+      for (iStack_20 = 0; iVar6 = g_INT_0077bdb8, iStack_20 < g_CDemonSetPtr->character_count;
           iStack_20 = iStack_20 + 1) {
         iVar10 = *(int *)((int)g_CDemonSetPtr->characters + iStack_28);
-        pSVar11 = g_SCollisionInfo_ARRAY_0077c26c + DAT_0077bdb8;
-        if (g_CVector3f_ARRAY_0077bdbc + DAT_0077bdb8 != (CVector3f *)(iVar10 + 0x20)) {
-          g_CVector3f_ARRAY_0077bdbc[DAT_0077bdb8].x = ((CVector3f *)(iVar10 + 0x20))->x;
+        pSVar11 = g_SCollisionInfo_ARRAY_0077c26c + g_INT_0077bdb8;
+        if (g_CVector3f_ARRAY_0077bdbc + g_INT_0077bdb8 != (CVector3f *)(iVar10 + 0x20)) {
+          g_CVector3f_ARRAY_0077bdbc[g_INT_0077bdb8].x = ((CVector3f *)(iVar10 + 0x20))->x;
           g_CVector3f_ARRAY_0077bdbc[iVar6].y = *(float *)(iVar10 + 0x24);
           g_CVector3f_ARRAY_0077bdbc[iVar6].z = *(float *)(iVar10 + 0x28);
         }
@@ -131,7 +131,7 @@ void __cdecl core_curtain_cpp_CCurtain_process_FUN_0043ebf0(CCurtain *this_ptr,f
                *(float *)(iVar10 + 0x28) + g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius))
              && (*(float *)(iVar10 + 0x28) - g_SCollisionInfo_ARRAY_0077c26c[iVar6].cylinder_radius
                  <= local_74)))))) {
-          DAT_0077bdb8 = DAT_0077bdb8 + 1;
+          g_INT_0077bdb8 = g_INT_0077bdb8 + 1;
         }
         iStack_28 = iStack_28 + 4;
       }

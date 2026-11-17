@@ -20,10 +20,10 @@
 ;   int g_INT_00604d18 = 0x0
 ;   double g_DOUBLE_00604d1c = 0.0
 ;   qword g_QWORD_00604d90 = 0x0
-;   int g_INT_00604d98 = 0x0
-;   int g_INT_00604da0 = 0x0
+;   _MMX_INTEGER g_MMX_INTEGER_00604d98
+;   _MMX_INTEGER g_MMX_INTEGER_00604da0
 ;   qword g_QWORD_00604db0 = 0x0
-;   int g_INT_00604db8 = 0x0
+;   _MMX_INTEGER g_MMX_INTEGER_00604db8
 ;   ... and 33 more
 ;
 ; *****************************************************************************
@@ -119,8 +119,8 @@ section .text
     IMUL dword ptr [ECX + 0x1c6b5d4]    ; 005626f0 | g_UINT_ARRAY_01c6b5d0[1]
     AND EBX,0xffff                      ; 005626f6
     AND EDX,0xffff                      ; 005626fc
-    MOV dword ptr [0x00604d98],EBX      ; 00562702 | g_INT_00604d98
-    MOV dword ptr [0x00604db8],EDX      ; 00562708 | g_INT_00604db8
+    MOV dword ptr [0x00604d98],EBX      ; 00562702 | g_MMX_INTEGER_00604d98
+    MOV dword ptr [0x00604db8],EDX      ; 00562708 | g_MMX_INTEGER_00604db8
     MOV EAX,dword ptr [EDI + 0x40]      ; 0056270e
     MOV EBX,dword ptr [ESI + 0x40]      ; 00562711
     SHR EAX,0x1                         ; 00562714
@@ -129,18 +129,18 @@ section .text
     IMUL dword ptr [ECX + 0x1c6b5d4]    ; 0056271a | g_UINT_ARRAY_01c6b5d0[1]
     AND EBX,0xffff                      ; 00562720
     AND EDX,0xffff                      ; 00562726
-    MOV dword ptr [0x00604da0],EBX      ; 0056272c | g_INT_00604da0
-    MOV dword ptr [0x00604dc0],EDX      ; 00562732 | g_INT_00604dc0
+    MOV dword ptr [0x00604da0],EBX      ; 0056272c | g_MMX_INTEGER_00604da0
+    MOV dword ptr [0x00604dc0],EDX      ; 00562732 | g_MMX_INTEGER_00604dc0
     MOVQ MM5,qword ptr [0x00604d90]     ; 00562738 | g_QWORD_00604d90
     MOVQ MM6,qword ptr [0x00604db0]     ; 0056273f | g_QWORD_00604db0
     PSLLQ MM5,0x10                      ; 00562746
     PSLLQ MM6,0x10                      ; 0056274a
-    POR MM5,qword ptr [0x00604d98]      ; 0056274e | g_INT_00604d98
-    POR MM6,qword ptr [0x00604db8]      ; 00562755 | g_INT_00604db8
+    POR MM5,qword ptr [0x00604d98]      ; 0056274e | g_MMX_INTEGER_00604d98
+    POR MM6,qword ptr [0x00604db8]      ; 00562755 | g_MMX_INTEGER_00604db8
     PSLLQ MM5,0x10                      ; 0056275c
     PSLLQ MM6,0x10                      ; 00562760
-    POR MM5,qword ptr [0x00604da0]      ; 00562764 | g_INT_00604da0
-    POR MM6,qword ptr [0x00604dc0]      ; 0056276b | g_INT_00604dc0
+    POR MM5,qword ptr [0x00604da0]      ; 00562764 | g_MMX_INTEGER_00604da0
+    POR MM6,qword ptr [0x00604dc0]      ; 0056276b | g_MMX_INTEGER_00604dc0
     MOVQ qword ptr [0x00604df0],MM6     ; 00562772 | g_QWORD_00604df0
     MOV ECX,dword ptr [0x006048e0]      ; 00562779 | g_INT_006048e0
     MOV EDX,dword ptr [0x006048e4]      ; 0056277f | g_INT_006048e4
@@ -205,14 +205,14 @@ section .text
     ADD EBX,dword ptr [0x00604908]      ; 0056285b | g_INT_PTR_00604908
     MOVZX EBX,word ptr [EBX]            ; 00562861
     MOVD MM4,EBX                        ; 00562864
-    PAND MM4,qword ptr [0x00604e70]     ; 00562867 | g_INT_00604e70
+    PAND MM4,qword ptr [0x00604e70]     ; 00562867 | g_MMX_INTEGER_00604e70
     PSLLQ MM4,qword ptr [0x00604f00]    ; 0056286e | g_QWORD_00604f00
     MOVD MM2,EBX                        ; 00562875
-    PAND MM2,qword ptr [0x00604e68]     ; 00562878 | g_INT_00604e68
+    PAND MM2,qword ptr [0x00604e68]     ; 00562878 | g_MMX_INTEGER_00604e68
     PSLLQ MM2,qword ptr [0x00604ee0]    ; 0056287f | g_QWORD_00604ee0
     POR MM4,MM2                         ; 00562886
     MOVD MM2,EBX                        ; 00562889
-    PAND MM2,qword ptr [0x00604e60]     ; 0056288c | g_INT_00604e60
+    PAND MM2,qword ptr [0x00604e60]     ; 0056288c | g_MMX_INTEGER_00604e60
     PSLLQ MM2,qword ptr [0x00604ec0]    ; 00562893 | g_QWORD_00604ec0
     POR MM4,MM2                         ; 0056289a
     PUNPCKLBW MM4,MM7                   ; 0056289d

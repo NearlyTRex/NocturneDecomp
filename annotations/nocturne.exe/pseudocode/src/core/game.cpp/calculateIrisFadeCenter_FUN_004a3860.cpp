@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004a3860(void)
 
 {
@@ -38,9 +36,9 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004a3860(void)
     CStack_3c.z = fStack_10 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
               (g_CScriptPtr->focus_actor,&CStack_48,&CStack_3c);
-    CStack_54.x = (int)ROUND(CStack_48.x * _DAT_0059de84);
-    CStack_54.y = (int)ROUND(CStack_48.y * _DAT_0059de84);
-    CStack_54.z = (int)ROUND(CStack_48.z * _DAT_0059de84);
+    CStack_54.x = (int)ROUND(CStack_48.x * 256.0f);
+    CStack_54.y = (int)ROUND(CStack_48.y * 256.0f);
+    CStack_54.z = (int)ROUND(CStack_48.z * 256.0f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_00441610
               (&g_CDemonCameraInstance,&CStack_54,&CStack_24);
     iStack_30 = CStack_24.x;
@@ -48,15 +46,15 @@ void __cdecl core_game_cpp_calculateIrisFadeCenter_FUN_004a3860(void)
     aiStack_2c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          *(int *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
     if (aiStack_2c[1] != 0) {
-      _DAT_01c78b0c =
+      g_INT_01c78b0c =
            (int)((iStack_30 + (iStack_30 >> 0x1f) * -0x10000) -
                 (uint)((iStack_30 >> 0x1f) << 0xf < 0)) >> 0x10;
-      _DAT_01c78b10 =
+      g_INT_01c78b10 =
            (int)((aiStack_2c[0] + (aiStack_2c[0] >> 0x1f) * -0x10000) -
                 (uint)((aiStack_2c[0] >> 0x1f) << 0xf < 0)) >> 0x10;
       if (0x1e0 < g_WindowHeight) {
-        _DAT_01c78b0c = (_DAT_01c78b0c * g_WindowWidth) / 0x280;
-        _DAT_01c78b10 = (_DAT_01c78b10 * g_WindowHeight) / 0x1e0;
+        g_INT_01c78b0c = (g_INT_01c78b0c * g_WindowWidth) / 0x280;
+        g_INT_01c78b10 = (g_INT_01c78b10 * g_WindowHeight) / 0x1e0;
         return;
       }
     }

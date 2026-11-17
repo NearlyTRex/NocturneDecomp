@@ -168,19 +168,19 @@ section .text
     MOV ESI,0x12                        ; 004c9225
     SAR EDX,0x1f                        ; 004c922a
     IDIV ESI                            ; 004c922d
-    MOV [0x01bd1d80],EAX                ; 004c922f | DAT_01bd1d80
+    MOV [0x01bd1d80],EAX                ; 004c922f | g_INT_01bd1d80
     CMP EBP,EAX                         ; 004c9234
     JLE 0x004c923e                      ; 004c9236
         ;   XREF to: 004c923e (CONDITIONAL_JUMP)  ; LAB_004c923e
-    MOV dword ptr [0x01bd1d80],EBP      ; 004c9238 | DAT_01bd1d80
-    MOV EDX,dword ptr [0x01bd1d80]      ; 004c923e | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],EBP      ; 004c9238 | g_INT_01bd1d80
+    MOV EDX,dword ptr [0x01bd1d80]      ; 004c923e | g_INT_01bd1d80
         ;   Label: LAB_004c923e
     MOV ESI,ECX                         ; 004c9244
     CMP EDX,0x4000                      ; 004c9246
     JLE 0x004c9258                      ; 004c924c
         ;   XREF to: 004c9258 (CONDITIONAL_JUMP)  ; LAB_004c9258
-    MOV dword ptr [0x01bd1d80],0x4000   ; 004c924e | DAT_01bd1d80
-    MOV EAX,[0x01bd1d80]                ; 004c9258 | DAT_01bd1d80
+    MOV dword ptr [0x01bd1d80],0x4000   ; 004c924e | g_INT_01bd1d80
+    MOV EAX,[0x01bd1d80]                ; 004c9258 | g_INT_01bd1d80
         ;   Label: LAB_004c9258
     PUSH 0x2a                           ; 004c925d
     SUB EBX,EAX                         ; 004c925f

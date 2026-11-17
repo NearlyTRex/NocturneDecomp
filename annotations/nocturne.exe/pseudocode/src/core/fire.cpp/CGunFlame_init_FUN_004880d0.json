@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 106,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 51,
-    "suspect_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 5,
     "suspect_types": [
-      "undefined_data",
-      "unknown_field",
-      "warning_overlapping_globals"
+      "pointer_cast",
+      "pointer_truncation",
+      "unknown_field"
     ],
-    "total_lines": 186
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -74,26 +74,26 @@
     },
     {
       "addr": "01c09e08",
-      "name": "DAT_01c09e08",
-      "type": "undefined4",
+      "name": "g_INT_01c09e08",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c09e0c",
-      "name": "DAT_01c09e0c",
-      "type": "undefined4",
+      "name": "g_CCharacter_PTR_ARRAY_01c09e0c",
+      "type": "CCharacter*[50]",
       "value": null
     },
     {
       "addr": "01c09ed4",
-      "name": "DAT_01c09ed4",
-      "type": "undefined4",
+      "name": "g_INT_01c09ed4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c09ed8",
-      "name": "DAT_01c09ed8",
-      "type": "undefined4",
+      "name": "g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "type": "CFlameCan*[150]",
       "value": null
     }
   ],
@@ -232,36 +232,44 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 22,
-      "match": "DAT_01c09e0c",
-      "severity": "mild",
-      "text": "this_ptr_00 = *(CCharacter **)(&DAT_01c09e0c + local_20);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 20,
+      "match": "(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c + local_20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 27,
+      "line": 25,
       "match": "._0_4_",
       "severity": "mild",
       "text": "fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= 5.4526381103294656e-315._0_4_)) {",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_01c09ed8",
-      "severity": "mild",
-      "text": "this_ptr_01 = *(CFlameCan **)(&DAT_01c09ed8 + iVar5);",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8 + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `g_CCharacter_PTR_ARRAY_01c09e0c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 20,
+      "match": "(int)g_CCharacter_PTR_ARRAY_01c09e0c",
+      "severity": "moderate",
+      "text": "this_ptr_00 = *(CCharacter **)((int)g_CCharacter_PTR_ARRAY_01c09e0c + local_20);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CFlameCan_PTR_ARRAY_01c09ed8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 41,
+      "match": "(int)g_CFlameCan_PTR_ARRAY_01c09ed8",
+      "severity": "moderate",
+      "text": "this_ptr_01 = *(CFlameCan **)((int)g_CFlameCan_PTR_ARRAY_01c09ed8 + iVar5);",
+      "type": "pointer_truncation"
     }
   ]
 }

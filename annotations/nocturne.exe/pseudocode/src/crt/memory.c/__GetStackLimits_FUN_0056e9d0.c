@@ -14,10 +14,10 @@ void __cdecl __GetStackLimits(ThreadData *pStackBound,uint *pHeapBound)
   byte local_c [4];
   
   VirtualQuery(local_c,&local_28,0x1c);
-  if (DAT_005c1d11 < 0x8000) {
+  if (g_WORD_005c1d11 < 0x8000) {
     uVar1 = (int)local_28.AllocationBase + 0x3000;
   }
-  else if ((DAT_005c1d11 < 0x8000) || (3 < DAT_005c1d0f)) {
+  else if ((g_WORD_005c1d11 < 0x8000) || (3 < g_BYTE_005c1d0f)) {
     uVar1 = (int)local_28.AllocationBase + 0x13000;
   }
   else {

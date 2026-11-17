@@ -172,7 +172,7 @@
   "suspects": [
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 37,
+      "line": 38,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "cVar2 = (char)((g_INT_01547200 + (g_INT_01547200 >> 0x1f) * -0x100) -",
@@ -180,7 +180,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 38,
+      "line": 39,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_01547200 >> 0x1f) << 7 < 0) >> 8);",

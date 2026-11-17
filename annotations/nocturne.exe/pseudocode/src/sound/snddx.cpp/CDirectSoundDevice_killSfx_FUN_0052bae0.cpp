@@ -10,21 +10,23 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
 
 {
   int iVar1;
+  LPDIRECTSOUNDBUFFER this_ptr_00;
   int *piVar2;
+  IDirectSoundBuffer *this_ptr_01;
   uint error_code;
   char *pcVar3;
-  int *piVar4;
   char acStack_1a0 [400];
   
   iVar1 = slot->hardware_buffer_handle;
-  if ((((iVar1 < 1) || (0x1e < iVar1)) || (*(int *)(iVar1 * 4 + 0x2dc92a8) == 0)) ||
-     (*(int *)(iVar1 * 4 + 0x2dc9324) == 0)) {
+  if ((((iVar1 < 1) || (0x1e < iVar1)) ||
+      (g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] == (IDirectSoundBuffer *)0x0)) ||
+     (g_INT_ARRAY_02dc9324[iVar1] == 0)) {
     sound_sndmain_cpp_logSoundError_FUN_00529980("DirectSoundDevice::killSfx - handle wasn't valid, call ignored");
   }
   else {
-    piVar2 = *(int **)(iVar1 * 4 + 0x2dc92a8);
-    if (piVar2 != (int *)0x0) {
-      error_code = (**(code **)(*piVar2 + 0x48))(piVar2);
+    this_ptr_00 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1];
+    if (this_ptr_00 != (LPDIRECTSOUNDBUFFER)0x0) {
+      error_code = (*this_ptr_00->vtable->Stop)(this_ptr_00);
       if (error_code != 0) {
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_00529a90(error_code);
         _sprintf(acStack_1a0,"DirectSux: Unable to %s.  (%s)",
@@ -33,17 +35,15 @@ void __cdecl sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_0052bae0(CDirectSoun
         return;
       }
     }
-    piVar4 = (int *)(iVar1 * 4 + 0x2dc9324);
-    piVar2 = (int *)*piVar4;
+    piVar2 = (int *)g_INT_ARRAY_02dc9324[iVar1];
     if (piVar2 != (int *)0x0) {
       (**(code **)(*piVar2 + 8))(piVar2);
-      *piVar4 = 0;
+      g_INT_ARRAY_02dc9324[iVar1] = 0;
     }
-    piVar4 = (int *)(iVar1 * 4 + 0x2dc92a8);
-    piVar2 = (int *)*piVar4;
-    if (piVar2 != (int *)0x0) {
-      (**(code **)(*piVar2 + 8))(piVar2);
-      *piVar4 = 0;
+    this_ptr_01 = g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1];
+    if (this_ptr_01 != (IDirectSoundBuffer *)0x0) {
+      (*this_ptr_01->vtable->Release)((IUnknown *)this_ptr_01);
+      g_IDirectSoundBuffer_PTR_ARRAY_02dc92a8[iVar1] = (IDirectSoundBuffer *)0x0;
       return;
     }
   }

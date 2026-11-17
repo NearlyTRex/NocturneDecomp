@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_004f9460(SRenderVertex *start_vertex,SRenderVertex *end_vertex)
 
 {
@@ -20,6 +18,7 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_004f9460(SRenderVertex *st
   int iVar7;
   uint uVar8;
   
+  iVar2 = g_INT_01e52a68;
   iVar7 = (end_vertex->projected_vertex).screen_y >> 0x10;
   iVar3 = (start_vertex->projected_vertex).screen_y >> 0x10;
   if (iVar3 != iVar7) {
@@ -31,15 +30,14 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_004f9460(SRenderVertex *st
       start_vertex = end_vertex;
       iVar7 = iVar3;
     }
-    iVar2 = _DAT_01e52a68 * 0x48;
-    *(int *)(&DAT_01e52a6c + iVar2) = iVar4;
-    iVar3 = _DAT_01e52eec;
-    *(int *)(iVar2 + 0x1e52a70) = iVar7;
+    g_SSoftwareEdge_ARRAY_01e52a6c[g_INT_01e52a68].base.y_min = iVar4;
+    iVar3 = g_INT_01e52eec;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.y_max = iVar7;
     if (iVar4 < iVar3) {
-      _DAT_01e52eec = iVar4;
+      g_INT_01e52eec = iVar4;
     }
-    if (_DAT_01e52ef0 < iVar7) {
-      _DAT_01e52ef0 = iVar7;
+    if (g_INT_01e52ef0 < iVar7) {
+      g_INT_01e52ef0 = iVar7;
     }
     uVar5 = (pSVar6->projected_vertex).screen_y - (start_vertex->projected_vertex).screen_y;
     if (uVar5 < 0x10000) {
@@ -53,44 +51,44 @@ void __cdecl engine_prim_c_setupBasicSoftwareEdge_FUN_004f9460(SRenderVertex *st
             (longlong)
             ((pSVar6->projected_vertex).screen_x - (start_vertex->projected_vertex).screen_x);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52a78) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.x_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar2 + 0x1e52a74) =
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.x_current =
          (start_vertex->projected_vertex).screen_x +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar6->u - start_vertex->u);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52a88) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.u_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar2 + 0x1e52a84) =
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.u_current =
          start_vertex->u + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar6->v - start_vertex->v);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52a90) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.v_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar2 + 0x1e52a8c) =
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.v_current =
          start_vertex->v + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar6->r - start_vertex->r);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52a80) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.red_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar2 + 0x1e52a7c) =
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.red_current =
          start_vertex->r + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 * (longlong)(pSVar6->a - start_vertex->a);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52aa0) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.alpha_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    *(uint *)(iVar2 + 0x1e52a9c) =
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.alpha_current =
          start_vertex->a + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)iVar7 *
             (longlong)
             ((pSVar6->projected_vertex).transformed_z -
             (start_vertex->projected_vertex).transformed_z);
     uVar5 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *(uint *)(iVar2 + 0x1e52a98) = uVar5;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_gradient = uVar5;
     lVar1 = (longlong)(int)uVar8 * (longlong)(int)uVar5;
-    _DAT_01e52a68 = _DAT_01e52a68 + 1;
-    *(uint *)(iVar2 + 0x1e52a94) =
+    g_INT_01e52a68 = g_INT_01e52a68 + 1;
+    g_SSoftwareEdge_ARRAY_01e52a6c[iVar2].base.depth_current =
          (start_vertex->projected_vertex).transformed_z +
          ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415760(CBiggs *this_ptr)
 
 {
@@ -44,7 +42,7 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_00415760(CBiggs *this_ptr)
                 (this_ptr_00,1,model_ptr,iVar2,part_index);
       core_morph_cpp_CMorph_render_FUN_004e0820(this_ptr_00,this_ptr->morph_timer / 4.0f);
     }
-    if (_DAT_01cd4318 != 0) {
+    if (g_INT_01cd4318 != 0) {
       iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090
                         (g_CDemonRenderer_PTR_005ae704);
       if (iVar2 == 0) {

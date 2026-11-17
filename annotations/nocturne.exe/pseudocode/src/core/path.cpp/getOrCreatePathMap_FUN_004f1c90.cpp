@@ -22,16 +22,16 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   int local_18 [2];
   
   bVar6 = 0;
-  if ((DAT_01e312f0 & 1) == 0) {
-    DAT_01e312f0 = DAT_01e312f0 | 1;
+  if ((g_UCHAR_01e312f0 & 1) == 0) {
+    g_UCHAR_01e312f0 = g_UCHAR_01e312f0 | 1;
     __arrinit(g_PathMapCache,0xc,&g_CPathMapTypeInfo_005a1200);
     _atexit(&g_PathMapCacheDestructorNode);
   }
-  if (DAT_005be0b8 < 0) {
+  if (g_INT_ARRAY_005be0b8[0] < 0) {
     iVar2 = 0;
     iVar1 = 0;
     do {
-      *(int *)((int)&DAT_005be0b8 + iVar2) = iVar1;
+      *(int *)((int)g_INT_ARRAY_005be0b8 + iVar2) = iVar1;
       iVar1 = iVar1 + 1;
       iVar2 = iVar2 + 4;
     } while (iVar1 < 0xc);
@@ -56,7 +56,7 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
        *(int *)((int)&((CVector3i *)(g_PathMapCache[0].height_cache_tags + 100))->z + iVar3)))
     break;
     iVar5 = iVar1;
-    if ((&DAT_005be0b8)[iVar1] < *(int *)((int)&DAT_005be0b8 + iVar4)) {
+    if (g_INT_ARRAY_005be0b8[iVar1] < *(int *)((int)g_INT_ARRAY_005be0b8 + iVar4)) {
       iVar5 = iVar2;
     }
     iVar4 = iVar4 + 4;
@@ -66,12 +66,12 @@ CPathMap * __cdecl core_path_cpp_getOrCreatePathMap_FUN_004f1c90(CLocation *loca
   } while (iVar2 < 0xc);
   iVar1 = 0;
   do {
-    if (*(int *)((int)&DAT_005be0b8 + iVar1) < (&DAT_005be0b8)[iVar5]) {
-      *(int *)((int)&DAT_005be0b8 + iVar1) = *(int *)((int)&DAT_005be0b8 + iVar1) + 1;
+    if (*(int *)((int)g_INT_ARRAY_005be0b8 + iVar1) < g_INT_ARRAY_005be0b8[iVar5]) {
+      *(int *)((int)g_INT_ARRAY_005be0b8 + iVar1) = *(int *)((int)g_INT_ARRAY_005be0b8 + iVar1) + 1;
     }
     iVar1 = iVar1 + 4;
   } while (iVar1 != 0x30);
-  (&DAT_005be0b8)[iVar5] = 0;
+  g_INT_ARRAY_005be0b8[iVar5] = 0;
   local_28.x = (location->position).x;
   local_28.y = (location->position).y;
   local_28.z = (location->position).z;

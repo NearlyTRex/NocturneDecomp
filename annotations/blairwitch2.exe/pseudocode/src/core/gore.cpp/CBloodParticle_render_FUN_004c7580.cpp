@@ -156,7 +156,7 @@ LAB_004c787c:
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
             (g_CDemonRenderer_PTR_0060b280,0xffff - g_INT_01c38aec);
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01cb8288);
+            (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
   engine_drender_cpp_pop_FUN_0046b4a0();
   fStack_114 = 1.0;
   puVar5 = (uint *)((int)this_ptr + (uint)bVar7 * -8 + 4);
@@ -260,7 +260,7 @@ LAB_004c787c:
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0
               (g_CDemonRenderer_PTR_0060b280,0xffff - g_INT_01c38aec);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50
-              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLHeaderPrimitive_01cb8288);
+              (g_CDemonRenderer_PTR_0060b280,&g_SMRGLPrimitiveQuadIndex_01cb8288.base);
     engine_drender_cpp_pop_FUN_0046b4a0();
     iStack_18 = iStack_18 + 1;
   } while (iStack_18 < 3);

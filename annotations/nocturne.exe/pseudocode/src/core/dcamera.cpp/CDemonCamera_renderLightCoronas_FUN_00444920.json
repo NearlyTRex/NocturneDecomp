@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 436,
+    "complexity_score": 419,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 136,
-    "suspect_count": 25,
+    "pseudocode_lines": 139,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -17,11 +17,9 @@
       "sign_compare_idiom",
       "stack_alignment_array",
       "stack_ref",
-      "undefined_data",
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
-    "total_lines": 407
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -81,62 +79,62 @@
     },
     {
       "addr": "00b0e5fc",
-      "name": "DAT_00b0e5fc",
-      "type": "undefined4",
+      "name": "g_INT_00b0e5fc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "00b0e600",
-      "name": "DAT_00b0e600",
-      "type": "undefined4",
+      "name": "g_INT_00b0e600",
+      "type": "int",
       "value": null
     },
     {
       "addr": "012b022c",
-      "name": "DAT_012b022c",
-      "type": "undefined4",
+      "name": "g_INT_012b022c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "012b0634",
-      "name": "DAT_012b0634",
-      "type": "undefined4",
+      "name": "g_CDemonLight_PTR_012b0634",
+      "type": "CDemonLight*",
       "value": null
     },
     {
       "addr": "012b0638",
-      "name": "DAT_012b0638",
-      "type": "undefined4",
+      "name": "g_CMatrix3x3i_012b0638",
+      "type": "CMatrix3x3i",
       "value": null
     },
     {
       "addr": "012b063c",
-      "name": "DAT_012b063c",
+      "name": "g_CMatrix3x3i_012b0638.m[0].y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012b0640",
-      "name": "DAT_012b0640",
+      "name": "g_CMatrix3x3i_012b0638.m[0].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012b064c",
-      "name": "DAT_012b064c",
+      "name": "g_CMatrix3x3i_012b0638.m[1].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012b0658",
-      "name": "DAT_012b0658",
+      "name": "g_CMatrix3x3i_012b0638.m[2].z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "012b0660",
-      "name": "DAT_012b0660",
-      "type": "undefined4",
+      "name": "g_BIT_INTEGER32_012b0660",
+      "type": "_BIT_INTEGER32",
       "value": null
     },
     {
@@ -402,48 +400,64 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 19,
+      "line": 17,
       "match": "aiStackY_1050",
       "severity": "moderate",
       "text": "int aiStackY_1050 [1016];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 40,
-      "match": "DAT_012b0638",
-      "severity": "mild",
-      "text": "pfVar8 = (float *)&DAT_012b0638;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(uint *)((int)g_INT_ARRAY_012b0234",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_INT_ARRAY_012b0234 + iVar4) = uVar3 & 0xff;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 86,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "local_28 = g_ZBufferScanlineArray[local_38 << (DAT_012b0660 & 0x1f)] +",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(int *)((int)g_INT_ARRAY_0146b290",
+      "severity": "moderate",
+      "text": "*(int *)((int)g_INT_ARRAY_0146b290 + iVar4) = this_ptr->display_width;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 87,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "(local_20 << (DAT_012b0660 & 0x1f));",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)g_INT_ARRAY_0146b650",
+      "severity": "moderate",
+      "text": "*(uint *)((int)g_INT_ARRAY_0146b650 + iVar4) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 78,
+      "match": "(int *)((int)g_INT_ARRAY_0146b290",
+      "severity": "moderate",
+      "text": "if (this_ptr->display_width != *(int *)((int)g_INT_ARRAY_0146b290 + local_34)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(int *)((int)g_INT_ARRAY_0146b290",
+      "severity": "moderate",
+      "text": "local_20 = *(int *)((int)g_INT_ARRAY_0146b290 + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(int *)((int)g_INT_ARRAY_0146b650",
+      "severity": "moderate",
+      "text": "local_30 = *(int *)((int)g_INT_ARRAY_0146b650 + local_34);",
+      "type": "pointer_cast"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 90,
+      "line": 88,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
@@ -451,15 +465,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 96,
+      "line": 95,
       "match": "&stack0xffffff98",
       "severity": "moderate",
-      "text": "(&_DAT_012b0634->base,local_24,(CVector3i *)&stack0xffffff98);",
+      "text": "(&g_CDemonLight_PTR_012b0634->base,local_24,(CVector3i *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 98,
+      "line": 97,
       "match": "&stack0xffffffa8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
@@ -467,7 +481,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 99,
+      "line": 98,
       "match": "&stack0xffffff9c",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff9c + (uint)bVar9 * -8);",
@@ -475,7 +489,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 99,
       "match": "&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -483,31 +497,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 100,
       "match": "&stack0xffffffa0",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffffa0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 117,
-      "match": "DAT_00b0e600",
-      "severity": "mild",
-      "text": "(DAT_00b0e600 & 0x1f));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 124,
-      "match": "DAT_012b0660",
-      "severity": "mild",
-      "text": "local_28 = local_28 + (1 << (DAT_012b0660 & 0x1f));",
-      "type": "undefined_data"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 127,
+      "line": 129,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "bVar10 = SBORROW4(local_20,local_30);",
@@ -515,7 +513,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffffa8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 98,
+      "line": 97,
       "match": "(int)&stack0xffffffa8",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
@@ -523,15 +521,31 @@
     },
     {
       "description": "Pointer value `&stack0xffffffac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(int)&stack0xffffffac",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `g_CDemonLight_PTR_012b0634` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 108,
+      "match": "(uint)g_CDemonLight_PTR_012b0634",
+      "severity": "moderate",
+      "text": "(uint)g_CDemonLight_PTR_012b0634->",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `g_CDemonLight_PTR_012b0634` truncated by cast to `byte` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 116,
+      "match": "(byte)g_CDemonLight_PTR_012b0634",
+      "severity": "moderate",
+      "text": "((byte)g_CDemonLight_PTR_012b0634->",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex address 0x4449a9 assigned to bare local `iStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 62,
+      "line": 60,
       "match": "0x4449a9",
       "severity": "moderate",
       "text": "iStack_68 = 0x4449a9;",
@@ -539,39 +553,15 @@
     },
     {
       "description": "Raw hex address 0x4449d6 assigned to bare local `iStack_68`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_68` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 67,
+      "line": 65,
       "match": "0x4449d6",
       "severity": "moderate",
       "text": "iStack_68 = 0x4449d6;",
       "type": "raw_address_constant"
     },
     {
-      "description": "Raw hex address 0x146ba10 assigned to bare local `iStack_44`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_44` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 76,
-      "match": "0x146ba10",
-      "severity": "moderate",
-      "text": "iStack_44 = 0x146ba10;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0xa9d078 assigned to bare local `iStack_48`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_48` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 77,
-      "match": "0xa9d078",
-      "severity": "moderate",
-      "text": "iStack_48 = 0xa9d078;",
-      "type": "raw_address_constant"
-    },
-    {
-      "description": "Raw hex address 0x8d9278 assigned to bare local `local_3c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_3c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 78,
-      "match": "0x8d9278",
-      "severity": "moderate",
-      "text": "local_3c = 0x8d9278;",
-      "type": "raw_address_constant"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 98,
+      "line": 97,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffa8 + (uint)bVar9 * -8) =",
@@ -579,7 +569,7 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8 + (uint)bVar9 * -8) =",
@@ -587,7 +577,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar7` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar7->vertices[0].a`). Replace `pCVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 43,
+      "line": 41,
       "match": "pCVar7 = (T *)&pCVar7->FIELD[N].SUBFIELD",
       "severity": "moderate",
       "text": "pCVar7 = (CMatrix3x3f *)&pCVar7->m[0].y;",
@@ -598,7 +588,7 @@
       "line": 16,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00444948: MOVSD.REP ES:EDI,ESI  ; DAT_012b0638 | DAT_012b063c",
+      "text": "// 00444948: MOVSD.REP ES:EDI,ESI  ; g_CMatrix3x3i_012b0638 | g_CMatrix3x3i_012b0638.m[0].y",
       "type": "unrolled_memcpy"
     }
   ]

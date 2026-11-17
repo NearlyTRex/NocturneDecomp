@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_00486fe0(CExplosion *this_ptr)
                     ((double)((1.0 - this_ptr->lifetime) * (float)27));
   local_20 = (int)ROUND(dVar4);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)(&DAT_005b858c + local_20 * 0x30));
+            (g_CDemonRenderer_PTR_005ae704,g_SMRGLTextureBasic_ARRAY_005b858c + local_20 * 2);
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
             (g_CDemonRenderer_PTR_005ae704,&this_ptr->position);
   engine_drender_cpp_CDemonRenderer_getCameraRotationRadians_FUN_00460db0

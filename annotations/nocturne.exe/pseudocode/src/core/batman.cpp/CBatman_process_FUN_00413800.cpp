@@ -248,7 +248,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                           (&local_104,&g_ZeroVector.f,
                            (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                           DAT_00764610);
+                           g_INT_00764610);
       pCVar11 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                           ((CDemonActor *)this_ptr,&local_f8,pCVar11);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0
@@ -269,7 +269,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00413800(CBatman *this_ptr,floa
       (*(((this_ptr->base).base.base.vtable._ue)->_ue).updateVictim)(&this_ptr->base,delta_time);
       if (((this_ptr->base).victim != (CCharacter *)0x0) ||
          (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                            (0x01C03A10,this_ptr->fall_event), iVar7 != 0)) {
+                            (g_CEventList_PTR_005b7650,this_ptr->fall_event), iVar7 != 0)) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_004e16b0
                   (&(this_ptr->base).base.model.base,0xb,1);
         iVar7 = sound_sndmain_cpp_isSfxPlaying_FUN_00526c50(this_ptr->sfx_handles[1]);

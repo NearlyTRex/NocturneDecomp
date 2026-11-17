@@ -62,7 +62,7 @@ void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005557d0(CWeathe
       local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_0050fb00
                            (g_CDemonSetPtr,&local_50,&local_44);
       fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
-      *(float *)(iVar3 + 0x2de0388) = fVar1;
+      *(float *)((int)g_FLOAT_ARRAY_02de0388 + iVar3) = fVar1;
       local_24 = (double)fVar1;
       local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(0.0,1.0);
       local_38.y = local_14 * (float)100 + (float)local_24;

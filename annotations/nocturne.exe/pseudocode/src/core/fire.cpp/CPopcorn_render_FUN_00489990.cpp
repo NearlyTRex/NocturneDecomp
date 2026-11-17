@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
 
 {
@@ -89,26 +87,26 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_00489990(CPopcorn *this_ptr)
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_54);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005b8ba4);
+            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005b8ba4);
   core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00447670
-            (_DAT_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
-  _DAT_005c5030 = 0xf80000;
-  _DAT_005c505c = 0xf80000;
-  _DAT_005c5060 = 0xf80000;
-  _DAT_005c508c = 0xf80000;
-  DAT_005c502c = 0x80000;
-  _DAT_005c5090 = 0x80000;
-  DAT_005c5040 = 0xffff - _DAT_01c038f4;
-  _DAT_005c50bc = 0x80000;
-  _DAT_005c50c0 = 0x80000;
+            (g_CDemonCamera_PTR_007f7370,(CVector3f *)this_ptr,(SProjectedVertex *)0x0);
+  g_SRenderVertex_ARRAY_005c5014[0].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[0].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].a = 0xffff - g_INT_01c038f4;
+  g_SRenderVertex_ARRAY_005c5014[3].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[3].v = 0x80000;
   local_24.x = (int)ROUND((this_ptr->base).position.x * 256.0f);
   local_24.y = (int)ROUND((this_ptr->base).position.y * 256.0f);
   local_24.z = (int)ROUND((this_ptr->base).position.z * 256.0f);
-  DAT_005c5070 = DAT_005c5040;
-  _DAT_005c50a0 = DAT_005c5040;
-  _DAT_005c50d0 = DAT_005c5040;
+  g_SRenderVertex_ARRAY_005c5014[1].a = g_SRenderVertex_ARRAY_005c5014[0].a;
+  g_SRenderVertex_ARRAY_005c5014[2].a = g_SRenderVertex_ARRAY_005c5014[0].a;
+  g_SRenderVertex_ARRAY_005c5014[3].a = g_SRenderVertex_ARRAY_005c5014[0].a;
   core_set_cpp_CDemonSet_computeLighting_FUN_0050bb50
-            (g_CDemonSetPtr,&local_24,(CVector3i *)&DAT_01c08d14,0,4);
+            (g_CDemonSetPtr,&local_24,&g_CVector3i_01c08d14,0,4);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00461000(g_CDemonRenderer_PTR_005ae704,1);
   local_a0.surface_normal.D.i = 0;
   local_a0.surface_normal.C.i = 0;

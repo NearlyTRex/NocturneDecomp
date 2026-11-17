@@ -11,7 +11,7 @@
 ;   TerminatedCString s_removeChatOut_invalid_in_0058ba36
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01d06610
+;   int g_INT_01d06610
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -28,10 +28,10 @@ section .text
     TEST EBX,EBX                        ; 004e9646
     JL 0x004e96ab                       ; 004e9648
         ;   XREF to: 004e96ab (CONDITIONAL_JUMP)  ; LAB_004e96ab
-    CMP EBX,dword ptr [0x01d06610]      ; 004e964a | DAT_01d06610
+    CMP EBX,dword ptr [0x01d06610]      ; 004e964a | g_INT_01d06610
     JGE 0x004e96ab                      ; 004e9650
         ;   XREF to: 004e96ab (CONDITIONAL_JUMP)  ; LAB_004e96ab
-    MOV EDI,dword ptr [0x01d06610]      ; 004e9652 | DAT_01d06610
+    MOV EDI,dword ptr [0x01d06610]      ; 004e9652 | g_INT_01d06610
         ;   Label: LAB_004e9652
     DEC EDI                             ; 004e9658
     MOV EDX,EDI                         ; 004e9659
@@ -60,7 +60,7 @@ section .text
     SHL EAX,0x2                         ; 004e9691
     ADD EAX,0x1d06614                   ; 004e9694
     PUSH EAX                            ; 004e9699
-    MOV dword ptr [0x01d06610],EDI      ; 004e969a | DAT_01d06610
+    MOV dword ptr [0x01d06610],EDI      ; 004e969a | g_INT_01d06610
     CALL crt_string.c_memmove_FUN_00566170 ; 004e96a0
         ;   XREF to: 00566170 (UNCONDITIONAL_CALL)  ; void * crt_string.c_memmove_FUN_00566170(void * dest, void * src, SIZE_T n)
     ADD ESP,0xc                         ; 004e96a5

@@ -48,7 +48,7 @@ void __cdecl core_demnfolk_cpp_CDemnfolk_playHurtSound_FUN_0045cec0(CDemnfolk *t
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  pcVar5 = &DAT_005d82f9;
+  pcVar5 = "_hurt?.wav @ 2";
   iVar3 = -1;
   pcVar4 = &DAT_0152c320;
   do {

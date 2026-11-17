@@ -13,11 +13,11 @@ bool unregisterConsoleHandler(void)
 {
   BOOL BVar1;
   
-  if (DAT_005c2140 != '\0') {
+  if (g_BYTE_005c2140 != 0) {
     BVar1 = SetConsoleCtrlHandler(consoleCtrlHandler,0);
     if (BVar1 != 0) {
-      DAT_005c2140 = '\0';
+      g_BYTE_005c2140 = 0;
     }
   }
-  return DAT_005c2140 == '\0';
+  return g_BYTE_005c2140 == 0;
 }

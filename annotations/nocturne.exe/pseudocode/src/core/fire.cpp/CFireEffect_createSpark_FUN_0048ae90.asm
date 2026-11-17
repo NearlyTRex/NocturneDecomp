@@ -26,7 +26,7 @@
 ;   ... and 10 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c49d50
+;   int g_INT_01c49d50
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040de00
@@ -39,7 +39,7 @@ section .text
         ;   Label: core_fire.cpp_CFireEffect_createSpark_FUN_0048ae90
     PUSH EDI                            ; 0048ae91
     PUSH EBP                            ; 0048ae92
-    MOV EDX,dword ptr [0x01c49d50]      ; 0048ae93 | DAT_01c49d50
+    MOV EDX,dword ptr [0x01c49d50]      ; 0048ae93 | g_INT_01c49d50
     LEA EAX,[EDX*0x4 + 0x0]             ; 0048ae99
     ADD EAX,EDX                         ; 0048aea0
     SHL EAX,0x2                         ; 0048aea2
@@ -47,14 +47,14 @@ section .text
     SUB EAX,EDX                         ; 0048aeaa
     INC EDX                             ; 0048aeac
     SHL EAX,0x2                         ; 0048aead
-    MOV dword ptr [0x01c49d50],EDX      ; 0048aeb0 | DAT_01c49d50
+    MOV dword ptr [0x01c49d50],EDX      ; 0048aeb0 | g_INT_01c49d50
     ADD EBX,EAX                         ; 0048aeb6
     CMP EDX,0x100                       ; 0048aeb8
     JL 0x0048aeca                       ; 0048aebe
         ;   XREF to: 0048aeca (CONDITIONAL_JUMP)  ; LAB_0048aeca
     PUSH ESI                            ; 0048aec0
     XOR ESI,ESI                         ; 0048aec1
-    MOV dword ptr [0x01c49d50],ESI      ; 0048aec3 | DAT_01c49d50
+    MOV dword ptr [0x01c49d50],ESI      ; 0048aec3 | g_INT_01c49d50
     POP ESI                             ; 0048aec9
     MOV EDI,dword ptr [ESP + 0x18]      ; 0048aeca
         ;   Label: LAB_0048aeca

@@ -225,7 +225,7 @@ section .text
     CMP dword ptr [EBX + 0x2408],0x0    ; 004d5071
     JZ 0x004d5049                       ; 004d5078
         ;   XREF to: 004d5049 (CONDITIONAL_JUMP)  ; LAB_004d5049
-    MOV EDX,dword ptr [0x01cc90b0]      ; 004d507a | DAT_01cc90b0
+    MOV EDX,dword ptr [0x01cc90b0]      ; 004d507a | g_INT_ARRAY_01cc9094[7]
     PUSH EDX                            ; 004d5080
     LEA EAX,[EBP + -0x3a]               ; 004d5081
     PUSH EAX                            ; 004d5084
@@ -337,7 +337,7 @@ section .text
     SAHF                                ; 004d51b6
     JNC 0x004d5024                      ; 004d51b7
         ;   XREF to: 004d5024 (CONDITIONAL_JUMP)  ; LAB_004d5024
-    MOV ECX,dword ptr [0x01cc9094]      ; 004d51bd | DAT_01cc9094
+    MOV ECX,dword ptr [0x01cc9094]      ; 004d51bd | g_INT_ARRAY_01cc9094
     PUSH ECX                            ; 004d51c3
     MOV ESI,dword ptr [EBP + 0x72]      ; 004d51c4
     PUSH ESI                            ; 004d51c7
@@ -583,7 +583,7 @@ section .text
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004d546f
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
     ADD ESP,0x8                         ; 004d5474
-    MOV ESI,dword ptr [0x01cc90b4]      ; 004d5477 | DAT_01cc90b4
+    MOV ESI,dword ptr [0x01cc90b4]      ; 004d5477 | g_INT_ARRAY_01cc9094[8]
     MOV dword ptr [EBP + 0x76],EAX      ; 004d547d
     PUSH ESI                            ; 004d5480
     LEA EAX,[EBP + -0x22]               ; 004d5481
@@ -697,7 +697,7 @@ section .text
         ;   Label: LAB_004d55b9
     JZ 0x004d5049                       ; 004d55c0
         ;   XREF to: 004d5049 (CONDITIONAL_JUMP)  ; LAB_004d5049
-    MOV EDI,dword ptr [0x01cc90b4]      ; 004d55c6 | DAT_01cc90b4
+    MOV EDI,dword ptr [0x01cc90b4]      ; 004d55c6 | g_INT_ARRAY_01cc9094[8]
     PUSH EDI                            ; 004d55cc
     LEA EAX,[EBP + -0x76]               ; 004d55cd
     PUSH EAX                            ; 004d55d0

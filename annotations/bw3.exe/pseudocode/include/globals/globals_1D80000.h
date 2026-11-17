@@ -8,7 +8,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 #include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
@@ -33,8 +33,8 @@ extern CVector3f g_CVector3f_ARRAY_01d80ed8[32];
 // CVector3i[2000]
 extern CVector3i g_CVector3i_ARRAY_01d88648[2000];
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d81058;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d81058;
 
 // SSoftwareEdge
 extern SSoftwareEdge g_SSoftwareEdge_01d80848;
@@ -46,8 +46,8 @@ extern char g_CHAR_01d88308;
 // float
 extern float g_FLOAT_01d88644;
 
-// float[64]
-extern float g_FLOAT_ARRAY_01d8e410[64];
+// float[64][32]
+extern float g_FLOAT_ARRAY_ARRAY_01d8e410[64][32];
 
 // int
 extern int g_INT_01d80844;

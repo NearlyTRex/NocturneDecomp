@@ -69,7 +69,7 @@ section .text
     PUSH EAX                            ; 004165b7
     CALL core_actor.cpp_archiveInteger_FUN_0040c900 ; 004165b8
         ;   XREF to: 0040c900 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveInteger_FUN_0040c900(int * int_ptr, char * property_name)
-    MOV EDX,dword ptr [0x00763e88]      ; 004165bd | DAT_00763e88
+    MOV EDX,dword ptr [0x00763e88]      ; 004165bd | g_INT_00763e88
     ADD ESP,0x8                         ; 004165c3
     CMP EDX,0x1                         ; 004165c6
     JZ 0x00416788                       ; 004165c9
@@ -89,7 +89,7 @@ section .text
     MOV ECX,dword ptr [EDI + ESI*0x1]   ; 004165ed
     PUSH ECX                            ; 004165f0
     PUSH 0x578fd4                       ; 004165f1 | = "\t%d,%d,%d\n"
-    MOV ESI,dword ptr [0x00763e84]      ; 004165f6 | DAT_00763e84
+    MOV ESI,dword ptr [0x00763e84]      ; 004165f6 | g_FILE_PTR_00763e84
     PUSH ESI                            ; 004165fc
     ADD EDI,0xc                         ; 004165fd
     INC EBP                             ; 00416600
@@ -137,7 +137,7 @@ section .text
     MOV ESI,dword ptr [EDI + EAX*0x1]   ; 00416666
     PUSH ESI                            ; 00416669
     PUSH 0x578fdf                       ; 0041666a | = "\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n"
-    MOV EAX,[0x00763e84]                ; 0041666f | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 0041666f | g_FILE_PTR_00763e84
     PUSH EAX                            ; 00416674
     CALL crt_stdio.c_fprintf_FUN_005644f0 ; 00416675
         ;   XREF to: 005644f0 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fprintf_FUN_005644f0(_FILE * file, char * format)
@@ -163,7 +163,7 @@ section .text
     PUSH ESI                            ; 004166b2
         ;   Label: LAB_004166b2
     PUSH 0x579002                       ; 004166b3 | = "\t\"%s\"\n"
-    MOV EDX,dword ptr [0x00763e84]      ; 004166b8 | DAT_00763e84
+    MOV EDX,dword ptr [0x00763e84]      ; 004166b8 | g_FILE_PTR_00763e84
     PUSH EDX                            ; 004166be
     INC EDI                             ; 004166bf
     ADD ESI,0x18                        ; 004166c0
@@ -259,7 +259,7 @@ section .text
     PUSH EAX                            ; 004167bc
     PUSH ESI                            ; 004167bd
     PUSH 0x578f9c                       ; 004167be | = "%d,%d,%d\n"
-    MOV ESI,dword ptr [0x00763e84]      ; 004167c3 | DAT_00763e84
+    MOV ESI,dword ptr [0x00763e84]      ; 004167c3 | g_FILE_PTR_00763e84
     PUSH ESI                            ; 004167c9
     INC EDI                             ; 004167ca
     ADD EBP,0xc                         ; 004167cb
@@ -304,7 +304,7 @@ section .text
     ADD EAX,EDI                         ; 0041682a
     PUSH EAX                            ; 0041682c
     PUSH 0x578fa6                       ; 0041682d | = "\t\t%d, %d,%d,%d, %d,%d,%d, %d,%d,%d\n"
-    MOV EAX,[0x00763e84]                ; 00416832 | DAT_00763e84
+    MOV EAX,[0x00763e84]                ; 00416832 | g_FILE_PTR_00763e84
     PUSH EAX                            ; 00416837
     ADD EBP,0x3c                        ; 00416838
     CALL crt_stdio.c_fscanf_FUN_00563350 ; 0041683b
@@ -329,7 +329,7 @@ section .text
     PUSH ESI                            ; 00416872
         ;   Label: LAB_00416872
     PUSH 0x578fca                       ; 00416873 | = " \"%[^\"]\"\n"
-    MOV EBP,dword ptr [0x00763e84]      ; 00416878 | DAT_00763e84
+    MOV EBP,dword ptr [0x00763e84]      ; 00416878 | g_FILE_PTR_00763e84
     PUSH EBP                            ; 0041687e
     INC EDI                             ; 0041687f
     ADD ESI,0x18                        ; 00416880

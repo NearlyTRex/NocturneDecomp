@@ -11,20 +11,20 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_005c505c
-;   undefined4 DAT_005c5060
-;   undefined4 DAT_005c508c
-;   undefined4 DAT_005c5090
-;   undefined4 DAT_005c50bc
-;   undefined4 DAT_005c50c0
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_01c78c84
-;   undefined4 DAT_01c78c98
-;   undefined4 DAT_01c78c9c
-;   undefined4 DAT_01c78ca0
-;   undefined4 DAT_01c78ca4
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[1].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[2].v
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[3].v
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010
@@ -46,21 +46,21 @@ section .text
     MOV EAX,0xf80000                    ; 004aeafd
     PUSH 0xffff                         ; 004aeb02
     XOR ECX,ECX                         ; 004aeb07
-    MOV dword ptr [0x01c78c84],EDX      ; 004aeb09 | DAT_01c78c84
-    MOV dword ptr [0x01c78c98],ECX      ; 004aeb0f | DAT_01c78c98
-    MOV dword ptr [0x01c78c9c],EBX      ; 004aeb15 | DAT_01c78c9c
-    MOV dword ptr [0x01c78ca0],ESI      ; 004aeb1b | DAT_01c78ca0
-    MOV dword ptr [0x01c78ca4],EDI      ; 004aeb21 | DAT_01c78ca4
-    MOV dword ptr [0x005c502c],EBP      ; 004aeb27 | DAT_005c502c
-    MOV [0x005c5030],EAX                ; 004aeb2d | DAT_005c5030
-    MOV [0x005c505c],EAX                ; 004aeb32 | DAT_005c505c
-    MOV [0x005c5060],EAX                ; 004aeb37 | DAT_005c5060
-    MOV [0x005c508c],EAX                ; 004aeb3c | DAT_005c508c
+    MOV dword ptr [0x01c78c84],EDX      ; 004aeb09 | g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count
+    MOV dword ptr [0x01c78c98],ECX      ; 004aeb0f | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0]
+    MOV dword ptr [0x01c78c9c],EBX      ; 004aeb15 | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1]
+    MOV dword ptr [0x01c78ca0],ESI      ; 004aeb1b | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2]
+    MOV dword ptr [0x01c78ca4],EDI      ; 004aeb21 | g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3]
+    MOV dword ptr [0x005c502c],EBP      ; 004aeb27 | g_SRenderVertex_ARRAY_005c5014[0].u
+    MOV [0x005c5030],EAX                ; 004aeb2d | g_SRenderVertex_ARRAY_005c5014[0].v
+    MOV [0x005c505c],EAX                ; 004aeb32 | g_SRenderVertex_ARRAY_005c5014[1].u
+    MOV [0x005c5060],EAX                ; 004aeb37 | g_SRenderVertex_ARRAY_005c5014[1].v
+    MOV [0x005c508c],EAX                ; 004aeb3c | g_SRenderVertex_ARRAY_005c5014[2].u
     MOV EAX,[0x005ae704]                ; 004aeb41 | g_CDemonRenderer_PTR_005ae704
-    MOV dword ptr [0x005c5090],EBP      ; 004aeb46 | DAT_005c5090
-    PUSH EAX                            ; 004aeb4c | DAT_01b4d738
-    MOV dword ptr [0x005c50bc],EBP      ; 004aeb4d | DAT_005c50bc
-    MOV dword ptr [0x005c50c0],EBP      ; 004aeb53 | DAT_005c50c0
+    MOV dword ptr [0x005c5090],EBP      ; 004aeb46 | g_SRenderVertex_ARRAY_005c5014[2].v
+    PUSH EAX                            ; 004aeb4c | g_CDemonRenderer_01b4d738
+    MOV dword ptr [0x005c50bc],EBP      ; 004aeb4d | g_SRenderVertex_ARRAY_005c5014[3].u
+    MOV dword ptr [0x005c50c0],EBP      ; 004aeb53 | g_SRenderVertex_ARRAY_005c5014[3].v
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 004aeb59
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 004aeb5e

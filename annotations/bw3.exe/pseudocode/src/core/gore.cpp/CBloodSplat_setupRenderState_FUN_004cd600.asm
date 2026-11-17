@@ -20,11 +20,11 @@
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].u
 ;   undefined4 g_SRenderVertex_ARRAY_0060b014[3].v
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
-;   undefined4 g_SMRGLHeaderPrimitive_01d22e48.base.count
-;   int g_INT_01d22e60
-;   int g_INT_01d22e64
-;   int g_INT_01d22e68
-;   int g_INT_01d22e6c
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.base.base.count
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[0]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[1]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[2]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3]
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0
@@ -46,11 +46,11 @@ section .text
     MOV EAX,0xf80000                    ; 004cd61d
     PUSH 0xffff                         ; 004cd622
     XOR ECX,ECX                         ; 004cd627
-    MOV dword ptr [0x01d22e4c],EDX      ; 004cd629 | g_SMRGLHeaderPrimitive_01d22e48.base.count
-    MOV dword ptr [0x01d22e60],ECX      ; 004cd62f | g_INT_01d22e60
-    MOV dword ptr [0x01d22e64],EBX      ; 004cd635 | g_INT_01d22e64
-    MOV dword ptr [0x01d22e68],ESI      ; 004cd63b | g_INT_01d22e68
-    MOV dword ptr [0x01d22e6c],EDI      ; 004cd641 | g_INT_01d22e6c
+    MOV dword ptr [0x01d22e4c],EDX      ; 004cd629 | g_SMRGLPrimitiveQuadIndex_01d22e48.base.base.count
+    MOV dword ptr [0x01d22e60],ECX      ; 004cd62f | g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[0]
+    MOV dword ptr [0x01d22e64],EBX      ; 004cd635 | g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[1]
+    MOV dword ptr [0x01d22e68],ESI      ; 004cd63b | g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[2]
+    MOV dword ptr [0x01d22e6c],EDI      ; 004cd641 | g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3]
     MOV dword ptr [0x0060b02c],EBP      ; 004cd647 | g_SRenderVertex_ARRAY_0060b014[0].u
     MOV [0x0060b030],EAX                ; 004cd64d | g_SRenderVertex_ARRAY_0060b014[0].v
     MOV [0x0060b05c],EAX                ; 004cd652 | g_SRenderVertex_ARRAY_0060b014[1].u

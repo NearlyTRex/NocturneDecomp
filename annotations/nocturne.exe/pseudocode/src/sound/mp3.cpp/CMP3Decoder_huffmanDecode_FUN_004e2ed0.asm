@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Illegal_Huffman_code_in_0058b655
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01cd944c
+;   undefined4 g_SHuffmanTable_ARRAY_01cd8c28[0].table_size
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -203,7 +203,7 @@ section .text
     TEST EDI,EDI                        ; 004e304f
     JNZ 0x004e2f07                      ; 004e3051
         ;   XREF to: 004e2f07 (CONDITIONAL_JUMP)  ; LAB_004e2f07
-    CMP EBX,dword ptr [0x01cd944c]      ; 004e3057 | DAT_01cd944c
+    CMP EBX,dword ptr [0x01cd944c]      ; 004e3057 | g_SHuffmanTable_ARRAY_01cd8c28[0].table_size
     JC 0x004e2f07                       ; 004e305d
         ;   XREF to: 004e2f07 (CONDITIONAL_JUMP)  ; LAB_004e2f07
     CMP dword ptr [ESP],0x0             ; 004e3063

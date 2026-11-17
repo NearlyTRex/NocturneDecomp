@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_script_cpp_CScript_saveState_FUN_005055f0(CScript *this_ptr,_FILE *file_handle)
 
 {
@@ -22,7 +20,7 @@ void __cdecl core_script_cpp_CScript_saveState_FUN_005055f0(CScript *this_ptr,_F
   _fprintf(file_handle,"// gGame->allowEnemyAttackFlag\n");
   _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// letterBoxBlackT\n");
-  _fprintf(file_handle,"%g\n",(double)_DAT_01e56c20);
+  _fprintf(file_handle,"%g\n",(double)g_FLOAT_01e56c20);
   _fprintf(file_handle,"// nextCmd\n");
   _fprintf(file_handle,"%d\n");
   _fprintf(file_handle,"// currentMessage\n");

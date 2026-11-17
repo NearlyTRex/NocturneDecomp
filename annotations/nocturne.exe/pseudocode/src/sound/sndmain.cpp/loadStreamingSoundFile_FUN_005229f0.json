@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 188,
+    "complexity_score": 173,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 13,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 123,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
     "total_lines": 388
   },
@@ -169,8 +168,8 @@
     },
     {
       "addr": "02dc1ed8",
-      "name": "DAT_02dc1ed8",
-      "type": "undefined4",
+      "name": "g_INT_02dc1ed8",
+      "type": "int",
       "value": null
     },
     {
@@ -290,16 +289,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -307,7 +298,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 91,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -315,7 +306,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 64,
+      "line": 63,
       "match": "pCVar8 = (T *)((pCVar8->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",
@@ -323,7 +314,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar8` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar8->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 99,
+      "line": 98,
       "match": "pCVar8 = (T *)((pCVar8->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar8 = (CSfxSample *)((pCVar8->sample_info).name + 2);",

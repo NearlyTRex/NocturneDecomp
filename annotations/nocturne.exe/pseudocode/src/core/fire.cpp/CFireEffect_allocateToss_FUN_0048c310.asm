@@ -15,7 +15,7 @@
 ;   core_fire.cpp_CFireEffect_createToss_FUN_0048c2a0 at 0048c2d5
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c5d820
+;   int g_INT_01c5d820
 ;
 ; Called Functions:
 ;   core_fire.cpp_CToss_create_FUN_004873b0
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 0048c311
     PUSH EDI                            ; 0048c312
     PUSH EBP                            ; 0048c313
-    MOV EBX,dword ptr [0x01c5d820]      ; 0048c314 | DAT_01c5d820
+    MOV EBX,dword ptr [0x01c5d820]      ; 0048c314 | g_INT_01c5d820
     IMUL EAX,EBX,0x3e4                  ; 0048c31a
     MOV EDX,dword ptr [ESP + 0x24]      ; 0048c320
     PUSH dword ptr [ESP + 0x28]         ; 0048c324
@@ -44,10 +44,10 @@ section .text
     PUSH EAX                            ; 0048c33d
     CALL core_fire.cpp_CToss_create_FUN_004873b0 ; 0048c33e
         ;   XREF to: 004873b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CToss_create_FUN_004873b0(CToss * this_ptr, int toss_type, CVector3f * position, UOrientationVector * orientation, ...)
-    MOV EBP,dword ptr [0x01c5d820]      ; 0048c343 | DAT_01c5d820
+    MOV EBP,dword ptr [0x01c5d820]      ; 0048c343 | g_INT_01c5d820
     INC EBP                             ; 0048c349
     ADD ESP,0x18                        ; 0048c34a
-    MOV dword ptr [0x01c5d820],EBP      ; 0048c34d | DAT_01c5d820
+    MOV dword ptr [0x01c5d820],EBP      ; 0048c34d | g_INT_01c5d820
     CMP EBP,0x14                        ; 0048c353
     JGE 0x0048c35f                      ; 0048c356
         ;   XREF to: 0048c35f (CONDITIONAL_JUMP)  ; LAB_0048c35f
@@ -59,7 +59,7 @@ section .text
     RET                                 ; 0048c35e
     XOR EDX,EDX                         ; 0048c35f
         ;   Label: LAB_0048c35f
-    MOV dword ptr [0x01c5d820],EDX      ; 0048c361 | DAT_01c5d820
+    MOV dword ptr [0x01c5d820],EDX      ; 0048c361 | g_INT_01c5d820
     MOV EAX,EBX                         ; 0048c367
     POP EBP                             ; 0048c369
     POP EDI                             ; 0048c36a

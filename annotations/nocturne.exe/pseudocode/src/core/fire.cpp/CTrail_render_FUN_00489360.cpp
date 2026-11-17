@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
 
 {
@@ -60,26 +58,26 @@ void __cdecl core_fire_cpp_CTrail_render_FUN_00489360(CTrail *this_ptr)
   local_50.z = (int)ROUND(local_3c * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,&local_50);
-  DAT_005c502c = 0x80000;
-  _DAT_005c5030 = 0xf80000;
-  _DAT_005c505c = 0xf80000;
-  _DAT_005c5060 = 0xf80000;
-  _DAT_005c508c = 0xf80000;
-  _DAT_005c5090 = 0x80000;
-  _DAT_005c50bc = 0x80000;
-  _DAT_005c50c0 = 0x80000;
-  DAT_005c5034 = 0xffff;
-  DAT_005c5038 = 0xffff;
-  DAT_005c503c = 0xffff;
-  DAT_005c5064 = 0xffff;
-  DAT_005c5068 = 0xffff;
-  DAT_005c506c = 0xffff;
-  DAT_005c5094 = 0xffff;
-  DAT_005c5098 = 0xffff;
-  DAT_005c509c = 0xffff;
-  DAT_005c50c4 = 0xffff;
-  DAT_005c50c8 = 0xffff;
-  DAT_005c50cc = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[0].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[1].v = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].u = 0xf80000;
+  g_SRenderVertex_ARRAY_005c5014[2].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[3].u = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[3].v = 0x80000;
+  g_SRenderVertex_ARRAY_005c5014[0].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[0].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[0].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[1].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[2].b = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].r = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].g = 0xffff;
+  g_SRenderVertex_ARRAY_005c5014[3].b = 0xffff;
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_004602a0
             (g_CDemonRenderer_PTR_005ae704,(SMRGLHeaderPrimitive *)&stack0xffffff88);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0(g_CDemonRenderer_PTR_005ae704);

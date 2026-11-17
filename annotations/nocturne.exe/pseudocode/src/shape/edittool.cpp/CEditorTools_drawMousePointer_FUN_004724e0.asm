@@ -24,8 +24,8 @@
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
 ;   int g_MouseCursorType
-;   undefined4 DAT_01bd1d8c
-;   undefined4 DAT_01bd1d90
+;   int g_INT_01bd1d8c
+;   int g_INT_01bd1d90
 ;   int g_ClipLeft
 ;   int g_ClipTop
 ;   int g_ClipRight
@@ -63,8 +63,8 @@ section .text
     TEST EAX,EAX                        ; 0047250b
     JNZ 0x00472c59                      ; 0047250d
         ;   XREF to: 00472c59 (CONDITIONAL_JUMP)  ; LAB_00472c59
-    MOV EDX,dword ptr [0x01bd1d8c]      ; 00472513 | DAT_01bd1d8c
-    MOV EAX,[0x01bd1d90]                ; 00472519 | DAT_01bd1d90
+    MOV EDX,dword ptr [0x01bd1d8c]      ; 00472513 | g_INT_01bd1d8c
+    MOV EAX,[0x01bd1d90]                ; 00472519 | g_INT_01bd1d90
     TEST EDX,EDX                        ; 0047251e
     JL 0x00472532                       ; 00472520
         ;   XREF to: 00472532 (CONDITIONAL_JUMP)  ; LAB_00472532
@@ -95,9 +95,9 @@ section .text
     CMP EDI,EAX                         ; 00472560
     JG 0x00472c7c                       ; 00472562
         ;   XREF to: 00472c7c (CONDITIONAL_JUMP)  ; LAB_00472c7c
-    MOV EAX,[0x01bd1d90]                ; 00472568 | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00472568 | g_INT_01bd1d90
     SUB EAX,EDI                         ; 0047256d
-    MOV ESI,dword ptr [0x01bd1d8c]      ; 0047256f | DAT_01bd1d8c
+    MOV ESI,dword ptr [0x01bd1d8c]      ; 0047256f | g_INT_01bd1d8c
     MOV EDX,EAX                         ; 00472575
     TEST ESI,ESI                        ; 00472577
     JL 0x0047258b                       ; 00472579
@@ -108,10 +108,10 @@ section .text
     CMP ESI,dword ptr [0x005b761c]      ; 0047257f | g_WindowWidth
     JL 0x004726bd                       ; 00472585
         ;   XREF to: 004726bd (CONDITIONAL_JUMP)  ; LAB_004726bd
-    MOV ESI,dword ptr [0x01bd1d90]      ; 0047258b | DAT_01bd1d90
+    MOV ESI,dword ptr [0x01bd1d90]      ; 0047258b | g_INT_01bd1d90
         ;   Label: LAB_0047258b
     ADD ESI,EDI                         ; 00472591
-    MOV EAX,[0x01bd1d8c]                ; 00472593 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472593 | g_INT_01bd1d8c
     MOV EDX,ESI                         ; 00472598
     TEST EAX,EAX                        ; 0047259a
     JL 0x004725ae                       ; 0047259c
@@ -153,10 +153,10 @@ section .text
     ADD ESP,0x8                         ; 004725f8
     JMP 0x00472532                      ; 004725fb
         ;   XREF to: 00472532 (UNCONDITIONAL_JUMP)  ; LAB_00472532
-    MOV ESI,dword ptr [0x01bd1d8c]      ; 00472600 | DAT_01bd1d8c
+    MOV ESI,dword ptr [0x01bd1d8c]      ; 00472600 | g_INT_01bd1d8c
         ;   Label: LAB_00472600
     SUB ESI,EDI                         ; 00472606
-    MOV EAX,[0x01bd1d90]                ; 00472608 | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00472608 | g_INT_01bd1d90
     MOV EDX,ESI                         ; 0047260d
     TEST ESI,ESI                        ; 0047260f
     JL 0x00472623                       ; 00472611
@@ -167,10 +167,10 @@ section .text
     CMP ESI,dword ptr [0x005b761c]      ; 00472617 | g_WindowWidth
     JL 0x0047267e                       ; 0047261d
         ;   XREF to: 0047267e (CONDITIONAL_JUMP)  ; LAB_0047267e
-    MOV EAX,[0x01bd1d8c]                ; 00472623 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472623 | g_INT_01bd1d8c
         ;   Label: LAB_00472623
     ADD EAX,EDI                         ; 00472628
-    MOV ESI,dword ptr [0x01bd1d90]      ; 0047262a | DAT_01bd1d90
+    MOV ESI,dword ptr [0x01bd1d90]      ; 0047262a | g_INT_01bd1d90
     MOV EDX,EAX                         ; 00472630
     TEST EAX,EAX                        ; 00472632
     JL 0x00472678                       ; 00472634
@@ -291,9 +291,9 @@ section .text
     INC EDI                             ; 00472756
     JMP 0x00472552                      ; 00472757
         ;   XREF to: 00472552 (UNCONDITIONAL_JUMP)  ; LAB_00472552
-    MOV EDX,dword ptr [0x01bd1d8c]      ; 0047275c | DAT_01bd1d8c
+    MOV EDX,dword ptr [0x01bd1d8c]      ; 0047275c | g_INT_01bd1d8c
         ;   Label: LAB_0047275c
-    MOV EAX,[0x01bd1d90]                ; 00472762 | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 00472762 | g_INT_01bd1d90
     TEST EDX,EDX                        ; 00472767
     JL 0x0047277b                       ; 00472769
         ;   XREF to: 0047277b (CONDITIONAL_JUMP)  ; LAB_0047277b
@@ -314,8 +314,8 @@ section .text
     CMP ESI,EAX                         ; 0047278e
     JG 0x00472c7c                       ; 00472790
         ;   XREF to: 00472c7c (CONDITIONAL_JUMP)  ; LAB_00472c7c
-    MOV EDI,dword ptr [0x01bd1d8c]      ; 00472796 | DAT_01bd1d8c
-    MOV EAX,[0x01bd1d90]                ; 0047279c | DAT_01bd1d90
+    MOV EDI,dword ptr [0x01bd1d8c]      ; 00472796 | g_INT_01bd1d8c
+    MOV EAX,[0x01bd1d90]                ; 0047279c | g_INT_01bd1d90
     SUB EDI,ESI                         ; 004727a1
     SUB EAX,ESI                         ; 004727a3
     MOV EBP,EDI                         ; 004727a5
@@ -329,9 +329,9 @@ section .text
     CMP EDI,dword ptr [0x005b761c]      ; 004727b1 | g_WindowWidth
     JL 0x00472887                       ; 004727b7
         ;   XREF to: 00472887 (CONDITIONAL_JUMP)  ; LAB_00472887
-    MOV EDI,dword ptr [0x01bd1d8c]      ; 004727bd | DAT_01bd1d8c
+    MOV EDI,dword ptr [0x01bd1d8c]      ; 004727bd | g_INT_01bd1d8c
         ;   Label: LAB_004727bd
-    MOV EAX,[0x01bd1d90]                ; 004727c3 | DAT_01bd1d90
+    MOV EAX,[0x01bd1d90]                ; 004727c3 | g_INT_01bd1d90
     ADD EDI,ESI                         ; 004727c8
     SUB EAX,ESI                         ; 004727ca
     MOV EDX,EDI                         ; 004727cc
@@ -345,9 +345,9 @@ section .text
     CMP EDI,dword ptr [0x005b761c]      ; 004727d8 | g_WindowWidth
     JL 0x004728d6                       ; 004727de
         ;   XREF to: 004728d6 (CONDITIONAL_JUMP)  ; LAB_004728d6
-    MOV EAX,[0x01bd1d8c]                ; 004727e4 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 004727e4 | g_INT_01bd1d8c
         ;   Label: LAB_004727e4
-    MOV EDI,dword ptr [0x01bd1d90]      ; 004727e9 | DAT_01bd1d90
+    MOV EDI,dword ptr [0x01bd1d90]      ; 004727e9 | g_INT_01bd1d90
     SUB EAX,ESI                         ; 004727ef
     ADD EDI,ESI                         ; 004727f1
     MOV EDX,EAX                         ; 004727f3
@@ -361,9 +361,9 @@ section .text
     CMP EAX,dword ptr [0x005b761c]      ; 004727ff | g_WindowWidth
     JL 0x00472925                       ; 00472805
         ;   XREF to: 00472925 (CONDITIONAL_JUMP)  ; LAB_00472925
-    MOV EAX,[0x01bd1d8c]                ; 0047280b | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 0047280b | g_INT_01bd1d8c
         ;   Label: LAB_0047280b
-    MOV EDI,dword ptr [0x01bd1d90]      ; 00472810 | DAT_01bd1d90
+    MOV EDI,dword ptr [0x01bd1d90]      ; 00472810 | g_INT_01bd1d90
     ADD EAX,ESI                         ; 00472816
     ADD EDI,ESI                         ; 00472818
     MOV EDX,EAX                         ; 0047281a
@@ -523,7 +523,7 @@ section .text
     SAR EDX,0x1f                        ; 004729cb
     SUB EAX,EDX                         ; 004729ce
     SAR EAX,0x1                         ; 004729d0
-    MOV EDI,dword ptr [0x01bd1d90]      ; 004729d2 | DAT_01bd1d90
+    MOV EDI,dword ptr [0x01bd1d90]      ; 004729d2 | g_INT_01bd1d90
     MOV ESI,dword ptr [0x005b6d58]      ; 004729d8 | g_CursorSizeVertical
     SUB EDI,EAX                         ; 004729de
     ADD ESI,EDI                         ; 004729e0
@@ -532,7 +532,7 @@ section .text
     CMP EBP,ESI                         ; 004729e6
     JGE 0x00472a0a                      ; 004729e8
         ;   XREF to: 00472a0a (CONDITIONAL_JUMP)  ; LAB_00472a0a
-    MOV EAX,[0x01bd1d8c]                ; 004729ea | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 004729ea | g_INT_01bd1d8c
         ;   Label: LAB_004729ea
     MOV EDX,EBP                         ; 004729ef
     TEST EAX,EAX                        ; 004729f1
@@ -560,7 +560,7 @@ section .text
     CMP EBP,EAX                         ; 00472a1d
     JG 0x00472c7c                       ; 00472a1f
         ;   XREF to: 00472c7c (CONDITIONAL_JUMP)  ; LAB_00472c7c
-    MOV EAX,[0x01bd1d8c]                ; 00472a25 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472a25 | g_INT_01bd1d8c
     SUB EAX,EBP                         ; 00472a2a
     MOV EDX,EDI                         ; 00472a2c
     MOV dword ptr [ESP + 0x8],EAX       ; 00472a2e
@@ -573,7 +573,7 @@ section .text
     CMP EAX,dword ptr [0x005b761c]      ; 00472a3a | g_WindowWidth
     JL 0x00472afd                       ; 00472a40
         ;   XREF to: 00472afd (CONDITIONAL_JUMP)  ; LAB_00472afd
-    MOV EAX,[0x01bd1d8c]                ; 00472a46 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472a46 | g_INT_01bd1d8c
         ;   Label: LAB_00472a46
     ADD EAX,EBP                         ; 00472a4b
     MOV EDX,EDI                         ; 00472a4d
@@ -587,7 +587,7 @@ section .text
     CMP EAX,dword ptr [0x005b761c]      ; 00472a5b | g_WindowWidth
     JL 0x00472b50                       ; 00472a61
         ;   XREF to: 00472b50 (CONDITIONAL_JUMP)  ; LAB_00472b50
-    MOV EAX,[0x01bd1d8c]                ; 00472a67 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472a67 | g_INT_01bd1d8c
         ;   Label: LAB_00472a67
     SUB EAX,EBP                         ; 00472a6c
     MOV EDX,ESI                         ; 00472a6e
@@ -601,7 +601,7 @@ section .text
     CMP EAX,dword ptr [0x005b761c]      ; 00472a7b | g_WindowWidth
     JL 0x00472ba3                       ; 00472a81
         ;   XREF to: 00472ba3 (CONDITIONAL_JUMP)  ; LAB_00472ba3
-    MOV EAX,[0x01bd1d8c]                ; 00472a87 | DAT_01bd1d8c
+    MOV EAX,[0x01bd1d8c]                ; 00472a87 | g_INT_01bd1d8c
         ;   Label: LAB_00472a87
     ADD EAX,EBP                         ; 00472a8c
     MOV dword ptr [ESP + 0xc],ESI       ; 00472a8e

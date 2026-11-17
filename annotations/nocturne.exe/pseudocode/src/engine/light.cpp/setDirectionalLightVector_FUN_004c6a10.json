@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 26,
+    "complexity_score": 10,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 1,
-    "suspect_types": [
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 22
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 21
   },
   "cross_references": [
     {
@@ -44,38 +42,38 @@
   "globals": [
     {
       "addr": "01c039dc",
-      "name": "DAT_01c039dc",
-      "type": "undefined4",
+      "name": "g_INT_01c039dc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e0",
-      "name": "DAT_01c039e0",
-      "type": "undefined4",
+      "name": "g_INT_01c039e0",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c039e4",
-      "name": "DAT_01c039e4",
-      "type": "undefined4",
+      "name": "g_INT_01c039e4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc3664",
-      "name": "DAT_01cc3664",
-      "type": "undefined4",
+      "name": "g_INT_01cc3664",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc3668",
-      "name": "DAT_01cc3668",
-      "type": "undefined4",
+      "name": "g_INT_01cc3668",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cc366c",
-      "name": "DAT_01cc366c",
-      "type": "undefined4",
+      "name": "g_INT_01cc366c",
+      "type": "int",
       "value": null
     }
   ],
@@ -178,14 +176,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    }
-  ]
+  "suspects": []
 }

@@ -30,9 +30,9 @@
 ; Referenced Globals:
 ;   double g_DOUBLE_005ce5be = 256
 ;   double g_DOUBLE_005ce5c6 = 3.32192809489000
-;   undefined4 DAT_00a014e0
-;   undefined4 DAT_00a014e4
-;   undefined4 DAT_00a014e8
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].x
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].y
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].z
 ;   int g_INT_00b6679c
 ;   int g_INT_00b667a0
 ;   int g_INT_013083cc
@@ -223,12 +223,12 @@ section .text
     CMP ESI,dword ptr [EAX]             ; 00440210
     JBE 0x00440318                      ; 00440212
         ;   XREF to: 00440318 (CONDITIONAL_JUMP)  ; LAB_00440318
-    FLD float ptr [EBX + 0x4]           ; 00440218 | DAT_00a014e4
+    FLD float ptr [EBX + 0x4]           ; 00440218 | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].y
     FMUL float ptr [0x013087ec]         ; 0044021b | g_CMatrix3x3i_013087d8.m[1].z
-    FLD float ptr [EBX]                 ; 00440221 | DAT_00a014e0
+    FLD float ptr [EBX]                 ; 00440221 | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].x
     FMUL float ptr [0x013087e0]         ; 00440223 | g_CMatrix3x3i_013087d8.m[0].z
     FADDP                               ; 00440229
-    FLD float ptr [EBX + 0x8]           ; 0044022b | DAT_00a014e8
+    FLD float ptr [EBX + 0x8]           ; 0044022b | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].z
     FMUL float ptr [0x013087f8]         ; 0044022e | g_CMatrix3x3i_013087d8.m[2].z
     FADDP                               ; 00440234
     FLDZ                                ; 00440236

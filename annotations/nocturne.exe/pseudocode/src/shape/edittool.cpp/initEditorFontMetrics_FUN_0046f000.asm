@@ -7,9 +7,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bcd9b8
+;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -21,20 +21,20 @@
 
 section .text
 
-    CMP dword ptr [0x01bcd070],0x0      ; 0046f000 | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 0046f000 | g_CBitFont_PTR_01bcd070
         ;   Label: shape_edittool.cpp_initEditorFontMetrics_FUN_0046f000
     JZ 0x0046f02b                       ; 0046f007
         ;   XREF to: 0046f02b (CONDITIONAL_JUMP)  ; LAB_0046f02b
-    MOV EAX,[0x01bcd070]                ; 0046f009 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 0046f009 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_0046f009
     PUSH 0x6a                           ; 0046f00e
     MOV EDX,dword ptr [EAX + 0x3168]    ; 0046f010
     PUSH EAX                            ; 0046f016
-    MOV dword ptr [0x01bcd9b8],EDX      ; 0046f017 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],EDX      ; 0046f017 | g_INT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 0046f01d
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0046f022
-    MOV [0x01bcd9bc],EAX                ; 0046f025 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 0046f025 | g_INT_01bcd9bc
     RET                                 ; 0046f02a
     PUSH EBX                            ; 0046f02b
         ;   Label: LAB_0046f02b

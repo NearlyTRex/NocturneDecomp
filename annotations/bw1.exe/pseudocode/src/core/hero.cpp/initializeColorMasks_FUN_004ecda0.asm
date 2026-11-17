@@ -5,9 +5,9 @@
 ;
 ;
 ; Referenced Globals:
-;   int g_INT_00623f20 = 0xf800
-;   int g_INT_00623f28 = 0x7e0
-;   int g_INT_00623f30 = 0x1f
+;   _MMX_INTEGER g_MMX_INTEGER_00623f20
+;   _MMX_INTEGER g_MMX_INTEGER_00623f28
+;   _MMX_INTEGER g_MMX_INTEGER_00623f30
 ;   qword g_QWORD_00623f38 = 0xf80000
 ;   qword g_QWORD_00623f58 = 0xfc00
 ;   qword g_QWORD_00623f78 = 0xf8
@@ -78,13 +78,13 @@ section .text
     MOV EBX,0xff                        ; 004ece3d
     SHL EAX,CL                          ; 004ece42
     MOV CL,byte ptr [0x01c4e9e8]        ; 004ece44 | g_BIT_INTEGER32_01c4e9e8
-    MOV [0x00623f20],EAX                ; 004ece4a | g_INT_00623f20
+    MOV [0x00623f20],EAX                ; 004ece4a | g_MMX_INTEGER_00623f20
     SHR EBX,CL                          ; 004ece4f
     MOV ECX,dword ptr [0x01c4e9e0]      ; 004ece51 | g_BIT_INTEGER32_01c4e9e0
     MOV EAX,EBX                         ; 004ece57
     SHL EAX,CL                          ; 004ece59
     MOV CL,byte ptr [0x01c4e9f4]        ; 004ece5b | g_BIT_INTEGER32_01c4e9f4
-    MOV [0x00623f28],EAX                ; 004ece61 | g_INT_00623f28
+    MOV [0x00623f28],EAX                ; 004ece61 | g_MMX_INTEGER_00623f28
     MOV EAX,0xff                        ; 004ece66
     SHR EAX,CL                          ; 004ece6b
     MOV ECX,dword ptr [0x01c4e9ec]      ; 004ece6d | g_BIT_INTEGER32_01c4e9ec
@@ -96,7 +96,7 @@ section .text
     MOV EDX,dword ptr [0x01c4e9e8]      ; 004ece85 | g_BIT_INTEGER32_01c4e9e8
     SHL EBX,CL                          ; 004ece8b
     MOV ECX,dword ptr [0x01c4e9f4]      ; 004ece8d | g_BIT_INTEGER32_01c4e9f4
-    MOV dword ptr [0x00623f30],EDI      ; 004ece93 | g_INT_00623f30
+    MOV dword ptr [0x00623f30],EDI      ; 004ece93 | g_MMX_INTEGER_00623f30
     SHL EAX,CL                          ; 004ece99
     SHL ESI,0x10                        ; 004ece9b
     MOV [0x00623f78],EAX                ; 004ece9e | g_QWORD_00623f78

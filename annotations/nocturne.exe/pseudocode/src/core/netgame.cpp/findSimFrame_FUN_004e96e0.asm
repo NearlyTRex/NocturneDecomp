@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   sequence_number
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01d09c00
-;   undefined4 DAT_01d09c68
+;   int g_INT_01d09c00
+;   undefined4 g_SSimFrame_ARRAY_01d09c04[1].sequence_number
 ;
 ; *****************************************************************************
 
@@ -17,7 +17,7 @@ section .text
     PUSH EBX                            ; 004e96e0
         ;   Label: core_netgame.cpp_findSimFrame_FUN_004e96e0
     MOV EBX,dword ptr [ESP + 0x8]       ; 004e96e1
-    MOV ECX,dword ptr [0x01d09c00]      ; 004e96e5 | DAT_01d09c00
+    MOV ECX,dword ptr [0x01d09c00]      ; 004e96e5 | g_INT_01d09c00
     XOR EDX,EDX                         ; 004e96eb
     TEST ECX,ECX                        ; 004e96ed
     JLE 0x004e9714                      ; 004e96ef
@@ -31,7 +31,7 @@ section .text
     XOR EAX,EAX                         ; 004e96fe
     SHL ECX,0x2                         ; 004e9700
     POP ESI                             ; 004e9703
-    CMP EBX,dword ptr [EAX + 0x1d09c04] ; 004e9704 | DAT_01d09c68
+    CMP EBX,dword ptr [EAX + 0x1d09c04] ; 004e9704 | g_SSimFrame_ARRAY_01d09c04[1].sequence_number
         ;   Label: LAB_004e9704
     JZ 0x004e971d                       ; 004e970a
         ;   XREF to: 004e971d (CONDITIONAL_JUMP)  ; LAB_004e971d

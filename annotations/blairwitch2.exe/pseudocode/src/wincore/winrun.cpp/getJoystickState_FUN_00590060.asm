@@ -18,9 +18,9 @@
 ;   void* PTR_joyGetPos_005c8434 = 001c88b4
 ;   int g_INT_01c38af0
 ;   int g_INT_01c38af4
-;   undefined4 DAT_01c38af8
+;   DWORD g_DWORD_01c38af8
 ;   int g_INT_01c38afc
-;   byte g_BYTE_01c38b00
+;   DWORD g_DWORD_01c38b00
 ;   int g_INT_01c38b04
 ;   int g_INT_01c38b08
 ;   int g_INT_01c38b0c
@@ -71,13 +71,13 @@ section .text
     PUSH 0x0                            ; 005900bf
     CALL dword ptr [0x026656bc]         ; 005900c1 | g_PTR_026656bc
     MOV EAX,dword ptr [ESP + 0x20]      ; 005900c7
-    MOV [0x01c38b00],EAX                ; 005900cb | g_BYTE_01c38b00
+    MOV [0x01c38b00],EAX                ; 005900cb | g_DWORD_01c38b00
     MOV EAX,dword ptr [ESP + 0x8]       ; 005900d0
     MOV [0x01c38af0],EAX                ; 005900d4 | g_INT_01c38af0
     MOV EAX,dword ptr [ESP + 0xc]       ; 005900d9
     MOV [0x01c38af4],EAX                ; 005900dd | g_INT_01c38af4
     MOV EAX,dword ptr [ESP + 0x14]      ; 005900e2
-    MOV [0x01c38af8],EAX                ; 005900e6 | DAT_01c38af8
+    MOV [0x01c38af8],EAX                ; 005900e6 | g_DWORD_01c38af8
     MOV EAX,dword ptr [ESP + 0x10]      ; 005900eb
     MOV ECX,dword ptr [0x01c38b14]      ; 005900ef | g_INT_01c38b14
     MOV [0x01c38afc],EAX                ; 005900f5 | g_INT_01c38afc
@@ -141,7 +141,7 @@ section .text
     PUSH ECX                            ; 00590183
     CALL dword ptr CS:[0x5c8434]        ; 00590184 | PTR_joyGetPos_005c8434
     MOV EAX,dword ptr [ESP + 0x40]      ; 0059018b
-    MOV [0x01c38b00],EAX                ; 0059018f | g_BYTE_01c38b00
+    MOV [0x01c38b00],EAX                ; 0059018f | g_DWORD_01c38b00
     MOV EAX,dword ptr [ESP + 0x34]      ; 00590194
     MOV [0x01c38af0],EAX                ; 00590198 | g_INT_01c38af0
     MOV EAX,dword ptr [ESP + 0x38]      ; 0059019d

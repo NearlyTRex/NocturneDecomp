@@ -14,11 +14,11 @@ char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_s
   byte bVar3;
   
   bVar3 = 0;
-  memset(&DAT_00763e10,0,0x32);
+  memset(g_CHAR_ARRAY_00763e10,0,0x32);
   if (source_string == (char *)0x0) {
-    return (char *)&DAT_00763e10;
+    return g_CHAR_ARRAY_00763e10;
   }
-  pcVar2 = (char *)&DAT_00763e10;
+  pcVar2 = g_CHAR_ARRAY_00763e10;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(uint *)pcVar2 = *(uint *)source_string;
     source_string = source_string + (uint)bVar3 * -8 + 4;
@@ -29,5 +29,5 @@ char * __cdecl core_actor_cpp_copyToActorDebugBuffer_FUN_0040bd40(char *source_s
     source_string = source_string + (uint)bVar3 * -2 + 1;
     pcVar2 = pcVar2 + (uint)bVar3 * -2 + 1;
   }
-  return (char *)&DAT_00763e10;
+  return g_CHAR_ARRAY_00763e10;
 }

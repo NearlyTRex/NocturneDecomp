@@ -18,7 +18,7 @@
 ;   TerminatedCString s_con_00598bd4
 ;   TerminatedCString s_conin_00598bd8
 ;   TerminatedCString s_EXE_00598be0
-;   undefined2 DAT_005c1d11
+;   WORD g_WORD_005c1d11 = 0x0
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -37,7 +37,7 @@ section .text
     PUSH ESI                            ; 0056c751
     PUSH EDI                            ; 0056c752
     MOV ESI,dword ptr [ESP + 0x14]      ; 0056c753
-    MOV DX,word ptr [0x005c1d11]        ; 0056c757 | DAT_005c1d11
+    MOV DX,word ptr [0x005c1d11]        ; 0056c757 | g_WORD_005c1d11
     XOR EBX,EBX                         ; 0056c75e
     CMP DX,0x8000                       ; 0056c760
     JNC 0x0056c76e                      ; 0056c765
@@ -95,7 +95,7 @@ section .text
     CALL dword ptr CS:[0x57548c]        ; 0056c7d2 | PTR_CloseHandle_0057548c
     JMP 0x0056c7f7                      ; 0056c7d9
         ;   XREF to: 0056c7f7 (UNCONDITIONAL_JUMP)  ; LAB_0056c7f7
-    CMP word ptr [0x005c1d11],0x8000    ; 0056c7db | DAT_005c1d11
+    CMP word ptr [0x005c1d11],0x8000    ; 0056c7db | g_WORD_005c1d11
         ;   Label: LAB_0056c7db
     JNC 0x0056c7f2                      ; 0056c7e4
         ;   XREF to: 0056c7f2 (CONDITIONAL_JUMP)  ; LAB_0056c7f2

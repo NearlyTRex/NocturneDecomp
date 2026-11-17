@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 600,
-    "complexity_score": 2198,
+    "complexity_score": 2153,
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 47,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 593,
-    "suspect_count": 156,
+    "suspect_count": 152,
     "suspect_types": [
       "concat_reconstruction",
       "fnstsw_flag_artifact",
       "nonstandard_int",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_ram",
       "undefined_type",
       "unknown_field",
       "warning_overlapping_globals"
@@ -458,15 +457,15 @@
     },
     {
       "addr": "00623e58",
-      "name": "g_INT_00623e58",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e58",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e60",
-      "name": "g_INT_00623e60",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e60",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e70",
@@ -476,15 +475,15 @@
     },
     {
       "addr": "00623e78",
-      "name": "g_INT_00623e78",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e78",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e80",
-      "name": "g_INT_00623e80",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e80",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e90",
@@ -524,21 +523,21 @@
     },
     {
       "addr": "00623f20",
-      "name": "g_INT_00623f20",
-      "type": "int",
-      "value": "0xf800"
+      "name": "g_MMX_INTEGER_00623f20",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623f28",
-      "name": "g_INT_00623f28",
-      "type": "int",
-      "value": "0x7e0"
+      "name": "g_MMX_INTEGER_00623f28",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623f30",
-      "name": "g_INT_00623f30",
-      "type": "int",
-      "value": "0x1f"
+      "name": "g_MMX_INTEGER_00623f30",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623f38",
@@ -880,44 +879,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined RAM reference",
-      "line": 197,
-      "match": "uRam00623e5c",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e5c,uVar15) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 198,
-      "match": "uRam00623e64",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e64,uVar14) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 199,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar45 = ((CONCAT44(g_QWORD_00623e70._4_4_,uVar19) & 0xffffffff0000ffff) << 0x10 |",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 200,
-      "match": "uRam00623e7c",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e7c,uVar12) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 201,
-      "match": "uRam00623e84",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e84,uVar9) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -1036,7 +1003,7 @@
       "line": 351,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar37 = (uint7)((uVar15 & _g_INT_00623f30) << g_QWORD_00623fc0) |",
+      "text": "uVar37 = (uint7)((uVar15 & g_MMX_INTEGER_00623f30.mm) << g_QWORD_00623fc0) |",
       "type": "nonstandard_int"
     },
     {
@@ -1044,7 +1011,7 @@
       "line": 352,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & _g_INT_00623f28) << g_QWORD_00623fa0) |",
+      "text": "(uint7)((uVar15 & g_MMX_INTEGER_00623f28.mm) << g_QWORD_00623fa0) |",
       "type": "nonstandard_int"
     },
     {
@@ -1052,7 +1019,7 @@
       "line": 353,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & _g_INT_00623f20) << g_QWORD_00623f80);",
+      "text": "(uint7)((uVar15 & g_MMX_INTEGER_00623f20.mm) << g_QWORD_00623f80);",
       "type": "nonstandard_int"
     },
     {
@@ -1108,7 +1075,7 @@
       "line": 491,
       "match": "uint7",
       "severity": "mild",
-      "text": "uVar37 = (uint7)((uVar15 & _g_INT_00623f30) << g_QWORD_00623fc0) |",
+      "text": "uVar37 = (uint7)((uVar15 & g_MMX_INTEGER_00623f30.mm) << g_QWORD_00623fc0) |",
       "type": "nonstandard_int"
     },
     {
@@ -1116,7 +1083,7 @@
       "line": 492,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & _g_INT_00623f28) << g_QWORD_00623fa0) |",
+      "text": "(uint7)((uVar15 & g_MMX_INTEGER_00623f28.mm) << g_QWORD_00623fa0) |",
       "type": "nonstandard_int"
     },
     {
@@ -1124,7 +1091,7 @@
       "line": 493,
       "match": "uint7",
       "severity": "mild",
-      "text": "(uint7)((uVar15 & _g_INT_00623f20) << g_QWORD_00623f80);",
+      "text": "(uint7)((uVar15 & g_MMX_INTEGER_00623f20.mm) << g_QWORD_00623f80);",
       "type": "nonstandard_int"
     },
     {
@@ -1372,7 +1339,7 @@
       "line": 197,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e5c,uVar15) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e58.u32[1],uVar15) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1380,7 +1347,7 @@
       "line": 198,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e64,uVar14) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e60.u32[1],uVar14) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {
@@ -1396,7 +1363,7 @@
       "line": 200,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e7c,uVar12) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e78.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1404,7 +1371,7 @@
       "line": 201,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e84,uVar9) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e80.u32[1],uVar9) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {

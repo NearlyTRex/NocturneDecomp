@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurface *this_ptr,int x,int y)
 
 {
@@ -24,20 +22,20 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
   }
   iVar2 = iVar3 * 2;
   iVar1 = iVar3 * 4;
-  if (_DAT_01b4d71c == 0) {
+  if (g_INT_01b4d71c == 0) {
     if ((uint)g_BitsPerPixel < 0x10) {
       if (g_BitsPerPixel == 8) {
-        *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = DAT_01b4d710;
+        *(byte *)(iVar3 + (int)g_ScreenBufferArray[iVar4]) = (byte)g_INT_01b4d710;
         return;
       }
     }
     else {
       if ((uint)g_BitsPerPixel < 0x11) {
-        *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = _DAT_01b4d710;
+        *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) = (ushort)g_INT_01b4d710;
         return;
       }
       if (g_BitsPerPixel == 0x20) {
-        *(uint *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = _DAT_01b4d710;
+        *(int *)(iVar1 + (int)g_ScreenBufferArray[iVar4]) = g_INT_01b4d710;
         return;
       }
     }
@@ -56,14 +54,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_0045bab0(CDrawSurfa
   else {
     if ((uint)g_BitsPerPixel < 0x11) {
       *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) =
-           *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> (DAT_01b4d720 & 0x1f) &
-           (ushort)_DAT_01b4d730;
+           *(ushort *)(iVar2 + (int)g_ScreenBufferArray[iVar4]) >> ((byte)g_INT_01b4d720 & 0x1f) &
+           (ushort)g_INT_01b4d730;
       return;
     }
     if (g_BitsPerPixel == 0x20) {
       *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) =
-           *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> (DAT_01b4d720 & 0x1f) &
-           _DAT_01b4d730;
+           *(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_INT_01b4d720 & 0x1f) &
+           g_INT_01b4d730;
       return;
     }
   }

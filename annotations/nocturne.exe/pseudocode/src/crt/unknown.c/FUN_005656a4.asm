@@ -10,8 +10,8 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad4 = 005671e4
-;   undefined4 DAT_02de4e20
-;   undefined4 DAT_02de4e24
+;   FileListNode* g_FileListNode_PTR_02de4e20
+;   FileListNode* g_FileListNode_PTR_02de4e24
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00568e80
@@ -26,7 +26,7 @@ section .text
         ;   Label: crt_unknown.c_FUN_005656a4
     MOV EBX,dword ptr [ESP + 0x8]       ; 005656a5
     CALL dword ptr [0x005c1ad0]         ; 005656a9 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad0
-    MOV EAX,[0x02de4e20]                ; 005656af | DAT_02de4e20
+    MOV EAX,[0x02de4e20]                ; 005656af | g_FileListNode_PTR_02de4e20
     TEST EAX,EAX                        ; 005656b4
     JZ 0x005656e0                       ; 005656b6
         ;   XREF to: 005656e0 (CONDITIONAL_JUMP)  ; LAB_005656e0
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005656b8 (CONDITIONAL_JUMP)  ; LAB_005656b8
     MOV EDX,0x2de4e24                   ; 005656e0
         ;   Label: LAB_005656e0
-    MOV EAX,dword ptr [EDX]             ; 005656e5 | DAT_02de4e24
+    MOV EAX,dword ptr [EDX]             ; 005656e5 | g_FileListNode_PTR_02de4e24
         ;   Label: LAB_005656e5
     TEST EAX,EAX                        ; 005656e7
     JZ 0x0056570f                       ; 005656e9
@@ -64,9 +64,9 @@ section .text
     JNZ 0x0056570b                      ; 005656ee
         ;   XREF to: 0056570b (CONDITIONAL_JUMP)  ; LAB_0056570b
     MOV ECX,dword ptr [EAX]             ; 005656f0
-    MOV dword ptr [EDX],ECX             ; 005656f2 | DAT_02de4e24
-    MOV EDX,dword ptr [0x02de4e20]      ; 005656f4 | DAT_02de4e20
-    MOV [0x02de4e20],EAX                ; 005656fa | DAT_02de4e20
+    MOV dword ptr [EDX],ECX             ; 005656f2 | g_FileListNode_PTR_02de4e24
+    MOV EDX,dword ptr [0x02de4e20]      ; 005656f4 | g_FileListNode_PTR_02de4e20
+    MOV [0x02de4e20],EAX                ; 005656fa | g_FileListNode_PTR_02de4e20
     MOV dword ptr [EAX],EDX             ; 005656ff
     CALL dword ptr [0x005c1ad4]         ; 00565701 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ad4
     MOV EAX,EBX                         ; 00565707

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_scat_cpp_CScat_process_FUN_004fbf20(CScat *this_ptr,float delta_time)
 
 {
@@ -308,7 +306,7 @@ LAB_004fc138:
                          ((CCharacter *)this_ptr), EVar18 == DEATH_STATE_ALIVE)) {
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar17 = this_ptr->head_blend_weight;
-    iVar13 = _DAT_01e53388;
+    iVar13 = g_INT_ARRAY_01e53388[0];
     core_xform_cpp_eulerToQuaternion_FUN_0055d610(&this_ptr->head_euler_angles,&local_58);
     source_quaternions = &CStack_68;
     CStack_68.w = local_58.w;

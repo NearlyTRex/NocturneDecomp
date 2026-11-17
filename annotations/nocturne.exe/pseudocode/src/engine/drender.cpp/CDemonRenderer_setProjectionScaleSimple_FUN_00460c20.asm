@@ -9,7 +9,7 @@
 ;
 ; Referenced Globals:
 ;   double DOUBLE_0057dc55 = 65536
-;   undefined4 DAT_005b7648
+;   int g_INT_005b7648 = 0x10000
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -23,6 +23,6 @@ section .text
     FDIVR double ptr [0x0057dc55]       ; 00460c24 | DOUBLE_0057dc55
     CALL crt_math.c_round_FUN_00563a30  ; 00460c2a
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
-    FISTP dword ptr [0x005b7648]        ; 00460c2f | DAT_005b7648
+    FISTP dword ptr [0x005b7648]        ; 00460c2f | g_INT_005b7648
     RET                                 ; 00460c35
 

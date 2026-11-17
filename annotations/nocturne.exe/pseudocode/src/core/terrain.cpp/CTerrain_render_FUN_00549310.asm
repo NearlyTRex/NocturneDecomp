@@ -23,8 +23,8 @@
 ;   double DOUBLE_00596cd5 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGround* g_CGroundPtr = 01cadf80
-;   undefined4 DAT_01b4d738
-;   undefined4 DAT_02dd10cc
+;   CDemonRenderer g_CDemonRenderer_01b4d738
+;   undefined4 g_CTerrain_02dd10c8.initialized
 ;
 ; Called Functions:
 ;   core_ground.cpp_CGround_getHeightAtPosition_FUN_004b21b0
@@ -46,7 +46,7 @@ section .text
     MOV EBP,ESP                         ; 00549314
     SUB ESP,0x1c                        ; 00549316
     AND ESP,0xfffffff8                  ; 00549319
-    CMP dword ptr [0x02dd10cc],0x0      ; 0054931c | DAT_02dd10cc
+    CMP dword ptr [0x02dd10cc],0x0      ; 0054931c | g_CTerrain_02dd10c8.initialized
     JNZ 0x0054932c                      ; 00549323
         ;   XREF to: 0054932c (CONDITIONAL_JUMP)  ; LAB_0054932c
     MOV ESP,EBP                         ; 00549325
@@ -59,7 +59,7 @@ section .text
         ;   Label: LAB_0054932c
     PUSH EAX                            ; 0054932e
     MOV ECX,dword ptr [0x005ae704]      ; 0054932f | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 00549335 | DAT_01b4d738
+    PUSH ECX                            ; 00549335 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30 ; 00549336
         ;   XREF to: 00460d30 (UNCONDITIONAL_CALL)  ; CVector3f * engine_drender.cpp_CDemonRenderer_getCameraOriginWorld_FUN_00460d30(CDemonRenderer * this_ptr, CVector3f * output)
     ADD ESP,0x8                         ; 0054933b
@@ -112,7 +112,7 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 005493c9
     PUSH EAX                            ; 005493cd
     MOV EDI,dword ptr [0x005ae704]      ; 005493ce | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 005493d4 | DAT_01b4d738
+    PUSH EDI                            ; 005493d4 | g_CDemonRenderer_01b4d738
     MOV dword ptr [ESP + 0x1c],ESI      ; 005493d5
     CALL engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0 ; 005493d9
         ;   XREF to: 004606e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_004606e0(CDemonRenderer * this_ptr, CVector3i * origin)
@@ -125,7 +125,7 @@ section .text
     MOV EAX,ESP                         ; 005493ef
     PUSH EAX                            ; 005493f1
     MOV EDX,dword ptr [0x005ae704]      ; 005493f2 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 005493f8 | DAT_01b4d738
+    PUSH EDX                            ; 005493f8 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700 ; 005493f9
         ;   XREF to: 00460700 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_00460700(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005493fe

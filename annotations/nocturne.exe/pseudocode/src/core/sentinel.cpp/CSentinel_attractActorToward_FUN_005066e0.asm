@@ -23,8 +23,8 @@
 ;   float FLOAT_00590095 = 0.5
 ;   float FLOAT_00590099 = -0.5
 ;   float FLOAT_0059009d = -4
-;   undefined4 DAT_01e5721c
-;   undefined4 DAT_01e57220
+;   int g_INT_01e5721c
+;   int g_INT_01e57220
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -49,7 +49,7 @@ section .text
     PUSH ESI                            ; 005066f3
         ;   Label: LAB_005066f3
     PUSH EBX                            ; 005066f4
-    MOV EDX,dword ptr [0x01e5721c]      ; 005066f5 | DAT_01e5721c
+    MOV EDX,dword ptr [0x01e5721c]      ; 005066f5 | g_INT_01e5721c
     LEA EAX,[EDX*0x4 + 0x0]             ; 005066fb
     MOV ESI,dword ptr [ESP + 0x4c]      ; 00506702
     SUB EAX,EDX                         ; 00506706
@@ -62,7 +62,7 @@ section .text
     PUSH EAX                            ; 0050671d
     CALL core_xform.cpp_transformVector3x4_FUN_0055a8b0 ; 0050671e
         ;   XREF to: 0055a8b0 (UNCONDITIONAL_CALL)  ; CVector3f * core_xform.cpp_transformVector3x4_FUN_0055a8b0(CVector3f * output_vector, CVector3f * input_vector, CMatrix3x4f * matrix)
-    MOV EDX,dword ptr [0x01e57220]      ; 00506723 | DAT_01e57220
+    MOV EDX,dword ptr [0x01e57220]      ; 00506723 | g_INT_01e57220
     MOV EBX,EAX                         ; 00506729
     LEA EAX,[EDX*0x4 + 0x0]             ; 0050672b
     SUB EAX,EDX                         ; 00506732

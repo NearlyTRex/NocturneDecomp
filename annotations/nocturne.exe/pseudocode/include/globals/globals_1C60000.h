@@ -37,3 +37,12 @@ extern CShell g_ShellPool[50];
 // CTrail[100]
 extern CTrail g_CTrail_ARRAY_01c676cc[100];
 
+// int
+extern int g_INT_01c625f4;
+extern int g_INT_01c62eb8;
+extern int g_INT_01c6750c;
+extern int g_INT_01c676c8;
+extern int g_INT_01c684dc;
+extern int g_INT_01c69610;
+extern int g_INT_01c6ce14;
+

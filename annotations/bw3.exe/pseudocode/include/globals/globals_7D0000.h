@@ -10,6 +10,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CPuzzle.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SRenderBufferEntry.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x7D0000
@@ -44,6 +45,9 @@ extern CPuzzle* g_CPuzzle_PTR_007dffb4;
 
 // SMRGLHeaderPrimitive*[2000]
 extern SMRGLHeaderPrimitive* g_SMRGLHeaderPrimitive_PTR_ARRAY_007dd9f4[2000];
+
+// SRenderBufferEntry*[2500]
+extern SRenderBufferEntry* g_SRenderBufferEntry_PTR_ARRAY_007db2e0[2500];
 
 // _FILE*
 extern _FILE* g_FILE_PTR_007df9b4;

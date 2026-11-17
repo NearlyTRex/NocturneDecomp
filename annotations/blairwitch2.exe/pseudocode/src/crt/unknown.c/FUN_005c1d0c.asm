@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_005c1cf0 at 005c1cf2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02680160
+;   FileListNode* g_FileListNode_PTR_02680160
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b8a04
@@ -29,7 +29,7 @@ section .text
     MOV EDI,0x61ef54                    ; 005c1d21
     ADD EAX,EAX                         ; 005c1d26
     ADD EDI,EAX                         ; 005c1d28
-    MOV EAX,[0x02680160]                ; 005c1d2a | DAT_02680160
+    MOV EAX,[0x02680160]                ; 005c1d2a | g_FileListNode_PTR_02680160
     XOR EBX,EBX                         ; 005c1d2f
     TEST EAX,EAX                        ; 005c1d31
     JZ 0x005c1d6a                       ; 005c1d33

@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059511a
-;   undefined4 DAT_00595122
-;   undefined4 DAT_0059512a
+;   double g_DOUBLE_0059511a = 3.14159265350000
+;   double g_DOUBLE_00595122 = 1.10000000000000
+;   double g_DOUBLE_0059512a = 1.5
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CKeys* g_CKeys_PTR_005bac64 = 01cc30e4
 ;   undefined4 g_CGameInstance.delta_time_float
@@ -49,14 +49,14 @@ section .text
         ;   Label: LAB_005342e4
     FLD float ptr [ESP]                 ; 005342e9
     FLD ST0                             ; 005342ec
-    FMUL double ptr [0x00595122]        ; 005342ee | DAT_00595122
+    FMUL double ptr [0x00595122]        ; 005342ee | g_DOUBLE_00595122
     FLD float ptr [EAX + 0x264]         ; 005342f4 | g_CGameInstance.delta_time_float
     FMULP ST2                           ; 005342fa
     FLD float ptr [EBX + 0x2c]          ; 005342fc
-    FMUL double ptr [0x0059512a]        ; 005342ff | DAT_0059512a
+    FMUL double ptr [0x0059512a]        ; 005342ff | g_DOUBLE_0059512a
     FXCH ST2                            ; 00534305
     FST float ptr [ESP + 0x8]           ; 00534307
-    FMUL double ptr [0x0059511a]        ; 0053430b | DAT_0059511a
+    FMUL double ptr [0x0059511a]        ; 0053430b | g_DOUBLE_0059511a
     FXCH                                ; 00534311
     FSTP float ptr [ESP + 0xc]          ; 00534313
     FXCH                                ; 00534317

@@ -10,10 +10,10 @@
 ;   int g_BitsPerPixel = 0x8
 ;   int g_CurrentTextureDimension = 0x100
 ;   int g_CurrentAlphaValue = 0xff
-;   undefined4 DAT_005c502c
-;   undefined4 DAT_005c5030
-;   undefined4 DAT_006b029c
-;   undefined4 DAT_006b02a0
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].u
+;   undefined4 g_SRenderVertex_ARRAY_005c5014[0].v
+;   int[24] g_INT_ARRAY_006b029c
+;   undefined4 g_INT_ARRAY_006b029c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -78,7 +78,7 @@ section .text
     JGE 0x00407fd2                      ; 00407ee0
         ;   XREF to: 00407fd2 (CONDITIONAL_JUMP)  ; LAB_00407fd2
     MOV EAX,dword ptr [ECX]             ; 00407ee6
-    MOV dword ptr [ESI + 0x6b029c],EAX  ; 00407ee8 | DAT_006b029c | DAT_006b02a0
+    MOV dword ptr [ESI + 0x6b029c],EAX  ; 00407ee8 | g_INT_ARRAY_006b029c | g_INT_ARRAY_006b029c[1]
     MOV EBP,dword ptr [0x005b762c]      ; 00407eee | g_CurrentTextureDimension
     MOV EAX,dword ptr [ECX + 0x4]       ; 00407ef4
     MOV EDX,dword ptr [ECX + 0x8]       ; 00407ef7
@@ -105,13 +105,13 @@ section .text
         ;   XREF to: 00407f90 (CONDITIONAL_JUMP)  ; LAB_00407f90
     IMUL EBP,dword ptr [ECX],0x30       ; 00407f30
         ;   Label: LAB_00407f30
-    MOV dword ptr [EBP + 0x5c502c],EAX  ; 00407f33 | DAT_005c502c
+    MOV dword ptr [EBP + 0x5c502c],EAX  ; 00407f33 | g_SRenderVertex_ARRAY_005c5014[0].u
     IMUL EAX,dword ptr [ECX],0x30       ; 00407f39
     ADD ESI,0x4                         ; 00407f3c
     INC EDI                             ; 00407f3f
     ADD EBX,0x3                         ; 00407f40
     ADD ECX,0xc                         ; 00407f43
-    MOV dword ptr [EAX + 0x5c5030],EDX  ; 00407f46 | DAT_005c5030
+    MOV dword ptr [EAX + 0x5c5030],EDX  ; 00407f46 | g_SRenderVertex_ARRAY_005c5014[0].v
     JMP 0x00407ed4                      ; 00407f4c
         ;   XREF to: 00407ed4 (UNCONDITIONAL_JUMP)  ; LAB_00407ed4
     MOV dword ptr [0x01c00c7c],0x530322 ; 00407f4e | g_ScanlineRenderFunc
@@ -159,7 +159,7 @@ section .text
     MOV EDX,0xfeffff                    ; 00407fc8
     JMP 0x00407f30                      ; 00407fcd
         ;   XREF to: 00407f30 (UNCONDITIONAL_JUMP)  ; LAB_00407f30
-    PUSH 0x6b029c                       ; 00407fd2 | DAT_006b029c
+    PUSH 0x6b029c                       ; 00407fd2 | g_INT_ARRAY_006b029c
         ;   Label: LAB_00407fd2
     PUSH EDI                            ; 00407fd7
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 00407fd8

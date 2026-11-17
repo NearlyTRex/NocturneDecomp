@@ -55,7 +55,7 @@
 ;   undefined4 DAT_00858be0
 ;   undefined4 DAT_00858be4
 ;   undefined4 DAT_00859ad8
-;   int g_INT_01289ca8
+;   SCoronaLightCache g_SCoronaLightCache_01289ca8
 ;   _BIT_INTEGER32 g_BIT_INTEGER32_01323d00
 ;   CDemonGlobe* g_CDemonGlobe_PTR_0152bc18
 ;   int g_INT_0152bc1c
@@ -159,7 +159,7 @@ section .text
     CMP dword ptr [EAX + 0x20],0x2      ; 0045267a
     JNZ 0x00452736                      ; 0045267e
         ;   XREF to: 00452736 (CONDITIONAL_JUMP)  ; LAB_00452736
-    MOV ECX,dword ptr [0x01289ca8]      ; 00452684 | g_INT_01289ca8
+    MOV ECX,dword ptr [0x01289ca8]      ; 00452684 | g_SCoronaLightCache_01289ca8
     TEST ECX,ECX                        ; 0045268a
     JBE 0x00452720                      ; 0045268c
         ;   XREF to: 00452720 (CONDITIONAL_JUMP)  ; LAB_00452720
@@ -214,7 +214,7 @@ section .text
     CMP EAX,EDX                         ; 0045271c
     JL 0x004526a1                       ; 0045271e
         ;   XREF to: 004526a1 (CONDITIONAL_JUMP)  ; LAB_004526a1
-    MOV EAX,[0x01289ca8]                ; 00452720 | g_INT_01289ca8
+    MOV EAX,[0x01289ca8]                ; 00452720 | g_SCoronaLightCache_01289ca8
         ;   Label: LAB_00452720
     CMP EAX,0x8                         ; 00452725
     JC 0x00452805                       ; 00452728
@@ -286,11 +286,11 @@ section .text
         ;   Label: LAB_00452805
     MOV EDX,0x1289cac                   ; 0045280b
     MOV ECX,dword ptr [ESP + 0x9c]      ; 00452810
-    MOV EBX,dword ptr [0x01289ca8]      ; 00452817 | g_INT_01289ca8
+    MOV EBX,dword ptr [0x01289ca8]      ; 00452817 | g_SCoronaLightCache_01289ca8
     PUSH ECX                            ; 0045281d
     INC EBX                             ; 0045281e
     ADD EDX,EAX                         ; 0045281f
-    MOV dword ptr [0x01289ca8],EBX      ; 00452821 | g_INT_01289ca8
+    MOV dword ptr [0x01289ca8],EBX      ; 00452821 | g_SCoronaLightCache_01289ca8
     MOV dword ptr [ESP + 0x18],EDX      ; 00452827
     CALL core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045ea60 ; 0045282b
         ;   XREF to: 0045ea60 (UNCONDITIONAL_CALL)  ; void core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045ea60(CDemonGlobe * this_ptr)

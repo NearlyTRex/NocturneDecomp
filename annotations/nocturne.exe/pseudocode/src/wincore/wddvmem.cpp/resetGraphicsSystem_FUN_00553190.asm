@@ -22,7 +22,7 @@
 ;   IDirectDrawSurface* g_DirectDrawSurface
 ;   IDirectDrawSurface* g_SoftwareRenderSurface
 ;   IUnknown* g_DirectDrawUnknown
-;   undefined4 DAT_02ddf568
+;   int g_INT_02ddf568
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -45,7 +45,7 @@ section .text
     PUSH EBP                            ; 00553193
     MOV EDX,0x1                         ; 00553194
     MOV ECX,dword ptr [0x02dc9d60]      ; 00553199 | g_UseDirect3D
-    MOV dword ptr [0x02ddf568],EDX      ; 0055319f | DAT_02ddf568
+    MOV dword ptr [0x02ddf568],EDX      ; 0055319f | g_INT_02ddf568
     TEST ECX,ECX                        ; 005531a5
     JZ 0x005532fc                       ; 005531a7
         ;   XREF to: 005532fc (CONDITIONAL_JUMP)  ; LAB_005532fc

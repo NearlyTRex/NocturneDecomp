@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 335,
+    "complexity_score": 320,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 27,
+    "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -120,9 +119,9 @@
     },
     {
       "addr": "00607bdc",
-      "name": "DAT_00607bdc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SIOControlBlock_PTR_00607bdc",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -267,16 +266,8 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "hFile = *(HANDLE *)(DAT_00607bdc + param_1 * 4);",
+      "text": "hFile = g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 17,
-      "match": "DAT_00607bdc",
-      "severity": "mild",
-      "text": "hFile = *(HANDLE *)(DAT_00607bdc + param_1 * 4);",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

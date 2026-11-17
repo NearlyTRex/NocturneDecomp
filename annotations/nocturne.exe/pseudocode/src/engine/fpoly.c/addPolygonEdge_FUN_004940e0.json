@@ -2,18 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 95,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 2,
-    "suspect_types": [
-      "undefined_data",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 185
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 69,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 189
   },
   "cross_references": [],
   "function": {
@@ -32,26 +29,26 @@
   "globals": [
     {
       "addr": "01c70f78",
-      "name": "DAT_01c70f78",
-      "type": "undefined4",
+      "name": "g_INT_01c70f78",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c70f7c",
-      "name": "DAT_01c70f7c",
-      "type": "undefined4",
+      "name": "g_SHardwareEdge_ARRAY_01c70f7c",
+      "type": "SHardwareEdge[16]",
       "value": null
     },
     {
       "addr": "01c712fc",
-      "name": "DAT_01c712fc",
-      "type": "undefined4",
+      "name": "g_INT_01c712fc",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01c71300",
-      "name": "DAT_01c71300",
-      "type": "undefined4",
+      "name": "g_INT_01c71300",
+      "type": "int",
       "value": null
     }
   ],
@@ -138,22 +135,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 27,
-      "match": "DAT_01c70f7c",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c70f7c + iVar3) = iVar5;",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

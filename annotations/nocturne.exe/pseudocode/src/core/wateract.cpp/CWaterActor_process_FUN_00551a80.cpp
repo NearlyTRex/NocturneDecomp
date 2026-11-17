@@ -28,7 +28,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *thi
       this_ptr->texture_frame = 0;
     }
   }
-  this_ptr_00 = 0x01C03A10;
+  this_ptr_00 = g_CEventList_PTR_005b7650;
   this_ptr->inv_delta_time = 1.0 / (float)this_ptr;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(this_ptr_00,this_ptr->move_event)
   ;
@@ -36,7 +36,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00551a80(CWaterActor *thi
     this_ptr->state = WATER_ACTOR_RISING;
   }
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,this_ptr->move_down_event);
+                    (g_CEventList_PTR_005b7650,this_ptr->move_down_event);
   if (iVar2 != 0) {
     this_ptr->state = WATER_ACTOR_LOWERING;
   }

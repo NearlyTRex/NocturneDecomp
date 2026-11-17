@@ -2,19 +2,19 @@
 DAT_ GLOBALS ANALYSIS REPORT
 ================================================================================
 
-Total DAT_ globals found: 541
-Filtered out (inside named data): 120
+Total DAT_ globals found: 291
+Filtered out (inside named data): 21
 Immediate constants (not real globals): 12
-Real globals remaining: 409
+Real globals remaining: 258
 
 Current type breakdown:
-  undefined4                     405
+  undefined4                     254
   undefined1                     4
 
-DAT_ globals with type hints: 106 / 409
+DAT_ globals with type hints: 69 / 258
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (67)
+HIGH CONFIDENCE INFERENCES (41)
 --------------------------------------------------------------------------------
   DAT_005d925f                    addr=005d925f    current=undefined4      likely=double          refs=1
     nearby: s_darkPoint_005d9266+1 (undefined4) at offset -8
@@ -22,42 +22,14 @@ HIGH CONFIDENCE INFERENCES (67)
     nearby: g_FLOAT_005e949a (float) at offset +4
   DAT_005ecd4e                    addr=005ecd4e    current=undefined4      likely=double          refs=1
     nearby: g_DOUBLE_005ecd46 (double) at offset +8
-  DAT_00601441                    addr=00601441    current=undefined4      likely=byte            refs=2
-    nearby: g_DOUBLE_00601430+4 (undefined4) at offset +13
-  DAT_0060a3e4                    addr=0060a3e4    current=undefined4      likely=int             refs=1
-  DAT_0060a3e8                    addr=0060a3e8    current=undefined4      likely=int             refs=1
-  DAT_0060a3ec                    addr=0060a3ec    current=undefined4      likely=int             refs=1
-  DAT_0060a3f0                    addr=0060a3f0    current=undefined4      likely=int             refs=1
-  DAT_0060a3f4                    addr=0060a3f4    current=undefined4      likely=float           refs=1
-  DAT_0060a3f8                    addr=0060a3f8    current=undefined4      likely=int             refs=1
-  DAT_0060a3fc                    addr=0060a3fc    current=undefined4      likely=int             refs=1
-  DAT_0060a400                    addr=0060a400    current=undefined4      likely=int             refs=1
-  DAT_0060a404                    addr=0060a404    current=undefined4      likely=int             refs=1
   DAT_0060b1a8                    addr=0060b1a8    current=undefined4      likely=SMRGLTextureBasic *  refs=1
     nearby: g_CDocClassVersion (int) at offset -68
   DAT_006141f4                    addr=006141f4    current=undefined4      likely=int             refs=2
     nearby: g_CEventList_PTR_006141f0 (CEventList*) at offset +4
-  DAT_00617958                    addr=00617958    current=undefined4      likely=float           refs=1
-    nearby: g_FLOAT_ARRAY_00617948[1] (undefined4) at offset +12
-  DAT_00618ec8                    addr=00618ec8    current=undefined4      likely=float           refs=2
-    nearby: g_DOUBLE_ARRAY_00618e88 (double[2]) at offset +64
   DAT_0061bb2c                    addr=0061bb2c    current=undefined4      likely=SMRGLPrimitiveQuad *  refs=1
     nearby: g_CShadowClassVersion (int) at offset -64
-  DAT_0061bf8c                    addr=0061bf8c    current=undefined4      likely=int             refs=1
-    nearby: g_INT_0061bf88 (int) at offset +4
-  DAT_0061bf90                    addr=0061bf90    current=undefined4      likely=int             refs=1
-    nearby: g_INT_0061bf88 (int) at offset +8
-  DAT_0061bf94                    addr=0061bf94    current=undefined4      likely=int             refs=1
-    nearby: g_INT_0061bf88 (int) at offset +12
-  DAT_0061bf98                    addr=0061bf98    current=undefined4      likely=int             refs=1
-    nearby: g_INT_0061bf88 (int) at offset +16
-  DAT_0061f4d8                    addr=0061f4d8    current=undefined4      likely=int             refs=15
-    nearby: PTR_DAT_0061f4d4 (void*) at offset +4
   DAT_0070c638                    addr=0070c638    current=undefined4      likely=float           refs=2
     nearby: g_PTR_0070c62c (void*) at offset +12
-  DAT_00a014e0                    addr=00a014e0    current=undefined4      likely=float           refs=2
-  DAT_00a014e4                    addr=00a014e4    current=undefined4      likely=float           refs=2
-  DAT_00a014e8                    addr=00a014e8    current=undefined4      likely=float           refs=2
   DAT_01ba51cc                    addr=01ba51cc    current=undefined4      likely=SSoftwareEdge *  refs=2
     nearby: g_INT_01ba51c8 (int) at offset +4
   DAT_01ba5798                    addr=01ba5798    current=undefined4      likely=uint *          refs=2
@@ -109,10 +81,6 @@ HIGH CONFIDENCE INFERENCES (67)
     nearby: g_FLOAT_01d0bb98 (float) at offset +68
   DAT_01d0bbe0                    addr=01d0bbe0    current=undefined4      likely=float           refs=4
     nearby: g_FLOAT_01d0bb98 (float) at offset +72
-  DAT_01d21c18                    addr=01d21c18    current=undefined4      likely=double          refs=1
-  DAT_01d21e28                    addr=01d21e28    current=undefined4      likely=double          refs=1
-  DAT_01d51054                    addr=01d51054    current=undefined4      likely=int *           refs=1
-    nearby: g_INT_01d51050 (int) at offset +4
   DAT_0200a398                    addr=0200a398    current=undefined4      likely=float           refs=2
     nearby: g_INT_0200a394 (int) at offset +4
   DAT_0200a39c                    addr=0200a39c    current=undefined4      likely=float           refs=2
@@ -121,22 +89,14 @@ HIGH CONFIDENCE INFERENCES (67)
     nearby: g_INT_0200a3a4 (int) at offset -4
   DAT_0200e894                    addr=0200e894    current=undefined4      likely=float           refs=2
     nearby: g_FLOAT_0200e890 (float) at offset +4
-  DAT_0264a5d0                    addr=0264a5d0    current=undefined4      likely=void **         refs=10
-    nearby: g_IDirectSoundBuffer_PTR_0264a5cc (IDirectSoundBuffer*) at offset +4
   DAT_026672ac                    addr=026672ac    current=undefined4      likely=SSoftwareEdge *  refs=2
     nearby: g_INT_026672a8 (int) at offset +4
-  DAT_02680160                    addr=02680160    current=undefined4      likely=uint *          refs=7
-    nearby: g_INT_02680150 (int) at offset +16
-  DAT_02680164                    addr=02680164    current=undefined4      likely=uint *          refs=5
-    nearby: g_INT_02680170 (int) at offset -12
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (39)
+MEDIUM CONFIDENCE INFERENCES (28)
 --------------------------------------------------------------------------------
   DAT_005d6a27                    addr=005d6a27    current=undefined1      likely=byte            refs=1
     nearby: s_engine_font_cpp_005d6a28 (TerminatedCString) at offset -1
-  DAT_00601440                    addr=00601440    current=undefined4      likely=byte            refs=5
-    nearby: g_DOUBLE_00601430+4 (undefined4) at offset +12
   DAT_0060958e                    addr=0060958e    current=undefined4      likely=byte            refs=1
     nearby: g_CHAR_ARRAY_00609590 (char[104]) at offset -2
   DAT_00609b88                    addr=00609b88    current=undefined4      likely=byte            refs=1
@@ -175,27 +135,12 @@ MEDIUM CONFIDENCE INFERENCES (39)
   DAT_01d06950                    addr=01d06950    current=undefined4      likely=byte            refs=1
   DAT_01d06951                    addr=01d06951    current=undefined4      likely=byte            refs=1
   DAT_01d074a9                    addr=01d074a9    current=undefined4      likely=byte            refs=1
-  DAT_01d083e0                    addr=01d083e0    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_01d082e0+3 (undefined4) at offset +253
-  DAT_01d083e1                    addr=01d083e1    current=undefined4      likely=byte            refs=1
-    nearby: g_CHAR_ARRAY_01d082e0+3 (undefined4) at offset +254
-  DAT_01d084e0                    addr=01d084e0    current=undefined4      likely=byte            refs=1
-  DAT_01d084e1                    addr=01d084e1    current=undefined4      likely=byte            refs=1
-  DAT_01d085e0                    addr=01d085e0    current=undefined4      likely=byte            refs=1
-  DAT_01d085e1                    addr=01d085e1    current=undefined4      likely=byte            refs=1
   DAT_01d1c631                    addr=01d1c631    current=undefined4      likely=byte            refs=1
     nearby: g_CHAR_01d1c630 (char) at offset +1
   DAT_01d1c698                    addr=01d1c698    current=undefined4      likely=byte            refs=2
     nearby: g_CHAR_01d1c630 (char) at offset +104
   DAT_01d1c699                    addr=01d1c699    current=undefined4      likely=byte            refs=2
     nearby: g_CHAR_01d1c630 (char) at offset +105
-  DAT_01d5105c                    addr=01d5105c    current=undefined4      likely=byte            refs=1
-    nearby: g_INT_01d51050 (int) at offset +12
-  DAT_01d51068                    addr=01d51068    current=undefined4      likely=byte            refs=1
-    nearby: g_INT_01d51050 (int) at offset +24
-  DAT_01d51069                    addr=01d51069    current=undefined4      likely=byte            refs=1
-    nearby: g_INT_01d51050 (int) at offset +25
-  DAT_01e60032                    addr=01e60032    current=undefined4      likely=byte            refs=1
   DAT_026807b4                    addr=026807b4    current=undefined4      likely=byte            refs=1
     nearby: g_CHAR_ARRAY_026807a0+1 (undefined4) at offset +19
 
@@ -204,7 +149,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (303)
+NO TYPE HINTS (189)
 --------------------------------------------------------------------------------
   DAT_005f5140                    addr=005f5140    type=undefined4      refs=1  nearby: g_FLOAT_005f513c at +4
   DAT_005f5144                    addr=005f5144    type=undefined4      refs=1  nearby: g_FLOAT_005f5148 at -4
@@ -217,20 +162,9 @@ NO TYPE HINTS (303)
   DAT_005ff360                    addr=005ff360    type=undefined4      refs=1  nearby: g_FLOAT_005ff358 at +8
   DAT_005ff8f8                    addr=005ff8f8    type=undefined4      refs=1  nearby: g_FLOAT_005ff8f4 at +4
   DAT_006006b8                    addr=006006b8    type=undefined4      refs=1  nearby: g_FLOAT_006006b4 at +4
-  DAT_00601442                    addr=00601442    type=undefined4      refs=2  nearby: g_DOUBLE_00601430+4 at +14
-  DAT_00601443                    addr=00601443    type=undefined4      refs=2  nearby: g_DOUBLE_00601430+4 at +15
   DAT_0060958f                    addr=0060958f    type=undefined1      refs=1  nearby: g_CHAR_ARRAY_00609590 at -1
   DAT_0060a088                    addr=0060a088    type=undefined4      refs=1  nearby: g_GlobalFilters at +4
   DAT_0060a0a8                    addr=0060a0a8    type=undefined4      refs=1  nearby: g_PlayerFilters at +4
-  DAT_0060a408                    addr=0060a408    type=undefined4      refs=1
-  DAT_0060a40c                    addr=0060a40c    type=undefined4      refs=1
-  DAT_0060a410                    addr=0060a410    type=undefined4      refs=1
-  DAT_0060a414                    addr=0060a414    type=undefined4      refs=1
-  DAT_0060a418                    addr=0060a418    type=undefined4      refs=1
-  DAT_0060a41c                    addr=0060a41c    type=undefined4      refs=1
-  DAT_0060a420                    addr=0060a420    type=undefined4      refs=1
-  DAT_0060a424                    addr=0060a424    type=undefined4      refs=1
-  DAT_0060b028                    addr=0060b028    type=undefined4      refs=1  nearby: g_SMRGLTextureBasic_0060aff8 at +48
   DAT_006141dc                    addr=006141dc    type=undefined4      refs=2  nearby: g_INT_006141d8 at +4
   DAT_00614c00                    addr=00614c00    type=undefined4      refs=1  nearby: switchdataD_00614c04 at -4
   DAT_00616030                    addr=00616030    type=undefined4      refs=1  nearby: g_INT_0061602c at +4
@@ -240,37 +174,6 @@ NO TYPE HINTS (303)
   DAT_00616048                    addr=00616048    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +4
   DAT_0061604c                    addr=0061604c    type=undefined4      refs=1  nearby: g_CFieldNotesPtr at +8
   DAT_006166ac                    addr=006166ac    type=undefined4      refs=1  nearby: g_CGargoyleClassVersion at -164
-  DAT_00618f40                    addr=00618f40    type=undefined4      refs=1  nearby: g_DOUBLE_ARRAY_00618e88 at +184
-  DAT_00619338                    addr=00619338    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at -4
-  DAT_00619340                    addr=00619340    type=undefined4      refs=3  nearby: g_INT_ARRAY_0061933c at +4
-  DAT_00619344                    addr=00619344    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +8
-  DAT_0061934c                    addr=0061934c    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +16
-  DAT_00619358                    addr=00619358    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +28
-  DAT_00619368                    addr=00619368    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +44
-  DAT_0061936c                    addr=0061936c    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +48
-  DAT_00619388                    addr=00619388    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +76
-  DAT_0061938c                    addr=0061938c    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +80
-  DAT_00619398                    addr=00619398    type=undefined4      refs=2  nearby: g_INT_ARRAY_0061933c at +92
-  DAT_0061939c                    addr=0061939c    type=undefined4      refs=2  nearby: g_INT_ARRAY_0061933c at +96
-  DAT_006193a0                    addr=006193a0    type=undefined4      refs=2  nearby: g_INT_ARRAY_0061933c at +100
-  DAT_006193a4                    addr=006193a4    type=undefined4      refs=2  nearby: g_INT_ARRAY_0061933c at +104
-  DAT_006193a8                    addr=006193a8    type=undefined4      refs=2  nearby: g_INT_ARRAY_0061933c at +108
-  DAT_006193c0                    addr=006193c0    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +132
-  DAT_006193c4                    addr=006193c4    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +136
-  DAT_006193c8                    addr=006193c8    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +140
-  DAT_006193cc                    addr=006193cc    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +144
-  DAT_006193d0                    addr=006193d0    type=undefined4      refs=1  nearby: g_INT_ARRAY_0061933c at +148
-  DAT_006196b0                    addr=006196b0    type=undefined4      refs=1
-  DAT_0061ade0                    addr=0061ade0    type=undefined4      refs=1
-  DAT_0061ade4                    addr=0061ade4    type=undefined4      refs=1
-  DAT_0061ade8                    addr=0061ade8    type=undefined4      refs=1
-  DAT_0061adec                    addr=0061adec    type=undefined4      refs=1
-  DAT_0061adf0                    addr=0061adf0    type=undefined4      refs=1
-  DAT_0061adf4                    addr=0061adf4    type=undefined4      refs=1
-  DAT_0061bf9c                    addr=0061bf9c    type=undefined4      refs=1  nearby: g_INT_0061bf88 at +20
-  DAT_0061bfa0                    addr=0061bfa0    type=undefined4      refs=1  nearby: g_INT_0061bf88 at +24
-  DAT_0061bfa4                    addr=0061bfa4    type=undefined4      refs=1  nearby: g_INT_0061bf88 at +28
-  DAT_0061bfa8                    addr=0061bfa8    type=undefined4      refs=1  nearby: g_INT_0061bf88 at +32
   DAT_0061e284                    addr=0061e284    type=undefined4      refs=1  nearby: g_INT_0061e280 at +4
   DAT_0061e288                    addr=0061e288    type=undefined4      refs=1  nearby: g_INT_0061e28c at -4
   DAT_0061f47c                    addr=0061f47c    type=undefined4      refs=1  nearby: g_UINT_0061f480 at -4
@@ -282,17 +185,6 @@ NO TYPE HINTS (303)
   DAT_0061f524                    addr=0061f524    type=undefined4      refs=1  nearby: s_EST_0061f52c at -8
   DAT_0061f528                    addr=0061f528    type=undefined4      refs=1  nearby: s_EST_0061f52c at -4
   DAT_0061f6bc                    addr=0061f6bc    type=undefined4      refs=1  nearby: g_ARRAY_PTR_0061f6b4[1] at +4
-  DAT_0061f764                    addr=0061f764    type=undefined4      refs=2  nearby: g_INT_0061f760 at +4
-  DAT_0070cb00                    addr=0070cb00    type=undefined4      refs=2  nearby: g_INT_0070cafc at +4
-  DAT_0070cb04                    addr=0070cb04    type=undefined4      refs=2  nearby: g_INT_0070cafc at +8
-  DAT_0070cb08                    addr=0070cb08    type=undefined4      refs=2  nearby: g_INT_0070cafc at +12
-  DAT_0070cb0c                    addr=0070cb0c    type=undefined4      refs=2  nearby: g_INT_0070cafc at +16
-  DAT_0070cb34                    addr=0070cb34    type=undefined4      refs=2  nearby: g_INT_0070cafc at +56
-  DAT_0070cbc4                    addr=0070cbc4    type=undefined4      refs=2  nearby: g_INT_0070cafc at +200
-  DAT_0070cbc8                    addr=0070cbc8    type=undefined4      refs=2  nearby: g_INT_0070cafc at +204
-  DAT_0070cc0c                    addr=0070cc0c    type=undefined4      refs=2
-  DAT_0070cc10                    addr=0070cc10    type=undefined4      refs=2
-  DAT_0070cc14                    addr=0070cc14    type=undefined4      refs=2
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_007c2550                    addr=007c2550    type=undefined4      refs=1  nearby: g_INT_007c254c at +4
   DAT_007c2558                    addr=007c2558    type=undefined4      refs=1  nearby: g_INT_007c2554 at +4
@@ -313,9 +205,6 @@ NO TYPE HINTS (303)
   DAT_0083d6e8                    addr=0083d6e8    type=undefined4      refs=1
   DAT_0083e5d4                    addr=0083e5d4    type=undefined4      refs=1
   DAT_0083e5e0                    addr=0083e5e0    type=undefined4      refs=1
-  DAT_0091f5e0                    addr=0091f5e0    type=undefined4      refs=1
-  DAT_0091f5e4                    addr=0091f5e4    type=undefined4      refs=1
-  DAT_0091f5e8                    addr=0091f5e8    type=undefined4      refs=1
   DAT_01510854                    addr=01510854    type=undefined4      refs=1  nearby: g_FLOAT_01510850 at +4
   DAT_01510860                    addr=01510860    type=undefined4      refs=1  nearby: g_FLOAT_0151085c at +4
   DAT_0151086c                    addr=0151086c    type=undefined4      refs=1  nearby: g_FLOAT_01510868 at +4
@@ -375,7 +264,6 @@ NO TYPE HINTS (303)
   DAT_01c22324                    addr=01c22324    type=undefined4      refs=1  nearby: g_FLOAT_01c22320 at +4
   DAT_01c22330                    addr=01c22330    type=undefined4      refs=1  nearby: g_FLOAT_01c2232c at +4
   DAT_01c2233c                    addr=01c2233c    type=undefined4      refs=1  nearby: g_FLOAT_01c22338 at +4
-  DAT_01c38af8                    addr=01c38af8    type=undefined4      refs=1  nearby: g_INT_01c38af4 at +4
   DAT_01c86058                    addr=01c86058    type=undefined4      refs=3  nearby: g_CMuzzleFlash_01c85ffc at +92
   DAT_01cab78a                    addr=01cab78a    type=undefined4      refs=1  nearby: g_INT_01cab780 at +10
   DAT_01cab78b                    addr=01cab78b    type=undefined4      refs=1  nearby: g_INT_01cab780 at +11
@@ -385,10 +273,6 @@ NO TYPE HINTS (303)
   DAT_01caf4a3                    addr=01caf4a3    type=undefined4      refs=1  nearby: g_CHAR_01caf4a0 at +3
   DAT_01cb0240                    addr=01cb0240    type=undefined4      refs=1  nearby: g_USHORT_01cb0242 at -2
   DAT_01cb8109                    addr=01cb8109    type=undefined4      refs=1  nearby: g_FLOAT_01cb810c at -3
-  DAT_01cb82e0                    addr=01cb82e0    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.D at +4
-  DAT_01cb82e4                    addr=01cb82e4    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01cb82c8.surface_normal.D at +8
-  DAT_01cb82e8                    addr=01cb82e8    type=undefined4      refs=1  nearby: g_INT_01cb82f0 at -8
-  DAT_01cb82ec                    addr=01cb82ec    type=undefined4      refs=1  nearby: g_INT_01cb82f0 at -4
   DAT_01d06552                    addr=01d06552    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d06450+3 at +255
   DAT_01d06553                    addr=01d06553    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d06450+3 at +256
   DAT_01d06752                    addr=01d06752    type=undefined4      refs=1
@@ -399,12 +283,6 @@ NO TYPE HINTS (303)
   DAT_01d06953                    addr=01d06953    type=undefined4      refs=1
   DAT_01d074aa                    addr=01d074aa    type=undefined4      refs=1
   DAT_01d074ab                    addr=01d074ab    type=undefined4      refs=1
-  DAT_01d083e2                    addr=01d083e2    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d082e0+3 at +255
-  DAT_01d083e3                    addr=01d083e3    type=undefined4      refs=1  nearby: g_CHAR_ARRAY_01d082e0+3 at +256
-  DAT_01d084e2                    addr=01d084e2    type=undefined4      refs=1
-  DAT_01d084e3                    addr=01d084e3    type=undefined4      refs=1
-  DAT_01d085e2                    addr=01d085e2    type=undefined4      refs=1
-  DAT_01d085e3                    addr=01d085e3    type=undefined4      refs=1
   DAT_01d09b9c                    addr=01d09b9c    type=undefined4      refs=1  nearby: g_INT_01d09b94 at +8
   DAT_01d09bd8                    addr=01d09bd8    type=undefined4      refs=1  nearby: g_INT_01d09b94 at +68
   DAT_01d09be0                    addr=01d09be0    type=undefined4      refs=1  nearby: g_INT_01d09b94 at +76
@@ -421,59 +299,15 @@ NO TYPE HINTS (303)
   DAT_01d167f0                    addr=01d167f0    type=undefined4      refs=1  nearby: g_FLOAT_01d167e4 at +12
   DAT_01d17b08                    addr=01d17b08    type=undefined4      refs=3  nearby: g_SSoftwareEdge_01d17ab8.base.depth_gradient at +36
   DAT_01d17b10                    addr=01d17b10    type=undefined4      refs=1  nearby: g_SSoftwareEdge_01d17ab8.base.depth_gradient at +44
-  DAT_01d182e0                    addr=01d182e0    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +4
-  DAT_01d182e4                    addr=01d182e4    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +8
-  DAT_01d182e8                    addr=01d182e8    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +12
-  DAT_01d182ec                    addr=01d182ec    type=undefined4      refs=1  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +16
-  DAT_01d182f0                    addr=01d182f0    type=undefined4      refs=23  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +20
-  DAT_01d182f4                    addr=01d182f4    type=undefined4      refs=2  nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D at +24
+  DAT_01d182f0                    addr=01d182f0    type=undefined4      refs=23  nearby: g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3] at +4
+  DAT_01d182f4                    addr=01d182f4    type=undefined4      refs=2  nearby: g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3] at +8
   DAT_01d192f8                    addr=01d192f8    type=undefined4      refs=13
   DAT_01d19300                    addr=01d19300    type=undefined4      refs=1
   DAT_01d1c632                    addr=01d1c632    type=undefined4      refs=1  nearby: g_CHAR_01d1c630 at +2
   DAT_01d1c633                    addr=01d1c633    type=undefined4      refs=1  nearby: g_CHAR_01d1c630 at +3
   DAT_01d1c69a                    addr=01d1c69a    type=undefined4      refs=2  nearby: g_CHAR_01d1c630 at +106
   DAT_01d1c69b                    addr=01d1c69b    type=undefined4      refs=2  nearby: g_CHAR_01d1c630 at +107
-  DAT_01d21c08                    addr=01d21c08    type=undefined4      refs=1
-  DAT_01d21c0c                    addr=01d21c0c    type=undefined4      refs=1
-  DAT_01d21c10                    addr=01d21c10    type=undefined4      refs=1
-  DAT_01d21c14                    addr=01d21c14    type=undefined4      refs=1
-  DAT_01d21c20                    addr=01d21c20    type=undefined4      refs=1
-  DAT_01d21c68                    addr=01d21c68    type=undefined4      refs=1
-  DAT_01d21c6c                    addr=01d21c6c    type=undefined4      refs=1
-  DAT_01d21c70                    addr=01d21c70    type=undefined4      refs=1
-  DAT_01d21c74                    addr=01d21c74    type=undefined4      refs=1
-  DAT_01d21cf8                    addr=01d21cf8    type=undefined4      refs=1
-  DAT_01d21cfc                    addr=01d21cfc    type=undefined4      refs=1
-  DAT_01d21d00                    addr=01d21d00    type=undefined4      refs=1
-  DAT_01d21d04                    addr=01d21d04    type=undefined4      refs=1
-  DAT_01d21e18                    addr=01d21e18    type=undefined4      refs=1
-  DAT_01d21e1c                    addr=01d21e1c    type=undefined4      refs=1
-  DAT_01d21e20                    addr=01d21e20    type=undefined4      refs=1
-  DAT_01d21e24                    addr=01d21e24    type=undefined4      refs=1
-  DAT_01d21e30                    addr=01d21e30    type=undefined4      refs=1
-  DAT_01d51058                    addr=01d51058    type=undefined4      refs=2  nearby: g_INT_01d51050 at +8
-  DAT_01d5105d                    addr=01d5105d    type=undefined4      refs=1  nearby: g_INT_01d51050 at +13
-  DAT_01d51064                    addr=01d51064    type=undefined4      refs=1  nearby: g_INT_01d51050 at +20
-  DAT_01d5106a                    addr=01d5106a    type=undefined4      refs=1  nearby: g_INT_01d51050 at +26
-  DAT_01d5106b                    addr=01d5106b    type=undefined4      refs=1  nearby: g_INT_01d51050 at +27
-  DAT_01d545d0                    addr=01d545d0    type=undefined4      refs=1  nearby: g_INT_01d5463c at -108
-  DAT_01d545d4                    addr=01d545d4    type=undefined4      refs=1  nearby: g_INT_01d5463c at -104
-  DAT_01d545d8                    addr=01d545d8    type=undefined4      refs=1  nearby: g_INT_01d5463c at -100
   DAT_01d65400                    addr=01d65400    type=undefined4      refs=1  nearby: g_INT_01d653fc at +4
-  DAT_01e50210                    addr=01e50210    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +4
-  DAT_01e50214                    addr=01e50214    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +8
-  DAT_01e50218                    addr=01e50218    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +12
-  DAT_01e5021c                    addr=01e5021c    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +16
-  DAT_01e50220                    addr=01e50220    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +20
-  DAT_01e50224                    addr=01e50224    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +24
-  DAT_01e50228                    addr=01e50228    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +28
-  DAT_01e5022c                    addr=01e5022c    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +32
-  DAT_01e50230                    addr=01e50230    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +36
-  DAT_01e50234                    addr=01e50234    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +40
-  DAT_01e50238                    addr=01e50238    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +44
-  DAT_01e5023c                    addr=01e5023c    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +48
-  DAT_01e50240                    addr=01e50240    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +52
-  DAT_01e50244                    addr=01e50244    type=undefined4      refs=1  nearby: g_INT_ARRAY_01e5020c at +56
   DAT_01fc9cdc                    addr=01fc9cdc    type=undefined4      refs=1  nearby: g_INT_01fc9cd8 at +4
   DAT_0200e3dc                    addr=0200e3dc    type=undefined4      refs=2  nearby: g_INT_0200e3d8 at +4
   DAT_0200e8a0                    addr=0200e8a0    type=undefined4      refs=1  nearby: g_FLOAT_0200e89c at +4
@@ -485,7 +319,6 @@ NO TYPE HINTS (303)
   DAT_020b1918                    addr=020b1918    type=undefined4      refs=1  nearby: g_CDemonGlobe_020b1924.intensity at -40
   DAT_020b191c                    addr=020b191c    type=undefined4      refs=1  nearby: g_CDemonGlobe_020b1924.intensity at -36
   DAT_020b1920                    addr=020b1920    type=undefined4      refs=1  nearby: g_CDemonGlobe_020b1924.intensity at -32
-  DAT_0264a5d4                    addr=0264a5d4    type=undefined4      refs=3  nearby: g_INT_0264a5d8 at -4
   DAT_0264bc30                    addr=0264bc30    type=undefined4      refs=2  nearby: g_PTR_0264bc2c at +4
   DAT_0264bc34                    addr=0264bc34    type=undefined4      refs=2  nearby: g_PTR_0264bc38 at -4
   DAT_0264bc64                    addr=0264bc64    type=undefined4      refs=2  nearby: g_PTR_0264bc60 at +4
@@ -502,8 +335,6 @@ NO TYPE HINTS (303)
   DAT_0264beec                    addr=0264beec    type=undefined4      refs=1  nearby: g_INT_0264bef0 at -4
   DAT_0264bef4                    addr=0264bef4    type=undefined4      refs=1  nearby: g_INT_0264bef0 at +4
   DAT_02652ea8                    addr=02652ea8    type=undefined4      refs=1  nearby: g_INT_02652eac at -4
-  DAT_02662d60                    addr=02662d60    type=undefined4      refs=1  nearby: g_INT_02662d64 at -4
-  DAT_026656c0                    addr=026656c0    type=undefined4      refs=1  nearby: g_PTR_026656bc at +4
   DAT_026672fc                    addr=026672fc    type=undefined4      refs=2  nearby: g_INT_026672a8 at +84
   DAT_026807c8                    addr=026807c8    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_026807e0 at -24
   DAT_026807cc                    addr=026807cc    type=undefined4      refs=1  nearby: g_CHAR_PTR_PTR_026807e0 at -20
@@ -513,13 +344,8 @@ NO TYPE HINTS (303)
 --------------------------------------------------------------------------------
 MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
-  DAT_01d182f0                    addr=01d182f0    refs=23    type=undefined4      nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D(+20)
-  DAT_0061f4d8                    addr=0061f4d8    refs=15    type=undefined4      likely=int  nearby: PTR_DAT_0061f4d4(+4)
+  DAT_01d182f0                    addr=01d182f0    refs=23    type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3](+4)
   DAT_01d192f8                    addr=01d192f8    refs=13    type=undefined4    
-  DAT_0264a5d0                    addr=0264a5d0    refs=10    type=undefined4      likely=void **  nearby: g_IDirectSoundBuffer_PTR_0264a5cc(+4)
-  DAT_02680160                    addr=02680160    refs=7     type=undefined4      likely=uint *  nearby: g_INT_02680150(+16)
-  DAT_02680164                    addr=02680164    refs=5     type=undefined4      likely=uint *  nearby: g_INT_02680170(-12)
-  DAT_00601440                    addr=00601440    refs=5     type=undefined4      likely=byte  nearby: g_DOUBLE_00601430+4(+12)
   DAT_01d0bba0                    addr=01d0bba0    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d0bb98(+8)
   DAT_01d0bbd8                    addr=01d0bbd8    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d0bb98(+64)
   DAT_01d0bbdc                    addr=01d0bbdc    refs=4     type=undefined4      likely=float  nearby: g_FLOAT_01d0bb98(+68)
@@ -533,24 +359,18 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_01d0bbb0                    addr=01d0bbb0    refs=3     type=undefined4      likely=float  nearby: g_FLOAT_01d0bb98(+24)
   DAT_01d0bbe4                    addr=01d0bbe4    refs=3     type=undefined4      nearby: g_FLOAT_01d0bb98(+76)
   DAT_01d17b08                    addr=01d17b08    refs=3     type=undefined4      nearby: g_SSoftwareEdge_01d17ab8.base.depth_gradient(+36)
-  DAT_00619340                    addr=00619340    refs=3     type=undefined4      nearby: g_INT_ARRAY_0061933c(+4)
-  DAT_0264a5d4                    addr=0264a5d4    refs=3     type=undefined4      nearby: g_INT_0264a5d8(-4)
   DAT_0083d6e0                    addr=0083d6e0    refs=2     type=undefined4    
-  DAT_00a014e0                    addr=00a014e0    refs=2     type=undefined4      likely=float
-  DAT_00a014e4                    addr=00a014e4    refs=2     type=undefined4      likely=float
-  DAT_00a014e8                    addr=00a014e8    refs=2     type=undefined4      likely=float
   DAT_0083d6d4                    addr=0083d6d4    refs=2     type=undefined4    
   DAT_01ba5798                    addr=01ba5798    refs=2     type=undefined4      likely=uint *  nearby: g_INT_ARRAY_01ba5778[7](+4)
   DAT_01ba57e8                    addr=01ba57e8    refs=2     type=undefined4      nearby: g_INT_ARRAY_01ba5778[7](+84)
   DAT_01ba57ec                    addr=01ba57ec    refs=2     type=undefined4      nearby: g_INT_ARRAY_01ba5778[7](+88)
   DAT_006141f4                    addr=006141f4    refs=2     type=undefined4      likely=int  nearby: g_CEventList_PTR_006141f0(+4)
   DAT_00780000                    addr=00780000    refs=2     type=undefined4    
-  DAT_01d182f4                    addr=01d182f4    refs=2     type=undefined4      nearby: g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D(+24)
+  DAT_01d182f4                    addr=01d182f4    refs=2     type=undefined4      nearby: g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3](+8)
   DAT_01d1c698                    addr=01d1c698    refs=2     type=undefined4      likely=byte  nearby: g_CHAR_01d1c630(+104)
   DAT_01d1c699                    addr=01d1c699    refs=2     type=undefined4      likely=byte  nearby: g_CHAR_01d1c630(+105)
   DAT_01d1c69a                    addr=01d1c69a    refs=2     type=undefined4      nearby: g_CHAR_01d1c630(+106)
   DAT_01d1c69b                    addr=01d1c69b    refs=2     type=undefined4      nearby: g_CHAR_01d1c630(+107)
-  DAT_01d51058                    addr=01d51058    refs=2     type=undefined4      nearby: g_INT_01d51050(+8)
   DAT_0200a398                    addr=0200a398    refs=2     type=undefined4      likely=float  nearby: g_INT_0200a394(+4)
   DAT_0200a39c                    addr=0200a39c    refs=2     type=undefined4      likely=float  nearby: g_INT_0200a394(+8)
   DAT_0200a3a0                    addr=0200a3a0    refs=2     type=undefined4      likely=float  nearby: g_INT_0200a3a4(-4)
@@ -562,7 +382,18 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
   DAT_0061ef60                    addr=0061ef60    refs=2     type=undefined1      likely=byte  nearby: g_FILE_PTR_0061ef54(+12)
   DAT_0061f484                    addr=0061f484    refs=2     type=undefined4      nearby: g_UINT_0061f480(+4)
   DAT_02681040                    addr=02681040    refs=2     type=undefined4      nearby: g_INT_02681070(-48)
-  DAT_0061f764                    addr=0061f764    refs=2     type=undefined4      nearby: g_INT_0061f760(+4)
+  DAT_0070c638                    addr=0070c638    refs=2     type=undefined4      likely=float  nearby: g_PTR_0070c62c(+12)
+  DAT_006141dc                    addr=006141dc    refs=2     type=undefined4      nearby: g_INT_006141d8(+4)
+  DAT_01ba51cc                    addr=01ba51cc    refs=2     type=undefined4      likely=SSoftwareEdge *  nearby: g_INT_01ba51c8(+4)
+  DAT_01ba521c                    addr=01ba521c    refs=2     type=undefined4      nearby: g_INT_01ba51c8(+84)
+  DAT_0264bc30                    addr=0264bc30    refs=2     type=undefined4      nearby: g_PTR_0264bc2c(+4)
+  DAT_0264bc34                    addr=0264bc34    refs=2     type=undefined4      nearby: g_PTR_0264bc38(-4)
+  DAT_0264bc64                    addr=0264bc64    refs=2     type=undefined4      nearby: g_PTR_0264bc60(+4)
+  DAT_0264bc6c                    addr=0264bc6c    refs=2     type=undefined4      nearby: g_PTR_0264bc68(+4)
+  DAT_0264bca4                    addr=0264bca4    refs=2     type=undefined4      nearby: g_PTR_0264bca0(+4)
+  DAT_0264bca8                    addr=0264bca8    refs=2     type=undefined4      nearby: g_PTR_0264bca0(+8)
+  DAT_0264bcac                    addr=0264bcac    refs=2     type=undefined4      nearby: g_PTR_0264bcb0(-4)
+  DAT_0264bcc0                    addr=0264bcc0    refs=2     type=undefined4      nearby: g_PTR_0264bcc4(-4)
 
 --------------------------------------------------------------------------------
 IMMEDIATE CONSTANTS - NOT REAL GLOBALS (12)
@@ -584,7 +415,7 @@ They appear only as inline constant values.
   DAT_00007f00                    value=0x7F00          refs=1
 
 --------------------------------------------------------------------------------
-FILTERED OUT - INSIDE NAMED DATA (120)
+FILTERED OUT - INSIDE NAMED DATA (21)
 --------------------------------------------------------------------------------
 These DAT_ globals fall within the address range of a named
 string, array, or struct and are not standalone globals.
@@ -593,16 +424,9 @@ string, array, or struct and are not standalone globals.
   DAT_005d24cf                    inside s_CEditorTools_setMousePoi_005d249d
   DAT_005d24d0                    inside s_CEditorTools_setMousePoi_005d249d
   DAT_005d24d1                    inside s_CEditorTools_setMousePoi_005d249d
-  DAT_005dcc8d                    inside s_You_re_done_with_calibra_005dcc6f
-  DAT_005dcc8e                    inside s_You_re_done_with_calibra_005dcc6f
-  DAT_005dcc8f                    inside s_You_re_done_with_calibra_005dcc6f
   DAT_005e94c7                    inside s_SOUND_005e94bf
   DAT_005e9697                    inside s_DSERR_CONTROLUNAVAIL_The_005e962e
   DAT_005e98a9                    inside s_DSERR_OTHERAPPHASPRIO_An_005e983c
-  DAT_00611328                    inside g_QWORD_00611320
-  DAT_00611330                    inside g_QWORD_00611320
-  DAT_00611338                    inside g_QWORD_00611320
-  DAT_00611340                    inside g_QWORD_00611320
   DAT_00614234                    inside s_CCharacter_00614216
   DAT_00614238                    inside s_CCharacter_00614216
   DAT_0061423c                    inside s_CCharacter_00614216
@@ -614,98 +438,6 @@ string, array, or struct and are not standalone globals.
   DAT_0061f5ac                    inside s_EST_0061f52c
   DAT_0061f62d                    inside s_EDT_0061f5ad
   DAT_00621864                    inside g_FLOAT10_0062185a
-  DAT_01d087b8                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087b9                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087ba                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087bb                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087e0                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087e1                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087e2                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d087e3                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08808                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08809                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0880a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0880b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08830                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08831                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08832                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08833                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08858                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08859                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0885a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0885b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08880                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08881                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08882                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08883                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088a8                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088a9                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088aa                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088ab                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088d0                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088d1                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088d2                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088d3                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088f8                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088f9                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088fa                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d088fb                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08920                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08921                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08922                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08923                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08948                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08949                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0894a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0894b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08970                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08971                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08972                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08973                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08998                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08999                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0899a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d0899b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089c0                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089c1                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089c2                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089c3                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089e8                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089e9                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089ea                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d089eb                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a10                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a11                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a12                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a13                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a38                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a39                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a3a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a3b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a60                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a61                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a62                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a63                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a88                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a89                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a8a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08a8b                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ab0                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ab1                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ab2                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ab3                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ad8                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ad9                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08ada                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08adb                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b00                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b01                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b02                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b03                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b28                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b29                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b2a                    inside g_INT_PTR_ARRAY_01d086f4
-  DAT_01d08b2b                    inside g_INT_PTR_ARRAY_01d086f4
   DAT_02653634                    inside g_UCHAR_ARRAY_02653630
   DAT_02653638                    inside g_UCHAR_ARRAY_02653630
   DAT_0266462c                    inside g_HWND_02664628

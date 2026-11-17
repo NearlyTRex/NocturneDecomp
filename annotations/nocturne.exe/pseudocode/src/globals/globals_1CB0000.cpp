@@ -10,3 +10,9 @@ CAlphaBitmap g_InvBackground2Bitmap = {};
 CAlphaBitmap g_WeapBackgroundBitmap = {};
 CAlphaBitmap g_WeapBackground2Bitmap = {};
 
+// SInventoryItemInfo[100]
+SInventoryItemInfo g_SInventoryItemInfo_ARRAY_01cb03d8[100] = {};
+
+// int
+int g_INT_01cb03d0 = {};
+

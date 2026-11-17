@@ -15,7 +15,7 @@
 ;   TerminatedCString s_Can_t_load_s_because_def_00591de8
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_0268cef0
+;   int g_INT_0268cef0
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -33,7 +33,7 @@ section .text
     PUSH EDI                            ; 0051f572
     PUSH EBP                            ; 0051f573
     MOV EBP,ESP                         ; 0051f574
-    MOV EDX,dword ptr [0x0268cef0]      ; 0051f576 | DAT_0268cef0
+    MOV EDX,dword ptr [0x0268cef0]      ; 0051f576 | g_INT_0268cef0
     XOR EBX,EBX                         ; 0051f57c
     TEST EDX,EDX                        ; 0051f57e
     JLE 0x0051f5c0                      ; 0051f580
@@ -53,13 +53,13 @@ section .text
     TEST EAX,EAX                        ; 0051f5a7
     JZ 0x0051f641                       ; 0051f5a9
         ;   XREF to: 0051f641 (CONDITIONAL_JUMP)  ; LAB_0051f641
-    MOV ECX,dword ptr [0x0268cef0]      ; 0051f5af | DAT_0268cef0
+    MOV ECX,dword ptr [0x0268cef0]      ; 0051f5af | g_INT_0268cef0
     INC EBX                             ; 0051f5b5
     ADD ESI,0x2ac0                      ; 0051f5b6
     CMP EBX,ECX                         ; 0051f5bc
     JL 0x0051f58d                       ; 0051f5be
         ;   XREF to: 0051f58d (CONDITIONAL_JUMP)  ; LAB_0051f58d
-    CMP dword ptr [0x0268cef0],0x40     ; 0051f5c0 | DAT_0268cef0
+    CMP dword ptr [0x0268cef0],0x40     ; 0051f5c0 | g_INT_0268cef0
         ;   Label: LAB_0051f5c0
     JL 0x0051f5f2                       ; 0051f5c7
         ;   XREF to: 0051f5f2 (CONDITIONAL_JUMP)  ; LAB_0051f5f2
@@ -74,7 +74,7 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0051f5ea
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0xc                         ; 0051f5ef
-    MOV EBX,dword ptr [0x0268cef0]      ; 0051f5f2 | DAT_0268cef0
+    MOV EBX,dword ptr [0x0268cef0]      ; 0051f5f2 | g_INT_0268cef0
         ;   Label: LAB_0051f5f2
     LEA EAX,[EBX*0x4 + 0x0]             ; 0051f5f8
     ADD EAX,EBX                         ; 0051f5ff
@@ -84,14 +84,14 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 0051f609
     MOV EBX,EAX                         ; 0051f60c
     SHL EAX,0x3                         ; 0051f60e
-    MOV ECX,dword ptr [0x0268cef0]      ; 0051f611 | DAT_0268cef0
+    MOV ECX,dword ptr [0x0268cef0]      ; 0051f611 | g_INT_0268cef0
     ADD EAX,EBX                         ; 0051f617
     MOV EBX,0x268cef4                   ; 0051f619
     PUSH EDX                            ; 0051f61e
     ADD EBX,EAX                         ; 0051f61f
     INC ECX                             ; 0051f621
     PUSH EBX                            ; 0051f622
-    MOV dword ptr [0x0268cef0],ECX      ; 0051f623 | DAT_0268cef0
+    MOV dword ptr [0x0268cef0],ECX      ; 0051f623 | g_INT_0268cef0
     CALL core_skeleton.cpp_CDeformableModel_load_FUN_005191f0 ; 0051f629
         ;   XREF to: 005191f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_005191f0(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0051f62e

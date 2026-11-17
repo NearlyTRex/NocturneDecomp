@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 444,
+    "complexity_score": 349,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 174,
-    "suspect_count": 25,
+    "suspect_count": 16,
     "suspect_types": [
       "loop_clobbered_constant",
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 568
   },
@@ -72,55 +71,55 @@
     },
     {
       "addr": "0061933c",
-      "name": "g_INT_ARRAY_0061933c",
-      "type": "int[1]",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[1]",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "00619340",
-      "name": "DAT_00619340",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061934c",
-      "name": "DAT_0061934c",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00619358",
-      "name": "DAT_00619358",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].l[8]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00619398",
-      "name": "DAT_00619398",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].s[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0061939c",
-      "name": "DAT_0061939c",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].s[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a0",
-      "name": "DAT_006193a0",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].s[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a4",
-      "name": "DAT_006193a4",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].s[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "006193a8",
-      "name": "DAT_006193a8",
+      "name": "g_SMpegLayer3BandIndex_ARRAY_00619338[0].s[5]",
       "type": "undefined4",
       "value": null
     },
@@ -458,115 +457,51 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "local_1c = (float *)(*(int *)(&DAT_00619398 + iVar9 * 0x94) * 3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "local_28 = *(int *)(&DAT_00619398 + iVar9 * 0x94);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(double *)((int)g_DOUBLE_ARRAY_01d1edd8",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d1edd8 + iVar10) = (double)fVar11;",
+      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d1edd8 + iVar9) = (double)fVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(double *)((int)g_DOUBLE_ARRAY_01d1f418",
       "severity": "moderate",
-      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d1f418 + iVar3) = (double)fVar12;",
+      "text": "*(double *)((int)g_DOUBLE_ARRAY_01d1f418 + iVar6) = (double)fVar11;",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 94,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_00619398 + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_00619398",
-      "severity": "mild",
-      "text": "local_28 = *(int *)(&DAT_00619398 + iVar7) - iVar4;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 99,
-      "match": "DAT_00619358",
-      "severity": "mild",
-      "text": "if (local_20 != *(float **)(&DAT_00619358 + iVar3)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 100,
-      "match": "DAT_00619358",
-      "severity": "mild",
-      "text": "if ((int)local_20 < (int)*(float **)(&DAT_00619358 + iVar3)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
-      "match": "DAT_006193a4",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&DAT_006193a4 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
-      "match": "DAT_006193a0",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&DAT_006193a0 + iVar3);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_006193a4",
-      "severity": "mild",
-      "text": "local_28 = *(int *)(&DAT_006193a4 + iVar3) - iVar4;",
-      "type": "undefined_data"
+      "description": "Complex pointer cast",
+      "line": 115,
+      "match": "(int *)((int)quantized_samples",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) == 0) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 116,
-      "match": "(int *)((int)quantized_samples",
+      "match": "(uint *)((int)output_samples",
       "severity": "moderate",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar10 + local_68) == 0) {",
+      "text": "*(uint *)((int)output_samples->samples[0] + iVar9 + local_68) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(uint *)((int)output_samples",
+      "line": 155,
+      "match": "(int *)((int)quantized_samples",
       "severity": "moderate",
-      "text": "*(uint *)((int)output_samples->samples[0] + iVar10 + local_68) = 0;",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar9 + local_68) < 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 156,
-      "match": "(int *)((int)quantized_samples",
+      "match": "(float *)((int)output_samples",
       "severity": "moderate",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar10 + local_68) < 0) {",
+      "text": "*(float *)((int)output_samples->samples[0] + iVar9 + local_68) =",
       "type": "pointer_cast"
     },
     {
@@ -574,20 +509,12 @@
       "line": 157,
       "match": "(float *)((int)output_samples",
       "severity": "moderate",
-      "text": "*(float *)((int)output_samples->samples[0] + iVar10 + local_68) =",
+      "text": "-*(float *)((int)output_samples->samples[0] + iVar9 + local_68);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(float *)((int)output_samples",
-      "severity": "moderate",
-      "text": "-*(float *)((int)output_samples->samples[0] + iVar10 + local_68);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 162,
+      "line": 161,
       "match": "(float *)((int)local_20",
       "severity": "moderate",
       "text": "local_20 = (float *)((int)local_20 + 1);",
@@ -595,7 +522,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 163,
+      "line": 162,
       "match": "(float *)((int)local_38",
       "severity": "moderate",
       "text": "local_38 = (float *)((int)local_38 + 1);",
@@ -611,23 +538,23 @@
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 99,
       "match": "(int)local_20",
       "severity": "moderate",
-      "text": "if ((int)local_20 < (int)*(float **)(&DAT_00619358 + iVar3)) {",
+      "text": "if ((int)local_20 < g_SMpegLayer3BandIndex_ARRAY_00619338[iVar8].l[8]) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 129,
       "match": "(int)local_38",
       "severity": "moderate",
-      "text": "iVar4 = ((int)local_38 - local_2c) / local_28;",
+      "text": "iVar3 = ((int)local_38 - local_2c) / local_28;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 162,
+      "line": 161,
       "match": "(int)local_20",
       "severity": "moderate",
       "text": "local_20 = (float *)((int)local_20 + 1);",
@@ -635,7 +562,7 @@
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 163,
+      "line": 162,
       "match": "(int)local_38",
       "severity": "moderate",
       "text": "local_38 = (float *)((int)local_38 + 1);",
@@ -650,11 +577,11 @@
       "type": "pointer_truncation"
     },
     {
-      "description": "Loop body reassigns `fVar11` (initialized to a literal constant before the loop) via swap-chain `fVar11 = fVar13; fVar13 = fVar2;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
-      "line": 62,
+      "description": "Loop body reassigns `fVar10` (initialized to a literal constant before the loop) via swap-chain `fVar10 = fVar12; fVar12 = fVar2;`, corrupting the loop's math after iter 0. Ghidra register-spill artifact \u2014 drop the swap-chain lines in a .keep so the loop runs with its original constants.",
+      "line": 61,
       "match": "do { ...A used in math...; A = B; B = C; ...} with pre-loop `A = <literal>;`",
       "severity": "moderate",
-      "text": "fVar11 = fVar13;",
+      "text": "fVar10 = fVar12;",
       "type": "loop_clobbered_constant"
     }
   ]

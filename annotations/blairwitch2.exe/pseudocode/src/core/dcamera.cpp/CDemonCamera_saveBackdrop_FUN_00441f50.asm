@@ -268,7 +268,7 @@ section .text
     JBE 0x0044220d                      ; 00442206
         ;   XREF to: 0044220d (CONDITIONAL_JUMP)  ; LAB_0044220d
     MOV EAX,0xff                        ; 00442208
-    MOV byte ptr [EBX],AL               ; 0044220d | g_CHAR_ARRAY_01326d20+0x140
+    MOV byte ptr [EBX],AL               ; 0044220d | g_SFogImagePlane_01326d20.pixels[1][0]
         ;   Label: LAB_0044220d
     MOV EAX,dword ptr [ESP + 0x210]     ; 0044220f
         ;   Label: LAB_0044220f
@@ -354,7 +354,7 @@ section .text
     JGE 0x00442558                      ; 0044236d
         ;   XREF to: 00442558 (CONDITIONAL_JUMP)  ; LAB_00442558
     MOV EAX,0xffffffe0                  ; 00442373
-    MOV byte ptr [ESI + 0x1326d20],AL   ; 00442378 | g_CHAR_ARRAY_01326d20 | g_CHAR_ARRAY_01326d20+1
+    MOV byte ptr [ESI + 0x1326d20],AL   ; 00442378 | g_SFogImagePlane_01326d20 | g_SFogImagePlane_01326d20.pixels[0][1]
         ;   Label: LAB_00442378
     ADD EAX,EBX                         ; 0044237e
     MOV EDI,dword ptr [ESP + 0x1f4]     ; 00442380
@@ -397,7 +397,7 @@ section .text
     PUSH EAX                            ; 0044241d
     LEA EAX,[ESP + 0x1c0]               ; 0044241e
     PUSH EAX                            ; 00442425
-    PUSH 0x1326d20                      ; 00442426 | g_CHAR_ARRAY_01326d20
+    PUSH 0x1326d20                      ; 00442426 | g_SFogImagePlane_01326d20
     LEA EAX,[ESP + 0x170]               ; 0044242b
     MOV EBP,0x12c00                     ; 00442432
     PUSH EAX                            ; 00442437
@@ -494,7 +494,7 @@ section .text
         ;   Label: LAB_0044254d
     JMP 0x0044251e                      ; 0044254e
         ;   XREF to: 0044251e (UNCONDITIONAL_JUMP)  ; LAB_0044251e
-    MOV byte ptr [EBX],0xff             ; 00442550 | g_CHAR_ARRAY_01326d20+0x280
+    MOV byte ptr [EBX],0xff             ; 00442550 | g_SFogImagePlane_01326d20.pixels[2][0]
         ;   Label: LAB_00442550
     JMP 0x0044220f                      ; 00442553
         ;   XREF to: 0044220f (UNCONDITIONAL_JUMP)  ; LAB_0044220f

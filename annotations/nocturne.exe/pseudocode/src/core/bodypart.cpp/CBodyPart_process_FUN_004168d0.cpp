@@ -70,7 +70,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_004168d0(CBodyPart *this_pt
         fVar6 = (this_ptr->physics_box).linear_velocity.z;
         if (((float)3 < SQRT(fVar6 * fVar6 + fVar5 * fVar5 + fVar4 * fVar4)) &&
            (iVar7 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                              (0x01C03A10,"disableBodyPartDamage"), iVar7 == 0)) {
+                              (g_CEventList_PTR_005b7650,"disableBodyPartDamage"),
+           iVar7 == 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00423ed0(&local_54);
           local_54.damage_amount = core_actor_cpp_getRandomFloatFromRange_FUN_0040dda0(10.0,15.0);
           local_54.attacker = &this_ptr->base;

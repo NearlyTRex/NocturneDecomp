@@ -96,7 +96,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057b4fe = -0.5
 ;   double DOUBLE_0057b506 = 0.0100000000000000
-;   undefined4 DAT_0077bdb8
+;   int g_INT_0077bdb8
 ;   CVector3f[100] g_CVector3f_ARRAY_0077bdbc
 ;   undefined4 g_CVector3f_ARRAY_0077bdbc[0].y
 ;   undefined4 g_CVector3f_ARRAY_0077bdbc[0].z
@@ -140,7 +140,7 @@ section .text
     MOV dword ptr [EBX + 0x6c],0x1      ; 0043e2dd
     XOR ECX,ECX                         ; 0043e2e4
         ;   Label: LAB_0043e2e4
-    MOV ESI,dword ptr [0x0077bdb8]      ; 0043e2e6 | DAT_0077bdb8
+    MOV ESI,dword ptr [0x0077bdb8]      ; 0043e2e6 | g_INT_0077bdb8
     MOV dword ptr [ESP + 0x140],ECX     ; 0043e2ec
     TEST ESI,ESI                        ; 0043e2f3
     JLE 0x0043e4b7                      ; 0043e2f5
@@ -254,7 +254,7 @@ section .text
     INC EAX                             ; 0043e4a0
     ADD ESI,0xc                         ; 0043e4a1
     MOV dword ptr [ESP + 0x140],EAX     ; 0043e4a4
-    CMP EAX,dword ptr [0x0077bdb8]      ; 0043e4ab | DAT_0077bdb8
+    CMP EAX,dword ptr [0x0077bdb8]      ; 0043e4ab | g_INT_0077bdb8
     JL 0x0043e343                       ; 0043e4b1
         ;   XREF to: 0043e343 (CONDITIONAL_JUMP)  ; LAB_0043e343
     XOR EDX,EDX                         ; 0043e4b7

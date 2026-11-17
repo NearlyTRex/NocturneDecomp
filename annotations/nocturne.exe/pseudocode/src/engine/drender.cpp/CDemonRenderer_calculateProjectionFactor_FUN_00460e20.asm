@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057dc85 = 18
 ;   double DOUBLE_0057dc8d = 65536
-;   undefined4 DAT_005b7648
+;   int g_INT_005b7648 = 0x10000
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
 
     SUB ESP,0x4                         ; 00460e20
         ;   Label: engine_drender.cpp_CDemonRenderer_calculateProjectionFactor_FUN_00460e20
-    FILD dword ptr [0x005b7648]         ; 00460e23 | DAT_005b7648
+    FILD dword ptr [0x005b7648]         ; 00460e23 | g_INT_005b7648
     FDIVR double ptr [0x0057dc85]       ; 00460e29 | DOUBLE_0057dc85
     FMUL double ptr [0x0057dc8d]        ; 00460e2f | DOUBLE_0057dc8d
     FSTP float ptr [ESP]                ; 00460e35

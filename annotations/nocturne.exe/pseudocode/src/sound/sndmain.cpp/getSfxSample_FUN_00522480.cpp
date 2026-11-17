@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
 
 {
@@ -43,12 +41,13 @@ CSfxSample * __cdecl sound_sndmain_cpp_getSfxSample_FUN_00522480(char *filename)
   } while (iVar7 < 0x40);
   iVar7 = 0;
   do {
-    _DAT_02dc1ed8 = _DAT_02dc1ed8 + 1;
-    if (0x3f < _DAT_02dc1ed8) {
-      _DAT_02dc1ed8 = 0;
+    g_INT_02dc1ed8 = g_INT_02dc1ed8 + 1;
+    if (0x3f < g_INT_02dc1ed8) {
+      g_INT_02dc1ed8 = 0;
     }
-    if ((g_SfxSamples[_DAT_02dc1ed8].taken == 0) && (g_SfxSamples[_DAT_02dc1ed8].ref_count == 0)) {
-      pCVar6 = g_SfxSamples + _DAT_02dc1ed8;
+    if ((g_SfxSamples[g_INT_02dc1ed8].taken == 0) && (g_SfxSamples[g_INT_02dc1ed8].ref_count == 0))
+    {
+      pCVar6 = g_SfxSamples + g_INT_02dc1ed8;
       bVar9 = pCVar6 == (CSfxSample *)0x0;
       goto LAB_005224ea;
     }
@@ -61,8 +60,8 @@ LAB_005224ea:
     return pCVar6;
   }
   sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(pCVar6);
-  if ((DAT_02db1110 & 1) == 0) {
-    DAT_02db1110 = DAT_02db1110 | 1;
+  if ((g_UCHAR_02db1110 & 1) == 0) {
+    g_UCHAR_02db1110 = g_UCHAR_02db1110 | 1;
     sound_mp3_cpp_CMP3Decoder_ctor_FUN_004e7d90(&g_CMP3DecoderInstance);
     _atexit(&g_CMP3DecoderDestructorNode1);
   }

@@ -8,8 +8,8 @@
 ;   crt_unknown.c_FUN_0056f034 at 0056f036
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c2144
-;   undefined4 DAT_02de5c30
+;   uint g_UINT_005c2144 = 0x1
+;   int g_INT_02de5c30
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_00563cc0
@@ -51,8 +51,8 @@ section .text
     ADD ESP,0xc                         ; 00571926
     XOR EDX,EDX                         ; 00571929
     XOR EAX,EAX                         ; 0057192b
-    MOV dword ptr [0x02de5c30],EDX      ; 0057192d | DAT_02de5c30
-    MOV dword ptr [0x005c2144],EDX      ; 00571933 | DAT_005c2144
+    MOV dword ptr [0x02de5c30],EDX      ; 0057192d | g_INT_02de5c30
+    MOV dword ptr [0x005c2144],EDX      ; 00571933 | g_UINT_005c2144
     JMP 0x00571a41                      ; 00571939
         ;   XREF to: 00571a41 (UNCONDITIONAL_JUMP)  ; LAB_00571a41
     CMP ESI,-0x4                        ; 0057193e
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 00571973 (CONDITIONAL_JUMP)  ; LAB_00571973
     MOV EBP,0x1                         ; 00571981
     MOV EAX,0x3a4                       ; 00571986
-    MOV dword ptr [0x02de5c30],EBP      ; 0057198b | DAT_02de5c30
-    MOV [0x005c2144],EAX                ; 00571991 | DAT_005c2144
+    MOV dword ptr [0x02de5c30],EBP      ; 0057198b | g_INT_02de5c30
+    MOV [0x005c2144],EAX                ; 00571991 | g_UINT_005c2144
     JMP 0x00571a3f                      ; 00571996
         ;   XREF to: 00571a3f (UNCONDITIONAL_JUMP)  ; LAB_00571a3f
     TEST ESI,ESI                        ; 0057199b
@@ -115,11 +115,11 @@ section .text
     ADD ESP,0xc                         ; 005719d0
     XOR ECX,ECX                         ; 005719d3
     MOV AH,byte ptr [ESP + 0x6]         ; 005719d5
-    MOV dword ptr [0x02de5c30],ECX      ; 005719d9 | DAT_02de5c30
+    MOV dword ptr [0x02de5c30],ECX      ; 005719d9 | g_INT_02de5c30
     TEST AH,AH                          ; 005719df
     JZ 0x005719ed                       ; 005719e1
         ;   XREF to: 005719ed (CONDITIONAL_JUMP)  ; LAB_005719ed
-    MOV dword ptr [0x02de5c30],0x1      ; 005719e3 | DAT_02de5c30
+    MOV dword ptr [0x02de5c30],0x1      ; 005719e3 | g_INT_02de5c30
     XOR EBX,EBX                         ; 005719ed
         ;   Label: LAB_005719ed
     MOV CL,0x1                          ; 005719ef
@@ -153,14 +153,14 @@ section .text
     JNZ 0x00571a39                      ; 00571a22
         ;   XREF to: 00571a39 (CONDITIONAL_JUMP)  ; LAB_00571a39
     CALL dword ptr CS:[0x575530]        ; 00571a24
-    MOV [0x005c2144],EAX                ; 00571a2b | DAT_005c2144
+    MOV [0x005c2144],EAX                ; 00571a2b | g_UINT_005c2144
     XOR EAX,EAX                         ; 00571a30
     ADD ESP,0x14                        ; 00571a32
     POP EBP                             ; 00571a35
     POP ESI                             ; 00571a36
     POP EBX                             ; 00571a37
     RET                                 ; 00571a38
-    MOV dword ptr [0x005c2144],ESI      ; 00571a39 | DAT_005c2144
+    MOV dword ptr [0x005c2144],ESI      ; 00571a39 | g_UINT_005c2144
         ;   Label: LAB_00571a39
     XOR EAX,EAX                         ; 00571a3f
         ;   Label: LAB_00571a3f

@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 42,
+    "complexity_score": 52,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "warning_overlapping_globals"
+      "pointer_cast"
     ],
     "total_lines": 83
   },
@@ -70,8 +70,8 @@
     },
     {
       "addr": "02dc93a4",
-      "name": "DAT_02dc93a4",
-      "type": "undefined4",
+      "name": "g_HWAVEOUT_02dc93a4",
+      "type": "HWAVEOUT",
       "value": null
     }
   ],
@@ -155,12 +155,20 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "if (*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2) != (LPWAVEHDR)0x0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8",
+      "severity": "moderate",
+      "text": "(g_HWAVEOUT_02dc93a4,*(LPWAVEHDR *)((int)g_LPWAVEHDR_ARRAY_02dc93a8 + iVar2),0x20);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

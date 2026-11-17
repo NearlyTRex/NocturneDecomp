@@ -25,11 +25,11 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedHardwareOp40_FUN_
   }
   g_VertexPreprocessMode = 0;
   g_RenderStateFlags.dword = RENDER_TEX_ENABLE;
-  if (DAT_006b0270 != 0) {
+  if (g_INT_006b0270 != 0) {
     engine_fpoly_c_rasterizePolygonHardware_FUN_00494260
               ((SRenderVertex **)(prim + 1),(prim->base).count);
-    return (SMRGLHeaderExtended *)&DAT_006b0288;
+    return (SMRGLHeaderExtended *)&g_INT_006b0288;
   }
   engine_clipper_c_clipAndRasterize_FUN_00432cd0((prim->base).count,(int *)(prim + 1));
-  return (SMRGLHeaderExtended *)&DAT_006b0288;
+  return (SMRGLHeaderExtended *)&g_INT_006b0288;
 }

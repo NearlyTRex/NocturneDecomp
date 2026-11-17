@@ -60,11 +60,11 @@ extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01ed31a0[16];
 // byte
 extern byte g_BYTE_01ed36bc;
 
-// char[101]
-extern char g_CHAR_ARRAY_01ed02b8[101];
+// char[101][100]
+extern char g_CHAR_ARRAY_ARRAY_01ed02b8[101][100];
 
-// char[10]
-extern char g_CHAR_ARRAY_01ed3808[10];
+// char[10][1024]
+extern char g_CHAR_ARRAY_ARRAY_01ed3808[10][1024];
 
 // char[2048]
 extern char g_CHAR_ARRAY_01ed6008[2048];

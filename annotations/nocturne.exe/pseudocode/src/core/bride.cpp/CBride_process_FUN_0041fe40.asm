@@ -536,7 +536,7 @@ section .text
     PUSH 0x40e00000                     ; 0042031a
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 0042031f
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
-    MOV ESI,dword ptr [0x00764b34]      ; 00420324 | DAT_00764b34
+    MOV ESI,dword ptr [0x00764b34]      ; 00420324 | g_INT_ARRAY_00764b2c[2]
     MOV dword ptr [EBP + 0x76],EAX      ; 0042032a
     ADD ESP,0x8                         ; 0042032d
     MOV dword ptr [EBP + 0xfffffeca],EBX ; 00420330
@@ -599,7 +599,7 @@ section .text
     PUSH 0x40e00000                     ; 004203e3
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 004203e8
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
-    MOV ESI,dword ptr [0x00764b30]      ; 004203ed | DAT_00764b30
+    MOV ESI,dword ptr [0x00764b30]      ; 004203ed | g_INT_ARRAY_00764b2c[1]
     MOV dword ptr [EBP + 0x76],EAX      ; 004203f3
     ADD ESP,0x8                         ; 004203f6
     LEA EAX,[EBP + 0xffffff4a]          ; 004203f9
@@ -715,7 +715,7 @@ section .text
     PUSH 0x40e00000                     ; 00420531
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00420536
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
-    MOV ESI,dword ptr [0x00764b34]      ; 0042053b | DAT_00764b34
+    MOV ESI,dword ptr [0x00764b34]      ; 0042053b | g_INT_ARRAY_00764b2c[2]
     MOV dword ptr [EBP + 0x76],EAX      ; 00420541
     ADD ESP,0x8                         ; 00420544
     MOV dword ptr [EBP + 0xffffff42],EBX ; 00420547
@@ -793,7 +793,7 @@ section .text
     PUSH 0x40e00000                     ; 0042061d
     CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0 ; 00420622
         ;   XREF to: 0040dda0 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040dda0(float min_value, float max_value)
-    MOV ESI,dword ptr [0x00764b30]      ; 00420627 | DAT_00764b30
+    MOV ESI,dword ptr [0x00764b30]      ; 00420627 | g_INT_ARRAY_00764b2c[1]
     MOV dword ptr [EBP + 0x76],EAX      ; 0042062d
     ADD ESP,0x8                         ; 00420630
     MOV dword ptr [EBP + 0xffffff06],EBX ; 00420633
@@ -1010,7 +1010,7 @@ section .text
     TEST EDX,EDX                        ; 004208a5
     JNZ 0x00420962                      ; 004208a7
         ;   XREF to: 00420962 (CONDITIONAL_JUMP)  ; LAB_00420962
-    MOV ECX,dword ptr [0x00764b40]      ; 004208ad | DAT_00764b40
+    MOV ECX,dword ptr [0x00764b40]      ; 004208ad | g_INT_ARRAY_00764b2c[5]
     PUSH 0x3e4ccccd                     ; 004208b3
     PUSH ECX                            ; 004208b8
     MOV ESI,dword ptr [EBX + 0xbd24]    ; 004208b9
@@ -1024,7 +1024,7 @@ section .text
     TEST EDI,EDI                        ; 004208d6
     JZ 0x004208f5                       ; 004208d8
         ;   XREF to: 004208f5 (CONDITIONAL_JUMP)  ; LAB_004208f5
-    MOV EAX,[0x00764b38]                ; 004208da | DAT_00764b38
+    MOV EAX,[0x00764b38]                ; 004208da | g_INT_ARRAY_00764b2c[3]
     PUSH 0x3e4ccccd                     ; 004208df
     PUSH EAX                            ; 004208e4
     MOV EDX,dword ptr [EBX + 0xbd28]    ; 004208e5
@@ -1033,7 +1033,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 004208ed
         ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 004208f2
-    MOV ECX,dword ptr [0x00764b44]      ; 004208f5 | DAT_00764b44
+    MOV ECX,dword ptr [0x00764b44]      ; 004208f5 | g_INT_ARRAY_00764b2c[6]
         ;   Label: LAB_004208f5
     PUSH 0x3e4ccccd                     ; 004208fb
     PUSH ECX                            ; 00420900
@@ -1048,7 +1048,7 @@ section .text
     TEST EDI,EDI                        ; 0042091e
     JZ 0x0042093d                       ; 00420920
         ;   XREF to: 0042093d (CONDITIONAL_JUMP)  ; LAB_0042093d
-    MOV EAX,[0x00764b3c]                ; 00420922 | DAT_00764b3c
+    MOV EAX,[0x00764b3c]                ; 00420922 | g_INT_ARRAY_00764b2c[4]
     PUSH 0x3e4ccccd                     ; 00420927
     PUSH EAX                            ; 0042092c
     MOV EDX,dword ptr [EBX + 0xbd30]    ; 0042092d
@@ -1057,7 +1057,7 @@ section .text
     CALL core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0 ; 00420935
         ;   XREF to: 004278e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_spawnGoreAtBone_FUN_004278e0(CCharacter * this_ptr, int part_index, int bone_index, float chance)
     ADD ESP,0x10                        ; 0042093a
-    MOV ECX,dword ptr [0x00764b2c]      ; 0042093d | DAT_00764b2c
+    MOV ECX,dword ptr [0x00764b2c]      ; 0042093d | g_INT_ARRAY_00764b2c
         ;   Label: LAB_0042093d
     PUSH 0x3f333333                     ; 00420943
     PUSH ECX                            ; 00420948

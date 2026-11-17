@@ -58,7 +58,7 @@ section .text
     SUB ESP,0x20c                       ; 0049f936
     AND ESP,0xfffffff8                  ; 0049f93c
     MOV EBX,dword ptr [EBP + 0x14]      ; 0049f93f
-    CMP dword ptr [0x01c78420],0x0      ; 0049f942 | DAT_01c78420
+    CMP dword ptr [0x01c78420],0x0      ; 0049f942 | g_INT_01c78420
     JNZ 0x0049fd9f                      ; 0049f949
         ;   XREF to: 0049fd9f (CONDITIONAL_JUMP)  ; LAB_0049fd9f
     CMP dword ptr [EBX + 0xcc],0x0      ; 0049f94f
@@ -95,7 +95,7 @@ section .text
     MOV ECX,dword ptr [0x005bed68]      ; 0049f9a5 | g_CSound_PTR_005bed68
     XOR EDX,EDX                         ; 0049f9ab
     PUSH ECX                            ; 0049f9ad
-    MOV dword ptr [0x01bd1d94],EDX      ; 0049f9ae | DAT_01bd1d94
+    MOV dword ptr [0x01bd1d94],EDX      ; 0049f9ae | g_BIT_INTEGER32_01bd1d94
     CALL core_sound.cpp_CSound_shutdown_FUN_0052df90 ; 0049f9b4
         ;   XREF to: 0052df90 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_shutdown_FUN_0052df90(CSound * this_ptr)
     ADD ESP,0x4                         ; 0049f9b9
@@ -151,10 +151,10 @@ section .text
     TEST EAX,EAX                        ; 0049fa35
     JZ 0x0049fa4d                       ; 0049fa37
         ;   XREF to: 0049fa4d (CONDITIONAL_JUMP)  ; LAB_0049fa4d
-    CMP dword ptr [0x01cd4318],0x0      ; 0049fa39 | DAT_01cd4318
+    CMP dword ptr [0x01cd4318],0x0      ; 0049fa39 | g_INT_01cd4318
     SETZ AL                             ; 0049fa40
     AND EAX,0xff                        ; 0049fa43
-    MOV [0x01cd4318],EAX                ; 0049fa48 | DAT_01cd4318
+    MOV [0x01cd4318],EAX                ; 0049fa48 | g_INT_01cd4318
     CMP dword ptr [EBX + 0x1dc],0x0     ; 0049fa4d
         ;   Label: LAB_0049fa4d
     JZ 0x0049fee3                       ; 0049fa54
@@ -239,7 +239,7 @@ section .text
         ;   Label: LAB_0049fb0f
     JZ 0x0049fb25                       ; 0049fb16
         ;   XREF to: 0049fb25 (CONDITIONAL_JUMP)  ; LAB_0049fb25
-    CMP dword ptr [0x01c78ac8],0x0      ; 0049fb18 | DAT_01c78ac8
+    CMP dword ptr [0x01c78ac8],0x0      ; 0049fb18 | g_INT_01c78ac8
     JZ 0x0049ff2f                       ; 0049fb1f
         ;   XREF to: 0049ff2f (CONDITIONAL_JUMP)  ; LAB_0049ff2f
     PUSH 0x1d                           ; 0049fb25

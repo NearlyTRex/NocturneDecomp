@@ -20,9 +20,9 @@
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CPathMapTypeInfo_005a1200
 ;   WatcomStaticDestructorNode g_PathMapCacheDestructorNode
-;   undefined4 DAT_005be0b8
-;   undefined4 DAT_005be0bc
-;   undefined4 DAT_01e312f0
+;   int[12] g_INT_ARRAY_005be0b8
+;   undefined4 g_INT_ARRAY_005be0b8[1]
+;   uchar g_UCHAR_01e312f0
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -42,11 +42,11 @@ section .text
     PUSH EBP                            ; 004f1c93
     SUB ESP,0x24                        ; 004f1c94
     MOV EBP,dword ptr [ESP + 0x38]      ; 004f1c97
-    MOV AH,byte ptr [0x01e312f0]        ; 004f1c9b | DAT_01e312f0
+    MOV AH,byte ptr [0x01e312f0]        ; 004f1c9b | g_UCHAR_01e312f0
     TEST AH,0x1                         ; 004f1ca1
     JZ 0x004f1d89                       ; 004f1ca4
         ;   XREF to: 004f1d89 (CONDITIONAL_JUMP)  ; LAB_004f1d89
-    CMP dword ptr [0x005be0b8],0x0      ; 004f1caa | DAT_005be0b8
+    CMP dword ptr [0x005be0b8],0x0      ; 004f1caa | g_INT_ARRAY_005be0b8
         ;   Label: LAB_004f1caa
     JL 0x004f1dba                       ; 004f1cb1
         ;   XREF to: 004f1dba (CONDITIONAL_JUMP)  ; LAB_004f1dba
@@ -85,14 +85,14 @@ section .text
     LEA ECX,[ESI*0x4 + 0x0]             ; 004f1d17
         ;   Label: LAB_004f1d17
     XOR EAX,EAX                         ; 004f1d1e
-    MOV EBX,dword ptr [ECX + 0x5be0b8]  ; 004f1d20 | DAT_005be0b8 | DAT_005be0bc
+    MOV EBX,dword ptr [ECX + 0x5be0b8]  ; 004f1d20 | g_INT_ARRAY_005be0b8 | g_INT_ARRAY_005be0b8[1]
         ;   Label: LAB_004f1d20
-    MOV EDX,dword ptr [EAX + 0x5be0b8]  ; 004f1d26 | DAT_005be0b8 | DAT_005be0bc
+    MOV EDX,dword ptr [EAX + 0x5be0b8]  ; 004f1d26 | g_INT_ARRAY_005be0b8 | g_INT_ARRAY_005be0b8[1]
     CMP EDX,EBX                         ; 004f1d2c
     JGE 0x004f1d39                      ; 004f1d2e
         ;   XREF to: 004f1d39 (CONDITIONAL_JUMP)  ; LAB_004f1d39
     LEA EDI,[EDX + 0x1]                 ; 004f1d30
-    MOV dword ptr [EAX + 0x5be0b8],EDI  ; 004f1d33 | DAT_005be0bc | DAT_005be0b8
+    MOV dword ptr [EAX + 0x5be0b8],EDI  ; 004f1d33 | g_INT_ARRAY_005be0b8[1]
     ADD EAX,0x4                         ; 004f1d39
         ;   Label: LAB_004f1d39
     CMP EAX,0x30                        ; 004f1d3c
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 004f1d20 (CONDITIONAL_JUMP)  ; LAB_004f1d20
     IMUL EBX,ESI,0x138dc                ; 004f1d41
     XOR EAX,EAX                         ; 004f1d47
-    MOV dword ptr [ESI*0x4 + 0x5be0b8],EAX ; 004f1d49 | DAT_005be0b8
+    MOV dword ptr [ESI*0x4 + 0x5be0b8],EAX ; 004f1d49 | g_INT_ARRAY_005be0b8
     MOV EAX,dword ptr [EBP]             ; 004f1d50
     MOV dword ptr [ESP + 0xc],EAX       ; 004f1d53
     LEA EAX,[EBP + 0x4]                 ; 004f1d57
@@ -130,7 +130,7 @@ section .text
     PUSH 0xc                            ; 004f1d90
     OR DL,0x1                           ; 004f1d92
     PUSH 0x1d468a0                      ; 004f1d95
-    MOV byte ptr [0x01e312f0],DL        ; 004f1d9a | DAT_01e312f0
+    MOV byte ptr [0x01e312f0],DL        ; 004f1d9a | g_UCHAR_01e312f0
     CALL crt_memory.c___arrinit_FUN_005644a7 ; 004f1da0
         ;   XREF to: 005644a7 (UNCONDITIONAL_CALL)  ; void * crt_memory.c___arrinit_FUN_005644a7(void * array_start, int element_count, WatcomTypeInfo * type_info)
     ADD ESP,0xc                         ; 004f1da5
@@ -143,7 +143,7 @@ section .text
     XOR EDX,EDX                         ; 004f1dba
         ;   Label: LAB_004f1dba
     XOR EAX,EAX                         ; 004f1dbc
-    MOV dword ptr [EDX + 0x5be0b8],EAX  ; 004f1dbe | DAT_005be0b8 | DAT_005be0bc
+    MOV dword ptr [EDX + 0x5be0b8],EAX  ; 004f1dbe | g_INT_ARRAY_005be0b8 | g_INT_ARRAY_005be0b8[1]
         ;   Label: LAB_004f1dbe
     INC EAX                             ; 004f1dc4
     ADD EDX,0x4                         ; 004f1dc5
@@ -152,9 +152,9 @@ section .text
         ;   XREF to: 004f1dbe (CONDITIONAL_JUMP)  ; LAB_004f1dbe
     JMP 0x004f1cc0                      ; 004f1dcd
         ;   XREF to: 004f1cc0 (UNCONDITIONAL_JUMP)  ; LAB_004f1cc0
-    MOV EAX,dword ptr [EBX + 0x5be0b8]  ; 004f1dd2 | DAT_005be0b8 | DAT_005be0bc
+    MOV EAX,dword ptr [EBX + 0x5be0b8]  ; 004f1dd2 | g_INT_ARRAY_005be0b8 | g_INT_ARRAY_005be0b8[1]
         ;   Label: LAB_004f1dd2
-    CMP EAX,dword ptr [ESI*0x4 + 0x5be0b8] ; 004f1dd8 | DAT_005be0b8
+    CMP EAX,dword ptr [ESI*0x4 + 0x5be0b8] ; 004f1dd8 | g_INT_ARRAY_005be0b8
     JLE 0x004f1de3                      ; 004f1ddf
         ;   XREF to: 004f1de3 (CONDITIONAL_JUMP)  ; LAB_004f1de3
     MOV ESI,ECX                         ; 004f1de1

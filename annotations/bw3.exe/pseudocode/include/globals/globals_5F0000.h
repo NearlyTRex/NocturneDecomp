@@ -5,6 +5,7 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "system/winnt.h"
 #include "types/classes/CConsole.h"
 #include "types/classes/CDemonFilter.h"
 #include "types/classes/CDemonRenderer.h"
@@ -18,6 +19,8 @@
 #include "types/classes/CGore.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SLightGlowTable.h"
+#include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -67,6 +70,12 @@ extern CGround* g_CGroundPtr;
 // CVector3i[62]
 extern CVector3i g_CVector3i_ARRAY_005f1954[62];
 
+// SLightGlowTable
+extern SLightGlowTable g_SLightGlowTable_005f2828;
+
+// SMRGLLightPrimitive[84]
+extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_005f1c3c[84];
+
 // SMRGLPrimitiveQuad*[2000]
 extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_005f2b04[2000];
 
@@ -78,10 +87,6 @@ extern SMRGLTextureBasic g_SMRGLTextureBasic_005f0f5c;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005f16c4;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005f1830;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005f193c;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_005f2828;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_005f2840;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_005f2858;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_005f2870;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005fc964;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005fc97c;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_005fc994;
@@ -166,6 +171,13 @@ extern WatcomStaticDestructorNode DAT_005FE960;
 extern WatcomStaticDestructorNode g_CGoreDestructorNode;
 extern WatcomStaticDestructorNode DAT_005FED14;
 extern WatcomStaticDestructorNode g_CGroundDestructorNode;
+
+// _MMX_INTEGER
+extern _MMX_INTEGER g_MMX_INTEGER_005f8b28;
+extern _MMX_INTEGER g_MMX_INTEGER_005f8b88;
+extern _MMX_INTEGER g_MMX_INTEGER_005f8b90;
+extern _MMX_INTEGER g_MMX_INTEGER_005f8b98;
+extern _MMX_INTEGER g_MMX_INTEGER_005f8ba0;
 
 // char[100]
 extern char g_CHAR_ARRAY_005fe970[100];
@@ -252,7 +264,6 @@ extern int g_INT_005f4ab4;
 extern int g_INT_005f4ab8;
 extern int g_INT_005f4abc;
 extern int g_INT_005f4ac4;
-extern int g_INT_005f8b28;
 extern int g_INT_005fb0e0;
 extern int g_CDynamiteClassVersion;
 extern int g_INT_005fb144;
@@ -337,9 +348,6 @@ extern ulonglong g_ULONGLONG_ARRAY_005fbc30[256];
 extern undefined1 DAT_005f098f;
 
 // undefined4
-extern undefined4 DAT_005f1c58;
-extern undefined4 DAT_005f1c5c;
-extern undefined4 DAT_005f1c7c;
 extern undefined4 DAT_005fba64;
 extern undefined4 DAT_005fbaa4;
 extern undefined4 DAT_005fbaa8;
@@ -350,9 +358,6 @@ extern undefined4 DAT_005fbbc0;
 extern undefined4 DAT_005fbbc4;
 extern undefined4 DAT_005fe4b8;
 extern undefined4 DAT_005fe4bc;
-
-// undefined8
-extern undefined8 DAT_005f8b88;
 
 // ushort[2048]
 extern ushort g_USHORT_ARRAY_005fa0e0[2048];

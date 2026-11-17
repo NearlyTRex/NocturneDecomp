@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01bcd078
-;   undefined4 DAT_01bcd07c
+;   char* g_CHAR_PTR_01bcd078
+;   int g_INT_01bcd07c
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -23,7 +23,7 @@ section .text
         ;   Label: shape_edittool.cpp_CEditorTools_dtor_FUN_0046fa20
     PUSH ESI                            ; 0046fa21
     PUSH EBP                            ; 0046fa22
-    MOV EDX,dword ptr [0x01bcd07c]      ; 0046fa23 | DAT_01bcd07c
+    MOV EDX,dword ptr [0x01bcd07c]      ; 0046fa23 | g_INT_01bcd07c
     MOV EBX,dword ptr [ESP + 0x10]      ; 0046fa29
     TEST EDX,EDX                        ; 0046fa2d
     JLE 0x0046fa50                      ; 0046fa2f
@@ -32,14 +32,14 @@ section .text
         ;   Label: LAB_0046fa31
     CALL shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0 ; 0046fa32
         ;   XREF to: 004721e0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_popWindowState_FUN_004721e0(CEditorTools * this_ptr)
-    MOV ECX,dword ptr [0x01bcd07c]      ; 0046fa37 | DAT_01bcd07c
+    MOV ECX,dword ptr [0x01bcd07c]      ; 0046fa37 | g_INT_01bcd07c
     ADD ESP,0x4                         ; 0046fa3d
     TEST ECX,ECX                        ; 0046fa40
     JG 0x0046fa31                       ; 0046fa42
         ;   XREF to: 0046fa31 (CONDITIONAL_JUMP)  ; LAB_0046fa31
     LEA EAX,[EAX]                       ; 0046fa44
     LEA EDX,[EDX]                       ; 0046fa4a
-    MOV ESI,dword ptr [0x01bcd078]      ; 0046fa50 | DAT_01bcd078
+    MOV ESI,dword ptr [0x01bcd078]      ; 0046fa50 | g_CHAR_PTR_01bcd078
         ;   Label: LAB_0046fa50
     TEST ESI,ESI                        ; 0046fa56
     JNZ 0x0046fa60                      ; 0046fa58
@@ -55,7 +55,7 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 0046fa66
     ADD ESP,0x4                         ; 0046fa68
-    MOV dword ptr [0x01bcd078],EBP      ; 0046fa6b | DAT_01bcd078
+    MOV dword ptr [0x01bcd078],EBP      ; 0046fa6b | g_CHAR_PTR_01bcd078
     MOV EAX,EBX                         ; 0046fa71
     POP EBP                             ; 0046fa73
     POP ESI                             ; 0046fa74

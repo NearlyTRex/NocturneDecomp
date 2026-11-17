@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 361,
+    "complexity_score": 345,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 251,
-    "suspect_count": 8,
+    "pseudocode_lines": 250,
+    "suspect_count": 7,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "unknown_field",
       "unrolled_memset",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 833
+    "total_lines": 832
   },
   "cross_references": [],
   "function": {
@@ -246,9 +245,9 @@
     },
     {
       "addr": "005a0ab8",
-      "name": "DAT_005a0ab8",
-      "type": "undefined4",
-      "value": null
+      "name": "g_FLOAT_005a0ab8",
+      "type": "float",
+      "value": "2"
     },
     {
       "addr": "005ad350",
@@ -258,9 +257,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b9354",
@@ -520,16 +519,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 161,
       "match": "._0_4_",
       "severity": "mild",
       "text": "local_1b18 = local_1b18 + 1.5938625219265179e-314._0_4_;",
@@ -537,7 +528,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 180,
+      "line": 179,
       "match": "(CCharacter_vtable *)((int)local_14",
       "severity": "moderate",
       "text": "iVar7 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)",
@@ -545,7 +536,7 @@
     },
     {
       "description": "Pointer value `local_14` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 180,
+      "line": 179,
       "match": "(int)local_14",
       "severity": "moderate",
       "text": "iVar7 = (*((CCharacter_vtable *)((int)local_14 + 0xd0))->attractActorToward)",
@@ -553,7 +544,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 54,
+      "line": 53,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -561,7 +552,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 142,
+      "line": 141,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -569,7 +560,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 146,
+      "line": 145,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",

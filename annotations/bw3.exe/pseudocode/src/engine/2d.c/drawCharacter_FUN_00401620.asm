@@ -18,10 +18,10 @@
 ;   engine_2d.c_drawTextWrapped_FUN_00401c70 at 00401cc1
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005e8840
-;   undefined4 DAT_005e8841
-;   undefined4 DAT_005e8842
-;   undefined4 DAT_005e8843
+;   SFontGlyph[224] g_SFontGlyph_ARRAY_005e8840
+;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[0]
+;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[1]
+;   undefined4 g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
 ;   int g_INT_005fba20 = 0x8
 ;   void*[1200] g_ARRAY_PTR_01c5faec
 ;   undefined4 g_ARRAY_PTR_01c5faec[1]
@@ -47,10 +47,10 @@ section .text
     SHL EAX,0x4                         ; 0040163a
     ADD EAX,EDX                         ; 0040163d
     MOV ECX,dword ptr [ESP + 0x24]      ; 0040163f
-    ADD EAX,0x5e8840                    ; 00401643 | DAT_005e8840
+    ADD EAX,0x5e8840                    ; 00401643 | g_SFontGlyph_ARRAY_005e8840
     XOR EDX,EDX                         ; 00401648
     MOV EBX,dword ptr [0x01c6b5a8]      ; 0040164a | g_INT_01c6b5a8
-    MOV DL,byte ptr [EAX]               ; 00401650 | DAT_005e8840
+    MOV DL,byte ptr [EAX]               ; 00401650 | g_SFontGlyph_ARRAY_005e8840
     CMP ECX,EBX                         ; 00401652
     JL 0x004016fb                       ; 00401654
         ;   XREF to: 004016fb (CONDITIONAL_JUMP)  ; LAB_004016fb
@@ -92,7 +92,7 @@ section .text
     TEST EDX,EDX                        ; 004016c4
     JLE 0x004016e0                      ; 004016c6
         ;   XREF to: 004016e0 (CONDITIONAL_JUMP)  ; LAB_004016e0
-    MOVZX ESI,byte ptr [EAX]            ; 004016c8 | DAT_005e8841 | DAT_005e8842 | DAT_005e8843
+    MOVZX ESI,byte ptr [EAX]            ; 004016c8 | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
         ;   Label: LAB_004016c8
     INC EAX                             ; 004016cb
     ADD ECX,0x2                         ; 004016cc
@@ -134,7 +134,7 @@ section .text
         ;   XREF to: 00401721 (CONDITIONAL_JUMP)  ; LAB_00401721
     INC ECX                             ; 00401715
         ;   Label: LAB_00401715
-    MOV BL,byte ptr [EAX]               ; 00401716 | DAT_005e8841 | DAT_005e8842 | DAT_005e8843
+    MOV BL,byte ptr [EAX]               ; 00401716 | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
     INC EAX                             ; 00401718
     INC ESI                             ; 00401719
     MOV byte ptr [ECX + -0x1],BL        ; 0040171a
@@ -162,7 +162,7 @@ section .text
     TEST EDX,EDX                        ; 0040174a
     JLE 0x00401764                      ; 0040174c
         ;   XREF to: 00401764 (CONDITIONAL_JUMP)  ; LAB_00401764
-    MOVZX ESI,byte ptr [EAX]            ; 0040174e | DAT_005e8841 | DAT_005e8842 | DAT_005e8843
+    MOVZX ESI,byte ptr [EAX]            ; 0040174e | g_SFontGlyph_ARRAY_005e8840[0].bitmap[0] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[1] | g_SFontGlyph_ARRAY_005e8840[0].bitmap[2]
         ;   Label: LAB_0040174e
     INC EAX                             ; 00401751
     ADD ECX,0x4                         ; 00401752

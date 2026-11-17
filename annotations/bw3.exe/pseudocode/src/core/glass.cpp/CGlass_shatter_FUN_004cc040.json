@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 318,
-    "complexity_score": 372,
+    "complexity_score": 457,
     "cross_reference_count": 11,
     "function_call_count": 6,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 172,
-    "suspect_count": 18,
+    "suspect_count": 26,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "stack_alignment_array",
       "unrolled_strcpy"
     ],
@@ -814,6 +815,70 @@
       "severity": "moderate",
       "text": "*(float *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 145,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "local_fc.x = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 148,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "local_ec.z = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 150,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "local_ec.w = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 151,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "local_fc.w = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 155,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_fc.x = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 158,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_ec.z = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 160,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_ec.w = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 161,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "local_fc.w = 0xfe0000;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

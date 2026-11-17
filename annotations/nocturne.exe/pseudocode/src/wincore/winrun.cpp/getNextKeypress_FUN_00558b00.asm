@@ -18,9 +18,9 @@
 ;   ... and 3 more
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de0848
-;   undefined4 DAT_02de084c
-;   undefined4 DAT_02de20a0
+;   int g_INT_02de0848
+;   int g_INT_02de084c
+;   int g_INT_02de20a0
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_00553910
@@ -33,31 +33,31 @@ section .text
         ;   Label: wincore_winrun.cpp_getNextKeypress_FUN_00558b00
     PUSH EDI                            ; 00558b01
     PUSH EBP                            ; 00558b02
-    MOV EAX,[0x02de0848]                ; 00558b03 | DAT_02de0848
-    MOV EDX,dword ptr [0x02de084c]      ; 00558b08 | DAT_02de084c
+    MOV EAX,[0x02de0848]                ; 00558b03 | g_INT_02de0848
+    MOV EDX,dword ptr [0x02de084c]      ; 00558b08 | g_INT_02de084c
     XOR EBX,EBX                         ; 00558b0e
     CMP EAX,EDX                         ; 00558b10
     JNZ 0x00558b2f                      ; 00558b12
         ;   XREF to: 00558b2f (CONDITIONAL_JUMP)  ; LAB_00558b2f
-    CMP dword ptr [0x02de20a0],0x0      ; 00558b14 | DAT_02de20a0
+    CMP dword ptr [0x02de20a0],0x0      ; 00558b14 | g_INT_02de20a0
         ;   Label: LAB_00558b14
     JNZ 0x00558b2f                      ; 00558b1b
         ;   XREF to: 00558b2f (CONDITIONAL_JUMP)  ; LAB_00558b2f
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_00553910 ; 00558b1d
         ;   XREF to: 00553910 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00553910()
-    MOV EAX,[0x02de0848]                ; 00558b22 | DAT_02de0848
-    CMP EAX,dword ptr [0x02de084c]      ; 00558b27 | DAT_02de084c
+    MOV EAX,[0x02de0848]                ; 00558b22 | g_INT_02de0848
+    CMP EAX,dword ptr [0x02de084c]      ; 00558b27 | g_INT_02de084c
     JZ 0x00558b14                       ; 00558b2d
         ;   XREF to: 00558b14 (CONDITIONAL_JUMP)  ; LAB_00558b14
-    MOV EDI,dword ptr [0x02de084c]      ; 00558b2f | DAT_02de084c
+    MOV EDI,dword ptr [0x02de084c]      ; 00558b2f | g_INT_02de084c
         ;   Label: LAB_00558b2f
-    MOV EAX,[0x02de0848]                ; 00558b35 | DAT_02de0848
+    MOV EAX,[0x02de0848]                ; 00558b35 | g_INT_02de0848
     CMP EAX,EDI                         ; 00558b3a
     JZ 0x00558b53                       ; 00558b3c
         ;   XREF to: 00558b53 (CONDITIONAL_JUMP)  ; LAB_00558b53
     LEA EBP,[EAX + 0x1]                 ; 00558b3e
     MOV EBX,dword ptr [EAX*0x4 + 0x2de07f8] ; 00558b41
-    MOV dword ptr [0x02de0848],EBP      ; 00558b48 | DAT_02de0848
+    MOV dword ptr [0x02de0848],EBP      ; 00558b48 | g_INT_02de0848
     CMP EBP,0x14                        ; 00558b4e
     JGE 0x00558b59                      ; 00558b51
         ;   XREF to: 00558b59 (CONDITIONAL_JUMP)  ; LAB_00558b59
@@ -69,7 +69,7 @@ section .text
     RET                                 ; 00558b58
     XOR EDX,EDX                         ; 00558b59
         ;   Label: LAB_00558b59
-    MOV dword ptr [0x02de0848],EDX      ; 00558b5b | DAT_02de0848
+    MOV dword ptr [0x02de0848],EDX      ; 00558b5b | g_INT_02de0848
     MOV AL,BL                           ; 00558b61
     POP EBP                             ; 00558b63
     POP EDI                             ; 00558b64

@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 89,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 19,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 59
@@ -73,15 +72,15 @@
     },
     {
       "addr": "005c1d54",
-      "name": "DAT_005c1d54",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_005c1d54",
+      "type": "void*",
+      "value": "00000000"
     },
     {
       "addr": "005c1d90",
-      "name": "DAT_005c1d90",
-      "type": "undefined4",
-      "value": null
+      "name": "g_PTR_005c1d90",
+      "type": "void*",
+      "value": "00000000"
     }
   ],
   "pcode_summary": {
@@ -161,22 +160,6 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "if (DAT_005c1d90 == (code *)0x0) {",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 11,
-      "match": "DAT_005c1d90",
-      "severity": "mild",
-      "text": "if (DAT_005c1d90 == (code *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 12,
       "match": "code *",
       "severity": "moderate",
@@ -192,20 +175,20 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 18,
-      "match": "DAT_005c1d54",
-      "severity": "mild",
-      "text": "uVar1 = (*DAT_005c1d54)(1);",
-      "type": "undefined_data"
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar1 = (*(code *)g_PTR_005c1d54)(1);",
+      "type": "unresolved_funcptr"
     },
     {
-      "description": "Undefined global data reference",
+      "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 19,
-      "match": "DAT_005c1d90",
-      "severity": "mild",
-      "text": "(*DAT_005c1d90)(uVar1,character);",
-      "type": "undefined_data"
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)g_PTR_005c1d90)(uVar1,character);",
+      "type": "unresolved_funcptr"
     }
   ]
 }

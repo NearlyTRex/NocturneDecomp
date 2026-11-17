@@ -8,7 +8,7 @@
 ;   crt_unknown.c_FUN_00566c96 at 00566c9a
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005c1d98
+;   byte g_BYTE_005c1d98 = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_0056dc98
@@ -19,7 +19,7 @@ section .text
 
     FLD1                                ; 00566c6c
         ;   Label: crt_unknown.c_FUN_00566c6c
-    TEST byte ptr [0x005c1d98],0x1      ; 00566c6e | DAT_005c1d98
+    TEST byte ptr [0x005c1d98],0x1      ; 00566c6e | g_BYTE_005c1d98
     JNZ 0x00566c7b                      ; 00566c75
         ;   XREF to: 00566c7b (CONDITIONAL_JUMP)  ; LAB_00566c7b
     FPATAN                              ; 00566c77

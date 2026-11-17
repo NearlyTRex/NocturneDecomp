@@ -2,16 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -65,9 +64,9 @@
     },
     {
       "addr": "00607bdc",
-      "name": "DAT_00607bdc",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SIOControlBlock_PTR_00607bdc",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     },
     {
       "addr": "00607be0",
@@ -202,16 +201,8 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(DAT_00607bdc + param_1 * 4) = 0;",
+      "text": "g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1] = (HANDLE)0x0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_00607bdc",
-      "severity": "mild",
-      "text": "*(uint *)(DAT_00607bdc + param_1 * 4) = 0;",
-      "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

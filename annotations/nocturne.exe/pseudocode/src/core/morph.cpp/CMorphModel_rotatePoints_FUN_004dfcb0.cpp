@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *this_ptr,float blend_factor,SMorphPoint *ref_points)
 
 {
@@ -36,7 +34,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   local_18 = 0;
   fVar8 = 1.0 - blend_factor;
   if (0 < this_ptr->num_points) {
-    input = (CVector3i *)&DAT_01cce554;
+    input = g_CVector3i_ARRAY_01cce554;
     iVar9 = 0;
     iVar10 = 0;
     do {
@@ -47,9 +45,9 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
       fVar3 = *(float *)((int)&(pSVar6->position).y + iVar9);
       fVar4 = *(float *)((int)&(pSVar6->position).z + iVar9);
       input->x = (int)ROUND((*(float *)((int)&(pSVar6->position).x + iVar9) * blend_factor +
-                            ref_points[iVar5].position.x * fVar8) * _DAT_005a0cc0);
-      input->y = (int)ROUND((fVar3 * blend_factor + fVar1 * fVar8) * _DAT_005a0cc0);
-      input->z = (int)ROUND((blend_factor * fVar4 + fVar8 * fVar2) * _DAT_005a0cc0);
+                            ref_points[iVar5].position.x * fVar8) * 256.0f);
+      input->y = (int)ROUND((fVar3 * blend_factor + fVar1 * fVar8) * 256.0f);
+      input->z = (int)ROUND((blend_factor * fVar4 + fVar8 * fVar2) * 256.0f);
       engine_special_cpp_transformAndProjectPoint_FUN_0053075c
                 ((SProjectedVertex *)
                  ((int)&(g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex).
@@ -75,7 +73,7 @@ void __cdecl core_morph_cpp_CMorphModel_rotatePoints_FUN_004dfcb0(CMorphModel *t
   core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(g_CDemonSetPtr,this_ptr->num_points);
   core_set_cpp_CDemonSet_lightVerticies_FUN_0050c2d0
             (g_CDemonSetPtr,this_ptr->num_points,this_ptr->num_faces,this_ptr->faces,
-             (CVector3i *)&DAT_01cce554,3,(CVector3i *)0x0);
+             g_CVector3i_ARRAY_01cce554,3,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00461050
             (g_CDemonRenderer_PTR_005ae704,local_20);
   return;

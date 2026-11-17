@@ -2,14 +2,15 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 156,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "raw_address_constant",
       "stack_alignment_array",
       "stack_ref",
       "unnamed_param"
@@ -285,6 +286,14 @@
       "severity": "mild",
       "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex literal 0xfffff0 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4594328 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 48,
+      "match": "0xfffff0",
+      "severity": "moderate",
+      "text": "hObject = CreateThread((LPSECURITY_ATTRIBUTES)0x0,(param_2 + 0xfffU >> 8 & 0xfffff0) << 8,",
+      "type": "raw_address_constant"
     }
   ],
   "vtable_info": {

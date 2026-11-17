@@ -19,7 +19,7 @@
 ; Referenced Globals:
 ;   float FLOAT_0059bddc = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   engine_special.cpp_transformAndProjectPoint_FUN_0053075c
@@ -54,7 +54,7 @@ section .text
     PUSH EAX                            ; 00445fc0
     LEA EAX,[EBX*0x4 + 0x0]             ; 00445fc1
     SUB EAX,EBX                         ; 00445fc8
-    MOV EDX,dword ptr [EDX]             ; 00445fca | DAT_01b4d738
+    MOV EDX,dword ptr [EDX]             ; 00445fca | g_CDemonRenderer_01b4d738
     SHL EAX,0x4                         ; 00445fcc
     ADD EAX,EDX                         ; 00445fcf
     PUSH EAX                            ; 00445fd1

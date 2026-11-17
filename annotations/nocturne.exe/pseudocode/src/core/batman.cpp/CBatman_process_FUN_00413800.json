@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1015,
-    "complexity_score": 593,
+    "complexity_score": 578,
     "cross_reference_count": 0,
     "function_call_count": 32,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 448,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
-      "undefined_data",
       "unrolled_memcpy",
       "unrolled_memset",
       "warning_type_propagation"
@@ -287,9 +286,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b80f0",
@@ -311,8 +310,8 @@
     },
     {
       "addr": "00764610",
-      "name": "DAT_00764610",
-      "type": "undefined4",
+      "name": "g_INT_00764610",
+      "type": "int",
       "value": null
     },
     {
@@ -905,14 +904,6 @@
       "severity": "moderate",
       "text": "(*(CDemonActor **)((int)g_CDemonSetPtr->enemies + iVar9),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 244,
-      "match": "DAT_00764610",
-      "severity": "mild",
-      "text": "DAT_00764610);",
-      "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",

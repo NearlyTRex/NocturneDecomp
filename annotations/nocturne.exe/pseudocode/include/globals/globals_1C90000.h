@@ -17,3 +17,9 @@ extern CBloodPool g_CBloodPool_ARRAY_01c9e03c[32];
 // CFootstep[1000]
 extern CFootstep g_Footsteps[1000];
 
+// int
+extern int g_INT_01c9e034;
+extern int g_INT_01c9e038;
+extern int g_INT_01c9e53c;
+extern int g_INT_01c9e540;
+

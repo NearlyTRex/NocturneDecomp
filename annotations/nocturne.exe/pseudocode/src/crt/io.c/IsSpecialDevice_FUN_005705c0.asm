@@ -15,8 +15,8 @@
 ;   void* PTR_GetFileType_00575514 = 00175d4e
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac4 = 005671e4
-;   undefined4 DAT_005c1d54
-;   undefined4 DAT_005c1f54
+;   void* g_PTR_005c1d54 = 00000000
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
 ;
 ; Called Functions:
 ;   crt_sync.c_CriticalSectionStub_FUN_005671e4
@@ -31,13 +31,13 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 005705c1
     PUSH EBX                            ; 005705c5
     CALL dword ptr [0x005c1ac0]         ; 005705c6 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ac0
-    MOV EDX,dword ptr [0x005c1d54]      ; 005705cc | DAT_005c1d54
+    MOV EDX,dword ptr [0x005c1d54]      ; 005705cc | g_PTR_005c1d54
     ADD ESP,0x4                         ; 005705d2
     TEST EDX,EDX                        ; 005705d5
     JZ 0x005705f8                       ; 005705d7
         ;   XREF to: 005705f8 (CONDITIONAL_JUMP)  ; LAB_005705f8
     PUSH EBX                            ; 005705d9
-    CALL dword ptr [0x005c1d54]         ; 005705da | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 005705da | g_PTR_005c1d54
     ADD ESP,0x4                         ; 005705e0
     TEST EAX,EAX                        ; 005705e3
     JZ 0x005705f8                       ; 005705e5
@@ -48,7 +48,7 @@ section .text
     ADD ESP,0x4                         ; 005705f3
     POP EBX                             ; 005705f6
     RET                                 ; 005705f7
-    MOV EAX,[0x005c1f54]                ; 005705f8 | DAT_005c1f54
+    MOV EAX,[0x005c1f54]                ; 005705f8 | g_SIOControlBlock_PTR_005c1f54
         ;   Label: LAB_005705f8
     MOV EAX,dword ptr [EAX + EBX*0x4]   ; 005705fd
     PUSH EAX                            ; 00570600

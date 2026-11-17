@@ -80,7 +80,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
               (pCVar16,euler_angles,translation);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (g_CDemonRenderer_PTR_00612560,&g_SMRGLTextureBasic_006122a8);
+              (g_CDemonRenderer_PTR_00612560,&g_SLightGlowTable_006122a8.fuzz);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
     UStack_ec.i = 1;
     do {

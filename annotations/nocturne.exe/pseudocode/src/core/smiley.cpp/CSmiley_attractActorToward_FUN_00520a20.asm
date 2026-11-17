@@ -10,7 +10,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_005920a5 = -4
-;   undefined4 DAT_02da8a7c
+;   int g_INT_02da8a7c
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -52,7 +52,7 @@ section .text
     POP ESI                             ; 00520a65
     POP EBX                             ; 00520a66
     RET                                 ; 00520a67
-    MOV EDX,dword ptr [0x02da8a7c]      ; 00520a68 | DAT_02da8a7c
+    MOV EDX,dword ptr [0x02da8a7c]      ; 00520a68 | g_INT_02da8a7c
         ;   Label: LAB_00520a68
     LEA EAX,[EDX*0x4 + 0x0]             ; 00520a6e
     SUB EAX,EDX                         ; 00520a75

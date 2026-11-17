@@ -14,13 +14,13 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 at 00527e06
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc78f8
-;   undefined4 DAT_02dc78fc
-;   undefined4 DAT_02dc7900
-;   undefined4 DAT_02dc7904
-;   undefined4 DAT_02dc7908
-;   undefined4 DAT_02dc790c
-;   undefined4 DAT_02dc8318
+;   double g_DOUBLE_02dc78f8
+;   undefined4 g_DOUBLE_02dc78f8+4
+;   double g_DOUBLE_02dc7900
+;   undefined4 g_DOUBLE_02dc7900+4
+;   double g_DOUBLE_02dc7908
+;   undefined4 g_DOUBLE_02dc7908+4
+;   CSoundDevice* g_CSoundDevice_PTR_02dc8318
 ;
 ; *****************************************************************************
 
@@ -29,18 +29,18 @@ section .text
     PUSH EBP                            ; 005277b0
         ;   Label: sound_sndmain.cpp_set3DListenerVelocity_FUN_005277b0
     MOV EAX,dword ptr [ESP + 0x8]       ; 005277b1
-    MOV [0x02dc78f8],EAX                ; 005277b5 | DAT_02dc78f8
+    MOV [0x02dc78f8],EAX                ; 005277b5 | g_DOUBLE_02dc78f8
     MOV EAX,dword ptr [ESP + 0xc]       ; 005277ba
-    MOV [0x02dc78fc],EAX                ; 005277be | DAT_02dc78fc
+    MOV [0x02dc78fc],EAX                ; 005277be | g_DOUBLE_02dc78f8+4
     MOV EAX,dword ptr [ESP + 0x10]      ; 005277c3
-    MOV [0x02dc7900],EAX                ; 005277c7 | DAT_02dc7900
+    MOV [0x02dc7900],EAX                ; 005277c7 | g_DOUBLE_02dc7900
     MOV EAX,dword ptr [ESP + 0x14]      ; 005277cc
-    MOV [0x02dc7904],EAX                ; 005277d0 | DAT_02dc7904
+    MOV [0x02dc7904],EAX                ; 005277d0 | g_DOUBLE_02dc7900+4
     MOV EAX,dword ptr [ESP + 0x18]      ; 005277d5
-    MOV [0x02dc7908],EAX                ; 005277d9 | DAT_02dc7908
+    MOV [0x02dc7908],EAX                ; 005277d9 | g_DOUBLE_02dc7908
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005277de
-    MOV EDX,dword ptr [0x02dc8318]      ; 005277e2 | DAT_02dc8318
-    MOV [0x02dc790c],EAX                ; 005277e8 | DAT_02dc790c
+    MOV EDX,dword ptr [0x02dc8318]      ; 005277e2 | g_CSoundDevice_PTR_02dc8318
+    MOV [0x02dc790c],EAX                ; 005277e8 | g_DOUBLE_02dc7908+4
     TEST EDX,EDX                        ; 005277ed
     JNZ 0x005277f3                      ; 005277ef
         ;   XREF to: 005277f3 (CONDITIONAL_JUMP)  ; LAB_005277f3

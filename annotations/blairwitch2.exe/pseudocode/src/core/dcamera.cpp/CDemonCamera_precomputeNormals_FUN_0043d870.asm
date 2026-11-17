@@ -42,12 +42,12 @@
 ;   undefined4 DAT_0083d6e0
 ;   undefined4 DAT_0083d6e4
 ;   undefined4 DAT_0083d6e8
-;   undefined4 DAT_0091f5e0
-;   undefined4 DAT_0091f5e4
-;   undefined4 DAT_0091f5e8
-;   undefined4 DAT_00a014e0
-;   undefined4 DAT_00a014e4
-;   undefined4 DAT_00a014e8
+;   undefined4 g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].x
+;   undefined4 g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].y
+;   undefined4 g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].z
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].x
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].y
+;   undefined4 g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].z
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -150,9 +150,9 @@ section .text
     LEA ESI,[ESP + 0x34]                ; 0043d972
     LEA EDI,[EDI + 0x91e6d4]            ; 0043d976
     MOV EAX,dword ptr [ESP + 0x64]      ; 0043d97c
-    MOVSD ES:EDI,ESI                    ; 0043d980 | DAT_0091f5e0
-    MOVSD ES:EDI,ESI                    ; 0043d981 | DAT_0091f5e4
-    MOVSD ES:EDI,ESI                    ; 0043d982 | DAT_0091f5e8
+    MOVSD ES:EDI,ESI                    ; 0043d980 | g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].x
+    MOVSD ES:EDI,ESI                    ; 0043d981 | g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].y
+    MOVSD ES:EDI,ESI                    ; 0043d982 | g_CVector3i_ARRAY_ARRAY_0091e6d4[1][1].z
     MOV EAX,dword ptr [EAX]             ; 0043d983
     SHR EAX,0x18                        ; 0043d985
     TEST EAX,EAX                        ; 0043d988
@@ -215,10 +215,10 @@ section .text
     MOV dword ptr [ESP + 0x60],EDI      ; 0043da32
     ADD ESI,0x4                         ; 0043da36
     FXCH                                ; 0043da39
-    FSTP float ptr [EBX + 0xa005c8]     ; 0043da3b | DAT_00a014e0
+    FSTP float ptr [EBX + 0xa005c8]     ; 0043da3b | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].x
     MOV EDX,dword ptr [EBP + 0x14]      ; 0043da41
-    FSTP float ptr [EBX + 0xa005cc]     ; 0043da44 | DAT_00a014e4
-    FSTP float ptr [EBX + 0xa005d0]     ; 0043da4a | DAT_00a014e8
+    FSTP float ptr [EBX + 0xa005cc]     ; 0043da44 | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].y
+    FSTP float ptr [EBX + 0xa005d0]     ; 0043da4a | g_CVector3f_ARRAY_ARRAY_00a005d4[1][1].z
     MOV ECX,dword ptr [EDX + 0x150]     ; 0043da50
     MOV dword ptr [ESP + 0x5c],ESI      ; 0043da56
     CMP EDI,ECX                         ; 0043da5a
@@ -254,7 +254,7 @@ section .text
     ADD ESP,0x4                         ; 0043dabc
     MOV EAX,EBX                         ; 0043dabf
     MOV dword ptr [0x00b667a4],ESI      ; 0043dac1 | g_INT_00b667a4
-    MOV dword ptr [0x0126e7a8],ESI      ; 0043dac7 | g_INT_0126e7a8
+    MOV dword ptr [0x0126e7a8],ESI      ; 0043dac7 | g_SCoronaLightCache_0126e7a8
     MOV EDX,dword ptr [EAX + 0x148]     ; 0043dacd
     MOV dword ptr [0x01308804],ESI      ; 0043dad3 | g_INT_01308804
     CMP EDX,0x1e0                       ; 0043dad9

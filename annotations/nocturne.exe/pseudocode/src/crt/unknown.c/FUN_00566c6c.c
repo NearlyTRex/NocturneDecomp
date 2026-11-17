@@ -11,7 +11,7 @@ void FUN_00566c6c(void)
 {
   float10 in_ST0;
   
-  if ((DAT_005c1d98 & 1) == 0) {
+  if ((g_BYTE_005c1d98 & 1) == 0) {
     fpatan(in_ST0,(float10)1);
   }
   else {

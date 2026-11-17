@@ -20,7 +20,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CGame* g_CGamePtr = 01c775ec
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.collision_render_enabled
 ;
@@ -47,7 +47,7 @@ section .text
         ;   XREF to: 00425c86 (CONDITIONAL_JUMP)  ; LAB_00425c86
     MOV ECX,dword ptr [0x005ae704]      ; 00425c30 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00425c30
-    PUSH ECX                            ; 00425c36 | DAT_01b4d738
+    PUSH ECX                            ; 00425c36 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 00425c37
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00425c3c

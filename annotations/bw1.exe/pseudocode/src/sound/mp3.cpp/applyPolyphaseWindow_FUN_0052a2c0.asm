@@ -35,12 +35,12 @@
 ;   double g_DOUBLE_005eb4fe = -6
 ;   double g_DOUBLE_005eb506 = 0.0000100000000000000
 ;   int g_INT_006202e0 = 0x1
-;   undefined4 DAT_01d3eb78
-;   undefined4 DAT_01d3eb7c
-;   undefined4 DAT_01d3eb80
-;   undefined4 DAT_01d3eb84
-;   undefined4 DAT_01d3eb88
-;   undefined4 DAT_01d3eb90
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][18]
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][18]+4
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][19]
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][19]+4
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][20]
+;   undefined4 g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][21]
 ;   ... and 14 more
 ;
 ; Called Functions:
@@ -101,8 +101,8 @@ section .text
     ADD EAX,0x8                         ; 0052a341
         ;   Label: LAB_0052a341
     XOR ECX,ECX                         ; 0052a344
-    MOV dword ptr [EAX + 0x1d3eae4],EBX ; 0052a346 | DAT_01d3eb7c | DAT_01d3eb84
-    MOV dword ptr [EAX + 0x1d3eae0],ECX ; 0052a34c | DAT_01d3eb78 | DAT_01d3eb80
+    MOV dword ptr [EAX + 0x1d3eae4],EBX ; 0052a346 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][18]+4 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][19]+4
+    MOV dword ptr [EAX + 0x1d3eae0],ECX ; 0052a34c | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][18] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][19]
     CMP EAX,0xc0                        ; 0052a352
     JNZ 0x0052a341                      ; 0052a357
         ;   XREF to: 0052a341 (CONDITIONAL_JUMP)  ; LAB_0052a341
@@ -120,7 +120,7 @@ section .text
     FSIN                                ; 0052a37e
     ADD ECX,0x8                         ; 0052a380
     INC EDX                             ; 0052a383
-    FSTP double ptr [ECX + 0x1d3eae0]   ; 0052a384 | DAT_01d3eb88 | DAT_01d3eb90
+    FSTP double ptr [ECX + 0x1d3eae0]   ; 0052a384 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][20] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][21]
     CMP EDX,0x1e                        ; 0052a38a
     JL 0x0052a372                       ; 0052a38d
         ;   XREF to: 0052a372 (CONDITIONAL_JUMP)  ; LAB_0052a372
@@ -131,8 +131,8 @@ section .text
     ADD EAX,0x8                         ; 0052a39a
         ;   Label: LAB_0052a39a
     XOR ESI,ESI                         ; 0052a39d
-    MOV dword ptr [EAX + 0x1d3eae0],ESI ; 0052a39f | DAT_01d3ebd8 | DAT_01d3ebe0
-    MOV dword ptr [EAX + 0x1d3eae4],ESI ; 0052a3a5 | DAT_01d3ebdc | DAT_01d3ebe4
+    MOV dword ptr [EAX + 0x1d3eae0],ESI ; 0052a39f | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][30] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][31]
+    MOV dword ptr [EAX + 0x1d3eae4],ESI ; 0052a3a5 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][30]+4 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[1][31]+4
     CMP EAX,0x120                       ; 0052a3ab
     JNZ 0x0052a39a                      ; 0052a3b0
         ;   XREF to: 0052a39a (CONDITIONAL_JUMP)  ; LAB_0052a39a
@@ -171,8 +171,8 @@ section .text
     ADD EAX,0x8                         ; 0052a410
         ;   Label: LAB_0052a410
     XOR EBX,EBX                         ; 0052a413
-    MOV dword ptr [EAX + 0x1d3ed24],ESI ; 0052a415 | DAT_01d3ed8c | DAT_01d3ed94
-    MOV dword ptr [EAX + 0x1d3ed20],EBX ; 0052a41b | DAT_01d3ed88 | DAT_01d3ed90
+    MOV dword ptr [EAX + 0x1d3ed24],ESI ; 0052a415 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][12]+4 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][13]+4
+    MOV dword ptr [EAX + 0x1d3ed20],EBX ; 0052a41b | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][12] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][13]
     CMP EAX,0x90                        ; 0052a421
     JNZ 0x0052a410                      ; 0052a426
         ;   XREF to: 0052a410 (CONDITIONAL_JUMP)  ; LAB_0052a410
@@ -188,7 +188,7 @@ section .text
     FSIN                                ; 0052a445
     ADD ECX,0x8                         ; 0052a447
     INC EDX                             ; 0052a44a
-    FSTP double ptr [ECX + 0x1d3ed20]   ; 0052a44b | DAT_01d3ed98 | DAT_01d3eda0
+    FSTP double ptr [ECX + 0x1d3ed20]   ; 0052a44b | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][14] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[3][15]
     CMP EDX,0x24                        ; 0052a451
     JL 0x0052a43b                       ; 0052a454
         ;   XREF to: 0052a43b (CONDITIONAL_JUMP)  ; LAB_0052a43b
@@ -216,8 +216,8 @@ section .text
     ADD EAX,0x8                         ; 0052a48e
         ;   Label: LAB_0052a48e
     XOR EDI,EDI                         ; 0052a491
-    MOV dword ptr [EAX + 0x1d3ec00],EDI ; 0052a493 | DAT_01d3ec68 | DAT_01d3ec70
-    MOV dword ptr [EAX + 0x1d3ec04],EDI ; 0052a499 | DAT_01d3ec6c | DAT_01d3ec74
+    MOV dword ptr [EAX + 0x1d3ec00],EDI ; 0052a493 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[2][12] | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[2][13]
+    MOV dword ptr [EAX + 0x1d3ec04],EDI ; 0052a499 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[2][12]+4 | g_DOUBLE_ARRAY_ARRAY_01d3e9c8[2][13]+4
     CMP EAX,0x120                       ; 0052a49f
     JNZ 0x0052a48e                      ; 0052a4a4
         ;   XREF to: 0052a48e (CONDITIONAL_JUMP)  ; LAB_0052a48e

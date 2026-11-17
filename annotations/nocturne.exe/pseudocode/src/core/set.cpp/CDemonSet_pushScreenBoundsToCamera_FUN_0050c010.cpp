@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemonSet *this_ptr,int vertex_count)
 
 {
@@ -20,7 +18,7 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
   int local_c;
   int local_8;
   
-  if (_DAT_007f7374 != (CDemonCamera *)0x0) {
+  if (g_CDemonCamera_PTR_007f7374 != (CDemonCamera *)0x0) {
     pSVar4 = g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr;
     local_c = g_Projection.center_x_fixed - g_Projection.half_width_fixed;
     iVar5 = g_Projection.center_x_fixed + g_Projection.half_width_fixed;
@@ -96,7 +94,8 @@ void __cdecl core_set_cpp_CDemonSet_pushScreenBoundsToCamera_FUN_0050c010(CDemon
       } while (local_10 < vertex_count);
     }
     core_dcamera_cpp_CDemonCamera_pushRect_FUN_004405d0
-              (_DAT_007f7374,iVar5 >> 0x10,local_c >> 0x10,iVar3 >> 0x10,local_8 >> 0x10);
+              (g_CDemonCamera_PTR_007f7374,iVar5 >> 0x10,local_c >> 0x10,iVar3 >> 0x10,
+               local_8 >> 0x10);
   }
   return;
 }

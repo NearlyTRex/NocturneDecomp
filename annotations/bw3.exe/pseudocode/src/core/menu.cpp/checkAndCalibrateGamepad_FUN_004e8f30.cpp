@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_004e8f30(void)
 
 {

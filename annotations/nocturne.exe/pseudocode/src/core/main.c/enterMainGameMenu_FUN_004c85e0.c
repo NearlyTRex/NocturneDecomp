@@ -98,12 +98,12 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_004c85e0(void)
     } while (cVar1 != '\0');
     iVar4 = 0;
     do {
-      *(byte **)(iVar4 + 0x1cc8110) = puVar5;
+      *(byte **)((int)&g_CHAR_PTR_01cc8110 + iVar4) = puVar5;
       iVar4 = iVar4 + 4;
       puVar5 = puVar5 + 0x100;
     } while (iVar4 != 0x10);
     iVar4 = core_menu_cpp_renderMenuAndGetChoice_FUN_004cf440
-                      ((char **)0x1cc8110,4,&iStack_c,0xfa,(char *)0x0);
+                      (&g_CHAR_PTR_01cc8110,4,&iStack_c,0xfa,(char *)0x0);
     if (iStack_8 != 0) {
       engine_special_cpp_clearScreen_FUN_0052ee70();
     }

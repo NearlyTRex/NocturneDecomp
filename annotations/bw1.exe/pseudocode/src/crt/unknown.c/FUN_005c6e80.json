@@ -2,20 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 210,
+    "complexity_score": 196,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 20,
-    "suspect_count": 17,
+    "pseudocode_lines": 21,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
-      "undefined_data",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 86
+    "total_lines": 87
   },
   "cross_references": [
     {
@@ -114,9 +113,9 @@
     },
     {
       "addr": "00626838",
-      "name": "DAT_00626838",
-      "type": "undefined4",
-      "value": null
+      "name": "g_SIOControlBlock_PTR_00626838",
+      "type": "SIOControlBlock*",
+      "value": "00000000"
     }
   ],
   "param_estimates": {
@@ -392,7 +391,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "DVar2 = SetFilePointer(*(HANDLE *)(DAT_00626838 + param_1 * 4),param_2,(PLONG)0x0,param_3);",
+      "text": "DVar2 = SetFilePointer(g_SIOControlBlock_PTR_00626838->standard_handles[param_1],param_2,",
       "type": "unnamed_param"
     },
     {
@@ -400,28 +399,20 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "DVar2 = SetFilePointer(*(HANDLE *)(DAT_00626838 + param_1 * 4),param_2,(PLONG)0x0,param_3);",
+      "text": "DVar2 = SetFilePointer(g_SIOControlBlock_PTR_00626838->standard_handles[param_1],param_2,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_3",
       "severity": "mild",
-      "text": "DVar2 = SetFilePointer(*(HANDLE *)(DAT_00626838 + param_1 * 4),param_2,(PLONG)0x0,param_3);",
+      "text": "(PLONG)0x0,param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 14,
-      "match": "DAT_00626838",
-      "severity": "mild",
-      "text": "DVar2 = SetFilePointer(*(HANDLE *)(DAT_00626838 + param_1 * 4),param_2,(PLONG)0x0,param_3);",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 15,
+      "line": 16,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_1);",
@@ -429,7 +420,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626604)(param_1);",

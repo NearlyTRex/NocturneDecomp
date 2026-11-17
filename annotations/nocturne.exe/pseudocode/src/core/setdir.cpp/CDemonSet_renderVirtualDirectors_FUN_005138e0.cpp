@@ -56,8 +56,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0(CDemo
       iVar5 = iVar3 * 4;
       do {
         iVar1 = *(int *)(local_50 + 0x26714b4);
-        if (*(float *)(&DAT_02663604 + iVar1 * 4) <
-            *(float *)(&DAT_02663604 + *(int *)(iVar5 + 0x26714b4) * 4)) {
+        if (g_FLOAT_ARRAY_02663604[iVar1] < g_FLOAT_ARRAY_02663604[*(int *)(iVar5 + 0x26714b4)]) {
           *(uint *)(local_50 + 0x26714b4) = *(uint *)(iVar5 + 0x26714b4);
           *(int *)(iVar5 + 0x26714b4) = iVar1;
         }
@@ -129,7 +128,7 @@ void __cdecl core_setdir_cpp_CDemonSet_renderVirtualDirectors_FUN_005138e0(CDemo
           local_20 = local_20 + 0x100;
         } while (local_18 < 0x30);
       }
-      _sprintf(local_c4,"%g",(double)*(float *)(&DAT_02663604 + local_3c * 4));
+      _sprintf(local_c4,"%g",(double)g_FLOAT_ARRAY_02663604[local_3c]);
       iVar6 = local_2c;
       engine_2d_c_drawText_FUN_00402600(local_c4,local_2c,local_44);
       engine_2d_c_drawText_FUN_00402600(local_60[local_3c].name,iVar6,local_4c);

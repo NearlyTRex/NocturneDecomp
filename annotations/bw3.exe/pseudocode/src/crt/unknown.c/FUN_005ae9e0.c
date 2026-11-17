@@ -15,7 +15,7 @@ uint FUN_005ae9e0(uint param_1)
   uVar2 = 0;
   if ((-1 < (int)param_1) && (param_1 <= g_UINT_00607b84)) {
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a4)(param_1);
-    BVar1 = FlushFileBuffers(*(HANDLE *)(DAT_00607bdc + param_1 * 4));
+    BVar1 = FlushFileBuffers(g_SIOControlBlock_PTR_00607bdc->standard_handles[param_1]);
     if (BVar1 == 0) {
       FUN_005ab46c();
       uVar2 = 0xffffffff;

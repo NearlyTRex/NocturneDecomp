@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
 
 {
@@ -58,7 +56,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   pCVar1 = g_CDemonSetPtr;
   (g_CDemonSetPtr->light_direction).x = -0x4844;
   (pCVar1->light_direction).y = -0x4844;
-  iVar4 = DAT_005bb210;
+  iVar4 = g_INT_005bb210;
   (pCVar1->light_direction).z = 0x4844;
   pCVar1->ambient_base_quick = 0x2000;
   if (iVar4 != 0) {
@@ -111,8 +109,8 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
   g_CDemonSetPtr->rendering_mode = 0;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040eab0(&g_MoonCloudTexture);
   pcVar2 = g_MoonCloudTexture.raw;
-  local_30 = _DAT_01ccdebc >> 0x10;
-  local_24 = _DAT_01ccdec0 >> 0x10;
+  local_30 = g_INT_01ccdebc >> 0x10;
+  local_24 = g_INT_01ccdec0 >> 0x10;
   local_2c = g_MoonCloudTexture.raw;
   local_28 = 0;
   do {
@@ -139,7 +137,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_004dec50(CMoon *this_ptr)
     local_28 = local_28 + 1;
   } while ((int)local_28 < 0x1e0);
   engine_3d_c_setBlendMode_FUN_004083c0(1);
-  dVar7 = round((double)_DAT_01ccdec4);
+  dVar7 = round((double)g_FLOAT_01ccdec4);
   local_1c = (int)ROUND(dVar7);
   if (0x1d < local_1c) {
     local_1c = 0;

@@ -27,13 +27,13 @@
 ;   double DOUBLE_00597f31 = 4294967296
 ;   double DOUBLE_00597f39 = 65536
 ;   double DOUBLE_00597f41 = 18
-;   undefined4 DAT_02de07d0
-;   undefined4 DAT_02de07d4
-;   undefined4 DAT_02de07d8
-;   undefined4 DAT_02de07dc
-;   undefined4 DAT_02de07e8
-;   undefined4 DAT_02de07f0
-;   undefined4 DAT_02de07f4
+;   DWORD g_DWORD_02de07d0
+;   int g_INT_02de07d4
+;   _struct_19 g_struct_19_02de07d8
+;   undefined4 g_struct_19_02de07d8.HighPart
+;   double g_DOUBLE_02de07e8
+;   int g_INT_02de07f0
+;   BOOL g_BOOL_02de07f4
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -46,7 +46,7 @@ section .text
 
     SUB ESP,0x24                        ; 00558a30
         ;   Label: wincore_winrun.cpp_getTime_FUN_00558a30
-    CMP dword ptr [0x02de07f4],0x0      ; 00558a33 | DAT_02de07f4
+    CMP dword ptr [0x02de07f4],0x0      ; 00558a33 | g_BOOL_02de07f4
     JZ 0x00558a4d                       ; 00558a3a
         ;   XREF to: 00558a4d (CONDITIONAL_JUMP)  ; LAB_00558a4d
     CALL dword ptr CS:[0x5753ec]        ; 00558a3c | PTR_timeGetTime_005753ec
@@ -58,20 +58,20 @@ section .text
     PUSH ESI                            ; 00558a4e
     MOV EDI,0x2de07d0                   ; 00558a4f
     MOV ESI,0x2de07d8                   ; 00558a54
-    PUSH 0x2de07d8                      ; 00558a59 | DAT_02de07d8
-    MOVSD ES:EDI,ESI                    ; 00558a5e | DAT_02de07d8 | DAT_02de07d0
-    MOVSD ES:EDI,ESI                    ; 00558a5f | DAT_02de07dc | DAT_02de07d4
+    PUSH 0x2de07d8                      ; 00558a59 | g_struct_19_02de07d8
+    MOVSD ES:EDI,ESI                    ; 00558a5e | g_struct_19_02de07d8 | g_DWORD_02de07d0
+    MOVSD ES:EDI,ESI                    ; 00558a5f | g_struct_19_02de07d8.HighPart | g_INT_02de07d4
     CALL dword ptr CS:[0x575570]        ; 00558a60 | PTR_QueryPerformanceCounter_00575570
     FLD double ptr [0x00597f31]         ; 00558a67 | DOUBLE_00597f31
-    FILD dword ptr [0x02de07d4]         ; 00558a6d | DAT_02de07d4
+    FILD dword ptr [0x02de07d4]         ; 00558a6d | g_INT_02de07d4
     FMUL ST1                            ; 00558a73
-    FILD dword ptr [0x02de07dc]         ; 00558a75 | DAT_02de07dc
+    FILD dword ptr [0x02de07dc]         ; 00558a75 | g_struct_19_02de07d8.HighPart
     FMULP ST2                           ; 00558a7b
     XOR ECX,ECX                         ; 00558a7d
-    MOV EAX,[0x02de07d0]                ; 00558a7f | DAT_02de07d0
+    MOV EAX,[0x02de07d0]                ; 00558a7f | g_DWORD_02de07d0
     MOV dword ptr [ESP + 0x1c],ECX      ; 00558a84
     MOV dword ptr [ESP + 0x18],EAX      ; 00558a88
-    MOV EAX,[0x02de07d8]                ; 00558a8c | DAT_02de07d8
+    MOV EAX,[0x02de07d8]                ; 00558a8c | g_struct_19_02de07d8
     MOV dword ptr [ESP + 0x24],ECX      ; 00558a91
     MOV dword ptr [ESP + 0x20],EAX      ; 00558a95
     FILD qword ptr [ESP + 0x18]         ; 00558a99
@@ -80,17 +80,17 @@ section .text
     FADDP                               ; 00558aa3
     FSUBP                               ; 00558aa5
     FLD ST0                             ; 00558aa7
-    FDIV double ptr [0x02de07e8]        ; 00558aa9 | DAT_02de07e8
+    FDIV double ptr [0x02de07e8]        ; 00558aa9 | g_DOUBLE_02de07e8
     FMUL double ptr [0x00597f39]        ; 00558aaf | DOUBLE_00597f39
     FMUL double ptr [0x00597f41]        ; 00558ab5 | DOUBLE_00597f41
-    MOV ESI,dword ptr [0x02de07f0]      ; 00558abb | DAT_02de07f0
+    MOV ESI,dword ptr [0x02de07f0]      ; 00558abb | g_INT_02de07f0
     FSTP ST1                            ; 00558ac1
     CALL crt_math.c_round_FUN_00563a30  ; 00558ac3
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP + 0x28]        ; 00558ac8
     MOV EAX,dword ptr [ESP + 0x28]      ; 00558acc
     ADD ESI,EAX                         ; 00558ad0
-    MOV dword ptr [0x02de07f0],ESI      ; 00558ad2 | DAT_02de07f0
+    MOV dword ptr [0x02de07f0],ESI      ; 00558ad2 | g_INT_02de07f0
     MOV EAX,ESI                         ; 00558ad8
     POP ESI                             ; 00558ada
     POP EDI                             ; 00558adb

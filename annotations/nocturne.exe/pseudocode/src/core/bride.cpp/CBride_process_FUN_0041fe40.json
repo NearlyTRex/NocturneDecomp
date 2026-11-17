@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 980,
-    "complexity_score": 504,
+    "complexity_score": 409,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 379,
-    "suspect_count": 11,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unrolled_memset",
       "warning_type_propagation"
     ],
@@ -256,43 +255,43 @@
     },
     {
       "addr": "00764b2c",
-      "name": "DAT_00764b2c",
-      "type": "undefined4",
+      "name": "g_INT_ARRAY_00764b2c",
+      "type": "int[11]",
       "value": null
     },
     {
       "addr": "00764b30",
-      "name": "DAT_00764b30",
+      "name": "g_INT_ARRAY_00764b2c[1]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764b34",
-      "name": "DAT_00764b34",
+      "name": "g_INT_ARRAY_00764b2c[2]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764b38",
-      "name": "DAT_00764b38",
+      "name": "g_INT_ARRAY_00764b2c[3]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764b3c",
-      "name": "DAT_00764b3c",
+      "name": "g_INT_ARRAY_00764b2c[4]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764b40",
-      "name": "DAT_00764b40",
+      "name": "g_INT_ARRAY_00764b2c[5]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "00764b44",
-      "name": "DAT_00764b44",
+      "name": "g_INT_ARRAY_00764b2c[6]",
       "type": "undefined4",
       "value": null
     }
@@ -748,78 +747,6 @@
       "severity": "moderate",
       "text": "/* WARNING: Type propagation algorithm not settling */",
       "type": "warning_type_propagation"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 187,
-      "match": "DAT_00764b30",
-      "severity": "mild",
-      "text": "DAT_00764b30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 207,
-      "match": "DAT_00764b34",
-      "severity": "mild",
-      "text": "DAT_00764b34);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 252,
-      "match": "DAT_00764b34",
-      "severity": "mild",
-      "text": "DAT_00764b34);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 277,
-      "match": "DAT_00764b30",
-      "severity": "mild",
-      "text": "DAT_00764b30);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 366,
-      "match": "DAT_00764b40",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,this_ptr->part_indices[0],DAT_00764b40,0.2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 369,
-      "match": "DAT_00764b38",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,this_ptr->part_indices[1],DAT_00764b38,0.2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 372,
-      "match": "DAT_00764b44",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,this_ptr->part_indices[2],DAT_00764b44,0.2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 375,
-      "match": "DAT_00764b3c",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,this_ptr->part_indices[3],DAT_00764b3c,0.2);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 378,
-      "match": "DAT_00764b2c",
-      "severity": "mild",
-      "text": "((CCharacter *)this_ptr,this_ptr->part_indices[8],DAT_00764b2c,0.7);",
-      "type": "undefined_data"
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",

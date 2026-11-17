@@ -25,8 +25,8 @@
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_0058b591
 ;   TerminatedCString s_Cannot_read_or_write_mor_0058b5a2
-;   undefined4 DAT_005bc010
-;   undefined4 DAT_005bc030
+;   uint[18] g_UINT_ARRAY_005bc010
+;   undefined4 g_UINT_ARRAY_005bc010[8]
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -74,7 +74,7 @@ section .text
     MOV BL,byte ptr [EDX]               ; 004e2b01
     MOV EDX,dword ptr [EDI + 0x14]      ; 004e2b03
     SUB EBP,EAX                         ; 004e2b06
-    MOV ESI,dword ptr [EDX*0x4 + 0x5bc010] ; 004e2b08 | DAT_005bc010 | DAT_005bc030
+    MOV ESI,dword ptr [EDX*0x4 + 0x5bc010] ; 004e2b08 | g_UINT_ARRAY_005bc010 | g_UINT_ARRAY_005bc010[8]
     SUB EDX,EAX                         ; 004e2b0f
     AND EBX,ESI                         ; 004e2b11
     MOV CL,DL                           ; 004e2b13

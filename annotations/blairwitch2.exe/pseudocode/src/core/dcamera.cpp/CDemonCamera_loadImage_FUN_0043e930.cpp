@@ -219,7 +219,8 @@ LAB_0043ea43:
                 iVar18 = 0;
                 iVar6 = local_40;
                 do {
-                  iVar18 = (*(int *)(iVar14 + local_48 + 0x133991d) >> 0x18) + iVar18;
+                  iVar18 = (*(int *)(g_SFogImagePlane_01326d20.pixels[0xef] +
+                                    iVar14 + local_48 + 0x13d) >> 0x18) + iVar18;
                   cVar4 = (char)iVar18 * '\x04';
                   if (0 < local_a4) {
                     cVar4 = cVar4 + g_CHAR_ARRAY_01339920[local_44 + iVar14];
@@ -446,7 +447,7 @@ LAB_0043ea43:
       engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046cab0
                 (g_CDemonRenderer_PTR_0060b280,&g_SMRGLTextureBasic_00609ff0,
                  &g_SRGBColorPalette_00b65c98);
-      _memset(g_CHAR_ARRAY_00b07f58,0,0x12d40);
+      _memset(g_CHAR_ARRAY_ARRAY_00b07f58,0,0x12d40);
       if (g_INT_006141bc == 0x180) {
         iStack_18 = 0;
         iStack_1c = 0;

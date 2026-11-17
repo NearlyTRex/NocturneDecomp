@@ -17,3 +17,11 @@ extern CDemonActorType g_CSmileyActorType_02da8aa4;
 // CMP3Decoder
 extern CMP3Decoder g_CMP3DecoderInstance;
 
+// int
+extern int g_INT_02da8a74;
+extern int g_INT_02da8a7c;
+extern int g_INT_02da8a88;
+extern int g_INT_02da8a8c;
+extern int g_INT_02da8a98;
+extern int g_INT_02da8aa0;
+

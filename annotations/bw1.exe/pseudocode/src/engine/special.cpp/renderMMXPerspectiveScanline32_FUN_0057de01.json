@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 519,
-    "complexity_score": 2099,
+    "complexity_score": 2054,
     "cross_reference_count": 57,
     "function_call_count": 0,
     "global_count": 38,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 554,
-    "suspect_count": 150,
+    "suspect_count": 146,
     "suspect_types": [
       "concat_reconstruction",
       "fnstsw_flag_artifact",
       "nonstandard_int",
       "pointer_cast",
       "pointer_truncation",
-      "undefined_ram",
       "undefined_type",
       "unknown_field",
       "warning_overlapping_globals"
@@ -502,15 +501,15 @@
     },
     {
       "addr": "00623e58",
-      "name": "g_INT_00623e58",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e58",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e60",
-      "name": "g_INT_00623e60",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e60",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e70",
@@ -520,15 +519,15 @@
     },
     {
       "addr": "00623e78",
-      "name": "g_INT_00623e78",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e78",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e80",
-      "name": "g_INT_00623e80",
-      "type": "int",
-      "value": "0x0"
+      "name": "g_MMX_INTEGER_00623e80",
+      "type": "_MMX_INTEGER",
+      "value": null
     },
     {
       "addr": "00623e90",
@@ -854,44 +853,12 @@
       "type": "unknown_field"
     },
     {
-      "description": "Undefined RAM reference",
-      "line": 196,
-      "match": "uRam00623e5c",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e5c,uVar12) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 197,
-      "match": "uRam00623e64",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e64,uVar13) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
-    },
-    {
       "description": "Unknown/mangled field access",
       "line": 198,
       "match": "._4_4_",
       "severity": "mild",
       "text": "uVar43 = ((CONCAT44(g_QWORD_00623e70._4_4_,uVar17) & 0xffffffff0000ffff) << 0x10 |",
       "type": "unknown_field"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 199,
-      "match": "uRam00623e7c",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e7c,uVar9) & 0xffffffff0000ffff) << 0x10 |",
-      "type": "undefined_ram"
-    },
-    {
-      "description": "Undefined RAM reference",
-      "line": 200,
-      "match": "uRam00623e84",
-      "severity": "mild",
-      "text": "CONCAT44(uRam00623e84,uVar7) & 0xffffffff0000ffff;",
-      "type": "undefined_ram"
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
@@ -1362,7 +1329,7 @@
       "line": 196,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e5c,uVar12) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e58.u32[1],uVar12) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1370,7 +1337,7 @@
       "line": 197,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e64,uVar13) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e60.u32[1],uVar13) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {
@@ -1386,7 +1353,7 @@
       "line": 199,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e7c,uVar9) & 0xffffffff0000ffff) << 0x10 |",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e78.u32[1],uVar9) & 0xffffffff0000ffff) << 0x10 |",
       "type": "concat_reconstruction"
     },
     {
@@ -1394,7 +1361,7 @@
       "line": 200,
       "match": "CONCAT44",
       "severity": "moderate",
-      "text": "CONCAT44(uRam00623e84,uVar7) & 0xffffffff0000ffff;",
+      "text": "CONCAT44(g_MMX_INTEGER_00623e80.u32[1],uVar7) & 0xffffffff0000ffff;",
       "type": "concat_reconstruction"
     },
     {

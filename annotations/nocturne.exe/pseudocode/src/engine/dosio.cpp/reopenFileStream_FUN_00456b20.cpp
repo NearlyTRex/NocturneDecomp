@@ -21,7 +21,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *directory_path
     iVar1 = engine_dosio_cpp_findFile_FUN_004567a0(&local_220);
     if (iVar1 != 0) {
       crt_fstream_cpp_openFile_FUN_00565eb5
-                (file_stream,local_220.target_path,mode_flags,0x000001A4);
+                (file_stream,local_220.target_path,mode_flags,g_INT_005a47a0);
       if (local_220.file_offset != 0) {
         crt_fstream_cpp_istream_seekg_FUN_00565f14
                   (&file_stream->_istream_core,local_220.file_offset);
@@ -33,7 +33,8 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00456b20(char *directory_path
     if (directory_path != (char *)0x0) {
       _mkdir(directory_path);
     }
-    crt_fstream_cpp_openFile_FUN_00565eb5(file_stream,local_220.found_path,mode_flags,0x000001A4);
+    crt_fstream_cpp_openFile_FUN_00565eb5
+              (file_stream,local_220.found_path,mode_flags,g_INT_005a47a0);
   }
   return;
 }

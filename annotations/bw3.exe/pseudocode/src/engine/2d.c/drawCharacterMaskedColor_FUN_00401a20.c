@@ -9,7 +9,7 @@
 int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int x_pos,int y_pos,int color)
 
 {
-  char *pcVar1;
+  uchar *puVar1;
   int iVar2;
   int iVar3;
   uint *puVar4;
@@ -18,15 +18,14 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
   byte *puVar7;
   ushort *puVar8;
   
-  iVar3 = (char_code + -0x20) * 0x91;
-  uVar5 = (uint)(byte)(&DAT_005e8840)[iVar3];
+  uVar5 = (uint)g_SFontGlyph_ARRAY_005e8840[char_code + -0x20].width;
   if ((((x_pos < g_INT_01c6b5a8) || (y_pos < g_INT_01c6b5ac)) ||
       ((int)((g_INT_01c6b5b0 + 1) - uVar5) < x_pos)) || (g_INT_01c6b5b4 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar6 = y_pos * 4;
-    pcVar1 = &DAT_005e8841 + iVar3;
+    puVar1 = g_SFontGlyph_ARRAY_005e8840[char_code + -0x20].bitmap;
     iVar3 = iVar6 + 0x2c;
     if (g_INT_005fba20 == 8) {
       do {
@@ -34,10 +33,10 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar7 = (byte)color;
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar7 = puVar7 + 1;
           } while (iVar2 < (int)uVar5);
@@ -51,10 +50,10 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
         iVar2 = 0;
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar8 = g_USHORT_ARRAY_01c6a070[color];
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar8 = puVar8 + 1;
           } while (iVar2 < (int)uVar5);
@@ -68,10 +67,10 @@ int __cdecl engine_2d_c_drawCharacterMaskedColor_FUN_00401a20(int char_code,int 
         puVar4 = (uint *)(*(int *)((int)g_ARRAY_PTR_01c5faec + iVar6) + x_pos * 4);
         if (uVar5 != 0) {
           do {
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               *puVar4 = g_UINT_ARRAY_01c6a270[color];
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar4 = puVar4 + 1;
           } while (iVar2 < (int)uVar5);

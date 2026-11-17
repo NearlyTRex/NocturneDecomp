@@ -10,16 +10,16 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_0045cc70(C
 
 {
   int iVar1;
-  uint uVar2;
+  float fVar2;
   double dVar3;
   
-  uVar2 = DAT_005ae6f8;
-  iVar1 = DAT_005ae6f4;
-  DAT_005ae6f4 = 1;
-  DAT_005ae6f8 = 0;
+  fVar2 = g_FLOAT_005ae6f8;
+  iVar1 = g_INT_005ae6f4;
+  g_INT_005ae6f4 = 1;
+  g_FLOAT_005ae6f8 = 0.0;
   cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_0045cde0(this_ptr,x1,y1,x2,y2);
   dVar3 = round((double)iVar1);
-  DAT_005ae6f4 = (int)ROUND(dVar3);
-  DAT_005ae6f8 = uVar2;
+  g_INT_005ae6f4 = (int)ROUND(dVar3);
+  g_FLOAT_005ae6f8 = fVar2;
   return;
 }

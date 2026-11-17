@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *this_ptr,float time_window,float update_interval)
 
 {
@@ -19,16 +17,14 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
   int iVar5;
   SIZE_T SVar6;
   SIZE_T SVar7;
-  uint *puVar8;
   SIZE_T size;
   ulong count;
-  uint uVar9;
+  uint uVar8;
   SIZE_T lock_length;
-  short *output_buffer;
-  uint *puVar10;
+  char *pcVar9;
+  char *pcVar10;
   byte bVar11;
   double dVar12;
-  char *format;
   _FILE *file;
   uint uVar13;
   int iVar14;
@@ -38,7 +34,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
   SIZE_T local_20;
   
   bVar11 = 0;
-  if (_DAT_02dc84bc < 1) {
+  if (g_INT_02dc84bc < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 1982;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
@@ -51,7 +47,7 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
       g_CurrentLineNumber = 1995;
       core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSample::pollStream - my sfx isn't active with me!");
     }
-    if (_DAT_02dc8318 == 0) {
+    if (g_CSoundDevice_PTR_02dc8318 == (CSoundDevice *)0x0) {
       sound_sndmain_cpp_logSoundError_FUN_00529980("SfxSample::pollStream - no sound device?\n");
       goto LAB_005240fa;
     }
@@ -133,27 +129,27 @@ int __cdecl sound_sndmain_cpp_CSfxSample_pollStream_FUN_00523ea0(CSfxSample *thi
             }
           }
         }
-        output_buffer = (short *)&DAT_02db1118;
+        pcVar9 = g_CHAR_ARRAY_02db1118;
         bVar1 = true;
         bVar2 = false;
         if (this_ptr->buffer_id == 0) break;
 LAB_005241ef:
         if (bVar3) {
           count = (local_30->sample->sample_info).num_channels * lock_length;
-          uVar9 = (local_30->sample->sample_info).bit_depth;
+          uVar8 = (local_30->sample->sample_info).bit_depth;
           local_20 = lock_length;
-          if (uVar9 < 8) {
+          if (uVar8 < 8) {
 LAB_00524219:
             g_CurrentFilename = "..\\sound\\sndmain.cpp";
             g_CurrentLineNumber = 1476;
             core_main_c_displayErrorAndQuit_FUN_004c8440("generateSilence - invalid bit depth!");
           }
-          else if (uVar9 < 9) {
-            memset(output_buffer,0x80,count);
+          else if (uVar8 < 9) {
+            memset(pcVar9,0x80,count);
           }
           else {
-            if (uVar9 != 0x10) goto LAB_00524219;
-            memset(output_buffer,0,count * 2);
+            if (uVar8 != 0x10) goto LAB_00524219;
+            memset(pcVar9,0,count * 2);
           }
         }
         else if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
@@ -165,35 +161,35 @@ LAB_00524219:
           file = this_ptr->file_handle;
           SVar7 = lock_length;
           size = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
-          local_20 = _fread(output_buffer,size,SVar7,file);
+          local_20 = _fread(pcVar9,size,SVar7,file);
           if ((this_ptr->file_handle->_flag & 0x20) != 0) {
             sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(this_ptr);
-            format = "Error reading %s while streaming\n";
+            pcVar9 = "Error reading %s while streaming\n";
             goto LAB_005240f2;
           }
         }
         else {
           local_20 = sound_mp3_cpp_CMP3Decoder_read_FUN_004e82d0
-                               (this_ptr->mp3_data,output_buffer,lock_length);
+                               (this_ptr->mp3_data,(short *)pcVar9,lock_length);
         }
         if ((bVar1) && (0 < (int)local_20)) {
-          puVar8 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
+          pcVar9 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
                              (this_ptr,this_ptr->stream_write_position,local_20);
-          if (puVar8 == (uint *)0x0) {
-            format = "Error locking %s while streaming\n";
+          if (pcVar9 == (char *)0x0) {
+            pcVar9 = "Error locking %s while streaming\n";
             goto LAB_005240f2;
           }
           iVar14 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_00525c40(this_ptr);
-          puVar10 = (uint *)&DAT_02db1118;
-          for (uVar9 = local_20 * iVar14 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *puVar8 = *puVar10;
-            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
-            puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+          pcVar10 = g_CHAR_ARRAY_02db1118;
+          for (uVar8 = local_20 * iVar14 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+            *(uint *)pcVar9 = *(uint *)pcVar10;
+            pcVar10 = pcVar10 + ((uint)bVar11 * -2 + 1) * 4;
+            pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
           }
-          for (uVar9 = local_20 * iVar14 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-            *(byte *)puVar8 = *(byte *)puVar10;
-            puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
-            puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);
+          for (uVar8 = local_20 * iVar14 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
+            *pcVar9 = *pcVar10;
+            pcVar10 = pcVar10 + (uint)bVar11 * -2 + 1;
+            pcVar9 = pcVar9 + (uint)bVar11 * -2 + 1;
           }
 LAB_00524292:
           sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00523cb0(this_ptr);
@@ -216,17 +212,16 @@ LAB_00524292:
           this_ptr->stream_write_position = 0;
         }
       }
-      output_buffer =
-           sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
-                     (this_ptr,this_ptr->stream_write_position,lock_length);
-      if (output_buffer != (short *)0x0) {
+      pcVar9 = sound_sndmain_cpp_CSfxSample_lock_FUN_00523ba0
+                         (this_ptr,this_ptr->stream_write_position,lock_length);
+      if ((short *)pcVar9 != (short *)0x0) {
         bVar2 = true;
         bVar1 = false;
         goto LAB_005241ef;
       }
-      format = "Error locking %s while streaming\n";
+      pcVar9 = "Error locking %s while streaming\n";
 LAB_005240f2:
-      sound_sndmain_cpp_logSoundError_FUN_00529980(format,this_ptr);
+      sound_sndmain_cpp_logSoundError_FUN_00529980(pcVar9,this_ptr);
 LAB_005240fa:
       sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(local_30);
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_00523a60(this_ptr);

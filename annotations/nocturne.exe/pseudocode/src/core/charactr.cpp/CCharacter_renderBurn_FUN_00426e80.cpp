@@ -32,7 +32,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
     return;
   }
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00461eb0
-            (g_CDemonRenderer_PTR_005ae704,(SMRGLTextureBasic *)&DAT_005ad1fc);
+            (g_CDemonRenderer_PTR_005ae704,&g_SMRGLTextureBasic_005ad1fc);
   this_ptr_00 = &this_ptr->model;
   if (this_ptr->is_fully_burned != 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0051d9d0
@@ -46,7 +46,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
   if (0 < pCVar5->bone_count) {
     iVar8 = 0;
     do {
-      *(uint *)((int)&DAT_00765aa0 + iVar8) = 0;
+      *(uint *)((int)g_FLOAT_ARRAY_00765aa0 + iVar8) = 0;
       iVar6 = iVar6 + 1;
       iVar8 = iVar8 + 4;
     } while (iVar6 < pCVar5->bone_count);
@@ -58,8 +58,8 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
     pCVar9 = this_ptr;
     do {
       iVar8 = pCVar9->fires[0].bone_index;
-      (&DAT_00765aa0)[iVar8] =
-           (float)(&DAT_00765aa0)[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;
+      g_FLOAT_ARRAY_00765aa0[iVar8] =
+           g_FLOAT_ARRAY_00765aa0[iVar8] + (pCVar9->fires[0].size * fVar2) / fVar3;
       iVar6 = iVar6 + 1;
       pCVar9 = (CCharacter *)((pCVar9->base).actor_name + 0x18);
     } while (iVar6 < this_ptr->fire_count);
@@ -69,7 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
   pCVar12 = local_20;
   if (0 < pCVar5->bone_count) {
     do {
-      if ((float)65535 <= (float)(&DAT_00765aa0)[iVar6]) {
+      if ((float)65535 <= g_FLOAT_ARRAY_00765aa0[iVar6]) {
         iVar8 = iVar8 + 1;
       }
       if (pCVar12->farthest_child_bone[0] == -1) {
@@ -93,7 +93,7 @@ void __cdecl core_charactr_cpp_CCharacter_renderBurn_FUN_00426e80(CCharacter *th
     for (iVar8 = 0; pCVar4 = g_CDemonRenderer_PTR_005ae704, iVar8 < (int)(uint)*puVar11;
         iVar8 = iVar8 + 1) {
       dVar13 = round
-                         ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00765aa0)[puVar10[1]]));
+                         ((double)(*(float *)(puVar7 + 4) * g_FLOAT_ARRAY_00765aa0[puVar10[1]]));
       local_18 = (int)ROUND(dVar13);
       puVar7 = puVar7 + 4;
       puVar10 = puVar10 + 1;

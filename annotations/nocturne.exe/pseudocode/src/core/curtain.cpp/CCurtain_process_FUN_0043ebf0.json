@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 651,
-    "complexity_score": 465,
+    "complexity_score": 390,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 18,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 280,
-    "suspect_count": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "self_copy_guard",
       "shadow_pointer_walk",
-      "undefined_data",
       "unknown_field",
       "unresolved_funcptr",
       "unrolled_memcpy"
@@ -95,9 +94,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005be368",
@@ -107,8 +106,8 @@
     },
     {
       "addr": "0077bdb8",
-      "name": "DAT_0077bdb8",
-      "type": "undefined4",
+      "name": "g_INT_0077bdb8",
+      "type": "int",
       "value": null
     },
     {
@@ -325,22 +324,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 104,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "DAT_0077bdb8 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "for (iStack_20 = 0; iVar6 = DAT_0077bdb8, iStack_20 < g_CDemonSetPtr->character_count;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 107,
       "match": "(int *)((int)g_CDemonSetPtr",
@@ -349,52 +332,12 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 108,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "pSVar11 = g_SCollisionInfo_ARRAY_0077c26c + DAT_0077bdb8;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 109,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "if (g_CVector3f_ARRAY_0077bdbc + DAT_0077bdb8 != (CVector3f *)(iVar10 + 0x20)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 110,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "g_CVector3f_ARRAY_0077bdbc[DAT_0077bdb8].x = ((CVector3f *)(iVar10 + 0x20))->x;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 115,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar7 = (**(code **)(*(int *)(iVar10 + 0x14c) + 0x34))(iVar10,pSVar11);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "DAT_0077bdb8 = DAT_0077bdb8 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_0077bdb8",
-      "severity": "mild",
-      "text": "DAT_0077bdb8 = DAT_0077bdb8 + 1;",
-      "type": "undefined_data"
     },
     {
       "description": "Unknown/mangled field access",

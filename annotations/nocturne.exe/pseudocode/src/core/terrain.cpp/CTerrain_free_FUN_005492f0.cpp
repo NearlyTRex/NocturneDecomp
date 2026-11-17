@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_terrain_cpp_CTerrain_free_FUN_005492f0(CTerrain *this_ptr)
 
 {
   core_ground_cpp_CGround_free_FUN_004b1470(g_CGroundPtr);
-  _DAT_02dd10cc = 0;
+  g_CTerrain_02dd10c8.initialized = 0;
   return;
 }

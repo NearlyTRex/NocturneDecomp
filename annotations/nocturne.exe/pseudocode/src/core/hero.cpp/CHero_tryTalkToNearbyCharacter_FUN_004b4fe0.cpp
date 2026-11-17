@@ -46,7 +46,7 @@ int __cdecl core_hero_cpp_CHero_tryTalkToNearbyCharacter_FUN_004b4fe0(CHero *thi
                              (&local_44,pCVar2);
           if (ABS(pCVar2->y) <= (float)0.34906585038888899) {
             core_event_cpp_CEventList_executeCommands_FUN_0047ab70
-                      (0x01C03A10,(pCVar1->base).talk_to_me_event);
+                      (g_CEventList_PTR_005b7650,(pCVar1->base).talk_to_me_event);
             return 1;
           }
         }

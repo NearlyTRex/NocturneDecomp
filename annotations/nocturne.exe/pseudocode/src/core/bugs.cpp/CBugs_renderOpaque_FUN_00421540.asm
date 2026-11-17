@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     RET                                 ; 00421557
     MOV ECX,dword ptr [0x005ae704]      ; 00421558 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_00421558
-    PUSH ECX                            ; 0042155e | DAT_01b4d738
+    PUSH ECX                            ; 0042155e | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0042155f
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 00421564
@@ -93,7 +93,7 @@ section .text
     PUSH EBP                            ; 004215e1
     ADD EDX,EAX                         ; 004215e2
     MOV EAX,[0x005ae704]                ; 004215e4 | g_CDemonRenderer_PTR_005ae704
-    PUSH EAX                            ; 004215e9 | DAT_01b4d738
+    PUSH EAX                            ; 004215e9 | g_CDemonRenderer_01b4d738
     MOV dword ptr [ESP + 0x54],EDX      ; 004215ea
     CALL engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0 ; 004215ee
         ;   XREF to: 00460aa0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0(CDemonRenderer * this_ptr, CVector3f * euler_angles, CVector3f * translation)
@@ -128,7 +128,7 @@ section .text
     ADD ESP,0x8                         ; 00421646
     PUSH 0xffff                         ; 00421649
     MOV EDX,dword ptr [0x005ae704]      ; 0042164e | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 00421654 | DAT_01b4d738
+    PUSH EDX                            ; 00421654 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010 ; 00421655
         ;   XREF to: 00461010 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00461010(CDemonRenderer * this_ptr, int render_alpha)
     ADD ESP,0x8                         ; 0042165a
@@ -143,7 +143,7 @@ section .text
         ;   XREF to: 004544d0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
     ADD ESP,0xc                         ; 0042167b
     MOV ECX,dword ptr [0x005ae704]      ; 0042167e | g_CDemonRenderer_PTR_005ae704
-    PUSH ECX                            ; 00421684 | DAT_01b4d738
+    PUSH ECX                            ; 00421684 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0 ; 00421685
         ;   XREF to: 00460bf0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_matrixPop_FUN_00460bf0(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0042168a

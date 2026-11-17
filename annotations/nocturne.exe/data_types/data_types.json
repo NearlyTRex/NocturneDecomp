@@ -1149,6 +1149,10 @@
       "type":"struct"
     },
     {
+      "name":"CPathQueueNode",
+      "type":"struct"
+    },
+    {
       "name":"CPickList_handleInput",
       "type":"function_definition"
     },
@@ -3993,6 +3997,10 @@
       "type":"struct"
     },
     {
+      "name":"SReverbSettings",
+      "type":"struct"
+    },
+    {
       "name":"SRoom",
       "type":"struct"
     },
@@ -5210,6 +5218,10 @@
     },
     {
       "name":"ofstream",
+      "type":"struct"
+    },
+    {
+      "name":"streambuf_vtable",
       "type":"struct"
     },
     {
@@ -36586,6 +36598,37 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"x",
+          "offset":0,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"cost",
+          "offset":4,
+          "type":"int"
+        },
+        {
+          "len":4,
+          "name":"z",
+          "offset":8,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"CPathQueueNode",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Class/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":336,
           "name":"base",
           "offset":0,
@@ -54649,6 +54692,37 @@
       "desc":"",
       "fields":[
         {
+          "len":4,
+          "name":"volume",
+          "offset":0,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"decay_time",
+          "offset":4,
+          "type":"float"
+        },
+        {
+          "len":4,
+          "name":"damping",
+          "offset":8,
+          "type":"float"
+        }
+      ],
+      "importable":true,
+      "len":12,
+      "min_alig":1,
+      "name":"SReverbSettings",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":1,
+      "cat":"/Nocturne/Struct/Game",
+      "desc":"",
+      "fields":[
+        {
           "len":1,
           "name":"r",
           "offset":0,
@@ -55882,6 +55956,97 @@
       "len":40,
       "min_alig":4,
       "name":"streambuf",
+      "pack":false,
+      "type":"struct"
+    },
+    {
+      "alig":4,
+      "cat":"/Nocturne/Class/System/iostream.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"do_sgetn",
+          "offset":0,
+          "type":"cpp_streambuf_do_sgetn*"
+        },
+        {
+          "len":4,
+          "name":"do_sputn",
+          "offset":4,
+          "type":"cpp_streambuf_do_sputn*"
+        },
+        {
+          "len":4,
+          "name":"pbackfail",
+          "offset":8,
+          "type":"cpp_streambuf_pbackfail*"
+        },
+        {
+          "len":4,
+          "name":"overflow",
+          "offset":12,
+          "type":"cpp_streambuf_overflow*"
+        },
+        {
+          "len":4,
+          "name":"underflow",
+          "offset":16,
+          "type":"cpp_streambuf_underflow*"
+        },
+        {
+          "len":4,
+          "name":"setbuf",
+          "offset":20,
+          "type":"cpp_streambuf_setbuf*"
+        },
+        {
+          "len":4,
+          "name":"seekoff",
+          "offset":24,
+          "type":"cpp_streambuf_seekoff*"
+        },
+        {
+          "len":4,
+          "name":"seekpos",
+          "offset":28,
+          "type":"cpp_streambuf_seekpos*"
+        },
+        {
+          "len":4,
+          "name":"sync",
+          "offset":32,
+          "type":"cpp_streambuf_sync*"
+        },
+        {
+          "len":4,
+          "name":"destructor",
+          "offset":36,
+          "type":"cpp_streambuf_destructor*"
+        },
+        {
+          "len":4,
+          "name":"doallocate",
+          "offset":40,
+          "type":"cpp_streambuf_doallocate*"
+        },
+        {
+          "len":4,
+          "name":"reserved",
+          "offset":44,
+          "type":"void*"
+        },
+        {
+          "len":4,
+          "name":"base_object_size",
+          "offset":48,
+          "type":"int"
+        }
+      ],
+      "importable":true,
+      "len":52,
+      "min_alig":4,
+      "name":"streambuf_vtable",
       "pack":false,
       "type":"struct"
     },

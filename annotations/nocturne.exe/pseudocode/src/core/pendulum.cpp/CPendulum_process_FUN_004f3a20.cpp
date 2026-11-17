@@ -19,14 +19,14 @@ void __cdecl core_pendulum_cpp_CPendulum_process_FUN_004f3a20(CPendulum *this_pt
   
   if (this_ptr->moving == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->start_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->start_event);
     if (iVar1 == 0) {
       return;
     }
     this_ptr->moving = 1;
   }
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,this_ptr->stop_event);
+                    (g_CEventList_PTR_005b7650,this_ptr->stop_event);
   if ((iVar1 != 0) && (this_ptr->decay != 1.0)) {
     this_ptr->decay_timer = 0.0;
     this_ptr->decay = 1.0;

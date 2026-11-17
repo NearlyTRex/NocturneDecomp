@@ -28,7 +28,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0051da50 at 0051da79
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a1ea8
+;   float g_FLOAT_005a1ea8 = 256
 ;
 ; Called Functions:
 ;   core_xform.cpp_transformVector3x4_FUN_0055a8b0
@@ -124,13 +124,13 @@ section .text
     LEA EAX,[ESP + 0x24]                ; 00518286
     MOV ESI,dword ptr [ESP + 0x34]      ; 0051828a
     FLD float ptr [EAX]                 ; 0051828e
-    FMUL float ptr [0x005a1ea8]         ; 00518290 | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 00518290 | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX]               ; 00518296
     FLD float ptr [EAX + 0x4]           ; 00518298
-    FMUL float ptr [0x005a1ea8]         ; 0051829b | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 0051829b | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX + 0x4]         ; 005182a1
     FLD float ptr [EAX + 0x8]           ; 005182a4
-    FMUL float ptr [0x005a1ea8]         ; 005182a7 | DAT_005a1ea8
+    FMUL float ptr [0x005a1ea8]         ; 005182a7 | g_FLOAT_005a1ea8
     FISTP dword ptr [EBX + 0x8]         ; 005182ad
     LEA ECX,[EBX + 0xc]                 ; 005182b0
     INC ESI                             ; 005182b3

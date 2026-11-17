@@ -13,8 +13,8 @@
 // SRGBColorPalette
 extern SRGBColorPalette g_SRGBColorPalette_00b81198;
 
-// char[24]
-extern char g_CHAR_ARRAY_00b81ca8[24];
+// char[24][307200]
+extern char g_CHAR_ARRAY_ARRAY_00b81ca8[24][307200];
 
 // int
 extern int g_INT_00b81498;

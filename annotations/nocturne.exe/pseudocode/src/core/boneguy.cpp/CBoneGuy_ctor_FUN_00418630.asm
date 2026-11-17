@@ -23,7 +23,7 @@
 ;   undefined4 s_oneguydie_00579192+1
 ;   undefined4 s_neguydie_00579192+2
 ;   undefined4 s_eguydie_00579192+3
-;   undefined4 DAT_0057919e
+;   float g_FLOAT_0057919e = 256
 ;   float FLOAT_0059a8a0 = 50
 ;   float FLOAT_0059a8a4 = 100
 ;   CBoneGuy_full_vtable g_CBoneGuyVTable
@@ -148,7 +148,7 @@ section .text
     CALL core_boneguy.cpp_hsvToRgb_FUN_00418480 ; 004187b4
         ;   XREF to: 00418480 (UNCONDITIONAL_CALL)  ; CColor3f * core_boneguy.cpp_hsvToRgb_FUN_00418480(CColor3f * out_rgb, CColor3f * in_hsv)
     ADD ESP,0x8                         ; 004187b9
-    FLD float ptr [0x0057919e]          ; 004187bc | DAT_0057919e
+    FLD float ptr [0x0057919e]          ; 004187bc | g_FLOAT_0057919e
     FLD float ptr [ESP]                 ; 004187c2
     FMUL ST1                            ; 004187c5
     CALL crt_math.c_round_FUN_00563a30  ; 004187c7

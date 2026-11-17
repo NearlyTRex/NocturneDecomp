@@ -9,11 +9,11 @@
 void __cdecl core_gore_cpp_CBloodSplat_setupRenderState_FUN_004cd600(CBloodSplat *this_ptr)
 
 {
-  g_SMRGLHeaderPrimitive_01d22e48.base.count = 4;
-  g_INT_01d22e60 = 0;
-  g_INT_01d22e64 = 1;
-  g_INT_01d22e68 = 2;
-  g_INT_01d22e6c = 3;
+  g_SMRGLPrimitiveQuadIndex_01d22e48.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[1] = 1;
+  g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01d22e48.vertices[3] = 3;
   g_SRenderVertex_ARRAY_0060b014[0].u = 0x80000;
   g_SRenderVertex_ARRAY_0060b014[0].v = 0xf80000;
   g_SRenderVertex_ARRAY_0060b014[1].u = 0xf80000;

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10(void)
 
 {
@@ -17,28 +15,28 @@ void __cdecl sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_00522d10(voi
   int iVar4;
   int iVar5;
   
-  dVar3 = _DAT_02dc78f0;
-  dVar2 = _DAT_02dc78e8;
-  dVar1 = _DAT_02dc78e0;
-  if (DAT_005bea68 == 2) {
-    dVar1 = _DAT_005bea88 * 0.5;
-    _DAT_02dc83d8 = _DAT_02dc78e0 - _DAT_02dc7910 * dVar1;
-    _DAT_02dc8418 = _DAT_02dc78e8 - _DAT_02dc7918 * dVar1;
-    _DAT_02dc8458 = _DAT_02dc78f0 - _DAT_02dc7920 * dVar1;
-    _DAT_02dc83e0 = _DAT_02dc78e0 + _DAT_02dc7910 * dVar1;
-    _DAT_02dc8420 = _DAT_02dc78e8 + _DAT_02dc7918 * dVar1;
-    _DAT_02dc8460 = _DAT_02dc78f0 + _DAT_02dc7920 * dVar1;
+  dVar3 = g_DOUBLE_02dc78f0;
+  dVar2 = g_DOUBLE_02dc78e8;
+  dVar1 = g_DOUBLE_02dc78e0;
+  if (g_INT_005bea68 == 2) {
+    dVar1 = g_DOUBLE_005bea88 * 0.5;
+    g_DOUBLE_ARRAY_02dc83d8[0] = g_DOUBLE_02dc78e0 - g_DOUBLE_02dc7910 * dVar1;
+    g_DOUBLE_ARRAY_02dc8418[0] = g_DOUBLE_02dc78e8 - g_DOUBLE_02dc7918 * dVar1;
+    g_DOUBLE_ARRAY_02dc8458[0] = g_DOUBLE_02dc78f0 - g_DOUBLE_02dc7920 * dVar1;
+    g_DOUBLE_ARRAY_02dc83d8[1] = g_DOUBLE_02dc78e0 + g_DOUBLE_02dc7910 * dVar1;
+    g_DOUBLE_ARRAY_02dc8418[1] = g_DOUBLE_02dc78e8 + g_DOUBLE_02dc7918 * dVar1;
+    g_DOUBLE_ARRAY_02dc8458[1] = g_DOUBLE_02dc78f0 + g_DOUBLE_02dc7920 * dVar1;
     return;
   }
-  if (0 < DAT_005bea68) {
+  if (0 < g_INT_005bea68) {
     iVar4 = 0;
     do {
       iVar5 = iVar4 + 8;
-      *(double *)(&DAT_02dc83d8 + iVar4) = dVar1;
-      *(double *)(&DAT_02dc8418 + iVar4) = dVar2;
-      *(double *)(&DAT_02dc8458 + iVar4) = dVar3;
+      *(double *)((int)g_DOUBLE_ARRAY_02dc83d8 + iVar4) = dVar1;
+      *(double *)((int)g_DOUBLE_ARRAY_02dc8418 + iVar4) = dVar2;
+      *(double *)((int)g_DOUBLE_ARRAY_02dc8458 + iVar4) = dVar3;
       iVar4 = iVar5;
-    } while (iVar5 < DAT_005bea68 * 8);
+    } while (iVar5 < g_INT_005bea68 * 8);
   }
   return;
 }

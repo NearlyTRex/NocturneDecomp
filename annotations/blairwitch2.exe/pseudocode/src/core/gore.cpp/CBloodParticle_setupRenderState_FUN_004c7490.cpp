@@ -25,15 +25,15 @@ void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004c7490(CBloodPa
   CVector3i local_18;
   
   bVar6 = 0;
-  g_SMRGLHeaderPrimitive_01cb8288.base.count = 4;
-  g_SMRGLHeaderPrimitive_01cb8288.surface_normal.A.i = 0;
-  g_SMRGLHeaderPrimitive_01cb8288.surface_normal.B.i = 0;
-  g_SMRGLHeaderPrimitive_01cb8288.surface_normal.C.i = 0;
-  g_SMRGLHeaderPrimitive_01cb8288.surface_normal.D.i = 0;
-  g_INT_01cb82a0 = 0;
-  g_INT_01cb82a4 = 1;
-  g_INT_01cb82a8 = 2;
-  g_INT_01cb82ac = 3;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.base.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.vertices[1] = 1;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01cb8288.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_0046b650
             (g_CDemonRenderer_PTR_0060b280,&local_18);
   g_CVector3i_01cb82b0.x = local_18.x;

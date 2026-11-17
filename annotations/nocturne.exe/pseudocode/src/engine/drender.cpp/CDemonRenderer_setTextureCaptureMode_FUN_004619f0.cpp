@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f0(CDemonRenderer *this_ptr,int enable_advanced_mode)
 
 {
@@ -15,8 +13,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_004619f
     this_ptr->texture_capture_enabled = 0;
     return;
   }
-  _DAT_01b4d7b0 = 0xffffffff;
-  _DAT_01b4d7ac = this_ptr->shadow_pass_active;
+  g_INT_01b4d7b0 = -1;
+  g_INT_01b4d7ac = this_ptr->shadow_pass_active;
   this_ptr->texture_capture_enabled = (enable_advanced_mode != 0) + 1;
   return;
 }

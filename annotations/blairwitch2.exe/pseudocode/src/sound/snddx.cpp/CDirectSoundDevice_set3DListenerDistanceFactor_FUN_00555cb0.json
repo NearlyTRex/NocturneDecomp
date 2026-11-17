@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 39,
+    "complexity_score": 9,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 26
   },
   "cross_references": [],
@@ -38,8 +35,8 @@
     },
     {
       "addr": "0264a5d0",
-      "name": "DAT_0264a5d0",
-      "type": "undefined4",
+      "name": "g_IDirectSound3DListener_PTR_0264a5d0",
+      "type": "IDirectSound3DListener*",
       "value": null
     }
   ],
@@ -125,24 +122,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5d0 + 0x2c))(_DAT_0264a5d0,distance_in_feet * 0.3048f,0);",
-      "type": "unresolved_funcptr"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

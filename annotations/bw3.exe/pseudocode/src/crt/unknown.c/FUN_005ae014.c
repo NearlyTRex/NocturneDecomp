@@ -124,6 +124,7 @@ LAB_005ae1d8:
     cVar1 = *pcVar7;
     pcVar7 = pcVar7 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  WriteFile(*(HANDLE *)(DAT_00607bdc + 8),acStack_114,~uVar5 - 1,&DStack_14,(LPOVERLAPPED)0x0);
+  WriteFile(g_SIOControlBlock_PTR_00607bdc->standard_handles[2],acStack_114,~uVar5 - 1,&DStack_14,
+            (LPOVERLAPPED)0x0);
   return 1;
 }

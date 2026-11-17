@@ -538,8 +538,8 @@ static TerminatedCString s_AR_d_005b67d3 = "AR%d_";
 static TerminatedCString s_wav_005b67d9 = ".wav";
 static TerminatedCString s_f_005b67de = "%f";
 static TerminatedCString s_f_005b67e1 = "%f";
-static TerminatedCString s_s_1_wav_005b67e7 = "1.wav @ ";
-static TerminatedCString s_s_1_wav_005b67f3 = "1.wav @ ";
+static TerminatedCString s_AB_1_wav_005b67e4 = "AB_1.wav @ ";
+static TerminatedCString s_AT_1_wav_005b67f0 = "AT_1.wav @ ";
 static TerminatedCString s_Chem_005b67fc = "Chem";
 static TerminatedCString s_chembackground_005b6801 = "chembackground";
 static TerminatedCString s_dropperempty_005b6810 = "dropperempty";
@@ -3179,12 +3179,6 @@ static float g_FLOAT_005bf4b4 = 0.01745329f;
 static float g_FLOAT_005bfdd8 = 3.141593f;
 
 // undefined1 constants
-static undefined1 DAT_005b67e4 = 0x41;
-static undefined1 DAT_005b67e5 = 0x42;
-static undefined1 DAT_005b67e6 = 0x5F;
-static undefined1 DAT_005b67f0 = 0x41;
-static undefined1 DAT_005b67f1 = 0x54;
-static undefined1 DAT_005b67f2 = 0x5F;
 static undefined1 DAT_005bd327 = 0x58;
 
 // undefined1* constants

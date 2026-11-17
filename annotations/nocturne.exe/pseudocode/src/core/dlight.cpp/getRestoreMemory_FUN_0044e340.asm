@@ -12,7 +12,7 @@
 ; Referenced Globals:
 ;   TerminatedCString s_core_dlight_cpp_0057c58e
 ;   TerminatedCString s_getRestoreMemory_Need_mo_0057c5a1
-;   undefined4 DAT_01ab99ec
+;   uint g_UINT_01ab99ec
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -27,21 +27,21 @@ section .text
         ;   Label: core_dlight.cpp_getRestoreMemory_FUN_0044e340
     MOV EAX,0x300064                    ; 0044e341
     SUB EAX,dword ptr [ESP + 0x8]       ; 0044e346
-    MOV ECX,dword ptr [0x01ab99ec]      ; 0044e34a | DAT_01ab99ec
+    MOV ECX,dword ptr [0x01ab99ec]      ; 0044e34a | g_UINT_01ab99ec
     SUB EAX,0x4                         ; 0044e350
     CMP EAX,ECX                         ; 0044e353
     JC 0x0044e37f                       ; 0044e355
         ;   XREF to: 0044e37f (CONDITIONAL_JUMP)  ; LAB_0044e37f
     MOV EDX,dword ptr [ESP + 0x8]       ; 0044e357
         ;   Label: LAB_0044e357
-    MOV EAX,[0x01ab99ec]                ; 0044e35b | DAT_01ab99ec
-    MOV EDI,dword ptr [0x01ab99ec]      ; 0044e360 | DAT_01ab99ec
+    MOV EAX,[0x01ab99ec]                ; 0044e35b | g_UINT_01ab99ec
+    MOV EDI,dword ptr [0x01ab99ec]      ; 0044e360 | g_UINT_01ab99ec
     ADD EAX,EAX                         ; 0044e366
     ADD EDX,0x8                         ; 0044e368
     ADD EAX,0x14b9924                   ; 0044e36b
     ADD EDI,EDX                         ; 0044e370
     ADD EAX,0x10                        ; 0044e372
-    MOV dword ptr [0x01ab99ec],EDI      ; 0044e375 | DAT_01ab99ec
+    MOV dword ptr [0x01ab99ec],EDI      ; 0044e375 | g_UINT_01ab99ec
     AND AL,0xf0                         ; 0044e37b
     POP EDI                             ; 0044e37d
     RET                                 ; 0044e37e

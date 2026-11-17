@@ -24,7 +24,7 @@
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00528210 at 0052825e
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00620b10
+;   int[6][3][4] g_INT_ARRAY_ARRAY_ARRAY_00620b10
 ;
 ; Called Functions:
 ;   sound_mp3.cpp_CMP3Decoder_readBits_FUN_00525f00
@@ -317,7 +317,7 @@ section .text
     SAR EAX,0x10                        ; 005281c1
     SHL EAX,0x2                         ; 005281c4
     MOVSX ECX,SI                        ; 005281c7
-    CMP ECX,dword ptr [EDX + EAX*0x1 + 0x620b10] ; 005281ca | DAT_00620b10
+    CMP ECX,dword ptr [EDX + EAX*0x1 + 0x620b10] ; 005281ca | g_INT_ARRAY_ARRAY_ARRAY_00620b10
     JC 0x005281da                       ; 005281d1
         ;   XREF to: 005281da (CONDITIONAL_JUMP)  ; LAB_005281da
     INC word ptr [ESP + 0x20]           ; 005281d3

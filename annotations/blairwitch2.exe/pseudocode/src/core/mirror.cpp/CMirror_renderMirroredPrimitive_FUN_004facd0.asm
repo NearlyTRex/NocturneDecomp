@@ -12,15 +12,15 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_0060b280 = 01ba5c50
-;   undefined4 g_SMRGLHeaderPrimitive_01d182c8.base.count
-;   undefined4 g_SMRGLHeaderPrimitive_01d182c8.surface_normal.A
-;   undefined4 g_SMRGLHeaderPrimitive_01d182c8.surface_normal.B
-;   undefined4 g_SMRGLHeaderPrimitive_01d182c8.surface_normal.C
-;   undefined4 g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D
-;   undefined4 DAT_01d182e0
-;   undefined4 DAT_01d182e4
-;   undefined4 DAT_01d182e8
-;   undefined4 DAT_01d182ec
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.base.base.count
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.A
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.B
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.C
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.D
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[0]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[1]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[2]
+;   undefined4 g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3]
 ;
 ; Called Functions:
 ;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10
@@ -33,26 +33,26 @@ section .text
     MOV EAX,dword ptr [ESP + 0x8]       ; 004facd0
         ;   Label: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004facd0
     MOV EDX,dword ptr [EAX + 0x4]       ; 004facd4
-    MOV dword ptr [0x01d182cc],EDX      ; 004facd7 | g_SMRGLHeaderPrimitive_01d182c8.base.count
+    MOV dword ptr [0x01d182cc],EDX      ; 004facd7 | g_SMRGLPrimitiveQuadIndex_01d182c8.base.base.count
     MOV EDX,dword ptr [EAX + 0x8]       ; 004facdd
-    MOV dword ptr [0x01d182d0],EDX      ; 004face0 | g_SMRGLHeaderPrimitive_01d182c8.surface_normal.A
+    MOV dword ptr [0x01d182d0],EDX      ; 004face0 | g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.A
     MOV EDX,dword ptr [EAX + 0xc]       ; 004face6
-    MOV dword ptr [0x01d182d4],EDX      ; 004face9 | g_SMRGLHeaderPrimitive_01d182c8.surface_normal.B
+    MOV dword ptr [0x01d182d4],EDX      ; 004face9 | g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.B
     MOV EDX,dword ptr [EAX + 0x10]      ; 004facef
-    MOV dword ptr [0x01d182d8],EDX      ; 004facf2 | g_SMRGLHeaderPrimitive_01d182c8.surface_normal.C
+    MOV dword ptr [0x01d182d8],EDX      ; 004facf2 | g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.C
     MOV EDX,dword ptr [EAX + 0x14]      ; 004facf8
-    MOV dword ptr [0x01d182dc],EDX      ; 004facfb | g_SMRGLHeaderPrimitive_01d182c8.surface_normal.D
+    MOV dword ptr [0x01d182dc],EDX      ; 004facfb | g_SMRGLPrimitiveQuadIndex_01d182c8.base.surface_normal.D
     MOV EDX,dword ptr [EAX + 0x18]      ; 004fad01
-    MOV dword ptr [0x01d182e0],EDX      ; 004fad04 | DAT_01d182e0
+    MOV dword ptr [0x01d182e0],EDX      ; 004fad04 | g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[0]
     MOV EDX,dword ptr [EAX + 0x24]      ; 004fad0a
-    MOV dword ptr [0x01d182e4],EDX      ; 004fad0d | DAT_01d182e4
+    MOV dword ptr [0x01d182e4],EDX      ; 004fad0d | g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[1]
     MOV EDX,dword ptr [EAX + 0x30]      ; 004fad13
     PUSH 0x1d182c8                      ; 004fad16
-    MOV dword ptr [0x01d182e8],EDX      ; 004fad1b | DAT_01d182e8
+    MOV dword ptr [0x01d182e8],EDX      ; 004fad1b | g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[2]
     MOV EDX,dword ptr [ESP + 0x8]       ; 004fad21
     MOV EAX,dword ptr [EAX + 0x3c]      ; 004fad25
     PUSH EDX                            ; 004fad28
-    MOV [0x01d182ec],EAX                ; 004fad29 | DAT_01d182ec
+    MOV [0x01d182ec],EAX                ; 004fad29 | g_SMRGLPrimitiveQuadIndex_01d182c8.vertices[3]
     CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10 ; 004fad2e
         ;   XREF to: 004faa10 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004fad33

@@ -51,14 +51,15 @@ void __cdecl core_emitter_cpp_CEmitter_process_FUN_00478790(CEmitter *this_ptr,f
   iVar4 = _strcmp(this_ptr->event_on,"none");
   if ((iVar4 != 0) &&
      (iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                        (0x01C03A10,this_ptr->event_on), pCVar3 = g_CDemonSetPtr, iVar4 != 0)) {
+                        (g_CEventList_PTR_005b7650,this_ptr->event_on), pCVar3 = g_CDemonSetPtr,
+     iVar4 != 0)) {
     iVar8 = 1;
     this_ptr->emitter_state = 1;
     this_ptr->state_timer = this_ptr->max_emit_time;
     core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_00508890(pCVar3,&this_ptr->base);
   }
-  iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30(0x01C03A10,this_ptr->event_off)
-  ;
+  iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
+                    (g_CEventList_PTR_005b7650,this_ptr->event_off);
   if (iVar4 != 0) {
     this_ptr->emitter_state = 0;
   }

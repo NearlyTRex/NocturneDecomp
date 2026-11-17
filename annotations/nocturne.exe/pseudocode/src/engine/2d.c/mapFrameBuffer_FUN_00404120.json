@@ -2,17 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 231,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 32,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 15,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "pointer_truncation",
-      "undefined_data"
+      "pointer_truncation"
     ],
     "total_lines": 237
   },
@@ -136,56 +135,56 @@
     },
     {
       "addr": "006b023c",
-      "name": "DAT_006b023c",
-      "type": "undefined4",
+      "name": "g_INT_006b023c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0240",
-      "name": "DAT_006b0240",
-      "type": "undefined4",
+      "name": "g_INT_006b0240",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0244",
-      "name": "DAT_006b0244",
-      "type": "undefined4",
+      "name": "g_INT_006b0244",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0248",
-      "name": "DAT_006b0248",
-      "type": "undefined4",
+      "name": "g_INT_006b0248",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b024c",
-      "name": "DAT_006b024c",
-      "type": "undefined4",
+      "name": "g_INT_006b024c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0250",
-      "name": "DAT_006b0250",
-      "type": "undefined4",
+      "name": "g_INT_006b0250",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0254",
-      "name": "DAT_006b0254",
-      "type": "undefined4",
+      "name": "g_INT_006b0254",
+      "type": "int",
       "value": null
     },
     {
       "addr": "006b0258",
-      "name": "DAT_006b0258",
-      "type": "undefined4",
+      "name": "g_PTR_006b0258",
+      "type": "void*",
       "value": null
     },
     {
       "addr": "006b025c",
-      "name": "DAT_006b025c",
-      "type": "undefined4",
+      "name": "g_INT_006b025c",
+      "type": "int",
       "value": null
     },
     {
@@ -366,86 +365,6 @@
   },
   "suspects": [
     {
-      "description": "Undefined global data reference",
-      "line": 7,
-      "match": "DAT_006b023c",
-      "severity": "mild",
-      "text": "if (DAT_006b023c != 0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 43,
-      "match": "DAT_006b023c",
-      "severity": "mild",
-      "text": "DAT_006b023c = g_WindowWidth;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 44,
-      "match": "DAT_006b0240",
-      "severity": "mild",
-      "text": "DAT_006b0240 = g_WindowHeight;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 45,
-      "match": "DAT_006b0244",
-      "severity": "mild",
-      "text": "DAT_006b0244 = g_ClipLeft;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 47,
-      "match": "DAT_006b0248",
-      "severity": "mild",
-      "text": "DAT_006b0248 = g_ClipTop;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 48,
-      "match": "DAT_006b024c",
-      "severity": "mild",
-      "text": "DAT_006b024c = g_ClipRight;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 50,
-      "match": "DAT_006b0250",
-      "severity": "mild",
-      "text": "DAT_006b0250 = g_ClipBottom;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 52,
-      "match": "DAT_006b0254",
-      "severity": "mild",
-      "text": "DAT_006b0254 = g_BitsPerPixel;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
-      "match": "DAT_006b0258",
-      "severity": "mild",
-      "text": "DAT_006b0258 = g_ScreenBufferArray[0];",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_006b025c",
-      "severity": "mild",
-      "text": "DAT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 63,
       "match": "(void **)((int)g_ScreenBufferArray",
@@ -466,7 +385,7 @@
       "line": 55,
       "match": "(int)g_ScreenBufferArray[1]",
       "severity": "moderate",
-      "text": "DAT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "text": "g_INT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
       "type": "pointer_truncation"
     },
     {
@@ -474,7 +393,7 @@
       "line": 55,
       "match": "(int)g_ScreenBufferArray[0]",
       "severity": "moderate",
-      "text": "DAT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
+      "text": "g_INT_006b025c = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];",
       "type": "pointer_truncation"
     },
     {

@@ -11,8 +11,8 @@
 ;   core_svetlana.cpp_CSvetlana_process_FUN_00541d00 at 00541dc6
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dca09c
-;   undefined4 DAT_02dca0a0
+;   undefined4 g_INT_ARRAY_02dca058[17]
+;   undefined4 g_INT_ARRAY_02dca058[18]
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_0042add0
@@ -45,7 +45,7 @@ section .text
         ;   XREF to: 00542b4b (CONDITIONAL_JUMP)  ; LAB_00542b4b
     JA 0x00542b57                       ; 00542af6
         ;   XREF to: 00542b57 (CONDITIONAL_JUMP)  ; LAB_00542b57
-    MOV EDI,dword ptr [0x02dca09c]      ; 00542af8 | DAT_02dca09c
+    MOV EDI,dword ptr [0x02dca09c]      ; 00542af8 | g_INT_ARRAY_02dca058[17]
     PUSH EDI                            ; 00542afe
     PUSH EBX                            ; 00542aff
     CALL core_svetlana.cpp_CSvetlana_performBladeAttack_FUN_00542b70 ; 00542b00
@@ -71,7 +71,7 @@ section .text
     POP ESI                             ; 00542b2e
     POP EBX                             ; 00542b2f
     RET                                 ; 00542b30
-    MOV EDX,dword ptr [0x02dca0a0]      ; 00542b31 | DAT_02dca0a0
+    MOV EDX,dword ptr [0x02dca0a0]      ; 00542b31 | g_INT_ARRAY_02dca058[18]
         ;   Label: LAB_00542b31
     PUSH EDX                            ; 00542b37
     PUSH EBX                            ; 00542b38

@@ -14,7 +14,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00579809 = 0.5
-;   undefined4 DAT_0078a123
+;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -36,7 +36,7 @@ section .text
     SAHF                                ; 0041e4ee
     JNC 0x0041e513                      ; 0041e4ef
         ;   XREF to: 0041e513 (CONDITIONAL_JUMP)  ; LAB_0041e513
-    CMP dword ptr [EBX + 0x68],0x78a123 ; 0041e4f1 | DAT_0078a123
+    CMP dword ptr [EBX + 0x68],0x78a123 ; 0041e4f1 | g_CHAR_ARRAY_0077d250+0xced3
     JNZ 0x0041e513                      ; 0041e4f8
         ;   XREF to: 0041e513 (CONDITIONAL_JUMP)  ; LAB_0041e513
     LEA EAX,[EBX + 0x150]               ; 0041e4fa

@@ -9,6 +9,6 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00460f10(CDemonRenderer *this_ptr,int color)
 
 {
-  DAT_006b0260 = color;
+  g_INT_006b0260 = color;
   return;
 }

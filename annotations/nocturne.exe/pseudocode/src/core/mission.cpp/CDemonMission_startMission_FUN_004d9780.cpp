@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMission *this_ptr)
 
 {
@@ -15,7 +13,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
   char *text;
   int iVar1;
   
-  if (_DAT_01cae0d4 < 1) {
+  if (g_INT_01cae0d4 < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0046fcd0
               (g_CEditorToolsPtr,"Can't run mission - no heros");
     return 0;
@@ -23,7 +21,7 @@ int __cdecl core_mission_cpp_CDemonMission_startMission_FUN_004d9780(CDemonMissi
   if (g_HeroActors[g_LocalHeroIndex] != (CHero *)0x0) {
     core_mission_cpp_CDemonMission_prepareAllActors_FUN_004d8db0(this_ptr);
     (this_ptr->pending_teleport).area_id = -1;
-    this_ptr_00 = 0x01C03A10;
+    this_ptr_00 = g_CEventList_PTR_005b7650;
     (this_ptr->pending_teleport).position.z = 0.0;
     (this_ptr->pending_teleport).position.y = (this_ptr->pending_teleport).position.z;
     (this_ptr->pending_teleport).position.x = (this_ptr->pending_teleport).position.y;

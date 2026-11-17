@@ -20,7 +20,7 @@
 ;   TerminatedCString s_setNextSfxChannel_invali_0059344c
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc1b74
+;   int g_INT_02dc1b74
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -38,7 +38,7 @@ section .text
     CMP EBX,0x20                        ; 005261b9
     JGE 0x005261db                      ; 005261bc
         ;   XREF to: 005261db (CONDITIONAL_JUMP)  ; LAB_005261db
-    MOV EDX,dword ptr [0x02dc1b74]      ; 005261be | DAT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 005261be | g_INT_02dc1b74
         ;   Label: LAB_005261be
     LEA EAX,[EDX*0x4 + 0x0]             ; 005261c4
     SUB EAX,EDX                         ; 005261cb

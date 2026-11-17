@@ -12,6 +12,7 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0055d0e0(LPGUID d
   int iVar1;
   uint uVar2;
   int iVar3;
+  SDirectSoundDeviceInfo *dest;
   uint *puVar4;
   uint *puVar5;
   uint *puVar6;
@@ -54,36 +55,38 @@ int __cdecl sound_snddx_cpp_directSoundEnumerationCallback_FUN_0055d0e0(LPGUID d
   iVar1 = g_INT_00604510;
   if (uVar2 == 0) {
     iVar3 = g_INT_00604510 * 0x11c;
-    puVar4 = (uint *)(iVar3 + 0x2cf3c74);
-    memset(puVar4,0,0x11c);
+    dest = g_SDirectSoundDeviceInfo_ARRAY_02cf3c74 + g_INT_00604510;
+    memset(dest,0,0x11c);
     if (device_guid == (LPGUID)0x0) {
-      *puVar4 = 1;
+      dest->is_primary_device = 1;
     }
     else {
-      *puVar4 = 0;
+      dest->is_primary_device = 0;
       puVar6 = (uint *)(iVar3 + 0x2cf3c7c + (uint)bVar8 * -8);
       puVar4 = (uint *)((int)device_guid + (uint)bVar8 * -8 + 4);
-      *(ulong *)(iVar3 + 0x2cf3c78) = device_guid->Data1;
+      g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].device_guid.Data1 = device_guid->Data1;
       puVar7 = puVar6 + (uint)bVar8 * -2 + 1;
       puVar5 = puVar4 + (uint)bVar8 * -2 + 1;
       *puVar6 = *puVar4;
       *puVar7 = *puVar5;
       puVar7[(uint)bVar8 * -2 + 1] = puVar5[(uint)bVar8 * -2 + 1];
     }
-    g_INT_ARRAY_02cf3d8c[iVar1 * 0x47] = 0;
+    g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].has_hardware_mixing = 0;
     if ((bStack_78 & 0x20) == 0) {
-      *(uint *)(iVar3 + 0x2cf3d88) = 0;
+      g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].is_emulated = 0;
       if (DStack_74.dwPrimaryBuffers != 0) {
-        g_INT_ARRAY_02cf3d8c[iVar1 * 0x47] = 1;
+        g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].has_hardware_mixing = 1;
       }
       if (DStack_74.dwFreeHwMixingStaticBuffers != 0) {
-        g_INT_ARRAY_02cf3d8c[iVar1 * 0x47] = 2;
+        g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].has_hardware_mixing = 2;
       }
     }
     else {
-      *(uint *)(iVar3 + 0x2cf3d88) = 1;
+      g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].is_emulated = 1;
     }
-    _strncpy((char *)(iVar3 + 0x2cf3c88),unaff_retaddr,0xff);
+    _strncpy
+              (g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[iVar1].device_description,unaff_retaddr,0xff)
+    ;
     g_INT_00604510 = g_INT_00604510 + 1;
     return 1;
   }

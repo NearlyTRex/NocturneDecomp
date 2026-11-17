@@ -75,7 +75,7 @@ section .text
     PUSH EDI                            ; 005265a2
     PUSH EBP                            ; 005265a3
     SUB ESP,0x37c                       ; 005265a4
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 005265aa | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 005265aa | g_INT_02dc1ed8
     MOV ESI,dword ptr [ESP + 0x390]     ; 005265b0
     TEST ESI,ESI                        ; 005265b7
     JZ 0x005265c0                       ; 005265b9
@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 005265d3 (CONDITIONAL_JUMP)  ; LAB_005265d3
     XOR EAX,EAX                         ; 005265c0
         ;   Label: LAB_005265c0
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 005265c2 | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 005265c2 | g_INT_02dc1ed8
         ;   Label: LAB_005265c2
     ADD ESP,0x37c                       ; 005265c8
     POP EBP                             ; 005265ce
@@ -121,7 +121,7 @@ section .text
         ;   XREF to: 005265ef (CONDITIONAL_JUMP)  ; LAB_005265ef
     POP EDI                             ; 00526607
         ;   Label: LAB_00526607
-    MOV EDX,dword ptr [0x02dc1b74]      ; 00526608 | DAT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 00526608 | g_INT_02dc1b74
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052660e
     SUB EAX,EDX                         ; 00526615
     SHL EAX,0x2                         ; 00526617
@@ -140,12 +140,12 @@ section .text
         ;   XREF to: 005265c2 (CONDITIONAL_JUMP)  ; LAB_005265c2
     CALL sound_sndmain.cpp_lockSound_FUN_00528800 ; 00526649
         ;   XREF to: 00528800 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00528800()
-    CMP dword ptr [0x02dc84bc],0x0      ; 0052664e | DAT_02dc84bc
+    CMP dword ptr [0x02dc84bc],0x0      ; 0052664e | g_INT_02dc84bc
     JLE 0x00526881                      ; 00526655
         ;   XREF to: 00526881 (CONDITIONAL_JUMP)  ; LAB_00526881
     MOV EBP,dword ptr [0x02dbd3e4]      ; 0052665b | g_CSfxSlot_ARRAY_02dbd374[0].playback_state
         ;   Label: LAB_0052665b
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526661 | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526661 | g_INT_02dc1ed8
     XOR EAX,EAX                         ; 00526667
     XOR EDX,EDX                         ; 00526669
     TEST EBP,EBP                        ; 0052666b
@@ -162,7 +162,7 @@ section .text
         ;   XREF to: 0052666f (CONDITIONAL_JUMP)  ; LAB_0052666f
     MOV dword ptr [ESP + 0x370],EDX     ; 00526689
         ;   Label: LAB_00526689
-    MOV dword ptr [0x02dc1ed8],EBX      ; 00526690 | DAT_02dc1ed8
+    MOV dword ptr [0x02dc1ed8],EBX      ; 00526690 | g_INT_02dc1ed8
     TEST EDX,EDX                        ; 00526696
     JL 0x005268b3                       ; 00526698
         ;   XREF to: 005268b3 (CONDITIONAL_JUMP)  ; LAB_005268b3
@@ -187,7 +187,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x370]     ; 005266dc
         ;   Label: LAB_005266dc
     MOV ESI,ESP                         ; 005266e3
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 005266e5 | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 005266e5 | g_INT_02dc1ed8
     XOR EDX,EDX                         ; 005266eb
     MOV dword ptr [ESP + 0x36c],EAX     ; 005266ed
     XOR EDI,EDI                         ; 005266f4
@@ -211,7 +211,7 @@ section .text
     MOV dword ptr [ESP + 0x374],EDI     ; 00526718
     MOV EAX,dword ptr [ESP + 0x374]     ; 0052671f
         ;   Label: LAB_0052671f
-    MOV dword ptr [0x02dc1ed8],EBX      ; 00526726 | DAT_02dc1ed8
+    MOV dword ptr [0x02dc1ed8],EBX      ; 00526726 | g_INT_02dc1ed8
     MOV dword ptr [ESP + 0x378],EAX     ; 0052672c
     TEST EAX,EAX                        ; 00526733
     JNZ 0x0052694f                      ; 00526735
@@ -283,7 +283,7 @@ section .text
         ;   XREF to: 0052685d (CONDITIONAL_JUMP)  ; LAB_0052685d
     MOV EDI,dword ptr [EBP + 0x74]      ; 00526823 | g_CSfxSlot_ARRAY_02dbd374[1].sample
     MOV ECX,dword ptr [EDI + 0x130]     ; 00526826
-    MOV EAX,[0x02dc8318]                ; 0052682c | DAT_02dc8318
+    MOV EAX,[0x02dc8318]                ; 0052682c | g_CSoundDevice_PTR_02dc8318
     PUSH ECX                            ; 00526831
     MOV EDX,dword ptr [EAX]             ; 00526832
     PUSH EAX                            ; 00526834
@@ -294,7 +294,7 @@ section .text
     JZ 0x00526c2e                       ; 00526840
         ;   XREF to: 00526c2e (CONDITIONAL_JUMP)  ; LAB_00526c2e
     PUSH EBP                            ; 00526846 | g_CSfxSlot_ARRAY_02dbd374[1].options.channel_index
-    MOV EAX,[0x02dc8318]                ; 00526847 | DAT_02dc8318
+    MOV EAX,[0x02dc8318]                ; 00526847 | g_CSoundDevice_PTR_02dc8318
     PUSH EAX                            ; 0052684c
     MOV EDX,dword ptr [EAX]             ; 0052684d
     CALL dword ptr [EDX + 0x48]         ; 0052684f
@@ -309,7 +309,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x370]     ; 00526864
     SHL EAX,0x6                         ; 0052686b
     OR EAX,EBP                          ; 0052686e
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526870 | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526870 | g_INT_02dc1ed8
     ADD ESP,0x37c                       ; 00526876
     POP EBP                             ; 0052687c
     POP EDI                             ; 0052687d
@@ -335,7 +335,7 @@ section .text
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
         ;   Label: LAB_005268b3
     XOR EAX,EAX                         ; 005268b8
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 005268ba | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 005268ba | g_INT_02dc1ed8
     ADD ESP,0x37c                       ; 005268c0
     POP EBP                             ; 005268c6
     POP EDI                             ; 005268c7
@@ -614,7 +614,7 @@ section .text
     CALL sound_sndmain.cpp_unlockSound_FUN_00528890 ; 00526c37
         ;   XREF to: 00528890 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_unlockSound_FUN_00528890()
     XOR EAX,EAX                         ; 00526c3c
-    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526c3e | DAT_02dc1ed8
+    MOV EBX,dword ptr [0x02dc1ed8]      ; 00526c3e | g_INT_02dc1ed8
     ADD ESP,0x37c                       ; 00526c44
     POP EBP                             ; 00526c4a
     POP EDI                             ; 00526c4b

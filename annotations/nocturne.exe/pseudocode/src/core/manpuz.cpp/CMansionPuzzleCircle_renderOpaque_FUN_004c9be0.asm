@@ -9,10 +9,10 @@
 ; undefined        Stack[-0x2c]:1  local_2c
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005a0020
+;   float g_FLOAT_005a0020 = 256
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 DAT_01cc9454
 ;   UVector3 g_ZeroVector
 ;   undefined4 g_ZeroVector+4
@@ -71,17 +71,17 @@ section .text
     MOV EAX,0x2dd1184                   ; 004c9c2b
     MOV EDX,dword ptr [0x005ae704]      ; 004c9c30 | g_CDemonRenderer_PTR_005ae704
     FLD float ptr [EAX]                 ; 004c9c36 | g_ZeroVector
-    FMUL float ptr [0x005a0020]         ; 004c9c38 | DAT_005a0020
+    FMUL float ptr [0x005a0020]         ; 004c9c38 | g_FLOAT_005a0020
     FISTP dword ptr [EBX]               ; 004c9c3e
     FLD float ptr [EAX + 0x4]           ; 004c9c40 | g_ZeroVector+4
-    FMUL float ptr [0x005a0020]         ; 004c9c43 | DAT_005a0020
+    FMUL float ptr [0x005a0020]         ; 004c9c43 | g_FLOAT_005a0020
     FISTP dword ptr [EBX + 0x4]         ; 004c9c49
     FLD float ptr [EAX + 0x8]           ; 004c9c4c | g_ZeroVector+8
-    FMUL float ptr [0x005a0020]         ; 004c9c4f | DAT_005a0020
+    FMUL float ptr [0x005a0020]         ; 004c9c4f | g_FLOAT_005a0020
     FISTP dword ptr [EBX + 0x8]         ; 004c9c55
     LEA EAX,[ESP + 0x1c]                ; 004c9c58
     PUSH EAX                            ; 004c9c5c
-    MOV EAX,dword ptr [EDX]             ; 004c9c5d | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 004c9c5d | g_CDemonRenderer_01b4d738
     ADD EAX,0xbb80                      ; 004c9c5f
     PUSH EAX                            ; 004c9c64
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 004c9c65
@@ -133,7 +133,7 @@ section .text
     RET                                 ; 004c9cc3
     MOV ECX,dword ptr [0x005ae704]      ; 004c9cc4 | g_CDemonRenderer_PTR_005ae704
         ;   Label: LAB_004c9cc4
-    PUSH ECX                            ; 004c9cca | DAT_01b4d738
+    PUSH ECX                            ; 004c9cca | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 004c9ccb
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 004c9cd0

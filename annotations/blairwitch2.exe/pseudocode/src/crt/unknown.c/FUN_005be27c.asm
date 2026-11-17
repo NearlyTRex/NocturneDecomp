@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2b8 = 005bce04
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2bc = 005bce04
-;   undefined4 DAT_02680160
+;   FileListNode* g_FileListNode_PTR_02680160
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bce04
@@ -27,7 +27,7 @@ section .text
     PUSH EDI                            ; 005be27e
     MOV EDI,dword ptr [ESP + 0x10]      ; 005be27f
     CALL dword ptr [0x0061f2b8]         ; 005be283 | PTR_crt_unknown.c_FUN_005bce04_0061f2b8
-    MOV EBX,dword ptr [0x02680160]      ; 005be289 | DAT_02680160
+    MOV EBX,dword ptr [0x02680160]      ; 005be289 | g_FileListNode_PTR_02680160
     XOR ESI,ESI                         ; 005be28f
     TEST EBX,EBX                        ; 005be291
     JZ 0x005be2b5                       ; 005be293

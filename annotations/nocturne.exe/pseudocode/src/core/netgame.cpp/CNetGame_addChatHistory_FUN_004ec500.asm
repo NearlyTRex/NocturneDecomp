@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CGame g_CGameInstance
-;   undefined4 DAT_01cea40c
+;   int g_INT_01cea40c
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_displayMessage_FUN_0049aa30
@@ -32,11 +32,11 @@ section .text
     PUSH ESI                            ; 004ec501
     PUSH EDI                            ; 004ec502
     MOV EBX,dword ptr [ESP + 0x20]      ; 004ec503
-    MOV EDX,dword ptr [0x01cea40c]      ; 004ec507 | DAT_01cea40c
+    MOV EDX,dword ptr [0x01cea40c]      ; 004ec507 | g_INT_01cea40c
     CMP EDX,0x190                       ; 004ec50d
     JGE 0x004ec5c5                      ; 004ec513
         ;   XREF to: 004ec5c5 (CONDITIONAL_JUMP)  ; LAB_004ec5c5
-    MOV EDX,dword ptr [0x01cea40c]      ; 004ec519 | DAT_01cea40c
+    MOV EDX,dword ptr [0x01cea40c]      ; 004ec519 | g_INT_01cea40c
         ;   Label: LAB_004ec519
     LEA EAX,[EDX*0x8 + 0x0]             ; 004ec51f
     ADD EAX,EDX                         ; 004ec526
@@ -66,7 +66,7 @@ section .text
         ;   XREF to: 004ec54e (CONDITIONAL_JUMP)  ; LAB_004ec54e
     POP EDI                             ; 004ec566
         ;   Label: LAB_004ec566
-    MOV EDX,dword ptr [0x01cea40c]      ; 004ec567 | DAT_01cea40c
+    MOV EDX,dword ptr [0x01cea40c]      ; 004ec567 | g_INT_01cea40c
     LEA EAX,[EDX*0x8 + 0x0]             ; 004ec56d
     ADD EAX,EDX                         ; 004ec574
     MOV EDI,0x1cea410                   ; 004ec576
@@ -91,12 +91,12 @@ section .text
     POP EDI                             ; 004ec59e
         ;   Label: LAB_004ec59e
     PUSH 0x40a00000                     ; 004ec59f
-    MOV ESI,dword ptr [0x01cea40c]      ; 004ec5a4 | DAT_01cea40c
+    MOV ESI,dword ptr [0x01cea40c]      ; 004ec5a4 | g_INT_01cea40c
     PUSH EBX                            ; 004ec5aa
     MOV EBX,dword ptr [0x005b9354]      ; 004ec5ab | g_CGamePtr
     INC ESI                             ; 004ec5b1
     PUSH EBX                            ; 004ec5b2 | g_CGameInstance
-    MOV dword ptr [0x01cea40c],ESI      ; 004ec5b3 | DAT_01cea40c
+    MOV dword ptr [0x01cea40c],ESI      ; 004ec5b3 | g_INT_01cea40c
     CALL core_game.cpp_CGame_displayMessage_FUN_0049aa30 ; 004ec5b9
         ;   XREF to: 0049aa30 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayMessage_FUN_0049aa30(CGame * this_ptr, char * message, float duration)
     ADD ESP,0xc                         ; 004ec5be
@@ -106,7 +106,7 @@ section .text
     RET                                 ; 004ec5c4
     LEA ECX,[EDX + -0x1]                ; 004ec5c5
         ;   Label: LAB_004ec5c5
-    MOV dword ptr [0x01cea40c],ECX      ; 004ec5c8 | DAT_01cea40c
+    MOV dword ptr [0x01cea40c],ECX      ; 004ec5c8 | g_INT_01cea40c
     LEA EAX,[ECX*0x8 + 0x0]             ; 004ec5ce
     ADD EAX,ECX                         ; 004ec5d5
     SHL EAX,0x5                         ; 004ec5d7

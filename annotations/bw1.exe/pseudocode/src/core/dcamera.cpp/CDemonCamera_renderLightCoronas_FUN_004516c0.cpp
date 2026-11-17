@@ -26,14 +26,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004516c0(CDemo
   int iStack_5c;
   int iStack_58;
   int local_54;
-  char *pcStack_48;
-  int *piStack_44;
-  CVector3f *local_40;
-  CVector3i *local_3c;
+  char (*pacStack_48) [320];
+  int (*paiStack_44) [320];
+  CVector3f (*local_40) [320];
+  CVector3i (*local_3c) [320];
   int local_38;
   int local_34;
   int local_30;
-  uint *local_2c;
+  int *local_2c;
   uint *local_28;
   CVector3i *local_24;
   int local_20;
@@ -77,24 +77,24 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004516c0(CDemo
   g_INT_00b81ca0 = g_INT_00b81ca0 + -1;
   if (0 < this_ptr->display_height) {
     local_34 = 0;
-    local_40 = g_CVector3f_ARRAY_00a1bad8;
-    piStack_44 = g_INT_ARRAY_014df1d0;
-    pcStack_48 = g_CHAR_ARRAY_00b10718;
-    local_3c = g_CVector3i_ARRAY_00939bd8;
+    local_40 = g_CVector3f_ARRAY_ARRAY_00a1bad8;
+    paiStack_44 = g_INT_ARRAY_ARRAY_014df1d0;
+    pacStack_48 = g_CHAR_ARRAY_ARRAY_00b10718;
+    local_3c = g_CVector3i_ARRAY_ARRAY_00939bd8;
     do {
       if (this_ptr->display_width != *(int *)((int)g_INT_ARRAY_014dea50 + local_34)) {
         local_20 = *(int *)((int)g_INT_ARRAY_014dea50 + local_34);
         local_30 = *(int *)((int)g_INT_ARRAY_014dee10 + local_34);
-        local_24 = local_3c + local_20;
-        local_1c = pcStack_48 + local_20;
-        local_2c = (uint *)(piStack_44 + local_20);
+        local_24 = *local_3c + local_20;
+        local_1c = *pacStack_48 + local_20;
+        local_2c = *paiStack_44 + local_20;
         local_28 = g_UINT_PTR_ARRAY_01c4480c[local_38 << (g_BIT_INTEGER32_01323d00.bytes[0] & 0x1f)]
                    + (local_20 << (g_BIT_INTEGER32_01323d00.bytes[0] & 0x1f));
-        pCVar6 = local_40 + local_20;
+        pCVar6 = *local_40 + local_20;
         iVar5 = local_20 - local_30;
         bVar10 = SBORROW4(local_20,local_30);
         while (bVar10 != iVar5 < 0) {
-          if ((*local_28 < *local_2c) &&
+          if ((*local_28 < (uint)*local_2c) &&
              (0.0 <= pCVar6->z * (float)g_CMatrix3x3i_01323cd8.m[2].z +
                      pCVar6->x * (float)g_CMatrix3x3i_01323cd8.m[0].z +
                      pCVar6->y * (float)g_CMatrix3x3i_01323cd8.m[1].z)) {
@@ -137,10 +137,10 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_004516c0(CDemo
         }
       }
       local_34 = local_34 + 4;
-      local_40 = local_40 + 0x140;
-      piStack_44 = piStack_44 + 0x140;
-      pcStack_48 = pcStack_48 + 0x140;
-      local_3c = local_3c + 0x140;
+      local_40 = local_40 + 1;
+      paiStack_44 = paiStack_44 + 1;
+      pacStack_48 = pacStack_48 + 1;
+      local_3c = local_3c + 1;
       local_38 = local_38 + 1;
     } while (local_38 < this_ptr->display_height);
   }

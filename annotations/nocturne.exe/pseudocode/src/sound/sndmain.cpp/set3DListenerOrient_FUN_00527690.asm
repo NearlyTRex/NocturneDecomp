@@ -20,21 +20,21 @@
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00527d80 at 00527df2
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc7910
-;   undefined4 DAT_02dc7914
-;   undefined4 DAT_02dc7918
-;   undefined4 DAT_02dc791c
-;   undefined4 DAT_02dc7920
-;   undefined4 DAT_02dc7924
-;   undefined4 DAT_02dc7928
-;   undefined4 DAT_02dc792c
-;   undefined4 DAT_02dc7930
-;   undefined4 DAT_02dc7934
-;   undefined4 DAT_02dc7938
-;   undefined4 DAT_02dc793c
-;   undefined4 DAT_02dc7940
-;   undefined4 DAT_02dc7944
-;   undefined4 DAT_02dc7948
+;   double g_DOUBLE_02dc7910
+;   undefined4 g_DOUBLE_02dc7910+4
+;   double g_DOUBLE_02dc7918
+;   undefined4 g_DOUBLE_02dc7918+4
+;   double g_DOUBLE_02dc7920
+;   undefined4 g_DOUBLE_02dc7920+4
+;   CVector3d g_CVector3d_02dc7928
+;   undefined4 g_CVector3d_02dc7928.x+4
+;   undefined4 g_CVector3d_02dc7928.y
+;   undefined4 g_CVector3d_02dc7928.y+4
+;   undefined4 g_CVector3d_02dc7928.z
+;   undefined4 g_CVector3d_02dc7928.z+4
+;   CVector3d g_CVector3d_02dc7940
+;   undefined4 g_CVector3d_02dc7940.x+4
+;   undefined4 g_CVector3d_02dc7940.y
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -44,42 +44,42 @@ section .text
     PUSH EBP                            ; 00527690
         ;   Label: sound_sndmain.cpp_set3DListenerOrient_FUN_00527690
     MOV EAX,dword ptr [ESP + 0x8]       ; 00527691
-    MOV [0x02dc7910],EAX                ; 00527695 | DAT_02dc7910
+    MOV [0x02dc7910],EAX                ; 00527695 | g_DOUBLE_02dc7910
     MOV EAX,dword ptr [ESP + 0xc]       ; 0052769a
-    MOV [0x02dc7914],EAX                ; 0052769e | DAT_02dc7914
+    MOV [0x02dc7914],EAX                ; 0052769e | g_DOUBLE_02dc7910+4
     MOV EAX,dword ptr [ESP + 0x10]      ; 005276a3
-    MOV [0x02dc7918],EAX                ; 005276a7 | DAT_02dc7918
+    MOV [0x02dc7918],EAX                ; 005276a7 | g_DOUBLE_02dc7918
     MOV EAX,dword ptr [ESP + 0x14]      ; 005276ac
-    MOV [0x02dc791c],EAX                ; 005276b0 | DAT_02dc791c
+    MOV [0x02dc791c],EAX                ; 005276b0 | g_DOUBLE_02dc7918+4
     MOV EAX,dword ptr [ESP + 0x18]      ; 005276b5
-    MOV [0x02dc7920],EAX                ; 005276b9 | DAT_02dc7920
+    MOV [0x02dc7920],EAX                ; 005276b9 | g_DOUBLE_02dc7920
     MOV EAX,dword ptr [ESP + 0x1c]      ; 005276be
-    MOV [0x02dc7924],EAX                ; 005276c2 | DAT_02dc7924
+    MOV [0x02dc7924],EAX                ; 005276c2 | g_DOUBLE_02dc7920+4
     MOV EAX,dword ptr [ESP + 0x20]      ; 005276c7
-    MOV [0x02dc7928],EAX                ; 005276cb | DAT_02dc7928
+    MOV [0x02dc7928],EAX                ; 005276cb | g_CVector3d_02dc7928
     MOV EAX,dword ptr [ESP + 0x24]      ; 005276d0
-    MOV [0x02dc792c],EAX                ; 005276d4 | DAT_02dc792c
+    MOV [0x02dc792c],EAX                ; 005276d4 | g_CVector3d_02dc7928.x+4
     MOV EAX,dword ptr [ESP + 0x28]      ; 005276d9
-    MOV [0x02dc7930],EAX                ; 005276dd | DAT_02dc7930
+    MOV [0x02dc7930],EAX                ; 005276dd | g_CVector3d_02dc7928.y
     MOV EAX,dword ptr [ESP + 0x2c]      ; 005276e2
-    MOV [0x02dc7934],EAX                ; 005276e6 | DAT_02dc7934
+    MOV [0x02dc7934],EAX                ; 005276e6 | g_CVector3d_02dc7928.y+4
     MOV EAX,dword ptr [ESP + 0x30]      ; 005276eb
-    MOV [0x02dc7938],EAX                ; 005276ef | DAT_02dc7938
+    MOV [0x02dc7938],EAX                ; 005276ef | g_CVector3d_02dc7928.z
     MOV EAX,dword ptr [ESP + 0x34]      ; 005276f4
-    MOV [0x02dc793c],EAX                ; 005276f8 | DAT_02dc793c
+    MOV [0x02dc793c],EAX                ; 005276f8 | g_CVector3d_02dc7928.z+4
     MOV EAX,dword ptr [ESP + 0x38]      ; 005276fd
-    MOV [0x02dc7940],EAX                ; 00527701 | DAT_02dc7940
+    MOV [0x02dc7940],EAX                ; 00527701 | g_CVector3d_02dc7940
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00527706
-    MOV [0x02dc7944],EAX                ; 0052770a | DAT_02dc7944
+    MOV [0x02dc7944],EAX                ; 0052770a | g_CVector3d_02dc7940.x+4
     MOV EAX,dword ptr [ESP + 0x40]      ; 0052770f
-    MOV [0x02dc7948],EAX                ; 00527713 | DAT_02dc7948
+    MOV [0x02dc7948],EAX                ; 00527713 | g_CVector3d_02dc7940.y
     MOV EAX,dword ptr [ESP + 0x44]      ; 00527718
-    MOV [0x02dc794c],EAX                ; 0052771c | DAT_02dc794c
+    MOV [0x02dc794c],EAX                ; 0052771c | g_CVector3d_02dc7940.y+4
     MOV EAX,dword ptr [ESP + 0x48]      ; 00527721
-    MOV [0x02dc7950],EAX                ; 00527725 | DAT_02dc7950
+    MOV [0x02dc7950],EAX                ; 00527725 | g_CVector3d_02dc7940.z
     MOV EAX,dword ptr [ESP + 0x4c]      ; 0052772a
-    MOV EDX,dword ptr [0x02dc8318]      ; 0052772e | DAT_02dc8318
-    MOV [0x02dc7954],EAX                ; 00527734 | DAT_02dc7954
+    MOV EDX,dword ptr [0x02dc8318]      ; 0052772e | g_CSoundDevice_PTR_02dc8318
+    MOV [0x02dc7954],EAX                ; 00527734 | g_CVector3d_02dc7940.z+4
     TEST EDX,EDX                        ; 00527739
     JNZ 0x0052773f                      ; 0052773b
         ;   XREF to: 0052773f (CONDITIONAL_JUMP)  ; LAB_0052773f

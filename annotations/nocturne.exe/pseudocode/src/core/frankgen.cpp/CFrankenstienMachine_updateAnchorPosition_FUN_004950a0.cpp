@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CVector3f * __cdecl core_frankgen_cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004950a0(CFrankenstienMachine *this_ptr)
 
 {
@@ -79,9 +77,9 @@ LAB_004950c9:
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar5 * -8) = *puVar4;
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
        puVar4[(uint)bVar5 * -2 + 1];
-  local_24.x = (float)iStack_30 * _DAT_0059db58;
-  local_24.y = (float)local_2c * _DAT_0059db58;
-  local_24.z = (float)local_28 * _DAT_0059db58;
+  local_24.x = (float)iStack_30 * 0.00390625f;
+  local_24.y = (float)local_2c * 0.00390625f;
+  local_24.z = (float)local_28 * 0.00390625f;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                      (&this_ptr->base,(CVector3f *)&stack0xffffffc4,&local_24);
   if (&this_ptr->anchor_world_position != pCVar3) {

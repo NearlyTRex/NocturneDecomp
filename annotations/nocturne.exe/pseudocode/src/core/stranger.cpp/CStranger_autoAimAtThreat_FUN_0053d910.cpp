@@ -6,9 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger *this_ptr,int hand_index,float delta_time)
 
 {
@@ -88,12 +85,12 @@ void __cdecl core_stranger_cpp_CStranger_autoAimAtThreat_FUN_0053d910(CStranger 
     }
     local_30 = -1.3089969;
     local_2c = 0.5235988;
-    iVar9 = _DAT_02dc9f84;
-    iVar10 = _DAT_02dc9f5c;
+    iVar9 = g_INT_ARRAY_02dc9f50[0xd];
+    iVar10 = g_INT_ARRAY_02dc9f50[3];
   }
   else {
-    iVar9 = _DAT_02dc9f88;
-    iVar10 = _DAT_02dc9f60;
+    iVar9 = g_INT_ARRAY_02dc9f50[0xe];
+    iVar10 = g_INT_ARRAY_02dc9f50[4];
     if (local_48 == WEAPON_TYPE_GUN) {
       local_2c = 1.3089969;
       local_30 = -0.5235988;

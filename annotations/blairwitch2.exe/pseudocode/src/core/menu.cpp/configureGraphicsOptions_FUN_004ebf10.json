@@ -185,26 +185,26 @@
     },
     {
       "addr": "005dcc8d",
-      "name": "DAT_005dcc8d",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005dcc8d",
+      "type": "TerminatedCString",
       "value": null
     },
     {
       "addr": "005dcc8e",
-      "name": "DAT_005dcc8e",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005dcc8d+1",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dcc8f",
-      "name": "DAT_005dcc8f",
-      "type": "undefined1",
+      "name": "s_tridx7_dll_005dcc8d+2",
+      "type": "undefined4",
       "value": null
     },
     {
       "addr": "005dcc90",
-      "name": "s_dx7_dll_005dcc90",
-      "type": "TerminatedCString",
+      "name": "s_tridx7_dll_005dcc8d+3",
+      "type": "undefined4",
       "value": null
     },
     {
@@ -993,14 +993,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
-      "match": "DAT_005dcc8d",
-      "severity": "mild",
-      "text": "pcVar8 = &DAT_005dcc8d;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 246,
       "match": "DAT_01d06550",
       "severity": "mild",
@@ -1142,6 +1134,14 @@
       "severity": "moderate",
       "text": "*(char **)((int)&g_CHAR_PTR_01d06a50 + iVar3) = pcVar5;",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xb71b01 matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+45913 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 416,
+      "match": "0xb71b01",
+      "severity": "moderate",
+      "text": "if ((local_34[0] < 0xb71b01) || (iVar3 != 0x1e0)) {",
+      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex literal 0x16e3601 matches address of g_UCHAR_ARRAY_01511ce8 (+1906969 bytes into) (type uchar[6291656]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",

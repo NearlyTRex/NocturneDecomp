@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee *this_ptr,CVector3f *position)
 
 {
@@ -25,9 +23,9 @@ void __cdecl core_marquee_cpp_CMarquee_renderLightBulb_FUN_004cc440(CMarquee *th
   CVector3i local_1c;
   
   bVar5 = 0;
-  local_1c.x = (int)ROUND(position->x * _DAT_005a02b0);
-  local_1c.y = (int)ROUND(position->y * _DAT_005a02b0);
-  local_1c.z = (int)ROUND(position->z * _DAT_005a02b0);
+  local_1c.x = (int)ROUND(position->x * 256.0f);
+  local_1c.y = (int)ROUND(position->y * 256.0f);
+  local_1c.z = (int)ROUND(position->z * 256.0f);
   engine_special_cpp_transformPoint_FUN_00530a25
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,&local_1c);
   this_ptr_00 = g_CDemonRenderer_PTR_005ae704;

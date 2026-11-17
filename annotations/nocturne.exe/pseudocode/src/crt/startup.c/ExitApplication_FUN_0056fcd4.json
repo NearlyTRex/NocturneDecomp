@@ -2,15 +2,14 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 39,
+    "complexity_score": 24,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
       "unresolved_funcptr"
     ],
     "total_lines": 25
@@ -67,8 +66,8 @@
     },
     {
       "addr": "02de4e30",
-      "name": "DAT_02de4e30",
-      "type": "undefined4",
+      "name": "g_INT_02de4e30",
+      "type": "int",
       "value": null
     }
   ],
@@ -147,14 +146,6 @@
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_ExitHookStub_FUN_0056fcd0_005c2054)();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 6,
-      "match": "DAT_02de4e30",
-      "severity": "mild",
-      "text": "if (DAT_02de4e30 == '\\0') {",
-      "type": "undefined_data"
     }
   ]
 }

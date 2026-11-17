@@ -20,7 +20,8 @@ void __cdecl core_boxactor_cpp_CBoxActor_setupPhysicsBox_FUN_0041e4d0(CBoxActor 
   
   fVar1 = this_ptr->weight_in_pounds;
   (this_ptr->physics_box).is_valid = 0;
-  if ((0.0 < fVar1) && ((byte *)(this_ptr->base).validation_magic == &DAT_0078a123)) {
+  if ((0.0 < fVar1) && ((char *)(this_ptr->base).validation_magic == g_CHAR_ARRAY_0077d250 + 0xced3)
+     ) {
     if ((this_ptr->model).model_ptr != (CKeyFramedModel *)0x0) {
       (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&CStack_4c);
       fStack_1c = CStack_4c.min.x + CStack_4c.max.x;

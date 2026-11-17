@@ -39,7 +39,7 @@ ulong __cdecl GetBlockSize(void *ptr);
 
 // Original: crt_heap.c_ResizeBlockInPlace_FUN_0056afe8
 // Address: 0056afe8
-undefined4 __watcallRegister ResizeBlockInPlace(undefined4 param_1,undefined4 param_2,int *unaff_EBX,undefined4 param_4,short param_5,int *param_6,uint param_7,uint *param_8);
+undefined4 __watcallRegister ResizeBlockInPlace(undefined4 param_1,undefined4 param_2,Heap *unaff_EBX,undefined4 param_4,short param_5,Heap *param_6,uint param_7,uint *param_8);
 
 // Original: crt_heap.c_TryResizeInPlace_FUN_0056b1a4
 // Address: 0056b1a4

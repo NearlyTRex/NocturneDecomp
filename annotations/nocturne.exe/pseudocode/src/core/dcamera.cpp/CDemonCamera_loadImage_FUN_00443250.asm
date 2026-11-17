@@ -178,7 +178,7 @@ section .text
         ;   Label: LAB_00443302
     PUSH 0x3                            ; 00443303
     PUSH 0x100                          ; 00443305
-    PUSH 0xb0daf8                       ; 0044330a | DAT_00b0daf8
+    PUSH 0xb0daf8                       ; 0044330a | g_SRGBColorPalette_00b0daf8
     CALL crt_stdio.c_fread_FUN_005636d0 ; 0044330f
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 00443314
@@ -283,11 +283,11 @@ section .text
     MOV EDX,dword ptr [0x0140e794]      ; 004433fe | g_SFogGrid_0140d784.scroll_vector.y
     MOV ECX,dword ptr [0x0140e798]      ; 00443404 | g_SFogGrid_0140d784.scroll_vector.z
     OR EAX,EDX                          ; 0044340a
-    MOV dword ptr [0x0140d780],EBP      ; 0044340c | DAT_0140d780
+    MOV dword ptr [0x0140d780],EBP      ; 0044340c | g_INT_0140d780
     OR EAX,ECX                          ; 00443412
     JNZ 0x00443420                      ; 00443414
         ;   XREF to: 00443420 (CONDITIONAL_JUMP)  ; LAB_00443420
-    MOV dword ptr [0x0140d780],0x1      ; 00443416 | DAT_0140d780
+    MOV dword ptr [0x0140d780],0x1      ; 00443416 | g_INT_0140d780
     MOV ESI,dword ptr [ESP + 0x130]     ; 00443420
         ;   Label: LAB_00443420
     PUSH ESI                            ; 00443427
@@ -351,14 +351,14 @@ section .text
     PUSH 0x1                            ; 004434ea
     MOV EDX,dword ptr [ESP + 0xb0]      ; 004434ec
     PUSH EDX                            ; 004434f3
-    PUSH 0x77d250                       ; 004434f4 | DAT_0077d250
+    PUSH 0x77d250                       ; 004434f4 | g_CHAR_ARRAY_0077d250
     CALL crt_stdio.c_fread_FUN_005636d0 ; 004434f9
         ;   XREF to: 005636d0 (UNCONDITIONAL_CALL)  ; SIZE_T crt_stdio.c_fread_FUN_005636d0(void * buffer, SIZE_T size, SIZE_T count, _FILE * file)
     ADD ESP,0x10                        ; 004434fe
     PUSH 0x12cdb28                      ; 00443501
     CALL support_codec.cpp_CLZWDecompress_init_FUN_00439a30 ; 00443506
         ;   XREF to: 00439a30 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDecompress_init_FUN_00439a30(CLZWDecompress * this_ptr)
-    MOV EDX,dword ptr [0x0140d780]      ; 0044350b | DAT_0140d780
+    MOV EDX,dword ptr [0x0140d780]      ; 0044350b | g_INT_0140d780
     LEA EAX,[EDX*0x4 + 0x0]             ; 00443511
     ADD EAX,EDX                         ; 00443518
     SHL EAX,0xa                         ; 0044351a
@@ -373,7 +373,7 @@ section .text
     PUSH 0x12e1778                      ; 00443538
     LEA EAX,[ESP + 0xb4]                ; 0044353d
     PUSH EAX                            ; 00443544
-    PUSH 0x77d250                       ; 00443545 | DAT_0077d250
+    PUSH 0x77d250                       ; 00443545 | g_CHAR_ARRAY_0077d250
     PUSH 0x12cdb28                      ; 0044354a
     CALL support_codec.cpp_CLZWDecompress_processBuffer_FUN_00439b30 ; 0044354f
         ;   XREF to: 00439b30 (UNCONDITIONAL_CALL)  ; int support_codec.cpp_CLZWDecompress_processBuffer_FUN_00439b30(CLZWDecompress * this_ptr, char * input, int * input_length, char * output, ...)
@@ -383,7 +383,7 @@ section .text
         ;   XREF to: 00443a96 (CONDITIONAL_JUMP)  ; LAB_00443a96
     XOR ESI,ESI                         ; 0044355f
         ;   Label: LAB_0044355f
-    MOV EDI,dword ptr [0x0140d780]      ; 00443561 | DAT_0140d780
+    MOV EDI,dword ptr [0x0140d780]      ; 00443561 | g_INT_0140d780
     MOV dword ptr [ESP + 0xa0],ESI      ; 00443567
     TEST EDI,EDI                        ; 0044356e
     JLE 0x004436c4                      ; 00443570
@@ -421,12 +421,12 @@ section .text
     JLE 0x00443612                      ; 00443604
         ;   XREF to: 00443612 (CONDITIONAL_JUMP)  ; LAB_00443612
     LEA ESI,[EDI + EDX*0x1]             ; 00443606
-    MOVZX ESI,byte ptr [ESI + 0x12e1778] ; 00443609 | DAT_012ceb78 | DAT_012ceb79 | DAT_012cecb8
+    MOVZX ESI,byte ptr [ESI + 0x12e1778] ; 00443609 | g_SFogImagePlane_012ceb78 | g_SFogImagePlane_012ceb78.pixels[0][1] | g_SFogImagePlane_012ceb78.pixels[1][0]
     ADD EAX,ESI                         ; 00443610
     INC ECX                             ; 00443612
         ;   Label: LAB_00443612
     INC EDX                             ; 00443613
-    MOV byte ptr [ECX + 0x12e1777],AL   ; 00443614 | DAT_012e18b8
+    MOV byte ptr [ECX + 0x12e1777],AL   ; 00443614 | g_SFogImagePlane_ARRAY_012e1778[0].pixels[1][0]
     CMP EDX,0x140                       ; 0044361a
     JL 0x004435e8                       ; 00443620
         ;   XREF to: 004435e8 (CONDITIONAL_JUMP)  ; LAB_004435e8
@@ -447,7 +447,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x110]     ; 00443673
     MOV EDX,dword ptr [ESP + 0x114]     ; 0044367a
     MOV ECX,dword ptr [ESP + 0xa0]      ; 00443681
-    MOV EBX,dword ptr [0x0140d780]      ; 00443688 | DAT_0140d780
+    MOV EBX,dword ptr [0x0140d780]      ; 00443688 | g_INT_0140d780
     ADD EBP,0x12c00                     ; 0044368e
     ADD EAX,0x12c00                     ; 00443694
     ADD EDX,0x12c00                     ; 00443699
@@ -484,7 +484,7 @@ section .text
         ;   Label: LAB_004436fc
     MOVZX ESI,byte ptr [EAX + 0xb0dafa] ; 00443702
     XOR EBX,EBX                         ; 00443709
-    MOVZX EDI,byte ptr [EAX + 0xb0daf8] ; 0044370b | DAT_00b0daf8
+    MOVZX EDI,byte ptr [EAX + 0xb0daf8] ; 0044370b | g_SRGBColorPalette_00b0daf8
     MOV BL,byte ptr [EAX + 0xb0daf9]    ; 00443712
     CMP ECX,0x20                        ; 00443718
     JNZ 0x00443afd                      ; 0044371b
@@ -606,9 +606,9 @@ section .text
     CMP EBP,0x10000                     ; 004438c4
     JNZ 0x00443874                      ; 004438ca
         ;   XREF to: 00443874 (CONDITIONAL_JUMP)  ; LAB_00443874
-    PUSH 0x5ad49c                       ; 004438cc | DAT_005ad49c
+    PUSH 0x5ad49c                       ; 004438cc | g_SMRGLTextureBasic_005ad49c
     MOV ESI,dword ptr [0x005ae704]      ; 004438d1 | g_CDemonRenderer_PTR_005ae704
-    PUSH ESI                            ; 004438d7 | DAT_01b4d738
+    PUSH ESI                            ; 004438d7 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004438d8
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ESI,0x145b290                   ; 004438dd
@@ -618,10 +618,10 @@ section .text
     PUSH EDI                            ; 004438ed
     MOV EAX,ECX                         ; 004438ee
     SHR ECX,0x2                         ; 004438f0
-    MOVSD.REP ES:EDI,ESI                ; 004438f3 | DAT_0145b290 | DAT_0145b294
+    MOVSD.REP ES:EDI,ESI                ; 004438f3 | g_UINT_ARRAY_0145b290 | g_UINT_ARRAY_0145b290[1]
     MOV CL,AL                           ; 004438f5
     AND CL,0x3                          ; 004438f7
-    MOVSB.REP ES:EDI,ESI                ; 004438fa | DAT_0145b294 | DAT_0145b295
+    MOVSB.REP ES:EDI,ESI                ; 004438fa | g_UINT_ARRAY_0145b290[1] | g_UINT_ARRAY_0145b290[1]+1
     POP EDI                             ; 004438fc
     MOV ECX,0x300                       ; 004438fd
     MOV ESI,0xb0daf8                    ; 00443902
@@ -629,15 +629,15 @@ section .text
     PUSH EDI                            ; 0044390d
     MOV EAX,ECX                         ; 0044390e
     SHR ECX,0x2                         ; 00443910
-    MOVSD.REP ES:EDI,ESI                ; 00443913 | DAT_00b0daf8 | DAT_00b0dafc
+    MOVSD.REP ES:EDI,ESI                ; 00443913 | g_SRGBColorPalette_00b0daf8 | g_SRGBColorPalette_00b0daf8.colors[1].g
     MOV CL,AL                           ; 00443915
     AND CL,0x3                          ; 00443917
-    MOVSB.REP ES:EDI,ESI                ; 0044391a | DAT_00b0dafc | DAT_00b0dafd
+    MOVSB.REP ES:EDI,ESI                ; 0044391a | g_SRGBColorPalette_00b0daf8.colors[1].g | g_SRGBColorPalette_00b0daf8.colors[1].b
     POP EDI                             ; 0044391c
-    PUSH 0xb0daf8                       ; 0044391d | DAT_00b0daf8
-    PUSH 0x5ad49c                       ; 00443922 | DAT_005ad49c
+    PUSH 0xb0daf8                       ; 0044391d | g_SRGBColorPalette_00b0daf8
+    PUSH 0x5ad49c                       ; 00443922 | g_SMRGLTextureBasic_005ad49c
     MOV EDI,dword ptr [0x005ae704]      ; 00443927 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDI                            ; 0044392d | DAT_01b4d738
+    PUSH EDI                            ; 0044392d | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60 ; 0044392e
         ;   XREF to: 00461f60 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00461f60(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0xc                         ; 00443933
@@ -670,7 +670,7 @@ section .text
     SHL EDX,0x8                         ; 00443999
     SBB EAX,EDX                         ; 0044399c
     SAR EAX,0x8                         ; 0044399e
-    MOV ECX,dword ptr [0x0140d780]      ; 004439a1 | DAT_0140d780
+    MOV ECX,dword ptr [0x0140d780]      ; 004439a1 | g_INT_0140d780
     MOV EBX,EAX                         ; 004439a7
     XOR EAX,EAX                         ; 004439a9
     TEST ECX,ECX                        ; 004439ab
@@ -684,7 +684,7 @@ section .text
     MOV BL,byte ptr [ECX + 0x12e1778]   ; 004439c1
     INC EAX                             ; 004439c7
     MOV byte ptr [EDX + 0x12ceb78],BL   ; 004439c8
-    MOV EBX,dword ptr [0x0140d780]      ; 004439ce | DAT_0140d780
+    MOV EBX,dword ptr [0x0140d780]      ; 004439ce | g_INT_0140d780
     ADD ECX,0x12c00                     ; 004439d4
     CMP EAX,EBX                         ; 004439da
     JL 0x004439bb                       ; 004439dc
@@ -742,7 +742,7 @@ section .text
         ;   XREF to: 0056582c (UNCONDITIONAL_CALL)  ; int crt_stdio.c_fseek_FUN_0056582c(_FILE * file, long offset, int whence)
     ADD ESP,0xc                         ; 00443a75
     PUSH ESI                            ; 00443a78
-    MOV EAX,[0x0140d780]                ; 00443a79 | DAT_0140d780
+    MOV EAX,[0x0140d780]                ; 00443a79 | g_INT_0140d780
     PUSH EAX                            ; 00443a7e
     PUSH 0x12c00                        ; 00443a7f
     PUSH 0x12e1778                      ; 00443a84
@@ -804,7 +804,7 @@ section .text
     MOV ECX,dword ptr [ECX + 0x158]     ; 00443b24
     XOR EBX,EBX                         ; 00443b2a
         ;   Label: LAB_00443b2a
-    MOV BL,byte ptr [EAX]               ; 00443b2c | DAT_01410290 | DAT_01410291
+    MOV BL,byte ptr [EAX]               ; 00443b2c | g_CHAR_ARRAY_01410290 | g_CHAR_ARRAY_01410290+1
     INC EAX                             ; 00443b2e
     ADD ECX,0x4                         ; 00443b2f
     MOV EBX,dword ptr [EBX*0x4 + 0xb0ddfc] ; 00443b32
@@ -851,7 +851,7 @@ section .text
     IDIV dword ptr [EBP + 0x13c]        ; 00443bc6
     ADD EAX,EDI                         ; 00443bcc
     ADD EAX,0x1410290                   ; 00443bce
-    MOV AL,byte ptr [EAX]               ; 00443bd3 | DAT_01410290
+    MOV AL,byte ptr [EAX]               ; 00443bd3 | g_CHAR_ARRAY_01410290
     AND EAX,0xff                        ; 00443bd5
     MOV EDX,dword ptr [ESP + 0xb4]      ; 00443bda
     MOV EAX,dword ptr [EAX*0x4 + 0xb0ddfc] ; 00443be1
@@ -946,7 +946,7 @@ section .text
     MOV dword ptr [ESP + 0xe4],EAX      ; 00443d48
     ADD EAX,EBP                         ; 00443d4f
     ADD EAX,0x1410290                   ; 00443d51
-    MOV AL,byte ptr [EAX]               ; 00443d56 | DAT_01410290
+    MOV AL,byte ptr [EAX]               ; 00443d56 | g_CHAR_ARRAY_01410290
     AND EAX,0xff                        ; 00443d58
     MOV EAX,dword ptr [EAX*0x4 + 0xb0ddfc] ; 00443d5d
     MOV EDX,EAX                         ; 00443d64
@@ -986,7 +986,7 @@ section .text
     SAR EAX,0x8                         ; 00443dfb
     ADD EBP,EAX                         ; 00443dfe
     ADD EBP,0x1410290                   ; 00443e00
-    MOVZX EBP,byte ptr [EBP]            ; 00443e06 | DAT_01410290
+    MOVZX EBP,byte ptr [EBP]            ; 00443e06 | g_CHAR_ARRAY_01410290
     MOV dword ptr [ESP + 0xe8],EAX      ; 00443e0a
     MOV EAX,dword ptr [EBP*0x4 + 0xb0ddfc] ; 00443e11
     MOV EBP,EAX                         ; 00443e18
@@ -1027,7 +1027,7 @@ section .text
     MOV dword ptr [ESP + 0xec],EAX      ; 00443ec5
     ADD EAX,EDI                         ; 00443ecc
     ADD EAX,0x1410290                   ; 00443ece
-    MOV AL,byte ptr [EAX]               ; 00443ed3 | DAT_01410290
+    MOV AL,byte ptr [EAX]               ; 00443ed3 | g_CHAR_ARRAY_01410290
     AND EAX,0xff                        ; 00443ed5
     MOV EAX,dword ptr [EAX*0x4 + 0xb0ddfc] ; 00443eda
     MOV EDI,EAX                         ; 00443ee1
@@ -1071,7 +1071,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0xec]      ; 00443fad
     ADD EAX,EDX                         ; 00443fb4
     ADD EAX,0x1410290                   ; 00443fb6
-    MOV AL,byte ptr [EAX]               ; 00443fbb | DAT_01410290
+    MOV AL,byte ptr [EAX]               ; 00443fbb | g_CHAR_ARRAY_01410290
     AND EAX,0xff                        ; 00443fbd
     MOV EAX,dword ptr [EAX*0x4 + 0xb0ddfc] ; 00443fc2
     MOV EDX,EAX                         ; 00443fc9

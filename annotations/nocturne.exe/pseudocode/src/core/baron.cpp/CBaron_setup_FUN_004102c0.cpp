@@ -17,8 +17,8 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)
   core_hero_cpp_CHero_setup_FUN_004b48d0(&this_ptr->base);
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0051e0a0
                           (&(this_ptr->base).base.model);
-  DAT_007642e8 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
-                           (this_ptr_00,"Bip01 head",1);
+  g_INT_007642e8 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 head",1);
   _DAT_007642ec =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Clavicle",1);
   _DAT_007642f0 =
@@ -43,10 +43,10 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Calf",1);
   _DAT_00764318 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Calf",1);
-  DAT_0076431c = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
-                           (this_ptr_00,"Bip01 L Hand",1);
-  DAT_00764320 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0
-                           (this_ptr_00,"Bip01 R Hand",1);
+  g_INT_0076431c =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 L Hand",1);
+  g_INT_00764320 =
+       core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 R Hand",1);
   _DAT_00764324 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine2",1);
   _DAT_00764328 =
@@ -54,7 +54,7 @@ void __cdecl core_baron_cpp_CBaron_setup_FUN_004102c0(CBaron *this_ptr)
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_005179d0(this_ptr_00,"Bip01 Spine1",1);
   this_ptr->target_actor = (CDemonActor *)0x0;
   (this_ptr->base).base.gesture_branch_root = iVar1;
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510
-            ((CKeyFramedModelInstance *)&DAT_0076436c);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00454510(&g_CKeyFramedModelInstance_0076436c)
+  ;
   return;
 }

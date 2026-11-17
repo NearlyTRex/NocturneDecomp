@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 325,
-    "complexity_score": 269,
+    "complexity_score": 253,
     "cross_reference_count": 7,
     "function_call_count": 8,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 129,
-    "suspect_count": 12,
+    "pseudocode_lines": 128,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "signed_shift_global_idiom",
-      "warning_overlapping_globals"
+      "signed_shift_global_idiom"
     ],
-    "total_lines": 454
+    "total_lines": 453
   },
   "cross_references": [
     {
@@ -244,8 +243,8 @@
     },
     {
       "addr": "02ddf56c",
-      "name": "DAT_02ddf56c",
-      "type": "undefined4",
+      "name": "g_INT_02ddf56c",
+      "type": "int",
       "value": null
     }
   ],
@@ -344,16 +343,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 60,
       "match": "(void *)((int)g_SoftwareFrameBuffer",
       "severity": "moderate",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
@@ -361,7 +352,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 110,
+      "line": 108,
       "match": "(void **)((int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(void **)((int)g_ScreenBufferArray + iVar4) =",
@@ -369,7 +360,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 111,
       "match": "(int *)((int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
@@ -377,7 +368,7 @@
     },
     {
       "description": "Pointer value `g_SoftwareFrameBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 60,
       "match": "(int)g_SoftwareFrameBuffer",
       "severity": "moderate",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
@@ -385,7 +376,7 @@
     },
     {
       "description": "Pointer value `g_ScreenBufferArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 110,
+      "line": 108,
       "match": "(int)g_ScreenBufferArray",
       "severity": "moderate",
       "text": "*(void **)((int)g_ScreenBufferArray + iVar4) =",
@@ -393,7 +384,7 @@
     },
     {
       "description": "Pointer value `pvVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 112,
+      "line": 110,
       "match": "(int)pvVar2",
       "severity": "moderate",
       "text": "(int)pvVar2);",
@@ -401,7 +392,7 @@
     },
     {
       "description": "Pointer value `g_ZBufferScanlineArray` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "(int)g_ZBufferScanlineArray",
       "severity": "moderate",
       "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
@@ -409,7 +400,7 @@
     },
     {
       "description": "Pointer value `g_SoftwareZBuffer` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "(int)g_SoftwareZBuffer",
       "severity": "moderate",
       "text": "*(int *)((int)g_ZBufferScanlineArray + iVar4) = (int)g_SoftwareZBuffer + iVar7;",
@@ -417,7 +408,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 47,
+      "line": 45,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -",
@@ -425,7 +416,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 48,
+      "line": 46,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3) *",
@@ -433,7 +424,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 104,
+      "line": 102,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "iVar6 = g_BitsPerPixel >> 0x1f;",

@@ -17,6 +17,9 @@
 #include "types/classes/CHag_full_vtable.h"
 #include "types/classes/CHand_full_vtable.h"
 #include "types/classes/CVector3i.h"
+#include "types/structs/SFontGlyph.h"
+#include "types/structs/SLightGlowTable.h"
+#include "types/structs/SMRGLLightPrimitive.h"
 #include "types/structs/SMRGLPrimitiveQuad.h"
 #include "types/structs/SMRGLSkyTexture.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -67,6 +70,15 @@ extern CHand_full_vtable g_CHandVTable;
 // CVector3i[62]
 extern CVector3i g_CVector3i_ARRAY_0060a0fc[62];
 
+// SFontGlyph[224]
+extern SFontGlyph g_SFontGlyph_ARRAY_00601440[224];
+
+// SLightGlowTable
+extern SLightGlowTable g_SLightGlowTable_0060afc8;
+
+// SMRGLLightPrimitive[84]
+extern SMRGLLightPrimitive g_SMRGLLightPrimitive_ARRAY_0060a3e4[84];
+
 // SMRGLPrimitiveQuad*[2000]
 extern SMRGLPrimitiveQuad* g_SMRGLPrimitiveQuad_PTR_ARRAY_0060b288[2000];
 
@@ -79,9 +91,6 @@ extern SMRGLTextureBasic g_SMRGLTextureBasic_00609acc;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ae4;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_00609ff0;
 extern SMRGLTextureBasic g_SMRGLTextureBasic_0060a0e4;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0060afc8;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0060afe0;
-extern SMRGLTextureBasic g_SMRGLTextureBasic_0060aff8;
 
 // SMRGLTextureBasic[6]
 extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_00609a10[6];
@@ -208,11 +217,6 @@ extern uint* g_UINT_PTR_0060d268;
 
 // undefined1
 extern undefined1 DAT_0060958f;
-
-// undefined4
-extern undefined4 DAT_0060a400;
-extern undefined4 DAT_0060a404;
-extern undefined4 DAT_0060a424;
 
 // void*
 extern void* g_PTR_006002e4;

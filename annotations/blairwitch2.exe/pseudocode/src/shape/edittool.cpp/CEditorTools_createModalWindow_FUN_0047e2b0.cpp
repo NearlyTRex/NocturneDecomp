@@ -17,15 +17,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
   int iVar5;
   uint uVar6;
   uint uVar7;
-  char *pcVar8;
-  uint *puVar9;
-  int iVar10;
-  uint *puVar11;
-  byte bVar12;
+  char *buffer;
+  uint *puVar8;
+  int iVar9;
+  uint *puVar10;
+  byte bVar11;
   int local_28;
   uint *local_18;
   
-  bVar12 = 0;
+  bVar11 = 0;
   if (g_CBitFont_PTR_01c25590 == (CBitFont *)0x0) {
     g_CHAR_PTR_01d046a0 = "..\\shape\\edittool.cpp";
     g_INT_01d046a4 = 0xa0;
@@ -54,26 +54,26 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
   if (g_INT_006141b8 < right) {
     right = g_INT_006141b8;
   }
-  g_CHAR_ARRAY_01c255a0[iVar1 + 0x48] = '\0';
+  *(byte *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48) = 0;
   local_28 = 0;
   if (text_content != (char *)0x0) {
-    pcVar8 = g_CHAR_ARRAY_01c255a0 + iVar1 + 0x48;
+    buffer = (char *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48);
     iVar4 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004ab2b0
                       (g_CBitFont_PTR_01c25590,text_content,g_CHAR_ARRAY_01c245f0,0x14,200,
                        (right - left) + iVar2 * -2);
-    iVar10 = 0;
+    iVar9 = 0;
     if (0 < iVar4) {
       do {
-        iVar10 = iVar10 + 1;
-        iVar5 = _sprintf(pcVar8,"%s\n");
-        pcVar8 = pcVar8 + iVar5;
-      } while (iVar10 < iVar4);
+        iVar9 = iVar9 + 1;
+        iVar5 = _sprintf(buffer,"%s\n");
+        buffer = buffer + iVar5;
+      } while (iVar9 < iVar4);
     }
     this_ptr_00 = g_CBitFont_PTR_01c25590;
     if (0 < iVar4) {
-      pcVar8[-1] = '\0';
+      buffer[-1] = '\0';
       local_28 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0
-                           (this_ptr_00,g_CHAR_ARRAY_01c255a0 + iVar1 + 0x48);
+                           (this_ptr_00,(char *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x48));
       local_28 = g_INT_01c25f7c + local_28;
       iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0
                         (g_CBitFont_PTR_01c25590,"j");
@@ -93,80 +93,69 @@ void __cdecl shape_edittool_cpp_CEditorTools_createModalWindow_FUN_0047e2b0(CEdi
   if (g_INT_01c25f84 != 0) {
     window_flags = window_flags | 1;
   }
-  pcVar8 = g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1d8;
-  pcVar8[0] = '\0';
-  pcVar8[1] = '\0';
-  pcVar8[2] = '\0';
-  pcVar8[3] = '\0';
+  *(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8) = 0;
   if ((window_flags & 1) == 0) {
     if (g_INT_01c2559c == 1) {
       shape_edittool_cpp_CEditorTools_backupScreen_FUN_0047baf0(this_ptr);
     }
     if (g_ARRAY_PTR_01c2a38c[0] != (byte *)0x0) {
-      *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e4) = g_INT_006141b8;
-      iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e4) * g_INT_006141c0;
-      *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e8) = g_INT_006141bc;
-      iVar10 = iVar4 >> 0x1f;
-      uVar6 = (int)((iVar4 + iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3;
-      iVar4 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e8);
-      pcVar8 = g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1dc;
-      pcVar8[0] = '\0';
-      pcVar8[1] = '\0';
-      pcVar8[2] = '\0';
-      pcVar8[3] = '\0';
-      pcVar8 = g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e0;
-      pcVar8[0] = '\0';
-      pcVar8[1] = '\0';
-      pcVar8[2] = '\0';
-      pcVar8[3] = '\0';
-      local_18 = (uint *)malloc(iVar4 * uVar6);
-      *(uint **)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1d8) = local_18;
+      *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) = g_INT_006141b8;
+      iVar4 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e4) * g_INT_006141c0;
+      *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8) = g_INT_006141bc;
+      iVar9 = iVar4 >> 0x1f;
+      uVar6 = (int)((iVar4 + iVar9 * -8) - (uint)(iVar9 << 2 < 0)) >> 3;
+      *(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) = 0;
+      *(uint *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) = 0;
+      local_18 = (uint *)malloc
+                           (*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8) * uVar6);
+      *(uint **)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1d8) = local_18;
       if ((local_18 != (uint *)0x0) &&
-         (iVar4 = 0, 0 < *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e8))) {
+         (iVar4 = 0, 0 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8))) {
         do {
-          iVar10 = *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0 >> 0x1f;
-          puVar9 = (uint *)
-                   (g_ARRAY_PTR_01c2a38c[*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] +
-                   ((int)((*(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0 +
-                          iVar10 * -8) - (uint)(iVar10 << 2 < 0)) >> 3));
-          puVar11 = local_18;
+          iVar9 = *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1dc) * g_INT_006141c0;
+          iVar5 = iVar9 >> 0x1f;
+          puVar8 = (uint *)
+                   (g_ARRAY_PTR_01c2a38c
+                    [*(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e0) + iVar4] +
+                   ((int)((iVar9 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3));
+          puVar10 = local_18;
           for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *puVar11 = *puVar9;
-            puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
-            puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
+            *puVar10 = *puVar8;
+            puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
+            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
           }
           for (uVar7 = uVar6 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-            *(byte *)puVar11 = *(byte *)puVar9;
-            puVar9 = (uint *)((int)puVar9 + (uint)bVar12 * -2 + 1);
-            puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);
+            *(byte *)puVar10 = *(byte *)puVar8;
+            puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);
+            puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);
           }
           local_18 = (uint *)((int)local_18 + uVar6);
           iVar4 = iVar4 + 1;
-        } while (iVar4 < *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1e8));
+        } while (iVar4 < *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1e8));
       }
     }
   }
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x10) = g_INT_01c35e48;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x14) = g_INT_01c35e4c;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x18) = g_INT_01c35e50;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x1c) = g_INT_01c35e54;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x30) = g_INT_01c35e38;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x34) = g_INT_01c35e3c;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x38) = g_INT_01c35e40;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x3c) = g_INT_01c35e44;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x40) = g_INT_01c35e58;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x44) = g_INT_01c35e5c;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x10) = g_INT_01c35e48;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x14) = g_INT_01c35e4c;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x18) = g_INT_01c35e50;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x1c) = g_INT_01c35e54;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x30) = g_INT_01c35e38;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x34) = g_INT_01c35e3c;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x38) = g_INT_01c35e40;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x3c) = g_INT_01c35e44;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x40) = g_INT_01c35e58;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x44) = g_INT_01c35e5c;
   engine_mini3d_cpp_getRenderViewport_FUN_004f2ba0
-            ((float *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x20),
-             (float *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x24),
-             (float *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x28),
-             (float *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0x2c));
+            ((float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x20),
+             (float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x24),
+             (float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x28),
+             (float *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0x2c));
   engine_mini3d_cpp_setRenderViewport_FUN_004f2ac0
             ((float)left,(float)top,(float)right,(float)bottom);
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1) = left;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 4) = top;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 8) = right;
-  *(int *)(g_CHAR_ARRAY_01c255a0 + iVar1 + 0xc) = bottom;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1) = left;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 4) = top;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 8) = right;
+  *(int *)((int)g_SWindow_ARRAY_01c255a0 + iVar1 + 0xc) = bottom;
   engine_2d_c_setupViewportAndClipping_FUN_00401810
             (left + iVar2,top + iVar3 + local_28,(right - iVar2) + -1,(bottom - iVar3) + -1);
   return;

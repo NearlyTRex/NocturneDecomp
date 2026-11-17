@@ -14,8 +14,8 @@
 ;   core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00442820 at 00442a38
 ;
 ; Referenced Globals:
-;   undefined8 DAT_00611338
-;   undefined8 DAT_00611340
+;   _MMX_INTEGER g_MMX_INTEGER_00611338
+;   _MMX_INTEGER g_MMX_INTEGER_00611340
 ;   ushort[2048] g_USHORT_ARRAY_00612880
 ;   undefined4 g_USHORT_ARRAY_00612880[1020]
 ;   qword g_QWORD_0061c8e8 = 0xf80000
@@ -172,8 +172,8 @@ section .text
     PMULHW MM4,MM3                      ; 00471903
     PADDW MM0,MM4                       ; 00471906
     PADDW MM1,MM4                       ; 00471909
-    PADDW MM0,qword ptr [0x00611338]    ; 0047190c | DAT_00611338
-    PADDW MM1,qword ptr [0x00611340]    ; 00471913 | DAT_00611340
+    PADDW MM0,qword ptr [0x00611338]    ; 0047190c | g_MMX_INTEGER_00611338
+    PADDW MM1,qword ptr [0x00611340]    ; 00471913 | g_MMX_INTEGER_00611340
     PSRLW MM0,0x4                       ; 0047191a
     PSRLW MM1,0x4                       ; 0047191e
     PACKUSWB MM0,MM7                    ; 00471922

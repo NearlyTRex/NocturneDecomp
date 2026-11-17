@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_elephantgun_kfm_0057f109
-;   undefined4 DAT_0059cb2c
+;   float g_FLOAT_0059cb2c = 8
 ;   CWeapon_full_vtable g_CElephantGunVTable
 ;
 ; Called Functions:
@@ -42,7 +42,7 @@ section .text
     MOV dword ptr [EBX + 0x2d8],0x1     ; 00477755
     MOV dword ptr [EBX + 0x2dc],0x1     ; 0047775f
     MOV dword ptr [EBX + 0x2e0],0x41700000 ; 00477769
-    FLD float ptr [0x0059cb2c]          ; 00477773 | DAT_0059cb2c
+    FLD float ptr [0x0059cb2c]          ; 00477773 | g_FLOAT_0059cb2c
     MOV dword ptr [EBX + 0x2e4],0x0     ; 00477779
     ADD ESP,0x8                         ; 00477783
     MOV dword ptr [EBX + 0x574],0x0     ; 00477786

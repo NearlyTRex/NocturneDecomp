@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 552,
-    "complexity_score": 546,
+    "complexity_score": 507,
     "cross_reference_count": 15,
     "function_call_count": 27,
     "global_count": 29,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 281,
-    "suspect_count": 22,
+    "pseudocode_lines": 282,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "preinc_loop_idiom",
       "shadow_pointer_walk",
       "stack_ref",
-      "unresolved_funcptr",
       "unrolled_memcpy",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 833
+    "total_lines": 834
   },
   "cross_references": [
     {
@@ -404,14 +402,14 @@
     },
     {
       "addr": "02dc1b74",
-      "name": "DAT_02dc1b74",
-      "type": "undefined4",
+      "name": "g_INT_02dc1b74",
+      "type": "int",
       "value": null
     },
     {
       "addr": "02dc1ed8",
-      "name": "DAT_02dc1ed8",
-      "type": "undefined4",
+      "name": "g_INT_02dc1ed8",
+      "type": "int",
       "value": null
     },
     {
@@ -428,14 +426,14 @@
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02dc8318",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02dc84bc",
-      "name": "DAT_02dc84bc",
-      "type": "undefined4",
+      "name": "g_INT_02dc84bc",
+      "type": "int",
       "value": null
     }
   ],
@@ -730,16 +728,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(CSfxOptions *)((int)pCVar13",
       "severity": "moderate",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -747,7 +737,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(CSfxOptions *)((int)pCVar17",
       "severity": "moderate",
       "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -755,7 +745,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(int *)((int)g_CSfxSlot_ARRAY_02dbd374",
       "severity": "moderate",
       "text": "iVar3 = *(int *)((int)g_CSfxSlot_ARRAY_02dbd374[1].distance_to_speakers + iVar6 + -0xc);",
@@ -763,7 +753,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 93,
       "match": "(CSfxOptions *)((int)pCVar13",
       "severity": "moderate",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -771,7 +761,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 94,
       "match": "(CSfxSlot *)((int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar18 * -8 + 4);",
@@ -779,31 +769,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 234,
+      "line": 232,
       "match": "&stack0xfffffc70",
       "severity": "moderate",
       "text": "(\"startSfx - can't get sample %s\\n\",&stack0xfffffc70);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 270,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*_DAT_02dc8318 + 0x3c))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 274,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(iVar6 = (**(code **)(*_DAT_02dc8318 + 0x48))(_DAT_02dc8318,this_ptr_00), iVar6 == 0))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Pointer value `pCVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 60,
+      "line": 58,
       "match": "(int)pCVar13",
       "severity": "moderate",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -811,7 +785,7 @@
     },
     {
       "description": "Pointer value `pCVar17` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 61,
+      "line": 59,
       "match": "(int)pCVar17",
       "severity": "moderate",
       "text": "pCVar17 = (CSfxOptions *)((int)pCVar17 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -819,7 +793,7 @@
     },
     {
       "description": "Pointer value `pCVar13` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 95,
+      "line": 93,
       "match": "(int)pCVar13",
       "severity": "moderate",
       "text": "pCVar13 = (CSfxOptions *)((int)pCVar13 + ((uint)bVar18 * -2 + 1) * 4);",
@@ -827,7 +801,7 @@
     },
     {
       "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 96,
+      "line": 94,
       "match": "(int)pCVar4",
       "severity": "moderate",
       "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar18 * -8 + 4);",
@@ -835,7 +809,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 47,
+      "line": 45,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -843,7 +817,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 148,
+      "line": 146,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -851,7 +825,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 193,
+      "line": 191,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -859,7 +833,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 58,
+      "line": 56,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -867,7 +841,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 93,
+      "line": 91,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {",
@@ -875,7 +849,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 155,
+      "line": 153,
       "match": "pCVar20 = (T *)((pCVar20->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar20 = (CSfxSample *)((pCVar20->sample_info).name + 2);",
@@ -883,7 +857,7 @@
     },
     {
       "description": "Watcom shadow-pointer walk \u2014 `pCVar20` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar20->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 200,
+      "line": 198,
       "match": "pCVar20 = (T *)((pCVar20->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
       "text": "pCVar20 = (CSfxSample *)((pCVar20->sample_info).name + 2);",
@@ -891,7 +865,7 @@
     },
     {
       "description": "Ghidra pre-increment-array-walk loop artifact on `pCVar4` (per-iteration advance via struct-field/pointer arithmetic \u2014 single-var `pCVar4 = pCVar4;` self-assign, two-var `tmp = &pCVar4->field; pCVar4 = tmp;` ping-pong, or a bare `pCVar4 = pCVar4 + N;` advance followed by a `*pCVar4 =` store \u2014 plus a constant-index store on `pCVar4`). Watcom's advance-then-displaced-store (`ADD reg,N` / store `[reg + -N]`) loses the displacement here, so every store lands one element late and the first is never written. The stride/sentinel are baked from the original struct layout, so it overruns on any layout change (e.g. the 64-bit port). Always wrong as-decoded; cross-reference .asm and rewrite as a straightforward for-loop in a .keep (watch for the skip-row store-offset bug).",
-      "line": 245,
+      "line": 243,
       "match": "do { advance(var via &field or +N); var[K]/arr[0]... store; ...}",
       "severity": "moderate",
       "text": "do {",

@@ -46,7 +46,7 @@ section .text
     PUSH 0x586d94                       ; 004befa7 | = "invsize.txt"
     MOV EAX,[0x005b7620]                ; 004befac | g_WindowHeight
     PUSH 0x586da0                       ; 004befb1 | = "data"
-    MOV [0x01cc30a0],EAX                ; 004befb6 | DAT_01cc30a0
+    MOV [0x01cc30a0],EAX                ; 004befb6 | g_INT_01cc30a0
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004befbb
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     MOV EBX,EAX                         ; 004befc0
@@ -236,8 +236,8 @@ section .text
         ;   Label: LAB_004bf1ed
     PUSH 0x586e53                       ; 004bf1f2 | = "itemlist.txt"
     XOR EBX,EBX                         ; 004bf1f7
-    PUSH 0x586e60                       ; 004bf1f9 | DAT_00586e60
-    MOV dword ptr [0x01cb03d0],EBX      ; 004bf1fe | DAT_01cb03d0
+    PUSH 0x586e60                       ; 004bf1f9 | g_CHAR_00586e60
+    MOV dword ptr [0x01cb03d0],EBX      ; 004bf1fe | g_INT_01cb03d0
     CALL engine_dosio.cpp_getFile_FUN_00456a60 ; 004bf204
         ;   XREF to: 00456a60 (UNCONDITIONAL_CALL)  ; _FILE * engine_dosio.cpp_getFile_FUN_00456a60(char * directory, char * filename, char * mode)
     ADD ESP,0xc                         ; 004bf209
@@ -249,7 +249,7 @@ section .text
         ;   Label: LAB_004bf212
     JNZ 0x004bf263                      ; 004bf216
         ;   XREF to: 004bf263 (CONDITIONAL_JUMP)  ; LAB_004bf263
-    IMUL EAX,dword ptr [0x01cb03d0],0x300 ; 004bf218 | DAT_01cb03d0
+    IMUL EAX,dword ptr [0x01cb03d0],0x300 ; 004bf218 | g_INT_01cb03d0
     PUSH EBX                            ; 004bf222
     ADD EAX,0x1cb03d8                   ; 004bf223
     PUSH EAX                            ; 004bf228
@@ -259,7 +259,7 @@ section .text
     TEST EAX,EAX                        ; 004bf231
     JZ 0x004bf263                       ; 004bf233
         ;   XREF to: 004bf263 (CONDITIONAL_JUMP)  ; LAB_004bf263
-    INC dword ptr [0x01cb03d0]          ; 004bf235 | DAT_01cb03d0
+    INC dword ptr [0x01cb03d0]          ; 004bf235 | g_INT_01cb03d0
     JMP 0x004bf212                      ; 004bf23b
         ;   XREF to: 004bf212 (UNCONDITIONAL_JUMP)  ; LAB_004bf212
     PUSH 0x5bab64                       ; 004bf23d | INT_005bab64

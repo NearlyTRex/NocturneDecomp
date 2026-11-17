@@ -65,7 +65,7 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_0049a650(CGame *this_ptr)
   this_ptr->damageable_enemy_count = 0;
   this_ptr->total_kill_count = 0;
   this_ptr->act_completion_state = 0;
-  DAT_01c78598 = 0;
+  g_CHAR_ARRAY_01c78598[0] = '\0';
   this_ptr->chapter_reload_filename[0] = '\0';
   return this_ptr;
 }

@@ -36,7 +36,7 @@
 ;   CGame* g_CGamePtr = 01c775ec
 ;   CConsole g_CConsoleInstance
 ;   undefined4 g_CGameInstance.letterbox_mode
-;   undefined4 DAT_01e53388
+;   int[18] g_INT_ARRAY_01e53388
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_0040a000
@@ -393,7 +393,7 @@ section .text
     JNZ 0x004fc2ce                      ; 004fc289
         ;   XREF to: 004fc2ce (CONDITIONAL_JUMP)  ; LAB_004fc2ce
     PUSH 0x51b650                       ; 004fc28b
-    MOV EDI,dword ptr [0x01e53388]      ; 004fc290 | DAT_01e53388
+    MOV EDI,dword ptr [0x01e53388]      ; 004fc290 | g_INT_ARRAY_01e53388
     PUSH EDI                            ; 004fc296
     LEA EAX,[EBX + 0x1fa40]             ; 004fc297
     PUSH dword ptr [EBX + 0x1fa4c]      ; 004fc29d

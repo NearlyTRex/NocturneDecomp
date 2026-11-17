@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 606,
+    "complexity_score": 646,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 221,
-    "suspect_count": 36,
+    "suspect_count": 40,
     "suspect_types": [
       "raw_address_constant",
       "stack_alignment_array",
@@ -520,6 +520,38 @@
       "severity": "moderate",
       "text": "(pCVar16,(SMRGLHeaderPrimitive *)&stack0xffffff08);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 184,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr->u = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 185,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr->v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 191,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr[1].v = 0xf80000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xf80000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4070056 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 202,
+      "match": "0xf80000",
+      "severity": "moderate",
+      "text": "pCVar16->vertex_buffer_ptr[3].u = 0xf80000;",
+      "type": "raw_address_constant"
     },
     {
       "description": "Raw hex address 0x45e706 assigned to bare local `uStack_100`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_100` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

@@ -14,7 +14,7 @@
 ;   support_codec.cpp_CCodec_processFromBuffer_FUN_004390b0 at 00439108
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0059b4b0
+;   WatcomTypeInfo g_WatcomTypeInfo_0059b4b0
 ;   void* PTR_crt_strstream.cpp_istrstream_dtor_FUN_00564fd8_005a4744 = 00564fd8
 ;   void* PTR_crt_unknown.c_FUN_00564faa_005a474c = 00564faa
 ;   void* PTR_crt_unknown.c_FUN_00564fc0_005a4754 = 00564fc0
@@ -70,7 +70,7 @@ section .text
     MOV EAX,EBX                         ; 00565038
     POP EBX                             ; 0056503a
     RET                                 ; 0056503b
-    PUSH 0x59b4b0                       ; 0056503c | DAT_0059b4b0
+    PUSH 0x59b4b0                       ; 0056503c | g_WatcomTypeInfo_0059b4b0
         ;   Label: LAB_0056503c
     PUSH EBX                            ; 00565041
     CALL crt_memory.c___vec_delete_FUN_0056445f ; 00565042

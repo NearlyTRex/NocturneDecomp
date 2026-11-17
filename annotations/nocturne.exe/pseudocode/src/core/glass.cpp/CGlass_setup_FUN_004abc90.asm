@@ -97,7 +97,7 @@ section .text
     LEA EAX,[EBX + 0x15c]               ; 004abcab
     PUSH EAX                            ; 004abcb1
     MOV EDX,dword ptr [0x005ae704]      ; 004abcb2 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 004abcb8 | DAT_01b4d738
+    PUSH EDX                            ; 004abcb8 | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0 ; 004abcb9
         ;   XREF to: 00461eb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00461eb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     MOV ECX,dword ptr [EBX + 0x1e0]     ; 004abcbe

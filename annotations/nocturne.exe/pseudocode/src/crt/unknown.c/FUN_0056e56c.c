@@ -9,14 +9,14 @@
 void * FUN_0056e56c(void *param_1)
 
 {
-  SIZE_T SVar1;
+  DWORD DVar1;
   
   if (param_1 == (void *)0x0) {
-    param_1 = calloc(1,0x000000F4);
-    SVar1 = 0x000000F4;
+    param_1 = calloc(1,g_DWORD_005c20cc);
+    DVar1 = g_DWORD_005c20cc;
     if (param_1 != (void *)0x0) {
       *(byte *)((int)param_1 + 0x52) = 1;
-      *(SIZE_T *)((int)param_1 + 0xf0) = SVar1;
+      *(DWORD *)((int)param_1 + 0xf0) = DVar1;
     }
   }
   FUN_005713a0(param_1);

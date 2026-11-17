@@ -7,6 +7,7 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CGround.h"
 #include "types/classes/CHero.h"
+#include "types/classes/CIni.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CA0000
@@ -32,9 +33,31 @@ extern CGround g_CGroundInstance;
 // CHero*[4]
 extern CHero* g_HeroActors[4];
 
+// CIni
+extern CIni g_CIni_01cae378;
+
+// char[10][256]
+extern char g_CHAR_ARRAY_ARRAY_01cae580[10][256];
+extern char g_CHAR_ARRAY_ARRAY_01caef80[10][256];
+extern char g_CHAR_ARRAY_ARRAY_01caf980[10][256];
+
 // char[256]
+extern char g_CHAR_ARRAY_01cae380[256];
 extern char g_CHAR_ARRAY_01cae480[256];
 
 // int
+extern int g_INT_01cae0d4;
 extern int g_LocalHeroIndex;
+extern int g_INT_01cae1a0;
+extern int g_INT_01cae37c;
+
+// int[12]
+extern int g_INT_ARRAY_01cae1e0[12];
+extern int g_INT_ARRAY_01cae30c[12];
+
+// int[17]
+extern int g_INT_ARRAY_01cae018[17];
+
+// int[18]
+extern int g_INT_ARRAY_01cae288[18];
 

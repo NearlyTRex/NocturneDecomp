@@ -13,7 +13,7 @@ EDeathState __cdecl core_stranger_cpp_CStranger_getDeathState_FUN_00540890(CStra
   EDeathState EVar2;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,"strangerCannotDie");
+                    (g_CEventList_PTR_005b7650,"strangerCannotDie");
   if (iVar1 != 0) {
     return DEATH_STATE_ALIVE;
   }

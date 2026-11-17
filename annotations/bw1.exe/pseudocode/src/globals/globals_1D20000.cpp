@@ -15,8 +15,8 @@ CMini3D g_CMini3DInstance = {};
 CVector3f g_CVector3f_ARRAY_01d2c5d4[32] = {};
 CVector3f g_CVector3f_ARRAY_01d2c758[32] = {};
 
-// SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d2c8d8 = {};
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d2c8d8 = {};
 
 // SSoftwareEdge
 SSoftwareEdge g_SSoftwareEdge_01d2c0c8 = {};
@@ -28,8 +28,8 @@ char* g_CHAR_PTR_01d21030 = {};
 // char*[4]
 char* g_CHAR_PTR_ARRAY_01d21448[4] = {};
 
-// char[10]
-char g_CHAR_ARRAY_01d219e8[10] = {};
+// char[10][256]
+char g_CHAR_ARRAY_ARRAY_01d219e8[10][256] = {};
 
 // char[256]
 char g_CHAR_ARRAY_01d20a30[256] = {};
@@ -39,11 +39,11 @@ char g_CHAR_ARRAY_01d20d30[256] = {};
 char g_CHAR_ARRAY_01d20e30[256] = {};
 char g_CHAR_ARRAY_01d20f30[256] = {};
 
-// char[30]
-char g_CHAR_ARRAY_01d214e0[30] = {};
+// char[30][40]
+char g_CHAR_ARRAY_ARRAY_01d214e0[30][40] = {};
 
-// char[4]
-char g_CHAR_ARRAY_01d21048[4] = {};
+// char[4][256]
+char g_CHAR_ARRAY_ARRAY_01d21048[4][256] = {};
 
 // float
 float g_FLOAT_01d224c0 = {};

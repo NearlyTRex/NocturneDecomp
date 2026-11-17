@@ -22,8 +22,8 @@
 ;   TerminatedCString s_sound_mp3_cpp_005eb100
 ;   TerminatedCString s_js_bound_bad_layer_modex_005eb111
 ;   undefined4 s_CMotionController_0061f8e5+0xb
-;   double[2] g_DOUBLE_ARRAY_006202e8
-;   undefined4 DAT_00620328
+;   double[2][4] g_DOUBLE_ARRAY_ARRAY_006202e8
+;   int[2][3][15] g_INT_ARRAY_ARRAY_ARRAY_00620328
 ;   char* g_CHAR_PTR_01d1d400
 ;   int g_INT_01d1d404
 ;
@@ -114,7 +114,7 @@ section .text
     SUB EAX,EDX                         ; 0052590d
     MOV EDX,dword ptr [ESP]             ; 0052590f
     ADD EAX,EBP                         ; 00525912
-    MOV EDX,dword ptr [EAX + EDX*0x4 + 0x620328] ; 00525914 | DAT_00620328
+    MOV EDX,dword ptr [EAX + EDX*0x4 + 0x620328] ; 00525914 | g_INT_ARRAY_ARRAY_ARRAY_00620328
     MOV EBP,dword ptr [EBX + 0x10]      ; 0052591b
     MOV EAX,EDX                         ; 0052591e
     SAR EDX,0x1f                        ; 00525920
@@ -124,7 +124,7 @@ section .text
     MOV ECX,EDI                         ; 0052592a
     SHL ECX,0x5                         ; 0052592c
     MOV dword ptr [ESP + 0x8],EBX       ; 0052592f
-    FLD double ptr [ECX + EAX*0x8 + 0x6202e8] ; 00525933 | g_DOUBLE_ARRAY_006202e8
+    FLD double ptr [ECX + EAX*0x8 + 0x6202e8] ; 00525933 | g_DOUBLE_ARRAY_ARRAY_006202e8
     CALL crt_math.c_round_FUN_005c03a0  ; 0052593a
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_005c03a0(double value)
     FISTP dword ptr [ESP + 0x10]        ; 0052593f

@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 234,
+    "complexity_score": 219,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 179,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "bit_int_float_compare",
-      "shadow_pointer_walk",
-      "warning_overlapping_globals"
+      "shadow_pointer_walk"
     ],
     "total_lines": 635
   },
@@ -173,38 +172,38 @@
     },
     {
       "addr": "01cea3f4",
-      "name": "DAT_01cea3f4",
-      "type": "undefined4",
+      "name": "g_INT_01cea3f4",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cea3f8",
-      "name": "DAT_01cea3f8",
-      "type": "undefined4",
+      "name": "g_UINT_01cea3f8",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01cea400",
-      "name": "DAT_01cea400",
-      "type": "undefined4",
+      "name": "g_INT_01cea400",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cea404",
-      "name": "DAT_01cea404",
-      "type": "undefined4",
+      "name": "g_INT_01cea404",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01cea40c",
-      "name": "DAT_01cea40c",
-      "type": "undefined4",
+      "name": "g_INT_01cea40c",
+      "type": "int",
       "value": null
     },
     {
       "addr": "01d06610",
-      "name": "DAT_01d06610",
-      "type": "undefined4",
+      "name": "g_INT_01d06610",
+      "type": "int",
       "value": null
     }
   ],
@@ -383,16 +382,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom shadow-pointer walk \u2014 `dest_addr` was initialized to the address of an array element's subfield (`dest_addr = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*dest_addr)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `dest_addr->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
-      "line": 161,
+      "line": 160,
       "match": "dest_addr = dest_addr + N",
       "severity": "moderate",
       "text": "dest_addr = dest_addr + 0xf;",
@@ -400,7 +391,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40400000 is the IEEE 754 bit pattern of 3f. Rewrite in a .keep as a plain float compare against 3f.",
-      "line": 54,
+      "line": 53,
       "match": "0x40400000 < (int)local_24))",
       "severity": "moderate",
       "text": "if (((float)30 < local_24) || (0x40400000 < (int)local_24)) {",
@@ -408,7 +399,7 @@
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x40a00000 is the IEEE 754 bit pattern of 5f. Rewrite in a .keep as a plain float compare against 5f.",
-      "line": 126,
+      "line": 125,
       "match": "0x40a00000 < (int)local_2c))",
       "severity": "moderate",
       "text": "if (((float)30 < local_2c) || (0x40a00000 < (int)local_2c)) {",

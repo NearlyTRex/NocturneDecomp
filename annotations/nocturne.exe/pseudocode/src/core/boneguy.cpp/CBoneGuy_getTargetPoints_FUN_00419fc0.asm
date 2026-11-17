@@ -14,11 +14,11 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; Referenced Globals:
-;   undefined4 DAT_00764794
-;   undefined4 DAT_007647a8
-;   undefined4 DAT_007647ac
-;   undefined4 DAT_007647b8
-;   undefined4 DAT_007647bc
+;   int[11] g_INT_ARRAY_00764794
+;   undefined4 g_INT_ARRAY_00764794[5]
+;   undefined4 g_INT_ARRAY_00764794[6]
+;   undefined4 g_INT_ARRAY_00764794[9]
+;   undefined4 g_INT_ARRAY_00764794[10]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneCachedModelPosition_FUN_0051d380
@@ -43,7 +43,7 @@ section .text
     POP ESI                             ; 00419fdd
     POP EBX                             ; 00419fde
     RET                                 ; 00419fdf
-    MOV ECX,dword ptr [0x00764794]      ; 00419fe0 | DAT_00764794
+    MOV ECX,dword ptr [0x00764794]      ; 00419fe0 | g_INT_ARRAY_00764794
         ;   Label: LAB_00419fe0
     PUSH ECX                            ; 00419fe6
     LEA EAX,[ESP + 0x1c]                ; 00419fe7
@@ -64,7 +64,7 @@ section .text
     MOV dword ptr [EBX + 0x8],EDX       ; 0041a00c
     PUSH EDI                            ; 0041a00f
         ;   Label: LAB_0041a00f
-    MOV EDI,dword ptr [0x007647a8]      ; 0041a010 | DAT_007647a8
+    MOV EDI,dword ptr [0x007647a8]      ; 0041a010 | g_INT_ARRAY_00764794[5]
     PUSH EDI                            ; 0041a016
     LEA EAX,[ESP + 0x2c]                ; 0041a017
     PUSH EAX                            ; 0041a01b
@@ -83,7 +83,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 0041a039
     MOV ECX,dword ptr [EAX + 0x8]       ; 0041a03c
     MOV dword ptr [EDX + 0x8],ECX       ; 0041a03f
-    MOV EBP,dword ptr [0x007647ac]      ; 0041a042 | DAT_007647ac
+    MOV EBP,dword ptr [0x007647ac]      ; 0041a042 | g_INT_ARRAY_00764794[6]
         ;   Label: LAB_0041a042
     PUSH EBP                            ; 0041a048
     LEA EAX,[ESP + 0x38]                ; 0041a049
@@ -103,7 +103,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 0041a06b
     MOV ECX,dword ptr [EAX + 0x8]       ; 0041a06e
     MOV dword ptr [EDX + 0x8],ECX       ; 0041a071
-    MOV EAX,[0x007647b8]                ; 0041a074 | DAT_007647b8
+    MOV EAX,[0x007647b8]                ; 0041a074 | g_INT_ARRAY_00764794[9]
         ;   Label: LAB_0041a074
     PUSH EAX                            ; 0041a079
     LEA EAX,[ESP + 0x14]                ; 0041a07a
@@ -123,7 +123,7 @@ section .text
     MOV dword ptr [EDX + 0x4],ECX       ; 0041a09c
     MOV ECX,dword ptr [EAX + 0x8]       ; 0041a09f
     MOV dword ptr [EDX + 0x8],ECX       ; 0041a0a2
-    MOV EDX,dword ptr [0x007647bc]      ; 0041a0a5 | DAT_007647bc
+    MOV EDX,dword ptr [0x007647bc]      ; 0041a0a5 | g_INT_ARRAY_00764794[10]
         ;   Label: LAB_0041a0a5
     PUSH EDX                            ; 0041a0ab
     LEA EAX,[ESP + 0x8]                 ; 0041a0ac

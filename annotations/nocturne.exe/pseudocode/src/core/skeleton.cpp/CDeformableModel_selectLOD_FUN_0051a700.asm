@@ -16,7 +16,7 @@
 ;
 ; Referenced Globals:
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005ae704 = 01b4d738
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_0041d450
@@ -33,7 +33,7 @@ section .text
     SUB ESP,0x8                         ; 0051a702
     MOV EBX,dword ptr [ESP + 0x14]      ; 0051a705
     MOV EDX,dword ptr [0x005ae704]      ; 0051a709 | g_CDemonRenderer_PTR_005ae704
-    PUSH EDX                            ; 0051a70f | DAT_01b4d738
+    PUSH EDX                            ; 0051a70f | g_CDemonRenderer_01b4d738
     CALL engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090 ; 0051a710
         ;   XREF to: 00461090 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00461090(CDemonRenderer * this_ptr)
     ADD ESP,0x4                         ; 0051a715

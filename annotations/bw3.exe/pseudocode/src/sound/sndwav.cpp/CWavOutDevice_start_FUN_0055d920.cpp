@@ -18,10 +18,11 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0055d920(CWavOutDevice *thi
   if (0 < g_INT_02cf5500) {
     iVar2 = 0;
     do {
-      memset(*(void **)(iVar2 + 0x2cf5490),0,0x20);
-      **(uint **)(iVar2 + 0x2cf5490) = *(uint *)(iVar2 + 0x2cf54d0);
-      *(int *)(*(int *)(iVar2 + 0x2cf5490) + 0xc) = iVar3;
-      *(int *)(*(int *)(iVar2 + 0x2cf5490) + 4) =
+      memset(*(void **)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2),0,0x20);
+      **(uint **)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) =
+           *(uint *)((int)g_LPVOID_ARRAY_02cf54d0 + iVar2);
+      *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) + 0xc) = iVar3;
+      *(int *)(*(int *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar2) + 4) =
            g_INT_02cf54f4 *
            ((int)((g_INT_02cf54f0 + (g_INT_02cf54f0 >> 0x1f) * -8) -
                  (uint)((g_INT_02cf54f0 >> 0x1f) << 2 < 0)) >> 3) * g_INT_02cf54fc;

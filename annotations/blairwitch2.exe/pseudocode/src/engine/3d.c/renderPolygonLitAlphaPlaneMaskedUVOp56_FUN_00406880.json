@@ -2,16 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 132,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 77,
-    "suspect_count": 4,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "shadow_pointer_walk"
     ],
     "total_lines": 228
@@ -214,6 +215,70 @@
       "severity": "moderate",
       "text": "return (SMRGLHeaderExtended *)((int)&prim[1].base + (prim->base).count * 0xc);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 49,
+      "match": "0xfbffff",
+      "severity": "moderate",
+      "text": "if (0xfbffff < iVar3) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 50,
+      "match": "0xfbffff",
+      "severity": "moderate",
+      "text": "iVar3 = 0xfbffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 52,
+      "match": "0xfbffff",
+      "severity": "moderate",
+      "text": "if (0xfbffff < iVar5) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfbffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4560983 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 53,
+      "match": "0xfbffff",
+      "severity": "moderate",
+      "text": "iVar5 = 0xfbffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 63,
+      "match": "0xfeffff",
+      "severity": "moderate",
+      "text": "if (0xfeffff < iVar3) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 64,
+      "match": "0xfeffff",
+      "severity": "moderate",
+      "text": "iVar3 = 0xfeffff;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 66,
+      "match": "0xfeffff",
+      "severity": "moderate",
+      "text": "if (0xfeffff < iVar5) {",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfeffff matches address of g_CHAR_ARRAY_ARRAY_00b667a8 (+4757591 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 67,
+      "match": "0xfeffff",
+      "severity": "moderate",
+      "text": "iVar5 = 0xfeffff;",
+      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

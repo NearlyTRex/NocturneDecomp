@@ -79,8 +79,8 @@ float g_FLOAT_01d1e33c = {};
 float g_FLOAT_01d1e340 = {};
 float g_FLOAT_01d1e344 = {};
 
-// float[64]
-float g_FLOAT_ARRAY_01d1a124[64] = {};
+// float[64][8]
+float g_FLOAT_ARRAY_ARRAY_01d1a124[64][8] = {};
 
 // int
 int g_INT_01d19ba8 = {};

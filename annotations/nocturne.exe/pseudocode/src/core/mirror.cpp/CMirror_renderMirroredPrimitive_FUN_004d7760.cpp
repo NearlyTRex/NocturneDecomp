@@ -6,24 +6,22 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004d7760(CMirror *this_ptr,SMRGLHeaderPrimitive *prim)
 
 {
   uint uVar1;
   
-  _DAT_01cc942c = (prim->base).count;
-  _DAT_01cc9430 = (prim->surface_normal).A;
-  _DAT_01cc9434 = (prim->surface_normal).B;
-  _DAT_01cc9438 = (prim->surface_normal).C;
-  _DAT_01cc943c = (prim->surface_normal).D;
-  _DAT_01cc9440 = prim[1].base.type;
-  _DAT_01cc9444 = prim[1].surface_normal.B;
-  _DAT_01cc9448 = prim[2].base.type;
-  _DAT_01cc944c = prim[2].surface_normal.B;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.base.base.count = (prim->base).count;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.A = (prim->surface_normal).A;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.B = (prim->surface_normal).B;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.C = (prim->surface_normal).C;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.base.surface_normal.D = (prim->surface_normal).D;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[0] = prim[1].base.type;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[1] = prim[1].surface_normal.B.i;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[2] = prim[2].base.type;
+  g_SMRGLPrimitiveQuadIndex_01cc9428.vertices[3] = prim[2].surface_normal.B.i;
   uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004d74a0
-                    (this_ptr,(SMRGLHeaderPrimitive *)0x1cc9428);
+                    (this_ptr,&g_SMRGLPrimitiveQuadIndex_01cc9428.base);
   if (uVar1 == 0) {
     return;
   }

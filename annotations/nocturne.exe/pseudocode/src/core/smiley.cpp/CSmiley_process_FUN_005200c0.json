@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 847,
-    "complexity_score": 495,
+    "complexity_score": 479,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 375,
-    "suspect_count": 10,
+    "pseudocode_lines": 374,
+    "suspect_count": 9,
     "suspect_types": [
       "unresolved_funcptr",
       "unrolled_memset",
-      "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 1222
+    "total_lines": 1221
   },
   "cross_references": [],
   "function": {
@@ -215,9 +214,9 @@
     },
     {
       "addr": "005b7650",
-      "name": "DAT_005b7650",
-      "type": "undefined4",
-      "value": null
+      "name": "g_CEventList_PTR_005b7650",
+      "type": "CEventList*",
+      "value": "01c03a10"
     },
     {
       "addr": "005b96c4",
@@ -245,8 +244,8 @@
     },
     {
       "addr": "02da8a7c",
-      "name": "DAT_02da8a7c",
-      "type": "undefined4",
+      "name": "g_INT_02da8a7c",
+      "type": "int",
       "value": null
     },
     {
@@ -705,16 +704,8 @@
       "type": "warning_type_propagation"
     },
     {
-      "description": "Overlapping global symbols",
-      "line": 3,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 114,
+      "line": 113,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -722,7 +713,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 223,
+      "line": 222,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(iRam0000014c + 0xe8))(0);",
@@ -730,7 +721,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 76,
+      "line": 75,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -738,7 +729,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 187,
+      "line": 186,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -746,7 +737,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 317,
+      "line": 316,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -754,7 +745,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 336,
+      "line": 335,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",
@@ -762,7 +753,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 364,
+      "line": 363,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.position_delta.z = 0.0;",
@@ -770,7 +761,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 367,
+      "line": 366,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).base.model.accumulated_root_motion.z = 0.0;",

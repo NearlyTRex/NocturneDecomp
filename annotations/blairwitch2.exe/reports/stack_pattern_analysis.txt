@@ -21,7 +21,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_unknown.c_FUN_005c045c
     Address: 005c045c
-    Suspect count: 63
+    Suspect count: 62
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 005c05fe: SUB ESP,EAX
     - [alt_frame_pointer] at 005c060e: MOV ESI,ESP
@@ -270,4 +270,4 @@ CORRELATION: Stack patterns vs suspect counts
 Functions with stack patterns tend to have more suspects:
 
   With stack patterns:    avg 19.2 suspects/function
-  Without stack patterns: avg 4.4 suspects/function
+  Without stack patterns: avg 4.5 suspects/function

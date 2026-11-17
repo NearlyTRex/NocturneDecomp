@@ -45,13 +45,13 @@
   "globals": [
     {
       "addr": "01326d20",
-      "name": "g_CHAR_ARRAY_01326d20",
-      "type": "char[76797]",
+      "name": "g_SFogImagePlane_01326d20",
+      "type": "SFogImagePlane",
       "value": null
     },
     {
       "addr": "01326e60",
-      "name": "g_CHAR_ARRAY_01326d20+0x140",
+      "name": "g_SFogImagePlane_01326d20.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -181,9 +181,9 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(char *)((int)output_buffer",
+      "match": "(SFogImagePlane *)((int)output_buffer",
       "severity": "moderate",
-      "text": "output_buffer = (char *)((int)output_buffer + 0x140);",
+      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_cast"
     },
     {
@@ -191,7 +191,7 @@
       "line": 36,
       "match": "(int)output_buffer",
       "severity": "moderate",
-      "text": "output_buffer = (char *)((int)output_buffer + 0x140);",
+      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_truncation"
     }
   ]

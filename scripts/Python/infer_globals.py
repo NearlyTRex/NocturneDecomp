@@ -29,7 +29,10 @@ block (initialised data, .bss, or the RUNTIME_HEAP block that holds the rest of
   sibling     --reference: functions the sibling mapping pairs with the reference
               program are aligned instruction by instruction, and each address the
               target uses is matched to the reference's defined global at the same
-              operand. The reference's type and element count carry over.
+              operand. The reference's type and element count carry over. A type
+              the target lacks is sized from the reference, so a plan made right
+              after importing the type is correct before the next export; --apply
+              reports "type not in the program" for one never imported.
 
 Evidence is merged into candidate objects, strongest source first, and an object
 only claims bytes no stronger object or existing definition holds. An array runs
@@ -45,7 +48,11 @@ automatic name `g_<type>_<address>` (strings keep Ghidra's own `s_` label).
         --project projects --project-name NocturneEdit --apply [--min-confidence high]
 
 --apply defines the data and labels in the Ghidra program. It only replaces
-undefined data, never a defined type; snapshot the project first.
+undefined data; a defined type goes only when the plan lists it as replaced and
+the matching flag is given: --replace-strings for an auto-created string,
+--replace-auto for a global whose label is still the automatic `g_<TYPE>_<addr>`
+that a high-confidence reference object covers (a folded ±N piece of it, or the
+object itself mis-sized). Snapshot the project first.
 
 #@author NearlyTRex
 #@category Annotations
@@ -86,8 +93,11 @@ BUILTIN_SIZES = {
     "short": 2, "ushort": 2, "word": 2,
     "int": 4, "uint": 4, "long": 4, "ulong": 4, "dword": 4, "float": 4, "pointer": 4,
     "double": 8, "longlong": 8, "ulonglong": 8, "qword": 8,
-    "float10": 10,
+    "float10": 10, "wchar_t": 2,
 }
+ARRAY_TYPE = re.compile(r"^(.*)\[(\d+)\]$")
+# element, outermost dimension, the remaining dimensions
+OUTER_DIMENSION = re.compile(r"^([^\[]*)\[(\d+)\]((?:\[\d+\])*)$")
 FLOAT_BY_SIZE = {4: "float", 8: "double", 10: "float10"}
 FINT_BY_SIZE = {2: "short", 4: "int", 8: "longlong"}
 PLAIN_BY_SIZE = {1: "byte", 2: "short", 4: "int", 8: "qword"}
@@ -192,19 +202,24 @@ def load_labels(program):
 
 
 def load_type_sizes(program):
-    """Type name -> byte length from the data_types export."""
+    """(type name -> byte length, typedef name -> base name) from the data_types export.
+
+    Typedefs are exported without a length (`HGLOBAL` -> `HANDLE`), so they are
+    sized through their base."""
     path = os.path.join(sm.ANNOTATIONS, program, "data_types", "data_types.json")
-    sizes = {}
+    sizes, bases = {}, {}
     try:
         with open(path) as fh:
             doc = json.load(fh)
     except OSError:
-        return sizes
+        return sizes, bases
     for kind in ("structs", "unions", "typedefs", "enums"):
         for r in doc.get(kind) or []:
             if r.get("name") and r.get("len"):
                 sizes[r["name"]] = r["len"]
-    return sizes
+            elif r.get("name") and r.get("base"):
+                bases[r["name"]] = r["base"]
+    return sizes, bases
 
 
 class Program:
@@ -219,7 +234,8 @@ class Program:
         self.defined = load_defined(name)
         self._defined_starts = [d[0] for d in self.defined]
         self.labels = load_labels(name)
-        self.type_sizes = load_type_sizes(name)
+        self.type_sizes, self.typedef_bases = load_type_sizes(name)
+        self.borrowed = None      # a program whose types size the ones this one lacks
         self.functions = {int(f["addr"], 16): f for f in self.image.functions if "addr" in f}
         self.code = [(s.va, s.va + max(s.vsize, s.raw_size)) for s in self.image.sections if s.executable]
 
@@ -268,11 +284,34 @@ class Program:
             return None
         return text.decode("ascii")
 
-    def size_of(self, type_name):
-        """Byte length of a type name ('T*' is a pointer), or None if unknown."""
+    def size_of(self, type_name, borrow=True, depth=0):
+        """Byte length of a type name ('T*' is a pointer, 'T[N]' an array, a typedef
+        its base), or None if unknown. With `borrow`, a type this program lacks is
+        sized by the borrowed (reference) program."""
+        type_name = type_name.strip()
         if type_name.endswith("*"):
             return 4
-        return BUILTIN_SIZES.get(type_name) or self.type_sizes.get(type_name)
+        m = ARRAY_TYPE.match(type_name)
+        if m:
+            inner = self.size_of(m.group(1), borrow, depth)
+            return inner * int(m.group(2)) if inner else None
+        size = BUILTIN_SIZES.get(type_name) or self.type_sizes.get(type_name)
+        if size:
+            return size
+        if type_name in self.typedef_bases and depth < 16:
+            size = self.size_of(self.typedef_bases[type_name], borrow, depth + 1)
+            if size:
+                return size
+        if borrow and self.borrowed is not None:
+            return self.borrowed.size_of(type_name, False, depth)
+        return None
+
+    def is_auto_label(self, va):
+        """Does `va` carry Create Data Label's automatic `g_<TYPE>_<addr>` name?
+
+        Nobody chose that name, so the definition under it may be replaced."""
+        name = self.labels.get(va)
+        return bool(name) and re.match(r"^g_[A-Za-z0-9_]+_%08x$" % va, name) is not None
 
 
 # --------------------------------------------------------------------------
@@ -640,10 +679,13 @@ def sibling_evidence(target, reference, mapping_path, min_confidence=0.9):
             if obj is None:
                 continue
             start, length, t, count, ref_name = obj
+            # an array's record already names its element (`char[256]` x10 is
+            # char[10][256]); only a count-less `T[N]` spells its own count
+            elem = t if count else element_type(t)
             off = ra - start
-            if off and target.size_of(element_type(t)) != reference.size_of(element_type(t)):
+            if off and target.size_of(elem, borrow=False) not in (None, reference.size_of(elem)):
                 continue
-            out.append(Evidence(tb - off, "sibling", type=element_type(t), size=length,
+            out.append(Evidence(tb - off, "sibling", type=elem, size=length,
                                 count=count, func=fb.get("name"), at=tb,
                                 note=ref_name or "%s@%08x" % (t, start), ref=(start, off)))
     return out, shapes
@@ -728,6 +770,11 @@ def label_type_name(type_name, count):
     target is just `PTR`) and an array adds `_ARRAY`."""
     suffixes = ["ARRAY"] if count else []
     t = type_name
+    m = ARRAY_TYPE.match(t)
+    while m:
+        suffixes.insert(0, "ARRAY")
+        t = m.group(1)
+        m = ARRAY_TYPE.match(t)
     if t in ("pointer", "code*"):
         # nothing left to peel: label.py joins the suffixes as collected, outermost first
         return "_".join(suffixes + ["PTR"])
@@ -771,6 +818,22 @@ class Inferrer:
         self.conflicts = []
         self.already_defined = 0
         self.folded = 0
+        self.sibling_keys = sorted(a for a, evs in self.by_addr.items() if any(e.source == "sibling" for e in evs))
+
+    def foreign_object_inside(self, start, end, refs):
+        """A reference object other than `refs` mapped to start inside (start, end)?
+
+        The reference's objects are disjoint there, so one landing inside this
+        object means this build laid them out differently (bw1 has 7 graphics
+        menu buffers where nocedit has 9, and the tables after them sit 512
+        bytes earlier): the reference's extent does not hold here."""
+        i = bisect.bisect_right(self.sibling_keys, start)
+        while i < len(self.sibling_keys) and self.sibling_keys[i] < end:
+            if any(e.source == "sibling" and e.ref and e.ref[0] not in refs
+                   for e in self.by_addr[self.sibling_keys[i]]):
+                return True
+            i += 1
+        return False
 
     # occupancy ----------------------------------------------------------
     def blocker(self, start, end):
@@ -787,8 +850,15 @@ class Inferrer:
         return None
 
     def place(self, cand):
-        if self.p.defined_at(cand.start) is not None:
-            self.already_defined += 1
+        d = self.p.defined_at(cand.start)
+        if d is not None:
+            if d[0] == cand.start and d[1] != cand.size and self.p.is_auto_label(d[0]) \
+                    and cand.confidence == "high" and (cand.note or "").startswith("reference:"):
+                # an earlier run defined this object with the wrong extent
+                cand.note += "; blocked by existing %s at %08x" % (d[2], d[0])
+                self.conflicts.append(cand)
+            else:
+                self.already_defined += 1
             return False
         i = bisect.bisect_right(self.placed, (cand.start, float("inf")))
         if i and self.placed[i - 1][1] > cand.start:
@@ -846,6 +916,10 @@ class Inferrer:
                 self.conflicts.append(Candidate(addr, t, count, total, "low", self.sources(self.by_addr[addr]),
                                                 note="this build's accesses do not fit the reference layout"))
                 continue
+            if self.foreign_object_inside(addr, addr + total, {e.ref[0] for e in evs if e.ref}):
+                self.conflicts.append(Candidate(addr, t, count, total, "low", self.sources(self.by_addr[addr]),
+                                                note="another reference object maps inside it"))
+                continue
             if len(evs) == 1 and evs[0].ref and evs[0].ref[1]:
                 # one operand that landed inside the reference object: if this build
                 # resized the type, start - offset is not where the object starts
@@ -853,9 +927,10 @@ class Inferrer:
                                                 note="one reference operand, inside the object"))
                 continue
             conf = "high" if n == sum(votes.values()) else "medium"
-            note = Counter(e.note for e in evs).most_common(1)[0][0]
-            self.place(Candidate(addr, t, count, total, conf, self.sources(self.by_addr[addr]),
-                                 note="reference: %s" % note))
+            note = "reference: %s" % Counter(e.note for e in evs).most_common(1)[0][0]
+            if self.p.size_of(t, borrow=False) is None:
+                note += " (type %s only in the reference)" % t
+            self.place(Candidate(addr, t, count, total, conf, self.sources(self.by_addr[addr]), note=note))
 
     def written(self, start, end):
         """Does code write anywhere in [start, end), or hand `start` to a destination?"""
@@ -1122,27 +1197,45 @@ def check_no_overlaps(program, candidates):
         last_end, last = c.end, c
 
 
-def contradicted_strings(program, conflicts):
-    """start -> (type, size) of auto-created strings a high-confidence candidate overlaps.
+def contradicted_definitions(program, conflicts):
+    """start -> (type, size) of definitions nobody chose that a candidate overrules.
 
     Auto-analysis defines a string wherever it finds printable bytes, so it
     swallows the last byte of a constant (`@` is 0x40, the top byte of many
-    doubles) or takes the name field of an initialised struct for a literal.
-    Only strings nobody named are offered for replacement."""
+    doubles) or takes the name field of an initialised struct for a literal; a
+    high-confidence candidate over unnamed strings replaces them. It also starts
+    a string a few bytes late; a string candidate replaces an unnamed string that
+    lies inside it. And a high-confidence reference object replaces what an
+    earlier run defined under automatic `g_<TYPE>_<addr>` labels inside it: a
+    folded ±N piece, or the object itself with the wrong extent."""
     out = {}
     for c in conflicts:
-        if c.confidence != "high":
-            continue
         a = program.next_defined(c.start)
         hits = []
         while a is not None and a < c.end:
-            d = program.defined_at(a)
-            hits.append(d)
+            hits.append(program.defined_at(a))
             a = program.next_defined(a)
         d = program.defined_at(c.start)
         if d is not None:
             hits.append(d)
-        if hits and all(h[2] in STRING_TYPES and h[0] not in program.labels for h in hits):
+        if not hits:
+            continue
+
+        def inside(h):
+            return h[0] >= c.start and h[0] + h[1] <= c.end
+
+        def unnamed_string(h):
+            return h[2] in STRING_TYPES and h[0] not in program.labels
+
+        def auto_piece(h):
+            # a piece that starts inside the object, even an array an earlier run
+            # sized to the next global and so ran past the object's end
+            return program.is_auto_label(h[0]) and (inside(h) or h[0] > c.start)
+
+        high = c.confidence == "high"
+        reference = (c.note or "").startswith("reference:")
+        if all(unnamed_string(h) and (high or (c.type == "string" and inside(h)))
+               or high and reference and auto_piece(h) for h in hits):
             for h in hits:
                 out[h[0]] = (h[2], h[1])
     return out
@@ -1179,20 +1272,25 @@ def plan(program_name, reference_name=None, mapping_path=None, image=None, refer
     if reference_name:
         mapping_path = mapping_path or os.path.join(
             sm.ANNOTATIONS, program_name, "reports", "sibling_mapping_from_%s.json" % reference_name.split(".")[0])
-        sibling, shapes = sibling_evidence(target, Program(reference_name, reference_image), mapping_path)
+        reference = Program(reference_name, reference_image)
+        target.borrowed = reference
+        sibling, shapes = sibling_evidence(target, reference, mapping_path)
         evidence += sibling
     inferrer = Inferrer(target, evidence, ref_shapes=shapes)
     candidates = inferrer.run()
-    replaced = contradicted_strings(target, inferrer.conflicts)
+    replaced = contradicted_definitions(target, inferrer.conflicts)
     replaced.update(early_strings(target, inferrer.by_addr))
+    replaced_rows = [{"start": "%08x" % a, "type": t, "size": n, "label": target.labels.get(a)}
+                     for a, (t, n) in sorted(replaced.items())]
     if replaced:
         target.drop_defined(set(replaced))
+        for a in replaced:
+            target.labels.pop(a, None)    # its automatic label goes with it
         inferrer = Inferrer(target, evidence, ref_shapes=shapes)
         candidates = inferrer.run()
     check_no_overlaps(target, candidates)
     return {
-        "replaced_definitions": [{"start": "%08x" % a, "type": t, "size": n}
-                                 for a, (t, n) in sorted(replaced.items())],
+        "replaced_definitions": replaced_rows,
         "program": program_name,
         "reference": reference_name,
         "candidates": [c.as_json(target.labels.get(c.start)) for c in candidates],
@@ -1216,7 +1314,9 @@ def render(doc):
                  sum(1 for x in cands if x["type"].endswith("*") or x["type"] == "pointer")),
              "already defined (skipped): %d" % doc["already_defined"],
              "auto-created strings a candidate replaces: %d (applied only with --replace-strings)"
-             % len(doc["replaced_definitions"]),
+             % sum(1 for r in doc["replaced_definitions"] if r["type"] in STRING_TYPES),
+             "auto-labelled globals a reference object replaces: %d (applied only with --replace-auto)"
+             % sum(1 for r in doc["replaced_definitions"] if r["type"] not in STRING_TYPES),
              "conflicts (not placed): %d" % len(doc["conflicts"]),
              "references outside every block: %d addresses" % len(doc["unmapped"]), ""]
     by_type = Counter(x["type"] for x in cands)
@@ -1229,8 +1329,9 @@ def render(doc):
             ",".join("%s:%d" % kv for kv in sorted(x["sources"].items())),
             "  " + x["note"] if x["note"] else ""))
     if doc["replaced_definitions"]:
-        lines += ["", "AUTO-CREATED STRINGS TO REPLACE", "-" * 80]
-        lines += ["  %s  %s, %d bytes" % (r["start"], r["type"], r["size"])
+        lines += ["", "DEFINITIONS TO REPLACE", "-" * 80]
+        lines += ["  %s  %s, %d bytes%s" % (r["start"], r["type"], r["size"],
+                                            "  " + r["label"] if r.get("label") else "")
                   for r in doc["replaced_definitions"]]
     if doc["conflicts"]:
         lines += ["", "CONFLICTS (NOT PLACED)", "-" * 80]
@@ -1263,6 +1364,11 @@ def resolve_type(name, dtm, by_name, types):
     """A Ghidra DataType for a candidate type name, or None."""
     if name == "string":
         return types["string"]
+    m = OUTER_DIMENSION.match(name)
+    if m:
+        # C order, as Ghidra names them: int[3][15] is 3 of int[15]
+        inner = resolve_type(m.group(1) + m.group(3), dtm, by_name, types)
+        return types["array"](inner, int(m.group(2)), inner.getLength()) if inner is not None else None
     if name.endswith("*"):
         inner = name[:-1]
         if inner == "code":
@@ -1296,7 +1402,7 @@ def live_blocker(listing, addr, end, clearing, undefined, address_set):
 
 
 def apply_plan(project_dir, project_name, program_name, doc, min_confidence="medium", apply=False,
-               replace_strings=False):
+               replace_strings=False, replace_auto=False):
     """Check every candidate against the live program; with `apply`, define it.
 
     Returns [(start, shape, outcome)]. Without `apply` nothing is written: each
@@ -1309,7 +1415,7 @@ def apply_plan(project_dir, project_name, program_name, doc, min_confidence="med
                                            LongLongDataType, PointerDataType, QWordDataType, ShortDataType,
                                            TerminatedStringDataType, UnsignedCharDataType,
                                            UnsignedIntegerDataType, UnsignedLongLongDataType,
-                                           UnsignedShortDataType)
+                                           UnsignedShortDataType, WideCharDataType)
     from ghidra.program.model.address import AddressSet
     from ghidra.program.model.data import DataUtilities, Undefined
     from ghidra.util.task import ConsoleTaskMonitor
@@ -1324,9 +1430,9 @@ def apply_plan(project_dir, project_name, program_name, doc, min_confidence="med
                 "uint": UnsignedIntegerDataType.dataType, "float": FloatDataType.dataType,
                 "double": DoubleDataType.dataType, "float10": Float10DataType.dataType,
                 "longlong": LongLongDataType.dataType, "ulonglong": UnsignedLongLongDataType.dataType,
-                "qword": QWordDataType.dataType}
+                "qword": QWordDataType.dataType, "wchar_t": WideCharDataType.dataType}
     types = {"builtins": builtins, "string": TerminatedStringDataType.dataType,
-             "pointer": PointerDataType}
+             "pointer": PointerDataType, "array": ArrayDataType}
     rank = CONFIDENCE.index(min_confidence)
     rows = []
     project = pyghidra.open_project(os.path.abspath(project_dir), project_name)
@@ -1344,20 +1450,28 @@ def apply_plan(project_dir, project_name, program_name, doc, min_confidence="med
             ok = False
             try:
                 clearing = set()
-                for r in doc["replaced_definitions"] if replace_strings else ():
+                for r in doc["replaced_definitions"]:
+                    is_string = r["type"] in STRING_TYPES
+                    if not (replace_strings if is_string else replace_auto):
+                        continue
+                    shape = "string" if is_string else r["type"]
                     addr = space.getAddress(int(r["start"], 16))
                     d = listing.getDefinedDataAt(addr)
-                    if d is None or d.getLength() != r["size"] or "string" not in d.getDataType().getName().lower():
-                        rows.append((r["start"], "string", "changed since export, left alone"))
+                    names = [s.getName() for s in symbols.getSymbols(addr) if not s.isDynamic()]
+                    if d is None or d.getLength() != r["size"] or (
+                            "string" not in d.getDataType().getName().lower() if is_string
+                            else r.get("label") not in names):
+                        rows.append((r["start"], shape, "changed since export, left alone"))
                         continue
                     clearing.add(addr.getOffset())
                     if apply:
                         listing.clearCodeUnits(addr, addr.add(r["size"] - 1), False)
-                        # as Create or Replace String does: the old string's label goes with it
+                        # as Create or Replace String does: the old label goes with the data
                         for sym in list(symbols.getSymbols(addr)):
-                            if not sym.isDynamic() and sym.getName().startswith("s_"):
+                            if not sym.isDynamic() and (sym.getName().startswith("s_") if is_string
+                                                        else sym.getName() == r.get("label")):
                                 symbols.removeSymbolSpecial(sym)
-                    rows.append((r["start"], "string", "cleared" if apply else "would clear"))
+                    rows.append((r["start"], shape, "cleared" if apply else "would clear"))
                 for c in doc["candidates"]:
                     shape = "%s[%d]" % (c["type"], c["count"]) if c["count"] else c["type"]
                     if CONFIDENCE.index(c["confidence"]) > rank:
@@ -1422,6 +1536,8 @@ def main(argv=None):
     ap.add_argument("--min-confidence", choices=CONFIDENCE, default="medium")
     ap.add_argument("--replace-strings", action="store_true",
                     help="clear the auto-created strings the plan lists as wrong before defining")
+    ap.add_argument("--replace-auto", action="store_true",
+                    help="clear the auto-labelled globals the plan lists as replaced by a reference object")
     ap.add_argument("--apply", action="store_true",
                     help="write to the program (default: a dry run that checks every row live)")
     args = ap.parse_args(argv)
@@ -1432,7 +1548,7 @@ def main(argv=None):
                                                     len(doc["conflicts"]), tpath))
     if args.project:
         rows = apply_plan(args.project, args.project_name, args.program, doc, args.min_confidence,
-                          args.apply, args.replace_strings)
+                          args.apply, args.replace_strings, args.replace_auto)
         path = os.path.join(os.path.dirname(tpath), "inferred_globals_apply.txt")
         with open(path, "w") as fh:
             fh.writelines("%s %-32s %s\n" % row for row in rows)

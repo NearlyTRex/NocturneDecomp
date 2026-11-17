@@ -9,10 +9,10 @@
 ; Referenced Globals:
 ;   TerminatedCString s_s_0058ce1b
 ;   int g_WindowWidth = 0x140
-;   undefined4 DAT_01e3161c
-;   undefined4 DAT_01e31620
-;   undefined4 DAT_01e31624
-;   undefined4 DAT_01e31628
+;   int g_INT_01e3161c
+;   int g_INT_01e31620
+;   int g_INT_01e31624
+;   int g_INT_01e31628
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -48,20 +48,20 @@ section .text
     PUSH EAX                            ; 004f1551
     CALL crt_stdio.c_sprintf_FUN_00563c90 ; 004f1552
         ;   XREF to: 00563c90 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_sprintf_FUN_00563c90(char * buffer, char * format)
-    MOV ECX,dword ptr [0x01e3161c]      ; 004f1557 | DAT_01e3161c
+    MOV ECX,dword ptr [0x01e3161c]      ; 004f1557 | g_INT_01e3161c
     ADD ESP,0xc                         ; 004f155d
     CMP EBX,ECX                         ; 004f1560
     JNZ 0x004f1570                      ; 004f1562
         ;   XREF to: 004f1570 (CONDITIONAL_JUMP)  ; LAB_004f1570
-    CMP EBP,dword ptr [0x01e31620]      ; 004f1564 | DAT_01e31620
+    CMP EBP,dword ptr [0x01e31620]      ; 004f1564 | g_INT_01e31620
     JNZ 0x004f1570                      ; 004f156a
         ;   XREF to: 004f1570 (CONDITIONAL_JUMP)  ; LAB_004f1570
     MOV byte ptr [ESP],0x73             ; 004f156c
-    CMP EBX,dword ptr [0x01e31624]      ; 004f1570 | DAT_01e31624
+    CMP EBX,dword ptr [0x01e31624]      ; 004f1570 | g_INT_01e31624
         ;   Label: LAB_004f1570
     JNZ 0x004f1584                      ; 004f1576
         ;   XREF to: 004f1584 (CONDITIONAL_JUMP)  ; LAB_004f1584
-    CMP EBP,dword ptr [0x01e31628]      ; 004f1578 | DAT_01e31628
+    CMP EBP,dword ptr [0x01e31628]      ; 004f1578 | g_INT_01e31628
     JNZ 0x004f1584                      ; 004f157e
         ;   XREF to: 004f1584 (CONDITIONAL_JUMP)  ; LAB_004f1584
     MOV byte ptr [ESP],0x64             ; 004f1580

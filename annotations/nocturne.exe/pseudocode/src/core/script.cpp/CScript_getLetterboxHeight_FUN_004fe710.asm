@@ -16,7 +16,7 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01e56c20
+;   float g_FLOAT_01e56c20
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_00563a30
@@ -47,7 +47,7 @@ section .text
     SAR EAX,0x1                         ; 004fe748
     MOV dword ptr [ESP + 0x4],EAX       ; 004fe74a
     FILD dword ptr [ESP + 0x4]          ; 004fe74e
-    FMUL float ptr [0x01e56c20]         ; 004fe752 | DAT_01e56c20
+    FMUL float ptr [0x01e56c20]         ; 004fe752 | g_FLOAT_01e56c20
     CALL crt_math.c_round_FUN_00563a30  ; 004fe758
         ;   XREF to: 00563a30 (UNCONDITIONAL_CALL)  ; double crt_math.c_round_FUN_00563a30(double value)
     FISTP dword ptr [ESP]               ; 004fe75d

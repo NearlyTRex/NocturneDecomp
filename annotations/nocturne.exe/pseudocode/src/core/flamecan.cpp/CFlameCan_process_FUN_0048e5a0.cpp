@@ -23,7 +23,7 @@ void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_0048e5a0(CFlameCan *this_pt
   float fStack_8;
   
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                    (0x01C03A10,this_ptr->on_fire_condition);
+                    (g_CEventList_PTR_005b7650,this_ptr->on_fire_condition);
   if (iVar2 == 0) {
     if (this_ptr->on_fire == 0) {
       return;

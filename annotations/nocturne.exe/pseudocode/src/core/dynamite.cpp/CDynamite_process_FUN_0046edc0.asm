@@ -14,7 +14,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_0057e4ee = 5
 ;   float FLOAT_0057e4f6 = 0.5
-;   undefined4 DAT_0059c91c
+;   float g_FLOAT_0059c91c = 3.5
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
 ;
@@ -63,7 +63,7 @@ section .text
     FLD float ptr [EBP + 0x14]          ; 0046ee07
     FMUL double ptr [0x0057e4ee]        ; 0046ee0a | DOUBLE_0057e4ee
     FMUL double ptr [ESP]               ; 0046ee10
-    FDIV float ptr [0x0059c91c]         ; 0046ee13 | DAT_0059c91c
+    FDIV float ptr [0x0059c91c]         ; 0046ee13 | g_FLOAT_0059c91c
     SUB ESP,0x4                         ; 0046ee19
     FSTP float ptr [ESP]                ; 0046ee1c
     CALL core_actor.cpp_randomChance_FUN_0040dea0 ; 0046ee1f

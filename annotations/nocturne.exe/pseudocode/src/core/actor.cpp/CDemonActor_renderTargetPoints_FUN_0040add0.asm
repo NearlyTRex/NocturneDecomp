@@ -11,10 +11,10 @@
 ; Referenced Globals:
 ;   float FLOAT_005992b0 = 256
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
-;   void* PTR_DAT_005ae700 = 01b4d738
+;   void* PTR_g_CDemonRenderer_01b4d738_005ae700 = 01b4d738
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01b4d738
+;   CDemonRenderer g_CDemonRenderer_01b4d738
 ;   undefined4 g_ColorCubeLookup+0x7c00
 ;   int g_ActiveRenderColor
 ;
@@ -59,7 +59,7 @@ section .text
     LEA EBX,[ESP + 0x78]                ; 0040ae1b
     MOV dword ptr [ESP + 0x88],EAX      ; 0040ae1f
     MOV EAX,EDI                         ; 0040ae26
-    MOV EDX,dword ptr [0x005ae700]      ; 0040ae28 | PTR_DAT_005ae700
+    MOV EDX,dword ptr [0x005ae700]      ; 0040ae28 | PTR_g_CDemonRenderer_01b4d738_005ae700
     FLD float ptr [EAX]                 ; 0040ae2e
     FMUL float ptr [0x005992b0]         ; 0040ae30 | FLOAT_005992b0
     FISTP dword ptr [EBX]               ; 0040ae36
@@ -71,13 +71,13 @@ section .text
     FISTP dword ptr [EBX + 0x8]         ; 0040ae4d
     LEA EAX,[ESP + 0x78]                ; 0040ae50
     PUSH EAX                            ; 0040ae54
-    MOV EAX,dword ptr [EDX]             ; 0040ae55 | DAT_01b4d738
+    MOV EAX,dword ptr [EDX]             ; 0040ae55 | g_CDemonRenderer_01b4d738
     ADD EAX,0xea5d0                     ; 0040ae57
     PUSH EAX                            ; 0040ae5c
     CALL engine_special.cpp_transformAndProjectPoint_FUN_0053075c ; 0040ae5d
         ;   XREF to: 0053075c (UNCONDITIONAL_CALL)  ; void engine_special.cpp_transformAndProjectPoint_FUN_0053075c(SProjectedVertex * output, CVector3i * input)
-    MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | PTR_DAT_005ae700
-    MOV ESI,dword ptr [ESI]             ; 0040ae68 | DAT_01b4d738
+    MOV ESI,dword ptr [0x005ae700]      ; 0040ae62 | PTR_g_CDemonRenderer_01b4d738_005ae700
+    MOV ESI,dword ptr [ESI]             ; 0040ae68 | g_CDemonRenderer_01b4d738
     MOV AH,byte ptr [ESI + 0xea5e3]     ; 0040ae6a
     ADD ESP,0x8                         ; 0040ae70
     TEST AH,0x80                        ; 0040ae73

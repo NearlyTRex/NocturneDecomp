@@ -8,13 +8,13 @@
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_00528080 at 005280a7
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc8328
-;   undefined4 DAT_02dc832c
-;   undefined4 DAT_02dc8330
-;   undefined4 DAT_02dc8334
-;   undefined4 DAT_02dc8338
-;   undefined4 DAT_02dc835c
-;   undefined4 DAT_02dc8380
+;   int g_INT_02dc8328
+;   int g_INT_02dc832c
+;   int g_INT_02dc8330
+;   int g_INT_02dc8334
+;   float* g_FLOAT_PTR_02dc8338
+;   float* g_FLOAT_PTR_02dc835c
+;   float* g_FLOAT_PTR_02dc8380
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -26,13 +26,13 @@ section .text
     PUSH EBX                            ; 005230d0
         ;   Label: sound_sndmain.cpp_freeMixBuffers_FUN_005230d0
     PUSH EBP                            ; 005230d1
-    MOV EDX,dword ptr [0x02dc835c]      ; 005230d2 | DAT_02dc835c
+    MOV EDX,dword ptr [0x02dc835c]      ; 005230d2 | g_FLOAT_PTR_02dc835c
     TEST EDX,EDX                        ; 005230d8
     JNZ 0x00523143                      ; 005230da
         ;   XREF to: 00523143 (CONDITIONAL_JUMP)  ; LAB_00523143
     PUSH ESI                            ; 005230dc
         ;   Label: LAB_005230dc
-    MOV ESI,dword ptr [0x02dc8380]      ; 005230dd | DAT_02dc8380
+    MOV ESI,dword ptr [0x02dc8380]      ; 005230dd | g_FLOAT_PTR_02dc8380
     TEST ESI,ESI                        ; 005230e3
     JZ 0x005230f8                       ; 005230e5
         ;   XREF to: 005230f8 (CONDITIONAL_JUMP)  ; LAB_005230f8
@@ -41,8 +41,8 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBP,EBP                         ; 005230ed
     ADD ESP,0x4                         ; 005230ef
-    MOV dword ptr [0x02dc8380],EBP      ; 005230f2 | DAT_02dc8380
-    MOV EAX,[0x02dc8338]                ; 005230f8 | DAT_02dc8338
+    MOV dword ptr [0x02dc8380],EBP      ; 005230f2 | g_FLOAT_PTR_02dc8380
+    MOV EAX,[0x02dc8338]                ; 005230f8 | g_FLOAT_PTR_02dc8338
         ;   Label: LAB_005230f8
     TEST EAX,EAX                        ; 005230fd
     JNZ 0x00523156                      ; 005230ff
@@ -61,10 +61,10 @@ section .text
     JNZ 0x00523106                      ; 00523124
         ;   XREF to: 00523106 (CONDITIONAL_JUMP)  ; LAB_00523106
     XOR EBX,EBX                         ; 00523126
-    MOV dword ptr [0x02dc8334],EBX      ; 00523128 | DAT_02dc8334
-    MOV dword ptr [0x02dc8328],EBX      ; 0052312e | DAT_02dc8328
-    MOV dword ptr [0x02dc832c],EBX      ; 00523134 | DAT_02dc832c
-    MOV dword ptr [0x02dc8330],EBX      ; 0052313a | DAT_02dc8330
+    MOV dword ptr [0x02dc8334],EBX      ; 00523128 | g_INT_02dc8334
+    MOV dword ptr [0x02dc8328],EBX      ; 0052312e | g_INT_02dc8328
+    MOV dword ptr [0x02dc832c],EBX      ; 00523134 | g_INT_02dc832c
+    MOV dword ptr [0x02dc8330],EBX      ; 0052313a | g_INT_02dc8330
     POP EBP                             ; 00523140
     POP EBX                             ; 00523141
     RET                                 ; 00523142
@@ -74,7 +74,7 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR EBX,EBX                         ; 00523149
     ADD ESP,0x4                         ; 0052314b
-    MOV dword ptr [0x02dc835c],EBX      ; 0052314e | DAT_02dc835c
+    MOV dword ptr [0x02dc835c],EBX      ; 0052314e | g_FLOAT_PTR_02dc835c
     JMP 0x005230dc                      ; 00523154
         ;   XREF to: 005230dc (UNCONDITIONAL_JUMP)  ; LAB_005230dc
     PUSH EAX                            ; 00523156
@@ -83,7 +83,7 @@ section .text
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     XOR ECX,ECX                         ; 0052315c
     ADD ESP,0x4                         ; 0052315e
-    MOV dword ptr [0x02dc8338],ECX      ; 00523161 | DAT_02dc8338
+    MOV dword ptr [0x02dc8338],ECX      ; 00523161 | g_FLOAT_PTR_02dc8338
     JMP 0x00523101                      ; 00523167
         ;   XREF to: 00523101 (UNCONDITIONAL_JUMP)  ; LAB_00523101
 

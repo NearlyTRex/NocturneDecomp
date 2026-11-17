@@ -429,12 +429,10 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     local_c0.channel_mode = local_60ac;
     dVar15 = round
                        ((((double)local_60b0 /
-                         g_DOUBLE_ARRAY_006011b8
-                         [local_f0.sampling_rate_index + local_f0.mpeg_version * 4]) *
-                        (double)*(int *)(&DAT_006011f8 +
-                                        local_f0.bitrate_index * 4 +
-                                        (local_f0.layer - 1U) * 0x3c + local_f0.mpeg_version * 0xb4)
-                        ) / (double)local_60ac);
+                         g_DOUBLE_ARRAY_ARRAY_006011b8[local_f0.mpeg_version]
+                         [local_f0.sampling_rate_index]) *
+                        (double)g_INT_ARRAY_ARRAY_ARRAY_006011f8[local_f0.mpeg_version + -1]
+                                [local_f0.layer + 2][local_f0.bitrate_index]) / (double)local_60ac);
     local_6c = (SMpegLayer3GranuleInfo *)(int)ROUND(dVar15);
     if (local_f0.padding != 0) {
       local_6c = (SMpegLayer3GranuleInfo *)((int)local_6c + 1);

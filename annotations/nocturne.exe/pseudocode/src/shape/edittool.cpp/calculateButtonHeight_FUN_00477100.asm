@@ -13,9 +13,9 @@
 ;   TerminatedCString s_shape_edittool_cpp_0057e4fa
 ;   TerminatedCString s_gEdFont_must_be_set_by_t_0057e510
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_01bcd070
-;   undefined4 DAT_01bcd9b8
-;   undefined4 DAT_01bcd9bc
+;   CBitFont* g_CBitFont_PTR_01bcd070
+;   int g_INT_01bcd9b8
+;   int g_INT_01bcd9bc
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -32,7 +32,7 @@ section .text
         ;   Label: shape_edittool.cpp_calculateButtonHeight_FUN_00477100
     PUSH EDI                            ; 00477101
     MOV EBX,dword ptr [ESP + 0xc]       ; 00477102
-    CMP dword ptr [0x01bcd070],0x0      ; 00477106 | DAT_01bcd070
+    CMP dword ptr [0x01bcd070],0x0      ; 00477106 | g_CBitFont_PTR_01bcd070
     JNZ 0x00477134                      ; 0047710d
         ;   XREF to: 00477134 (CONDITIONAL_JUMP)  ; LAB_00477134
     PUSH ESI                            ; 0047710f
@@ -45,20 +45,20 @@ section .text
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 00477130
     POP ESI                             ; 00477133
-    MOV EAX,[0x01bcd070]                ; 00477134 | DAT_01bcd070
+    MOV EAX,[0x01bcd070]                ; 00477134 | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_00477134
     PUSH 0x6a                           ; 00477139
     MOV ECX,dword ptr [EAX + 0x3168]    ; 0047713b
     PUSH EAX                            ; 00477141
-    MOV dword ptr [0x01bcd9b8],ECX      ; 00477142 | DAT_01bcd9b8
+    MOV dword ptr [0x01bcd9b8],ECX      ; 00477142 | g_INT_01bcd9b8
     CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0 ; 00477148
         ;   XREF to: 004930e0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004930e0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047714d
-    MOV [0x01bcd9bc],EAX                ; 00477150 | DAT_01bcd9bc
+    MOV [0x01bcd9bc],EAX                ; 00477150 | g_INT_01bcd9bc
     TEST EBX,EBX                        ; 00477155
     JNZ 0x0047717b                      ; 00477157
         ;   XREF to: 0047717b (CONDITIONAL_JUMP)  ; LAB_0047717b
-    MOV ECX,dword ptr [0x01bcd070]      ; 00477159 | DAT_01bcd070
+    MOV ECX,dword ptr [0x01bcd070]      ; 00477159 | g_CBitFont_PTR_01bcd070
     MOV ECX,dword ptr [ECX + 0x316c]    ; 0047715f
     MOV EAX,[0x005b7620]                ; 00477165 | g_WindowHeight
         ;   Label: LAB_00477165
@@ -72,7 +72,7 @@ section .text
     RET                                 ; 0047717a
     PUSH EBX                            ; 0047717b
         ;   Label: LAB_0047717b
-    MOV EDI,dword ptr [0x01bcd070]      ; 0047717c | DAT_01bcd070
+    MOV EDI,dword ptr [0x01bcd070]      ; 0047717c | g_CBitFont_PTR_01bcd070
     PUSH EDI                            ; 00477182
     CALL engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60 ; 00477183
         ;   XREF to: 00492e60 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_00492e60(CBitFont * this_ptr, char * text_string)

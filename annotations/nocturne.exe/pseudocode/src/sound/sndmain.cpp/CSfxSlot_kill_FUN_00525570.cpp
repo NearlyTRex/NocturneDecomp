@@ -6,15 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *this_ptr)
 
 {
   int *piVar1;
   CSfxSample *pCVar2;
   
-  if (_DAT_02dc84bc < 1) {
+  if (g_INT_02dc84bc < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 2836;
     core_main_c_displayErrorAndQuit_FUN_004c8440("SfxSlot::kill - must be locked!");
@@ -27,8 +25,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_00525570(CSfxSlot *this_ptr)
     engine_console_cpp_CConsole_printf_FUN_0043ac60(g_CConsolePtr,"Killing sfx %s\n",pCVar2);
   }
   if (this_ptr->hardware_buffer_handle != 0) {
-    if (_DAT_02dc8318 != (int *)0x0) {
-      (**(code **)(*_DAT_02dc8318 + 0x4c))(_DAT_02dc8318,this_ptr);
+    if (g_CSoundDevice_PTR_02dc8318 != (CSoundDevice *)0x0) {
+      (*g_CSoundDevice_PTR_02dc8318->vtable->killSfx)(g_CSoundDevice_PTR_02dc8318,this_ptr);
     }
     this_ptr->hardware_buffer_handle = 0;
   }

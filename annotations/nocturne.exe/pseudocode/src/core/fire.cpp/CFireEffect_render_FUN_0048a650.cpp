@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr)
 
 {
@@ -31,7 +29,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
   CLaserBeam *this_ptr_15;
   
   iVar2 = 0;
-  if (0 < _DAT_01c23d48) {
+  if (0 < g_INT_01c23d48) {
     iVar1 = 0;
     do {
       if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) == 0) {
@@ -40,7 +38,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       }
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x260;
-    } while (iVar2 < _DAT_01c23d48);
+    } while (iVar2 < g_INT_01c23d48);
   }
   this_ptr_00 = g_RockPool;
   do {
@@ -48,7 +46,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       (*((this_ptr_00->base).vtable)->render)(&this_ptr_00->base);
     }
     this_ptr_00 = this_ptr_00 + 1;
-  } while (this_ptr_00 != (CRock *)&DAT_01c5c700);
+  } while (this_ptr_00 != g_RockPool + sizeof(g_RockPool) / sizeof(g_RockPool[0]));
   this_ptr_01 = g_FireballPool;
   core_fire_cpp_CFireball_setupRenderState_FUN_004842a0(g_FireballPool);
   do {
@@ -56,12 +54,12 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
       (*((this_ptr_01->base).vtable)->render)(&this_ptr_01->base);
     }
     this_ptr_01 = this_ptr_01 + 1;
-  } while (this_ptr_01 != (CFireball *)&DAT_01c5b4fc);
+  } while (this_ptr_01 != g_FireballPool + sizeof(g_FireballPool) / sizeof(g_FireballPool[0]));
   this_ptr_02 = g_ShellPool;
   do {
     (*((this_ptr_02->base).vtable)->render)(&this_ptr_02->base);
     this_ptr_02 = this_ptr_02 + 1;
-  } while (this_ptr_02 != (CShell *)&DAT_01c69610);
+  } while (this_ptr_02 != g_ShellPool + sizeof(g_ShellPool) / sizeof(g_ShellPool[0]));
   iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00461090(g_CDemonRenderer_PTR_005ae704)
   ;
   if (iVar2 == 0) {
@@ -70,7 +68,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
                (CVector3f *)0x0,(CMatrix3x3f *)0x0);
     iVar2 = 0;
     core_fire_cpp_CBulletHole_setupRenderState_FUN_00482ed0(g_CBulletHole_ARRAY_01c20148);
-    if (0 < _DAT_01c20140) {
+    if (0 < g_INT_01c20140) {
       iVar1 = 0;
       do {
         if (*(int *)((int)&g_CBulletHole_ARRAY_01c20148[0].actor_ptr + iVar1) != 0) {
@@ -79,7 +77,7 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x3c;
-      } while (iVar2 < _DAT_01c20140);
+      } while (iVar2 < g_INT_01c20140);
     }
     this_ptr_03 = g_CSmokeParticle_ARRAY_01c0a140;
     core_fire_cpp_CSmokeParticle_setupRenderState_FUN_00482680(g_CSmokeParticle_ARRAY_01c0a140);
@@ -88,22 +86,22 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
         core_fire_cpp_CSmokeParticle_render_FUN_00482950(this_ptr_03);
       }
       this_ptr_03 = this_ptr_03 + 1;
-    } while (this_ptr_03 != (CSmokeParticle *)&DAT_01c20140);
+    } while (this_ptr_03 != g_CSmokeParticle_ARRAY_01c0a140 + sizeof(g_CSmokeParticle_ARRAY_01c0a140) / sizeof(g_CSmokeParticle_ARRAY_01c0a140[0]));
     this_ptr_04 = g_CMuzzleFlash_ARRAY_01c4e958;
     do {
       if (this_ptr_04->frames_remaining != 0) {
         core_fire_cpp_CMuzzleFlash_render_FUN_00484f00(this_ptr_04);
       }
       this_ptr_04 = this_ptr_04 + 1;
-    } while (this_ptr_04 != (CMuzzleFlash *)&DAT_01c4f088);
+    } while (this_ptr_04 != g_CMuzzleFlash_ARRAY_01c4e958 + sizeof(g_CMuzzleFlash_ARRAY_01c4e958) / sizeof(g_CMuzzleFlash_ARRAY_01c4e958[0]));
     iVar2 = 0;
-    if (0 < _DAT_01c5c700) {
+    if (0 < g_INT_01c5c700) {
       this_ptr_15 = g_CLaserBeam_ARRAY_01c5c704;
       do {
         core_fire_cpp_CLaserBeam_render_FUN_00485a90(this_ptr_15);
         iVar2 = iVar2 + 1;
         this_ptr_15 = this_ptr_15 + 1;
-      } while (iVar2 < _DAT_01c5c700);
+      } while (iVar2 < g_INT_01c5c700);
     }
     this_ptr_05 = g_SparkPool;
     core_fire_cpp_CSpark_setupRenderState_FUN_004837a0(g_SparkPool);
@@ -112,53 +110,53 @@ void __cdecl core_fire_cpp_CFireEffect_render_FUN_0048a650(CFireEffect *this_ptr
         (*((this_ptr_05->base).vtable)->render)(&this_ptr_05->base);
       }
       this_ptr_05 = this_ptr_05 + 1;
-    } while (this_ptr_05 != (CSpark *)&DAT_01c4e954);
+    } while (this_ptr_05 != g_SparkPool + sizeof(g_SparkPool) / sizeof(g_SparkPool[0]));
     this_ptr_06 = g_GlassParticlePool;
     do {
       if (0.0 < (this_ptr_06->base).lifetime_remaining) {
         (*((this_ptr_06->base).vtable)->render)(&this_ptr_06->base);
       }
       this_ptr_06 = this_ptr_06 + 1;
-    } while (this_ptr_06 != (CGlassParticle *)&DAT_01c58c8c);
+    } while (this_ptr_06 != g_GlassParticlePool + sizeof(g_GlassParticlePool) / sizeof(g_GlassParticlePool[0]));
     this_ptr_07 = g_CBulletTrail_ARRAY_01c58c90;
     do {
       if (this_ptr_07->frames_remaining != 0) {
         core_fire_cpp_CBulletTrail_render_FUN_004856c0(this_ptr_07);
       }
       this_ptr_07 = this_ptr_07 + 1;
-    } while (this_ptr_07 != (CBulletTrail *)&DAT_01c58df8);
+    } while (this_ptr_07 != g_CBulletTrail_ARRAY_01c58c90 + sizeof(g_CBulletTrail_ARRAY_01c58c90) / sizeof(g_CBulletTrail_ARRAY_01c58c90[0]));
     this_ptr_08 = g_CExplosion_ARRAY_01c5d708;
     do {
       core_fire_cpp_CExplosion_render_FUN_00486fe0(this_ptr_08);
       this_ptr_08 = this_ptr_08 + 1;
-    } while (this_ptr_08 != (CExplosion *)&DAT_01c5d820);
+    } while (this_ptr_08 != g_CExplosion_ARRAY_01c5d708 + sizeof(g_CExplosion_ARRAY_01c5d708) / sizeof(g_CExplosion_ARRAY_01c5d708[0]));
     this_ptr_09 = g_TossPool;
     do {
       core_fire_cpp_CToss_render_FUN_00487630(this_ptr_09);
       this_ptr_09 = this_ptr_09 + 1;
-    } while (this_ptr_09 != (CToss *)&DAT_01c625f4);
+    } while (this_ptr_09 != g_TossPool + sizeof(g_TossPool) / sizeof(g_TossPool[0]));
     this_ptr_10 = g_CGunFlame_ARRAY_01c62ebc;
     do {
       core_fire_cpp_CGunFlame_render_FUN_00488580(this_ptr_10);
       this_ptr_10 = this_ptr_10 + 1;
-    } while (this_ptr_10 != (CGunFlame *)&DAT_01c6750c);
+    } while (this_ptr_10 != g_CGunFlame_ARRAY_01c62ebc + sizeof(g_CGunFlame_ARRAY_01c62ebc) / sizeof(g_CGunFlame_ARRAY_01c62ebc[0]));
     this_ptr_11 = g_CLightningBolt_ARRAY_01c67510;
     do {
       core_fire_cpp_CLightningBolt_render_FUN_00488bf0(this_ptr_11);
       this_ptr_11 = this_ptr_11 + 1;
-    } while (this_ptr_11 != (CLightningBolt *)&DAT_01c676c8);
+    } while (this_ptr_11 != g_CLightningBolt_ARRAY_01c67510 + sizeof(g_CLightningBolt_ARRAY_01c67510) / sizeof(g_CLightningBolt_ARRAY_01c67510[0]));
     this_ptr_12 = g_CTrail_ARRAY_01c676cc;
     do {
       core_fire_cpp_CTrail_render_FUN_00489360(this_ptr_12);
       this_ptr_12 = this_ptr_12 + 1;
-    } while (this_ptr_12 != (CTrail *)&DAT_01c684dc);
+    } while (this_ptr_12 != g_CTrail_ARRAY_01c676cc + sizeof(g_CTrail_ARRAY_01c676cc) / sizeof(g_CTrail_ARRAY_01c676cc[0]));
     this_ptr_13 = g_PopcornPool;
     do {
       if (0.0 < (this_ptr_13->base).lifetime_remaining) {
         (*((this_ptr_13->base).vtable)->render)(&this_ptr_13->base);
       }
       this_ptr_13 = this_ptr_13 + 1;
-    } while (&this_ptr_13->base != (CParticle *)&DAT_01c6ce14);
+    } while (this_ptr_13 != g_PopcornPool + sizeof(g_PopcornPool) / sizeof(g_PopcornPool[0]));
     this_ptr_14 = g_RainDropPool;
     do {
       if (0.0 < (this_ptr_14->base).lifetime_remaining) {

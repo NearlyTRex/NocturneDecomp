@@ -7,9 +7,12 @@
 #include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
 #include "types/classes/CVector3f.h"
+#include "types/classes/CWinFont.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x14B0000
@@ -32,11 +35,21 @@ extern CDemonFilter g_CDemonFilter_ARRAY_014b8cb8[4];
 // CDemonFilter[8]
 extern CDemonFilter g_CDemonFilter_ARRAY_014b8a58[8];
 
+// CDemonGlobe*
+extern CDemonGlobe* g_CDemonGlobe_PTR_014b8458;
+
+// CDemonLight*
+extern CDemonLight* g_CDemonLight_PTR_014b9920;
+
 // CFilterCache
 extern CFilterCache g_CFilterCacheInstance;
 
 // CFilterFX
 extern CFilterFX g_CFilterFXInstance;
+
+// CVector3f
+extern CVector3f g_CVector3f_014b846c;
+extern CVector3f g_CVector3f_014b847c;
 
 // CVector3f[16]
 extern CVector3f g_CVector3f_ARRAY_014b8490[16];
@@ -46,4 +59,52 @@ extern CVector3f g_CVector3f_ARRAY_014b86dc[16];
 extern CVector3f g_CVector3f_ARRAY_014b87a0[16];
 extern CVector3f g_CVector3f_ARRAY_014b8864[16];
 extern CVector3f g_CVector3f_ARRAY_014b8928[16];
+
+// CWinFont*
+extern CWinFont* g_CWinFont_PTR_014b9910;
+extern CWinFont* g_CWinFont_PTR_014b9914;
+extern CWinFont* g_CWinFont_PTR_014b9918;
+extern CWinFont* g_CWinFont_PTR_014b991c;
+
+// char*
+extern char* g_CHAR_PTR_014b7194;
+
+// float
+extern float g_FLOAT_014b89e8;
+extern float g_FLOAT_014b89f0;
+extern float g_FLOAT_014b89f4;
+extern float g_FLOAT_014b89fc;
+extern float g_FLOAT_014b8a00;
+extern float g_FLOAT_014b8a08;
+
+// int
+extern int g_INT_014b7190;
+extern int g_INT_014b845c;
+extern int g_INT_014b8460;
+extern int g_INT_014b8464;
+extern int g_INT_014b8468;
+extern int g_INT_014b848c;
+extern int g_INT_014b8550;
+extern int g_INT_014b8614;
+extern int g_INT_014b86d8;
+extern int g_INT_014b879c;
+extern int g_INT_014b8860;
+extern int g_INT_014b8924;
+extern int g_INT_014b89ec;
+extern int g_INT_014b89f8;
+extern int g_INT_014b8a04;
+
+// int[240]
+extern int g_INT_ARRAY_014b6a10[240];
+extern int g_INT_ARRAY_014b6dd0[240];
+
+// uchar
+extern uchar g_UCHAR_014b8478;
+extern uchar g_UCHAR_014b8488;
+
+// uchar[6291656]
+extern uchar g_UCHAR_ARRAY_014b9924[6291656];
+
+// uint[3]
+extern uint g_UINT_ARRAY_014b8a0c[3];
 

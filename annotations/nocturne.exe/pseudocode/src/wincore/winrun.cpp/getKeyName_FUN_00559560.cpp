@@ -12,8 +12,8 @@ char * __cdecl wincore_winrun_cpp_getKeyName_FUN_00559560(EInputCodeType keycode
   int iVar1;
   
   if (((int)keycode < 0x200) &&
-     (iVar1 = GetKeyNameTextA((keycode & 0x1ff) << 0x10,(LPSTR)0x2de1fd0,200), 0 < iVar1)) {
-    return (char *)0x2de1fd0;
+     (iVar1 = GetKeyNameTextA((keycode & 0x1ff) << 0x10,g_CHAR_ARRAY_02de1fd0,200), 0 < iVar1)) {
+    return g_CHAR_ARRAY_02de1fd0;
   }
   if (keycode < DIK_PERIOD) {
     if (DIK_O < keycode) {

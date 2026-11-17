@@ -46,13 +46,13 @@
 ;   undefined4 g_CVector3i_ARRAY_0060a0fc[1].x
 ;   undefined4 g_CVector3i_ARRAY_0060a0fc[1].y
 ;   undefined4 g_CVector3i_ARRAY_0060a0fc[1].z
-;   undefined4 DAT_0060a3e4
-;   undefined4 DAT_0060a3e8
-;   undefined4 DAT_0060a3ec
-;   undefined4 DAT_0060a3f0
-;   undefined4 DAT_0060a3f4
-;   undefined4 DAT_0060a3f8
-;   undefined4 DAT_0060a3fc
+;   SMRGLLightPrimitive[84] g_SMRGLLightPrimitive_ARRAY_0060a3e4
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.A
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.B
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.C
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.D
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[0]
+;   undefined4 g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[1]
 ;   ... and 13 more
 ;
 ; Called Functions:
@@ -172,25 +172,25 @@ section .text
     JNZ 0x004489b7                      ; 00448a31
         ;   XREF to: 004489b7 (CONDITIONAL_JUMP)  ; LAB_004489b7
     XOR EBX,EBX                         ; 00448a33
-    MOV EAX,dword ptr [EBX + 0x60a3e4]  ; 00448a35 | DAT_0060a3e4 | DAT_0060a408
+    MOV EAX,dword ptr [EBX + 0x60a3e4]  ; 00448a35 | g_SMRGLLightPrimitive_ARRAY_0060a3e4 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].base.count
         ;   Label: LAB_00448a35
     MOV dword ptr [ESP + 0x4],EAX       ; 00448a3b
-    MOV EAX,dword ptr [EBX + 0x60a3e8]  ; 00448a3f | DAT_0060a3e8 | DAT_0060a40c
+    MOV EAX,dword ptr [EBX + 0x60a3e8]  ; 00448a3f | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.A | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].normal.A
     MOV dword ptr [ESP + 0x8],EAX       ; 00448a45
-    MOV EAX,dword ptr [EBX + 0x60a3ec]  ; 00448a49 | DAT_0060a3ec | DAT_0060a410
+    MOV EAX,dword ptr [EBX + 0x60a3ec]  ; 00448a49 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.B | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].normal.B
     MOV dword ptr [ESP + 0xc],EAX       ; 00448a4f
-    MOV EAX,dword ptr [EBX + 0x60a3f0]  ; 00448a53 | DAT_0060a3f0 | DAT_0060a414
-    FILD dword ptr [EBX + 0x60a3f4]     ; 00448a59 | DAT_0060a3f4 | DAT_0060a418
+    MOV EAX,dword ptr [EBX + 0x60a3f0]  ; 00448a53 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.C | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].normal.C
+    FILD dword ptr [EBX + 0x60a3f4]     ; 00448a59 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].normal.D | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].normal.D
     MOV dword ptr [ESP + 0x10],EAX      ; 00448a5f
-    MOV EAX,dword ptr [EBX + 0x60a3f8]  ; 00448a63 | DAT_0060a3f8 | DAT_0060a41c
+    MOV EAX,dword ptr [EBX + 0x60a3f8]  ; 00448a63 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[0] | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].vertices[0]
     FMUL float ptr [EBP + 0x30]         ; 00448a69
     MOV dword ptr [ESP + 0x18],EAX      ; 00448a6c
-    MOV EAX,dword ptr [EBX + 0x60a3fc]  ; 00448a70 | DAT_0060a3fc | DAT_0060a420
+    MOV EAX,dword ptr [EBX + 0x60a3fc]  ; 00448a70 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[1] | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].vertices[1]
     MOV dword ptr [ESP + 0x1c],EAX      ; 00448a76
-    MOV EAX,dword ptr [EBX + 0x60a400]  ; 00448a7a | DAT_0060a400 | DAT_0060a424
+    MOV EAX,dword ptr [EBX + 0x60a400]  ; 00448a7a | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[2] | g_SMRGLLightPrimitive_ARRAY_0060a3e4[1].vertices[2]
     PUSH 0x43f860                       ; 00448a80
     MOV dword ptr [ESP + 0x24],EAX      ; 00448a85
-    MOV EAX,dword ptr [EBX + 0x60a404]  ; 00448a89 | DAT_0060a404
+    MOV EAX,dword ptr [EBX + 0x60a404]  ; 00448a89 | g_SMRGLLightPrimitive_ARRAY_0060a3e4[0].vertices[3]
     MOV ESI,dword ptr [0x0060b27c]      ; 00448a8f | g_CDemonRenderer_PTR_0060b27c
     MOV dword ptr [ESP + 0x28],EAX      ; 00448a95
     LEA EAX,[ESP + 0x4]                 ; 00448a99

@@ -2,43 +2,41 @@
 // Address: 005c1594
 // Address Range: [[005c1594, 005c1612]]
 // Convention: unknown
-// Signature: int crt_unknown_c_FUN_005c1594(int param_1)
+// Signature: _FILE * crt_unknown_c_FUN_005c1594(_FILE *param_1)
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_005c1594(int param_1)
+_FILE * FUN_005c1594(_FILE *param_1)
 
 {
-  int iVar1;
-  uint *puVar2;
-  uint *puVar3;
+  _FILE *p_Var1;
+  FileListNode *pFVar2;
+  FileListNode *pFVar3;
   
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626610)();
-  for (puVar2 = _DAT_02c9f050; puVar2 != (uint *)0x0; puVar2 = (uint *)*puVar2) {
-    iVar1 = puVar2[1];
-    if (param_1 == iVar1) {
-      if ((*(byte *)(iVar1 + 0xc) & 3) != 0) {
-        _fclose(iVar1,1);
+  for (pFVar2 = g_FileListNode_PTR_02c9f050; pFVar2 != (FileListNode *)0x0; pFVar2 = pFVar2->next) {
+    p_Var1 = pFVar2->file_struct;
+    if (param_1 == p_Var1) {
+      if ((p_Var1->_flag & 3) != 0) {
+        _fclose(p_Var1,1);
       }
       (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();
       return param_1;
     }
   }
-  puVar2 = (uint *)&DAT_02c9f054;
+  pFVar2 = (FileListNode *)&g_FileListNode_PTR_02c9f054;
   do {
-    puVar3 = puVar2;
-    puVar2 = (uint *)*puVar3;
-    if (puVar2 == (uint *)0x0) {
+    pFVar3 = pFVar2;
+    pFVar2 = pFVar3->next;
+    if (pFVar2 == (FileListNode *)0x0) {
       setErrno(4);
       (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();
-      return 0;
+      return (_FILE *)0x0;
     }
-  } while (param_1 != puVar2[1]);
-  *puVar3 = *puVar2;
-  *puVar2 = _DAT_02c9f050;
-  _DAT_02c9f050 = puVar2;
+  } while (param_1 != pFVar2->file_struct);
+  pFVar3->next = pFVar2->next;
+  pFVar2->next = g_FileListNode_PTR_02c9f050;
+  g_FileListNode_PTR_02c9f050 = pFVar2;
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626614)();
   return param_1;
 }

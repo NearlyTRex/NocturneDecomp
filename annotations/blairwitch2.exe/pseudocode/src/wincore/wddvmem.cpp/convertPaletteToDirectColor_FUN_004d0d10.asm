@@ -15,9 +15,9 @@
 ;
 ; Referenced Globals:
 ;   int g_INT_006141c0 = 0x8
-;   int g_INT_0061c8d0 = 0xf800
-;   int g_INT_0061c8d8 = 0x7e0
-;   int g_INT_0061c8e0 = 0x1f
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8d0
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8d8
+;   _MMX_INTEGER g_MMX_INTEGER_0061c8e0
 ;   qword g_QWORD_0061c8e8 = 0xf80000
 ;   qword g_QWORD_0061c908 = 0xfc00
 ;   qword g_QWORD_0061c928 = 0xf8
@@ -90,21 +90,21 @@ section .text
     MOV EBX,EAX                         ; 004d0dba
     SHL EBX,CL                          ; 004d0dbc
     MOV CL,byte ptr [0x01c35828]        ; 004d0dbe | g_BIT_INTEGER32_01c35828
-    MOV dword ptr [0x0061c8d0],EBX      ; 004d0dc4 | g_INT_0061c8d0
+    MOV dword ptr [0x0061c8d0],EBX      ; 004d0dc4 | g_MMX_INTEGER_0061c8d0
     MOV EBX,0xff                        ; 004d0dca
     SHR EBX,CL                          ; 004d0dcf
     MOV ECX,dword ptr [0x01c35820]      ; 004d0dd1 | g_BIT_INTEGER32_01c35820
     MOV ESI,EBX                         ; 004d0dd7
     SHL ESI,CL                          ; 004d0dd9
     MOV CL,byte ptr [0x01c35834]        ; 004d0ddb | g_BIT_INTEGER32_01c35834
-    MOV dword ptr [0x0061c8d8],ESI      ; 004d0de1 | g_INT_0061c8d8
+    MOV dword ptr [0x0061c8d8],ESI      ; 004d0de1 | g_MMX_INTEGER_0061c8d8
     MOV ESI,0xff                        ; 004d0de7
     SHR ESI,CL                          ; 004d0dec
     MOV ECX,dword ptr [0x01c3582c]      ; 004d0dee | g_BIT_INTEGER32_01c3582c
     MOV EDI,ESI                         ; 004d0df4
     SHL EDI,CL                          ; 004d0df6
     MOV CL,byte ptr [0x01c3581c]        ; 004d0df8 | g_BIT_INTEGER32_01c3581c
-    MOV dword ptr [0x0061c8e0],EDI      ; 004d0dfe | g_INT_0061c8e0
+    MOV dword ptr [0x0061c8e0],EDI      ; 004d0dfe | g_MMX_INTEGER_0061c8e0
     SHL EAX,CL                          ; 004d0e04
     MOV CL,byte ptr [0x01c35828]        ; 004d0e06 | g_BIT_INTEGER32_01c35828
     SHL EAX,0x10                        ; 004d0e0c

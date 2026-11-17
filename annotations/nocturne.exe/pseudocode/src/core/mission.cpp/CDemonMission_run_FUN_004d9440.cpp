@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this_ptr)
 
 {
@@ -19,7 +17,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
   int color_mode;
   
   while( true ) {
-    if (_DAT_01cae0d4 < 1) {
+    if (g_INT_01cae0d4 < 1) {
       g_CurrentFilename = "..\\core\\mission.cpp";
       g_CurrentLineNumber = 1223;
       core_main_c_displayErrorAndQuit_FUN_004c8440("CDemonMission::run - hero list empty");
@@ -31,7 +29,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
     }
     core_mission_cpp_CDemonMission_loadSet_FUN_004d9020
               (this_ptr,(g_HeroActors[g_LocalHeroIndex]->base).base.location.area_id);
-    DAT_01ccbbf0 = '\0';
+    g_CHAR_ARRAY_01ccbbf0[0] = '\0';
     core_mission_cpp_CDemonMission_buildActiveSetActorList_FUN_004d9180(this_ptr);
     iVar1 = core_game_cpp_CGame_runGameSession_FUN_0049da10(g_CGamePtr);
     this_ptr_00 = g_HeroActors[g_LocalHeroIndex];
@@ -39,7 +37,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
               (this_ptr,(CDemonActor *)this_ptr_00);
     (*(((this_ptr_00->base).base.vtable._uh)->_uh).reset)(this_ptr_00);
     core_mission_cpp_CDemonMission_clearMissionData_FUN_004d7ea0(this_ptr);
-    if ((iVar1 == 0) || (DAT_01ccbbf0 == '\0')) break;
+    if ((iVar1 == 0) || (g_CHAR_ARRAY_01ccbbf0[0] == '\0')) break;
     iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     bVar2 = iVar1 != 0;
     if (bVar2) {
@@ -51,7 +49,7 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_004d9440(CDemonMission *this
     }
     color_value = (uint)!bVar2;
     core_level_cpp_CLevelLoader_show_FUN_004c5640(g_CLevelLoader_PTR_005baca0,9,(uint)bVar2,iVar1);
-    core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,&DAT_01ccbbf0,0);
+    core_mission_cpp_CDemonMission_load_FUN_004d7ee0(this_ptr,g_CHAR_ARRAY_01ccbbf0,0);
     iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_004d9a80(this_ptr,&this_ptr_00->base);
     if (iVar1 == 0) goto LAB_004d950e;
     iVar1 = core_mission_cpp_CDemonMission_startMission_FUN_004d9780(this_ptr);

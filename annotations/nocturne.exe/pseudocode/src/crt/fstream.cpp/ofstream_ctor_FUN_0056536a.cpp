@@ -16,8 +16,9 @@ ofstream * __cdecl crt_fstream_cpp_ofstream_ctor_FUN_0056536a(void *this_ptr,int
   ios *piVar5;
   
   if ((c1 & 1U) == 0) {
-    *(byte **)this_ptr = &DAT_005a4810;
-    *(byte **)((int)this_ptr + 0x44) = &DAT_005a4818;
+    *(WatcomVirtualBaseDescriptor **)this_ptr = &g_WatcomVirtualBaseDescriptor_005a4810;
+    *(WatcomVirtualBaseDescriptor **)((int)this_ptr + 0x44) =
+         &g_WatcomVirtualBaseDescriptor_005a4818;
     piVar5 = crt_iostream_cpp_ios_ctor_FUN_0056b503((ios *)((int)this_ptr + 0x50));
     this_ptr = &piVar5[-2].__format_flags;
   }

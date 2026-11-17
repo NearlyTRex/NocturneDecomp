@@ -24,7 +24,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046015
       pSVar2 = poly;
       do {
         iVar1 = pSVar2->vertices[0].vertex_index;
-        *(int *)(&DAT_01b4d76c + iVar3) = iVar1;
+        *(int *)((int)g_INT_ARRAY_01b4d76c + iVar3) = iVar1;
         iVar3 = iVar3 + 4;
         local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
@@ -45,7 +45,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046015
           iVar3 = 0;
           pSVar2 = poly;
           do {
-            iVar1 = *(int *)(&DAT_01b4d76c + iVar3);
+            iVar1 = *(int *)((int)g_INT_ARRAY_01b4d76c + iVar3);
             this_ptr->vertex_buffer_ptr[iVar1].u = pSVar2->vertices[0].texture_u;
             this_ptr->vertex_buffer_ptr[iVar1].v = pSVar2->vertices[0].texture_v;
             pSVar2 = (SMRGLPrimitivePoly *)&(pSVar2->base).surface_normal.B;
@@ -60,7 +60,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046015
         g_ScanlineRenderFunc = (MainScanlineFunc *)core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00463a79;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80
-                (this_ptr,(poly->base).base.count,(int *)&DAT_01b4d76c);
+                (this_ptr,(poly->base).base.count,g_INT_ARRAY_01b4d76c);
     }
   }
   return;

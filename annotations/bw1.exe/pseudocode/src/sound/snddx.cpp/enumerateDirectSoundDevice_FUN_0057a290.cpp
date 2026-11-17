@@ -19,11 +19,12 @@ int __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0057a290(UINT device_
   if ((-1 < (int)device_id) && ((int)device_id < g_INT_006235d0)) {
     device_info->device_id = device_id;
     device_info->api_type = 1;
-    DVar1 = g_INT_ARRAY_02c8115c[device_id * 0x47];
+    DVar1 = g_SDirectSoundDeviceInfo_ARRAY_02c81044[device_id].has_hardware_mixing;
     device_info->flags = 0;
     device_info->has_hardware_mixing = DVar1;
-    device_info->is_emulated = *(DWORD *)(device_id * 0x11c + 0x2c81158);
-    device_info->is_primary_device = *(DWORD *)(device_id * 0x11c + 0x2c81044);
+    device_info->is_emulated = g_SDirectSoundDeviceInfo_ARRAY_02c81044[device_id].is_emulated;
+    device_info->is_primary_device =
+         g_SDirectSoundDeviceInfo_ARRAY_02c81044[device_id].is_primary_device;
     _sprintf(device_info->device_name,"DirectSound: %s");
     return 1;
   }

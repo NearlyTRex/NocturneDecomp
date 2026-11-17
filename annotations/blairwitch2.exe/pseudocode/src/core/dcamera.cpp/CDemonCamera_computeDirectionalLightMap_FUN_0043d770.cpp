@@ -24,7 +24,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_computeDirectionalLightMap_FUN_0043d7
     local_1c = 0;
     do {
       pcVar2 = g_CHAR_ARRAY_00ae24d8 + local_1c;
-      pfVar3 = (float *)((int)&g_CVector3f_ARRAY_00a005d4[0].x + local_24);
+      pfVar3 = (float *)((int)&g_CVector3f_ARRAY_ARRAY_00a005d4[0][0].x + local_24);
       iVar4 = 0;
       if (0 < this_ptr->display_width) {
         do {

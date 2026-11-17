@@ -5,6 +5,7 @@
 // Dependencies
 #include "system/basetypes.h"
 #include "system/iostream.h"
+#include "system/signal.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
 #include "system/time.h"
@@ -64,7 +65,7 @@ uint crt_unknown_c_FUN_005c12d0(byte *param_1,byte *param_2);
 _FILE * crt_unknown_c_FUN_005c140c(undefined4 param_1,byte param_2,uint param_3,char *param_4,undefined4 param_5,_FILE *param_6);
 undefined4 crt_unknown_c_FUN_005c1520(undefined4 param_1,undefined1 *param_2,undefined4 param_3);
 _FILE * __cdecl crt_stdio_c_fopen_FUN_005c157c(char *filename,char *mode);
-int crt_unknown_c_FUN_005c1594(int param_1);
+_FILE * crt_unknown_c_FUN_005c1594(_FILE *param_1);
 _FILE * __cdecl crt_stdio_c_freopen_FUN_005c1614(char *filename,char *mode,_FILE *stream);
 undefined4 crt_unknown_c_FUN_005c16b0(int param_1,int *param_2);
 void crt_unknown_c_FUN_005c16f4(undefined4 *param_1);
@@ -207,8 +208,8 @@ undefined4 crt_unknown_c_FUN_005c68f8(uint param_1);
 void crt_unknown_c_FUN_005c69a8(undefined4 param_1);
 bool crt_unknown_c_FUN_005c69bc(uint *param_1);
 undefined4 crt_unknown_c_FUN_005c6a10(void);
-_FILE ** crt_unknown_c_FUN_005c6a20(void);
-void crt_unknown_c_FUN_005c6ae0(int param_1);
+_FILE * crt_unknown_c_FUN_005c6a20(void);
+void crt_unknown_c_FUN_005c6ae0(_FILE *param_1);
 void crt_unknown_c_FUN_005c6b18(void);
 void crt_unknown_c_FUN_005c6b40(void);
 char * crt_unknown_c_FUN_005c6c7c(void);
@@ -309,7 +310,7 @@ DWORD crt_unknown_c_FUN_005c871c(uint param_1,LPCVOID param_2,DWORD param_3);
 undefined4 crt_unknown_c_FUN_005c8ae0(uint param_1);
 void crt_unknown_c_FUN_005c8b38(int param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005c8b70(void);
-int crt_unknown_c_FUN_005c8bc0(int param_1);
+int crt_unknown_c_FUN_005c8bc0(HANDLE param_1);
 void crt_unknown_c_FUN_005c8c4c(HANDLE param_1,uint param_2);
 void crt_unknown_c_FUN_005c8d24(int param_1);
 void crt_unknown_c_FUN_005c8d50(void);
@@ -481,9 +482,9 @@ void crt_unknown_c_FUN_005cd04c(void);
 int crt_unknown_c_FUN_005cd0c0(void);
 int crt_unknown_c_FUN_005cd0cc(void);
 void crt_unknown_c_FUN_005cd0e0(void);
-undefined4 crt_unknown_c_FUN_005cd0f0(int param_1,undefined4 param_2);
-undefined4 crt_unknown_c_FUN_005cd144(int param_1);
-undefined4 crt_unknown_c_FUN_005cd168(int param_1);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005cd0f0(int param_1,SIGNAL_HANDLER_TYPE param_2);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005cd144(int param_1);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005cd168(int param_1);
 undefined4 crt_unknown_c_FUN_005cd1b0(int param_1);
 undefined4 crt_unknown_c_FUN_005cd210(void);
 byte crt_unknown_c_FUN_005cd248(void);

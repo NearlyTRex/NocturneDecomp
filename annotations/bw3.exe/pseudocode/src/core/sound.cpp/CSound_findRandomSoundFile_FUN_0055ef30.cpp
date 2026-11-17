@@ -23,7 +23,7 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30(CSound *this
     iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_00486a40(wildcard_pattern,pcVar3,iVar5);
     if (iVar5 != 0) {
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00482440(&g_CStrListInstance,iVar2);
-      pcVar4 = g_CHAR_ARRAY_02cf5858 + g_INT_02cf5850 * 0x28;
+      pcVar4 = g_CHAR_ARRAY_ARRAY_02cf5858[g_INT_02cf5850];
       do {
         cVar1 = *pcVar3;
         *pcVar4 = cVar1;
@@ -41,7 +41,7 @@ void __cdecl core_sound_cpp_CSound_findRandomSoundFile_FUN_0055ef30(CSound *this
     return;
   }
   iVar2 = rand();
-  pcVar3 = g_CHAR_ARRAY_02cf5858 + (iVar2 % g_INT_02cf5850) * 0x28;
+  pcVar3 = g_CHAR_ARRAY_ARRAY_02cf5858[iVar2 % g_INT_02cf5850];
   do {
     cVar1 = *pcVar3;
     *out_result = cVar1;

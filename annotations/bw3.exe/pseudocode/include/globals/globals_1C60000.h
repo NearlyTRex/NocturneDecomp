@@ -4,6 +4,7 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CEventList.h"
@@ -19,6 +20,10 @@ extern CDemonActorType g_CExorcismClassInfo;
 // CEventList
 extern CEventList g_CEventList_01c6e360;
 
+// DWORD
+extern DWORD g_DWORD_01c6e258;
+extern DWORD g_DWORD_01c6e260;
+
 // SRGBColorPalette*
 extern SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970;
 
@@ -30,10 +35,6 @@ extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af88;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94;
 extern _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4;
-
-// byte
-extern byte g_BYTE_01c6e260;
-extern byte g_BYTE_01c6e261;
 
 // char[4952]
 extern char g_CHAR_ARRAY_01c6cef0[4952];

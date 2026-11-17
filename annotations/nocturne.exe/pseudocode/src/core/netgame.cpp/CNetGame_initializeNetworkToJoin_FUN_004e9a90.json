@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 216,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 14,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 126,
-    "suspect_count": 7,
+    "pseudocode_lines": 125,
+    "suspect_count": 2,
     "suspect_types": [
-      "undefined_data",
       "unknown_field",
-      "unrolled_strcpy",
-      "warning_overlapping_globals"
+      "unrolled_strcpy"
     ],
-    "total_lines": 404
+    "total_lines": 403
   },
   "cross_references": [
     {
@@ -154,20 +152,20 @@
     },
     {
       "addr": "005c1664",
-      "name": "DAT_005c1664",
-      "type": "undefined4",
-      "value": null
+      "name": "g_INT_005c1664",
+      "type": "int",
+      "value": "0x1"
     },
     {
       "addr": "01cea3f8",
-      "name": "DAT_01cea3f8",
-      "type": "undefined4",
+      "name": "g_UINT_01cea3f8",
+      "type": "uint",
       "value": null
     },
     {
       "addr": "01cea3fc",
-      "name": "DAT_01cea3fc",
-      "type": "undefined4",
+      "name": "g_INT_01cea3fc",
+      "type": "int",
       "value": null
     }
   ],
@@ -301,56 +299,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 38,
-      "match": "DAT_02dd10c4",
-      "severity": "mild",
-      "text": "((SNetworkAddr *)(auStack_33 + 3),(uint32_t *)&DAT_02dd10c4,0x1ddf);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 58,
-      "match": "DAT_005c1664",
-      "severity": "mild",
-      "text": "uStack_18 = DAT_005c1664;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 59,
-      "match": "DAT_005c1664",
-      "severity": "mild",
-      "text": "DAT_005c1664 = 0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 77,
+      "line": 75,
       "match": "._0_4_",
       "severity": "mild",
       "text": "auStack_33._0_4_ = this_ptr->players[this_ptr->local_player_index].aim_mode;",
       "type": "unknown_field"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 96,
-      "match": "DAT_005c1664",
-      "severity": "mild",
-      "text": "DAT_005c1664 = uStack_18;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 78,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

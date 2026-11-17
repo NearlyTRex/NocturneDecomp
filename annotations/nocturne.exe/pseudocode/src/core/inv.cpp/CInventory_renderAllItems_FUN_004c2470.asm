@@ -106,7 +106,7 @@ section .text
     JNZ 0x004c2dcc                      ; 004c24a4
         ;   XREF to: 004c2dcc (CONDITIONAL_JUMP)  ; LAB_004c2dcc
     MOV EBX,dword ptr [0x005b7620]      ; 004c24aa | g_WindowHeight
-    CMP EBX,dword ptr [0x01cc30a0]      ; 004c24b0 | DAT_01cc30a0
+    CMP EBX,dword ptr [0x01cc30a0]      ; 004c24b0 | g_INT_01cc30a0
     JNZ 0x004c2dd3                      ; 004c24b6
         ;   XREF to: 004c2dd3 (CONDITIONAL_JUMP)  ; LAB_004c2dd3
     MOV EAX,[0x01c02594]                ; 004c24bc | g_UseExternalRenderer
@@ -774,7 +774,7 @@ section .text
     CMP EDX,dword ptr [ESP + 0x670]     ; 004c2d5e
     JNZ 0x004c2d70                      ; 004c2d65
         ;   XREF to: 004c2d70 (CONDITIONAL_JUMP)  ; LAB_004c2d70
-    CMP dword ptr [0x01d16810],0x0      ; 004c2d67 | DAT_01d16810
+    CMP dword ptr [0x01d16810],0x0      ; 004c2d67 | g_INT_01d16810
     JNZ 0x004c2dc0                      ; 004c2d6e
         ;   XREF to: 004c2dc0 (CONDITIONAL_JUMP)  ; LAB_004c2dc0
     MOV ESI,dword ptr [ESP + 0x66c]     ; 004c2d70

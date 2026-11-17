@@ -60,7 +60,7 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00409d30(CDemonActor *
   pcVar3 = "str";
   pCVar2[-7].position.x = 1.4013e-43;
   pcVar4 = (char *)((int)&pCVar2[-1].orientation + 4);
-  pCVar2[-7].position.y = (float)&DAT_0078a123;
+  pCVar2[-7].position.y = (float)(g_CHAR_ARRAY_0077d250 + 0xced3);
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

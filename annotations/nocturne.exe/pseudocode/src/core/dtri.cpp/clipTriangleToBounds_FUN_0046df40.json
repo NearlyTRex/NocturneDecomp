@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 973,
-    "complexity_score": 509,
+    "complexity_score": 494,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 101,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 369,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
-      "unrolled_memcpy",
-      "warning_overlapping_globals"
+      "unrolled_memcpy"
     ],
     "total_lines": 1342
   },
@@ -147,8 +146,8 @@
     },
     {
       "addr": "01bc996c",
-      "name": "DAT_01bc996c",
-      "type": "undefined4",
+      "name": "g_INT_01bc996c",
+      "type": "int",
       "value": null
     },
     {
@@ -207,8 +206,8 @@
     },
     {
       "addr": "01bc9a30",
-      "name": "DAT_01bc9a30",
-      "type": "undefined4",
+      "name": "g_INT_01bc9a30",
+      "type": "int",
       "value": null
     },
     {
@@ -255,8 +254,8 @@
     },
     {
       "addr": "01bc9af4",
-      "name": "DAT_01bc9af4",
-      "type": "undefined4",
+      "name": "g_INT_01bc9af4",
+      "type": "int",
       "value": null
     },
     {
@@ -303,8 +302,8 @@
     },
     {
       "addr": "01bc9bb8",
-      "name": "DAT_01bc9bb8",
-      "type": "undefined4",
+      "name": "g_INT_01bc9bb8",
+      "type": "int",
       "value": null
     },
     {
@@ -351,8 +350,8 @@
     },
     {
       "addr": "01bc9c7c",
-      "name": "DAT_01bc9c7c",
-      "type": "undefined4",
+      "name": "g_INT_01bc9c7c",
+      "type": "int",
       "value": null
     },
     {
@@ -423,8 +422,8 @@
     },
     {
       "addr": "01bc9d40",
-      "name": "DAT_01bc9d40",
-      "type": "undefined4",
+      "name": "g_INT_01bc9d40",
+      "type": "int",
       "value": null
     },
     {
@@ -495,8 +494,8 @@
     },
     {
       "addr": "01bc9e04",
-      "name": "DAT_01bc9e04",
-      "type": "undefined4",
+      "name": "g_INT_01bc9e04",
+      "type": "int",
       "value": null
     },
     {
@@ -627,19 +626,19 @@
     },
     {
       "addr": "01bca0fc",
-      "name": "DAT_01bca0fc",
+      "name": "g_CHAR_ARRAY_01bca0d0+0x2c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bca100",
-      "name": "DAT_01bca100",
+      "name": "g_CHAR_ARRAY_01bca0d0+0x30",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01bca104",
-      "name": "DAT_01bca104",
+      "name": "g_CHAR_ARRAY_01bca0d0+0x34",
       "type": "undefined4",
       "value": null
     }
@@ -824,16 +823,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 20,
+      "line": 17,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9970[0].x = triangle_vertices->x;",
@@ -841,7 +832,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 25,
+      "line": 22,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9970[1].x = triangle_vertices[1].x;",
@@ -849,7 +840,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 30,
+      "line": 27,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9970[2].x = triangle_vertices[2].x;",
@@ -857,7 +848,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 63,
+      "line": 60,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9e08[0].x = triangle_vertices->x;",
@@ -865,7 +856,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 68,
+      "line": 65,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9e08[1].x = triangle_vertices[1].x;",
@@ -873,7 +864,7 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 73,
+      "line": 70,
       "match": "field-by-field struct copy",
       "severity": "moderate",
       "text": "g_CVector3f_ARRAY_01bc9e08[2].x = triangle_vertices[2].x;",
@@ -881,50 +872,50 @@
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 102,
+      "line": 99,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9a34[_DAT_01bc9a30].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9a34[g_INT_01bc9a30].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 147,
+      "line": 144,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9af8[_DAT_01bc9af4].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9af8[g_INT_01bc9af4].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 194,
+      "line": 191,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9bbc[_DAT_01bc9bb8].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9bbc[g_INT_01bc9bb8].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 241,
+      "line": 238,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9c80[_DAT_01bc9c7c].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9c80[g_INT_01bc9c7c].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 287,
+      "line": 284,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9d44[_DAT_01bc9d40].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9d44[g_INT_01bc9d40].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
-      "line": 333,
+      "line": 332,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "g_CVector3f_ARRAY_01bc9e08[_DAT_01bc9e04].x = pCVar7->x;",
+      "text": "g_CVector3f_ARRAY_01bc9e08[g_INT_01bc9e04].x = pCVar6->x;",
       "type": "unrolled_memcpy"
     }
   ]

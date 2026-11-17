@@ -17,10 +17,9 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   int iVar5;
   char (*pacVar6) [256];
   CDemonActor *pCVar7;
-  uint *puVar8;
+  char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  byte bVar11;
+  byte bVar10;
   char acStack_154 [100];
   char acStack_f0 [100];
   char acStack_8c [100];
@@ -31,7 +30,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   int local_18;
   CDemonActor *local_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   core_mission_cpp_CDemonMission_clearMissionData_FUN_004d7ea0(this_ptr);
   if (load_flags == 0) {
     core_mission_cpp_CDemonMission_freeAllAssets_FUN_004d9900(this_ptr);
@@ -86,12 +85,12 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
     iVar2 = 0;
     if (0 < local_1c) {
       do {
-        pcVar9 = "corrupt!";
-        pcVar10 = acStack_154;
+        pcVar8 = "corrupt!";
+        pcVar9 = acStack_154;
         for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(uint *)pcVar10 = *(uint *)pcVar9;
-          pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
-          pcVar10 = (char *)((int)pcVar10 + ((uint)bVar11 * -2 + 1) * 4);
+          *(uint *)pcVar9 = *(uint *)pcVar8;
+          pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
+          pcVar9 = (char *)((int)pcVar9 + ((uint)bVar10 * -2 + 1) * 4);
         }
         _fscanf((_FILE *)load_flags,"%s %d\n",acStack_154,&local_18);
         pCVar3 = core_actor_cpp_getActorClassByName_FUN_0040d4d0(acStack_154);
@@ -133,31 +132,31 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004d7fe0(CDemonM
   this_ptr->actor_lookup_count = 0;
   this_ptr->next_inventory_actor = (CDemonActor *)0x0;
   for (iVar2 = 0; iVar2 < local_24 + local_20; iVar2 = iVar2 + 1) {
-    puVar8 = &DAT_005bb000;
+    pcVar8 = g_CHAR_ARRAY_005bb000;
     pcVar9 = acStack_8c;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(uint *)pcVar9 = *puVar8;
-      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-      pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
+      *(uint *)pcVar9 = *(uint *)pcVar8;
+      pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
+      pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
     }
-    puVar8 = &DAT_005bb068;
+    pcVar8 = g_CHAR_ARRAY_005bb068;
     pcVar9 = acStack_f0;
     for (iVar5 = 0x19; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(uint *)pcVar9 = *puVar8;
-      puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
-      pcVar9 = pcVar9 + ((uint)bVar11 * -2 + 1) * 4;
+      *(uint *)pcVar9 = *(uint *)pcVar8;
+      pcVar8 = pcVar8 + ((uint)bVar10 * -2 + 1) * 4;
+      pcVar9 = pcVar9 + ((uint)bVar10 * -2 + 1) * 4;
     }
     _fscanf((_FILE *)load_flags,"%s \"%[^\"]\"\n",acStack_8c,acStack_f0);
-    pcVar9 = acStack_f0;
+    pcVar8 = acStack_f0;
     pCVar4 = core_actor_cpp_createActorByName_FUN_0040d540(acStack_8c);
     local_14 = pCVar4;
     pCVar7 = pCVar4;
     do {
-      cVar1 = *pcVar9;
+      cVar1 = *pcVar8;
       pCVar7->actor_name[0] = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar9[1];
-      pcVar9 = pcVar9 + 2;
+      cVar1 = pcVar8[1];
+      pcVar8 = pcVar8 + 2;
       pCVar7->actor_name[1] = cVar1;
       pCVar7 = (CDemonActor *)(pCVar7->actor_name + 2);
     } while (cVar1 != '\0');

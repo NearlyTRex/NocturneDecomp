@@ -23,7 +23,7 @@ int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *of
   }
   sscanf(buffer + *offset," %[^ ,(){}]%n",local_78,&local_14);
   if (local_14 < 0) {
-    _sprintf(&DAT_01c08b60,"Error parsing vector location");
+    _sprintf(g_CHAR_ARRAY_01c08b60,"Error parsing vector location");
     return -1;
   }
   pCVar1 = core_event_cpp_resolveActorByName_FUN_0047a390
@@ -33,7 +33,7 @@ int __cdecl core_event_cpp_parseVectorLocation_FUN_0047a4c0(char *buffer,int *of
     return -1;
   }
   *offset = *offset + local_14;
-  if (pCVar1 != 0x0FFFFFFF) {
+  if (pCVar1 != g_CDemonActor_PTR_0059cf1c) {
     if ((CLocation *)out_position != &pCVar1->location) {
       out_position->x = (pCVar1->location).position.x;
       out_position->y = (pCVar1->location).position.y;

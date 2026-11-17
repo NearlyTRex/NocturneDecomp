@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 
 {
@@ -26,82 +24,82 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_renderGridCube_FUN_00468d00(CDemonRa
   float local_14;
   
   local_1c = (this_ptr->cell_size).x / 131072.094299316._4_4_;
-  local_18 = (this_ptr->cell_size).y * _DAT_0057e1f6;
-  local_14 = _DAT_0057e1f6 * (this_ptr->cell_size).z;
+  local_18 = (this_ptr->cell_size).y * 0.125f;
+  local_14 = 0.125f * (this_ptr->cell_size).z;
   if (&local_4c != &local_1c) {
     local_4c = local_1c;
     local_48 = local_18;
     local_44 = local_14;
   }
   engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_004609d0
-            ((CDemonRenderer *)PTR_DAT_005ae700,(CVector3i *)0x1bc9950);
-  local_dc.vertices[5].vertex_index = (int)ROUND(world_pos->x * _DAT_0059c8a0);
-  local_dc.vertices[5].texture_u = (int)ROUND(world_pos->y * _DAT_0059c8a0);
-  local_dc.vertices[5].texture_v = (int)ROUND(world_pos->z * _DAT_0059c8a0);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,&g_CVector3i_01bc9950);
+  local_dc.vertices[5].vertex_index = (int)ROUND(world_pos->x * 256.0f);
+  local_dc.vertices[5].texture_u = (int)ROUND(world_pos->y * 256.0f);
+  local_dc.vertices[5].texture_v = (int)ROUND(world_pos->z * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr->projected_vertex,
              (CVector3i *)(local_dc.vertices + 5));
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)world_pos->z;
-  local_64.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_64.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
-  local_64.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
+  local_64.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_64.y = (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_64.z = (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[1].projected_vertex,&local_64);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
-  local_58.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_58.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
-  local_58.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
+  local_58.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_58.y = (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_58.z = (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[2].projected_vertex,&local_58);
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)world_pos->y;
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
   local_dc.vertices[6].vertex_index =
-       (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_dc.vertices[6].texture_u = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0)
-  ;
-  local_dc.vertices[6].texture_v = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0)
-  ;
+       (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_dc.vertices[6].texture_u =
+       (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_dc.vertices[6].texture_v =
+       (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[3].projected_vertex,
              (CVector3i *)(local_dc.vertices + 6));
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)world_pos->z;
-  local_40.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_40.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
-  local_40.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
+  local_40.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_40.y = (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_40.z = (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[4].projected_vertex,&local_40);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)world_pos->z;
-  local_28.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_28.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
-  local_28.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
+  local_28.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_28.y = (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_28.z = (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[5].projected_vertex,&local_28);
   local_dc.vertices[7].vertex_index = (int)(world_pos->x + local_4c);
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
-  local_34.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_34.y = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0);
-  local_34.z = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0);
+  local_34.x = (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_34.y = (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_34.z = (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[6].projected_vertex,&local_34);
   local_dc.vertices[7].vertex_index = (int)world_pos->x;
   local_dc.vertices[7].texture_u = (int)(world_pos->y + local_48);
   local_dc.vertices[7].texture_v = (int)(world_pos->z + local_44);
   local_dc.vertices[4].vertex_index =
-       (int)ROUND((float)local_dc.vertices[7].vertex_index * _DAT_0059c8a0);
-  local_dc.vertices[4].texture_u = (int)ROUND((float)local_dc.vertices[7].texture_u * _DAT_0059c8a0)
-  ;
-  local_dc.vertices[4].texture_v = (int)ROUND((float)local_dc.vertices[7].texture_v * _DAT_0059c8a0)
-  ;
+       (int)ROUND((float)local_dc.vertices[7].vertex_index * 256.0f);
+  local_dc.vertices[4].texture_u =
+       (int)ROUND((float)local_dc.vertices[7].texture_u * 256.0f);
+  local_dc.vertices[4].texture_v =
+       (int)ROUND((float)local_dc.vertices[7].texture_v * 256.0f);
   engine_special_cpp_transformAndProjectPoint_FUN_0053075c
             (&g_CDemonRenderer_PTR_005ae704->vertex_buffer_ptr[7].projected_vertex,
              (CVector3i *)(local_dc.vertices + 4));

@@ -21,7 +21,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_addDirectionalLightMap_FUN_00440500(C
     iVar5 = 0;
     do {
       pcVar3 = g_CHAR_ARRAY_00ae24d8 + iVar5;
-      pcVar2 = g_CHAR_ARRAY_00af5218 + iVar5;
+      pcVar2 = g_CHAR_ARRAY_ARRAY_00af5218[0] + iVar5;
       for (iVar4 = this_ptr->display_width; 0 < iVar4; iVar4 = iVar4 + -1) {
         cVar1 = *pcVar3;
         pcVar3 = pcVar3 + 1;

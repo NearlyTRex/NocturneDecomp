@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_SetEnvironmentVariableA_00575590 = 00175f9e
 ;   void* PTR_SetEnvironmentVariableW_00575594 = 00175fb8
-;   undefined2 DAT_005c1d11
+;   WORD g_WORD_005c1d11 = 0x0
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -29,7 +29,7 @@ section .text
     PUSH ESI                            ; 00574571
     PUSH EDI                            ; 00574572
     PUSH EBP                            ; 00574573
-    CMP word ptr [0x005c1d11],0x8000    ; 00574574 | DAT_005c1d11
+    CMP word ptr [0x005c1d11],0x8000    ; 00574574 | g_WORD_005c1d11
     JNC 0x00574595                      ; 0057457d
         ;   XREF to: 00574595 (CONDITIONAL_JUMP)  ; LAB_00574595
     MOV EDX,dword ptr [ESP + 0x18]      ; 0057457f

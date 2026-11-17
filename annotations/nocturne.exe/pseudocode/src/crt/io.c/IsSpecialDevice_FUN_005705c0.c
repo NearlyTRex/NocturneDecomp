@@ -13,14 +13,14 @@ int __cdecl IsSpecialDevice(int handle_index)
   DWORD DVar2;
   
   (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac0)(handle_index);
-  if (DAT_005c1d54 != (code *)0x0) {
-    iVar1 = (*DAT_005c1d54)(handle_index);
+  if (g_PTR_005c1d54 != (byte *)0x0) {
+    iVar1 = (*(code *)g_PTR_005c1d54)(handle_index);
     if (iVar1 != 0) {
       (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(handle_index);
       return 1;
     }
   }
-  DVar2 = GetFileType(*(HANDLE *)(DAT_005c1f54 + handle_index * 4));
+  DVar2 = GetFileType(g_SIOControlBlock_PTR_005c1f54->standard_handles[handle_index]);
   if (DVar2 == 2) {
     (*(code *)PTR_crt_sync_c_CriticalSectionStub_FUN_005671e4_005c1ac4)(handle_index);
     return 1;

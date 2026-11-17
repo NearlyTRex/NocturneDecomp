@@ -14,11 +14,11 @@
 ;
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_0057548c = 00175ad4
-;   undefined4 DAT_005c1d54
-;   undefined4 DAT_005c1d58
-;   undefined4 DAT_005c1d60
-;   undefined4 DAT_005c1f54
-;   undefined4 DAT_005c1f90
+;   void* g_PTR_005c1d54 = 00000000
+;   void* g_PTR_005c1d58 = 00000000
+;   void* g_PTR_005c1d60 = 00000000
+;   SIOControlBlock* g_SIOControlBlock_PTR_005c1f54 = 00000000
+;   uint g_UINT_005c1f90 = 0x14
 ;
 ; Called Functions:
 ;   CloseHandle
@@ -39,7 +39,7 @@ section .text
     TEST EBX,EBX                        ; 00568a5b
     JL 0x00568a67                       ; 00568a5d
         ;   XREF to: 00568a67 (CONDITIONAL_JUMP)  ; LAB_00568a67
-    CMP EBX,dword ptr [0x005c1f90]      ; 00568a5f | DAT_005c1f90
+    CMP EBX,dword ptr [0x005c1f90]      ; 00568a5f | g_UINT_005c1f90
     JBE 0x00568a7b                      ; 00568a65
         ;   XREF to: 00568a7b (CONDITIONAL_JUMP)  ; LAB_00568a7b
     PUSH 0x4                            ; 00568a67
@@ -50,9 +50,9 @@ section .text
     ADD ESP,0x4                         ; 00568a73
     JMP 0x00568aec                      ; 00568a76
         ;   XREF to: 00568aec (UNCONDITIONAL_JUMP)  ; LAB_00568aec
-    MOV ESI,dword ptr [0x005c1f54]      ; 00568a7b | DAT_005c1f54
+    MOV ESI,dword ptr [0x005c1f54]      ; 00568a7b | g_SIOControlBlock_PTR_005c1f54
         ;   Label: LAB_00568a7b
-    MOV ECX,dword ptr [0x005c1d60]      ; 00568a81 | DAT_005c1d60
+    MOV ECX,dword ptr [0x005c1d60]      ; 00568a81 | g_PTR_005c1d60
     XOR EBP,EBP                         ; 00568a87
     MOV EAX,dword ptr [ESI + EBX*0x4]   ; 00568a89
     XOR EDI,EDI                         ; 00568a8c
@@ -61,17 +61,17 @@ section .text
     JZ 0x00568abb                       ; 00568a93
         ;   XREF to: 00568abb (CONDITIONAL_JUMP)  ; LAB_00568abb
     PUSH EBX                            ; 00568a95
-    CALL dword ptr [0x005c1d54]         ; 00568a96 | DAT_005c1d54
+    CALL dword ptr [0x005c1d54]         ; 00568a96 | g_PTR_005c1d54
     MOV ESI,EAX                         ; 00568a9c
     ADD ESP,0x4                         ; 00568a9e
     TEST EAX,EAX                        ; 00568aa1
     JZ 0x00568abb                       ; 00568aa3
         ;   XREF to: 00568abb (CONDITIONAL_JUMP)  ; LAB_00568abb
     PUSH EBX                            ; 00568aa5
-    CALL dword ptr [0x005c1d58]         ; 00568aa6 | DAT_005c1d58
+    CALL dword ptr [0x005c1d58]         ; 00568aa6 | g_PTR_005c1d58
     ADD ESP,0x4                         ; 00568aac
     PUSH ESI                            ; 00568aaf
-    CALL dword ptr [0x005c1d60]         ; 00568ab0 | DAT_005c1d60
+    CALL dword ptr [0x005c1d60]         ; 00568ab0 | g_PTR_005c1d60
     ADD ESP,0x4                         ; 00568ab6
     JMP 0x00568adf                      ; 00568ab9
         ;   XREF to: 00568adf (UNCONDITIONAL_JUMP)  ; LAB_00568adf

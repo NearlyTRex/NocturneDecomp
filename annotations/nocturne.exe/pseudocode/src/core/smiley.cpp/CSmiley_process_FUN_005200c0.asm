@@ -67,12 +67,12 @@
 ;   double DOUBLE_0059209d = 32
 ;   float FLOAT_005a1f98 = 2.5
 ;   CConsole* g_CConsolePtr = 0077ad0c
-;   undefined4 DAT_005b7650
+;   CEventList* g_CEventList_PTR_005b7650 = 01c03a10
 ;   CGore* g_CGorePtr = 01c78c7c
 ;   CDemonSet* g_CDemonSetPtr = 01e57284
 ;   CConsole g_CConsoleInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 DAT_02da8a7c
+;   int g_INT_02da8a7c
 ;   ... and 1 more
 ;
 ; Called Functions:
@@ -457,7 +457,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 005204a3
     ADD ESP,0x8                         ; 005204a6
     LEA EAX,[EBP + 0xfffffefa]          ; 005204a9
-    MOV EDX,dword ptr [0x02da8a7c]      ; 005204af | DAT_02da8a7c
+    MOV EDX,dword ptr [0x02da8a7c]      ; 005204af | g_INT_02da8a7c
     PUSH EAX                            ; 005204b5
     LEA EAX,[EDX*0x4 + 0x0]             ; 005204b6
     MOV dword ptr [EBP + 0xffffff2e],EBX ; 005204bd
@@ -543,7 +543,7 @@ section .text
     MOV dword ptr [EBP + 0x76],EAX      ; 00520595
     ADD ESP,0x8                         ; 00520598
     LEA EAX,[EBP + 0xffffff36]          ; 0052059b
-    MOV EDX,dword ptr [0x02da8a7c]      ; 005205a1 | DAT_02da8a7c
+    MOV EDX,dword ptr [0x02da8a7c]      ; 005205a1 | g_INT_02da8a7c
     PUSH EAX                            ; 005205a7
     LEA EAX,[EDX*0x4 + 0x0]             ; 005205a8
     SUB EAX,EDX                         ; 005205af
@@ -635,7 +635,7 @@ section .text
         ;   XREF to: 0052037b (UNCONDITIONAL_JUMP)  ; caseD_7
     PUSH 0x59207c                       ; 005206a7 | = "Capture"
         ;   Label: caseD_1
-    MOV EDI,dword ptr [0x005b7650]      ; 005206ac | DAT_005b7650
+    MOV EDI,dword ptr [0x005b7650]      ; 005206ac | g_CEventList_PTR_005b7650
     PUSH EDI                            ; 005206b2
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005206b3
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)
@@ -733,7 +733,7 @@ section .text
         ;   XREF to: 00520736 (UNCONDITIONAL_JUMP)  ; LAB_00520736
     PUSH 0x592084                       ; 005207b0 | = "Capture"
         ;   Label: caseD_2
-    MOV ECX,dword ptr [0x005b7650]      ; 005207b5 | DAT_005b7650
+    MOV ECX,dword ptr [0x005b7650]      ; 005207b5 | g_CEventList_PTR_005b7650
     PUSH ECX                            ; 005207bb
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 005207bc
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

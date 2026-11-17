@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 111,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 2,
+    "pseudocode_lines": 84,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
+      "raw_address_constant",
       "unresolved_funcptr"
     ],
-    "total_lines": 276
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -183,7 +184,7 @@
   "suspects": [
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 44,
+      "line": 45,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)DStack_74.dwReserved1 + 8))(DStack_74.dwReserved1);",
@@ -191,11 +192,19 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 59,
       "match": "(uint *)((int)device_guid",
       "severity": "moderate",
       "text": "puVar4 = (uint *)((int)device_guid + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Raw hex literal 0x2cf3c7c matches address of g_SDirectSoundDeviceInfo_ARRAY_02cf3c74 (+8 bytes into) (type SDirectSoundDeviceInfo[8]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 58,
+      "match": "0x2cf3c7c",
+      "severity": "moderate",
+      "text": "puVar6 = (uint *)(iVar3 + 0x2cf3c7c + (uint)bVar8 * -8);",
+      "type": "raw_address_constant"
     }
   ]
 }

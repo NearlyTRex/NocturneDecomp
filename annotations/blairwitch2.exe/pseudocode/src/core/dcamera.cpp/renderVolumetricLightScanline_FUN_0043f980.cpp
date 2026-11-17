@@ -15,9 +15,9 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int sca
   byte bVar4;
   SSoftwareEdge *pSVar5;
   int iVar6;
-  byte *pbVar7;
-  int iVar8;
-  uint uVar9;
+  int iVar7;
+  uint uVar8;
+  int iVar9;
   int iVar10;
   int iVar11;
   int iVar12;
@@ -26,56 +26,56 @@ void __cdecl core_dcamera_cpp_renderVolumetricLightScanline_FUN_0043f980(int sca
   int iVar15;
   int iVar16;
   int iVar17;
-  int iVar18;
+  char *pcVar18;
   
   pSVar5 = left;
-  uVar9 = scanline_y - g_INT_01c35e4c;
-  if (((g_BIT_INTEGER32_01308800.dword != 1) || ((uVar9 & 1) == 0)) &&
-     ((g_BIT_INTEGER32_01308800.dword != 2 || ((uVar9 & 3) == 0)))) {
-    iVar17 = (int)uVar9 >> (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
-    iVar15 = ((right->base).x_current >> 0x10) - g_INT_01c35e48 >>
+  uVar8 = scanline_y - g_INT_01c35e4c;
+  if (((g_BIT_INTEGER32_01308800.dword != 1) || ((uVar8 & 1) == 0)) &&
+     ((g_BIT_INTEGER32_01308800.dword != 2 || ((uVar8 & 3) == 0)))) {
+    iVar16 = (int)uVar8 >> (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
+    iVar14 = ((right->base).x_current >> 0x10) - g_INT_01c35e48 >>
              (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
-    iVar18 = ((left->base).x_current >> 0x10) - g_INT_01c35e48 >>
+    iVar17 = ((left->base).x_current >> 0x10) - g_INT_01c35e48 >>
              (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f);
-    iVar16 = iVar15;
-    if (iVar18 < iVar15) {
+    iVar15 = iVar14;
+    if (iVar17 < iVar14) {
       left = right;
-      iVar16 = iVar18;
-      iVar18 = iVar15;
+      iVar15 = iVar17;
+      iVar17 = iVar14;
       right = pSVar5;
     }
-    iVar15 = (right->base).depth_current;
-    iVar10 = iVar15 >> 0x1f;
-    iVar6 = (int)((iVar15 + iVar10 * -0x100) - (uint)(iVar10 << 7 < 0)) >> 8;
-    iVar15 = (left->base).depth_current;
-    iVar11 = (left->base).depth_current >> 0x1f;
-    iVar10 = (right->base).depth_current;
-    iVar12 = iVar10 >> 0x1f;
-    iVar8 = (iVar18 - iVar16) + 1;
-    iVar14 = (right->base).red_current;
-    iVar13 = (left->base).red_current - iVar14;
+    iVar14 = (right->base).depth_current;
+    iVar9 = iVar14 >> 0x1f;
+    iVar6 = (int)((iVar14 + iVar9 * -0x100) - (uint)(iVar9 << 7 < 0)) >> 8;
+    iVar14 = (left->base).depth_current;
+    iVar10 = (left->base).depth_current >> 0x1f;
+    iVar9 = (right->base).depth_current;
+    iVar11 = iVar9 >> 0x1f;
+    iVar7 = (iVar17 - iVar15) + 1;
+    iVar13 = (right->base).red_current;
+    iVar12 = (left->base).red_current - iVar13;
     bVar4 = g_BIT_INTEGER32_01308800.bytes[0] & 0x1f;
-    puVar2 = g_UINT_PTR_ARRAY_01c2b64c[iVar17 << (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f)];
-    pbVar7 = (byte *)(g_CHAR_ARRAY_01326d20 + iVar16 + iVar17 * 0x140);
-    iVar18 = (iVar18 - iVar16) * 4;
+    puVar2 = g_UINT_PTR_ARRAY_01c2b64c[iVar16 << (g_BIT_INTEGER32_01308800.bytes[0] & 0x1f)];
+    pcVar18 = g_SFogImagePlane_01326d20.pixels[iVar16] + iVar15;
+    iVar17 = (iVar17 - iVar15) * 4;
     do {
-      if (*(int *)((int)puVar2 + iVar18 + (iVar16 << bVar4) * 4) < iVar6) {
+      if (*(int *)((int)puVar2 + iVar17 + (iVar15 << bVar4) * 4) < iVar6) {
         piVar1 = (int *)(g_INT_013083d0 + 0x13083d4);
         g_INT_013083d0 = g_INT_013083d0 + 4U & 0x3fc;
-        uVar9 = (uint)*pbVar7 * 0x100 + iVar14 + *piVar1 >> 8;
-        if (0xfe < uVar9) {
-          uVar9 = 0xff;
+        uVar8 = (uint)(byte)*pcVar18 * 0x100 + iVar13 + *piVar1 >> 8;
+        if (0xfe < uVar8) {
+          uVar8 = 0xff;
         }
-        *pbVar7 = (byte)uVar9;
+        *pcVar18 = (byte)uVar8;
       }
-      iVar14 = iVar14 + iVar13 / iVar8;
-      iVar6 = iVar6 + (((int)((iVar15 + iVar11 * -0x100) - (uint)(iVar11 << 7 < 0)) >> 8) -
-                      ((int)((iVar10 + iVar12 * -0x100) - (uint)(iVar12 << 7 < 0)) >> 8)) / iVar8;
-      pbVar7 = pbVar7 + 1;
-      iVar17 = iVar18 + -4;
-      bVar3 = 3 < iVar18;
-      iVar18 = iVar17;
-    } while (iVar17 != 0 && bVar3);
+      iVar13 = iVar13 + iVar12 / iVar7;
+      iVar6 = iVar6 + (((int)((iVar14 + iVar10 * -0x100) - (uint)(iVar10 << 7 < 0)) >> 8) -
+                      ((int)((iVar9 + iVar11 * -0x100) - (uint)(iVar11 << 7 < 0)) >> 8)) / iVar7;
+      pcVar18 = pcVar18 + 1;
+      iVar16 = iVar17 + -4;
+      bVar3 = 3 < iVar17;
+      iVar17 = iVar16;
+    } while (iVar16 != 0 && bVar3);
     g_INT_013083cc = 1;
   }
   return;

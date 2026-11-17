@@ -11,11 +11,11 @@ BOOL __watcallRegister registerConsoleHandler(void)
 {
   BOOL BVar1;
   
-  if (DAT_005c2140 == 0) {
+  if (g_BYTE_005c2140 == 0) {
     BVar1 = SetConsoleCtrlHandler(consoleCtrlHandler,1);
     if (BVar1 != 0) {
-      DAT_005c2140 = 1;
+      g_BYTE_005c2140 = 1;
     }
   }
-  return (uint)DAT_005c2140;
+  return (uint)g_BYTE_005c2140;
 }

@@ -13,8 +13,8 @@ HANDLE FUN_0056e208(void)
   
   pvVar1 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
   if (pvVar1 == (HANDLE)0x0) {
-    pvVar1 = (HANDLE)(DAT_005c1f5c + 1);
-    DAT_005c1f5c = (int)pvVar1;
+    pvVar1 = (HANDLE)(g_INT_005c1f5c + 1);
+    g_INT_005c1f5c = (int)pvVar1;
   }
   return pvVar1;
 }

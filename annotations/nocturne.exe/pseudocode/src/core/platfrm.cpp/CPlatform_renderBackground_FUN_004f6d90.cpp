@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform *this_ptr,int layer_flag)
 
 {
@@ -33,12 +31,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform 
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->to_end_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->to_end_event);
     if (iVar1 != 0) {
       return;
     }
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_0047dc30
-                      (0x01C03A10,this_ptr->to_start_event);
+                      (g_CEventList_PTR_005b7650,this_ptr->to_start_event);
     if (iVar1 != 0) {
       return;
     }
@@ -66,12 +64,12 @@ void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_004f6d90(CPlatform 
       return;
     }
     g_CDemonSetPtr->per_pixel_lighting_enabled = 1;
-    CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * _DAT_005a1360);
-    CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * _DAT_005a1360);
-    CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * _DAT_005a1360);
-    _DAT_014b7190 =
+    CStack_14.x = (int)ROUND((this_ptr->base).location.position.x * 256.0f);
+    CStack_14.y = (int)ROUND((this_ptr->base).location.position.y * 256.0f);
+    CStack_14.z = (int)ROUND((this_ptr->base).location.position.z * 256.0f);
+    g_INT_014b7190 =
          core_dcamera_cpp_CDemonCamera_getFogValueAtPosition_FUN_004475a0
-                   (_DAT_007f7370,&CStack_14,(SProjectedVertex *)0x0);
+                   (g_CDemonCamera_PTR_007f7370,&CStack_14,(SProjectedVertex *)0x0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,0.0,-1);
     g_CDemonSetPtr->per_pixel_lighting_enabled = 0;

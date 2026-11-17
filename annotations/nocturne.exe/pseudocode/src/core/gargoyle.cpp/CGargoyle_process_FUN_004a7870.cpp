@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_ptr,float delta_time)
 
@@ -267,7 +266,7 @@ void __cdecl core_gargoyle_cpp_CGargoyle_process_FUN_004a7870(CGargoyle *this_pt
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_0055a8b0
                          (&local_8c,&g_ZeroVector.f,
                           (this_ptr->base).base.model.bone_transform.bone_model_matrices +
-                          _DAT_01c78b20);
+                          g_INT_01c78b20);
       pCVar8 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_0040a240
                          ((CDemonActor *)this_ptr,&local_bc,pCVar8);
       core_enemy_cpp_CEnemy_testAttackRadius_FUN_004798e0(&this_ptr->base,pCVar8,fVar11,damage_info)
@@ -362,7 +361,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).x;
   iVar7 = (this_ptr->base).base.base.scale.x;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.x + _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.x + g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar7;
     if (iVar5 < iVar7) {
@@ -370,7 +369,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.x - _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.x - g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).x;
     (this_ptr->base).base.base.scale.x = iVar7;
     if (iVar7 < iVar5) {
@@ -380,7 +379,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).y;
   iVar7 = (this_ptr->base).base.base.scale.y;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.y + _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.y + g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar7;
     if (iVar5 < iVar7) {
@@ -388,7 +387,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.y - _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.y - g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).y;
     (this_ptr->base).base.base.scale.y = iVar7;
     if (iVar7 < iVar5) {
@@ -398,7 +397,7 @@ switchD_004a818f_caseD_4:
   iVar5 = (this_ptr->target_scale).z;
   iVar7 = (this_ptr->base).base.base.scale.z;
   if (iVar7 < iVar5) {
-    iVar7 = (this_ptr->base).base.base.scale.z + _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.z + g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar7;
     if (iVar5 < iVar7) {
@@ -407,7 +406,7 @@ switchD_004a818f_caseD_4:
     }
   }
   else if (iVar5 < iVar7) {
-    iVar7 = (this_ptr->base).base.base.scale.z - _DAT_01bd1d80;
+    iVar7 = (this_ptr->base).base.base.scale.z - g_INT_01bd1d80;
     iVar5 = (this_ptr->target_scale).z;
     (this_ptr->base).base.base.scale.z = iVar7;
     if (iVar7 < iVar5) {

@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 326,
+    "complexity_score": 282,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
     "max_suspect_severity": "severe",
-    "pseudocode_lines": 146,
-    "suspect_count": 15,
+    "pseudocode_lines": 147,
+    "suspect_count": 11,
     "suspect_types": [
       "signed_shift_global_idiom",
       "stack_ref",
       "unknown_field",
       "unresolved_funcptr",
-      "warning_max_restarts",
-      "warning_overlapping_globals"
+      "warning_max_restarts"
     ],
-    "total_lines": 539
+    "total_lines": 540
   },
   "cross_references": [],
   "function": {
@@ -138,8 +137,8 @@
     },
     {
       "addr": "0264a5d4",
-      "name": "DAT_0264a5d4",
-      "type": "undefined4",
+      "name": "g_IKsPropertySet_PTR_0264a5d4",
+      "type": "IKsPropertySet*",
       "value": null
     },
     {
@@ -303,36 +302,12 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Decompiler iteration limit exceeded",
-      "line": 3,
+      "line": 2,
       "match": "WARNING: Exceeded maximum restarts with more pending",
       "severity": "severe",
       "text": "/* WARNING: Exceeded maximum restarts with more pending */",
       "type": "warning_max_restarts"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5d4 + 8))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5d4 + 8))();",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
@@ -383,16 +358,8 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*_DAT_0264a5d4 + 0x10))",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 130,
       "match": "&stack0xfffff94c",
       "severity": "moderate",
       "text": "_sprintf(&stack0xfffff94c,\"DirectSux: Unable to %s.  (%s)\");",
@@ -400,7 +367,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 130,
+      "line": 131,
       "match": "&stack0xfffff94c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_logSoundError_FUN_005549c0(&stack0xfffff94c);",
@@ -408,7 +375,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 109,
+      "line": 110,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "((int)((g_INT_0264a5d8 + (g_INT_0264a5d8 >> 0x1f) * -8) -",
@@ -416,7 +383,7 @@
     },
     {
       "description": "Signed `>> 0x1f` sign-mask on a global operand \u2014 the Watcom signed-divide-by-power-of-2 / branchless-abs idiom that cppcheck misses on globals (unresolved type without -I). Rewrite to `x / N` or `ABS(x)` in a .keep (bit-exact incl INT_MIN); see the static_shift_too_many_bits notes in docs/decompiler-artifacts.md.",
-      "line": 110,
+      "line": 111,
       "match": "g_Global >> 0x1f",
       "severity": "moderate",
       "text": "(uint)((g_INT_0264a5d8 >> 0x1f) << 2 < 0)) >> 3) * g_INT_0264a5e0;",

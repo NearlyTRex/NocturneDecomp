@@ -9,13 +9,13 @@
 ; double           Stack[0x14]:8   vel_z
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc1b74
+;   int g_INT_02dc1b74
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02dc1b74]      ; 00526020 | DAT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 00526020 | g_INT_02dc1b74
         ;   Label: sound_sndmain.cpp_setNextSfxStaticVelocity_FUN_00526020
     LEA EAX,[EDX*0x4 + 0x0]             ; 00526026
     SUB EAX,EDX                         ; 0052602d

@@ -6,63 +6,63 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_gore_cpp_CBloodParticle_setupRenderState_FUN_004ae0a0(CBloodParticle *this_ptr)
 
 {
   int iVar1;
-  uint *puVar2;
+  CMatrix3x3f *pCVar2;
   uint *puVar3;
-  byte bVar4;
-  double dVar5;
-  double dVar6;
+  float *pfVar4;
+  uint *puVar5;
+  byte bVar6;
   double dVar7;
+  double dVar8;
+  double dVar9;
   float afStackY_1000 [997];
   float local_60;
   float local_54;
   float local_48;
   CVector3i local_18;
   
-  bVar4 = 0;
-  _DAT_01c78c84 = 4;
-  _DAT_01c78c88 = 0;
-  _DAT_01c78c8c = 0;
-  _DAT_01c78c90 = 0;
-  _DAT_01c78c94 = 0;
-  _DAT_01c78c98 = 0;
-  _DAT_01c78c9c = 1;
-  _DAT_01c78ca0 = 2;
-  _DAT_01c78ca4 = 3;
+  bVar6 = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.base.base.count = 4;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.A.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.B.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.C.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.base.surface_normal.D.i = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[0] = 0;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[1] = 1;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[2] = 2;
+  g_SMRGLPrimitiveQuadIndex_01c78c80.vertices[3] = 3;
   engine_drender_cpp_CDemonRenderer_getCameraRotationFixed_FUN_00460d90
             (g_CDemonRenderer_PTR_005ae704,&local_18);
-  _DAT_01c78ca8 = local_18.x;
-  *(uint *)(&DAT_01c78cac + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + 4);
-  *(uint *)(&DAT_01c78cb0 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-       *(uint *)((int)&local_18 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-  _DAT_01c78cac = 0;
-  puVar2 = (uint *)(_DAT_007f7370 + 0x110);
+  g_CVector3i_01c78ca8.x = local_18.x;
+  *(uint *)((int)&g_CVector3i_01c78ca8 + (uint)bVar6 * -8 + 4) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + 4);
+  *(uint *)((uint)bVar6 * -8 + 0x1c78cb0 + (uint)bVar6 * -8) =
+       *(uint *)((int)&local_18 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+  g_CVector3i_01c78ca8.y = 0;
+  pCVar2 = &g_CDemonCamera_PTR_007f7370->rotation_matrix;
+  pfVar4 = (float *)&stack0xffffffc0;
+  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pfVar4 = pCVar2->m[0].x;
+    pCVar2 = (CMatrix3x3f *)((int)pCVar2 + (uint)bVar6 * -8 + 4);
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
+  }
   puVar3 = (uint *)&stack0xffffffc0;
+  puVar5 = (uint *)&stack0xffffff98;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    *puVar5 = *puVar3;
+    puVar3 = puVar3 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  puVar2 = (uint *)&stack0xffffffc0;
-  puVar3 = (uint *)&stack0xffffff98;
-  for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
-  }
-  dVar6 = (double)local_54 * -65536;
-  dVar7 = (double)local_48 * -65536;
-  dVar5 = round((double)local_60 * -65536);
-  dVar6 = round(dVar6);
-  dVar7 = round(dVar7);
-  _DAT_01c78cb4 = (int)ROUND(dVar5);
-  _DAT_01c78cb8 = (int)ROUND(dVar6);
-  _DAT_01c78cbc = (int)ROUND(dVar7);
+  dVar8 = (double)local_54 * -65536;
+  dVar9 = (double)local_48 * -65536;
+  dVar7 = round((double)local_60 * -65536);
+  dVar8 = round(dVar8);
+  dVar9 = round(dVar9);
+  g_CVector3i_01c78cb4.x = (int)ROUND(dVar7);
+  g_CVector3i_01c78cb4.y = (int)ROUND(dVar8);
+  g_CVector3i_01c78cb4.z = (int)ROUND(dVar9);
   return;
 }

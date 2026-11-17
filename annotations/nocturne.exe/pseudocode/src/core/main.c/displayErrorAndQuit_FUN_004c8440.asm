@@ -23,9 +23,9 @@
 ;
 ; Referenced Globals:
 ;   CSound* g_CSound_PTR_005bed68 = 02dc9450
-;   undefined4 DAT_01cc3700
+;   char[4352] g_CHAR_ARRAY_01cc3700
 ;   char* g_CurrentFilename
-;   undefined4 DAT_01cc4808
+;   int g_INT_01cc4808
 ;   CSound g_CSound_02dc9450
 ;
 ; Called Functions:
@@ -44,7 +44,7 @@ section .text
         ;   Label: core_main.c_displayErrorAndQuit_FUN_004c8440
     PUSH EDI                            ; 004c8441
     SUB ESP,0x4                         ; 004c8442
-    CMP dword ptr [0x01cc4808],0x0      ; 004c8445 | DAT_01cc4808
+    CMP dword ptr [0x01cc4808],0x0      ; 004c8445 | g_INT_01cc4808
     JNZ 0x004c84d6                      ; 004c844c
         ;   XREF to: 004c84d6 (CONDITIONAL_JUMP)  ; LAB_004c84d6
     PUSH EBX                            ; 004c8452
@@ -56,8 +56,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x18]      ; 004c8460
     PUSH EBX                            ; 004c8464
     MOV ECX,0x1                         ; 004c8465
-    PUSH 0x1cc3700                      ; 004c846a | DAT_01cc3700
-    MOV dword ptr [0x01cc4808],ECX      ; 004c846f | DAT_01cc4808
+    PUSH 0x1cc3700                      ; 004c846a | g_CHAR_ARRAY_01cc3700
+    MOV dword ptr [0x01cc4808],ECX      ; 004c846f | g_INT_01cc4808
     XOR ESI,ESI                         ; 004c8475
     CALL crt_stdio.c_vsprintf_FUN_00563a08 ; 004c8477
         ;   XREF to: 00563a08 (UNCONDITIONAL_CALL)  ; int crt_stdio.c_vsprintf_FUN_00563a08(char * buffer, char * format, va_list_t args)
@@ -100,7 +100,7 @@ section .text
         ;   XREF to: 004012a0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_cleanupGraphicsSystem_FUN_004012a0()
     CALL wincore_winrun.cpp_endPeriod_FUN_00558a20 ; 004c84be
         ;   XREF to: 00558a20 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_00558a20()
-    PUSH 0x1cc3700                      ; 004c84c3 | DAT_01cc3700
+    PUSH 0x1cc3700                      ; 004c84c3 | g_CHAR_ARRAY_01cc3700
     CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500 ; 004c84c8
         ;   XREF to: 00559500 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_00559500(char * message)
     CALL crt_watcom.c_notifyAbnormalTermination_FUN_00566f90 ; 004c84d6

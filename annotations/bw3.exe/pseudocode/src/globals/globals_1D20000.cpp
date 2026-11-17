@@ -41,8 +41,10 @@ CVector3i g_CVector3i_01d22e70 = {};
 CVector3i g_CVector3i_01d22e7c = {};
 
 // SMRGLHeaderPrimitive
-SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e48 = {};
 SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01d22e88 = {};
+
+// SMRGLPrimitiveQuadIndex
+SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01d22e48 = {};
 
 // char[20]
 char g_CHAR_ARRAY_01d22c6f[20] = {};
@@ -90,10 +92,6 @@ int g_INT_01d22c90 = {};
 int g_INT_01d22c94 = {};
 int g_INT_01d22c98 = {};
 int g_INT_01d22c9c = {};
-int g_INT_01d22e60 = {};
-int g_INT_01d22e64 = {};
-int g_INT_01d22e68 = {};
-int g_INT_01d22e6c = {};
 int g_INT_01d22eb0 = {};
 int g_INT_01d276b4 = {};
 int g_INT_01d276b8 = {};

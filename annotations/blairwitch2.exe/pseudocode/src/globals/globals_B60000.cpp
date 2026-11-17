@@ -7,8 +7,8 @@
 // SRGBColorPalette
 SRGBColorPalette g_SRGBColorPalette_00b65c98 = {};
 
-// char[24]
-char g_CHAR_ARRAY_00b667a8[24] = {};
+// char[24][307200]
+char g_CHAR_ARRAY_ARRAY_00b667a8[24][307200] = {};
 
 // int
 int g_INT_00b65f98 = {};

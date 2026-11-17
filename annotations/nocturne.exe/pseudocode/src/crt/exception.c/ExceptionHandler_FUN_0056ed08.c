@@ -67,15 +67,15 @@ switchD_0056ed30_caseD_c000008e:
     break;
   default:
 switchD_0056ed30_default:
-    if (DAT_005c1f70 != (code *)0x0) {
+    if (g_PTR_005c1f70 != (byte *)0x0) {
       iVar4 = 1;
       do {
-        iVar2 = (*DAT_005c1f6c)(iVar4,ExceptionRecord->ExceptionCode);
+        iVar2 = (*(code *)g_PTR_005c1f6c)(iVar4,ExceptionRecord->ExceptionCode);
         if (iVar2 != 0) {
           if (((iVar2 == 1) || (iVar2 == 2)) || (iVar2 == 3)) break;
-          DAT_02de5c24 = '\x01';
-          (*DAT_005c1f70)(iVar4);
-          if (DAT_02de5c24 != '\0') {
+          g_BYTE_02de5c24 = '\x01';
+          (*(code *)g_PTR_005c1f70)(iVar4);
+          if (g_BYTE_02de5c24 != '\0') {
             return ExceptionContinueExecution;
           }
         }
@@ -84,10 +84,10 @@ switchD_0056ed30_default:
     }
     goto LAB_0056eeab;
   }
-  DAT_02de5c24 = '\x01';
+  g_BYTE_02de5c24 = '\x01';
   ClearFPUExceptions();
   iVar4 = raiseFPE(iVar4);
-  if ((iVar4 != -1) && (DAT_02de5c24 != '\0')) {
+  if ((iVar4 != -1) && (g_BYTE_02de5c24 != '\0')) {
     *(ushort *)&(ContextRecord->FloatSave).StatusWord =
          ((ushort)(ContextRecord->FloatSave).StatusWord >> 8 & 0x7f) << 8;
     return ExceptionContinueExecution;

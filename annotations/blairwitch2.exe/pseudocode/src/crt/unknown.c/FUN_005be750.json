@@ -2,24 +2,22 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 214,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 44,
-    "suspect_count": 13,
+    "pseudocode_lines": 43,
+    "suspect_count": 10,
     "suspect_types": [
       "mem_magic_size",
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
       "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 127
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -39,7 +37,7 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005be750",
-    "signature": "_FILE ** crt_unknown_c_FUN_005be750(void)"
+    "signature": "_FILE * crt_unknown_c_FUN_005be750(void)"
   },
   "function_calls": [
     {
@@ -108,14 +106,14 @@
     },
     {
       "addr": "02680160",
-      "name": "DAT_02680160",
-      "type": "undefined4",
+      "name": "g_FileListNode_PTR_02680160",
+      "type": "FileListNode*",
       "value": null
     },
     {
       "addr": "02680164",
-      "name": "DAT_02680164",
-      "type": "undefined4",
+      "name": "g_FileListNode_PTR_02680164",
+      "type": "FileListNode*",
       "value": null
     }
   ],
@@ -206,16 +204,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 9,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2b8)();",
@@ -223,7 +213,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(_FILE **)((int)dest",
       "severity": "moderate",
       "text": "dest = (_FILE **)((int)dest + 0x1a);",
@@ -231,15 +221,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 20,
       "match": "DAT_0061f15c",
       "severity": "mild",
-      "text": "} while (dest < &DAT_0061f15c);",
+      "text": "} while (dest < (_FILE *)&DAT_0061f15c);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 28,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2bc)();",
@@ -247,7 +237,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 46,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2bc)();",
@@ -255,47 +245,31 @@
     },
     {
       "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 19,
       "match": "(int)dest",
       "severity": "moderate",
       "text": "dest = (_FILE **)((int)dest + 0x1a);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&p_Var1[1]._ptr` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 31,
-      "match": "(int)&p_Var1[1]._ptr",
+      "description": "Pointer value `&psVar1->__put_end` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 29,
+      "match": "(int)&psVar1->__put_end",
       "severity": "moderate",
-      "text": "dest = (_FILE **)((int)&p_Var1[1]._ptr + 3);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `dest` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 42,
-      "match": "(int)dest",
-      "severity": "moderate",
-      "text": "p_Var1->_cnt = (int)dest;",
+      "text": "dest = (_FILE **)((int)&psVar1->__put_end + 1);",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 31,
+      "line": 29,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "dest = (_FILE **)((int)&p_Var1[1]._ptr + 3);",
+      "text": "dest = (_FILE **)((int)&psVar1->__put_end + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `_DAT_02680164` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `_DAT_02680164->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 37,
-      "match": "_DAT_02680164 = (T *)_DAT_02680164->ARRAY",
-      "severity": "moderate",
-      "text": "_DAT_02680164 = (_FILE *)_DAT_02680164->_ptr;",
-      "type": "shadow_pointer_walk"
-    },
-    {
       "description": "memset size hardcodes 0x1a == sizeof(_FILE), whose dest resolves to that struct. _FILE is 64-bit-unstable (contains a pointer), so the struct grows past 0x1a once pointers are 8 bytes and memset covers only its leading 0x1a bytes, leaving the grown tail untouched. Replace the magic with sizeof(_FILE) for an in-memory copy \u2014 but if this marshals to a fixed file/wire format, keep the literal (sizeof would break the format) (\u00a717/\u00a718).",
-      "line": 40,
+      "line": 38,
       "match": "memset(dest) size 0x1a == sizeof(_FILE)",
       "severity": "moderate",
       "text": "memset(dest,0,0x1a)",

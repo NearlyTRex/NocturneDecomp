@@ -19,7 +19,7 @@ SIGNAL_HANDLER_TYPE __watcallStack setSignalHandler(int signal_number,SIGNAL_HAN
     *(SIGNAL_HANDLER_TYPE *)(iVar2 + signal_number * 8 + 0x58) = new_handler_type;
     return SVar1;
   }
-  SVar1 = *(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8);
-  *(SIGNAL_HANDLER_TYPE *)(&DAT_005c20d8 + signal_number * 8) = new_handler_type;
+  SVar1 = g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[signal_number * 2];
+  g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[signal_number * 2] = new_handler_type;
   return SVar1;
 }

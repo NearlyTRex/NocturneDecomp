@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl shape_edittool_cpp_CPickList_handleDialogInput_FUN_00475230(CPickList *this_ptr)
 
 {
@@ -57,15 +55,15 @@ LAB_004752e0:
   if (this_ptr->current_index < this_ptr->scroll_top) {
     this_ptr->current_index = this_ptr->scroll_top;
   }
-  iVar1 = _DAT_01bd1d8c;
-  if (_DAT_01bd1d8c < g_ClipLeft) {
+  iVar1 = g_INT_01bd1d8c;
+  if (g_INT_01bd1d8c < g_ClipLeft) {
     iVar1 = g_ClipLeft;
   }
   if (g_ClipRight < iVar1) {
     iVar1 = g_ClipRight;
   }
-  iVar2 = _DAT_01bd1d90;
-  if (_DAT_01bd1d90 < g_ClipTop) {
+  iVar2 = g_INT_01bd1d90;
+  if (g_INT_01bd1d90 < g_ClipTop) {
     iVar2 = g_ClipTop;
   }
   if (g_ClipBottom < iVar2) {
@@ -73,10 +71,10 @@ LAB_004752e0:
   }
   wincore_winrun_cpp_setCursorPosition_FUN_00558d60(iVar1,iVar2);
   iVar1 = g_LastClickItemIndex;
-  if (((DAT_01bd1d94 & 1) != 0) &&
+  if (((g_BIT_INTEGER32_01bd1d94.bytes[0] & 1) != 0) &&
      (iVar1 = shape_edittool_cpp_CPickList_getItemAtMousePosition_FUN_00475f10
-                        (this_ptr,_DAT_01bd1d8c,_DAT_01bd1d90), -1 < iVar1)) {
-    DAT_01bd1d94 = DAT_01bd1d94 & 0xfe;
+                        (this_ptr,g_INT_01bd1d8c,g_INT_01bd1d90), -1 < iVar1)) {
+    g_BIT_INTEGER32_01bd1d94.bytes[0] = g_BIT_INTEGER32_01bd1d94.bytes[0] & 0xfe;
     this_ptr->current_index = iVar1;
     iVar2 = wincore_winrun_cpp_getTime_FUN_00558a30();
     iVar3 = iVar2 - g_LastClickTimestamp;

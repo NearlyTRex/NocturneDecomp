@@ -13,6 +13,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_00460c00(C
   
   dVar1 = round
                     ((double)(((float)18 / field_of_view) * (float)65536));
-  DAT_005b7648 = (int)ROUND(dVar1);
+  g_INT_005b7648 = (int)ROUND(dVar1);
   return;
 }

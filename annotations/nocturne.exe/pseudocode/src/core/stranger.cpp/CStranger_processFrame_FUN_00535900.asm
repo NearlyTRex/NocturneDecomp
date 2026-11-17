@@ -63,7 +63,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0053590c
     MOV EBX,dword ptr [EBP + 0x14]      ; 0053590f
     PUSH 0x5954d7                       ; 00535912 | = "DebugActionPending"
-    MOV EDX,dword ptr [0x005b7650]      ; 00535917 | DAT_005b7650
+    MOV EDX,dword ptr [0x005b7650]      ; 00535917 | g_CEventList_PTR_005b7650
     PUSH EDX                            ; 0053591d
     CALL core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30 ; 0053591e
         ;   XREF to: 0047dc30 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateCondition_FUN_0047dc30(CEventList * this_ptr, char * condition_expression)

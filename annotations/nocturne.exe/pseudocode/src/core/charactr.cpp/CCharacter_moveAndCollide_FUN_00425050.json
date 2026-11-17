@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 682,
-    "complexity_score": 550,
+    "complexity_score": 439,
     "cross_reference_count": 36,
     "function_call_count": 9,
     "global_count": 28,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 305,
-    "suspect_count": 21,
+    "pseudocode_lines": 304,
+    "suspect_count": 11,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
-      "undefined_data",
       "unrolled_memset",
-      "unrolled_strlen",
-      "warning_overlapping_globals"
+      "unrolled_strlen"
     ],
-    "total_lines": 987
+    "total_lines": 986
   },
   "cross_references": [
     {
@@ -367,62 +365,62 @@
     },
     {
       "addr": "00765a9c",
-      "name": "DAT_00765a9c",
-      "type": "undefined4",
+      "name": "g_CDemonActor_PTR_00765a9c",
+      "type": "CDemonActor*",
       "value": null
     },
     {
       "addr": "014b89e8",
-      "name": "DAT_014b89e8",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89e8",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89ec",
-      "name": "DAT_014b89ec",
-      "type": "undefined4",
+      "name": "g_INT_014b89ec",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b89f0",
-      "name": "DAT_014b89f0",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89f0",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89f4",
-      "name": "DAT_014b89f4",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89f4",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b89f8",
-      "name": "DAT_014b89f8",
-      "type": "undefined4",
+      "name": "g_INT_014b89f8",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b89fc",
-      "name": "DAT_014b89fc",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b89fc",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b8a00",
-      "name": "DAT_014b8a00",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b8a00",
+      "type": "float",
       "value": null
     },
     {
       "addr": "014b8a04",
-      "name": "DAT_014b8a04",
-      "type": "undefined4",
+      "name": "g_INT_014b8a04",
+      "type": "int",
       "value": null
     },
     {
       "addr": "014b8a08",
-      "name": "DAT_014b8a08",
-      "type": "undefined4",
+      "name": "g_FLOAT_014b8a08",
+      "type": "float",
       "value": null
     },
     {
@@ -855,104 +853,24 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 21,
+      "line": 19,
       "match": "afStackY_1064",
       "severity": "moderate",
       "text": "float afStackY_1064 [985];",
       "type": "stack_alignment_array"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 82,
-      "match": "DAT_00765a9c",
-      "severity": "mild",
-      "text": "DAT_00765a9c = (CDemonActor *)0x0;",
-      "type": "undefined_data"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 98,
       "match": "(SMotion *)((int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SMotion *)((int)pSVar11 + (uint)bVar13 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 179,
-      "match": "DAT_00765a9c",
-      "severity": "mild",
-      "text": "if (DAT_00765a9c == (CDemonActor *)0x0) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 180,
-      "match": "DAT_00765a9c",
-      "severity": "mild",
-      "text": "DAT_00765a9c = g_CDemonSetPtr->collision_actor;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_014b89e8",
-      "severity": "mild",
-      "text": "if (pCVar7 != (CVector3f *)&DAT_014b89e8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 188,
-      "match": "DAT_014b89f4",
-      "severity": "mild",
-      "text": "if (local_28 != (CVector3f *)&DAT_014b89f4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 193,
-      "match": "DAT_014b8a00",
-      "severity": "mild",
-      "text": "if (pCVar6 != (CVector3f *)&DAT_014b8a00) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 218,
-      "match": "DAT_014b89e8",
-      "severity": "mild",
-      "text": "if (pCVar7 != (CVector3f *)&DAT_014b89e8) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 223,
-      "match": "DAT_014b89f4",
-      "severity": "mild",
-      "text": "if (pCVar9 != (CVector3f *)&DAT_014b89f4) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 228,
-      "match": "DAT_014b8a00",
-      "severity": "mild",
-      "text": "if (local_2c != (CVector3f *)&DAT_014b8a00) {",
-      "type": "undefined_data"
-    },
-    {
       "description": "Pointer value `pSVar11` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 100,
+      "line": 98,
       "match": "(int)pSVar11",
       "severity": "moderate",
       "text": "pSVar11 = (SMotion *)((int)pSVar11 + (uint)bVar13 * -2 + 1);",
@@ -960,7 +878,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 67,
+      "line": 65,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).platform_position_delta.z = 0.0;",
@@ -968,7 +886,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 77,
+      "line": 75,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->base).platform_orientation_delta.z = 0.0;",
@@ -976,7 +894,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 87,
+      "line": 85,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",
@@ -984,7 +902,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 116,
+      "line": 114,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",
@@ -992,7 +910,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 134,
+      "line": 132,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCVar6->z = 0.0;",
@@ -1000,7 +918,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 137,
+      "line": 135,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "pCVar9->z = 0.0;",
@@ -1008,7 +926,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 301,
+      "line": 299,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "(this_ptr->velocity).z = 0.0;",
@@ -1016,7 +934,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 96,
+      "line": 94,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

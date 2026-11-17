@@ -4,20 +4,57 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/C3DSLight.h"
 #include "types/classes/CDemonCamera.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CDemonLight.h"
 #include "types/classes/CDemonRaytrace.h"
 #include "types/classes/CKeyFramedModel.h"
+#include "types/classes/CRect.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1FB0000
 // =============================================================================
 
+// C3DSLight*[200]
+extern C3DSLight* g_C3DSLight_PTR_ARRAY_01fba9a8[200];
+
 // CDemonCamera
 extern CDemonCamera g_CDemonCameraInstance;
+
+// CDemonGlobe*[100]
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_01fba2f0[100];
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_01fba484[100];
+extern CDemonGlobe* g_CDemonGlobe_PTR_ARRAY_01fba7a8[100];
+
+// CDemonLight*[4]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fba2dc[4];
+
+// CDemonLight*[96]
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fb99d4[96];
+extern CDemonLight* g_CDemonLight_PTR_ARRAY_01fb9b58[96];
 
 // CDemonRaytrace
 extern CDemonRaytrace g_CDemonRaytraceInstance;
 
 // CKeyFramedModel
 extern CKeyFramedModel g_CKeyFramedModelInstance;
+
+// CRect[96]
+extern CRect g_CRect_ARRAY_01fb9cd8[96];
+
+// int
+extern int g_INT_01fb99d0;
+extern int g_INT_01fb9b54;
+extern int g_INT_01fba2d8;
+extern int g_INT_01fba2ec;
+extern int g_INT_01fba480;
+extern int g_INT_01fba7a4;
+extern int g_INT_01fba9a4;
+
+// int[100]
+extern int g_INT_ARRAY_01fba614[100];
+
+// int[65536]
+extern int g_INT_ARRAY_01fbb060[65536];
 

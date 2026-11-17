@@ -16,7 +16,7 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
   int iVar5;
   int iVar6;
   int y;
-  char *text;
+  char (*text) [1024];
   CBitFont *this_ptr_00;
   int iVar7;
   
@@ -54,8 +54,8 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
       this_ptr_00 = g_CBitFont_PTR_0152d248;
     }
     iVar5 = engine_font_cpp_CBitFont_wrapTextToLines_FUN_004c4260
-                      (this_ptr_00,this_ptr->current_message,g_CHAR_ARRAY_01e7e0a8,10,0x400,
-                       (g_INT_0061b498 * 9) / 10);
+                      (this_ptr_00,this_ptr->current_message,g_CHAR_ARRAY_ARRAY_01e7e0a8[0],10,0x400
+                       ,(g_INT_0061b498 * 9) / 10);
     iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
     y = ((iVar7 * 2 - iVar4) - iVar6 * iVar5) / 2;
     iVar4 = iVar6;
@@ -68,13 +68,13 @@ void __cdecl core_script_cpp_CScript_renderSubtitles_FUN_005439b0(CScript *this_
     engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
     iVar7 = 0;
     if (0 < iVar5) {
-      text = g_CHAR_ARRAY_01e7e0a8;
+      text = g_CHAR_ARRAY_ARRAY_01e7e0a8;
       do {
-        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(this_ptr_00,text);
+        iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(this_ptr_00,*text);
         iVar7 = iVar7 + 1;
         engine_font_cpp_CBitFont_drawText_FUN_004c1dd0
-                  (this_ptr_00,text,(iVar1 - iVar4) / 2,y,0xf8,0);
-        text = text + 0x400;
+                  (this_ptr_00,*text,(iVar1 - iVar4) / 2,y,0xf8,0);
+        text = text + 1;
         y = y + iVar6;
       } while (iVar7 < iVar5);
     }

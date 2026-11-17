@@ -21,7 +21,12 @@ CVector3f g_CVector3f_ARRAY_0077bdbc[100] = {};
 // SCollisionInfo[100]
 SCollisionInfo g_SCollisionInfo_ARRAY_0077c26c[100] = {};
 
-// undefined4
-undefined4 DAT_0077ac8c = {};
-undefined4 DAT_0077bdb8 = {};
+// char[145328]
+char g_CHAR_ARRAY_0077d250[145328] = {};
+
+// int
+int g_INT_0077bdb8 = {};
+
+// int[17]
+int g_INT_ARRAY_0077ac8c[17] = {};
 

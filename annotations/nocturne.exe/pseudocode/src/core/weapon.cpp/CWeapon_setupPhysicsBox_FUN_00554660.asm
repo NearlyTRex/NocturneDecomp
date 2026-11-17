@@ -12,7 +12,7 @@
 ;
 ; Referenced Globals:
 ;   float FLOAT_00597c15 = 0.5
-;   undefined4 DAT_0078a123
+;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240
@@ -30,7 +30,7 @@ section .text
     CMP dword ptr [EAX + 0x178],0x0     ; 0055466e
     JZ 0x00554680                       ; 00554675
         ;   XREF to: 00554680 (CONDITIONAL_JUMP)  ; LAB_00554680
-    CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | DAT_0078a123
+    CMP dword ptr [EBX + 0x68],0x78a123 ; 00554677 | g_CHAR_ARRAY_0077d250+0xced3
     JZ 0x00554685                       ; 0055467e
         ;   XREF to: 00554685 (CONDITIONAL_JUMP)  ; LAB_00554685
     ADD ESP,0x48                        ; 00554680

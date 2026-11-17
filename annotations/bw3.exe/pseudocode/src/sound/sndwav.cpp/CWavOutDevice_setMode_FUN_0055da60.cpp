@@ -42,17 +42,17 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_setMode_FUN_0055da60(CWavOutDevice *t
       pvVar3 = GlobalAlloc(0x2002,((int)((g_INT_02cf54f0 + (g_INT_02cf54f0 >> 0x1f) * -8) -
                                         (uint)((g_INT_02cf54f0 >> 0x1f) << 2 < 0)) >> 3) *
                                   g_INT_02cf54fc * g_INT_02cf54f4);
-      *(HGLOBAL *)(iVar6 + 0x2cf54b0) = pvVar3;
+      *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf54b0 + iVar6) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_0055dc0c;
       pvVar4 = GlobalLock(pvVar3);
-      *(LPVOID *)(iVar6 + 0x2cf54d0) = pvVar4;
+      *(LPVOID *)((int)g_LPVOID_ARRAY_02cf54d0 + iVar6) = pvVar4;
       if (pvVar4 == (LPVOID)0x0) goto LAB_0055dc0c;
       pvVar3 = GlobalAlloc(0x2002,0x20);
-      *(HGLOBAL *)(iVar6 + 0x2cf5470) = pvVar3;
+      *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5470 + iVar6) = pvVar3;
       if (pvVar3 == (HGLOBAL)0x0) goto LAB_0055dc0c;
       iVar1 = iVar1 + 1;
-      pvVar4 = GlobalLock(*(HGLOBAL *)(iVar6 + 0x2cf5470));
-      *(LPVOID *)(iVar6 + 0x2cf5490) = pvVar4;
+      pvVar4 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02cf5470 + iVar6));
+      *(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02cf5490 + iVar6) = pvVar4;
       iVar6 = iVar6 + 4;
     } while (iVar1 < g_INT_02cf5500);
   }

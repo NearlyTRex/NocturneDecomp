@@ -14,7 +14,7 @@
 ;   TerminatedCString s_setMaxSwSoundLatency_can_005939d3
 ;   double DOUBLE_00593a0e = 0.0500000000000000
 ;   double DOUBLE_00593a16 = 2
-;   undefined4 DAT_005bea98
+;   float g_FLOAT_005bea98 = 0.5
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;
@@ -48,7 +48,7 @@ section .text
     JA 0x005289de                       ; 005289ad
         ;   XREF to: 005289de (CONDITIONAL_JUMP)  ; LAB_005289de
     MOV EAX,dword ptr [ESP + 0x4]       ; 005289af
-    MOV [0x005bea98],EAX                ; 005289b3 | DAT_005bea98
+    MOV [0x005bea98],EAX                ; 005289b3 | g_FLOAT_005bea98
     RET                                 ; 005289b8
     MOV EDX,0x5939be                    ; 005289b9 | = "..\\sound\\sndmain.cpp"
         ;   Label: LAB_005289b9
@@ -64,6 +64,6 @@ section .text
     MOV dword ptr [ESP + 0x4],0x40000000 ; 005289de
         ;   Label: LAB_005289de
     MOV EAX,dword ptr [ESP + 0x4]       ; 005289e6
-    MOV [0x005bea98],EAX                ; 005289ea | DAT_005bea98
+    MOV [0x005bea98],EAX                ; 005289ea | g_FLOAT_005bea98
     RET                                 ; 005289ef
 

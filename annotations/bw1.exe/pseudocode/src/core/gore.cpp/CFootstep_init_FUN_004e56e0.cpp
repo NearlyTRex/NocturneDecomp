@@ -26,11 +26,11 @@ void __cdecl core_gore_cpp_CFootstep_init_FUN_004e56e0(CFootstep *this_ptr,CVect
     fVar6 = (float10)fcos((float10)(orientation->vec).y);
     fVar5 = fVar5 * (float10)0.5;
     fVar6 = fVar6 * (float10)0.5;
-    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&DAT_0061ee1c + iVar2) +
-                         -fVar6 * (float10)*(float *)((int)g_FLOAT_ARRAY_0061ee0c + iVar2) +
-                        (float10)position->x);
-    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&DAT_0061ee1c + iVar2) +
-                        fVar5 * (float10)*(float *)((int)g_FLOAT_ARRAY_0061ee0c + iVar2)) +
+    local_40.x = (float)(fVar5 * (float10)*(float *)((int)g_FLOAT_ARRAY_ARRAY_0061ee0c[1] + iVar2) +
+                         -fVar6 * (float10)*(float *)((int)g_FLOAT_ARRAY_ARRAY_0061ee0c[0] + iVar2)
+                        + (float10)position->x);
+    local_40.z = (float)(fVar6 * (float10)*(float *)((int)g_FLOAT_ARRAY_ARRAY_0061ee0c[1] + iVar2) +
+                        fVar5 * (float10)*(float *)((int)g_FLOAT_ARRAY_ARRAY_0061ee0c[0] + iVar2)) +
                  position->z;
     if (local_34 != &local_40) {
       local_34[0].x = local_40.x;

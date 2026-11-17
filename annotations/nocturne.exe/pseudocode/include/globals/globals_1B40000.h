@@ -4,22 +4,75 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBitFont.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/classes/CDemonRenderer.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SEdgeTableEntry.h"
+#include "types/structs/SFace.h"
 #include "types/structs/SFreaky.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1B40000
 // =============================================================================
 
+// CBitFont*
+extern CBitFont* g_CBitFont_PTR_01b4d718;
+
 // CDemonActorType
 extern CDemonActorType g_CDraculaBrideActorType_01b4d224;
+
+// CDemonRenderer
+extern CDemonRenderer g_CDemonRenderer_01b4d738;
 
 // CVector3f
 extern CVector3f CVector3f_01b4d200;
 extern CVector3f CVector3f_01b4d20c;
 extern CVector3f CVector3f_01b4d218;
 
+// SEdgeTableEntry[40]
+extern SEdgeTableEntry g_SEdgeTableEntry_ARRAY_01b4d490[40];
+
+// SFace[5000]
+extern SFace g_SFace_ARRAY_01b4d7b4[5000];
+
 // SFreaky[6]
 extern SFreaky g_SFreaky_ARRAY_01b4d280[6];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01b4cd34[16];
+
+// float
+extern float g_FLOAT_01b4d478;
+extern float g_FLOAT_01b4d47c;
+extern float g_FLOAT_01b4d484;
+extern float g_FLOAT_01b4d488;
+
+// int
+extern int g_INT_01b4cd30;
+extern int g_INT_01b4d1b4;
+extern int g_INT_01b4d1b8;
+extern int g_INT_01b4d1fc;
+extern int g_INT_01b4d480;
+extern int g_INT_01b4d48c;
+extern int g_INT_01b4d710;
+extern int g_INT_01b4d714;
+extern int g_INT_01b4d71c;
+extern int g_INT_01b4d720;
+extern int g_INT_01b4d724;
+extern int g_INT_01b4d728;
+extern int g_INT_01b4d72c;
+extern int g_INT_01b4d730;
+extern int g_INT_01b4d734;
+extern int g_INT_01b4d764;
+extern int g_INT_01b4d768;
+extern int g_INT_01b4d7ac;
+extern int g_INT_01b4d7b0;
+
+// int[16]
+extern int g_INT_ARRAY_01b4d76c[16];
+
+// int[8]
+extern int g_INT_ARRAY_01b4d260[8];
 

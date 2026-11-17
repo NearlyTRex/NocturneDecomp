@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005396d0(CStranger *this_ptr,SPose *out_pose)
 
@@ -36,7 +35,7 @@ void __cdecl core_stranger_cpp_CStranger_extractTurnPose_FUN_005396d0(CStranger 
   pCVar1 = core_xform_cpp_quaternionToEulerAngles_FUN_0055d5b0
                      (&local_1c,
                       (this_ptr->base).base.model.bone_transform.pose_data.bone_rotations +
-                      _DAT_02dc9f50);
+                      g_INT_ARRAY_02dc9f50[0]);
   blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
   bone_index = -1;
   local_10 = -pCVar1->y;

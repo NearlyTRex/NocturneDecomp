@@ -12,9 +12,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_x_005884ec
 ;   CBitFont* g_CBitFont_PTR_014b98f8
-;   undefined4 DAT_01c038f8
-;   undefined4 DAT_01c038fc
-;   undefined4 DAT_01c03908
+;   DWORD g_DWORD_01c038f8
+;   DWORD g_DWORD_01c038fc
+;   DWORD g_DWORD_01c03908
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_00563c90
@@ -69,11 +69,11 @@ section .text
     CALL engine_font.cpp_CBitFont_drawText_FUN_00490980 ; 004cf877
         ;   XREF to: 00490980 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_00490980(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004cf87c
-    MOV EAX,[0x01c03908]                ; 004cf87f | DAT_01c03908
+    MOV EAX,[0x01c03908]                ; 004cf87f | g_DWORD_01c03908
     PUSH EAX                            ; 004cf884
-    MOV EDX,dword ptr [0x01c038fc]      ; 004cf885 | DAT_01c038fc
+    MOV EDX,dword ptr [0x01c038fc]      ; 004cf885 | g_DWORD_01c038fc
     PUSH EDX                            ; 004cf88b
-    MOV ECX,dword ptr [0x01c038f8]      ; 004cf88c | DAT_01c038f8
+    MOV ECX,dword ptr [0x01c038f8]      ; 004cf88c | g_DWORD_01c038f8
     PUSH ECX                            ; 004cf892
     PUSH 0x5884ec                       ; 004cf893 | = "%d,%d,%x"
     LEA EAX,[ESP + 0x10]                ; 004cf898

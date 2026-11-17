@@ -4,15 +4,31 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
+#include "system/stdio.h"
 #include "system/stdlib.h"
+#include "system/time.h"
 #include "system/watcom.h"
+#include "system/wincon.h"
+#include "system/windef.h"
 #include "system/winnt.h"
+#include "types/classes/CTerrain.h"
 #include "types/classes/CTextureList.h"
 #include "types/classes/CWater.h"
+#include "types/classes/CWeather.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
+#include "types/structs/SMRGLTextureBasic.h"
+#include "types/structs/SRenderVertex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5C0000
 // =============================================================================
+
+// BYTE
+extern BYTE g_BYTE_005c1d0f;
+
+// CTerrain*
+extern CTerrain* g_CTerrain_PTR_005c1144;
 
 // CTextureList*
 extern CTextureList* g_CTextureListPtr;
@@ -20,9 +36,25 @@ extern CTextureList* g_CTextureListPtr;
 // CWater*
 extern CWater* g_CWaterPtr;
 
+// CWeather*
+extern CWeather* g_CWeather_PTR_005c15b8;
+
+// DWORD
+extern DWORD g_DWORD_005c1ccc;
+extern DWORD g_DWORD_005c1cf0;
+extern DWORD g_DWORD_005c20cc;
+
 // GUID
 extern GUID g_IID_IDirectSound3DListener;
 extern GUID g_IID_IDirectSound3DBuffer;
+
+// HANDLE
+extern HANDLE g_HANDLE_005c20d0;
+extern HANDLE g_HANDLE_005c20d4;
+
+// Heap*
+extern Heap* g_Heap_PTR_005c1680;
+extern Heap* g_Heap_PTR_005c1684;
 
 // RuntimeHandlerEntry
 extern RuntimeHandlerEntry g_FirstInitHandler;
@@ -35,12 +67,84 @@ extern RuntimeHandlerEntry g_InitHandlers[160];
 // RuntimeHandlerEntry[6]
 extern RuntimeHandlerEntry RuntimeHandlerEntry_ARRAY_005c26d4[6];
 
+// SIGNAL_HANDLER_TYPE[26]
+extern SIGNAL_HANDLER_TYPE g_SIGNAL_HANDLER_TYPE_ARRAY_005c20d8[26];
+
+// SIOControlBlock*
+extern SIOControlBlock* g_SIOControlBlock_PTR_005c1f54;
+
+// SMRGLPrimitiveQuad
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_005c1374;
+
+// SMRGLTextureBasic
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005c15bc;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005c15d4;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005c15ec;
+extern SMRGLTextureBasic g_SMRGLTextureBasic_005c1618;
+
+// SMRGLTextureBasic[16]
+extern SMRGLTextureBasic g_SMRGLTextureBasic_ARRAY_005c11f4[16];
+
+// SRenderVertex[20000]
+extern SRenderVertex g_SRenderVertex_ARRAY_005c5014[20000];
+
+// TerminatedCString
+extern TerminatedCString s_EST_005c1e08;
+extern TerminatedCString s_EDT_005c1e89;
+
+// WCHAR*
+extern WCHAR* g_WCHAR_PTR_005c1cd8;
+extern WCHAR* g_WCHAR_PTR_005c1cdc;
+extern WCHAR* g_WCHAR_PTR_005c1ce0;
+
+// WORD
+extern WORD g_WORD_005c1d11;
+
 // WatcomStaticDestructorNode
 extern WatcomStaticDestructorNode g_CTextureListDestructorNode;
 extern WatcomStaticDestructorNode g_CWaterDestructorNode;
 
+// WatcomStaticDestructorNode*
+extern WatcomStaticDestructorNode* g_WatcomStaticDestructorNode_PTR_005c1f50;
+
+// _FILE
+extern _FILE g_FILE_005c18ae;
+extern _FILE g_FILE_005c18c8;
+
+// _FILE*
+extern _FILE* g_FILE_PTR_005c1894;
+
+// byte
+extern byte g_BYTE_005c1794;
+extern byte g_BYTE_005c1795;
+extern byte g_BYTE_005c1d10;
+extern byte g_BYTE_005c1d98;
+extern byte g_BYTE_005c1f20;
+extern byte g_BYTE_005c2050;
+extern byte g_BYTE_005c2140;
+
+// byte[16]
+extern byte g_BYTE_ARRAY_005c3f68[16];
+
+// char*
+extern char* g_CHAR_PTR_005c1cd0;
+extern char* g_CHAR_PTR_005c1cd4;
+extern char* g_CHAR_PTR_005c1d09;
+
+// char[145]
+extern char g_CHAR_ARRAY_005c2170[145];
+
 // char[256]
 extern char g_RendererDllPath[256];
+
+// char[260]
+extern char g_CHAR_ARRAY_005c1b24[260];
+
+// char[4]
+extern char g_CHAR_ARRAY_005c1a9c[4];
+
+// dst_rule
+extern dst_rule g_dst_rule_005c1dc0;
 
 // int
 extern int g_SystemInitialized;
@@ -56,113 +160,88 @@ extern int INT_005c1174;
 extern int INT_005c1188;
 extern int INT_005c11a0;
 extern int g_INT_005c11c4;
+extern int g_INT_005c11f0;
 extern int g_INT_005c154c;
 extern int INT_005c1578;
 extern int INT_005c1590;
 extern int INT_005c1614;
 extern int INT_005c1654;
+extern int g_INT_005c1660;
+extern int g_INT_005c1664;
 extern int INT_005c1668;
 extern int INT_005c166c;
+extern int g_INT_005c1688;
+extern int g_INT_005c1aa0;
+extern int g_INT_005c1ab8;
+extern int g_INT_005c1cc8;
+extern int g_INT_005c1cf8;
+extern int g_INT_005c1d50;
+extern int g_INT_005c1de4;
+extern int g_INT_005c1de8;
+extern int g_INT_005c1dec;
+extern int g_INT_005c1f14;
+extern int g_INT_005c1f18;
+extern int g_INT_005c1f1c;
+extern int g_INT_005c1f58;
+extern int g_INT_005c1f5c;
+extern int g_INT_005c1fe8;
+extern int g_INT_005c1fec;
+extern int g_INT_005c204c;
+extern int g_INT_005c206c;
+
+// short
+extern short g_SHORT_005c1f4c;
+
+// uint
+extern uint g_UINT_005c1d13;
+extern uint g_UINT_005c1d17;
+extern uint g_UINT_005c1d1b;
+extern uint g_UINT_005c1d1f;
+extern uint g_UINT_005c1f90;
+extern uint g_UINT_005c2144;
+
+// uint*
+extern uint* g_UINT_PTR_005c1cec;
 
 // undefined1
-extern undefined1 DAT_005c1a9c;
 extern undefined1 DAT_005c1b23;
-extern undefined1 DAT_005c1b24;
-extern undefined1 DAT_005c1b25;
-extern undefined1 DAT_005c1b26;
-extern undefined1 DAT_005c1b27;
-extern undefined1 DAT_005c1d0f;
-extern undefined1 DAT_005c1e89;
-extern undefined1 DAT_005c2050;
-extern undefined1 DAT_005c2140;
-
-// undefined2
-extern undefined2 DAT_005c1d11;
-extern undefined2 DAT_005c1f4c;
 
 // undefined4
-extern undefined4 DAT_005c1660;
-extern undefined4 DAT_005c1664;
-extern undefined4 DAT_005c1680;
-extern undefined4 DAT_005c1684;
-extern undefined4 DAT_005c1688;
-extern undefined4 DAT_005c1ab8;
-extern undefined4 DAT_005c1b04;
 extern undefined4 DAT_005c1c28;
-extern undefined4 DAT_005c1cc8;
-extern undefined4 DAT_005c1ccc;
-extern undefined4 DAT_005c1cf0;
-extern undefined4 DAT_005c1cf8;
-extern undefined4 DAT_005c1d17;
-extern undefined4 DAT_005c1d1b;
-extern undefined4 DAT_005c1d50;
-extern undefined4 DAT_005c1d54;
-extern undefined4 DAT_005c1d58;
-extern undefined4 DAT_005c1d5c;
-extern undefined4 DAT_005c1d60;
-extern undefined4 DAT_005c1d7c;
-extern undefined4 DAT_005c1d80;
-extern undefined4 DAT_005c1d88;
-extern undefined4 DAT_005c1d90;
-extern undefined4 DAT_005c1d94;
-extern undefined4 DAT_005c1dd8;
-extern undefined4 DAT_005c1ddc;
 extern undefined4 DAT_005c1de0;
-extern undefined4 DAT_005c1de4;
-extern undefined4 DAT_005c1de8;
-extern undefined4 DAT_005c1dec;
 extern undefined4 DAT_005c1dfc;
 extern undefined4 DAT_005c1e00;
 extern undefined4 DAT_005c1e04;
-extern undefined4 DAT_005c1f14;
-extern undefined4 DAT_005c1f1c;
-extern undefined4 DAT_005c1f20;
-extern undefined4 DAT_005c1f50;
-extern undefined4 DAT_005c1f54;
-extern undefined4 DAT_005c1f58;
-extern undefined4 DAT_005c1f5c;
-extern undefined4 DAT_005c1f6c;
-extern undefined4 DAT_005c1f70;
-extern undefined4 DAT_005c204c;
-extern undefined4 DAT_005c206c;
-extern undefined4 DAT_005c20d0;
-extern undefined4 DAT_005c20d4;
-extern undefined4 DAT_005c2144;
-extern undefined4 DAT_005c5014;
-extern undefined4 DAT_005c5018;
-extern undefined4 DAT_005c501c;
-extern undefined4 DAT_005c5024;
-extern undefined4 DAT_005c502c;
-extern undefined4 DAT_005c5034;
-extern undefined4 DAT_005c5038;
-extern undefined4 DAT_005c503c;
-extern undefined4 DAT_005c5040;
-extern undefined4 DAT_005c5044;
-extern undefined4 DAT_005c5048;
-extern undefined4 DAT_005c504c;
-extern undefined4 DAT_005c5054;
-extern undefined4 DAT_005c5064;
-extern undefined4 DAT_005c5068;
-extern undefined4 DAT_005c506c;
-extern undefined4 DAT_005c5070;
-extern undefined4 DAT_005c5074;
-extern undefined4 DAT_005c5078;
-extern undefined4 DAT_005c5084;
-extern undefined4 DAT_005c5088;
-extern undefined4 DAT_005c5094;
-extern undefined4 DAT_005c5098;
-extern undefined4 DAT_005c509c;
-extern undefined4 DAT_005c50a4;
-extern undefined4 DAT_005c50a8;
-extern undefined4 DAT_005c50b4;
-extern undefined4 DAT_005c50c4;
-extern undefined4 DAT_005c50c8;
-extern undefined4 DAT_005c50cc;
-extern undefined4 DAT_005c50e4;
-extern undefined4 DAT_005c5114;
-extern undefined4 DAT_005c5144;
-extern undefined4 DAT_005c5174;
 
 // void*
+extern void* g_PTR_005c1b04;
+extern void* g_PTR_005c1cf4;
+extern void* g_PTR_005c1d23;
+extern void* g_PTR_005c1d54;
+extern void* g_PTR_005c1d58;
+extern void* g_PTR_005c1d5c;
+extern void* g_PTR_005c1d60;
+extern void* g_PTR_005c1d7c;
+extern void* g_PTR_005c1d80;
+extern void* g_PTR_005c1d88;
+extern void* g_PTR_005c1d90;
+extern void* g_PTR_005c1d94;
+extern void* g_PTR_005c1f6c;
+extern void* g_PTR_005c1f70;
+extern void* g_PTR_005c2168;
+extern void* g_PTR_005c216c;
+extern void* g_PTR_005c3f84;
 extern void* g_BackBuffer;
+
+// void*[2]
+extern void* g_ARRAY_PTR_005c2040[2];
+
+// void*[3]
+extern void* g_ARRAY_PTR_005c1f60[3];
+
+// void*[4]
+extern void* g_ARRAY_PTR_005c1cb4[4];
+
+// void*[8]
+extern void* g_ARRAY_PTR_005c4094[8];
 

@@ -4,13 +4,23 @@
 
 // Type dependencies
 #include "system/basetypes.h"
+#include "system/stdio.h"
 #include "system/windef.h"
+#include "system/winnt.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CVector3f.h"
+#include "types/structs/SRenderVertex.h"
+#include "types/structs/SSoftwareEdge.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x2DE0000
 // =============================================================================
+
+// BOOL
+extern BOOL g_BOOL_02de07f4;
+
+// BYTE
+extern BYTE g_BYTE_02de5c24;
 
 // CDemonActorType
 extern CDemonActorType g_CWerewolfActorType_02de078c;
@@ -20,11 +30,123 @@ extern CDemonActorType g_CZombieActorType_02de4940;
 extern CVector3f CVector3f_02de0774;
 extern CVector3f CVector3f_02de0780;
 
+// DWORD
+extern DWORD g_DWORD_02de07d0;
+extern DWORD g_DWORD_02de3120;
+
+// FileListNode*
+extern FileListNode* g_FileListNode_PTR_02de4e20;
+extern FileListNode* g_FileListNode_PTR_02de4e24;
+
+// HMODULE
+extern HMODULE g_HMODULE_02de3118;
+
 // HWND
 extern HWND g_HWND_02de2098;
+extern HWND g_HWND_02de311c;
+
+// SRenderVertex[32]
+extern SRenderVertex g_SRenderVertex_ARRAY_02de3140[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02de3740[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02de3d40[32];
+extern SRenderVertex g_SRenderVertex_ARRAY_02de4340[32];
+
+// SSoftwareEdge[16]
+extern SSoftwareEdge g_SSoftwareEdge_ARRAY_02de4980[16];
+
+// WCHAR*
+extern WCHAR* g_WCHAR_PTR_02de4e38;
+
+// _struct_19
+extern _struct_19 g_struct_19_02de07d8;
+extern _struct_19 g_struct_19_02de07e0;
+
+// char*
+extern char* g_CHAR_PTR_02de2d14;
+extern char* g_CHAR_PTR_02de4e34;
+
+// char**
+extern char** g_CHAR_PTR_PTR_02de54a0;
+extern char** g_CHAR_PTR_PTR_02de54a4;
+
+// char[16]
+extern char g_CHAR_ARRAY_02de5460[16];
+
+// char[1]
+extern char g_CHAR_ARRAY_02de5c40[1];
+
+// char[200]
+extern char g_CHAR_ARRAY_02de06a8[200];
+extern char g_CHAR_ARRAY_02de1fd0[200];
 
 // char[256]
 extern char g_CHAR_ARRAY_02de0860[256];
+extern char g_CHAR_ARRAY_02de5c41[256];
+
+// char[260]
+extern char g_CHAR_ARRAY_02de4e40[260];
+extern char g_CHAR_ARRAY_02de514c[260];
+
+// double
+extern double g_DOUBLE_02de07e8;
+
+// float[200]
+extern float g_FLOAT_ARRAY_02de0388[200];
+
+// int
+extern int g_INT_02de07d4;
+extern int g_INT_02de07f0;
+extern int g_INT_02de0848;
+extern int g_INT_02de084c;
+extern int g_INT_02de0850;
+extern int g_INT_02de0854;
+extern int g_INT_02de0858;
+extern int g_INT_02de20a0;
+extern int g_INT_02de20a4;
+extern int g_INT_02de20a8;
+extern int g_INT_02de20ac;
+extern int g_INT_02de2d10;
+extern int g_INT_02de3124;
+extern int g_INT_02de312c;
+extern int g_INT_02de3130;
+extern int g_INT_02de3134;
+extern int g_INT_02de3138;
+extern int g_INT_02de313c;
+extern int g_INT_02de497c;
+extern int g_INT_02de4e00;
+extern int g_INT_02de4e04;
+extern int g_INT_02de4e10;
+extern int g_INT_02de4e30;
+extern int g_INT_02de54a8;
+extern int g_INT_02de5c10;
+extern int g_INT_02de5c14;
+extern int g_INT_02de5c30;
+extern int g_INT_02de5d50;
+extern int g_INT_02de5d54;
+extern int g_INT_02de5d58;
+extern int g_INT_02de5d80;
+extern int g_INT_02de5d84;
+extern int g_INT_02de5d88;
+
+// int[20]
+extern int g_INT_ARRAY_02de07f8[20];
+
+// int[600]
+extern int g_INT_ARRAY_02de20b0[600];
+
+// uint
+extern uint g_UINT_02de0770;
+
+// void*
+extern void* g_PTR_02de3114;
+extern void* g_PTR_02de4e3c;
+extern void* g_PTR_02de5c18;
+extern void* g_PTR_02de5d60;
+extern void* g_PTR_02de5d70;
+
+// wchar_t[260]
+extern wchar_t g_WCHAR_T_ARRAY_02de4f44[260];
+extern wchar_t g_WCHAR_T_ARRAY_02de5250[260];
 
 // word
 extern word DAT_02DE612A;

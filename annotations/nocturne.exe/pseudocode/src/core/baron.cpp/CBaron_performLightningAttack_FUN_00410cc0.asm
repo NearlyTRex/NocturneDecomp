@@ -29,8 +29,8 @@
 ;   double DOUBLE_00578690 = 0.785398163375000
 ;   WatcomTypeInfo g_CVectorTypeInfo_005993b0
 ;   CFireEffect* g_CFireEffect_PTR_005b80f0 = 01c08d04
-;   undefined4 DAT_0076431c
-;   undefined4 DAT_00764320
+;   int g_INT_0076431c
+;   int g_INT_00764320
 ;   UVector3 g_ZeroVector
 ;
 ; Called Functions:
@@ -251,7 +251,7 @@ section .text
     MOV dword ptr [ESP + 0x108],EAX     ; 00410f11
     MOV EAX,dword ptr [EDX + 0x8]       ; 00410f18
     MOV dword ptr [ESP + 0x10c],EAX     ; 00410f1b
-    MOV EDX,dword ptr [0x0076431c]      ; 00410f22 | DAT_0076431c
+    MOV EDX,dword ptr [0x0076431c]      ; 00410f22 | g_INT_0076431c
         ;   Label: LAB_00410f22
     LEA EAX,[EDX*0x4 + 0x0]             ; 00410f28
     SUB EAX,EDX                         ; 00410f2f
@@ -271,7 +271,7 @@ section .text
     PUSH EBX                            ; 00410f5b
     CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240 ; 00410f5c
         ;   XREF to: 0040a240 (UNCONDITIONAL_CALL)  ; CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_0040a240(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
-    MOV EDX,dword ptr [0x00764320]      ; 00410f61 | DAT_00764320
+    MOV EDX,dword ptr [0x00764320]      ; 00410f61 | g_INT_00764320
     LEA EAX,[EDX*0x4 + 0x0]             ; 00410f67
     SUB EAX,EDX                         ; 00410f6e
     SHL EAX,0x4                         ; 00410f70

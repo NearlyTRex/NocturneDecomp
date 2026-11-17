@@ -38,7 +38,7 @@
 ;   double DOUBLE_00586182 = 3.14159265350000
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01cae288
+;   int[18] g_INT_ARRAY_01cae288
 ;   undefined4 g_CWeaponActorType_02ddf970.name_hash
 ;
 ; Called Functions:
@@ -303,7 +303,7 @@ section .text
     JNZ 0x004ba2e3                      ; 004ba29b
         ;   XREF to: 004ba2e3 (CONDITIONAL_JUMP)  ; LAB_004ba2e3
     PUSH 0x51b650                       ; 004ba29d
-    MOV ECX,dword ptr [0x01cae288]      ; 004ba2a2 | DAT_01cae288
+    MOV ECX,dword ptr [0x01cae288]      ; 004ba2a2 | g_INT_ARRAY_01cae288
     PUSH ECX                            ; 004ba2a8
     LEA EAX,[EBX + 0x1fa4c]             ; 004ba2a9
     PUSH dword ptr [EBX + 0x1fa58]      ; 004ba2af

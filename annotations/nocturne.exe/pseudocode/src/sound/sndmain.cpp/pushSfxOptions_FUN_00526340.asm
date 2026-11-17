@@ -22,7 +22,7 @@
 ;   TerminatedCString s_pushSfxOptions_stack_ful_0059348f
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_02dc1b74
+;   int g_INT_02dc1b74
 ;
 ; Called Functions:
 ;   core_main.c_displayErrorAndQuit_FUN_004c8440
@@ -34,13 +34,13 @@ section .text
     PUSH ESI                            ; 00526340
         ;   Label: sound_sndmain.cpp_pushSfxOptions_FUN_00526340
     PUSH EDI                            ; 00526341
-    MOV EDX,dword ptr [0x02dc1b74]      ; 00526342 | DAT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 00526342 | g_INT_02dc1b74
     INC EDX                             ; 00526348
-    MOV dword ptr [0x02dc1b74],EDX      ; 00526349 | DAT_02dc1b74
+    MOV dword ptr [0x02dc1b74],EDX      ; 00526349 | g_INT_02dc1b74
     CMP EDX,0x8                         ; 0052634f
     JGE 0x00526397                      ; 00526352
         ;   XREF to: 00526397 (CONDITIONAL_JUMP)  ; LAB_00526397
-    MOV ECX,dword ptr [0x02dc1b74]      ; 00526354 | DAT_02dc1b74
+    MOV ECX,dword ptr [0x02dc1b74]      ; 00526354 | g_INT_02dc1b74
         ;   Label: LAB_00526354
     LEA EDX,[ECX + -0x1]                ; 0052635a
     LEA EAX,[EDX*0x4 + 0x0]             ; 0052635d

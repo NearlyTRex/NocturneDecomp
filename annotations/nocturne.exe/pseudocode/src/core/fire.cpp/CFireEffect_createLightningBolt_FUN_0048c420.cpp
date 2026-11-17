@@ -6,21 +6,19 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_fire_cpp_CFireEffect_createLightningBolt_FUN_0048c420(CFireEffect *this_ptr,CVector3f *start_position,float start_width,int enable_camera_shake,float end_width)
 
 {
   core_fire_cpp_CLightningBolt_activate_FUN_00488b10
-            (g_CLightningBolt_ARRAY_01c67510 + _DAT_01c6750c,start_position,start_width,end_width);
-  _DAT_01c6750c = _DAT_01c6750c + 1;
-  if (_DAT_01c6750c < 10) {
+            (g_CLightningBolt_ARRAY_01c67510 + g_INT_01c6750c,start_position,start_width,end_width);
+  g_INT_01c6750c = g_INT_01c6750c + 1;
+  if (g_INT_01c6750c < 10) {
     if (enable_camera_shake == 0) {
       return;
     }
   }
   else {
-    _DAT_01c6750c = 0;
+    g_INT_01c6750c = 0;
     if (enable_camera_shake == 0) {
       return;
     }

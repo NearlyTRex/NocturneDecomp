@@ -14,7 +14,7 @@
 #include "types/classes/CPickList.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/structs/SMRGLHeaderPrimitive.h"
+#include "types/structs/SMRGLPrimitiveQuadIndex.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1CD0000
@@ -56,9 +56,9 @@ extern CVector3f g_CVector3f_01cd0d50;
 extern CVector3i g_CVector3i_01cd0e68;
 extern CVector3i g_CVector3i_01cd0e74;
 
-// SMRGLHeaderPrimitive
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cd0e40;
-extern SMRGLHeaderPrimitive g_SMRGLHeaderPrimitive_01cd0e80;
+// SMRGLPrimitiveQuadIndex
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cd0e40;
+extern SMRGLPrimitiveQuadIndex g_SMRGLPrimitiveQuadIndex_01cd0e80;
 
 // char[256]
 extern char g_CHAR_ARRAY_01cd05c0[256];
@@ -97,10 +97,6 @@ extern int g_INT_01cd0c88;
 extern int g_INT_01cd0c8c;
 extern int g_INT_01cd0c90;
 extern int g_INT_01cd0c94;
-extern int g_INT_01cd0e58;
-extern int g_INT_01cd0e5c;
-extern int g_INT_01cd0e60;
-extern int g_INT_01cd0e64;
 extern int g_INT_01cd0ea8;
 extern int g_INT_01cd56ac;
 extern int g_INT_01cd56b0;

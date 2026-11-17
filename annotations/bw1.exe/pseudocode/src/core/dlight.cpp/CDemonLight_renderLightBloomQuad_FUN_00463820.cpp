@@ -170,7 +170,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00463820(CDemo
     this_ptr_00->vertex_buffer_ptr[3].g = 0xffff;
     this_ptr_00->vertex_buffer_ptr[3].b = 0xffff;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
-              (this_ptr_00,&g_SMRGLTextureBasic_006122c0);
+              (this_ptr_00,&g_SLightGlowTable_006122a8.headlight);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(g_CDemonRenderer_PTR_00612560,1);
     iStack_f8 = 4;
     engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30

@@ -7,7 +7,7 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0078a123
+;   undefined4 g_CHAR_ARRAY_0077d250+0xced3
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_moveAndCollide_FUN_00425050
@@ -43,7 +43,7 @@ section .text
     CALL dword ptr [EDX + 0xe8]         ; 0047a0ca
     MOV ECX,dword ptr [EBX + 0x68]      ; 0047a0d0
     ADD ESP,0x4                         ; 0047a0d3
-    CMP ECX,0x78a123                    ; 0047a0d6 | DAT_0078a123
+    CMP ECX,0x78a123                    ; 0047a0d6 | g_CHAR_ARRAY_0077d250+0xced3
     JNZ 0x0047a10f                      ; 0047a0dc
         ;   XREF to: 0047a10f (CONDITIONAL_JUMP)  ; LAB_0047a10f
     LEA EAX,[EBX + 0x150]               ; 0047a0de

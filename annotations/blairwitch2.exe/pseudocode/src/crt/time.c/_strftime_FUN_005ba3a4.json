@@ -2,18 +2,16 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 485,
-    "complexity_score": 412,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 232,
-    "suspect_count": 16,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast",
-      "pointer_truncation",
-      "unknown_field",
-      "unrolled_memcpy"
+      "unrolled_memcpy",
+      "unrolled_strlen"
     ],
     "total_lines": 717
   },
@@ -117,8 +115,8 @@
     },
     {
       "addr": "0061eeb8",
-      "name": "g_CHAR_ARRAY_0061eeb8",
-      "type": "char[7]",
+      "name": "g_CHAR_ARRAY_ARRAY_0061eeb8",
+      "type": "char[7][4]",
       "value": null
     },
     {
@@ -129,8 +127,8 @@
     },
     {
       "addr": "0061eef0",
-      "name": "g_CHAR_ARRAY_0061eef0",
-      "type": "char[12]",
+      "name": "g_CHAR_ARRAY_ARRAY_0061eef0",
+      "type": "char[12][4]",
       "value": null
     },
     {
@@ -334,115 +332,11 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_a0._0_1_ = *format_string;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "local_a0._1_1_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 145,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_a0._0_1_ = (char)local_a0 + -1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 180,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "local_a0._1_1_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 181,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_a0._0_1_ = (char)time_ptr->tm_wday + '0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 203,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "local_a0._0_1_ = cVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 204,
-      "match": "._1_1_",
-      "severity": "mild",
-      "text": "local_a0._1_1_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 215,
-      "match": "(int *)((int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 229,
-      "match": "(int *)((int)piVar6",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 230,
-      "match": "(int *)((int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 215,
-      "match": "(int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar6` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 229,
-      "match": "(int)piVar6",
-      "severity": "moderate",
-      "text": "piVar6 = (int *)((int)piVar6 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `piVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 230,
-      "match": "(int)piVar7",
-      "severity": "moderate",
-      "text": "piVar7 = (int *)((int)piVar7 + (uint)bVar8 * -2 + 1);",
-      "type": "pointer_truncation"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 222,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "text": "for (uVar5 = uVar6 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
     },
     {
@@ -450,8 +344,16 @@
       "line": 227,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (uVar4 = uVar5 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {",
+      "text": "for (uVar5 = uVar6 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 211,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 005ba7cf, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

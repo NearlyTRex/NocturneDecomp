@@ -5,6 +5,8 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "types/classes/CDemonActorType.h"
+#include "types/funcdefs/FileSearchHandlerFunc.h"
+#include "types/structs/SMRGLPrimitiveQuad.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x1AF0000
@@ -14,6 +16,15 @@
 extern CDemonActorType g_CZombieDogActorType_01af4e5c;
 extern CDemonActorType g_CDoorActorType_01af4e9c;
 
-// void*
-extern void* g_VOID_PTR_01af4ef0;
+// FileSearchHandlerFunc*[5]
+extern FileSearchHandlerFunc* g_FileSearchHandlerFunc_PTR_ARRAY_01af4edc[5];
+
+// SMRGLPrimitiveQuad[5000]
+extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_ARRAY_01af4ef0[5000];
+
+// int
+extern int g_INT_01af4ed8;
+
+// uint
+extern uint g_UINT_01af4e98;
 

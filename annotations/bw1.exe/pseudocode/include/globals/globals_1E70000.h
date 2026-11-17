@@ -29,11 +29,11 @@ extern SMRGLPrimitiveQuad g_SMRGLPrimitiveQuad_01e7d360;
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7d5bc[16];
 extern SSoftwareEdge g_SSoftwareEdge_ARRAY_01e7dad0[16];
 
-// char[101]
-extern char g_CHAR_ARRAY_01e7abe8[101];
+// char[101][100]
+extern char g_CHAR_ARRAY_ARRAY_01e7abe8[101][100];
 
-// char[10]
-extern char g_CHAR_ARRAY_01e7e0a8[10];
+// char[10][1024]
+extern char g_CHAR_ARRAY_ARRAY_01e7e0a8[10][1024];
 
 // int
 extern int g_INT_01e7abdc;

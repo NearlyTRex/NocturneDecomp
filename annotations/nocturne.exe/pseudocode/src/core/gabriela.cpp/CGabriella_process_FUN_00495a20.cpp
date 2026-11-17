@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_ptr,float delta_time)
 
@@ -153,15 +152,15 @@ void __cdecl core_gabriela_cpp_CGabriella_process_FUN_00495a20(CGabriella *this_
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,1);
     (this_ptr->base).base.walk_step_speed =
-         (float)local_14 * _DAT_01c71358 + (this_ptr->base).base.walk_step_speed;
+         (float)local_14 * g_FLOAT_01c71358 + (this_ptr->base).base.walk_step_speed;
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,2);
     (this_ptr->base).base.walk_step_speed =
-         (float)local_14 * _DAT_01c7135c + (this_ptr->base).base.walk_step_speed;
+         (float)local_14 * g_FLOAT_01c7135c + (this_ptr->base).base.walk_step_speed;
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0(&pCVar2->base,3);
     (this_ptr->base).base.walk_step_speed =
-         (this_ptr->base).base.walk_step_speed - (float)local_14 * _DAT_01c71360;
+         (this_ptr->base).base.walk_step_speed - (float)local_14 * g_FLOAT_01c71360;
     local_14 = (CCharacter_full_vtable *)
                core_motion_cpp_CMotionController_getStateBlendWeight_FUN_004e18d0
                          (&pCVar2->base,0x14);

@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 58,
+    "complexity_score": 26,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 28,
-    "suspect_count": 2,
-    "suspect_types": [
-      "raw_address_pointer_store",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 86
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 26,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 84
   },
   "cross_references": [],
   "function": {
@@ -153,24 +150,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 17,
-      "match": "*(int **)(iVar1 * 4 + 0x2dc92a8",
-      "severity": "moderate",
-      "text": "piStack_19c = *(int **)(iVar1 * 4 + 0x2dc92a8);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 18,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "error_code = (**(code **)(*piStack_19c + 0x24))();",
-      "type": "unresolved_funcptr"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

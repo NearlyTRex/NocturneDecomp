@@ -2,19 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 206,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 12,
-    "suspect_types": [
-      "undefined_data",
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
-    ],
-    "total_lines": 271
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 76,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -117,20 +113,20 @@
     },
     {
       "addr": "02dc9214",
-      "name": "DAT_02dc9214",
-      "type": "undefined4",
+      "name": "g_IDirectSound_PTR_02dc9214",
+      "type": "IDirectSound*",
       "value": null
     },
     {
       "addr": "02dc9218",
-      "name": "DAT_02dc9218",
-      "type": "undefined4",
+      "name": "g_IDirectSoundBuffer_PTR_02dc9218",
+      "type": "IDirectSoundBuffer*",
       "value": null
     },
     {
       "addr": "02dc9220",
-      "name": "DAT_02dc9220",
-      "type": "undefined4",
+      "name": "g_IDirectSound3DListener_PTR_02dc9220",
+      "type": "IDirectSound3DListener*",
       "value": null
     },
     {
@@ -241,102 +237,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 19,
-      "match": "DAT_02dc93a0",
-      "severity": "mild",
-      "text": "iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 28,
-      "match": "DAT_02dc9214",
-      "severity": "mild",
-      "text": "uVar2 = DirectSoundCreate(lp_guid,(LPDIRECTSOUND *)&DAT_02dc9214,(LPUNKNOWN)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0x18))(_DAT_02dc9214,g_HWND_02de2098,3);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 35,
-      "match": "DAT_02dc9218",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 42,
-      "match": "DAT_02dc9218",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*_DAT_02dc9214 + 0xc))(_DAT_02dc9214,&uStack_20,&DAT_02dc9218,0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&g_IID_IDirectSound3DListener,&DAT_02dc9220);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_02dc9220",
-      "severity": "mild",
-      "text": "(**(code **)*_DAT_02dc9218)(_DAT_02dc9218,&g_IID_IDirectSound3DListener,&DAT_02dc9220);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 55,
-      "match": "DAT_02dc93a0",
-      "severity": "mild",
-      "text": "return (CDirectSoundDevice *)&DAT_02dc93a0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 70,
-      "match": "DAT_02dc93a0",
-      "severity": "mild",
-      "text": "sound_snddx_cpp_CDirectSoundDevice_close_FUN_00529e90((CDirectSoundDevice *)&DAT_02dc93a0);",
-      "type": "undefined_data"
-    }
-  ]
+  "suspects": []
 }

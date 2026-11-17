@@ -124,8 +124,8 @@ __asm {
         imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_INT_0061c808],EBX
-        mov dword ptr [g_INT_0061c828],EDX
+        mov dword ptr [g_MMX_INTEGER_0061c808],EBX
+        mov dword ptr [g_MMX_INTEGER_0061c828],EDX
         mov EAX,dword ptr [EDI + 0x40]
         mov EBX,dword ptr [ESI + 0x40]
         shr EAX,0x1
@@ -134,18 +134,18 @@ __asm {
         imul dword ptr [ECX + 0x1c35e74]
         and EBX,0xffff
         and EDX,0xffff
-        mov dword ptr [g_INT_0061c810],EBX
-        mov dword ptr [g_INT_0061c830],EDX
+        mov dword ptr [g_MMX_INTEGER_0061c810],EBX
+        mov dword ptr [g_MMX_INTEGER_0061c830],EDX
         movq MM5,qword ptr [g_QWORD_0061c800]
         movq MM6,qword ptr [g_QWORD_0061c820]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_INT_0061c808]
-        por MM6,qword ptr [g_INT_0061c828]
+        por MM5,qword ptr [g_MMX_INTEGER_0061c808]
+        por MM6,qword ptr [g_MMX_INTEGER_0061c828]
         psllq MM5,0x10
         psllq MM6,0x10
-        por MM5,qword ptr [g_INT_0061c810]
-        por MM6,qword ptr [g_INT_0061c830]
+        por MM5,qword ptr [g_MMX_INTEGER_0061c810]
+        por MM6,qword ptr [g_MMX_INTEGER_0061c830]
         jmp LAB_0055b6c0
     LAB_0055b600:
         mov EAX,dword ptr [EDI + 0x10]

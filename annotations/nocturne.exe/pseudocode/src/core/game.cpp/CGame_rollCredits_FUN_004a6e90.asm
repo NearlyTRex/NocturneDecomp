@@ -36,7 +36,7 @@
 ;   CKeys g_CKeys_01cc30e4
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
-;   undefined4 DAT_01d16810
+;   int g_INT_01d16810
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_saveClockTime_FUN_0049a890
@@ -375,7 +375,7 @@ section .text
         ;   XREF to: 005263c0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005263c0()
     JMP 0x004a6f8f                      ; 004a7226
         ;   XREF to: 004a6f8f (UNCONDITIONAL_JUMP)  ; LAB_004a6f8f
-    CMP dword ptr [0x01d16810],0x0      ; 004a722b | DAT_01d16810
+    CMP dword ptr [0x01d16810],0x0      ; 004a722b | g_INT_01d16810
         ;   Label: LAB_004a722b
     JZ 0x004a723e                       ; 004a7232
         ;   XREF to: 004a723e (CONDITIONAL_JUMP)  ; LAB_004a723e

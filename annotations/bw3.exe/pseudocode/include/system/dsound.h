@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/d3d.h"
 #include "system/mmsystem.h"
 #include "system/unknwn.h"
 #include "system/winbase.h"
@@ -13,6 +14,23 @@
 // =============================================================================
 // DSOUND - System Header
 // =============================================================================
+
+// Forward declarations
+struct D3DVECTOR;
+
+// Structure: DS3DLISTENER
+#pragma pack(push, 1)
+typedef struct DS3DLISTENER {
+    DWORD dwSize;
+    D3DVECTOR vPosition;
+    D3DVECTOR vVelocity;
+    D3DVECTOR vOrientFront;
+    D3DVECTOR vOrientTop;
+    D3DVALUE flDistanceFactor;
+    D3DVALUE flRolloffFactor;
+    D3DVALUE flDopplerFactor;
+} DS3DLISTENER;
+#pragma pack(pop)
 
 // Structure: DSBUFFERDESC
 #pragma pack(push, 1)
@@ -59,6 +77,52 @@ typedef struct DSCAPS {
 typedef struct IDirectSound {
     struct IDirectSound_vtable* vtable;
 } IDirectSound;
+
+// Structure: IDirectSound3DListener
+#pragma pack(push, 1)
+typedef struct IDirectSound3DListener {
+    struct IDirectSound3DListener_vtable* vtable;
+} IDirectSound3DListener;
+#pragma pack(pop)
+
+// Function Definition: IDirectSound3DListener_CommitDeferredSettings
+typedef HRESULT IDirectSound3DListener_CommitDeferredSettings(struct IDirectSound3DListener* this_ptr);
+
+// Function Definition: IDirectSound3DListener_GetDistanceFactor
+typedef HRESULT IDirectSound3DListener_GetDistanceFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE* pflDistanceFactor);
+
+// Function Definition: IDirectSound3DListener_GetDopplerFactor
+typedef HRESULT IDirectSound3DListener_GetDopplerFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE* pflDopplerFactor);
+
+// Function Definition: IDirectSound3DListener_GetOrientation
+typedef HRESULT IDirectSound3DListener_GetOrientation(struct IDirectSound3DListener* this_ptr, struct D3DVECTOR* pvOrientFront, struct D3DVECTOR* pvOrientTop);
+
+// Function Definition: IDirectSound3DListener_GetPosition
+typedef HRESULT IDirectSound3DListener_GetPosition(struct IDirectSound3DListener* this_ptr, struct D3DVECTOR* pvPosition);
+
+// Function Definition: IDirectSound3DListener_GetRolloffFactor
+typedef HRESULT IDirectSound3DListener_GetRolloffFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE* pflRolloffFactor);
+
+// Function Definition: IDirectSound3DListener_GetVelocity
+typedef HRESULT IDirectSound3DListener_GetVelocity(struct IDirectSound3DListener* this_ptr, struct D3DVECTOR* pvVelocity);
+
+// Function Definition: IDirectSound3DListener_SetDistanceFactor
+typedef HRESULT IDirectSound3DListener_SetDistanceFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE flDistanceFactor, DWORD dwApply);
+
+// Function Definition: IDirectSound3DListener_SetDopplerFactor
+typedef HRESULT IDirectSound3DListener_SetDopplerFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE flDopplerFactor, DWORD dwApply);
+
+// Function Definition: IDirectSound3DListener_SetOrientation
+typedef HRESULT IDirectSound3DListener_SetOrientation(struct IDirectSound3DListener* this_ptr, D3DVALUE xFront, D3DVALUE yFront, D3DVALUE zFront, D3DVALUE xTop, D3DVALUE yTop, D3DVALUE zTop, DWORD dwApply);
+
+// Function Definition: IDirectSound3DListener_SetPosition
+typedef HRESULT IDirectSound3DListener_SetPosition(struct IDirectSound3DListener* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
+
+// Function Definition: IDirectSound3DListener_SetRolloffFactor
+typedef HRESULT IDirectSound3DListener_SetRolloffFactor(struct IDirectSound3DListener* this_ptr, D3DVALUE flRolloffFactor, DWORD dwApply);
+
+// Function Definition: IDirectSound3DListener_SetVelocity
+typedef HRESULT IDirectSound3DListener_SetVelocity(struct IDirectSound3DListener* this_ptr, D3DVALUE x, D3DVALUE y, D3DVALUE z, DWORD dwApply);
 
 // Structure: IDirectSoundBuffer
 #pragma pack(push, 1)
@@ -140,6 +204,40 @@ typedef HRESULT IDirectSoundBuffer_Stop(LPDIRECTSOUNDBUFFER this_ptr);
 
 // Function Definition: IDirectSoundBuffer_Unlock
 typedef HRESULT IDirectSoundBuffer_Unlock(LPDIRECTSOUNDBUFFER this_ptr, LPVOID pvAudioPtr1, DWORD dwAudioBytes1, LPVOID pvAudioPtr2, DWORD dwAudioBytes2);
+
+// Typedef: LPDS3DLISTENER
+// pointer to DS3DLISTENER
+typedef struct DS3DLISTENER* LPDS3DLISTENER;
+
+// Function Definition: IDirectSound3DListener_GetAllParameters
+typedef HRESULT IDirectSound3DListener_GetAllParameters(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pListener);
+
+// Function Definition: IDirectSound3DListener_SetAllParameters
+typedef HRESULT IDirectSound3DListener_SetAllParameters(struct IDirectSound3DListener* this_ptr, LPDS3DLISTENER pcListener, DWORD dwApply);
+
+// Structure: IDirectSound3DListener_vtable
+#pragma pack(push, 1)
+typedef struct IDirectSound3DListener_vtable {
+    IUnknown_QueryInterface* QueryInterface;
+    IUnknown_AddRef* AddRef;
+    IUnknown_Release* Release;
+    IDirectSound3DListener_GetAllParameters* GetAllParameters;
+    IDirectSound3DListener_GetDistanceFactor* GetDistanceFactor;
+    IDirectSound3DListener_GetDopplerFactor* GetDopplerFactor;
+    IDirectSound3DListener_GetOrientation* GetOrientation;
+    IDirectSound3DListener_GetPosition* GetPosition;
+    IDirectSound3DListener_GetRolloffFactor* GetRolloffFactor;
+    IDirectSound3DListener_GetVelocity* GetVelocity;
+    IDirectSound3DListener_SetAllParameters* SetAllParameters;
+    IDirectSound3DListener_SetDistanceFactor* SetDistanceFactor;
+    IDirectSound3DListener_SetDopplerFactor* SetDopplerFactor;
+    IDirectSound3DListener_SetOrientation* SetOrientation;
+    IDirectSound3DListener_SetPosition* SetPosition;
+    IDirectSound3DListener_SetRolloffFactor* SetRolloffFactor;
+    IDirectSound3DListener_SetVelocity* SetVelocity;
+    IDirectSound3DListener_CommitDeferredSettings* CommitDeferredSettings;
+} IDirectSound3DListener_vtable;
+#pragma pack(pop)
 
 // Typedef: LPDSBUFFERDESC
 // pointer to DSBUFFERDESC

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void crt_unknown_c_FUN_005712ec(int param_1)
+; void crt_unknown_c_FUN_005712ec(undefined *param_1)
 ;
 ;
 ; XREF[1]:
@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8 = 005671e4
 ;   void* PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1aec = 005671e4
-;   undefined4 DAT_02de5d70
+;   void* g_PTR_02de5d70
 ;
 ; Called Functions:
 ;   crt_memory.c_free_FUN_005638d0
@@ -26,7 +26,7 @@ section .text
     PUSH EDI                            ; 005712ee
     MOV EDI,dword ptr [ESP + 0x10]      ; 005712ef
     CALL dword ptr [0x005c1ae8]         ; 005712f3 | PTR_crt_sync.c_CriticalSectionStub_FUN_005671e4_005c1ae8
-    MOV EBX,dword ptr [0x02de5d70]      ; 005712f9 | DAT_02de5d70
+    MOV EBX,dword ptr [0x02de5d70]      ; 005712f9 | g_PTR_02de5d70
     MOV ESI,0x2de5d70                   ; 005712ff
     TEST EBX,EBX                        ; 00571304
     JZ 0x00571336                       ; 00571306
@@ -46,7 +46,7 @@ section .text
     MOV EDI,dword ptr [EBX]             ; 0057131f
         ;   Label: LAB_0057131f
     PUSH EBX                            ; 00571321
-    MOV dword ptr [ESI],EDI             ; 00571322 | DAT_02de5d70
+    MOV dword ptr [ESI],EDI             ; 00571322 | g_PTR_02de5d70
     CALL crt_memory.c_free_FUN_005638d0 ; 00571324
         ;   XREF to: 005638d0 (UNCONDITIONAL_CALL)  ; void crt_memory.c_free_FUN_005638d0(void * ptr)
     ADD ESP,0x4                         ; 00571329

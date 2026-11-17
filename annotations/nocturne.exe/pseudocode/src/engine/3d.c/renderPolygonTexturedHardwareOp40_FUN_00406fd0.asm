@@ -8,8 +8,8 @@
 ;
 ; Referenced Globals:
 ;   int g_BitsPerPixel = 0x8
-;   undefined4 DAT_006b0270
-;   undefined4 DAT_006b0288
+;   int g_INT_006b0270
+;   int g_INT_006b0288
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   int g_MMXSupported
 ;   _BIT_INTEGER32 g_RenderStateFlags
@@ -40,7 +40,7 @@ section .text
     MOV ESI,0x1                         ; 00406ff7
         ;   Label: LAB_00406ff7
     XOR EDI,EDI                         ; 00406ffc
-    MOV EBP,dword ptr [0x006b0270]      ; 00406ffe | DAT_006b0270
+    MOV EBP,dword ptr [0x006b0270]      ; 00406ffe | g_INT_006b0270
     MOV dword ptr [0x01c039a4],EDI      ; 00407004 | g_VertexPreprocessMode
     MOV dword ptr [0x01c039a0],ESI      ; 0040700a | g_RenderStateFlags
     TEST EBP,EBP                        ; 00407010
@@ -52,7 +52,7 @@ section .text
     CALL engine_fpoly.c_rasterizePolygonHardware_FUN_00494260 ; 00407019
         ;   XREF to: 00494260 (UNCONDITIONAL_CALL)  ; void engine_fpoly.c_rasterizePolygonHardware_FUN_00494260(SRenderVertex * * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0040701e
-    MOV EAX,0x6b0288                    ; 00407021 | DAT_006b0288
+    MOV EAX,0x6b0288                    ; 00407021 | g_INT_006b0288
     POP EBP                             ; 00407026
     POP EDI                             ; 00407027
     POP ESI                             ; 00407028
@@ -79,7 +79,7 @@ section .text
     CALL engine_clipper.c_clipAndRasterize_FUN_00432cd0 ; 0040705c
         ;   XREF to: 00432cd0 (UNCONDITIONAL_CALL)  ; void engine_clipper.c_clipAndRasterize_FUN_00432cd0(int vertex_count, int * vertex_indices)
     ADD ESP,0x8                         ; 00407061
-    MOV EAX,0x6b0288                    ; 00407064 | DAT_006b0288
+    MOV EAX,0x6b0288                    ; 00407064 | g_INT_006b0288
     POP EBP                             ; 00407069
     POP EDI                             ; 0040706a
     POP ESI                             ; 0040706b

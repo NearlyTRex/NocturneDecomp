@@ -14,7 +14,7 @@ _tm * __cdecl gmtime_r(time_t days,time_t seconds,time_t timezone_offset,_tm *re
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  byte *local_14;
+  short *local_14;
   
   if (((uint)seconds < 0xa8c0) && (0 < timezone_offset)) {
     uVar3 = (seconds + 0x15180) - timezone_offset;
@@ -39,17 +39,17 @@ _tm * __cdecl gmtime_r(time_t days,time_t seconds,time_t timezone_offset,_tm *re
   }
   result->tm_year = uVar3;
   result->tm_yday = uVar4;
-  local_14 = &DAT_005a4a78;
+  local_14 = &g_SHORT_005a4a78;
   iVar2 = is_leap_year(uVar3 + 0x76c);
   if (iVar2 != 0) {
-    local_14 = &DAT_005a4a92;
+    local_14 = &g_SHORT_005a4a92;
   }
   uVar3 = uVar4 / 0x1f;
-  if ((uint)(*(int *)(local_14 + uVar3 * 2) >> 0x10) <= uVar4) {
+  if ((uint)(*(int *)(local_14 + uVar3) >> 0x10) <= uVar4) {
     uVar3 = uVar3 + 1;
   }
   result->tm_mon = uVar3;
-  result->tm_mday = (uVar4 - (int)*(short *)(local_14 + uVar3 * 2)) + 1;
+  result->tm_mday = (uVar4 - (int)local_14[uVar3]) + 1;
   result->tm_wday = (uVar5 + 1) % 7;
   return result;
 }

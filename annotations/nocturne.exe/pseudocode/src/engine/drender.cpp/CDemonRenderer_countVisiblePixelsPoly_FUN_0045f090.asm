@@ -16,9 +16,9 @@
 ; Referenced Globals:
 ;   TerminatedCString s_engine_drender_cpp_0057dbbe
 ;   TerminatedCString s_Can_t_use_demonZFacetCou_0057dbd4
-;   undefined4 DAT_01b4d764
-;   undefined4 DAT_01b4d76c
-;   undefined4 DAT_01b4d770
+;   int g_INT_01b4d764
+;   int[16] g_INT_ARRAY_01b4d76c
+;   undefined4 g_INT_ARRAY_01b4d76c[1]
 ;   MainScanlineFunc* g_ScanlineRenderFunc
 ;   _BIT_INTEGER32 g_RenderStateFlags
 ;   int g_VertexPreprocessMode
@@ -44,7 +44,7 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 0045f09b
     XOR EDX,EDX                         ; 0045f09f
     MOV ECX,dword ptr [EBP + 0xc]       ; 0045f0a1
-    MOV dword ptr [0x01b4d764],EDX      ; 0045f0a4 | DAT_01b4d764
+    MOV dword ptr [0x01b4d764],EDX      ; 0045f0a4 | g_INT_01b4d764
     TEST ECX,ECX                        ; 0045f0aa
     JNZ 0x0045f145                      ; 0045f0ac
         ;   XREF to: 0045f145 (CONDITIONAL_JUMP)  ; LAB_0045f145
@@ -60,7 +60,7 @@ section .text
     XOR ECX,ECX                         ; 0045f0c5
     MOV EBX,dword ptr [EDX + 0x18]      ; 0045f0c7
         ;   Label: LAB_0045f0c7
-    MOV dword ptr [ECX + 0x1b4d76c],EBX ; 0045f0ca | DAT_01b4d76c | DAT_01b4d770
+    MOV dword ptr [ECX + 0x1b4d76c],EBX ; 0045f0ca | g_INT_ARRAY_01b4d76c | g_INT_ARRAY_01b4d76c[1]
     IMUL ESI,EBX,0x30                   ; 0045f0d0
     MOV EBX,dword ptr [EBP]             ; 0045f0d3
     ADD ECX,0x4                         ; 0045f0d6
@@ -93,14 +93,14 @@ section .text
     CALL core_main.c_displayErrorAndQuit_FUN_004c8440 ; 0045f11e
         ;   XREF to: 004c8440 (UNCONDITIONAL_CALL)  ; void core_main.c_displayErrorAndQuit_FUN_004c8440(char * format)
     ADD ESP,0x4                         ; 0045f123
-    PUSH 0x1b4d76c                      ; 0045f126 | DAT_01b4d76c
+    PUSH 0x1b4d76c                      ; 0045f126 | g_INT_ARRAY_01b4d76c
         ;   Label: LAB_0045f126
     MOV EAX,dword ptr [EDI + 0x4]       ; 0045f12b
     PUSH EAX                            ; 0045f12e
     PUSH EBP                            ; 0045f12f
     CALL engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80 ; 0045f130
         ;   XREF to: 0045ed80 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0045ed80(CDemonRenderer * this_ptr, int vertex_count, int * vertex_indices)
-    MOV EAX,[0x01b4d764]                ; 0045f135 | DAT_01b4d764
+    MOV EAX,[0x01b4d764]                ; 0045f135 | g_INT_01b4d764
     ADD ESP,0xc                         ; 0045f13a
     ADD ESP,0x4                         ; 0045f13d
         ;   Label: LAB_0045f13d

@@ -17,10 +17,10 @@
 ;   int g_BitsPerPixel = 0x8
 ;   void*[1200] g_ScreenBufferArray
 ;   undefined4 g_ScreenBufferArray[1]
-;   undefined4 DAT_01c78b04
-;   undefined4 DAT_01c78b08
-;   undefined4 DAT_01c78b0c
-;   undefined4 DAT_01c78b10
+;   int g_INT_01c78b04
+;   float g_FLOAT_01c78b08
+;   int g_INT_01c78b0c
+;   int g_INT_01c78b10
 ;
 ; Called Functions:
 ;   core_game.cpp_calculateIrisFadeCenter_FUN_004a3860
@@ -38,7 +38,7 @@ section .text
     PUSH EBP                            ; 004a3963
     SUB ESP,0x4                         ; 004a3964
     MOV EDI,dword ptr [0x005b761c]      ; 004a3967 | g_WindowWidth
-    MOV EDX,dword ptr [0x01c78b04]      ; 004a396d | DAT_01c78b04
+    MOV EDX,dword ptr [0x01c78b04]      ; 004a396d | g_INT_01c78b04
     TEST EDX,EDX                        ; 004a3973
     JZ 0x004a3a13                       ; 004a3975
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
@@ -48,7 +48,7 @@ section .text
     CMP EDX,0x1                         ; 004a3984
     JZ 0x004a3a21                       ; 004a3987
         ;   XREF to: 004a3a21 (CONDITIONAL_JUMP)  ; LAB_004a3a21
-    CMP dword ptr [0x01c78b08],0x3f800000 ; 004a398d | DAT_01c78b08
+    CMP dword ptr [0x01c78b08],0x3f800000 ; 004a398d | g_FLOAT_01c78b08
     JL 0x004a3a21                       ; 004a3997
         ;   XREF to: 004a3a21 (CONDITIONAL_JUMP)  ; LAB_004a3a21
     CALL core_game.cpp_calculateIrisFadeCenter_FUN_004a3860 ; 004a399d
@@ -56,7 +56,7 @@ section .text
     CMP dword ptr [0x005b7624],0x20     ; 004a39a2 | g_BitsPerPixel
     JNZ 0x004a3a13                      ; 004a39a9
         ;   XREF to: 004a3a13 (CONDITIONAL_JUMP)  ; LAB_004a3a13
-    FLD float ptr [0x01c78b08]          ; 004a39ab | DAT_01c78b08
+    FLD float ptr [0x01c78b08]          ; 004a39ab | g_FLOAT_01c78b08
     FMUL ST0                            ; 004a39b1
     MOV EAX,[0x005b7620]                ; 004a39b3 | g_WindowHeight
     XOR ESI,ESI                         ; 004a39b8
@@ -74,11 +74,11 @@ section .text
     TEST EDI,EDI                        ; 004a39d6
     JLE 0x004a39ff                      ; 004a39d8
         ;   XREF to: 004a39ff (CONDITIONAL_JUMP)  ; LAB_004a39ff
-    MOV EBX,dword ptr [0x01c78b0c]      ; 004a39da | DAT_01c78b0c
+    MOV EBX,dword ptr [0x01c78b0c]      ; 004a39da | g_INT_01c78b0c
         ;   Label: LAB_004a39da
     SUB EBX,EAX                         ; 004a39e0
     IMUL EBX,EBX                        ; 004a39e2
-    MOV ECX,dword ptr [0x01c78b10]      ; 004a39e5 | DAT_01c78b10
+    MOV ECX,dword ptr [0x01c78b10]      ; 004a39e5 | g_INT_01c78b10
     SUB ECX,ESI                         ; 004a39eb
     IMUL ECX,ECX                        ; 004a39ed
     ADD ECX,EBX                         ; 004a39f0

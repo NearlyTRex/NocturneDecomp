@@ -10,7 +10,7 @@ CEditorTools * __cdecl shape_edittool_cpp_CEditorTools_ctor_FUN_00493ba0(CEditor
 
 {
   g_INT_01c3eb5c = 0;
-  memset(g_CHAR_ARRAY_01c3eb60,0,0x9d8);
+  memset(g_SWindow_ARRAY_01c3eb60,0,0x9d8);
   shape_edittool_cpp_CEditorTools_init_FUN_00493c30(this_ptr);
   return this_ptr;
 }

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005458a0(void)
 
 {
@@ -15,9 +13,9 @@ CTextureCache * __cdecl engine_texture_cpp_initTextureCache_FUN_005458a0(void)
   
   this_ptr = operator_new(0xd300c);
   if (this_ptr == (CTextureCache *)0x0) {
-    _DAT_02dd0f84 = this_ptr;
+    g_CTextureCache_PTR_02dd0f84 = this_ptr;
     return (CTextureCache *)0x0;
   }
-  _DAT_02dd0f84 = engine_texture_cpp_CTextureCache_ctor_FUN_00544de0(this_ptr,0x400);
-  return _DAT_02dd0f84;
+  g_CTextureCache_PTR_02dd0f84 = engine_texture_cpp_CTextureCache_ctor_FUN_00544de0(this_ptr,0x400);
+  return g_CTextureCache_PTR_02dd0f84;
 }

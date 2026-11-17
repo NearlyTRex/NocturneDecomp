@@ -45,7 +45,7 @@
   "globals": [
     {
       "addr": "01342360",
-      "name": "g_CHAR_ARRAY_01342220+0x140",
+      "name": "g_SFogImagePlane_01342220.pixels[1][0]",
       "type": "undefined4",
       "value": null
     },
@@ -175,9 +175,9 @@
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(char *)((int)output_buffer",
+      "match": "(SFogImagePlane *)((int)output_buffer",
       "severity": "moderate",
-      "text": "output_buffer = (char *)((int)output_buffer + 0x140);",
+      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_cast"
     },
     {
@@ -185,7 +185,7 @@
       "line": 36,
       "match": "(int)output_buffer",
       "severity": "moderate",
-      "text": "output_buffer = (char *)((int)output_buffer + 0x140);",
+      "text": "output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);",
       "type": "pointer_truncation"
     }
   ]

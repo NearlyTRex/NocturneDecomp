@@ -86,7 +86,7 @@ section .text
     CALL engine_console.cpp_CConsole_printf_FUN_0043ac60 ; 0049da5c
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0x10                        ; 0049da61
-    MOV EDX,dword ptr [0x02de20a8]      ; 0049da64 | DAT_02de20a8
+    MOV EDX,dword ptr [0x02de20a8]      ; 0049da64 | g_INT_02de20a8
     PUSH EDX                            ; 0049da6a
     PUSH 0x58280c                       ; 0049da6b | = "System RAM: %d\n"
     MOV ECX,dword ptr [0x005ad350]      ; 0049da70 | g_CConsolePtr
@@ -96,7 +96,7 @@ section .text
         ;   XREF to: 0043ac60 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_printf_FUN_0043ac60(CConsole * this_ptr, char * format)
     ADD ESP,0xc                         ; 0049da81
     MOV dword ptr [EBP + -0x8],EBX      ; 0049da84
-    MOV EBX,dword ptr [0x02de20ac]      ; 0049da87 | DAT_02de20ac
+    MOV EBX,dword ptr [0x02de20ac]      ; 0049da87 | g_INT_02de20ac
     PUSH EBX                            ; 0049da8d
     PUSH 0x58281c                       ; 0049da8e | = "Swap file: %d\n"
     MOV ESI,dword ptr [0x005ad350]      ; 0049da93 | g_CConsolePtr
@@ -162,7 +162,7 @@ section .text
     MOV dword ptr [EAX + 0x218],ECX     ; 0049dbf8
     PUSH 0x58283a                       ; 0049dbfe | BYTE_ARRAY_0058283a
     MOV dword ptr [EAX + 0x21c],ECX     ; 0049dc03
-    MOV dword ptr [0x01c78420],ECX      ; 0049dc09 | DAT_01c78420
+    MOV dword ptr [0x01c78420],ECX      ; 0049dc09 | g_INT_01c78420
     MOV dword ptr [EAX + 0x210],ECX     ; 0049dc0f
     CALL support_newmsg.cpp_decryptMessage_FUN_004ee3f0 ; 0049dc15
         ;   XREF to: 004ee3f0 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_decryptMessage_FUN_004ee3f0(char * encrypted_msg)
@@ -207,13 +207,13 @@ section .text
     MOV dword ptr [0x01c74740],ESI      ; 0049dc7c | g_CDemonLightInstance.base.fixed_point_scale
     CALL core_set.cpp_CDemonSet_initScene_FUN_005084c0 ; 0049dc82
         ;   XREF to: 005084c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initScene_FUN_005084c0(CDemonSet * this_ptr)
-    MOV EAX,[0x01c78698]                ; 0049dc87 | DAT_01c78698
+    MOV EAX,[0x01c78698]                ; 0049dc87 | g_INT_01c78698
     ADD ESP,0x4                         ; 0049dc8c
     TEST EAX,EAX                        ; 0049dc8f
     JZ 0x0049e018                       ; 0049dc91
         ;   XREF to: 0049e018 (CONDITIONAL_JUMP)  ; LAB_0049e018
-    PUSH 0x1c7869c                      ; 0049dc97 | DAT_01c7869c
-    MOV dword ptr [0x01c78698],EBX      ; 0049dc9c | DAT_01c78698
+    PUSH 0x1c7869c                      ; 0049dc97 | g_INT_ARRAY_01c7869c
+    MOV dword ptr [0x01c78698],EBX      ; 0049dc9c | g_INT_01c78698
     MOV EBX,dword ptr [0x005be368]      ; 0049dca2 | g_CDemonSetPtr
     PUSH EBX                            ; 0049dca8 | g_CDemonSetInstance
     CALL core_set.cpp_CDemonSet_loadMasterLightStates_FUN_0050e820 ; 0049dca9
@@ -363,7 +363,7 @@ section .text
     PUSH ECX                            ; 0049de50
     CALL core_game.cpp_CGame_processFrame_FUN_0049cc10 ; 0049de51
         ;   XREF to: 0049cc10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processFrame_FUN_0049cc10(CGame * this_ptr)
-    MOV EBX,dword ptr [0x01c78420]      ; 0049de56 | DAT_01c78420
+    MOV EBX,dword ptr [0x01c78420]      ; 0049de56 | g_INT_01c78420
     ADD ESP,0x4                         ; 0049de5c
     TEST EBX,EBX                        ; 0049de5f
     JZ 0x0049e156                       ; 0049de61
@@ -392,7 +392,7 @@ section .text
         ;   XREF to: 00476160 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00476160(CPickList * this_ptr)
     XOR EAX,EAX                         ; 0049de9e
     ADD ESP,0x4                         ; 0049dea0
-    MOV [0x01c78420],EAX                ; 0049dea3 | DAT_01c78420
+    MOV [0x01c78420],EAX                ; 0049dea3 | g_INT_01c78420
     TEST EBX,EBX                        ; 0049dea8
         ;   Label: LAB_0049dea8
     JNZ 0x0049e0dc                      ; 0049deaa
@@ -548,7 +548,7 @@ section .text
     ADD ESP,0x8                         ; 0049e05a
     JMP 0x0049dd33                      ; 0049e05d
         ;   XREF to: 0049dd33 (UNCONDITIONAL_JUMP)  ; LAB_0049dd33
-    CMP dword ptr [0x01c78420],0x0      ; 0049e062 | DAT_01c78420
+    CMP dword ptr [0x01c78420],0x0      ; 0049e062 | g_INT_01c78420
         ;   Label: LAB_0049e062
     JNZ 0x0049ddf4                      ; 0049e069
         ;   XREF to: 0049ddf4 (CONDITIONAL_JUMP)  ; LAB_0049ddf4
@@ -589,7 +589,7 @@ section .text
         ;   XREF to: 0049de4d (UNCONDITIONAL_JUMP)  ; LAB_0049de4d
     XOR EDX,EDX                         ; 0049e0d4
         ;   Label: LAB_0049e0d4
-    MOV dword ptr [0x01c78420],EDX      ; 0049e0d6 | DAT_01c78420
+    MOV dword ptr [0x01c78420],EDX      ; 0049e0d6 | g_INT_01c78420
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049e0dc
         ;   Label: LAB_0049e0dc
     CMP dword ptr [EAX + 0xcc],0x0      ; 0049e0df
@@ -598,13 +598,13 @@ section .text
     CALL wincore_winrun.cpp_processWindowMessages_FUN_005591c0 ; 0049e0ec
         ;   XREF to: 005591c0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_processWindowMessages_FUN_005591c0()
         ;   Label: LAB_0049e0ec
-    CMP dword ptr [0x02de20a4],0x0      ; 0049e0f1 | DAT_02de20a4
+    CMP dword ptr [0x02de20a4],0x0      ; 0049e0f1 | g_INT_02de20a4
         ;   Label: LAB_0049e0f1
     JZ 0x0049e117                       ; 0049e0f8
         ;   XREF to: 0049e117 (CONDITIONAL_JUMP)  ; LAB_0049e117
     XOR EDX,EDX                         ; 0049e0fa
     MOV EAX,[0x005be368]                ; 0049e0fc | g_CDemonSetPtr
-    MOV dword ptr [0x02de20a4],EDX      ; 0049e101 | DAT_02de20a4
+    MOV dword ptr [0x02de20a4],EDX      ; 0049e101 | g_INT_02de20a4
     MOV EDX,dword ptr [EAX + 0x15aabc]  ; 0049e107 | g_CDemonSetInstance.selected_camera_index
     PUSH EDX                            ; 0049e10d
     PUSH EAX                            ; 0049e10e | g_CDemonSetInstance
@@ -813,7 +813,7 @@ section .text
     JLE 0x0049e4e7                      ; 0049e35f
         ;   XREF to: 0049e4e7 (CONDITIONAL_JUMP)  ; LAB_0049e4e7
     MOV EAX,[0x014b9900]                ; 0049e365 | g_CBitFont_PTR_014b9900
-    MOV [0x01bcd070],EAX                ; 0049e36a | DAT_01bcd070
+    MOV [0x01bcd070],EAX                ; 0049e36a | g_CBitFont_PTR_01bcd070
         ;   Label: LAB_0049e36a
     CMP EBX,0x2                         ; 0049e36f
         ;   Label: LAB_0049e36f
@@ -926,7 +926,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 ; 0049e482
         ;   XREF to: 00474e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0049e487
-    MOV dword ptr [0x01c78420],ESI      ; 0049e48a | DAT_01c78420
+    MOV dword ptr [0x01c78420],ESI      ; 0049e48a | g_INT_01c78420
     JMP 0x0049e0dc                      ; 0049e490
         ;   XREF to: 0049e0dc (UNCONDITIONAL_JUMP)  ; LAB_0049e0dc
     PUSH 0x5828df                       ; 0049e495 | = "Abort network game"
@@ -959,7 +959,7 @@ section .text
     CALL shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70 ; 0049e4d4
         ;   XREF to: 00474e70 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_initializeDialog_FUN_00474e70(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0049e4d9
-    MOV dword ptr [0x01c78420],ESI      ; 0049e4dc | DAT_01c78420
+    MOV dword ptr [0x01c78420],ESI      ; 0049e4dc | g_INT_01c78420
     JMP 0x0049e0dc                      ; 0049e4e2
         ;   XREF to: 0049e0dc (UNCONDITIONAL_JUMP)  ; LAB_0049e0dc
     MOV EAX,[0x014b9904]                ; 0049e4e7 | g_CBitFont_PTR_014b9904

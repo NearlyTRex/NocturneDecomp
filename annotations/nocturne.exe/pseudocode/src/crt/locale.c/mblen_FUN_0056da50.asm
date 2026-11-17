@@ -17,13 +17,13 @@
 ;   crt_unknown.c_FUN_00573db0 at 00573dc8
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de5c30
+;   int g_INT_02de5c30
 ;
 ; *****************************************************************************
 
 section .text
 
-    CMP dword ptr [0x02de5c30],0x0      ; 0056da50 | DAT_02de5c30
+    CMP dword ptr [0x02de5c30],0x0      ; 0056da50 | g_INT_02de5c30
         ;   Label: crt_locale.c_mblen_FUN_0056da50
     JZ 0x0056da76                       ; 0056da57
         ;   XREF to: 0056da76 (CONDITIONAL_JUMP)  ; LAB_0056da76

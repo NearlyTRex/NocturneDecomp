@@ -10,7 +10,7 @@
 ;   char[100] g_IpAddress
 ;   CDemonMission* g_CDemonMission_PTR_005baf90 = 01cc9450
 ;   CNetGame* g_CNetGamePtr = 01cea280
-;   undefined4 DAT_01c78598
+;   char[256] g_CHAR_ARRAY_01c78598
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_004d9440
@@ -69,7 +69,7 @@ section .text
     JZ 0x004a5ece                       ; 004a5ea0
         ;   XREF to: 004a5ece (CONDITIONAL_JUMP)  ; LAB_004a5ece
     XOR AH,AH                           ; 004a5ea2
-    MOV byte ptr [0x01c78598],AH        ; 004a5ea4 | DAT_01c78598
+    MOV byte ptr [0x01c78598],AH        ; 004a5ea4 | g_CHAR_ARRAY_01c78598
     MOV ESI,dword ptr [0x005bdee0]      ; 004a5eaa | g_CNetGamePtr
         ;   Label: LAB_004a5eaa
     PUSH ESI                            ; 004a5eb0

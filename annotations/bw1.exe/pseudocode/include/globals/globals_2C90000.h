@@ -5,7 +5,9 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/ddraw.h"
+#include "system/stdio.h"
 #include "system/unknwn.h"
+#include "system/windef.h"
 #include "system/winnt.h"
 #include "system/winuser.h"
 #include "types/classes/CDemonActorType.h"
@@ -46,6 +48,16 @@ extern CVector3i g_CVector3i_ARRAY_02c94468[1000];
 
 // CWeather
 extern CWeather g_CWeather_02c997c0;
+
+// DWORD
+extern DWORD g_DWORD_02c9a5a0;
+
+// FileListNode*
+extern FileListNode* g_FileListNode_PTR_02c9f050;
+extern FileListNode* g_FileListNode_PTR_02c9f054;
+
+// HMODULE
+extern HMODULE g_HMODULE_02c9cf10;
 
 // HWND
 extern HWND g_HWND_02c9be68;
@@ -193,4 +205,8 @@ extern void* g_PTR_02c9f06c;
 extern void* g_PTR_02c9ff68;
 extern void* g_PTR_02c9ff90;
 extern void* g_PTR_02c9ffa0;
+
+// wchar_t[260]
+extern wchar_t g_WCHAR_T_ARRAY_02c9f174[260];
+extern wchar_t g_WCHAR_T_ARRAY_02c9f480[260];
 

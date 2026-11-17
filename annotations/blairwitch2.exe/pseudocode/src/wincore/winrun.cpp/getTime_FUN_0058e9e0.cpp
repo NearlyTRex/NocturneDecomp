@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void)
 
 {
@@ -16,13 +14,13 @@ int __cdecl wincore_winrun_cpp_getTime_FUN_0058e9e0(void)
   double dVar3;
   
   if (g_INT_ARRAY_02662d84[0] == 0) {
-    _DAT_02662d60 = g_struct_19_02662d68.LowPart;
+    g_DWORD_02662d60 = g_struct_19_02662d68.LowPart;
     g_INT_02662d64 = g_struct_19_02662d68.HighPart;
     QueryPerformanceCounter((LARGE_INTEGER *)&g_struct_19_02662d68);
     iVar1 = g_INT_02662d80;
     dVar3 = ((((double)g_struct_19_02662d68.LowPart +
               (double)g_struct_19_02662d68.HighPart * 4294967296) -
-             ((double)_DAT_02662d60 + (double)g_INT_02662d64 * 4294967296)) /
+             ((double)g_DWORD_02662d60 + (double)g_INT_02662d64 * 4294967296)) /
             g_DOUBLE_02662d78) * 65536 * 18;
     if (0.0 < dVar3) {
       dVar3 = round(dVar3);

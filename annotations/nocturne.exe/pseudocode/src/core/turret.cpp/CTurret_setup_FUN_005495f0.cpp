@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_turret_cpp_CTurret_setup_FUN_005495f0(CTurret *this_ptr)
 
 {
@@ -27,9 +25,9 @@ void __cdecl core_turret_cpp_CTurret_setup_FUN_005495f0(CTurret *this_ptr)
   for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
     fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)0.20000000000000001;
     if (local_18 < fVar1) {
-      (this_ptr->barrel_tip_pos).x = (float)pCVar2->x * _DAT_005a3788;
-      (this_ptr->barrel_tip_pos).y = (float)pCVar2->y * _DAT_005a3788;
-      (this_ptr->barrel_tip_pos).z = (float)pCVar2->z * _DAT_005a3788;
+      (this_ptr->barrel_tip_pos).x = (float)pCVar2->x * 0.00390625f;
+      (this_ptr->barrel_tip_pos).y = (float)pCVar2->y * 0.00390625f;
+      (this_ptr->barrel_tip_pos).z = (float)pCVar2->z * 0.00390625f;
       local_18 = fVar1;
     }
     pCVar2 = pCVar2 + 1;

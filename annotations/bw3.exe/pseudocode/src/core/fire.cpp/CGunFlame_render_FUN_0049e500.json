@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1042,
-    "complexity_score": 1217,
+    "complexity_score": 1262,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 33,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 417,
-    "suspect_count": 77,
+    "suspect_count": 81,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
+      "raw_address_constant",
       "stack_alignment_array",
       "suspect_float",
       "undefined_data",
@@ -1593,6 +1594,38 @@
       "severity": "moderate",
       "text": "local_110[(uint)bVar4 * -2 + 3] = *(float *)((int)&g_CVector3f_02cfd900 + (uint)bVar4 * -8 + 4);",
       "type": "pointer_truncation"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 331,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "pCVar10->vertex_buffer_ptr[1].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 333,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "pCVar10->vertex_buffer_ptr[2].u = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 334,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "pCVar10->vertex_buffer_ptr[2].v = 0xfe0000;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex literal 0xfe0000 matches address of g_CHAR_ARRAY_ARRAY_00b9e558 (+4463272 bytes into) (type char[24][307200]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
+      "line": 336,
+      "match": "0xfe0000",
+      "severity": "moderate",
+      "text": "pCVar10->vertex_buffer_ptr[3].v = 0xfe0000;",
+      "type": "raw_address_constant"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",

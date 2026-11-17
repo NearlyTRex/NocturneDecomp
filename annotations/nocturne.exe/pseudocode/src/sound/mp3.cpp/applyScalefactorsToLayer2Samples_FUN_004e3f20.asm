@@ -9,7 +9,7 @@
 ; SMpegFrame *     Stack[0xc]:4   frame_info
 ;
 ; Referenced Globals:
-;   undefined4 DAT_005bbdf0
+;   double[64] g_DOUBLE_ARRAY_005bbdf0
 ;
 ; *****************************************************************************
 
@@ -36,7 +36,7 @@ section .text
         ;   Label: LAB_004e3f41
     MOV EBX,dword ptr [ECX]             ; 004e3f43
     FLD ST0                             ; 004e3f45
-    FMUL double ptr [EBX*0x8 + 0x5bbdf0] ; 004e3f47 | DAT_005bbdf0
+    FMUL double ptr [EBX*0x8 + 0x5bbdf0] ; 004e3f47 | g_DOUBLE_ARRAY_005bbdf0
     ADD ECX,0x180                       ; 004e3f4e
     ADD EAX,0x180                       ; 004e3f54
     INC EDX                             ; 004e3f59

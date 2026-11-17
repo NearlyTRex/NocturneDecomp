@@ -16,7 +16,7 @@
 ;   void* g_PTR_0061f414 = 00000000
 ;   void* g_PTR_0061f440 = 00000000
 ;   uint g_UINT_0061f480 = 0x14
-;   undefined4 DAT_0061f4d8
+;   SIOControlBlock* g_SIOControlBlock_PTR_0061f4d8 = 00000000
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005be180
@@ -52,7 +52,7 @@ section .text
     ADD ESP,0x4                         ; 005bfb27
     JMP 0x005bfc02                      ; 005bfb2a
         ;   XREF to: 005bfc02 (UNCONDITIONAL_JUMP)  ; LAB_005bfc02
-    MOV ESI,dword ptr [0x0061f4d8]      ; 005bfb2f | DAT_0061f4d8
+    MOV ESI,dword ptr [0x0061f4d8]      ; 005bfb2f | g_SIOControlBlock_PTR_0061f4d8
         ;   Label: LAB_005bfb2f
     PUSH EBX                            ; 005bfb35
     MOV ESI,dword ptr [ESI + EBX*0x4]   ; 005bfb36

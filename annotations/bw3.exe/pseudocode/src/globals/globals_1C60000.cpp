@@ -10,6 +10,10 @@ CDemonActorType g_CExorcismClassInfo = {};
 // CEventList
 CEventList g_CEventList_01c6e360 = {};
 
+// DWORD
+DWORD g_DWORD_01c6e258 = {};
+DWORD g_DWORD_01c6e260 = {};
+
 // SRGBColorPalette*
 SRGBColorPalette* g_SRGBColorPalette_PTR_01c6a970 = {};
 
@@ -21,10 +25,6 @@ _BIT_INTEGER32 g_BIT_INTEGER32_01c6af88 = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af8c = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6af94 = {};
 _BIT_INTEGER32 g_BIT_INTEGER32_01c6e2b4 = {};
-
-// byte
-byte g_BYTE_01c6e260 = {};
-byte g_BYTE_01c6e261 = {};
 
 // char[4952]
 char g_CHAR_ARRAY_01c6cef0[4952] = {};

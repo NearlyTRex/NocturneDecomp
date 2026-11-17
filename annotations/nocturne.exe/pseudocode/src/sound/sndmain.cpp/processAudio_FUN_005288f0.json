@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 48,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unaffected_reg"
     ],
-    "total_lines": 64
+    "total_lines": 65
   },
   "cross_references": [
     {
@@ -67,26 +66,26 @@
     },
     {
       "addr": "02dc8318",
-      "name": "DAT_02dc8318",
-      "type": "undefined4",
+      "name": "g_CSoundDevice_PTR_02dc8318",
+      "type": "CSoundDevice*",
       "value": null
     },
     {
       "addr": "02dc84a8",
-      "name": "DAT_02dc84a8",
-      "type": "undefined4",
+      "name": "g_DOUBLE_02dc84a8",
+      "type": "double",
       "value": null
     },
     {
       "addr": "02dc84b8",
-      "name": "DAT_02dc84b8",
-      "type": "undefined4",
+      "name": "g_HANDLE_02dc84b8",
+      "type": "HANDLE",
       "value": null
     },
     {
       "addr": "02dc84bc",
-      "name": "DAT_02dc84bc",
-      "type": "undefined4",
+      "name": "g_INT_02dc84bc",
+      "type": "int",
       "value": null
     }
   ],
@@ -161,20 +160,36 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "short *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "(**(code **)(*_DAT_02dc8318 + 0x10))(_DAT_02dc8318);",
-      "type": "unresolved_funcptr"
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(*g_CSoundDevice_PTR_02dc8318->vtable->poll)(g_CSoundDevice_PTR_02dc8318,unaff_EBX,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "(*g_CSoundDevice_PTR_02dc8318->vtable->poll)(g_CSoundDevice_PTR_02dc8318,unaff_EBX,unaff_ESI);",
+      "type": "unaffected_reg"
     }
   ]
 }

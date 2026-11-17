@@ -13,3 +13,8 @@ CMuzzleFlash g_CMuzzleFlash_ARRAY_01c4e958[20] = {};
 // CSpark[256]
 CSpark g_SparkPool[256] = {};
 
+// int
+int g_INT_01c49d50 = {};
+int g_INT_01c4e954 = {};
+int g_INT_01c4f088 = {};
+

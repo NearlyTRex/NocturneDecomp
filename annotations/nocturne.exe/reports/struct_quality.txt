@@ -4,13 +4,13 @@ STRUCT QUALITY REPORT
 
 SUMMARY
 ----------------------------------------------------------------------
-Total structs:              530
-Fully clean structs:        516
+Total structs:              532
+Fully clean structs:        518
 Structs with issues:        14
-Unreferenced structs:       88
+Unreferenced structs:       76
 
-Total fields:               3993
-Clean fields:               3973
+Total fields:               3999
+Clean fields:               3979
 Unknown (unk*) fields:      10
 Padding (pad*) fields:      5
 Reserved (reserved*) fields:5
@@ -18,7 +18,7 @@ Default (field_*) fields:   0
 Overall field quality:      99.5%
 
 ======================================================================
-UNREFERENCED STRUCTS (88)
+UNREFERENCED STRUCTS (76)
 ----------------------------------------------------------------------
 These structs are not referenced in any source or header file.
 
@@ -34,43 +34,32 @@ These structs are not referenced in any source or header file.
   SAudioFormatDescriptor                    /Nocturne/Struct/Game
   SBoneData                                 /Nocturne/Struct/Game
   SCameraDepthEntry                         /Nocturne/Struct/Game
-  SCameraEdge                               /Nocturne/Struct/Game
   SCameraViewportState                      /Nocturne/Struct/Game
-  SChatOutMessage                           /Nocturne/Struct/Game
   SColorBox                                 /Nocturne/Struct/Game
   SColorQuantMapper                         /Nocturne/Struct/Game
   SConditionVariable                        /Nocturne/Struct/Game
-  SCoronaLightCache                         /Nocturne/Struct/Game
   SCram                                     /Nocturne/Struct/Game
   SCramRectangle                            /Nocturne/Struct/Game
-  SDirectSoundDeviceInfo                    /Nocturne/Struct/Game
   SEdgeChainEntry                           /Nocturne/Struct/Game
-  SEdgeTableEntry                           /Nocturne/Struct/Game
   SEnumPair                                 /Nocturne/Struct/Game
   SEpdDirEntry                              /Nocturne/Struct/Game
   SEpdHeader                                /Nocturne/Struct/Game
   SFileTrackingEntry                        /Nocturne/Struct/Game
-  SFogImagePlane                            /Nocturne/Struct/Game
-  SHuffmanTableSource                       /Nocturne/Struct/Game
-  SLightGlowTable                           /Nocturne/Struct/Game
   SLineStrip2Index                          /Nocturne/Struct/Game
   SLineStrip3Index                          /Nocturne/Struct/Game
   SLodSamplePoint                           /Nocturne/Struct/Game
   SLodUvAccum                               /Nocturne/Struct/Game
   SMRGLIndexBlock                           /Nocturne/Struct/Game
   SMRGLKeyframeModelOnDisk                  /Nocturne/Struct/Game
-  SMRGLLightPrimitive                       /Nocturne/Struct/Game
   SMRGLPointerArray                         /Nocturne/Struct/Game
   SMRGLPrimitiveBigPoly                     /Nocturne/Struct/Game
   SMRGLPrimitiveBigPolyIndex                /Nocturne/Struct/Game
-  SMRGLPrimitiveQuadIndex                   /Nocturne/Struct/Game
   SMRGLTextureList                          /Nocturne/Struct/Game
   SMRGLVertexBlock                          /Nocturne/Struct/Game
   SMemHead                                  /Nocturne/Struct/Game
   SModelPartName                            /Nocturne/Struct/Game
   SMorphControlPoint                        /Nocturne/Struct/Game
   SMpegFrameDecodeContext                   /Nocturne/Struct/Game
-  SMpegLayer3BandIndex                      /Nocturne/Struct/Game
   SNetPacket_ChatMessage                    /Nocturne/Struct/Game
   SNetPacket_GameSettings                   /Nocturne/Struct/Game
   SNetPacket_PlayerAnnounce                 /Nocturne/Struct/Game
@@ -92,7 +81,6 @@ These structs are not referenced in any source or header file.
   SQuadVertices                             /Nocturne/Struct/Game
   SRA4HQPoint                               /Nocturne/Struct/Game
   SRecordingDeviceInfo                      /Nocturne/Struct/Game
-  SRenderBufferEntry                        /Nocturne/Struct/Game
   SS3DFaceMatch                             /Nocturne/Struct/Game
   SScreenCoord                              /Nocturne/Struct/Game
   SScriptXRef                               /Nocturne/Struct/Game
@@ -172,7 +160,7 @@ SMpegFrameHeader                           91.7% complete  (11/12 fields clean)
   Fields: padding
 
 ======================================================================
-FULLY CLEAN STRUCTS (516)
+FULLY CLEAN STRUCTS (518)
 ----------------------------------------------------------------------
   C3DSCamera
   C3DSLight
@@ -384,6 +372,7 @@ FULLY CLEAN STRUCTS (516)
   CParticle_vtable
   CPassenger
   CPathMap
+  CPathQueueNode
   CPendulum
   CPickList
   CPickList_full_vtable
@@ -647,6 +636,7 @@ FULLY CLEAN STRUCTS (516)
   SRenderBufferEntry
   SRenderVertex
   SResolutionEntry
+  SReverbSettings
   SRoom
   SScanlineSpans
   SScrape

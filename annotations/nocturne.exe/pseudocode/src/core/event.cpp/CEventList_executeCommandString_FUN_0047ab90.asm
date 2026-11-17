@@ -18,8 +18,8 @@
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   uchar[257] g_CharacterClassificationTable
 ;   CConsole g_CConsoleInstance
-;   undefined4 DAT_01c08b5c
-;   undefined4 DAT_01c08b60
+;   int g_INT_01c08b5c
+;   char[256] g_CHAR_ARRAY_01c08b60
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommand_FUN_0047ac50
@@ -102,14 +102,14 @@ section .text
     TEST EAX,EAX                        ; 0047ac0c
     JNZ 0x0047ab9d                      ; 0047ac0e
         ;   XREF to: 0047ab9d (CONDITIONAL_JUMP)  ; LAB_0047ab9d
-    CMP dword ptr [0x01c08b5c],0x0      ; 0047ac10 | DAT_01c08b5c
+    CMP dword ptr [0x01c08b5c],0x0      ; 0047ac10 | g_INT_01c08b5c
     JZ 0x0047ac1f                       ; 0047ac17
         ;   XREF to: 0047ac1f (CONDITIONAL_JUMP)  ; LAB_0047ac1f
     ADD ESP,0x64                        ; 0047ac19
     POP ESI                             ; 0047ac1c
     POP EBX                             ; 0047ac1d
     RET                                 ; 0047ac1e
-    PUSH 0x1c08b60                      ; 0047ac1f | DAT_01c08b60
+    PUSH 0x1c08b60                      ; 0047ac1f | g_CHAR_ARRAY_01c08b60
         ;   Label: LAB_0047ac1f
     PUSH 0x57f57d                       ; 0047ac24 | = "%s\n"
     MOV ECX,dword ptr [0x005ad350]      ; 0047ac29 | g_CConsolePtr

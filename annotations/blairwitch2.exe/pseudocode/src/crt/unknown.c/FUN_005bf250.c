@@ -13,7 +13,7 @@ DWORD FUN_005bf250(uint param_1)
   DWORD DVar1;
   
   if ((-1 < (int)param_1) && (param_1 <= g_UINT_0061f480)) {
-    hFile = *(HANDLE *)(DAT_0061f4d8 + param_1 * 4);
+    hFile = g_SIOControlBlock_PTR_0061f4d8->standard_handles[param_1];
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2a8)(param_1);
     DVar1 = SetFilePointer(hFile,0,(PLONG)0x0,1);
     (*(code *)PTR_crt_unknown_c_FUN_005bce04_0061f2ac)(param_1);

@@ -9,6 +9,6 @@
 // GLOBAL VARIABLES - Range 0xB00000
 // =============================================================================
 
-// char[241]
-extern char g_CHAR_ARRAY_00b07f58[241];
+// char[241][320]
+extern char g_CHAR_ARRAY_ARRAY_00b07f58[241][320];
 

@@ -74,8 +74,8 @@ char g_CHAR_01cc4228 = {};
 char g_CHAR_01cc7f38 = {};
 char g_CHAR_01cc88d0 = {};
 
-// char[10]
-char g_CHAR_ARRAY_01cc91a0[10] = {};
+// char[10][256]
+char g_CHAR_ARRAY_ARRAY_01cc91a0[10][256] = {};
 
 // char[256]
 char g_CHAR_ARRAY_01ccfe98[256] = {};
@@ -120,8 +120,8 @@ float g_FLOAT_01ccc3cc = {};
 float g_FLOAT_01ccc3d0 = {};
 float g_FLOAT_01ccc3d4 = {};
 
-// float[64]
-float g_FLOAT_ARRAY_01cc80cc[64] = {};
+// float[64][8]
+float g_FLOAT_ARRAY_ARRAY_01cc80cc[64][8] = {};
 
 // int
 int g_INT_01cc010c = {};

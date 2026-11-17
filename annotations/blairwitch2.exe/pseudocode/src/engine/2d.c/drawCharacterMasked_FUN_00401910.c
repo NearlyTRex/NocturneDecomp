@@ -9,7 +9,7 @@
 int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos,int y_pos)
 
 {
-  char *pcVar1;
+  uchar *puVar1;
   int iVar2;
   int iVar3;
   ushort *puVar4;
@@ -18,15 +18,14 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
   uint uVar7;
   int iVar8;
   
-  iVar3 = (char_code + -0x20) * 0x91;
-  uVar7 = (uint)(byte)(&DAT_00601440)[iVar3];
+  uVar7 = (uint)g_SFontGlyph_ARRAY_00601440[char_code + -0x20].width;
   if ((((x_pos < g_INT_01c35e48) || (y_pos < g_INT_01c35e4c)) ||
       ((int)((g_INT_01c35e50 + 1) - uVar7) < x_pos)) || (g_INT_01c35e54 + -10 < y_pos)) {
     iVar3 = 0;
   }
   else {
     iVar8 = y_pos * 4;
-    pcVar1 = &DAT_00601441 + iVar3;
+    puVar1 = g_SFontGlyph_ARRAY_00601440[char_code + -0x20].bitmap;
     iVar3 = iVar8 + 0x2c;
     if (g_INT_006141c0 == 8) {
       do {
@@ -34,13 +33,13 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
         puVar5 = (byte *)(*(int *)((int)g_ARRAY_PTR_01c2a38c + iVar8) + x_pos);
         if (uVar7 != 0) {
           do {
-            if (*pcVar1 == '\0') {
+            if (*puVar1 == '\0') {
               *puVar5 = 0;
             }
             else {
               *puVar5 = 2;
             }
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar5 = puVar5 + 1;
           } while (iVar2 < (int)uVar7);
@@ -56,11 +55,11 @@ int __cdecl engine_2d_c_drawCharacterMasked_FUN_00401910(int char_code,int x_pos
         if (uVar7 != 0) {
           do {
             uVar6 = g_USHORT_ARRAY_01c34910[0];
-            if (*pcVar1 != '\0') {
+            if (*puVar1 != '\0') {
               uVar6 = g_USHORT_ARRAY_01c34910[2];
             }
             *puVar4 = uVar6;
-            pcVar1 = pcVar1 + 1;
+            puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 1;
             puVar4 = puVar4 + 1;
           } while (iVar2 < (int)uVar7);

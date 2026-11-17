@@ -10,13 +10,13 @@
 ; float            Stack[0x10]:4   z_velocity
 ;
 ; Referenced Globals:
-;   undefined4 DAT_0264a5d0
+;   IDirectSound3DListener* g_IDirectSound3DListener_PTR_0264a5d0
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x0264a5d0]      ; 00555c80 | DAT_0264a5d0
+    MOV EDX,dword ptr [0x0264a5d0]      ; 00555c80 | g_IDirectSound3DListener_PTR_0264a5d0
         ;   Label: sound_snddx.cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_00555c80
     TEST EDX,EDX                        ; 00555c86
     JNZ 0x00555c8b                      ; 00555c88

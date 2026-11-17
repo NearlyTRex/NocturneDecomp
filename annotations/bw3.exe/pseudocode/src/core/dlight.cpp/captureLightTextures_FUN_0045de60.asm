@@ -8,9 +8,9 @@
 ;   core_set.cpp_CDemonSet_loadAssets_FUN_00539ee0 at 00539ee0
 ;
 ; Referenced Globals:
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005f2840
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005f2870
-;   undefined4 DAT_005f28a0
+;   undefined4 g_SLightGlowTable_005f2828.headlight.base.type
+;   undefined4 g_SLightGlowTable_005f2828.sprites[0].params.flare_axis_pos
+;   undefined4 g_SLightGlowTable_005f2828.sprites[1].params.flare_axis_pos
 ;   undefined4 DAT_005f2a20
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
@@ -25,15 +25,15 @@ section .text
     PUSH EBX                            ; 0045de60
         ;   Label: core_dlight.cpp_captureLightTextures_FUN_0045de60
     PUSH ESI                            ; 0045de61
-    PUSH 0x5f2840                       ; 0045de62 | g_SMRGLTextureBasic_005f2840
+    PUSH 0x5f2840                       ; 0045de62 | g_SLightGlowTable_005f2828.headlight.base.type
     MOV EDX,dword ptr [0x005f2afc]      ; 0045de67 | g_CDemonRenderer_PTR_005f2afc
     PUSH EDX                            ; 0045de6d | g_CDemonRenderer_01bdd7e4
-    MOV EBX,0x5f2870                    ; 0045de6e | g_SMRGLTextureBasic_005f2870
+    MOV EBX,0x5f2870                    ; 0045de6e | g_SLightGlowTable_005f2828.sprites[0].params.flare_axis_pos
     CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0 ; 0045de73
         ;   XREF to: 0046e5e0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture)
     LEA ESI,[EBX + 0x1b0]               ; 0045de78 | DAT_005f2a20
     ADD ESP,0x8                         ; 0045de7e
-    PUSH EBX                            ; 0045de81 | g_SMRGLTextureBasic_005f2870 | DAT_005f28a0
+    PUSH EBX                            ; 0045de81 | g_SLightGlowTable_005f2828.sprites[0].params.flare_axis_pos | g_SLightGlowTable_005f2828.sprites[1].params.flare_axis_pos
         ;   Label: LAB_0045de81
     MOV ECX,dword ptr [0x005f2afc]      ; 0045de82 | g_CDemonRenderer_PTR_005f2afc
     PUSH ECX                            ; 0045de88 | g_CDemonRenderer_01bdd7e4

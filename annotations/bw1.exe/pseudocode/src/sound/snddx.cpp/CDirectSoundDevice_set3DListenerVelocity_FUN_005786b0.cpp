@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_snddx_cpp_CDirectSoundDevice_set3DListenerVelocity_FUN_005786b0(CDirectSoundDevice *this_ptr,float x_velocity,float y_velocity,float z_velocity)
 
 {
-  if (_DAT_02c81da0 == (int *)0x0) {
+  if (g_IDirectSound3DListener_PTR_02c81da0 == (IDirectSound3DListener *)0x0) {
     return;
   }
-  (**(code **)(*_DAT_02c81da0 + 0x40))(_DAT_02c81da0,x_velocity,y_velocity,z_velocity,1);
+  (*g_IDirectSound3DListener_PTR_02c81da0->vtable->SetVelocity)
+            (g_IDirectSound3DListener_PTR_02c81da0,x_velocity,y_velocity,z_velocity,1);
   return;
 }

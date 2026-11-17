@@ -10,6 +10,6 @@
 // GLOBAL VARIABLES - Range 0x910000
 // =============================================================================
 
-// CVector3i[241]
-extern CVector3i g_CVector3i_ARRAY_0091e6d4[241];
+// CVector3i[241][320]
+extern CVector3i g_CVector3i_ARRAY_ARRAY_0091e6d4[241][320];
 

@@ -35,7 +35,7 @@
 ;   double DOUBLE_0057a542 = 0.25
 ;   double DOUBLE_0057a54a = 2.40000000000000
 ;   float FLOAT_0057a552 = -1
-;   undefined4 DAT_005ad1d0
+;   float[6] g_FLOAT_ARRAY_005ad1d0
 ;   CConsole* g_CConsolePtr = 0077ad0c
 ;   CConsole g_CConsoleInstance
 ;   UVector3 g_ZeroVector
@@ -193,7 +193,7 @@ section .text
         ;   XREF to: 0042b393 (CONDITIONAL_JUMP)  ; LAB_0042b393
     FLD float ptr [ESP + 0xf4]          ; 0042b0f5
         ;   Label: LAB_0042b0f5
-    FADD float ptr [EAX*0x4 + 0x5ad1d0] ; 0042b0fc | DAT_005ad1d0
+    FADD float ptr [EAX*0x4 + 0x5ad1d0] ; 0042b0fc | g_FLOAT_ARRAY_005ad1d0
     XOR EAX,EAX                         ; 0042b103
     FSTP float ptr [ESP + 0x104]        ; 0042b105
     MOV dword ptr [ESP + 0x98],EAX      ; 0042b10c

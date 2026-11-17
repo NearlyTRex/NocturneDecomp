@@ -27,15 +27,18 @@ int __cdecl core_boxactor_cpp_CBoxActor_renderOpaque_FUN_0041ea00(CBoxActor *thi
     return 0;
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_00460a00
-            ((CDemonRenderer *)PTR_DAT_005ae700,&(this_ptr->base).location.position);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,
+             &(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00460aa0
-            ((CDemonRenderer *)PTR_DAT_005ae700,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700,&(this_ptr->base).orient.vec,
+             (CVector3f *)0x0);
   this_ptr_00 = (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,&local_20);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_0041ceb0(this_ptr_00);
   if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004544d0
               (&this_ptr->model,this_ptr->anim_frame,-1);
   }
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0((CDemonRenderer *)PTR_DAT_005ae700);
+  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_00460bf0
+            ((CDemonRenderer *)PTR_g_CDemonRenderer_01b4d738_005ae700);
   return iVar2;
 }

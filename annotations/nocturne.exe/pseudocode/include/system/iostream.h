@@ -103,3 +103,20 @@ typedef struct streambuf {
     uint __flags;
 } streambuf;
 
+// Structure: streambuf_vtable
+typedef struct streambuf_vtable {
+    cpp_streambuf_do_sgetn* do_sgetn;
+    cpp_streambuf_do_sputn* do_sputn;
+    cpp_streambuf_pbackfail* pbackfail;
+    cpp_streambuf_overflow* overflow;
+    cpp_streambuf_underflow* underflow;
+    cpp_streambuf_setbuf* setbuf;
+    cpp_streambuf_seekoff* seekoff;
+    cpp_streambuf_seekpos* seekpos;
+    cpp_streambuf_sync* sync;
+    cpp_streambuf_destructor* destructor;
+    cpp_streambuf_doallocate* doallocate;
+    void* reserved;
+    int base_object_size;
+} streambuf_vtable;
+

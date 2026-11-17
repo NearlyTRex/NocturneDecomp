@@ -2,18 +2,17 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 69,
+    "complexity_score": 53,
     "cross_reference_count": 67,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
-      "unresolved_funcptr",
-      "warning_overlapping_globals"
+      "unresolved_funcptr"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -458,8 +457,8 @@
     },
     {
       "addr": "02d252a0",
-      "name": "DAT_02d252a0",
-      "type": "undefined4",
+      "name": "g_FileListNode_PTR_02d252a0",
+      "type": "FileListNode*",
       "value": null
     }
   ],
@@ -533,16 +532,8 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
-      "line": 2,
-      "match": "WARNING: Globals starting with",
-      "severity": "mild",
-      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
-      "type": "warning_overlapping_globals"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
+      "line": 8,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079b4)();",
@@ -550,7 +541,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 14,
+      "line": 12,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079b8)();",
@@ -558,7 +549,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 20,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
       "text": "(*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079b8)();",

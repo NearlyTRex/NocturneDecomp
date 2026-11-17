@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005211f0(float *input_real,float *input_imag,float *output_real,float *output_imag,int size)
 
 {
@@ -68,10 +66,10 @@ void __cdecl sound_sndmain_cpp_computeComplexFFT_FUN_005211f0(float *input_real,
   if (1 < size) {
     do {
       iVar10 = local_24 / 2;
-      fVar18 = (float10)_DAT_00592116 / (float10)iVar10;
+      fVar18 = (float10)3.1415926535000001 / (float10)iVar10;
       fVar3 = (float10)fcos(fVar18);
       fVar19 = (float10)fsin(fVar18);
-      fVar20 = (float10)_DAT_0059210e;
+      fVar20 = (float10)2;
       fVar18 = fVar18 * fVar20;
       fVar21 = (float10)fsin(fVar18);
       fVar18 = (float10)fcos(fVar18);

@@ -63,7 +63,7 @@
 ;   double g_DOUBLE_005bb49c = 0.00390625
 ;   double g_DOUBLE_005bb4a4 = 65536
 ;   float g_FLOAT_005de4f0 = 256
-;   SMRGLTextureBasic g_SMRGLTextureBasic_005f2858
+;   undefined4 g_SLightGlowTable_005f2828.sprites[0].texture.base.type
 ;   CDemonRenderer* g_CDemonRenderer_PTR_005f2afc = 01bdd7e4
 ;   CDemonRenderer g_CDemonRenderer_01bdd7e4
 ;   int g_INT_01c6e24c
@@ -414,7 +414,7 @@ section .text
     MOV dword ptr [EBX + 0xb0],0xffff   ; 0045da11
     MOV EDX,dword ptr [EAX]             ; 0045da1b | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EDX + 0xb4],0xffff   ; 0045da1d
-    PUSH 0x5f2858                       ; 0045da27 | g_SMRGLTextureBasic_005f2858
+    PUSH 0x5f2858                       ; 0045da27 | g_SLightGlowTable_005f2828.sprites[0].texture.base.type
     MOV EDX,dword ptr [EAX]             ; 0045da2c | g_CDemonRenderer_01bdd7e4
     PUSH EAX                            ; 0045da2e | g_CDemonRenderer_01bdd7e4
     MOV dword ptr [EDX + 0xb8],0xffff   ; 0045da2f

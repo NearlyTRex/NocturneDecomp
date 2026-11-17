@@ -223,13 +223,13 @@ void __cdecl core_game_cpp_CGame_finishAct_FUN_004a6a10(CGame *this_ptr)
   engine_3d_c_setRenderAlpha_FUN_00408370(0xffff);
   pCVar9 = local_2c;
   iVar3 = engine_font_cpp_CBitFont_wrapText_FUN_00492f30
-                    (local_2c,&stack0xfffffaa4,(char *)0x1c73240,0x14,0x100,0xc0);
+                    (local_2c,&stack0xfffffaa4,&g_CHAR_01c73240,0x14,0x100,0xc0);
   iVar11 = 0;
   iStack_34 = iVar3;
   local_30 = engine_font_cpp_CBitFont_getCharHeight_FUN_004930e0(pCVar9,0x58);
   iVar6 = 0xf0;
   if (0 < iVar3) {
-    pcVar4 = (char *)0x1c73240;
+    pcVar4 = &g_CHAR_01c73240;
     do {
       iVar11 = iVar11 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_00490de0

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 215,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 15,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
+    "pseudocode_lines": 146,
     "suspect_count": 6,
     "suspect_types": [
       "pointer_truncation",
       "raw_address_constant"
     ],
-    "total_lines": 550
+    "total_lines": 551
   },
   "cross_references": [
     {
@@ -483,15 +483,15 @@
   "suspects": [
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 105,
+      "line": 106,
       "match": "(int)local_44",
       "severity": "moderate",
-      "text": "if ((int)local_44 < iVar4) {",
+      "text": "if ((int)local_44 < iVar5) {",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 114,
+      "line": 115,
       "match": "(int)local_44",
       "severity": "moderate",
       "text": "local_50 = ((int)local_44 * 3) / 2;",
@@ -499,34 +499,34 @@
     },
     {
       "description": "Pointer value `local_44` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 118,
+      "line": 119,
       "match": "(int)local_44",
       "severity": "moderate",
-      "text": "local_34 = iVar2 - (int)local_44;",
+      "text": "local_34 = iVar3 - (int)local_44;",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_38` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 136,
+      "line": 137,
       "match": "(int)local_38",
       "severity": "moderate",
-      "text": "(iVar3,(int)local_38,local_30 + iVar3,local_28,iVar4);",
+      "text": "(iVar4,(int)local_38,local_30 + iVar4,local_28,iVar5);",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `local_40` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 140,
+      "line": 141,
       "match": "(int)local_40",
       "severity": "moderate",
       "text": "(local_44,local_20,(int)local_40,local_34,0xf8,0);",
       "type": "pointer_truncation"
     },
     {
-      "description": "Raw hex address 0x4cc692 assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 42,
+      "description": "Raw hex address 0x4cc692 assigned to bare local `iVar3`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar3` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 43,
       "match": "0x4cc692",
       "severity": "moderate",
-      "text": "iVar2 = 0x4cc692;",
+      "text": "iVar3 = 0x4cc692;",
       "type": "raw_address_constant"
     }
   ]

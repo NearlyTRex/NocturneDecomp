@@ -7,7 +7,6 @@
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004ba5ee) */
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void __cdecl core_icepick_cpp_CIcePick_process_FUN_004b9fe0(CIcePick *this_ptr,float delta_time)
 
@@ -304,7 +303,7 @@ LAB_004ba228:
   if (EVar10 == DEATH_STATE_ALIVE) {
     blend_callback = core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650;
     fVar16 = this_ptr->head_look_blend_weight;
-    iVar6 = _DAT_01cae288;
+    iVar6 = g_INT_ARRAY_01cae288[0];
     core_xform_cpp_eulerToQuaternion_FUN_0055d610
               (&this_ptr->head_look_euler,(CQuaternion4f *)&stack0xffffff78);
     auStack_78._0_4_ = in_stack_ffffff78;

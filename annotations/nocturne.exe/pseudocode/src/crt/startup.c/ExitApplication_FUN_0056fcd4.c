@@ -10,7 +10,7 @@ void __cdecl ExitApplication(int exit_code)
 
 {
   (*(code *)PTR_crt_unknown_c_ExitHookStub_FUN_0056fcd0_005c2054)();
-  if (DAT_02de4e30 == '\0') {
+  if ((char)g_INT_02de4e30 == '\0') {
     ProcessExitHandlers('\x10',0xff);
   }
   FinalExitHandler(exit_code);

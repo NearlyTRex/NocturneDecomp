@@ -13,7 +13,7 @@ uint FUN_0056e608(uint param_1)
   int iVar1;
   uint uVar2;
   
-  if (DAT_005c1ab8 == -1) {
+  if (g_INT_005c1ab8 == -1) {
     return 0;
   }
   lpTlsValue = (void *)FUN_0056e56c(param_1);
@@ -24,7 +24,7 @@ uint FUN_0056e608(uint param_1)
       free(lpTlsValue);
       return 0;
     }
-    TlsSetValue(DAT_005c1ab8,lpTlsValue);
+    TlsSetValue(g_INT_005c1ab8,lpTlsValue);
     uVar2 = 1;
   }
   return uVar2;

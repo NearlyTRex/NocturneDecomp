@@ -6,13 +6,11 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl sound_sndmain_cpp_popSfxOptions_FUN_005263c0(void)
 
 {
-  _DAT_02dc1b74 = _DAT_02dc1b74 + -1;
-  if (-1 < _DAT_02dc1b74) {
+  g_INT_02dc1b74 = g_INT_02dc1b74 + -1;
+  if (-1 < g_INT_02dc1b74) {
     return;
   }
   g_CurrentFilename = "..\\sound\\sndmain.cpp";

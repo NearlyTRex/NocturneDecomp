@@ -24,7 +24,7 @@
 ; Referenced Globals:
 ;   int g_WindowWidth = 0x140
 ;   int g_WindowHeight = 0xc8
-;   undefined4 DAT_0140e7a4
+;   int g_INT_0140e7a4
 ;   uint*[1200] g_ZBufferScanlineArray
 ;   int g_UseExternalRenderer
 ;
@@ -142,7 +142,7 @@ section .text
         ;   Label: LAB_0044080e
     MOV EBP,dword ptr [EDI + 0x1d0]     ; 00440810
     MOV dword ptr [ESP + 0x20],EBX      ; 00440816
-    MOV dword ptr [0x0140e7a4],EBX      ; 0044081a | DAT_0140e7a4
+    MOV dword ptr [0x0140e7a4],EBX      ; 0044081a | g_INT_0140e7a4
     TEST EBP,EBP                        ; 00440820
     JLE 0x004408b0                      ; 00440822
         ;   XREF to: 004408b0 (CONDITIONAL_JUMP)  ; LAB_004408b0
@@ -158,7 +158,7 @@ section .text
     CMP EAX,dword ptr [EBP + 0xc]       ; 0044083d
     JG 0x0044089a                       ; 00440840
         ;   XREF to: 0044089a (CONDITIONAL_JUMP)  ; LAB_0044089a
-    MOV EBX,dword ptr [0x0140e7a4]      ; 00440842 | DAT_0140e7a4
+    MOV EBX,dword ptr [0x0140e7a4]      ; 00440842 | g_INT_0140e7a4
     XOR ECX,ECX                         ; 00440848
     TEST EBX,EBX                        ; 0044084a
     JLE 0x0044086d                      ; 0044084c
@@ -185,10 +185,10 @@ section .text
     MOV EAX,dword ptr [EDX + 0x4]       ; 0044087d
     LEA EDX,[ECX + 0x4]                 ; 00440880
     MOV dword ptr [ECX + 0x140eba8],EAX ; 00440883
-    MOV ECX,dword ptr [0x0140e7a4]      ; 00440889 | DAT_0140e7a4
+    MOV ECX,dword ptr [0x0140e7a4]      ; 00440889 | g_INT_0140e7a4
     INC ECX                             ; 0044088f
     MOV dword ptr [ESP + 0x28],EDX      ; 00440890
-    MOV dword ptr [0x0140e7a4],ECX      ; 00440894 | DAT_0140e7a4
+    MOV dword ptr [0x0140e7a4],ECX      ; 00440894 | g_INT_0140e7a4
     MOV EAX,dword ptr [ESP + 0x20]      ; 0044089a
         ;   Label: LAB_0044089a
     ADD EBP,0x10                        ; 0044089e
@@ -198,7 +198,7 @@ section .text
     CMP EAX,EDX                         ; 004408ac
     JL 0x00440830                       ; 004408ae
         ;   XREF to: 00440830 (CONDITIONAL_JUMP)  ; LAB_00440830
-    MOV ECX,dword ptr [0x0140e7a4]      ; 004408b0 | DAT_0140e7a4
+    MOV ECX,dword ptr [0x0140e7a4]      ; 004408b0 | g_INT_0140e7a4
         ;   Label: LAB_004408b0
     XOR EBP,EBP                         ; 004408b6
     TEST ECX,ECX                        ; 004408b8
@@ -237,7 +237,7 @@ section .text
     INC EBP                             ; 0044092a
     CALL core_dstrendr.cpp_memcpyMMX_FUN_00465341 ; 0044092b
         ;   XREF to: 00465341 (UNCONDITIONAL_CALL)  ; void core_dstrendr.cpp_memcpyMMX_FUN_00465341(void * dest, void * src, int byte_count)
-    MOV EAX,[0x0140e7a4]                ; 00440930 | DAT_0140e7a4
+    MOV EAX,[0x0140e7a4]                ; 00440930 | g_INT_0140e7a4
     ADD ESP,0xc                         ; 00440935
     CMP EBP,EAX                         ; 00440938
     JL 0x004408ca                       ; 0044093a

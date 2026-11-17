@@ -11,7 +11,7 @@
 ;   CBitFont* g_CBitFont_PTR_01511cb8
 ;   int g_INT_01c38af0
 ;   int g_INT_01c38af4
-;   byte g_BYTE_01c38b00
+;   DWORD g_DWORD_01c38b00
 ;
 ; Called Functions:
 ;   crt_unknown.c_sprintf_FUN_005b7790
@@ -66,7 +66,7 @@ section .text
     CALL engine_font.cpp_CBitFont_drawText_FUN_004a8df0 ; 004eb437
         ;   XREF to: 004a8df0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawText_FUN_004a8df0(CBitFont * this_ptr, char * text, int x, int y, ...)
     ADD ESP,0x18                        ; 004eb43c
-    MOV EAX,[0x01c38b00]                ; 004eb43f | g_BYTE_01c38b00
+    MOV EAX,[0x01c38b00]                ; 004eb43f | g_DWORD_01c38b00
     PUSH EAX                            ; 004eb444
     MOV EDX,dword ptr [0x01c38af4]      ; 004eb445 | g_INT_01c38af4
     PUSH EDX                            ; 004eb44b

@@ -38,6 +38,16 @@ CVector3f g_CVector3f_02d24a60 = {};
 // CVector3i
 CVector3i g_CVector3i_02d26200 = {};
 
+// DWORD
+DWORD g_DWORD_02d202b0 = {};
+
+// FileListNode*
+FileListNode* g_FileListNode_PTR_02d252a0 = {};
+FileListNode* g_FileListNode_PTR_02d252a4 = {};
+
+// HMODULE
+HMODULE g_HMODULE_02d22c20 = {};
+
 // HWND
 HWND g_HWND_02d21b78 = {};
 
@@ -163,6 +173,10 @@ void* g_PTR_02d252bc = {};
 void* g_PTR_02d261b8 = {};
 void* g_PTR_02d261e0 = {};
 void* g_PTR_02d261f0 = {};
+
+// wchar_t[260]
+wchar_t g_WCHAR_T_ARRAY_02d253c4[260] = {};
+wchar_t g_WCHAR_T_ARRAY_02d256d0[260] = {};
 
 // word
 word DAT_02D270D6 = 0;

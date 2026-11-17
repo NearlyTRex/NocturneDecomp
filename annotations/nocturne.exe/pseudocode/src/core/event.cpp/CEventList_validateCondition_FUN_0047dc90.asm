@@ -13,8 +13,8 @@
 ;   core_script.cpp_parseConditionExpr_FUN_004fe140 at 004fe170
 ;
 ; Referenced Globals:
-;   undefined4 DAT_01c08b5c
-;   undefined4 DAT_01c08b60
+;   int g_INT_01c08b5c
+;   char[256] g_CHAR_ARRAY_01c08b60
 ;
 ; Called Functions:
 ;   core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10
@@ -39,15 +39,15 @@ section .text
     MOV EDX,0x1                         ; 0047dca3
     PUSH ECX                            ; 0047dca8
     XOR EBX,EBX                         ; 0047dca9
-    MOV dword ptr [0x01c08b5c],EDX      ; 0047dcab | DAT_01c08b5c
+    MOV dword ptr [0x01c08b5c],EDX      ; 0047dcab | g_INT_01c08b5c
     CALL core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10 ; 0047dcb1
         ;   XREF to: 0047dd10 (UNCONDITIONAL_CALL)  ; int core_event.cpp_CEventList_evaluateExpression_FUN_0047dd10(CEventList * this_ptr, char * expression)
     ADD ESP,0x8                         ; 0047dcb6
-    MOV dword ptr [0x01c08b5c],EBX      ; 0047dcb9 | DAT_01c08b5c
+    MOV dword ptr [0x01c08b5c],EBX      ; 0047dcb9 | g_INT_01c08b5c
     TEST EAX,EAX                        ; 0047dcbf
     JGE 0x0047dc9a                      ; 0047dcc1
         ;   XREF to: 0047dc9a (CONDITIONAL_JUMP)  ; LAB_0047dc9a
-    MOV EAX,0x1c08b60                   ; 0047dcc3 | DAT_01c08b60
+    MOV EAX,0x1c08b60                   ; 0047dcc3 | g_CHAR_ARRAY_01c08b60
     POP EBX                             ; 0047dcc8
     RET                                 ; 0047dcc9
 

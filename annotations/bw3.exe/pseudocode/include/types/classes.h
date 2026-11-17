@@ -224,6 +224,7 @@
 #include "types/classes/CParticle_vtable.h"
 #include "types/classes/CPassenger.h"
 #include "types/classes/CPathMap.h"
+#include "types/classes/CPathQueueNode.h"
 #include "types/classes/CPendulum.h"
 #include "types/classes/CPickList.h"
 #include "types/classes/CPickList_full_vtable.h"

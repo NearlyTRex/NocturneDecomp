@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
   char cVar1;
   int iVar2;
   int channel_index;
-  uint *puVar3;
-  SSoundDeviceInfo *pSVar4;
+  SSoundDeviceInfo *pSVar3;
+  char *pcVar4;
   char *pcVar5;
   SSoundDeviceInfo local_29c;
   char local_184 [256];
@@ -23,24 +23,24 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
   int local_18;
   float local_14;
   
-  pSVar4 = &local_29c;
-  puVar3 = &DAT_005beba0;
-  pcVar5 = local_184;
+  pSVar3 = &local_29c;
+  pcVar5 = g_CHAR_ARRAY_005beba0;
+  pcVar4 = local_184;
   for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *(uint *)pcVar5 = *puVar3;
-    puVar3 = puVar3 + 1;
+    *(uint *)pcVar4 = *(uint *)pcVar5;
     pcVar5 = pcVar5 + 4;
+    pcVar4 = pcVar4 + 4;
   }
-  if ((-1 < DAT_005bea74) &&
-     (iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230(), DAT_005bea74 < iVar2)) {
-    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(DAT_005bea74,&local_29c);
+  if ((-1 < g_INT_005bea74) &&
+     (iVar2 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00528230(), g_INT_005bea74 < iVar2)) {
+    sound_sndmain_cpp_getSoundDeviceInfo_FUN_005282c0(g_INT_005bea74,&local_29c);
     pcVar5 = local_184;
     do {
-      cVar1 = pSVar4->device_name[0];
+      cVar1 = pSVar3->device_name[0];
       *pcVar5 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = *(char *)((int)pSVar4 + 1);
-      pSVar4 = (SSoundDeviceInfo *)((int)pSVar4 + 2);
+      cVar1 = *(char *)((int)pSVar3 + 1);
+      pSVar3 = (SSoundDeviceInfo *)((int)pSVar3 + 2);
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
@@ -57,7 +57,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
   iVar2 = sound_sndmain_cpp_isSoundMuted_FUN_00526ca0();
   channel_index = 0;
   engine_ini_cpp_CIniFile_setInteger_FUN_004bda80(ini_file,"Mute",iVar2);
-  if (0 < DAT_005bea60) {
+  if (0 < g_INT_005bea60) {
     do {
       _sprintf(local_84,"SfxChannel%dEnabled",channel_index);
       iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00527490(channel_index);
@@ -66,7 +66,7 @@ void __cdecl sound_sndmain_cpp_writeIni_FUN_00528c80(CIniFile *ini_file)
       local_14 = sound_sndmain_cpp_getSfxChannelVol_FUN_00527380(channel_index);
       channel_index = channel_index + 1;
       engine_ini_cpp_CIniFile_setFloatValue_FUN_004bdb20(ini_file,local_84,local_14);
-    } while (channel_index < DAT_005bea60);
+    } while (channel_index < g_INT_005bea60);
   }
   return;
 }

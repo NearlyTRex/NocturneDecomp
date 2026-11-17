@@ -356,7 +356,7 @@ section .text
         ;   XREF to: 004a5ce4 (CONDITIONAL_JUMP)  ; LAB_004a5ce4
     XOR EBX,EBX                         ; 004a5b9b
         ;   Label: LAB_004a5b9b
-    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5b9d | DAT_01bd1d94
+    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5b9d | g_BIT_INTEGER32_01bd1d94
         ;   Label: LAB_004a5b9d
     JZ 0x004a5d15                       ; 004a5ba3
         ;   XREF to: 004a5d15 (CONDITIONAL_JUMP)  ; LAB_004a5d15
@@ -476,7 +476,7 @@ section .text
     TEST EAX,EAX                        ; 004a5cfc
     JNZ 0x004a5b9b                      ; 004a5cfe
         ;   XREF to: 004a5b9b (CONDITIONAL_JUMP)  ; LAB_004a5b9b
-    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5d04 | DAT_01bd1d94
+    CMP EBX,dword ptr [0x01bd1d94]      ; 004a5d04 | g_BIT_INTEGER32_01bd1d94
     JNZ 0x004a5b9b                      ; 004a5d0a
         ;   XREF to: 004a5b9b (CONDITIONAL_JUMP)  ; LAB_004a5b9b
     JMP 0x004a5b70                      ; 004a5d10

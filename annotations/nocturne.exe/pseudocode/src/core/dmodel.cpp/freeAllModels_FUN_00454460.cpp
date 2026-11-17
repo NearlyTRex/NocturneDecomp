@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_dmodel_cpp_freeAllModels_FUN_00454460(void)
 
 {
@@ -18,6 +16,6 @@ void __cdecl core_dmodel_cpp_freeAllModels_FUN_00454460(void)
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00452f10(this_ptr);
     this_ptr = this_ptr + 1;
   } while (this_ptr != g_CKeyFramedModelPool + sizeof(g_CKeyFramedModelPool) / sizeof(g_CKeyFramedModelPool[0]));
-  _DAT_01abb658 = 0;
+  g_INT_01abb658 = 0;
   return;
 }

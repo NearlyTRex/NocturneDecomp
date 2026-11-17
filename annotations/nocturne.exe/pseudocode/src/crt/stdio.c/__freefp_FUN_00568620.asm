@@ -11,8 +11,8 @@
 ;   crt_unknown.c___CClose_FUN_005633c4 at 005633de
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02de4e20
-;   undefined4 DAT_02de4e24
+;   FileListNode* g_FileListNode_PTR_02de4e20
+;   FileListNode* g_FileListNode_PTR_02de4e24
 ;
 ; *****************************************************************************
 
@@ -22,7 +22,7 @@ section .text
         ;   Label: crt_stdio.c___freefp_FUN_00568620
     MOV EBX,dword ptr [ESP + 0x8]       ; 00568621
     MOV EDX,0x2de4e20                   ; 00568625
-    MOV EAX,dword ptr [EDX]             ; 0056862a | DAT_02de4e20
+    MOV EAX,dword ptr [EDX]             ; 0056862a | g_FileListNode_PTR_02de4e20
         ;   Label: LAB_0056862a
     TEST EAX,EAX                        ; 0056862c
     JZ 0x00568655                       ; 0056862e
@@ -40,8 +40,8 @@ section .text
     MOV byte ptr [EBX + 0xc],CL         ; 00568641
     MOV EBX,dword ptr [EAX]             ; 00568644
     MOV dword ptr [EDX],EBX             ; 00568646
-    MOV EDX,dword ptr [0x02de4e24]      ; 00568648 | DAT_02de4e24
-    MOV [0x02de4e24],EAX                ; 0056864e | DAT_02de4e24
+    MOV EDX,dword ptr [0x02de4e24]      ; 00568648 | g_FileListNode_PTR_02de4e24
+    MOV [0x02de4e24],EAX                ; 0056864e | g_FileListNode_PTR_02de4e24
     MOV dword ptr [EAX],EDX             ; 00568653
     POP EBX                             ; 00568655
         ;   Label: LAB_00568655

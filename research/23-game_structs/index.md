@@ -292,7 +292,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CParticleBox](structs/CParticleBox.md) | — | — | — | 2008 ✓ | — |
 | [CPassenger](structs/CPassenger.md) | 132168 ✓ | 131760 ✓ | 133112 ✓ | 151688 ✓ | 136200 ✓ |
 | [CPathMap](structs/CPathMap.md) | 80092 ✓ | 80092 ✓ | 80092 ✓ | 80092 ✓ | 80092 ✓ |
-| [CPathQueueNode](structs/CPathQueueNode.md) | 12 | — | — | — | — |
+| [CPathQueueNode](structs/CPathQueueNode.md) | 12 | 12 | 12 | 12 | 12 |
 | [CPatrolPoint](structs/CPatrolPoint.md) | — | — | — | 1724 ✓ | — |
 | [CPendulum](structs/CPendulum.md) | 1092 ✓ | 1084 ✓ | 1092 ✓ | 1440 ✓ | 1092 ✓ |
 | [CPickList](structs/CPickList.md) | 936 ✓ | 368 ✓ | 960 ✓ | 960 ✓ | 960 ✓ |
@@ -411,7 +411,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CWeather](structs/CWeather.md) | 56 ✓ | 56 ✓ | 56 | 56 | 56 |
 | [CWerewolf](structs/CWerewolf.md) | 48900 ✓ | 48492 ✓ | 49840 ✓ | 68416 ✓ | 53404 ✓ |
 | [CWhitewolf](structs/CWhitewolf.md) | — | — | — | — | 56472 ✓ |
-| [CWinFont](structs/CWinFont.md) | 316 ✓ | 316 | 27520 ✓ | 27520 ✓ | 27520 ✓ |
+| [CWinFont](structs/CWinFont.md) | 316 ✓ | 316 ✓ | 27520 ✓ | 27520 ✓ | 27520 ✓ |
 | [CYow](structs/CYow.md) | — | — | 49848 ✓ | — | 53368 ✓ |
 | [CZThumb](structs/CZThumb.md) | 40 ✓ | — | — | 40 ✓ | — |
 | [CZombie](structs/CZombie.md) | 49068 ✓ | 48660 ✓ | 50008 ✓ | 68584 ✓ | 53580 ✓ |
@@ -432,7 +432,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SActorVarBlock](structs/SActorVarBlock.md) | 1504 | 1504 | 1504 | 1504 | 1504 |
 | [SAlphaEntry](structs/SAlphaEntry.md) | 8 | 8 | — | — | — |
 | [SArmAimData](structs/SArmAimData.md) | 32 | 32 | 32 | 32 | 32 |
-| [SAudioFormatDescriptor](structs/SAudioFormatDescriptor.md) | 16 | 16 | — | — | — |
+| [SAudioFormatDescriptor](structs/SAudioFormatDescriptor.md) | 16 | 16 | 16 | 16 | 16 |
 | [SBat](structs/SBat.md) | 24 ✓ | 24 ✓ | — | — | — |
 | [SBitBuffer](structs/SBitBuffer.md) | 8 | 8 | 8 | 8 | 8 |
 | [SBodyPartFire](structs/SBodyPartFire.md) | 688 ✓ | 680 ✓ | 688 ✓ | 1036 ✓ | 688 ✓ |
@@ -444,12 +444,12 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SButtonStruct](structs/SButtonStruct.md) | — | — | 44 | 44 | 44 |
 | [SCPUInfo](structs/SCPUInfo.md) | 20 | 20 | 20 | 20 | 20 |
 | [SCameraDepthEntry](structs/SCameraDepthEntry.md) | 307248 | 307248 | — | — | — |
-| [SCameraEdge](structs/SCameraEdge.md) | 12 | 12 | — | — | — |
+| [SCameraEdge](structs/SCameraEdge.md) | 12 | 12 | 12 | 12 | 12 |
 | [SCameraViewportState](structs/SCameraViewportState.md) | 144 | 144 | 144 | 144 | 144 |
 | [SCarryHand](structs/SCarryHand.md) | 68 | 68 | 120 | 120 | 120 |
 | [SChainVertex](structs/SChainVertex.md) | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ |
 | [SChatHistory](structs/SChatHistory.md) | 288 ✓ | 288 ✓ | 288 ✓ | 288 ✓ | 288 ✓ |
-| [SChatOutMessage](structs/SChatOutMessage.md) | 276 | 276 | — | — | — |
+| [SChatOutMessage](structs/SChatOutMessage.md) | 276 | 276 | 276 | 276 | 276 |
 | [SClipPlane](structs/SClipPlane.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
 | [SClothBone](structs/SClothBone.md) | 172 ✓ | 172 ✓ | 172 ✓ | 172 ✓ | 172 ✓ |
 | [SClothVertex](structs/SClothVertex.md) | 284 ✓ | 284 ✓ | 284 ✓ | 284 ✓ | 284 ✓ |
@@ -460,7 +460,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SColorQuantCentroid](structs/SColorQuantCentroid.md) | 32 | 32 | — | — | — |
 | [SColorQuantMapper](structs/SColorQuantMapper.md) | 33544 | 33544 | — | — | — |
 | [SConditionVariable](structs/SConditionVariable.md) | 8 | 8 | — | — | — |
-| [SCoronaLightCache](structs/SCoronaLightCache.md) | 629796 | 629796 | — | — | — |
+| [SCoronaLightCache](structs/SCoronaLightCache.md) | 629796 | 629796 | 629796 | 629796 | 629796 |
 | [SCoronaLightEntry](structs/SCoronaLightEntry.md) | 78724 | 78724 | 78724 | 78724 | 78724 |
 | [SCounterBlock](structs/SCounterBlock.md) | 364 | 364 | 364 | 364 | 364 |
 | [SCram](structs/SCram.md) | 116 | 116 | — | — | — |
@@ -470,7 +470,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SDamageDecal](structs/SDamageDecal.md) | 56 | 56 | 56 | 56 | 56 |
 | [SDamageInfo](structs/SDamageInfo.md) | 60 ✓ | 60 ✓ | 60 | 60 | 60 |
 | [SDialogEntry](structs/SDialogEntry.md) | 550 | 550 | 550 | 550 | 550 |
-| [SDirectSoundDeviceInfo](structs/SDirectSoundDeviceInfo.md) | 284 | 284 | — | — | — |
+| [SDirectSoundDeviceInfo](structs/SDirectSoundDeviceInfo.md) | 284 | 284 | 284 | 284 | 284 |
 | [SDisplayListSortEntry](structs/SDisplayListSortEntry.md) | 8 | 8 | 8 | 8 | 8 |
 | [SDjienBox](structs/SDjienBox.md) | — | — | 72 ✓ | — | — |
 | [SDynamicLight](structs/SDynamicLight.md) | — | — | 76 ✓ | 76 ✓ | 76 ✓ |
@@ -490,10 +490,10 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SFog](structs/SFog.md) | 36 | 36 | 36 | 36 | 36 |
 | [SFogGrid](structs/SFogGrid.md) | 4128 | 4128 | 4128 | 4128 | 4128 |
 | [SFogGridPlane](structs/SFogGridPlane.md) | 256 | 256 | 256 | 256 | 256 |
-| [SFogImagePlane](structs/SFogImagePlane.md) | 76800 | 76800 | — | — | — |
+| [SFogImagePlane](structs/SFogImagePlane.md) | 76800 | 76800 | 76800 | 76800 | 76800 |
 | [SFollowFormation](structs/SFollowFormation.md) | — | — | — | 980 | — |
 | [SFollowSlotStruct](structs/SFollowSlotStruct.md) | — | — | — | 60 ✓ | — |
-| [SFontGlyph](structs/SFontGlyph.md) | 145 | 145 | — | — | — |
+| [SFontGlyph](structs/SFontGlyph.md) | 145 | 145 | 145 | 145 | 145 |
 | [SFoundFileInfo](structs/SFoundFileInfo.md) | 532 | 532 | 532 | 532 | 532 |
 | [SFreaky](structs/SFreaky.md) | 84 ✓ | 84 ✓ | 84 ✓ | 84 ✓ | — |
 | [SGameSettingsPlayer](structs/SGameSettingsPlayer.md) | 40 | 40 | 40 | 40 | 40 |
@@ -501,7 +501,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SGroundCell](structs/SGroundCell.md) | 4 | 4 | 4 | 4 | 4 |
 | [SHardwareEdge](structs/SHardwareEdge.md) | 56 | 56 | 56 | 56 | 56 |
 | [SHuffmanTable](structs/SHuffmanTable.md) | 2088 | 2088 | 2088 | 2088 | 2088 |
-| [SHuffmanTableSource](structs/SHuffmanTableSource.md) | 24 | 24 | — | — | — |
+| [SHuffmanTableSource](structs/SHuffmanTableSource.md) | 24 | 24 | 24 | 24 | 24 |
 | [SInputFace](structs/SInputFace.md) | 18 | 18 | 18 | 18 | 18 |
 | [SInteractionInfo](structs/SInteractionInfo.md) | 32 | 32 | 32 | 32 | 32 |
 | [SIntersectXZCylinder](structs/SIntersectXZCylinder.md) | 92 ✓ | 92 ✓ | 92 | 92 | 92 |
@@ -509,9 +509,9 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SIpAddr](structs/SIpAddr.md) | — | — | 4 | 4 | 4 |
 | [SLaserInfo](structs/SLaserInfo.md) | 84 ✓ | 84 ✓ | 84 | 84 | 84 |
 | [SLayerAction](structs/SLayerAction.md) | 56 | 56 | 56 | 56 | 56 |
-| [SLightGlowParams](structs/SLightGlowParams.md) | 24 | 24 | — | — | — |
-| [SLightGlowSprite](structs/SLightGlowSprite.md) | 48 | 48 | — | — | — |
-| [SLightGlowTable](structs/SLightGlowTable.md) | 480 | 480 | — | — | — |
+| [SLightGlowParams](structs/SLightGlowParams.md) | 24 | 24 | 24 | 24 | 24 |
+| [SLightGlowSprite](structs/SLightGlowSprite.md) | 48 | 48 | 48 | 48 | 48 |
+| [SLightGlowTable](structs/SLightGlowTable.md) | 480 | 480 | 480 | 480 | 480 |
 | [SLineStrip](structs/SLineStrip.md) | 8 | 8 | 8 | 8 | 8 |
 | [SLineStrip2Index](structs/SLineStrip2Index.md) | 16 | 16 | — | — | — |
 | [SLineStrip3Index](structs/SLineStrip3Index.md) | 20 | 20 | — | — | — |
@@ -520,14 +520,14 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SLodUvAccum](structs/SLodUvAccum.md) | 16 | 16 | — | — | — |
 | [SMRGLAnimatedTexture](structs/SMRGLAnimatedTexture.md) | 28 | 28 | 28 | 28 | 28 |
 | [SMRGLHeaderBasic](structs/SMRGLHeaderBasic.md) | 8 | 8 | 8 | 8 | 8 |
-| [SMRGLHeaderBasicCountOnly](structs/SMRGLHeaderBasicCountOnly.md) | 4 | 4 | — | — | — |
+| [SMRGLHeaderBasicCountOnly](structs/SMRGLHeaderBasicCountOnly.md) | 4 | 4 | 4 | 4 | 4 |
 | [SMRGLHeaderExtended](structs/SMRGLHeaderExtended.md) | 12 | 12 | 12 | 12 | 12 |
 | [SMRGLHeaderPrimitive](structs/SMRGLHeaderPrimitive.md) | 24 | 24 | 24 | 24 | 24 |
 | [SMRGLIndexBlock](structs/SMRGLIndexBlock.md) | 20 | 20 | — | — | — |
 | [SMRGLKeyframe](structs/SMRGLKeyframe.md) | 20 | 20 | 20 | 20 | 20 |
 | [SMRGLKeyframeModel](structs/SMRGLKeyframeModel.md) | 344 | 344 | 344 | 344 | 344 |
 | [SMRGLKeyframeModelOnDisk](structs/SMRGLKeyframeModelOnDisk.md) | 344 | 344 | — | — | — |
-| [SMRGLLightPrimitive](structs/SMRGLLightPrimitive.md) | 36 | 36 | — | — | — |
+| [SMRGLLightPrimitive](structs/SMRGLLightPrimitive.md) | 36 | 36 | 36 | 36 | 36 |
 | [SMRGLModelBounds](structs/SMRGLModelBounds.md) | 52 | 52 | 52 | 52 | 52 |
 | [SMRGLPoint](structs/SMRGLPoint.md) | 16 | 16 | 16 | 16 | 16 |
 | [SMRGLPointerArray](structs/SMRGLPointerArray.md) | 16 | 16 | — | — | — |
@@ -536,7 +536,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SMRGLPrimitivePoly](structs/SMRGLPrimitivePoly.md) | 120 | 120 | 120 | 120 | 120 |
 | [SMRGLPrimitivePolyIndex](structs/SMRGLPrimitivePolyIndex.md) | 56 | 56 | 56 | 56 | 56 |
 | [SMRGLPrimitiveQuad](structs/SMRGLPrimitiveQuad.md) | 72 | 72 | 72 | 72 | 72 |
-| [SMRGLPrimitiveQuadIndex](structs/SMRGLPrimitiveQuadIndex.md) | 40 | 40 | — | — | — |
+| [SMRGLPrimitiveQuadIndex](structs/SMRGLPrimitiveQuadIndex.md) | 40 | 40 | 40 | 40 | 40 |
 | [SMRGLPrimitiveTriangle](structs/SMRGLPrimitiveTriangle.md) | 60 | 60 | 60 | 60 | 60 |
 | [SMRGLPrimitiveTriangleIndex](structs/SMRGLPrimitiveTriangleIndex.md) | 36 | 36 | 36 | 36 | 36 |
 | [SMRGLSkyTexture](structs/SMRGLSkyTexture.md) | 24 | 24 | 24 | 24 | 24 |
@@ -560,7 +560,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SMpegFrame](structs/SMpegFrame.md) | 28 | 28 | 28 | 28 | 28 |
 | [SMpegFrameDecodeContext](structs/SMpegFrameDecodeContext.md) | 48 | 48 | — | — | — |
 | [SMpegFrameHeader](structs/SMpegFrameHeader.md) | 48 | 48 | 48 | 48 | 48 |
-| [SMpegLayer3BandIndex](structs/SMpegLayer3BandIndex.md) | 148 | 148 | — | — | — |
+| [SMpegLayer3BandIndex](structs/SMpegLayer3BandIndex.md) | 148 | 148 | 148 | 148 | 148 |
 | [SMpegLayer3GranuleInfo](structs/SMpegLayer3GranuleInfo.md) | 72 | 72 | 72 | 72 | 72 |
 | [SMpegLayer3ScalefactorGranule](structs/SMpegLayer3ScalefactorGranule.md) | 248 | 248 | 248 | 248 | 248 |
 | [SMpegLayer3SideInfo](structs/SMpegLayer3SideInfo.md) | 328 | 328 | 328 | 328 | 328 |
@@ -624,11 +624,11 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SRaytraceState](structs/SRaytraceState.md) | 160 ✓ | 160 ✓ | 160 ✓ | 160 ✓ | 160 ✓ |
 | [SRecordingDeviceInfo](structs/SRecordingDeviceInfo.md) | 264 | 264 | 264 | 264 | 264 |
 | [SReflector](structs/SReflector.md) | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ | — |
-| [SRenderBufferEntry](structs/SRenderBufferEntry.md) | 280 | 280 | — | — | — |
+| [SRenderBufferEntry](structs/SRenderBufferEntry.md) | 280 | 280 | 280 | 280 | 280 |
 | [SRenderVertex](structs/SRenderVertex.md) | 48 | 48 | 48 | 48 | 48 |
 | [SResolutionEntry](structs/SResolutionEntry.md) | 8 | 8 | — | — | — |
 | [SReverbPreset](structs/SReverbPreset.md) | 16 | — | 16 | 16 | 16 |
-| [SReverbSettings](structs/SReverbSettings.md) | 12 | — | 12 | 12 | 12 |
+| [SReverbSettings](structs/SReverbSettings.md) | 12 | 12 | 12 | 12 | 12 |
 | [SRoom](structs/SRoom.md) | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ |
 | [SS3DFaceMatch](structs/SS3DFaceMatch.md) | 60 | 60 | — | — | — |
 | [SScanlineSpans](structs/SScanlineSpans.md) | 132 | 132 | — | — | — |
@@ -679,5 +679,5 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SWavChunkHeader](structs/SWavChunkHeader.md) | 8 | 8 | — | — | — |
 | [SWavFmtChunk](structs/SWavFmtChunk.md) | 12 | 12 | — | — | — |
 | [SWayPointAdjacency](structs/SWayPointAdjacency.md) | 8 | 8 | 8 | 8 | 8 |
-| [SWindow](structs/SWindow.md) | 488 | 488 | — | — | — |
-| [SWindowRect](structs/SWindowRect.md) | 16 | 16 | — | — | — |
+| [SWindow](structs/SWindow.md) | 488 | 488 | 488 | 488 | 488 |
+| [SWindowRect](structs/SWindowRect.md) | 16 | 16 | 16 | 16 | 16 |

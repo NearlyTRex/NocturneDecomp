@@ -39,21 +39,29 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_0057ae70(CWavInDevice *thi
     iVar8 = 0;
     iVar2 = -1;
     do {
-      if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {
-        uVar4 = (uint)(channels < *(int *)((int)&DAT_006235e0 + iVar8));
-        if (*(int *)((int)&DAT_006235e0 + iVar8) < channels) {
+      if ((*(uint *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].format_flags + iVar8) &
+          auStack_24._16_4_) != 0) {
+        uVar4 = (uint)(channels <
+                      *(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample +
+                              iVar8));
+        if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].bits_per_sample + iVar8) <
+            channels) {
           uVar4 = uVar4 + 2;
         }
-        if (g_INT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar8)) {
+        if (g_INT_02c82a3c <
+            *(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8)) {
           uVar4 = uVar4 + 1;
         }
-        if (*(int *)((int)&DAT_006235e8 + iVar8) < g_INT_02c82a3c) {
+        if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].sample_rate + iVar8) <
+            g_INT_02c82a3c) {
           uVar4 = uVar4 + 2;
         }
-        if (sample_rate < *(int *)((int)&DAT_006235e4 + iVar8)) {
+        if (sample_rate <
+            *(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8)) {
           uVar4 = uVar4 + 2;
         }
-        if (*(int *)((int)&DAT_006235e4 + iVar8) < sample_rate) {
+        if (*(int *)((int)&g_SAudioFormatDescriptor_ARRAY_006235dc[0].channels + iVar8) <
+            sample_rate) {
           uVar4 = uVar4 + 3;
         }
         if (uVar4 < uVar9) {
@@ -70,9 +78,9 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_0057ae70(CWavInDevice *thi
       sound_sndmain_cpp_logSoundError_FUN_005773f0("WavInDevice::setMode - Can't set any recording modes!");
       return 0;
     }
-    g_INT_02c82a1c = (&DAT_006235e0)[iVar2 * 4];
-    g_INT_02c82a20 = (&DAT_006235e4)[iVar2 * 4];
-    g_INT_02c82a24 = (&DAT_006235e8)[iVar2 * 4];
+    g_INT_02c82a1c = g_SAudioFormatDescriptor_ARRAY_006235dc[iVar2].bits_per_sample;
+    g_INT_02c82a20 = g_SAudioFormatDescriptor_ARRAY_006235dc[iVar2].channels;
+    g_INT_02c82a24 = g_SAudioFormatDescriptor_ARRAY_006235dc[iVar2].sample_rate;
     g_INT_02c82a28 = (int)(g_INT_02c82a1c == 8);
     g_INT_02c82a2c = g_INT_02c82a24 / 0x14;
     g_INT_02c82a30 = (g_INT_02c82a24 * 2) / g_INT_02c82a2c;
@@ -86,18 +94,18 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_0057ae70(CWavInDevice *thi
         pvVar5 = GlobalAlloc(0x2002,((int)((g_INT_02c82a1c + (g_INT_02c82a1c >> 0x1f) * -8) -
                                           (uint)((g_INT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) *
                                     g_INT_02c82a2c * g_INT_02c82a20);
-        *(HGLOBAL *)(iVar8 + 0x2c8297c) = pvVar5;
+        *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c8297c + iVar8) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         pvVar6 = GlobalLock(pvVar5);
         *(LPVOID *)((int)g_INT_ARRAY_02c829cc + iVar8) = pvVar6;
         if (pvVar6 == (LPVOID)0x0) break;
         pvVar5 = GlobalAlloc(0x2002,0x20);
-        *(HGLOBAL *)(iVar8 + 0x2c828dc) = pvVar5;
+        *(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc + iVar8) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         iVar7 = iVar7 + 1;
-        pvVar6 = GlobalLock(*(HGLOBAL *)(iVar8 + 0x2c828dc));
+        pvVar6 = GlobalLock(*(HGLOBAL *)((int)g_HGLOBAL_ARRAY_02c828dc + iVar8));
         iVar1 = g_INT_02c82a30;
-        *(LPVOID *)(iVar8 + 0x2c8292c) = pvVar6;
+        *(LPVOID *)((int)g_LPWAVEHDR_ARRAY_02c8292c + iVar8) = pvVar6;
         iVar8 = iVar8 + 4;
       } while (iVar7 < iVar1);
     }
@@ -118,7 +126,8 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_0057ae70(CWavInDevice *thi
     if (iVar7 == 0) {
       return 0;
     }
-    auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_006235dc)[iVar2 * 4];
+    auStack_24._16_4_ =
+         auStack_24._16_4_ & ~g_SAudioFormatDescriptor_ARRAY_006235dc[iVar2].format_flags;
     channels = g_INT_02c82a34;
     sample_rate = g_INT_02c82a38;
   } while( true );

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004ba740(CIcePick *this_ptr,float delta_time)
 
 {
@@ -46,7 +44,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004ba740(CIcePick *t
     this_ptr_01 = core_motion_cpp_CMotionController_getMotionList_FUN_004e1890(&this_ptr_00->base);
     iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_004e1010(this_ptr_01,motion_name,iVar5);
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0051c3d0
-              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,_DAT_01cae2c8,
+              (this_ptr_00,iVar5,0.0,this_ptr->shoot_blend_weight,g_INT_ARRAY_01cae288[0x10],
                core_skeleton_cpp_motionBlendWeightFunc_FUN_0051b650);
     fVar1 = (this_ptr->base).player_input.look_up_down_speed * (float)3.1415926535000001 *
             (float)2 * delta_time + this_ptr->aim_pitch;
@@ -64,7 +62,7 @@ void __cdecl core_icepick_cpp_CIcePick_updateShootBlend_FUN_004ba740(CIcePick *t
     puVar2 = (uint *)((int)&local_30 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     *(uint *)((int)&local_20 + (uint)bVar4 * -8 + 4) =
          *(uint *)((int)&local_30 + (uint)bVar4 * -8 + 4);
-    iVar5 = _DAT_01cae2c8;
+    iVar5 = g_INT_ARRAY_01cae288[0x10];
     *puVar3 = *puVar2;
     puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0051d7a0

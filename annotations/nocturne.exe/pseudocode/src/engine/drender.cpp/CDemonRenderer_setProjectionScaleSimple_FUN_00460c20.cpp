@@ -12,6 +12,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_setProjectionScaleSimple_FUN_0046
   double dVar1;
   
   dVar1 = round((double)((float)65536 / scale_factor));
-  DAT_005b7648 = (int)ROUND(dVar1);
+  g_INT_005b7648 = (int)ROUND(dVar1);
   return;
 }

@@ -69,6 +69,14 @@ CWavOutDevice g_CWavOutDevice_02cf5678 = {};
 HANDLE g_HANDLE_02cf3418 = {};
 HANDLE g_HANDLE_02cfd8a8 = {};
 
+// HGLOBAL[20]
+HGLOBAL g_HGLOBAL_ARRAY_02cf5508[20] = {};
+HGLOBAL g_HGLOBAL_ARRAY_02cf55a8[20] = {};
+
+// HGLOBAL[8]
+HGLOBAL g_HGLOBAL_ARRAY_02cf5470[8] = {};
+HGLOBAL g_HGLOBAL_ARRAY_02cf54b0[8] = {};
+
 // HMODULE
 HMODULE g_HMODULE_02cf610c = {};
 
@@ -77,6 +85,9 @@ HWND g_HWND_02cf611c = {};
 
 // IDirectSound*
 IDirectSound* g_IDirectSound_PTR_02cf49c4 = {};
+
+// IDirectSound3DListener*
+IDirectSound3DListener* g_IDirectSound3DListener_PTR_02cf49d0 = {};
 
 // IDirectSoundBuffer*
 IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_02cf49c8 = {};
@@ -87,6 +98,21 @@ IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02cf49f4[25] = {};
 
 // IDirectSoundBuffer*[31]
 IDirectSoundBuffer* g_IDirectSoundBuffer_PTR_ARRAY_02cf500c[31] = {};
+
+// IKsPropertySet*
+IKsPropertySet* g_IKsPropertySet_PTR_02cf49d4 = {};
+
+// LPVOID[8]
+LPVOID g_LPVOID_ARRAY_02cf54d0[8] = {};
+
+// LPWAVEHDR[20]
+LPWAVEHDR g_LPWAVEHDR_ARRAY_02cf5558[20] = {};
+
+// LPWAVEHDR[8]
+LPWAVEHDR g_LPWAVEHDR_ARRAY_02cf5490[8] = {};
+
+// SDirectSoundDeviceInfo[8]
+SDirectSoundDeviceInfo g_SDirectSoundDeviceInfo_ARRAY_02cf3c74[8] = {};
 
 // SMRGLTextureBasic
 SMRGLTextureBasic g_SMRGLTextureBasic_02cfd080 = {};
@@ -112,8 +138,10 @@ byte g_BYTE_02cf3424 = {};
 byte g_BYTE_02cf3427 = {};
 
 // char[40]
-char g_CHAR_ARRAY_02cf5858[40] = {};
 char g_CHAR_ARRAY_02cf5e98[40] = {};
+
+// char[40][40]
+char g_CHAR_ARRAY_ARRAY_02cf5858[40][40] = {};
 
 // char[516]
 char g_CHAR_ARRAY_02cfd0d8[516] = {};
@@ -250,9 +278,6 @@ int g_INT_ARRAY_02cf2940[32] = {};
 
 // int[4096]
 int g_INT_ARRAY_02cfd980[4096] = {};
-
-// int[782]
-int g_INT_ARRAY_02cf3d8c[782] = {};
 
 // uchar[4]
 uchar g_UCHAR_ARRAY_02cfd898[4] = {};

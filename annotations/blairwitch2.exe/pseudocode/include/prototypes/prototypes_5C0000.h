@@ -4,6 +4,7 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/signal.h"
 #include "system/stdio.h"
 #include "system/stdlib.h"
 #include "system/time.h"
@@ -24,7 +25,7 @@ DWORD crt_unknown_c_FUN_005c045c(uint param_1,LPCVOID param_2,DWORD param_3);
 undefined4 crt_unknown_c_FUN_005c0820(uint param_1);
 void crt_unknown_c_FUN_005c0878(int param_1,uint param_2);
 undefined4 crt_unknown_c_FUN_005c08b0(void);
-int crt_unknown_c_FUN_005c0900(int param_1);
+int crt_unknown_c_FUN_005c0900(HANDLE param_1);
 void crt_unknown_c_FUN_005c098c(HANDLE param_1,uint param_2);
 void crt_unknown_c_FUN_005c0a64(int param_1);
 void crt_unknown_c_FUN_005c0a90(void);
@@ -195,9 +196,9 @@ void crt_unknown_c_FUN_005c4d4c(void);
 int crt_unknown_c_FUN_005c4dc0(void);
 int crt_unknown_c_FUN_005c4dcc(void);
 void crt_unknown_c_FUN_005c4de0(void);
-undefined4 crt_unknown_c_FUN_005c4df0(int param_1,undefined4 param_2);
-undefined4 crt_unknown_c_FUN_005c4e44(int param_1);
-undefined4 crt_unknown_c_FUN_005c4e68(int param_1);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005c4df0(int param_1,SIGNAL_HANDLER_TYPE param_2);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005c4e44(int param_1);
+SIGNAL_HANDLER_TYPE crt_unknown_c_FUN_005c4e68(int param_1);
 undefined4 crt_unknown_c_FUN_005c4eb0(int param_1);
 undefined4 crt_unknown_c_FUN_005c4f10(void);
 byte crt_unknown_c_FUN_005c4f48(void);

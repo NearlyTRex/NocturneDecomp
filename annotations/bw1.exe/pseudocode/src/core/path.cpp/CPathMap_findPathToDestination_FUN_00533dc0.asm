@@ -786,7 +786,7 @@ section .text
     IMUL EAX,ESI,0x64                   ; 0053460f
     MOV dword ptr [ESP + 0x1cc],EBX     ; 00534612
     XOR EBX,EBX                         ; 00534619
-    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e7abe8] ; 0053461b | DAT_01e7bfa2
+    MOV BL,byte ptr [EDI + EAX*0x1 + 0x1e7abe8] ; 0053461b | g_CHAR_ARRAY_ARRAY_01e7abe8[50][50]
     TEST EBX,EBX                        ; 00534622
     JZ 0x005347a8                       ; 00534624
         ;   XREF to: 005347a8 (CONDITIONAL_JUMP)  ; LAB_005347a8

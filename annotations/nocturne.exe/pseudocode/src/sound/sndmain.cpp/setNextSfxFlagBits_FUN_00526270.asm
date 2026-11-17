@@ -12,13 +12,13 @@
 ;   core_stranger.cpp_CStranger_processFrame_FUN_00535900 at 00537c26
 ;
 ; Referenced Globals:
-;   undefined4 DAT_02dc1b74
+;   int g_INT_02dc1b74
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV EDX,dword ptr [0x02dc1b74]      ; 00526270 | DAT_02dc1b74
+    MOV EDX,dword ptr [0x02dc1b74]      ; 00526270 | g_INT_02dc1b74
         ;   Label: sound_sndmain.cpp_setNextSfxFlagBits_FUN_00526270
     LEA EAX,[EDX*0x4 + 0x0]             ; 00526276
     SUB EAX,EDX                         ; 0052627d

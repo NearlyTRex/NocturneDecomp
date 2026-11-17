@@ -46,10 +46,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
               (g_CDemonRenderer_PTR_005f2afc,&this_ptr->position);
     if (this_ptr->is_wall_splat == 1) {
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C.i = 0xffff;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A.i = 0;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B.i = 0;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C.i = 0xffff;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.B.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (g_CDemonRenderer_PTR_005f2afc,
                  g_SMRGLTextureBasic_ARRAY_005fedac + this_ptr->texture_variant * 0x10 + local_18);
@@ -91,10 +91,10 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
       if (expire_flag != 0) {
         this_ptr->expired = 1;
       }
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.B.i = 0xffff;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.A.i = 0;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.C.i = 0;
-      g_SMRGLHeaderPrimitive_01d22e48.surface_normal.D.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.B.i = 0xffff;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.A.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.C.i = 0;
+      g_SMRGLPrimitiveQuadIndex_01d22e48.base.surface_normal.D.i = 0;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
                 (g_CDemonRenderer_PTR_005f2afc,
                  g_SMRGLTextureBasic_ARRAY_005fed4c + this_ptr->texture_variant);
@@ -145,7 +145,7 @@ void __cdecl core_gore_cpp_CBloodSplat_render_FUN_004cd690(CBloodSplat *this_ptr
               (this_ptr->blood_type,&g_SRenderVertex_ARRAY_0060b014[3].r,
                &g_SRenderVertex_ARRAY_0060b014[3].g,&g_SRenderVertex_ARRAY_0060b014[3].b);
     engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730
-              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLHeaderPrimitive_01d22e48);
+              (g_CDemonRenderer_PTR_005f2afc,&g_SMRGLPrimitiveQuadIndex_01d22e48.base);
     if (this_ptr->is_wall_splat == 1) {
       engine_drender_cpp_pop_FUN_0046d080();
       return;

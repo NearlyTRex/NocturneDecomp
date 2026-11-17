@@ -17,6 +17,21 @@ extern CMP3Decoder g_CMP3DecoderInstanceOther;
 // CSfxSlot[64]
 extern CSfxSlot g_CSfxSlot_ARRAY_02dbd374[64];
 
+// byte
+extern byte g_BYTE_02dbd348;
+
+// char[15360]
+extern char g_CHAR_ARRAY_02db1118[15360];
+
 // float
 extern float g_FLOAT_02dbd370;
+
+// int
+extern int g_INT_02dbd34c;
+
+// int[8]
+extern int g_INT_ARRAY_02dbd350[8];
+
+// uchar
+extern uchar g_UCHAR_02db1110;
 

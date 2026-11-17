@@ -6,12 +6,10 @@
 
 #include "nocturne.h"
 
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
 int __watcallStack mblen(char *mb_string)
 
 {
-  if ((_DAT_02de5c30 != 0) && ((*(byte *)((byte)*mb_string + 0x2de5c41) & 1) != 0)) {
+  if ((g_INT_02de5c30 != 0) && ((g_CHAR_ARRAY_02de5c41[(byte)*mb_string] & 1U) != 0)) {
     return 2;
   }
   return 1;

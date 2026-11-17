@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 180,
+    "complexity_score": 155,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 105,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
-      "undefined_data",
       "unrolled_strcpy"
     ],
     "total_lines": 321
@@ -153,8 +152,8 @@
     },
     {
       "addr": "007658e4",
-      "name": "DAT_007658e4",
-      "type": "undefined4",
+      "name": "g_CKeyFramedModelInstance_007658e4",
+      "type": "CKeyFramedModelInstance",
       "value": null
     },
     {
@@ -293,22 +292,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Undefined global data reference",
-      "line": 24,
-      "match": "DAT_007658e4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&DAT_007658e4,\"stake_b.kfm\");",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 26,
-      "match": "DAT_007658e4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&DAT_007658e4);",
-      "type": "undefined_data"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 97,

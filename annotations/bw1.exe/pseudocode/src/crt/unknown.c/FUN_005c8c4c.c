@@ -10,7 +10,6 @@ void FUN_005c8c4c(HANDLE param_1,uint param_2)
 
 {
   int iVar1;
-  int iVar2;
   DWORD nStdHandle;
   
   if ((int)param_2 < 0) {
@@ -29,21 +28,21 @@ void FUN_005c8c4c(HANDLE param_1,uint param_2)
   }
   SetStdHandle(nStdHandle,param_1);
 LAB_005c8c9a:
-  iVar1 = param_2 * 4;
   if ((int)param_2 < g_INT_0062683c) {
-    *(HANDLE *)(iVar1 + (int)DAT_00626838) = param_1;
+    g_SIOControlBlock_PTR_00626838->standard_handles[param_2] = param_1;
   }
   else {
-    DAT_00626838 = realloc(DAT_00626838,iVar1 + 4);
+    g_SIOControlBlock_PTR_00626838 =
+         realloc(g_SIOControlBlock_PTR_00626838,param_2 * 4 + 4);
     if (g_INT_0062683c < (int)param_2) {
-      iVar2 = g_INT_0062683c * 4;
+      iVar1 = g_INT_0062683c * 4;
       do {
-        *(uint *)((int)DAT_00626838 + iVar2) = 0;
-        iVar2 = iVar2 + 4;
-      } while (iVar2 < iVar1);
+        *(uint *)((int)g_SIOControlBlock_PTR_00626838->standard_handles + iVar1) = 0;
+        iVar1 = iVar1 + 4;
+      } while (iVar1 < (int)(param_2 * 4));
     }
     g_INT_0062683c = param_2 + 1;
-    *(HANDLE *)(param_2 * 4 + (int)DAT_00626838) = param_1;
+    g_SIOControlBlock_PTR_00626838->standard_handles[param_2] = param_1;
   }
   (*(code *)PTR_crt_unknown_c_FUN_005c50d4_00626634)();
   return;
